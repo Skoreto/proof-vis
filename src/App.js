@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import SvgExample from './components/SVGExample'
+import Graph from './components/Graph/Graph'
 
 class App extends Component {
   render() {
@@ -15,7 +15,7 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
 
-        <SvgExample width={400} height={200}/>
+        <Graph width={600} height={400}/>
 
       </div>
     );
