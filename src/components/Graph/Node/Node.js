@@ -7,7 +7,7 @@ class Node extends Component {
 
         return (
             <svg>
-                <circle cx={cx} cy={cy} r={25} fill={fill} stroke={'black'} stroke-width={3} />
+                <circle cx={cx} cy={cy} r={25} fill={fill} stroke={'black'} strokeWidth={3} />
             </svg>
         );
     }
