@@ -8,10 +8,10 @@ class Graph extends Component {
         const {width, height} = this.props;
 
         return (
-            <svg width={width} height={height}>
+            <svg width={width} height={height} stroke={'black'} strokeWidth={2} >
                 <Edge x1={90} y1={80} x2={290} y2={100} strokeColor={'black'} />
-                <Node cx={90} cy={80} fillColor={'yellow'} />
-                <Node cx={290} cy={100} fillColor={'red'} />
+                <Node cx={90} cy={80} fillColor={'yellow'} label={'x'} />
+                <Node cx={290} cy={100} fillColor={'red'} label={'Y'} />
             </svg>
         );
     }

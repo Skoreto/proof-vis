@@ -6,6 +6,8 @@ class Edge extends Component {
         super(props);
         this.handleMouseHover = this.handleMouseHover.bind(this);
         this.state = {
+            id: props.id,
+            name: props.name,
             isHovering: false,
             strokeColor: props.strokeColor,
             stroke: props.strokeColor
