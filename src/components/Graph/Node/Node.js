@@ -11,7 +11,7 @@ class Node extends Component {
             isHovering: false,
             fillColor: props.fillColor,
             fill: props.fillColor,
-            label: props.label
+            label: props.label ? props.label : ''
         };
     }
 
