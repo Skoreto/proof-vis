@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Graph from './components/Graph/Graph';
+import Button from './components/UI/Button/Button'
 
 class App extends Component {
     render() {
@@ -18,6 +19,8 @@ class App extends Component {
                 <div className="GraphBox">
                     <Graph width={900} height={600} />
                 </div>
+
+                <Button>Další</Button>
             </div>
         );
     }
