@@ -8,21 +8,21 @@ class Edge extends Component {
             id: props.id,
             name: props.name,
             isHovering: false,
-            strokeColor: props.strokeColor,
+            strokeColor: props.strokeColor ? props.strokeColor : 'black',
             stroke: props.strokeColor
         };
     }
 
     handleMouseHover = () => {
         this.setState(this.changeFillHoverState);
-    }
+    };
 
     changeFillHoverState = (state) => {
         return {
             isHovering: !state.isHovering,
             stroke: state.isHovering ? state.strokeColor : 'lightblue'
         };
-    }
+    };
 
     render() {
         const {x1, y1, x2, y2} = this.props;
