@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 
 class Edge extends Component {
-
     constructor(props) {
         super(props);
         this.handleMouseHover = this.handleMouseHover.bind(this);
@@ -14,11 +13,11 @@ class Edge extends Component {
         };
     }
 
-    handleMouseHover() {
+    handleMouseHover = () => {
         this.setState(this.changeFillHoverState);
     }
 
-    changeFillHoverState(state) {
+    changeFillHoverState = (state) => {
         return {
             isHovering: !state.isHovering,
             stroke: state.isHovering ? state.strokeColor : 'lightblue'

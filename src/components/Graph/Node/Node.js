@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 
 class Node extends Component {
-
     constructor(props) {
         super(props);
         this.handleMouseHover = this.handleMouseHover.bind(this);
@@ -15,11 +14,11 @@ class Node extends Component {
         };
     }
 
-    handleMouseHover() {
+    handleMouseHover = () => {
         this.setState(this.changeFillHoverState);
     }
 
-    changeFillHoverState(state) {
+    changeFillHoverState = (state) => {
         return {
             isHovering: !state.isHovering,
             fill: state.isHovering ? state.fillColor : 'lightblue'
