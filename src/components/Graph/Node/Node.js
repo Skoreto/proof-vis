@@ -16,14 +16,14 @@ class Node extends Component {
 
     handleMouseHover = () => {
         this.setState(this.changeFillHoverState);
-    }
+    };
 
     changeFillHoverState = (state) => {
         return {
             isHovering: !state.isHovering,
             fill: state.isHovering ? state.fillColor : 'lightblue'
         };
-    }
+    };
 
     render() {
         const {cx, cy} = this.props;

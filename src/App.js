@@ -9,9 +9,12 @@ class App extends Component {
         super(props);
         this.nextStep = this.nextStep.bind(this);
         this.state = {
-            nodes1: [
-                {x: 90, y: 280, fillColor: 'lightgreen' },
-                {x: 290, y: 240, fillColor: 'brown' }
+            edges: [
+                {x1: 90, y1: 280, x2: 290, y2: 240, strokeColor: 'pink'}
+            ],
+            nodes: [
+                {x: 90, y: 280, fillColor: 'lightgreen'},
+                {x: 290, y: 240, fillColor: 'brown'}
             ],
             step: 0
         };
@@ -19,17 +22,17 @@ class App extends Component {
 
     nextStep = () => {
         this.setState(this.changeNodesState);
-    }
+    };
 
     changeNodesState = (state) => {
-        let newNodes = [...state.nodes1];
-        newNodes.push({x: 290, y: 300 + (state.step * 60), fillColor: 'green' });
+        let newNodes = [...state.nodes];
+        newNodes.push({x: 290, y: 300 + (state.step * 60), fillColor: 'green'});
 
         return {
-            nodes1: newNodes,
+            nodes: newNodes,
             step: ++state.step
         };
-    }
+    };
 
     render() {
         return (
@@ -43,7 +46,7 @@ class App extends Component {
                 </p>
 
                 <div className={cssClasses.GraphBox}>
-                    <Graph width={900} height={600} nodes={this.state.nodes1} />
+                    <Graph width={900} height={600} edges={this.state.edges} nodes={this.state.nodes} />
                 </div>
 
                 <Button clicked={this.nextStep}>Další</Button>
