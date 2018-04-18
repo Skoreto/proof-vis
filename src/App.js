@@ -34,9 +34,50 @@ class App extends Component {
                 this.setState(this.step3);
             }
 
-            // Update currentStep after a step was executed
+            // Increase currentStep after a step was executed
             this.setState((state) => {return {currentStep: ++state.currentStep}});
         }
+    };
+
+    previousStep = () => {
+        if (this.state.currentStep > 0) {
+            if (this.state.currentStep === 1) {
+                this.setState(this.stepReset);
+            }
+
+            if (this.state.currentStep === 2) {
+                this.setState(this.stepReset);
+                this.setState(this.step1);
+            }
+
+            if (this.state.currentStep === 3) {
+                this.setState(this.stepReset);
+                this.setState(this.step1);
+                this.setState(this.step2);
+            }
+
+            if (this.state.currentStep === 4) {
+                this.setState(this.stepReset);
+                this.setState(this.step1);
+                this.setState(this.step2);
+                this.setState(this.step3);
+            }
+
+            // Reduce currentStep after a step was executed
+            this.setState((state) => {return {currentStep: --state.currentStep}});
+        }
+    };
+
+    stepReset = () => {
+        return {
+            edges: [
+                {x1: 90, y1: 280, x2: 290, y2: 240, strokeColor: 'pink'}
+            ],
+            nodes: [
+                {x: 90, y: 280, fillColor: 'lightgreen'},
+                {x: 290, y: 240, fillColor: 'brown'}
+            ],
+        };
     };
 
     step1 = (state) => {
@@ -81,6 +122,7 @@ class App extends Component {
                     <Graph width={900} height={600} edges={this.state.edges} nodes={this.state.nodes} />
                 </div>
 
+                <Button clicked={this.previousStep}>Předchozí</Button>
                 <Button clicked={this.nextStep}>Další</Button>
             </div>
         );
