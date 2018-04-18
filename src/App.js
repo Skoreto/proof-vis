@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import cssClasses from './App.css';
 import Graph from './components/Graph/Graph';
 import Button from './components/UI/Button/Button'
+import StepCounter from './components/UI/StepCounter/StepCounter'
 
 class App extends Component {
     constructor(props) {
@@ -123,6 +124,7 @@ class App extends Component {
                 </div>
 
                 <Button clicked={this.previousStep}>Předchozí</Button>
+                <StepCounter currentStep={this.state.currentStep} stepSum={4} />
                 <Button clicked={this.nextStep}>Další</Button>
             </div>
         );
