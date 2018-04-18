@@ -1,0 +1,7 @@
+.StepCounter {
+    font: inherit;
+    font-weight: bold;
+    padding: 10px;
+    margin: 20px;
+    display: inline-block;
+}
