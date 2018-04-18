@@ -16,21 +16,53 @@ class App extends Component {
                 {x: 90, y: 280, fillColor: 'lightgreen'},
                 {x: 290, y: 240, fillColor: 'brown'}
             ],
-            step: 0
+            currentStep: 0
         };
     }
 
     nextStep = () => {
-        this.setState(this.changeNodesState);
+        if (this.state.currentStep <= 5) {
+            if (this.state.currentStep === 0) {
+                this.setState(this.step1);
+            }
+
+            if (this.state.currentStep === 1) {
+                this.setState(this.step2);
+            }
+
+            if (this.state.currentStep === 2) {
+                this.setState(this.step3);
+            }
+
+            // Update currentStep after a step was executed
+            this.setState((state) => {return {currentStep: ++state.currentStep}});
+        }
     };
 
-    changeNodesState = (state) => {
-        let newNodes = [...state.nodes];
-        newNodes.push({x: 290, y: 300 + (state.step * 60), fillColor: 'green'});
+    step1 = (state) => {
+        let newEdges = [...state.edges];
+        newEdges.push({x1: 290, y1: 380, x2: 490, y2: 340, strokeColor: 'brown'});
 
         return {
-            nodes: newNodes,
-            step: ++state.step
+            edges: newEdges
+        };
+    };
+
+    step2 = (state) => {
+        let newNodes = [...state.nodes];
+        newNodes.push({x: 290, y: 380, fillColor: 'green'});
+
+        return {
+            nodes: newNodes
+        };
+    };
+
+    step3 = (state) => {
+        let newNodes = [...state.nodes];
+        newNodes.push({x: 490, y: 340, fillColor: 'orange'});
+
+        return {
+            nodes: newNodes
         };
     };
 
