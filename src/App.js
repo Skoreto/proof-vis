@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import update from 'immutability-helper';
 import logo from './logo.svg';
 import cssClasses from './App.css';
 import Graph from './components/Graph/Graph';
@@ -8,14 +9,21 @@ import StepCounter from './components/UI/StepCounter/StepCounter'
 class App extends Component {
     constructor(props) {
         super(props);
-        this.nextStep = this.nextStep.bind(this);
+        // this.nextStep = this.nextStep.bind(this);
         this.state = {
             edges: [
-                {x1: 90, y1: 280, x2: 290, y2: 240, strokeColor: 'pink'}
+                {id: 1, x1: 80, y1: 240, x2: 220, y2: 180},
+                {id: 2, x1: 220, y1: 180, x2: 230, y2: 330},
+                {id: 3, x1: 220, y1: 180, x2: 370, y2: 230},
+                {id: 4, x1: 230, y1: 330, x2: 380, y2: 360},
+                {id: 5, x1: 370, y1: 230, x2: 380, y2: 360}
             ],
             nodes: [
-                {x: 90, y: 280, fillColor: 'lightgreen'},
-                {x: 290, y: 240, fillColor: 'brown'}
+                {id: 1, x: 80, y: 240, fillColor: '#ffff08'},
+                {id: 2, x: 220, y: 180, fillColor: '#ffff08'},
+                {id: 3, x: 230, y: 330, fillColor: '#ffff08', label: 'x'},
+                {id: 4, x: 370, y: 230, fillColor: '#ffff08'},
+                {id: 5, x: 380, y: 360, fillColor: '#ffff08'},
             ],
             currentStep: 0
         };
@@ -72,34 +80,73 @@ class App extends Component {
     stepReset = () => {
         return {
             edges: [
-                {x1: 90, y1: 280, x2: 290, y2: 240, strokeColor: 'pink'}
+                {id: 1, x1: 80, y1: 240, x2: 220, y2: 180},
+                {id: 2, x1: 220, y1: 180, x2: 230, y2: 330},
+                {id: 3, x1: 220, y1: 180, x2: 370, y2: 230},
+                {id: 4, x1: 230, y1: 330, x2: 380, y2: 360},
+                {id: 5, x1: 370, y1: 230, x2: 380, y2: 360}
             ],
             nodes: [
-                {x: 90, y: 280, fillColor: 'lightgreen'},
-                {x: 290, y: 240, fillColor: 'brown'}
-            ],
+                {id: 1, x: 80, y: 240, fillColor: '#ffff08'},
+                {id: 2, x: 220, y: 180, fillColor: '#ffff08'},
+                {id: 3, x: 230, y: 330, fillColor: '#ffff08'},
+                {id: 4, x: 370, y: 230, fillColor: '#ffff08'},
+                {id: 5, x: 380, y: 360, fillColor: '#ffff08'},
+            ]
         };
     };
 
-    step1 = (state) => {
-        let newEdges = [...state.edges];
-        newEdges.push({x1: 290, y1: 380, x2: 490, y2: 340, strokeColor: 'brown'});
+    // step1 = (state) => {
+    //     let newEdges = [...state.edges];
+    //     newEdges.push({x1: 290, y1: 380, x2: 490, y2: 340, strokeColor: 'brown'});
+    //
+    //     return {
+    //         edges: newEdges
+    //     };
+    // };
 
-        return {
-            edges: newEdges
-        };
+    step3 = (state) => {
+        let newNodes = [...state.nodes];
+        // newNodes[1].fillColor = 'blue';
+
+        let upNode = Object.assign({}, this.state.nodes[1], {fillColor: 'blue'});
+        newNodes[1] = upNode;
+
+        this.setState({nodes: [
+            {fillColor: 'blue', label: 'x'},
+            {id: 2, x: 220, y: 180, fillColor: '#ffff08'},
+            {id: 3, x: 230, y: 330, fillColor: '#ffff08'},
+            {id: 4, x: 370, y: 230, fillColor: '#ffff08'},
+            {id: 5, x: 380, y: 360, fillColor: '#ffff08'},
+        ]})
     };
 
     step2 = (state) => {
-        let newNodes = [...state.nodes];
-        newNodes.push({x: 290, y: 380, fillColor: 'green'});
+        const newNodes = update(state.nodes, {$push: [{id: 6, x: 220, y: 480, fillColor: 'blue'}]});
 
         return {
             nodes: newNodes
         };
     };
 
-    step3 = (state) => {
+    step1 = (state) => {
+        const oldNodes = state.nodes;
+        const newNodes = update(oldNodes,
+            {[2]: {x: {$set: 400}, label: {$set: 'y'}, y: {$set: 400}, fillColor: {$set: '#f44f08'} }});
+
+        return {
+            nodes: newNodes
+        };
+    };
+
+
+    step4 = (state) => {
+        let newNodes = [...state.nodes, {id: 6, x: 380, y: 460, fillColor: '#ffff58'}];
+
+        this.setState({nodes: newNodes})
+    };
+
+    step4 = (state) => {
         let newNodes = [...state.nodes];
         newNodes.push({x: 490, y: 340, fillColor: 'orange'});
 
