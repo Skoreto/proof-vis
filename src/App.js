@@ -28,6 +28,20 @@ class App extends Component {
         };
     }
 
+    /**
+     *
+     * @param state State of component.
+     * @param nodeIndex Index of node in an array.
+     * @param fillColor New fillColor.
+     * @param label New label of node.
+     */
+    updateNode = (state, nodeIndex, fillColor, label) => {
+        const newNodes = update(state.nodes,
+            {[nodeIndex]: {fillColor: {$set: fillColor}, label: {$set: label}}});
+
+        this.setState({nodes: newNodes})
+    };
+
     nextStep = () => {
         if (this.state.currentStep <= 5) {
             if (this.state.currentStep === 0) {
@@ -129,11 +143,16 @@ class App extends Component {
     };
 
     step1 = (state) => {
-        const newNodes = update(state.nodes,
-            {[2]: {x: {$set: 400}, label: {$set: 'y'}, y: {$set: 400}, fillColor: {$set: '#f44f08'} }});
-
-        this.setState({nodes: newNodes})
+        this.updateNode(state, 3, 'green', 'c');
     };
+
+
+    // step1 = (state) => {
+    //     const newNodes = update(state.nodes,
+    //         {[2]: {x: {$set: 400}, label: {$set: 'y'}, y: {$set: 400}, fillColor: {$set: '#f44f08'} }});
+    //
+    //     this.setState({nodes: newNodes})
+    // };
 
 
     step4 = (state) => {
