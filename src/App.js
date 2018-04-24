@@ -9,7 +9,6 @@ import StepCounter from './components/UI/StepCounter/StepCounter'
 class App extends Component {
     constructor(props) {
         super(props);
-        // this.nextStep = this.nextStep.bind(this);
         this.state = {
             edges: [
                 {id: 1, x1: 80, y1: 240, x2: 220, y2: 180},
@@ -78,7 +77,7 @@ class App extends Component {
     };
 
     stepReset = () => {
-        return {
+        this.setState({
             edges: [
                 {id: 1, x1: 80, y1: 240, x2: 220, y2: 180},
                 {id: 2, x1: 220, y1: 180, x2: 230, y2: 330},
@@ -93,7 +92,7 @@ class App extends Component {
                 {id: 4, x: 370, y: 230, fillColor: '#ffff08'},
                 {id: 5, x: 380, y: 360, fillColor: '#ffff08'},
             ]
-        };
+        })
     };
 
     // step1 = (state) => {
@@ -109,7 +108,7 @@ class App extends Component {
         let newNodes = [...state.nodes];
         // newNodes[1].fillColor = 'blue';
 
-        let upNode = Object.assign({}, this.state.nodes[1], {fillColor: 'blue'});
+        let upNode = Object.assign({}, this.state.nodes[1], {label: 'blue'});
         newNodes[1] = upNode;
 
         this.setState({nodes: [
@@ -130,13 +129,10 @@ class App extends Component {
     };
 
     step1 = (state) => {
-        const oldNodes = state.nodes;
-        const newNodes = update(oldNodes,
+        const newNodes = update(state.nodes,
             {[2]: {x: {$set: 400}, label: {$set: 'y'}, y: {$set: 400}, fillColor: {$set: '#f44f08'} }});
 
-        return {
-            nodes: newNodes
-        };
+        this.setState({nodes: newNodes})
     };
 
 
