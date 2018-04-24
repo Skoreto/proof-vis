@@ -12,6 +12,7 @@ class App extends Component {
         this.state = {
             edges: [],
             nodes: [],
+            texts: [],
             currentStep: 0
         };
     }
@@ -80,20 +81,9 @@ class App extends Component {
 
     stepReset = () => {
         this.setState({
-            edges: [
-                {id: 1, x1: 80, y1: 240, x2: 220, y2: 180},
-                {id: 2, x1: 220, y1: 180, x2: 230, y2: 330},
-                {id: 3, x1: 220, y1: 180, x2: 370, y2: 230},
-                {id: 4, x1: 230, y1: 330, x2: 380, y2: 360},
-                {id: 5, x1: 370, y1: 230, x2: 380, y2: 360}
-            ],
-            nodes: [
-                {id: 1, x: 80, y: 240, fillColor: '#ffff08'},
-                {id: 2, x: 220, y: 180, fillColor: '#ffff08'},
-                {id: 3, x: 230, y: 330, fillColor: '#ffff08'},
-                {id: 4, x: 370, y: 230, fillColor: '#ffff08'},
-                {id: 5, x: 380, y: 360, fillColor: '#ffff08'},
-            ]
+            edges: [],
+            nodes: [],
+            texts: []
         })
     };
 
@@ -122,7 +112,12 @@ class App extends Component {
         newNodes = this.updateNode(newNodes, 3, '#ffff08', 'y');
         newNodes = this.updateNode(newNodes, 4, '#ffff08', 'v');
 
-        this.setState({nodes: newNodes})
+        const newTexts = update(state.texts, {$push: [{x: 308, y: 200, text: 'e'}]});
+
+        this.setState({
+            nodes: newNodes,
+            texts: newTexts
+        })
     };
 
     step3 = (state) => {
@@ -133,14 +128,6 @@ class App extends Component {
 
         this.setState({nodes: newNodes})
     };
-
-    // step7 = (state) => {
-    //     const newNodes = update(state.nodes, {$push: [{id: 6, x: 220, y: 480, fillColor: 'blue'}]});
-    //
-    //     return {
-    //         nodes: newNodes
-    //     };
-    // };
 
     render() {
         return (
@@ -154,7 +141,8 @@ class App extends Component {
                 </p>
 
                 <div className={cssClasses.GraphBox}>
-                    <Graph width={900} height={600} edges={this.state.edges} nodes={this.state.nodes} />
+                    <Graph width={900} height={600} edges={this.state.edges} nodes={this.state.nodes}
+                    texts={this.state.texts}/>
                 </div>
 
                 <Button clicked={this.previousStep}>Předchozí</Button>
