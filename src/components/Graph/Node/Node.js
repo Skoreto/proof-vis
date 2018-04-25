@@ -9,17 +9,25 @@ class Node extends Component {
         };
     }
 
-    /*
+    /**
      * Update fillColor when props are changed in App component.
+     * @param newProps Props changed in a parent component.
      */
     componentWillReceiveProps(newProps) {
         this.setState({fillColor: newProps.fillColor});
     }
 
+    /**
+     * Handle behavior of node when hovered by mouse.
+     */
     handleMouseHover = () => {
         this.setState(this.changeFillHoverState);
     };
 
+    /**
+     * Change fillColor of node when hovered by mouse.
+     * Change fillColor back to default when the node is not hovered.
+     */
     changeFillHoverState = (state, props) => {
         return {
             isHovering: !state.isHovering,

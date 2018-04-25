@@ -17,6 +17,13 @@ class App extends Component {
         };
     }
 
+    updateEdge = (edges, edgeIndex, strokeColor, strokeWidth) => {
+        const newEdges = update(edges,
+            {[edgeIndex]: {strokeColor: {$set: strokeColor}, strokeWidth: {$set: strokeWidth}}});
+
+        return newEdges;
+    };
+
     /**
      * Method for updating node properties.
      * @param state State of component.
@@ -90,11 +97,11 @@ class App extends Component {
     step1 = () => {
         this.setState({
             edges: [
-                {id: 1, x1: 80, y1: 240, x2: 220, y2: 180},
-                {id: 2, x1: 220, y1: 180, x2: 230, y2: 330},
-                {id: 3, x1: 220, y1: 180, x2: 370, y2: 230},
-                {id: 4, x1: 230, y1: 330, x2: 380, y2: 360},
-                {id: 5, x1: 370, y1: 230, x2: 380, y2: 360}
+                {id: 1, x1: 80, y1: 240, x2: 220, y2: 180, strokeWidth: 2},
+                {id: 2, x1: 220, y1: 180, x2: 230, y2: 330, strokeWidth: 2},
+                {id: 3, x1: 220, y1: 180, x2: 370, y2: 230, strokeWidth: 2},
+                {id: 4, x1: 230, y1: 330, x2: 380, y2: 360, strokeWidth: 2},
+                {id: 5, x1: 370, y1: 230, x2: 380, y2: 360, strokeWidth: 2}
             ],
             nodes: [
                 {id: 1, x: 80, y: 240, fillColor: '#ffff08'},
@@ -121,12 +128,19 @@ class App extends Component {
     };
 
     step3 = (state) => {
-        let newNodes =  this.updateNode(state.nodes, 0, '#B39DDB', 'u');
+        let newNodes = this.updateNode(state.nodes, 0, '#B39DDB', 'u');
         newNodes = this.updateNode(newNodes, 1, '#B39DDB', 'x');
         newNodes = this.updateNode(newNodes, 3, '#B39DDB', 'y');
         newNodes = this.updateNode(newNodes, 4, '#B39DDB', 'v');
 
-        this.setState({nodes: newNodes})
+        let newEdges = this.updateEdge(state.edges, 0, '#B39DDB', 5);
+        newEdges = this.updateEdge(newEdges, 2, '#B39DDB', 5);
+        newEdges = this.updateEdge(newEdges, 4, '#B39DDB', 5);
+
+        this.setState({
+            nodes: newNodes,
+            edges: newEdges
+        })
     };
 
     render() {
