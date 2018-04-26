@@ -17,25 +17,30 @@ class App extends Component {
         };
     }
 
-    updateEdge = (edges, edgeIndex, strokeColor, strokeWidth) => {
-        const newEdges = update(edges,
-            {[edgeIndex]: {strokeColor: {$set: strokeColor}, strokeWidth: {$set: strokeWidth}}});
-
-        return newEdges;
+    /**
+     *
+     * @param edges Array of edges from the state of component.
+     * @param edgeIndex Index of node in the array.
+     * @param strokeColor New strokeColor.
+     * @param strokeWidth New strokeWidth.
+     * @param dash Receive dashArray.
+     * @returns {ReadonlyArray<any> | ReadonlySet<any> | ReadonlyMap<any, any> | any}
+     */
+    updateEdge = (edges, edgeIndex, strokeColor, strokeWidth, dash) => {
+        return update(edges, {[edgeIndex]: {strokeColor: {$set: strokeColor}, strokeWidth: {$set: strokeWidth},
+                dash: {$set: dash}}});
     };
 
     /**
      * Method for updating node properties.
-     * @param state State of component.
-     * @param nodeIndex Index of node in an array.
+     * @param nodes Array of nodes from the state of component.
+     * @param nodeIndex Index of node in the array.
      * @param fillColor New fillColor.
      * @param label New label of node.
+     * @returns {ReadonlyArray<any> | ReadonlySet<any> | ReadonlyMap<any, any> | any}
      */
     updateNode = (nodes, nodeIndex, fillColor, label) => {
-        const newNodes = update(nodes,
-            {[nodeIndex]: {fillColor: {$set: fillColor}, label: {$set: label}}});
-
-        return newNodes;
+        return update(nodes, {[nodeIndex]: {fillColor: {$set: fillColor}, label: {$set: label}}});
     };
 
     nextStep = () => {
@@ -50,6 +55,21 @@ class App extends Component {
 
             if (this.state.currentStep === 2) {
                 this.setState(this.step3);
+            }
+
+            if (this.state.currentStep === 3) {
+                this.setState(this.stepReset);
+                this.setState(this.step1);
+                this.setState(this.step2);
+                // this.setState(this.step4);
+                // TODO Skipping step4 without timeout.
+                setTimeout(()=> {
+                    this.setState(this.step4);
+                }, 1)
+            }
+
+            if (this.state.currentStep === 4) {
+                // this.setState(this.step4);
             }
 
             // Increase currentStep after a step was executed
@@ -79,6 +99,13 @@ class App extends Component {
                 this.setState(this.step1);
                 this.setState(this.step2);
                 this.setState(this.step3);
+            }
+
+            if (this.state.currentStep === 5) {
+                this.setState(this.stepReset);
+                this.setState(this.step1);
+                this.setState(this.step2);
+                setTimeout(()=> {this.setState(this.step4);}, 3)
             }
 
             // Reduce currentStep after a step was executed
@@ -133,14 +160,35 @@ class App extends Component {
         newNodes = this.updateNode(newNodes, 3, '#B39DDB', 'y');
         newNodes = this.updateNode(newNodes, 4, '#B39DDB', 'v');
 
-        let newEdges = this.updateEdge(state.edges, 0, '#B39DDB', 5);
-        newEdges = this.updateEdge(newEdges, 2, '#B39DDB', 5);
-        newEdges = this.updateEdge(newEdges, 4, '#B39DDB', 5);
+        let newEdges = this.updateEdge(state.edges, 0, '#B39DDB', 5, 0);
+        newEdges = this.updateEdge(newEdges, 2, '#B39DDB', 5, 0);
+        newEdges = this.updateEdge(newEdges, 4, '#B39DDB', 5, 0);
 
         this.setState({
             nodes: newNodes,
             edges: newEdges
         })
+    };
+
+    step4 = (state) => {
+        // this.setState(this.stepReset);
+        // this.setState(this.step1);
+
+        let newNodes = this.updateNode(state.nodes, 0, '#B39DDB', 'u');
+        newNodes = this.updateNode(newNodes, 1, '#B39DDB', 'x');
+        newNodes = this.updateNode(newNodes, 2, '#B39DDB', '');
+        newNodes = this.updateNode(newNodes, 4, '#B39DDB', 'v');
+
+        let newEdges = this.updateEdge(state.edges, 0, '#B39DDB', 5, 0);
+        newEdges = this.updateEdge(newEdges, 1, '#B39DDB', 5, 0);
+        newEdges = this.updateEdge(newEdges, 2, 'black', 2, 10);
+        newEdges = this.updateEdge(newEdges, 3, '#B39DDB', 5, 0);
+
+        this.setState({
+            nodes: newNodes,
+            edges: newEdges
+        })
+
     };
 
     render() {
@@ -156,11 +204,11 @@ class App extends Component {
 
                 <div className={cssClasses.GraphBox}>
                     <Graph width={900} height={600} edges={this.state.edges} nodes={this.state.nodes}
-                    texts={this.state.texts}/>
+                    texts={this.state.texts} />
                 </div>
 
                 <Button clicked={this.previousStep}>Předchozí</Button>
-                <StepCounter currentStep={this.state.currentStep} stepSum={4} />
+                <StepCounter currentStep={this.state.currentStep} stepSum={5} />
                 <Button clicked={this.nextStep}>Další</Button>
             </div>
         );

@@ -8,7 +8,7 @@ const Graph = (props) => {
         <svg width={props.width} height={props.height} stroke={'black'} strokeWidth={2} >
             {props.edges.map((d, i) => {
                 return <Edge key={i} x1={d.x1} y1={d.y1} x2={d.x2} y2={d.y2} strokeColor={d.strokeColor}
-                strokeWidth={d.strokeWidth} />
+                strokeWidth={d.strokeWidth} dash={d.dash} />
             })}
 
             {props.nodes.map((d, i) => {
