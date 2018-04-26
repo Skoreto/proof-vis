@@ -42,12 +42,12 @@ class Edge extends Component {
     };
 
     render() {
-        const {id, name, x1, y1, x2, y2} = this.props;
+        const {id, name, x1, y1, x2, y2, dash} = this.props;
 
         return (
             <svg>
                 <line x1={x1} y1={y1} x2={x2} y2={y2} stroke={this.state.strokeColor}
-                      strokeWidth={this.state.strokeWidth}
+                      strokeWidth={this.state.strokeWidth} strokeDasharray={dash}
                       onMouseEnter={this.handleMouseHover} onMouseLeave={this.handleMouseHover} />
             </svg>
         );
