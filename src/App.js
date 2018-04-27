@@ -13,12 +13,20 @@ class App extends Component {
             edges: [],
             nodes: [],
             texts: [],
+            timeouts: [],
             currentStep: 0
         };
     }
 
+    // componentDidMount = () => {
+    //     let interval1;
+    //     // store intervalId in the state so it can be accessed later:
+    //     this.setState({interval1: interval1});
+    // };
+
     componentWillUnmount = () => {
         // clearTimeout(timeout1);
+        clearInterval(this.state.interval1)
     };
 
     /**
@@ -66,23 +74,17 @@ class App extends Component {
                 this.setState(this.step1);
                 this.setState(this.step2);
                 this.setState(this.step4);
-
-                // this.setState((prevState4, props) => {this.stepReset(prevState4)});
-                // // this.setState(this.step1);
-                // this.setState((prevState, props) => {this.step1(prevState)});
-                // // this.setState(this.step2);
-                // this.setState((prevState1, props) => {this.step2(prevState1)});
-                // // this.setState(this.step4);
-                // this.setState((prevState2, props) => {this.step4(prevState2)});
-                // let timeout1 = setTimeout(()=> {
-                //     this.setState(this.step4);
-                // }, 100);
             }
 
             if (this.state.currentStep === 4) {
                 this.setState(this.stepReset);
                 this.setState(this.step1);
-                // this.setState(this.step5);
+                this.setState(this.step5);
+            }
+
+            if (this.state.currentStep === 5) {
+                let interval1 = setInterval(this.step6, 4000);
+                this.setState({interval1: interval1});
             }
 
             // Increase currentStep after a step was executed
@@ -121,8 +123,28 @@ class App extends Component {
                 this.setState(this.step4);
             }
 
+            if (this.state.currentStep === 6) {
+                clearInterval(this.state.interval1);
+                this.clearAllTimers(this.state);
+                this.setState(this.stepReset);
+                this.setState(this.step1);
+                this.setState(this.step5);
+            }
+
             // Reduce currentStep after a step was executed
             this.setState((state) => {return {currentStep: --state.currentStep}});
+        }
+    };
+
+    /**
+     * Clears all used Timeouts and Intervals.
+     * @param state
+     */
+    clearAllTimers = (state) => {
+        if (state.timeouts.length > 0) {
+            state.timeouts.forEach(function (value, index) {
+                clearTimeout(value);
+            });
         }
     };
 
@@ -187,15 +209,65 @@ class App extends Component {
         let newNodes = this.updateNode(state.nodes, 0, '#B39DDB', 'u');
         newNodes = this.updateNode(newNodes, 1, '#B39DDB', 'x');
         newNodes = this.updateNode(newNodes, 2, '#B39DDB', '');
+        newNodes = this.updateNode(newNodes, 3, '#ffff08', 'y');
         newNodes = this.updateNode(newNodes, 4, '#B39DDB', 'v');
 
         let newEdges = this.updateEdge(state.edges, 0, '#B39DDB', 5, 0);
         newEdges = this.updateEdge(newEdges, 1, '#B39DDB', 5, 0);
-        newEdges = this.updateEdge(newEdges, 2, 'black', 2, 10);
+        newEdges = this.updateEdge(newEdges, 2, 'red', 2, 10);
         newEdges = this.updateEdge(newEdges, 3, '#B39DDB', 5, 0);
 
         return {
             nodes: newNodes,
+            edges: newEdges
+        }
+    };
+
+    step5 = (state) => {
+        let newNodes = this.updateNode(state.nodes, 1, '#81C784', 'x');
+        newNodes = this.updateNode(newNodes, 2, '#81C784', '');
+        newNodes = this.updateNode(newNodes, 3, '#81C784', 'y');
+
+        newNodes = this.updateNode(newNodes, 4, '#81C784', '');
+
+        let newEdges = this.updateEdge(state.edges, 1, '#81C784', 5, 0);
+        newEdges = this.updateEdge(newEdges, 2, 'red', 2, 10);
+        newEdges = this.updateEdge(newEdges, 3, '#81C784', 5, 0);
+        newEdges = this.updateEdge(newEdges, 4, '#81C784', 5, 0);
+
+        const newTexts = update(state.texts, {$push: [{x: 308, y: 200, text: 'e'}]});
+
+        return {
+            nodes: newNodes,
+            edges: newEdges,
+            texts: newTexts
+        }
+    };
+
+    step6 = () => {
+        let timeout1 = setTimeout(()=> {
+            this.setState(this.step6a);
+        }, 1000);
+
+        let timeout2 = setTimeout(()=> {
+            this.setState(this.step6b);
+        }, 2000);
+
+        this.setState({timeouts: [timeout1, timeout2]});
+    };
+
+    step6a = (state) => {
+        let newEdges = this.updateEdge(state.edges, 2, '#81C784', 5, 0);
+
+        return {
+            edges: newEdges
+        }
+    };
+
+    step6b = (state) => {
+        let newEdges = this.updateEdge(state.edges, 2, 'red', 2, 10);
+
+        return {
             edges: newEdges
         }
     };
@@ -217,7 +289,7 @@ class App extends Component {
                 </div>
 
                 <Button clicked={this.previousStep}>Předchozí</Button>
-                <StepCounter currentStep={this.state.currentStep} stepSum={5} />
+                <StepCounter currentStep={this.state.currentStep} stepSum={6} />
                 <Button clicked={this.nextStep}>Další</Button>
             </div>
         );
