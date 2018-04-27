@@ -17,8 +17,12 @@ class App extends Component {
         };
     }
 
+    componentWillUnmount = () => {
+        // clearTimeout(timeout1);
+    };
+
     /**
-     *
+     * Method for updating edge properties.
      * @param edges Array of edges from the state of component.
      * @param edgeIndex Index of node in the array.
      * @param strokeColor New strokeColor.
@@ -61,15 +65,24 @@ class App extends Component {
                 this.setState(this.stepReset);
                 this.setState(this.step1);
                 this.setState(this.step2);
-                // this.setState(this.step4);
-                // TODO Skipping step4 without timeout.
-                setTimeout(()=> {
-                    this.setState(this.step4);
-                }, 1)
+                this.setState(this.step4);
+
+                // this.setState((prevState4, props) => {this.stepReset(prevState4)});
+                // // this.setState(this.step1);
+                // this.setState((prevState, props) => {this.step1(prevState)});
+                // // this.setState(this.step2);
+                // this.setState((prevState1, props) => {this.step2(prevState1)});
+                // // this.setState(this.step4);
+                // this.setState((prevState2, props) => {this.step4(prevState2)});
+                // let timeout1 = setTimeout(()=> {
+                //     this.setState(this.step4);
+                // }, 100);
             }
 
             if (this.state.currentStep === 4) {
-                // this.setState(this.step4);
+                this.setState(this.stepReset);
+                this.setState(this.step1);
+                // this.setState(this.step5);
             }
 
             // Increase currentStep after a step was executed
@@ -105,7 +118,7 @@ class App extends Component {
                 this.setState(this.stepReset);
                 this.setState(this.step1);
                 this.setState(this.step2);
-                setTimeout(()=> {this.setState(this.step4);}, 3)
+                this.setState(this.step4);
             }
 
             // Reduce currentStep after a step was executed
@@ -114,15 +127,15 @@ class App extends Component {
     };
 
     stepReset = () => {
-        this.setState({
+        return {
             edges: [],
             nodes: [],
             texts: []
-        })
+        }
     };
 
     step1 = () => {
-        this.setState({
+        return {
             edges: [
                 {id: 1, x1: 80, y1: 240, x2: 220, y2: 180, strokeWidth: 2},
                 {id: 2, x1: 220, y1: 180, x2: 230, y2: 330, strokeWidth: 2},
@@ -137,7 +150,7 @@ class App extends Component {
                 {id: 4, x: 370, y: 230, fillColor: '#ffff08'},
                 {id: 5, x: 380, y: 360, fillColor: '#ffff08'},
             ]
-        })
+        }
     };
 
     step2 = (state) => {
@@ -148,10 +161,10 @@ class App extends Component {
 
         const newTexts = update(state.texts, {$push: [{x: 308, y: 200, text: 'e'}]});
 
-        this.setState({
+        return {
             nodes: newNodes,
             texts: newTexts
-        })
+        }
     };
 
     step3 = (state) => {
@@ -164,16 +177,13 @@ class App extends Component {
         newEdges = this.updateEdge(newEdges, 2, '#B39DDB', 5, 0);
         newEdges = this.updateEdge(newEdges, 4, '#B39DDB', 5, 0);
 
-        this.setState({
+        return {
             nodes: newNodes,
             edges: newEdges
-        })
+        }
     };
 
     step4 = (state) => {
-        // this.setState(this.stepReset);
-        // this.setState(this.step1);
-
         let newNodes = this.updateNode(state.nodes, 0, '#B39DDB', 'u');
         newNodes = this.updateNode(newNodes, 1, '#B39DDB', 'x');
         newNodes = this.updateNode(newNodes, 2, '#B39DDB', '');
@@ -184,11 +194,10 @@ class App extends Component {
         newEdges = this.updateEdge(newEdges, 2, 'black', 2, 10);
         newEdges = this.updateEdge(newEdges, 3, '#B39DDB', 5, 0);
 
-        this.setState({
+        return {
             nodes: newNodes,
             edges: newEdges
-        })
-
+        }
     };
 
     render() {
