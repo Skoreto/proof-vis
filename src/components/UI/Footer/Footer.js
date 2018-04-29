@@ -1,5 +1,4 @@
 import React from 'react';
-import { Row, Col, Image } from 'react-bootstrap';
 import '../../../customMainTheme.css';
 import './Footer.css'
 

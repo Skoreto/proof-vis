@@ -127,9 +127,6 @@ aside h3 {
     margin-left: 15px;
     margin-right: 0px;
   }
-  .footer {
-    height: auto;
-  }
   /* Pro malé úhlopříčky centrujeme na střed a ke stranám */
   .pull-right,
   .pull-left {
@@ -204,23 +201,9 @@ aside h3 {
   .wrapper:after {
     content: none;
   }
-  .footer {
-    height: auto;
-  }
-  .footer-col-inner {
-    margin-bottom: 15px;
-  }
 }
 /* Velká úhlopříčka (desktopy, 992px a víc) */
 @media (min-width: 992px) {
-  /* Sticky Footer */
-  html,
-  body {
-    height: 100%;
-  }
-  body {
-    font-size: 14px;
-  }
   .wrapper {
     min-height: 100%;
     margin-bottom: -344px;
@@ -234,9 +217,5 @@ aside h3 {
   }
   .page-wrapper {
       min-height: 600px;
-  }
-  .footer {
-    height: 324px;
-    /* musí mít stejnou výšku jako patička */ 
   }
 }
