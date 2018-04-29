@@ -290,7 +290,7 @@ class App extends Component {
                                 <div className="breadcrumbs pull-right">
                                     <ul className="breadcrumbs-list">
                                         <li className="breadcrumbs-label">Nacházíte se zde:</li>
-                                        <li className="current"> Důkazy přímo</li>
+                                        <li className="current">Důkazy přímo</li>
                                     </ul>
                                 </div>
                             </header>

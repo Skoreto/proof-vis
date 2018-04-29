@@ -30,3 +30,14 @@ a:hover {
   text-decoration: none;
   color: #7e3636;
 }
+/* Velká úhlopříčka (desktopy, 992px a víc) */
+@media (min-width: 992px) {
+  /* Sticky Footer */
+  html,
+  body {
+    height: 100%;
+  }
+  body {
+    font-size: 14px;
+  }
+}

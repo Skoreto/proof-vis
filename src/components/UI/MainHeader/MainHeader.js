@@ -1,9 +1,9 @@
 import React from 'react';
-import { Row, Col, Image } from 'react-bootstrap';
+import { Col, Image } from 'react-bootstrap';
 import './MainHeader.css'
 
 const MainHeader = () => (
-    <Row className="show-grid header">
+    <header className={"header"}>
         <div className="header-main container">
             <Col sm={12} className="logo">
                 <a href="">
@@ -11,7 +11,7 @@ const MainHeader = () => (
                 </a>
             </Col>
         </div>
-    </Row>
+    </header>
 );
 
 export default MainHeader;

@@ -51,3 +51,28 @@
 .footer .bottom-bar .copyright a:hover {
     color: #f5f8fb;
 }
+
+@media (max-width: 767px) {
+    .footer {
+        height: auto;
+    }
+    .footer-col-inner {
+        margin-bottom: 30px;
+    }
+}
+/* MQ - Střední úhlopříčka (tablety, 768px a více) */
+@media (min-width: 768px) {
+    .footer {
+        height: auto;
+    }
+    .footer-col-inner {
+        margin-bottom: 15px;
+    }
+}
+/* Velká úhlopříčka (desktopy, 992px a víc) */
+@media (min-width: 992px) {
+    .footer {
+        height: 324px;
+        /* musí mít stejnou výšku jako patička */
+    }
+}
