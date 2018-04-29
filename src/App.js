@@ -1,10 +1,14 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import update from 'immutability-helper';
-import logo from './logo.svg';
+import { Grid, Row, Col, Clearfix } from 'react-bootstrap';
 import cssClasses from './App.css';
+import './customMainTheme.css'
+import MainHeader from "./components/UI/MainHeader";
+import CustomNavbar from "./components/UI/CustomNavbar/CustomNavbar";
 import Graph from './components/Graph/Graph';
 import Button from './components/UI/Button/Button'
 import StepCounter from './components/UI/StepCounter/StepCounter'
+import { Navbar, Nav, NavItem } from 'react-bootstrap';
 
 class App extends Component {
     constructor(props) {
@@ -274,24 +278,70 @@ class App extends Component {
 
     render() {
         return (
-            <div className={cssClasses.App}>
-                <header className={cssClasses["App-header"]}>
-                    <img src={logo} className={cssClasses["App-logo"]} alt="logo" />
-                    <h1 className={cssClasses["App-title"]}>Welcome to ProofVis</h1>
-                </header>
-                <p className={cssClasses["App-intro"]}>
-                    To get started, edit <code>src/App.js</code> and save to reload.
-                </p>
+            <Grid>
+                <MainHeader/>
+                <CustomNavbar/>
+                <Navbar className={"main-nav"} default collapseOnSelect >
+                    <Navbar.Header className={"navbar-header"}>
+                        <Navbar.Brand>
 
-                <div className={cssClasses.GraphBox}>
-                    <Graph width={900} height={600} edges={this.state.edges} nodes={this.state.nodes}
-                    texts={this.state.texts} />
-                </div>
+                        </Navbar.Brand>
+                        <Navbar.Toggle />
+                    </Navbar.Header>
+                    <Navbar.Collapse>
+                        <Nav pullRight>
+                            <NavItem eventKey={1} href="/" to="/">
+                                Home
+                            </NavItem>
+                            <NavItem eventKey={2} href="/about" to="/about">
+                                About
+                            </NavItem>
+                            <NavItem eventKey={3} href="/news" to="/news">
+                                News
+                            </NavItem>
+                        </Nav>
+                    </Navbar.Collapse>
+                </Navbar>
 
-                <Button clicked={this.previousStep}>Předchozí</Button>
-                <StepCounter currentStep={this.state.currentStep} stepSum={6} />
-                <Button clicked={this.nextStep}>Další</Button>
-            </div>
+                <Row className="show-grid page-wrapper">
+                    <Clearfix>
+                        <header className="page-heading">
+                            <h1 className="heading-title pull-left">Příklad 20</h1>
+                            <div className="breadcrumbs pull-right">
+                                <ul className="breadcrumbs-list">
+                                    <li className="breadcrumbs-label">Nacházíte se zde:</li>
+                                    <li className="current"> Důkazy přímo</li>
+                                </ul>
+                            </div>
+                        </header>
+                    </Clearfix>
+                </Row>
+
+                <Row className="show-grid page-content">
+                    <main>
+                        <Col xs={6} md={6} lg={6}>
+                            <div className={cssClasses.GraphBox}>
+                                <Graph width={650} height={400} edges={this.state.edges} nodes={this.state.nodes}
+                                       texts={this.state.texts} />
+                            </div>
+                        </Col>
+                    </main>
+                    <aside>
+                        <Col xs={5} md={5} lg={5} smOffset={1} mdOffset={1} lgOffset={1}>
+                            <div>
+                                <Button clicked={this.previousStep}>Předchozí</Button>
+                                <StepCounter currentStep={this.state.currentStep} stepSum={6} />
+                                <Button clicked={this.nextStep}>Další</Button>
+                            </div>
+                        </Col>
+                    </aside>
+
+
+
+                </Row>
+
+
+            </Grid>
         );
     }
 }
