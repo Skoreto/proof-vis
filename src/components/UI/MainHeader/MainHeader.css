@@ -1,0 +1,9 @@
+/* ==== HLAVIČKA WEBU ==== */
+.header .header-main {
+    padding: 30px 0;
+}
+.header .logo {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 1.5em;
+}

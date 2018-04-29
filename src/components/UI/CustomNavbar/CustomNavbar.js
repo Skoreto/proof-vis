@@ -1,9 +1,9 @@
 import React from 'react';
 import { Navbar, Nav, NavItem } from 'react-bootstrap';
-import cssClasses from './CustomNavbar.css'
+import './CustomNavbar.css'
 
 const CustomNavbar = (props) => (
-    <Navbar className={cssClasses["main-nav"]} default collapseOnSelect >
+    <Navbar className="main-nav" default collapseOnSelect >
         <Navbar.Header className={"navbar-header"}>
             <Navbar.Brand>
 
