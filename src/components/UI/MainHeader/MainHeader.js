@@ -1,5 +1,6 @@
 import React from 'react';
 import { Row, Col, Image } from 'react-bootstrap';
+import './MainHeader.css'
 
 const MainHeader = () => (
     <Row className="show-grid header">
