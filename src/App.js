@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import update from 'immutability-helper';
+import imUpdate from 'immutability-helper';
 import { Row, Col } from 'react-bootstrap';
 import './App.css';
 import './customMainTheme.css'
 import './main.css'
 import MainHeader from "./components/UI/MainHeader/MainHeader";
 import CustomNavbar from "./components/UI/CustomNavbar/CustomNavbar";
+import PageHeading from "./components/UI/PageHeading/PageHeading";
 import Footer from "./components/UI/Footer/Footer";
 import Graph from './components/Graph/Graph';
 import Button from './components/UI/Button/Button'
@@ -44,7 +45,7 @@ class App extends Component {
      * @returns {ReadonlyArray<any> | ReadonlySet<any> | ReadonlyMap<any, any> | any}
      */
     updateEdge = (edges, edgeIndex, strokeColor, strokeWidth, dash) => {
-        return update(edges, {[edgeIndex]: {strokeColor: {$set: strokeColor}, strokeWidth: {$set: strokeWidth},
+        return imUpdate(edges, {[edgeIndex]: {strokeColor: {$set: strokeColor}, strokeWidth: {$set: strokeWidth},
                 dash: {$set: dash}}});
     };
 
@@ -57,7 +58,7 @@ class App extends Component {
      * @returns {ReadonlyArray<any> | ReadonlySet<any> | ReadonlyMap<any, any> | any}
      */
     updateNode = (nodes, nodeIndex, fillColor, label) => {
-        return update(nodes, {[nodeIndex]: {fillColor: {$set: fillColor}, label: {$set: label}}});
+        return imUpdate(nodes, {[nodeIndex]: {fillColor: {$set: fillColor}, label: {$set: label}}});
     };
 
     nextStep = () => {
@@ -186,7 +187,7 @@ class App extends Component {
         newNodes = this.updateNode(newNodes, 3, '#ffff08', 'y');
         newNodes = this.updateNode(newNodes, 4, '#ffff08', 'v');
 
-        const newTexts = update(state.texts, {$push: [{x: 308, y: 200, text: 'e'}]});
+        const newTexts = imUpdate(state.texts, {$push: [{x: 308, y: 200, text: 'e'}]});
 
         return {
             nodes: newNodes,
@@ -240,7 +241,7 @@ class App extends Component {
         newEdges = this.updateEdge(newEdges, 3, '#81C784', 5, 0);
         newEdges = this.updateEdge(newEdges, 4, '#81C784', 5, 0);
 
-        const newTexts = update(state.texts, {$push: [{x: 308, y: 200, text: 'e'}]});
+        const newTexts = imUpdate(state.texts, {$push: [{x: 308, y: 200, text: 'e'}]});
 
         return {
             nodes: newNodes,
@@ -284,19 +285,9 @@ class App extends Component {
                 <CustomNavbar/>
                 <div className={"container"}>
                     <div className="page-wrapper">
-                        <Row className="show-grid">
-                            <header className="page-heading clearfix">
-                                <h1 className="heading-title pull-left">Příklad 20</h1>
-                                <div className="breadcrumbs pull-right">
-                                    <ul className="breadcrumbs-list">
-                                        <li className="breadcrumbs-label">Nacházíte se zde:</li>
-                                        <li className="current">Důkazy přímo</li>
-                                    </ul>
-                                </div>
-                            </header>
-                        </Row>
+                        <PageHeading headingTitle={"Příklad 20"} breadcrumbsCurrent={"Důkazy přímo"} />
                         <div className="page-content">
-                            <Row className="show-grid page-row">
+                            <Row className="page-row">
                                 <main>
                                     <Col xs={6} md={6} lg={6}>
                                         <div className={"GraphBox"}>
