@@ -18,8 +18,11 @@ const CustomNavbar = () => (
                 </NavItem>
                 <NavDropdown eventKey={2} title="Důkazy přímo" id="basic-nav-dropdown" className={"nav-item"}>
                     <MenuItem eventKey={2.1} componentClass={Link} href="/priklad20" to="/priklad20">Příklad 20</MenuItem>
-                    <MenuItem eventKey={2.2} href="/" to="/">Příklad 23</MenuItem>
-                    <MenuItem eventKey={2.3} href="/" to="/">Příklad 26</MenuItem>
+                    <MenuItem eventKey={2.2} componentClass={Link} href="/priklad20vis" to="/priklad20vis">
+                        Příklad 20 vis.js
+                    </MenuItem>
+                    <MenuItem eventKey={2.3} href="/" to="/">Příklad 23</MenuItem>
+                    <MenuItem eventKey={2.4} href="/" to="/">Příklad 26</MenuItem>
                 </NavDropdown>
                 <NavDropdown eventKey={3} title="Důkazy nepřímo" id="basic-nav-dropdown" className={"nav-item"}>
                     <MenuItem eventKey={3.1} href="/" to="/">Příklad 21</MenuItem>
