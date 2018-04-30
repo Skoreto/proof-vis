@@ -1,0 +1,42 @@
+/* === NADPIS HLAVNÍ STRANY === */
+.page-wrapper .page-heading {
+    margin-bottom: 30px;
+    border-bottom: 2px solid #e8e8e8;
+}
+.page-wrapper .page-heading h1 {
+    margin-top: 0;
+    display: inline-block;
+    font-size: 28px;
+    color: #2a4713;
+}
+/* === DROBEČKOVÁ NAVIGACE === */
+.page-wrapper .breadcrumbs {
+    display: inline-block;
+}
+.page-wrapper .breadcrumbs ul {
+    padding-top: 25px;
+    margin: 0;
+}
+.page-wrapper .breadcrumbs ul li {
+    color: #ad2121;
+    font-size: 14px;
+    float: left;
+    list-style: none;
+    display: inline-block;
+}
+.page-wrapper .breadcrumbs ul li a {
+    display: inline-block;
+    padding: 0 5px;
+    color: #585858;
+}
+.page-wrapper .breadcrumbs ul li a:hover {
+    color: #7e3636;
+}
+.page-wrapper .breadcrumbs ul li.breadcrumbs-label {
+    padding-right: 0;
+    color: #585858;
+}
+.page-wrapper .breadcrumbs ul li.current {
+    max-width: 250px;
+    margin-left: 5px;
+}
