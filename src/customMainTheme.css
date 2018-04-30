@@ -23,6 +23,11 @@
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
 }
+.GraphBox {
+  border: 1px solid #858585;
+  width: 650px;
+  height: 400px;
+}
 /* === SEZNAMY OBSAHU === */
 .page-wrapper ul li {
   margin-bottom: 5px;
