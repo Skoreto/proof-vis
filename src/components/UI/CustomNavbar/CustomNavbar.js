@@ -1,5 +1,6 @@
 import React from 'react';
 import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import './CustomNavbar.css'
 
 const CustomNavbar = () => (
@@ -12,11 +13,11 @@ const CustomNavbar = () => (
         </Navbar.Header>
         <Navbar.Collapse>
             <Nav>
-                <NavItem eventKey={1} href="/" to="/" className={"nav-item"}>
+                <NavItem eventKey={1} componentClass={Link} href="/" to="/" className={"nav-item"}>
                     Přehled
                 </NavItem>
                 <NavDropdown eventKey={2} title="Důkazy přímo" id="basic-nav-dropdown" className={"nav-item"}>
-                    <MenuItem eventKey={2.1} href="/" to="/">Příklad 20</MenuItem>
+                    <MenuItem eventKey={2.1} componentClass={Link} href="/priklad20" to="/priklad20">Příklad 20</MenuItem>
                     <MenuItem eventKey={2.2} href="/" to="/">Příklad 23</MenuItem>
                     <MenuItem eventKey={2.3} href="/" to="/">Příklad 26</MenuItem>
                 </NavDropdown>

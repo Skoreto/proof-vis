@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="daa44ed9-404f-45c0-a4b5-d9b994cc961e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/exercises/Exercise20/Exercise20.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/CustomNavbar/CustomNavbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/CustomNavbar/CustomNavbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/customMainTheme.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/customMainTheme.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,8 +25,19 @@
           <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/App.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="374">
-                  <caret line="22" column="26" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
+                <state relative-caret-position="289">
+                  <caret line="17" column="19" lean-forward="true" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
+                  <folding>
+                    <element signature="e#0#41#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Exercise20.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/components/exercises/Exercise20/Exercise20.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state>
                   <folding>
                     <element signature="e#0#41#0" expanded="true" />
                   </folding>
@@ -36,7 +49,7 @@
             <entry file="file://$PROJECT_DIR$/package.json">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="408">
-                  <caret line="25" selection-start-line="25" selection-end-line="25" />
+                  <caret line="24" column="3" selection-start-line="24" selection-start-column="3" selection-end-line="24" selection-end-column="3" />
                 </state>
               </provider>
             </entry>
@@ -46,15 +59,6 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="527">
                   <caret line="32" column="65" selection-start-line="32" selection-start-column="65" selection-end-line="32" selection-end-column="65" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="App.css" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/App.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="493">
-                  <caret line="29" selection-start-line="29" selection-end-line="29" />
                 </state>
               </provider>
             </entry>
@@ -224,6 +228,21 @@
               <item name="proof-vis" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="exercises" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proof-vis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="proof-vis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="exercises" type="462c0819:PsiDirectoryNode" />
+              <item name="Exercise20" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proof-vis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="proof-vis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="Graph" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -344,14 +363,7 @@
       <workItem from="1526147229273" duration="35000" />
       <workItem from="1526147326304" duration="3712000" />
       <workItem from="1526227312918" duration="9428000" />
-      <workItem from="1527495093047" duration="7861000" />
-    </task>
-    <task id="LOCAL-00034" summary="Add PageHeading component">
-      <created>1525090525630</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1525090525630</updated>
+      <workItem from="1527495093047" duration="8137000" />
     </task>
     <task id="LOCAL-00035" summary="Install react-router and react-router-dom packages">
       <created>1525098617569</created>
@@ -689,16 +701,24 @@
       <option name="project" value="LOCAL" />
       <updated>1527526324181</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="Skip over 'Install react-router and react-router-dom packages' commit f38a3c882289e33318bfe0550c16251016a00a5f">
+      <created>1527527584821</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1527527584822</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="387483000" />
+    <option name="totallyTimeSpent" value="387759000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="2062" height="1126" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.110839844" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.110839844" />
       <window_info anchor="bottom" id="TODO" order="7" />
       <window_info anchor="bottom" id="Messages" order="0" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
@@ -706,7 +726,7 @@
       <window_info anchor="bottom" id="Run" order="3" weight="0.32971373" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.4975586" visible="true" weight="0.19545904" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4975586" visible="true" weight="0.19545904" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -726,7 +746,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Link vis.js Manipulation module files by CDN" />
     <MESSAGE value="Fix sending invalid type for Button active and disabled parameters" />
     <MESSAGE value="Add Exercise26 visualization" />
     <MESSAGE value="Add Exercise 26 texts" />
@@ -751,7 +770,8 @@
     <MESSAGE value="Skip over 'Install immutability-helper' commit c6b5ec2c2ab0ae5cbadbe85bfc8f1d5575d9fe54&#10;&#10;# Conflicts:&#10;#&#9;package.json" />
     <MESSAGE value="Skip over 'Install react-bootstrap' commit cb81cd00c0a2fbae9591671dc23df737d8eb0722" />
     <MESSAGE value="Resolve 'Improve overall initial layout' commit e359c210fe1efd277623dd4c204a9c7728a64e1e&#10;&#10;# Conflicts:&#10;#&#9;src/App.css" />
-    <option name="LAST_COMMIT_MESSAGE" value="Resolve 'Improve overall initial layout' commit e359c210fe1efd277623dd4c204a9c7728a64e1e&#10;&#10;# Conflicts:&#10;#&#9;src/App.css" />
+    <MESSAGE value="Skip over 'Install react-router and react-router-dom packages' commit f38a3c882289e33318bfe0550c16251016a00a5f" />
+    <option name="LAST_COMMIT_MESSAGE" value="Skip over 'Install react-router and react-router-dom packages' commit f38a3c882289e33318bfe0550c16251016a00a5f" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -766,13 +786,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/components/UI/Footer/Footer.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="37" column="5" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="714">
@@ -1100,23 +1113,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="26" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
@@ -1134,7 +1130,33 @@
     <entry file="file://$PROJECT_DIR$/src/App.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="3" selection-start-line="24" selection-start-column="3" selection-end-line="24" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="19" lean-forward="true" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/exercises/Exercise20/Exercise20.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
