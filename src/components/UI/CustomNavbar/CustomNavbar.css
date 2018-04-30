@@ -83,3 +83,17 @@
     color: #fff;
     padding-left: 24px;
 }
+/* MQ - Malé úhlopříčky (telefony, méně než 768px) */
+@media (max-width: 767px) {
+    .main-nav .navbar-collapse {
+        padding-left: 15px;
+        padding-right: 15px;
+        border-top: 0;
+    }
+    .navbar-nav {
+        margin-top: 0;
+    }
+    .main-nav .nav .nav-item.active > a:before {
+        content: none;
+    }
+}

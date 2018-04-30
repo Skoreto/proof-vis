@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import update from 'immutability-helper';
-import { Grid, Row, Col, Clearfix } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import './App.css';
 import './customMainTheme.css'
 import './main.css'

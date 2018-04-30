@@ -42,7 +42,7 @@ class Edge extends Component {
     };
 
     render() {
-        const {id, name, x1, y1, x2, y2, dash} = this.props;
+        const { x1, y1, x2, y2, dash} = this.props;
 
         return (
             <svg>
