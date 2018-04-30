@@ -152,20 +152,6 @@ aside h3 {
   .header br {
     display: none;
   }
-  .main-nav .navbar-collapse {
-    padding-left: 15px;
-    padding-right: 15px;
-    border-top: 0;
-  }
-  .navbar-nav {
-    margin-top: 0;
-  }
-  .main-nav .nav .nav-item.active > a:before {
-    content: none;
-  }
-  .footer-col-inner {
-    margin-bottom: 30px;
-  }
   .page-wrapper .page-heading h1.heading-title {
     float: none;
     text-align: center;

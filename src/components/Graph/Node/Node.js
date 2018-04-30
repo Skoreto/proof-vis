@@ -36,7 +36,7 @@ class Node extends Component {
     };
 
     render() {
-        const {id, name, cx, cy,} = this.props;
+        const { cx, cy,} = this.props;
         const label = this.props.label ? this.props.label : '';
 
         return (
