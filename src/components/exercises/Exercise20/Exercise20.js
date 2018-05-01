@@ -4,10 +4,7 @@ import { Row, Col } from 'react-bootstrap';
 import '../../../App.css';
 import '../../../customMainTheme.css'
 import '../../../main.css'
-import MainHeader from "../../../components/UI/MainHeader/MainHeader";
-import CustomNavbar from "../../../components/UI/CustomNavbar/CustomNavbar";
 import PageHeading from "../../../components/UI/PageHeading/PageHeading";
-import Footer from "../../../components/UI/Footer/Footer";
 import Graph from '../../../components/Graph/Graph';
 import Button from '../../../components/UI/Button/Button'
 import StepCounter from '../../../components/UI/StepCounter/StepCounter'
@@ -280,8 +277,6 @@ class Exercise20 extends Component {
     render() {
         return (
             <div>
-                <MainHeader/>
-                <CustomNavbar/>
                 <div className={"container"}>
                     <div className="page-wrapper">
                         <PageHeading headingTitle={"Příklad 20"} breadcrumbsCurrent={"Důkazy přímo"} />
@@ -319,7 +314,6 @@ class Exercise20 extends Component {
                         </div>
                     </div>
                 </div>
-                <Footer/>
             </div>
         );
     }
