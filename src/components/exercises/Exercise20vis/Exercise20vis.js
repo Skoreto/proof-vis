@@ -361,9 +361,11 @@ class Exercise20vis extends Component {
                             <Row className="page-row">
                                 <main>
                                     <Col xs={6} md={6} lg={6}>
+                                        <div className={"over-component"}></div>
                                         <div className={"GraphBox"}>
                                             <GraphVis graph={this.state.graphVis} options={this.state.options}
                                                       events={events} style={{width: "650px", height: "400px" }} />
+
                                         </div>
                                     </Col>
                                 </main>
@@ -385,6 +387,7 @@ class Exercise20vis extends Component {
                                             <StepCounter currentStep={this.state.currentStep} stepSum={6} />
                                             <Button clicked={this.nextStep}>Další</Button>
                                         </div>
+                                        <Button>Kreslit</Button>
                                     </Col>
                                 </aside>
                             </Row>
