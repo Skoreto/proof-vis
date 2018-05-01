@@ -1,4 +1,5 @@
 import React from 'react';
+import BottomBar from './BottomBar'
 import '../../../customMainTheme.css';
 import './Footer.css'
 
@@ -60,15 +61,7 @@ const Footer = () => (
                 </div>
             </div>
         </div>
-        <div className="bottom-bar">
-            <div className="container">
-                <div className="row">
-                    <small className="copyright col-md-6 col-sm-12 col-xs-12">2018 Vizualizace důkazů |
-                        Školní projekt
-                        <a href="mailto:tomas.skorepa@uhk.cz"> Tomáš Skořepa</a></small>
-                </div>
-            </div>
-        </div>
+        <BottomBar/>
     </footer>
 );
 

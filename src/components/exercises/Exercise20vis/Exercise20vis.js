@@ -355,7 +355,7 @@ class Exercise20vis extends Component {
         const isSketchAllowed = this.state.isSketchAllowed;
         const sketch = isSketchAllowed ? (
             <div className={"over-component"}>
-                <SketchField width='650px' height='400px' tool={Tools.Pencil} lineColor='black' lineWidth={3}/>
+                <SketchField width='650px' height='400px' tool={Tools.Pencil} lineColor='#1E88E5' lineWidth={3}/>
             </div>
         ) : (
             <div>
