@@ -30,7 +30,7 @@ class Exercise20vis extends Component {
                 nodes: [],
                 edges: []
             },
-            texts: [],
+            timeouts: [],
             currentStep: 0,
             options: {
                 autoResize: true,
@@ -39,12 +39,22 @@ class Exercise20vis extends Component {
                 clickToUse: false,
                 physics: false,
                 layout: {},
-                "edges": {
-                    "smooth": {
-                        "type": "continuous",
-                        "forceDirection": "none",
-                        "roundness": 0
-                    }
+                nodes: {
+                    shape: 'circle',
+                    color: {background: '#ffff08', border: '#000000'},
+                    label: '   ',
+                    margin: 10,
+                    font: {size: 16, }
+                },
+                edges: {
+                    arrows: {
+                        to: {enabled: false}
+                    },
+                    color: {color: '#000000', hover: '#000000'},
+                    width: 1,
+                    dashes: false,
+                    label: undefined,
+                    font: {align: 'top'}
                 },
                 configure: {
                     enabled: false,
@@ -82,6 +92,33 @@ class Exercise20vis extends Component {
         };
     }
 
+    /**
+     * Method for updating node properties.
+     * @param nodes
+     * @param nodeIndex
+     * @param background
+     * @param label
+     * @returns {ReadonlyArray<any> | ReadonlySet<any> | ReadonlyMap<any, any> | any}
+     */
+    updateNode = (nodes, nodeIndex, background, label) => {
+        return imUpdate(nodes, {[nodeIndex]: {color: {$set: {background: background}}, label: {$set: label}}});
+    };
+
+    /**
+     * Method for updating edge properties.
+     * @param edges
+     * @param edgeIndex
+     * @param color
+     * @param width
+     * @param dashes
+     * @param label
+     * @returns {ReadonlyArray<any> | ReadonlySet<any> | ReadonlyMap<any, any> | any}
+     */
+    updateEdge = (edges, edgeIndex, color, width, dashes, label) => {
+        return imUpdate(edges, {[edgeIndex]: {color: {$set: {color: color, highlight: color, hover: color}},
+                width: {$set: width}, dashes: {$set: dashes}, label: {$set: label}}});
+    };
+
     nextStep = () => {
         if (this.state.currentStep <= 5) {
             if (this.state.currentStep === 0) {
@@ -94,6 +131,24 @@ class Exercise20vis extends Component {
 
             if (this.state.currentStep === 2) {
                 this.setState(this.step3);
+            }
+
+            if (this.state.currentStep === 3) {
+                this.setState(this.stepReset);
+                this.setState(this.step1);
+                this.setState(this.step2);
+                this.setState(this.step4);
+            }
+
+            if (this.state.currentStep === 4) {
+                this.setState(this.stepReset);
+                this.setState(this.step1);
+                this.setState(this.step5);
+            }
+
+            if (this.state.currentStep === 5) {
+                let interval1 = setInterval(this.step6, 4000);
+                this.setState({interval1: interval1});
             }
 
             // Increase currentStep after a step was executed
@@ -118,8 +173,42 @@ class Exercise20vis extends Component {
                 this.setState(this.step2);
             }
 
+            if (this.state.currentStep === 4) {
+                this.setState(this.stepReset);
+                this.setState(this.step1);
+                this.setState(this.step2);
+                this.setState(this.step3);
+            }
+
+            if (this.state.currentStep === 5) {
+                this.setState(this.stepReset);
+                this.setState(this.step1);
+                this.setState(this.step2);
+                this.setState(this.step4);
+            }
+
+            if (this.state.currentStep === 6) {
+                clearInterval(this.state.interval1);
+                this.clearAllTimers(this.state);
+                this.setState(this.stepReset);
+                this.setState(this.step1);
+                this.setState(this.step5);
+            }
+
             // Reduce currentStep after a step was executed
             this.setState((state) => {return {currentStep: --state.currentStep}});
+        }
+    };
+
+    /**
+     * Clears all used Timeouts and Intervals.
+     * @param state
+     */
+    clearAllTimers = (state) => {
+        if (state.timeouts.length > 0) {
+            state.timeouts.forEach(function (value, index) {
+                clearTimeout(value);
+            });
         }
     };
 
@@ -136,31 +225,126 @@ class Exercise20vis extends Component {
         return {
             graphVis: {
                 nodes: [
-                    { id: 1, x: -180, y: -40, color: { background: '#ffff08', border: '#000000' } },
-                    { id: 2, x: -40, y: -100, color: { background: '#ffff08', border: '#000000' } },
-                    { id: 3, x: -30, y: 50, color: { background: '#ffff08', border: '#000000' } },
-                    { id: 4, x: 110, y: -50, color: { background: '#ffff08', border: '#000000' } },
-                    { id: 5, x: 120, y: 80, color: { background: '#ffff08', border: '#000000' } },
-                    {id: 6, x: 130, y: 110}
+                    {id: 1, x: -180, y: -40, color: {background: '#ffff08'}, label: '   '},
+                    {id: 2, x: -40, y: -100, color: {background: '#ffff08'}, label: '   '},
+                    {id: 3, x: -30, y: 50, color: {background: '#ffff08'}, label: '   '},
+                    {id: 4, x: 110, y: -50, color: {background: '#ffff08'}, label: '   '},
+                    {id: 5, x: 120, y: 80, color: {background: '#ffff08'}, label: '   '}
                 ],
                 edges: [
-                    { id: 1, from: 1, to: 2 },
-                    { id: 2, from: 2, to: 3 },
-                    { id: 3, from: 2, to: 4 },
-                    { id: 4, from: 3, to: 5 },
-                    { id: 5, from: 4, to: 5 }
+                    {id: 1, from: 1, to: 2 },
+                    {id: 2, from: 2, to: 3 },
+                    {id: 3, from: 2, to: 4 },
+                    {id: 4, from: 3, to: 5 },
+                    {id: 5, from: 4, to: 5 }
                 ]
             }
         }
     };
 
     step2 = (state) => {
-        let newNodes = imUpdate(state.graphVis.nodes, {[1]: {x: {$set: 50}}});
+        let newNodes = this.updateNode(state.graphVis.nodes, 0, '#ffff08', ' u ');
+        newNodes = this.updateNode(newNodes, 1, '#ffff08', ' x ');
+        newNodes = this.updateNode(newNodes, 3, '#ffff08', ' y ');
+        newNodes = this.updateNode(newNodes, 4, '#ffff08', ' v ');
+
+        let newEdges = this.updateEdge(state.graphVis.edges, 2, '#000000', 1, false, ' e ');
 
         return {
             graphVis: {
                 nodes: newNodes,
-                edges: state.graphVis.edges
+                edges: newEdges
+            }
+        }
+    };
+
+    step3 = (state) => {
+        let newNodes = this.updateNode(state.graphVis.nodes, 0, '#B39DDB', ' u ');
+        newNodes = this.updateNode(newNodes, 1, '#B39DDB', ' x ');
+        newNodes = this.updateNode(newNodes, 3, '#B39DDB', ' y ');
+        newNodes = this.updateNode(newNodes, 4, '#B39DDB', ' v ');
+
+        let newEdges = this.updateEdge(state.graphVis.edges, 0, '#B39DDB', 2, false, undefined);
+        newEdges = this.updateEdge(newEdges, 2, '#B39DDB', 2, [8, 8], ' e ');
+        newEdges = this.updateEdge(newEdges, 4, '#B39DDB', 2, false, undefined);
+
+        return {
+            graphVis: {
+                nodes: newNodes,
+                edges: newEdges
+            }
+        }
+    };
+
+    step4 = (state) => {
+        let newNodes = this.updateNode(state.graphVis.nodes, 0, '#B39DDB', ' u ');
+        newNodes = this.updateNode(newNodes, 1, '#B39DDB', ' x ');
+        newNodes = this.updateNode(newNodes, 2, '#B39DDB', '   ');
+        newNodes = this.updateNode(newNodes, 3, '#ffff08', ' y ');
+        newNodes = this.updateNode(newNodes, 4, '#B39DDB', ' v ');
+
+        let newEdges = this.updateEdge(state.graphVis.edges, 0, '#B39DDB', 2, false, undefined);
+        newEdges = this.updateEdge(newEdges, 1, '#B39DDB', 2, false, undefined);
+        newEdges = this.updateEdge(newEdges, 2, 'red', 2, [8, 8], ' e ');
+        newEdges = this.updateEdge(newEdges, 3, '#B39DDB', 2, false, undefined);
+
+        return {
+            graphVis: {
+                nodes: newNodes,
+                edges: newEdges
+            }
+        }
+    };
+
+    step5 = (state) => {
+        let newNodes = this.updateNode(state.graphVis.nodes, 1, '#81C784', ' x ');
+        newNodes = this.updateNode(newNodes, 2, '#81C784', '   ');
+        newNodes = this.updateNode(newNodes, 3, '#81C784', ' y ');
+        newNodes = this.updateNode(newNodes, 4, '#81C784', '   ');
+
+        let newEdges = this.updateEdge(state.graphVis.edges, 1, '#81C784', 2, false, undefined);
+        newEdges = this.updateEdge(newEdges, 2, 'red', 2, [8, 8], ' e ');
+        newEdges = this.updateEdge(newEdges, 3, '#81C784', 2, false, undefined);
+        newEdges = this.updateEdge(newEdges, 4, '#81C784', 2, false, undefined);
+
+        return {
+            graphVis: {
+                nodes: newNodes,
+                edges: newEdges
+            }
+        }
+    };
+
+    step6 = () => {
+        let timeout1 = setTimeout(()=> {
+            this.setState(this.step6a);
+        }, 1000);
+
+        let timeout2 = setTimeout(()=> {
+            this.setState(this.step6b);
+        }, 2000);
+
+        this.setState({timeouts: [timeout1, timeout2]});
+    };
+
+    step6a = (state) => {
+        let newEdges = this.updateEdge(state.graphVis.edges, 2, '#81C784', 2, false, ' e ');
+
+        return {
+            graphVis: {
+                nodes: state.graphVis.nodes,
+                edges: newEdges
+            }
+        }
+    };
+
+    step6b = (state) => {
+        let newEdges = this.updateEdge(state.graphVis.edges, 2, 'red', 2, [8, 8], ' e ');
+
+        return {
+            graphVis: {
+                nodes: state.graphVis.nodes,
+                edges: newEdges
             }
         }
     };
@@ -178,7 +362,8 @@ class Exercise20vis extends Component {
                                 <main>
                                     <Col xs={6} md={6} lg={6}>
                                         <div className={"GraphBox"}>
-                                            <GraphVis graph={this.state.graphVis} options={this.state.options} events={events} style={{width: "650px", height: "400px" }} />
+                                            <GraphVis graph={this.state.graphVis} options={this.state.options}
+                                                      events={events} style={{width: "650px", height: "400px" }} />
                                         </div>
                                     </Col>
                                 </main>
