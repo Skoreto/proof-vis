@@ -2,7 +2,12 @@
 .footer {
     background: #264011;
     color: #fff;
-    height: 344px;
+    /* Stick to the bottom */
+    height: 30px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }
 .footer ul {
     padding-left: 0;
@@ -36,43 +41,27 @@
     margin-bottom: 30px;
     margin-left: 8px;
 }
-.footer .bottom-bar {
-    background: #1c2f0d;
-    padding: 5px 0;
-}
-.footer .bottom-bar .copyright {
-    font-size: 13px;
-    color: #dcdcdc;
-    line-height: 3;
-}
-.footer .bottom-bar .copyright a {
-    color: #dcaeae;
-}
-.footer .bottom-bar .copyright a:hover {
-    color: #f5f8fb;
-}
-
 @media (max-width: 767px) {
     .footer {
-        height: auto;
+        height: 30px;
     }
     .footer-col-inner {
-        margin-bottom: 30px;
+        /*margin-bottom: 30px;*/
     }
 }
 /* MQ - Střední úhlopříčka (tablety, 768px a více) */
 @media (min-width: 768px) {
     .footer {
-        height: auto;
+        height: 30px;
     }
     .footer-col-inner {
-        margin-bottom: 15px;
+        /*margin-bottom: 15px;*/
     }
 }
 /* Velká úhlopříčka (desktopy, 992px a víc) */
 @media (min-width: 992px) {
     .footer {
-        height: 324px;
+        height: auto;
         /* musí mít stejnou výšku jako patička */
     }
 }

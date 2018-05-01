@@ -24,7 +24,7 @@
   background-clip: padding-box;
 }
 .GraphBox {
-  border: 1px solid #858585;
+  border: 1px solid lightgray;
   width: 650px;
   height: 400px;
   z-index: 1;

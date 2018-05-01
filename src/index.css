@@ -1,6 +1,6 @@
 /* ======= Základ ======= */
 html, body {
-  height: 100%;
+  min-height: 100%;
 }
 body {
   font-size: 14px;
