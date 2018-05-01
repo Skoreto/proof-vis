@@ -9,7 +9,7 @@ import Footer from './components/UI/Footer/Footer'
 class App extends Component {
     render() {
         return (
-            <BrowserRouter>
+            <BrowserRouter basename={process.env.PUBLIC_URL}>
                 <div>
                     <MainHeader/>
                     <CustomNavbar/>
