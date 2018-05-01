@@ -31,9 +31,9 @@
 }
 .over-component {
   position: absolute;
-  width: 400px;
-  height: 200px;
-  background-color: #3f51b5;
+  width: 650px;
+  height: 400px;
+  /*background-color: #3f51b5;*/
   z-index: 2;
 }
 /* === SEZNAMY OBSAHU === */

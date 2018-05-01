@@ -2,6 +2,7 @@ import GraphVis from 'react-graph-vis'
 import React, { Component } from 'react';
 import imUpdate from 'immutability-helper';
 import { Row, Col } from 'react-bootstrap';
+import {SketchField, Tools} from 'react-sketch';
 import '../../../App.css';
 import '../../../customMainTheme.css'
 import '../../../main.css'
@@ -21,7 +22,6 @@ const events = {
         console.log(edges);
     }
 };
-
 class Exercise20vis extends Component {
     constructor(props) {
         super(props);
@@ -32,6 +32,7 @@ class Exercise20vis extends Component {
             },
             timeouts: [],
             currentStep: 0,
+            isSketchAllowed: false,
             options: {
                 autoResize: true,
                 height: '100%',
@@ -91,6 +92,10 @@ class Exercise20vis extends Component {
             },
         };
     }
+
+    sketchAllowance = () => {
+        this.setState(this.state.isSketchAllowed ? {isSketchAllowed: false} : {isSketchAllowed: true});
+    };
 
     /**
      * Method for updating node properties.
@@ -350,6 +355,16 @@ class Exercise20vis extends Component {
     };
 
     render() {
+        const isSketchAllowed = this.state.isSketchAllowed;
+        const sketch = isSketchAllowed ? (
+            <div className={"over-component"}>
+                <SketchField width='650px' height='400px' tool={Tools.Pencil} lineColor='black' lineWidth={3}/>
+            </div>
+        ) : (
+            <div>
+            </div>
+        );
+
         return (
             <div>
                 <MainHeader/>
@@ -361,11 +376,10 @@ class Exercise20vis extends Component {
                             <Row className="page-row">
                                 <main>
                                     <Col xs={6} md={6} lg={6}>
-                                        <div className={"over-component"}></div>
+                                        {sketch}
                                         <div className={"GraphBox"}>
                                             <GraphVis graph={this.state.graphVis} options={this.state.options}
                                                       events={events} style={{width: "650px", height: "400px" }} />
-
                                         </div>
                                     </Col>
                                 </main>
@@ -387,7 +401,7 @@ class Exercise20vis extends Component {
                                             <StepCounter currentStep={this.state.currentStep} stepSum={6} />
                                             <Button clicked={this.nextStep}>Další</Button>
                                         </div>
-                                        <Button>Kreslit</Button>
+                                        <Button clicked={this.sketchAllowance}>Kreslit</Button>
                                     </Col>
                                 </aside>
                             </Row>
