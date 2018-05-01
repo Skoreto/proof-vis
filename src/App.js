@@ -9,6 +9,7 @@ class App extends Component {
             <Router>
                 <div>
                     <Route exact path="/" component={Exercise20} />
+                    <Route path="/priklad20" component={Exercise20} />
                     <Route path="/priklad20vis" component={Exercise20vis} />
                 </div>
             </Router>

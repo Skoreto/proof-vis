@@ -233,7 +233,6 @@ class Exercise20 extends Component {
         let newNodes = this.updateNode(state.nodes, 1, '#81C784', 'x');
         newNodes = this.updateNode(newNodes, 2, '#81C784', '');
         newNodes = this.updateNode(newNodes, 3, '#81C784', 'y');
-
         newNodes = this.updateNode(newNodes, 4, '#81C784', '');
 
         let newEdges = this.updateEdge(state.edges, 1, '#81C784', 5, 0);
