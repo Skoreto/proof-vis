@@ -6,13 +6,7 @@ import Exercise20vis from './components/exercises/Exercise20vis/Exercise20vis'
 class App extends Component {
     render() {
         return (
-            <Router>
-                <div>
-                    <Route exact path="/" component={Exercise20} />
-                    <Route path="/priklad20" component={Exercise20} />
-                    <Route path="/priklad20vis" component={Exercise20vis} />
-                </div>
-            </Router>
+            <Exercise20/>
         );
     }
 }
