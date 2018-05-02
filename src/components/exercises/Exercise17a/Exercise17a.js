@@ -12,13 +12,7 @@ import PageHeading from "../../../components/UI/PageHeading/PageHeading";
 import Button from '../../../components/UI/Button/Button'
 import StepCounter from '../../../components/UI/StepCounter/StepCounter'
 
-const events = {
-    select: function(event) {
-        let { nodes, edges } = event;
-    }
-};
-
-class Exercise20vis extends Component {
+class Exercise17a extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -27,6 +21,7 @@ class Exercise20vis extends Component {
                 edges: []
             },
             timeouts: [],
+            intervals: [],
             currentStep: 0,
             isSketchAllowed: false,
             options: {
@@ -103,29 +98,12 @@ class Exercise20vis extends Component {
 
             if (this.state.currentStep === 1) {
                 this.setState(this.step2);
+                let interval1 = setInterval(this.step2, 4000);
+                this.setState({intervals: [interval1]});
             }
 
             if (this.state.currentStep === 2) {
                 this.setState(this.step3);
-            }
-
-            if (this.state.currentStep === 3) {
-                this.setState(this.stepReset);
-                this.setState(this.step1);
-                this.setState(this.step2);
-                this.setState(this.step4);
-            }
-
-            if (this.state.currentStep === 4) {
-                this.setState(this.stepReset);
-                this.setState(this.step1);
-                this.setState(this.step5);
-            }
-
-            if (this.state.currentStep === 5) {
-                this.setState(this.step6);
-                let interval1 = setInterval(this.step6, 4000);
-                this.setState({interval1: interval1});
             }
 
             // Increase currentStep after a step was executed
@@ -150,28 +128,6 @@ class Exercise20vis extends Component {
                 this.setState(this.step2);
             }
 
-            if (this.state.currentStep === 4) {
-                this.setState(this.stepReset);
-                this.setState(this.step1);
-                this.setState(this.step2);
-                this.setState(this.step3);
-            }
-
-            if (this.state.currentStep === 5) {
-                this.setState(this.stepReset);
-                this.setState(this.step1);
-                this.setState(this.step2);
-                this.setState(this.step4);
-            }
-
-            if (this.state.currentStep === 6) {
-                clearInterval(this.state.interval1);
-                this.clearAllTimers(this.state);
-                this.setState(this.stepReset);
-                this.setState(this.step1);
-                this.setState(this.step5);
-            }
-
             // Reduce currentStep after a step was executed
             this.setState((state) => {return {currentStep: --state.currentStep}});
         }
@@ -185,6 +141,11 @@ class Exercise20vis extends Component {
         if (state.timeouts.length > 0) {
             state.timeouts.forEach(function (value, index) {
                 clearTimeout(value);
+            });
+        }
+        if (state.intervals.length > 0) {
+            state.intervals.forEach(function (value, index) {
+                clearInterval(value);
             });
         }
     };
@@ -202,131 +163,51 @@ class Exercise20vis extends Component {
         return {
             graphVis: {
                 nodes: [
-                    {id: 1, x: -180, y: -40, color: {background: '#ffff08'}, label: '   '},
-                    {id: 2, x: -40, y: -100, color: {background: '#ffff08'}, label: '   '},
-                    {id: 3, x: -30, y: 50, color: {background: '#ffff08'}, label: '   '},
-                    {id: 4, x: 110, y: -50, color: {background: '#ffff08'}, label: '   '},
-                    {id: 5, x: 120, y: 80, color: {background: '#ffff08'}, label: '   '}
+                    {id: 1, x: -200, y: 0, color: {background: '#ffff08'}, label: ' u '},
+                    {id: 2, x: 0, y: 0, color: {background: '#ffff08'}, label: ' w '},
+                    {id: 3, x: 200, y: 0, color: {background: '#ffff08'}, label: ' v '}
                 ],
                 edges: [
-                    {id: 1, from: 1, to: 2 },
-                    {id: 2, from: 2, to: 3 },
-                    {id: 3, from: 2, to: 4 },
-                    {id: 4, from: 3, to: 5 },
-                    {id: 5, from: 4, to: 5 }
+                    {id: 1, from: 1, to: 2, label: 'e1' },
+                    {id: 2, from: 2, to: 3, label: 'e2' }
                 ]
             }
         }
     };
 
-    step2 = (state) => {
-        let newNodes = this.updateNode(state.graphVis.nodes, 0, '#ffff08', ' u ');
-        newNodes = this.updateNode(newNodes, 1, '#ffff08', ' x ');
-        newNodes = this.updateNode(newNodes, 3, '#ffff08', ' y ');
-        newNodes = this.updateNode(newNodes, 4, '#ffff08', ' v ');
-
-        let newEdges = this.updateEdge(state.graphVis.edges, 2, '#000000', 1, false, ' e ');
-
-        return {
-            graphVis: {
-                nodes: newNodes,
-                edges: newEdges
-            }
-        }
-    };
-
-    step3 = (state) => {
-        let newNodes = this.updateNode(state.graphVis.nodes, 0, '#B39DDB', ' u ');
-        newNodes = this.updateNode(newNodes, 1, '#B39DDB', ' x ');
-        newNodes = this.updateNode(newNodes, 3, '#B39DDB', ' y ');
-        newNodes = this.updateNode(newNodes, 4, '#B39DDB', ' v ');
-
-        let newEdges = this.updateEdge(state.graphVis.edges, 0, '#B39DDB', 2, false, undefined);
-        newEdges = this.updateEdge(newEdges, 2, '#B39DDB', 2, [8, 8], ' e ');
-        newEdges = this.updateEdge(newEdges, 4, '#B39DDB', 2, false, undefined);
-
-        return {
-            graphVis: {
-                nodes: newNodes,
-                edges: newEdges
-            }
-        }
-    };
-
-    step4 = (state) => {
-        let newNodes = this.updateNode(state.graphVis.nodes, 0, '#B39DDB', ' u ');
-        newNodes = this.updateNode(newNodes, 1, '#B39DDB', ' x ');
-        newNodes = this.updateNode(newNodes, 2, '#B39DDB', '   ');
-        newNodes = this.updateNode(newNodes, 3, '#ffff08', ' y ');
-        newNodes = this.updateNode(newNodes, 4, '#B39DDB', ' v ');
-
-        let newEdges = this.updateEdge(state.graphVis.edges, 0, '#B39DDB', 2, false, undefined);
-        newEdges = this.updateEdge(newEdges, 1, '#B39DDB', 2, false, undefined);
-        newEdges = this.updateEdge(newEdges, 2, 'red', 2, [8, 8], ' e ');
-        newEdges = this.updateEdge(newEdges, 3, '#B39DDB', 2, false, undefined);
-
-        return {
-            graphVis: {
-                nodes: newNodes,
-                edges: newEdges
-            }
-        }
-    };
-
-    step5 = (state) => {
-        let newNodes = this.updateNode(state.graphVis.nodes, 1, '#81C784', ' x ');
-        newNodes = this.updateNode(newNodes, 2, '#81C784', '   ');
-        newNodes = this.updateNode(newNodes, 3, '#81C784', ' y ');
-        newNodes = this.updateNode(newNodes, 4, '#81C784', '   ');
-
-        let newEdges = this.updateEdge(state.graphVis.edges, 1, '#81C784', 2, false, undefined);
-        newEdges = this.updateEdge(newEdges, 2, 'red', 2, [8, 8], ' e ');
-        newEdges = this.updateEdge(newEdges, 3, '#81C784', 2, false, undefined);
-        newEdges = this.updateEdge(newEdges, 4, '#81C784', 2, false, undefined);
-
-        return {
-            graphVis: {
-                nodes: newNodes,
-                edges: newEdges
-            }
-        }
-    };
-
-    step6 = () => {
+    step2 = () => {
         let timeout1 = setTimeout(()=> {
-            this.setState(this.step6a);
+            this.setState(this.step2a);
         }, 1000);
 
         let timeout2 = setTimeout(()=> {
-            this.setState(this.step6b);
+            this.setState(this.step2b);
         }, 2000);
 
         this.setState({timeouts: [timeout1, timeout2]});
     };
 
-    step6a = (state) => {
-        let newEdges = this.updateEdge(state.graphVis.edges, 2, '#81C784', 2, false, ' e ');
-
+    step2a = (state) => {
+        let newNodes = this.updateNode(state.graphVis.nodes, 0, '#9575CD', ' u ');
         return {
-            graphVis: {
-                nodes: state.graphVis.nodes,
-                edges: newEdges
-            }
+            graphVis: {nodes: newNodes, edges: state.graphVis.edges}
         }
     };
 
-    step6b = (state) => {
-        let newEdges = this.updateEdge(state.graphVis.edges, 2, 'red', 2, [8, 8], ' e ');
-
+    step2b = (state) => {
+        let newEdges = this.updateEdge(state.graphVis.edges, 0, '#9575CD', 2, false, ' e1 ');
         return {
-            graphVis: {
-                nodes: state.graphVis.nodes,
-                edges: newEdges
-            }
+            graphVis: {nodes: state.graphVis.nodes, edges: newEdges}
         }
     };
 
     render() {
+        const events = {
+            select: function(event) {
+                let {nodes, edges} = event;
+            }
+        };
+
         const isSketchAllowed = this.state.isSketchAllowed;
         const sketch = isSketchAllowed ? (
             <div className={"over-component"}>
@@ -338,7 +219,7 @@ class Exercise20vis extends Component {
             <div>
                 <div className={"container"}>
                     <div className="page-wrapper">
-                        <PageHeading headingTitle={"Příklad 20 (vis.js)"} breadcrumbsCurrent={"Důkazy přímo"} />
+                        <PageHeading headingTitle={"Příklad 17 a)"} breadcrumbsCurrent={"Ostatní příklady"} />
                         <div className="page-content">
                             <Row className="page-row">
                                 <main>
@@ -351,7 +232,7 @@ class Exercise20vis extends Component {
                                         <div className={"controls-panel"}>
                                             <div id="divStepButtons">
                                                 <Button clicked={this.previousStep}>Předchozí</Button>
-                                                <StepCounter currentStep={this.state.currentStep} stepSum={6} />
+                                                <StepCounter currentStep={this.state.currentStep} stepSum={3} />
                                                 <Button clicked={this.nextStep}>Další</Button>
                                                 <Button clicked={this.sketchAllowance}>Kreslit</Button>
                                             </div>
@@ -383,4 +264,4 @@ class Exercise20vis extends Component {
     }
 }
 
-export default Exercise20vis;
+export default Exercise17a;

@@ -9,7 +9,7 @@ import Graph from '../../../components/Graph/Graph';
 import Button from '../../../components/UI/Button/Button'
 import StepCounter from '../../../components/UI/StepCounter/StepCounter'
 
-class Exercise20 extends Component {
+class Exercise20svg extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -35,7 +35,7 @@ class Exercise20 extends Component {
     /**
      * Method for updating edge properties.
      * @param edges Array of edges from the state of component.
-     * @param edgeIndex Index of node in the array.
+     * @param edgeIndex Index of edge in the array.
      * @param strokeColor New strokeColor.
      * @param strokeWidth New strokeWidth.
      * @param dash Receive dashArray.
@@ -279,7 +279,7 @@ class Exercise20 extends Component {
             <div>
                 <div className={"container"}>
                     <div className="page-wrapper">
-                        <PageHeading headingTitle={"Příklad 20"} breadcrumbsCurrent={"Důkazy přímo"} />
+                        <PageHeading headingTitle={"Příklad 20 (SVG)"} breadcrumbsCurrent={"Důkazy přímo"} />
                         <div className="page-content">
                             <Row className="page-row">
                                 <main>
@@ -319,4 +319,4 @@ class Exercise20 extends Component {
     }
 }
 
-export default Exercise20;
+export default Exercise20svg;

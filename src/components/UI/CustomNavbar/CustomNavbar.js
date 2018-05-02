@@ -16,9 +16,11 @@ const CustomNavbar = () => (
         <Navbar.Collapse>
             <Nav>
                 <NavDropdown eventKey={1} title="Důkazy přímo" id="basic-nav-dropdown" className={"nav-item"}>
-                    <MenuItem eventKey={1.1} componentClass={Link} href="/priklad20" to="/priklad20">Příklad 20</MenuItem>
+                    <MenuItem eventKey={1.1} componentClass={Link} href="/priklad20svg" to="/priklad20svg">
+                        Příklad 20 (SVG)
+                    </MenuItem>
                     <MenuItem eventKey={1.2} componentClass={Link} href="/priklad20vis" to="/priklad20vis">
-                        Příklad 20 vis.js
+                        Příklad 20 (vis.js)
                     </MenuItem>
                     <MenuItem eventKey={1.3} href="/" to="/">Příklad 23</MenuItem>
                     <MenuItem eventKey={1.4} href="/" to="/">Příklad 26</MenuItem>
@@ -30,7 +32,9 @@ const CustomNavbar = () => (
                     <MenuItem eventKey={3.1}>Příklad 19</MenuItem>
                 </NavDropdown>
                 <NavDropdown eventKey={4} title="Ostatní" id="basic-nav-dropdown" className={"nav-item"}>
-                    <MenuItem eventKey={4.1}>Příklad 17 a)</MenuItem>
+                    <MenuItem eventKey={4.1} componentClass={Link} href="/priklad17a" to="/priklad17a">
+                        Příklad 17 a)
+                    </MenuItem>
                 </NavDropdown>
                 <NavItem eventKey={5} componentClass={Link} href="/platno" to="/platno" className={"nav-item"}>
                     Plátno
