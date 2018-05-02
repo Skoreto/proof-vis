@@ -1,6 +1,6 @@
 import GraphVis from 'react-graph-vis'
 import React, {Component} from 'react';
-import {updateNode, updateEdge} from '../../../functionality/GraphFunctions'
+import {updateNode, updateEdge, updateEdgeWithArrow} from '../../../functionality/GraphFunctions'
 import {Row, Col} from 'react-bootstrap';
 import {SketchField, Tools} from 'react-sketch';
 import M from 'react-mathjax2';
@@ -40,7 +40,8 @@ class Exercise17a extends Component {
                 },
                 edges: {
                     arrows: {
-                        to: {enabled: false}
+                        to: {enabled: false},
+                        from: {enabled: false}
                     },
                     color: {color: '#000000', hover: '#000000'},
                     width: 1,
@@ -84,6 +85,7 @@ class Exercise17a extends Component {
         };
         this.updateNode = updateNode.bind(this);
         this.updateEdge = updateEdge.bind(this);
+        this.updateEdgeWithArrow = updateEdgeWithArrow.bind(this);
     }
 
     sketchAllowance = () => {
@@ -98,12 +100,17 @@ class Exercise17a extends Component {
 
             if (this.state.currentStep === 1) {
                 this.setState(this.step2);
-                let interval1 = setInterval(this.step2, 4000);
+                let interval1 = setInterval(this.step2, 7000);
                 this.setState({intervals: [interval1]});
             }
 
             if (this.state.currentStep === 2) {
+                this.clearAllTimers(this.state);
+                this.setState(this.stepReset);
+                this.setState(this.step1);
                 this.setState(this.step3);
+                let interval2 = setInterval(this.step3, 13000);
+                this.setState({intervals: [interval2]});
             }
 
             // Increase currentStep after a step was executed
@@ -114,18 +121,23 @@ class Exercise17a extends Component {
     previousStep = () => {
         if (this.state.currentStep > 0) {
             if (this.state.currentStep === 1) {
+                this.clearAllTimers(this.state);
                 this.setState(this.stepReset);
             }
 
             if (this.state.currentStep === 2) {
+                this.clearAllTimers(this.state);
                 this.setState(this.stepReset);
                 this.setState(this.step1);
             }
 
             if (this.state.currentStep === 3) {
+                this.clearAllTimers(this.state);
                 this.setState(this.stepReset);
                 this.setState(this.step1);
                 this.setState(this.step2);
+                let interval1 = setInterval(this.step2, 7000);
+                this.setState({intervals: [interval1]});
             }
 
             // Reduce currentStep after a step was executed
@@ -151,12 +163,7 @@ class Exercise17a extends Component {
     };
 
     stepReset = () => {
-        return {
-            graphVis: {
-                nodes: [],
-                edges: []
-            }
-        }
+        return {graphVis: {nodes: [], edges: []}}
     };
 
     step1 = () => {
@@ -176,29 +183,112 @@ class Exercise17a extends Component {
     };
 
     step2 = () => {
-        let timeout1 = setTimeout(()=> {
-            this.setState(this.step2a);
-        }, 1000);
+        let timeout2a = setTimeout(()=> {this.setState(this.step2a);}, 1000);
+        let timeout2b = setTimeout(()=> {this.setState(this.step2b);}, 2000);
+        let timeout2c = setTimeout(()=> {this.setState(this.step2c);}, 3000);
+        let timeout2d = setTimeout(()=> {this.setState(this.step2d);}, 4000);
+        let timeout2e = setTimeout(()=> {this.setState(this.step2e);}, 5000);
+        let timeout2f = setTimeout(()=> {
+            this.setState(this.stepReset);
+            this.setState(this.step1);
+        }, 6000);
 
-        let timeout2 = setTimeout(()=> {
-            this.setState(this.step2b);
-        }, 2000);
-
-        this.setState({timeouts: [timeout1, timeout2]});
+        this.setState({timeouts: [timeout2a, timeout2b, timeout2c, timeout2d, timeout2e, timeout2f]});
     };
 
     step2a = (state) => {
-        let newNodes = this.updateNode(state.graphVis.nodes, 0, '#9575CD', ' u ');
-        return {
-            graphVis: {nodes: newNodes, edges: state.graphVis.edges}
-        }
+        let newNodes = this.updateNode(state.graphVis.nodes, 0, '#D1C4E9', ' u ');
+        return {graphVis: {nodes: newNodes, edges: state.graphVis.edges}}
     };
 
     step2b = (state) => {
-        let newEdges = this.updateEdge(state.graphVis.edges, 0, '#9575CD', 2, false, ' e1 ');
+        let newEdges = this.updateEdgeWithArrow(state.graphVis.edges, 0, '#D1C4E9', 3, false, ' e1 ', true, false);
+        return {graphVis: {nodes: state.graphVis.nodes, edges: newEdges}}
+    };
+
+    step2c = (state) => {
+        let newNodes = this.updateNode(state.graphVis.nodes, 1, '#D1C4E9', ' w ');
+        let newEdges = this.updateEdgeWithArrow(state.graphVis.edges, 0, '#D1C4E9', 3, false, ' e1 ', false, false);
+        return {graphVis: {nodes: newNodes, edges: newEdges}}
+    };
+
+    step2d = (state) => {
+        let newEdges = this.updateEdgeWithArrow(state.graphVis.edges, 1, '#D1C4E9', 3, false, ' e2 ', true, false);
+        return {graphVis: {nodes: state.graphVis.nodes, edges: newEdges}}
+    };
+
+    step2e = (state) => {
+        let newNodes = this.updateNode(state.graphVis.nodes, 2, '#D1C4E9', ' v ');
+        let newEdges = this.updateEdgeWithArrow(state.graphVis.edges, 1, '#D1C4E9', 3, false, ' e2 ', false, false);
+        return {graphVis: {nodes: newNodes, edges: newEdges}}
+    };
+
+    step3 = () => {
+        let timeout3a = setTimeout(()=> {this.setState(this.step2a);}, 1000);
+        let timeout3b = setTimeout(()=> {this.setState(this.step2b);}, 2000);
+        let timeout3c = setTimeout(()=> {this.setState(this.step2c);}, 3000);
+        let timeout3d = setTimeout(()=> {this.setState(this.step3d);}, 4000);
+        let timeout3e = setTimeout(()=> {this.setState(this.step3e);}, 5000);
+        let timeout3f = setTimeout(()=> {this.setState(this.step3f);}, 6000);
+        let timeout3g = setTimeout(()=> {this.setState(this.step3g);}, 7000);
+        let timeout3h = setTimeout(()=> {this.setState(this.step3h);}, 8000);
+        let timeout3i = setTimeout(()=> {this.setState(this.step3i);}, 9000);
+        let timeout3j = setTimeout(()=> {this.setState(this.step3j);}, 10000);
+        let timeout3k = setTimeout(()=> {this.setState(this.step3k);}, 11000);
+        let timeout3l = setTimeout(()=> {
+            this.setState(this.stepReset);
+            this.setState(this.step1);
+        }, 12000);
+
+        this.setState({timeouts: [timeout3a, timeout3b, timeout3c, timeout3d, timeout3e, timeout3f, timeout3g,
+                timeout3h, timeout3i, timeout3j, timeout3k, timeout3l]});
+    };
+
+    step3d = (state) => {
+        let newNodes = this.updateNode(state.graphVis.nodes, 1, '#B39DDB', ' w ');
+        return {
+            graphVis: {nodes: newNodes, edges: this.state.graphVis.edges}
+        }
+    };
+
+    step3e = (state) => {
+        let newEdges = this.updateEdgeWithArrow(state.graphVis.edges, 0, '#B39DDB', 3, false, ' e1 ', false, true);
         return {
             graphVis: {nodes: state.graphVis.nodes, edges: newEdges}
         }
+    };
+
+    step3f = (state) => {
+        let newNodes = this.updateNode(state.graphVis.nodes, 0, '#B39DDB', ' u ');
+        let newEdges = this.updateEdgeWithArrow(state.graphVis.edges, 0, '#B39DDB', 3, false, ' e1 ', false, false);
+        return {graphVis: {nodes: newNodes, edges: newEdges}}
+    };
+
+    step3g = (state) => {
+        let newNodes = this.updateNode(state.graphVis.nodes, 0, '#9575CD', ' u ');
+        return {graphVis: {nodes: newNodes, edges: state.graphVis.edges}}
+    };
+
+    step3h = (state) => {
+        let newEdges = this.updateEdgeWithArrow(state.graphVis.edges, 0, '#9575CD', 3, false, ' e1 ', true, false);
+        return {graphVis: {nodes: state.graphVis.nodes, edges: newEdges}}
+    };
+
+    step3i = (state) => {
+        let newNodes = this.updateNode(state.graphVis.nodes, 1, '#9575CD', ' w ');
+        let newEdges = this.updateEdgeWithArrow(state.graphVis.edges, 0, '#9575CD', 3, false, ' e1 ', false, false);
+        return {graphVis: {nodes: newNodes, edges: newEdges}}
+    };
+
+    step3j = (state) => {
+        let newEdges = this.updateEdgeWithArrow(state.graphVis.edges, 1, '#9575CD', 3, false, ' e2 ', true, false);
+        return {graphVis: {nodes: state.graphVis.nodes, edges: newEdges}}
+    };
+
+    step3k = (state) => {
+        let newNodes = this.updateNode(state.graphVis.nodes, 2, '#9575CD', ' v ');
+        let newEdges = this.updateEdgeWithArrow(state.graphVis.edges, 1, '#9575CD', 3, false, ' e2 ', false, false);
+        return {graphVis: {nodes: newNodes, edges: newEdges}}
     };
 
     render() {
@@ -243,14 +333,13 @@ class Exercise17a extends Component {
                                     <Col xs={5} md={5} lg={5} smOffset={1} mdOffset={1} lgOffset={1}>
                                         <M.Context input='tex'>
                                             <div className="bg-info" id="definition">
-                                                Nechť <MN>G</MN> je souvislý graf. Jestliže <MN>e</MN> není most
-                                                v <MN>G</MN>, pak v <MN>G</MN> existuje kružnice obsahující
-                                                hranu <MN>e</MN>. Dokažte přímo.
+                                                Dokažte, nebo vyvraťte: když v grafu <MN>G</MN> existují dva
+                                                různé <MN>u</MN>-<MN>v</MN> sledy, tak <MN>G</MN> obsahuje kružnici.
                                             </div>
                                         </M.Context>
                                         <br/>
                                         <div id="divProofContainer">
-                                            <h3>Důkaz přímo</h3>
+                                            <h3>Důkaz</h3>
                                             <div className="bg-warning" id="proofBox"></div>
                                         </div>
                                     </Col>
