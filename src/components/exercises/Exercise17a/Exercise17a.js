@@ -1,6 +1,6 @@
 import GraphVis from 'react-graph-vis'
 import React, {Component} from 'react';
-import {updateNode, updateEdge, updateEdgeWithArrow} from '../../../functionality/GraphFunctions'
+import {updateNode, updateEdge, updateEdgeWithArrow, clearAllTimers} from '../../../functionality/GraphFunctions'
 import {Row, Col} from 'react-bootstrap';
 import {SketchField, Tools} from 'react-sketch';
 import M from 'react-mathjax2';
@@ -87,6 +87,7 @@ class Exercise17a extends Component {
         this.updateNode = updateNode.bind(this);
         this.updateEdge = updateEdge.bind(this);
         this.updateEdgeWithArrow = updateEdgeWithArrow.bind(this);
+        this.clearAllTimers = clearAllTimers.bind(this);
     }
 
     sketchAllowance = () => {
@@ -148,23 +149,6 @@ class Exercise17a extends Component {
 
             // Reduce currentStep after a step was executed
             this.setState((state) => {return {currentStep: --state.currentStep}});
-        }
-    };
-
-    /**
-     * Clears all used Timeouts and Intervals.
-     * @param state State of the updated component.
-     */
-    clearAllTimers = (state) => {
-        if (state.timeouts.length > 0) {
-            state.timeouts.forEach(function (value, index) {
-                clearTimeout(value);
-            });
-        }
-        if (state.intervals.length > 0) {
-            state.intervals.forEach(function (value, index) {
-                clearInterval(value);
-            });
         }
     };
 
