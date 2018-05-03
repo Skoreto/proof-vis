@@ -44,3 +44,20 @@ export function updateEdgeWithArrow(edges, edgeIndex, color, width, dashes, labe
             width: {$set: width}, dashes: {$set: dashes}, label: {$set: label},
             arrows: {$set: {to: {enabled: enableArrowTo}, from: {enabled: enableArrowFrom}}}}});
 }
+
+/**
+ * Clears all used Timeouts and Intervals.
+ * @param state State of the updated component.
+ */
+export function clearAllTimers(state) {
+    if (state.timeouts.length > 0) {
+        state.timeouts.forEach(function (value, index) {
+            clearTimeout(value);
+        });
+    }
+    if (state.intervals.length > 0) {
+        state.intervals.forEach(function (value, index) {
+            clearInterval(value);
+        });
+    }
+}
