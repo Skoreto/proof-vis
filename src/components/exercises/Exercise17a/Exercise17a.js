@@ -24,6 +24,7 @@ class Exercise17a extends Component {
             intervals: [],
             currentStep: 0,
             isSketchAllowed: false,
+            descriptionBox: '',
             options: {
                 autoResize: true,
                 height: '100%',
@@ -96,12 +97,14 @@ class Exercise17a extends Component {
         if (this.state.currentStep <= 5) {
             if (this.state.currentStep === 0) {
                 this.setState(this.step1);
+                this.setState(this.step1Texts);
             }
 
             if (this.state.currentStep === 1) {
                 this.setState(this.step2);
                 let interval1 = setInterval(this.step2, 7000);
                 this.setState({intervals: [interval1]});
+                this.setState(this.step2Texts);
             }
 
             if (this.state.currentStep === 2) {
@@ -111,6 +114,7 @@ class Exercise17a extends Component {
                 this.setState(this.step3);
                 let interval2 = setInterval(this.step3, 13000);
                 this.setState({intervals: [interval2]});
+                this.setState(this.step3Texts);
             }
 
             // Increase currentStep after a step was executed
@@ -129,6 +133,7 @@ class Exercise17a extends Component {
                 this.clearAllTimers(this.state);
                 this.setState(this.stepReset);
                 this.setState(this.step1);
+                this.setState(this.step1Texts);
             }
 
             if (this.state.currentStep === 3) {
@@ -138,6 +143,7 @@ class Exercise17a extends Component {
                 this.setState(this.step2);
                 let interval1 = setInterval(this.step2, 7000);
                 this.setState({intervals: [interval1]});
+                this.setState(this.step2Texts);
             }
 
             // Reduce currentStep after a step was executed
@@ -147,7 +153,7 @@ class Exercise17a extends Component {
 
     /**
      * Clears all used Timeouts and Intervals.
-     * @param state
+     * @param state State of the updated component.
      */
     clearAllTimers = (state) => {
         if (state.timeouts.length > 0) {
@@ -163,10 +169,11 @@ class Exercise17a extends Component {
     };
 
     stepReset = () => {
-        return {graphVis: {nodes: [], edges: []}}
+        return {graphVis: {nodes: [], edges: []}, descriptionBox: ''}
     };
 
     step1 = () => {
+        const description = (<p>Příklad grafu <MN>G</MN></p>);
         return {
             graphVis: {
                 nodes: [
@@ -178,8 +185,14 @@ class Exercise17a extends Component {
                     {id: 1, from: 1, to: 2, label: 'e1' },
                     {id: 2, from: 2, to: 3, label: 'e2' }
                 ]
-            }
+            },
+            descriptionBox: description
         }
+    };
+
+    step1Texts = () => {
+        const description = (<p>Příklad grafu <MN>G</MN></p>);
+        return {descriptionBox: description}
     };
 
     step2 = () => {
@@ -191,6 +204,7 @@ class Exercise17a extends Component {
         let timeout2f = setTimeout(()=> {
             this.setState(this.stepReset);
             this.setState(this.step1);
+            this.setState(this.step2Texts);
         }, 6000);
 
         this.setState({timeouts: [timeout2a, timeout2b, timeout2c, timeout2d, timeout2e, timeout2f]});
@@ -223,6 +237,11 @@ class Exercise17a extends Component {
         return {graphVis: {nodes: newNodes, edges: newEdges}}
     };
 
+    step2Texts = () => {
+        const description = (<p>Konstrukce sledu <MN>S_1 = (u,e_1,w,e_2,v)</MN></p>);
+        return {descriptionBox: description};
+    };
+
     step3 = () => {
         let timeout3a = setTimeout(()=> {this.setState(this.step2a);}, 1000);
         let timeout3b = setTimeout(()=> {this.setState(this.step2b);}, 2000);
@@ -238,6 +257,7 @@ class Exercise17a extends Component {
         let timeout3l = setTimeout(()=> {
             this.setState(this.stepReset);
             this.setState(this.step1);
+            this.setState(this.step3Texts);
         }, 12000);
 
         this.setState({timeouts: [timeout3a, timeout3b, timeout3c, timeout3d, timeout3e, timeout3f, timeout3g,
@@ -246,16 +266,12 @@ class Exercise17a extends Component {
 
     step3d = (state) => {
         let newNodes = this.updateNode(state.graphVis.nodes, 1, '#B39DDB', ' w ');
-        return {
-            graphVis: {nodes: newNodes, edges: this.state.graphVis.edges}
-        }
+        return {graphVis: {nodes: newNodes, edges: this.state.graphVis.edges}}
     };
 
     step3e = (state) => {
         let newEdges = this.updateEdgeWithArrow(state.graphVis.edges, 0, '#B39DDB', 3, false, ' e1 ', false, true);
-        return {
-            graphVis: {nodes: state.graphVis.nodes, edges: newEdges}
-        }
+        return {graphVis: {nodes: state.graphVis.nodes, edges: newEdges}}
     };
 
     step3f = (state) => {
@@ -291,6 +307,11 @@ class Exercise17a extends Component {
         return {graphVis: {nodes: newNodes, edges: newEdges}}
     };
 
+    step3Texts = () => {
+        const description = (<p>Konstrukce sledu <MN>S_2 = (u,e_1,w,e_1,u,e_1,w,e_2,v)</MN></p>);
+        return {descriptionBox: description}
+    };
+
     render() {
         const events = {
             select: function(event) {
@@ -319,6 +340,11 @@ class Exercise17a extends Component {
                                             <GraphVis graph={this.state.graphVis} options={this.state.options}
                                                       events={events} style={{width: "650px", height: "400px" }} />
                                         </div>
+                                        <M.Context input='tex'>
+                                            <div className={"descriptionBox"}>
+                                                {this.state.descriptionBox}
+                                            </div>
+                                        </M.Context>
                                         <div className={"controls-panel"}>
                                             <div id="divStepButtons">
                                                 <Button clicked={this.previousStep}>Předchozí</Button>
@@ -340,7 +366,19 @@ class Exercise17a extends Component {
                                         <br/>
                                         <div id="divProofContainer">
                                             <h3>Důkaz</h3>
-                                            <div className="bg-warning" id="proofBox"></div>
+                                            <M.Context input='tex'>
+                                                <div className="bg-warning" id="proofBox">
+                                                    <p className="text-red"><b>Tvrzení:</b></p>
+                                                    <p>Když v grafu <MN>G</MN> existují dva
+                                                        různé <MN>u</MN>-<MN>v</MN> sledy, tak <MN>G</MN> obsahuje
+                                                        kružnici.</p>
+                                                    <p className="text-blue">Neplatí, protože existuje
+                                                        kontrapříklad.</p>
+                                                    <br />
+                                                    <p>Existují dva různé <MN>u</MN>-<MN>v</MN> sledy:</p>
+                                                    <p id="pCurrent"><MN>S_1 = (u,e_1,w,e_2,v)</MN></p>
+                                                </div>
+                                            </M.Context>
                                         </div>
                                     </Col>
                                 </aside>
