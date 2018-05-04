@@ -1,10 +1,12 @@
 .button {
-    padding: 10px;
-    margin-left: 20px;
-    margin-right: 20px;
     background-image: none;
     background-color: #fafafa;
     border: 0;
     font-size: 16px;
+}
+.btn-default:focus.btnSketchActive,
+.btn-default:active.btnSketchActive,
+.btn-default.active.btnSketchActive {
+    background-color: #C8E6C9;
 }
 

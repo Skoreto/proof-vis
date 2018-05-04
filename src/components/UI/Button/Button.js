@@ -4,8 +4,8 @@ import './Button.css';
 
 const button = (props) => (
     <Button
-        className={"button"}
-        onClick={props.clicked}>{props.children}</Button>
+        className={"button " + props.addClass}
+        onClick={props.clicked} active={props.active} disabled={props.disabled}>{props.children}</Button>
 );
 
 export default button;

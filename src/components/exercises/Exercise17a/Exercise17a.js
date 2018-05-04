@@ -14,7 +14,10 @@ import StepCounter from '../../../components/UI/StepCounter/StepCounter'
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 import faChevronRight from '@fortawesome/fontawesome-free-solid/faChevronRight'
 import faChevronLeft from '@fortawesome/fontawesome-free-solid/faChevronLeft'
+import faPaintBrush from '@fortawesome/fontawesome-free-solid/faPaintBrush'
 import faPencilAlt from '@fortawesome/fontawesome-free-solid/faPencilAlt'
+import faMinus from '@fortawesome/fontawesome-free-solid/faMinus'
+import faCircle from '@fortawesome/fontawesome-free-solid/faCircleNotch'
 
 const locales = {
     cs: {
@@ -46,7 +49,16 @@ class Exercise17a extends Component {
             intervals: [],
             currentStep: 0,
             isSketchAllowed: false,
+            sketchTool: Tools.Pencil,
             descriptionBox: '',
+            btnSketchA: '',
+            btnSketchC: '',
+            btnPencilA: '',
+            btnPencilD: 'disabled',
+            btnLineA: '',
+            btnLineD: 'disabled',
+            btnCircleA: '',
+            btnCircleD: 'disabled',
             options: {
                 autoResize: true,
                 height: '100%',
@@ -126,8 +138,73 @@ class Exercise17a extends Component {
         this.clearAllTimers = clearAllTimers.bind(this);
     }
 
-    sketchAllowance = () => {
-        this.setState(this.state.isSketchAllowed ? {isSketchAllowed: false} : {isSketchAllowed: true});
+    handlerSketchAllowance = () => {
+        if (this.state.isSketchAllowed) {
+            this.setState({
+                isSketchAllowed: false,
+                btnSketchA: '',
+                btnSketchC: '',
+                btnPencilD: 'disabled',
+                btnLineD: 'disabled',
+                btnCircleD: 'disabled'
+            })
+        } else {
+            this.setState({
+                isSketchAllowed: true,
+                btnSketchA: 'active',
+                btnSketchC: 'btnSketchActive',
+                btnPencilD: '',
+                btnPencilA: 'active',
+                btnLineD: '',
+                btnCircleD: ''
+            })
+        }
+    };
+
+    /**
+     * Handler for changing drawing tool.
+     * Activates the right tool button and deactivates others.
+     * @param {number} tool - Number for assigned tool.
+     */
+    handlerSelectedTool = (tool) => {
+        switch (tool) {
+            case 1: {
+                this.setState({
+                    sketchTool: Tools.Pencil,
+                    btnPencilA: 'active',
+                    btnLineA: '',
+                    btnCircleA: ''
+                });
+                break;
+            }
+            case 2: {
+                this.setState({
+                    sketchTool: Tools.Line,
+                    btnPencilA: '',
+                    btnLineA: 'active',
+                    btnCircleA: ''
+                });
+                break;
+            }
+            case 3: {
+                this.setState({
+                    sketchTool: Tools.Circle,
+                    btnPencilA: '',
+                    btnLineA: '',
+                    btnCircleA: 'active'
+                });
+                break;
+            }
+            default: {
+                this.setState({
+                    sketchTool: Tools.Pencil,
+                    btnPencilA: 'active',
+                    btnLineA: '',
+                    btnCircleA: ''
+                });
+                break;
+            }
+        }
     };
 
     nextStep = () => {
@@ -342,7 +419,7 @@ class Exercise17a extends Component {
         const isSketchAllowed = this.state.isSketchAllowed;
         const sketch = isSketchAllowed ? (
             <div className={"over-component"}>
-                <SketchField width='650px' height='400px' tool={Tools.Pencil} lineColor='#1E88E5' lineWidth={3}/>
+                <SketchField width='650px' height='400px' tool={this.state.sketchTool} lineColor='#1E88E5' lineWidth={3}/>
             </div>
         ) : (<div></div>);
 
@@ -366,22 +443,37 @@ class Exercise17a extends Component {
                                 <Col xs={6} md={6} lg={6}>
                                     <main>
                                         {sketch}
-                                        <div className={"GraphBox"}>
+                                        <div className="GraphBox">
                                             <GraphVis graph={this.state.graphVis} options={this.state.options}
                                                       events={events} style={{width: "650px", height: "400px" }} />
                                         </div>
                                         <M.Context input='tex'>
-                                            <div className={"descriptionBox"}>
+                                            <div className="descriptionBox">
                                                 {this.state.descriptionBox}
                                             </div>
                                         </M.Context>
-                                        <div className={"controls-panel"}>
-                                            <div id="divStepButtons">
-                                                <Button clicked={this.previousStep}><FontAwesomeIcon icon={faChevronLeft} /></Button>
+                                        <div className="controls-panel">
+                                            <span className="step-buttons">
+                                                <Button clicked={this.previousStep}>
+                                                    <FontAwesomeIcon icon={faChevronLeft}/></Button>
                                                 <StepCounter currentStep={this.state.currentStep} stepSum={4} />
-                                                <Button clicked={this.nextStep}><FontAwesomeIcon icon={faChevronRight} /></Button>
-                                                <Button clicked={this.sketchAllowance}><FontAwesomeIcon icon={faPencilAlt} /></Button>
-                                            </div>
+                                                <Button clicked={this.nextStep}>
+                                                    <FontAwesomeIcon icon={faChevronRight}/></Button>
+                                            </span>
+                                            <span className="sketch-buttons">
+                                                <Button clicked={this.handlerSketchAllowance}
+                                                        active={this.state.btnSketchA} addClass={this.state.btnSketchC}>
+                                                    <FontAwesomeIcon icon={faPaintBrush}/></Button>
+                                                <Button clicked={() => this.handlerSelectedTool(1)}
+                                                        active={this.state.btnPencilA} disabled={this.state.btnPencilD}>
+                                                    <FontAwesomeIcon icon={faPencilAlt}/></Button>
+                                                <Button clicked={() => this.handlerSelectedTool(2)}
+                                                        active={this.state.btnLineA} disabled={this.state.btnLineD}>
+                                                    <FontAwesomeIcon icon={faMinus}/></Button>
+                                                <Button clicked={() => this.handlerSelectedTool(3)}
+                                                        active={this.state.btnCircleA} disabled={this.state.btnCircleD}>
+                                                    <FontAwesomeIcon icon={faCircle}/></Button>
+                                            </span>
                                         </div>
                                     </main>
                                 </Col>
