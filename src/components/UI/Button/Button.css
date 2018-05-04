@@ -1,5 +1,10 @@
-.Button {
+.button {
     padding: 10px;
-    margin: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-image: none;
+    background-color: #fafafa;
+    border: 0;
+    font-size: 16px;
 }
 
