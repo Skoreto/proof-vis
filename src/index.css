@@ -1,6 +1,7 @@
 /* ======= Základ ======= */
 html, body {
   min-height: 100%;
+  font-family: 'Roboto', sans-serif;
 }
 body {
   font-size: 14px;
@@ -8,7 +9,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 h1, h2, h3, h4, h5, h6 {
-  font-family: arial, sans-serif;
   font-weight: 400;
 }
 p {
