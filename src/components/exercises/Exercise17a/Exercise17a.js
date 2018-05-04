@@ -154,7 +154,6 @@ class Exercise17a extends Component {
                 btnSketchA: 'active',
                 btnSketchC: 'btnSketchActive',
                 btnPencilD: '',
-                btnPencilA: 'active',
                 btnLineD: '',
                 btnCircleD: ''
             })

@@ -1,12 +1,12 @@
 ﻿/* ======= Základ ======= */
 .wrapper {
   min-height: 100%;
-  margin-bottom: -344px;
+  margin-bottom: -30px;
   /* stejná jako výška patičky */
 }
 .wrapper:after {
   display: block;
-  height: 344px;
+  height: 30px;
   /* musí mít stejnou výšku jako patička */
 }
 .btn {
@@ -144,7 +144,7 @@ aside h3 {
 @media (min-width: 768px) {   
   .wrapper {
     min-height: inherit;
-    margin-bottom: 0;
+    margin-bottom: -30px;
   }
   .wrapper:after {
     content: none;
@@ -154,16 +154,16 @@ aside h3 {
 @media (min-width: 992px) {
   .wrapper {
     min-height: 100%;
-    margin-bottom: -344px;
+    margin-bottom: -30px;
     /* stejná výška jako patička */
   }
   .wrapper:after {
     content: "";
     display: block;
-    height: 324px;
+    height: 30px;
     /* musí mít stejnou výšku jako patička */ 
   }
   .page-wrapper {
-      min-height: 600px;
+      min-height: 700px;
   }
 }
