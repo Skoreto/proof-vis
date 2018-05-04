@@ -11,6 +11,8 @@ import '../../../main.css'
 import PageHeading from "../../../components/UI/PageHeading/PageHeading";
 import Button from '../../../components/UI/Button/Button'
 import StepCounter from '../../../components/UI/StepCounter/StepCounter'
+import FontAwesomeIcon from '@fortawesome/react-fontawesome'
+import faCoffee from '@fortawesome/fontawesome-free-solid/faCoffee'
 
 const locales = {
     cs: {
@@ -375,7 +377,7 @@ class Exercise17a extends Component {
                                             <div id="divStepButtons">
                                                 <Button clicked={this.previousStep}>Předchozí</Button>
                                                 <StepCounter currentStep={this.state.currentStep} stepSum={4} />
-                                                <Button clicked={this.nextStep}>Další</Button>
+                                                <Button clicked={this.nextStep}><FontAwesomeIcon icon={faCoffee} /> Další</Button>
                                                 <Button clicked={this.sketchAllowance}>Kreslit</Button>
                                             </div>
                                         </div>
@@ -387,12 +389,7 @@ class Exercise17a extends Component {
                                             <M.Context input='tex'>
                                                 <div className="bg-warning" id="proofBox">
                                                     <div className={1 === this.state.currentStep ? 'proof-active' : ''}>
-                                                        <p className="text-red"><b>Tvrzení:</b></p>
-                                                        <p>Když v grafu <MN>G</MN> existují dva různé <MN>u</MN>-
-                                                            <MN>v</MN> sledy, tak <MN>G</MN> obsahuje
-                                                        kružnici.</p>
-                                                        <p className="text-blue">Neplatí, protože existuje
-                                                            kontrapříklad.</p>
+                                                        <p>Dané tvrzení neplatí, protože existuje kontra-příklad.</p>
                                                     </div>
                                                     <div className={2 === this.state.currentStep ? 'proof-active' : ''}>
                                                         <p>Existují dva různé <MN>u</MN>-<MN>v</MN> sledy:</p>
