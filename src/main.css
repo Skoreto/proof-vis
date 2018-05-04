@@ -97,8 +97,17 @@
     font-size: 16px;
     text-align: center;
 }
-#divStepButtons {
+.controls-panel {
+    padding: 5px;
     text-align: center;
+}
+.step-buttons Button {
+    padding: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.sketch-buttons {
+    border-left: 1px solid #fafafa;
 }
 /* == CONTEXTOVE MENU UPRAVY VRCHOLU == */
 #operation {
