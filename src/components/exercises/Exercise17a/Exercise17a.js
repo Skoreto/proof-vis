@@ -12,6 +12,24 @@ import PageHeading from "../../../components/UI/PageHeading/PageHeading";
 import Button from '../../../components/UI/Button/Button'
 import StepCounter from '../../../components/UI/StepCounter/StepCounter'
 
+const locales = {
+    cs: {
+        edit: 'Upravit',
+        del: 'Smazat vybrané',
+        back: 'Zpět',
+        addNode: 'Přidat vrchol',
+        addEdge: 'Přidat hranu',
+        editNode: 'Upravit vrchol',
+        editEdge: 'Upravit hranu',
+        addDescription: 'Klikněte do prázdného prostoru pro umístění nového vrcholu.',
+        edgeDescription: 'Táhnutím hrany od vybraného vrcholu ji spojte s jiným vrcholem.',
+        editEdgeDescription: 'Přetáhněte konec hrany na vrchol, se kterým ji chcete spojit.',
+        createEdgeError: 'Nelze připojit hrany ke clusteru.',
+        deleteClusterError: 'Clustery nemohou být smazány.',
+        editClusterError: 'Clustery nemohou být upraveny.'
+    }
+};
+
 class Exercise17a extends Component {
     constructor(props) {
         super(props);
@@ -29,6 +47,8 @@ class Exercise17a extends Component {
                 autoResize: true,
                 height: '100%',
                 width: '100%',
+                locale: 'cs',
+                locales: locales,
                 clickToUse: false,
                 physics: false,
                 layout: {},
@@ -58,6 +78,18 @@ class Exercise17a extends Component {
                 manipulation: {
                     enabled: true,
                     initiallyActive: false,
+                    addNode: function(nodeData, callback) {
+                        // Nastaveni parametru noveho vrcholu
+                        let color = { background:'#FFFF00', border:'#000000' };
+                        let shadow = { enabled: false };
+                        nodeData.shape = 'dot';
+                        nodeData.size = 18;
+                        nodeData.label = null;
+                        nodeData.color = color;
+                        nodeData.borderWidth = 1;
+                        nodeData.shadow = shadow;
+                        callback(nodeData);
+                    },
                     editEdge: true,
                     deleteNode: true,
                     deleteEdge: true,
@@ -79,7 +111,7 @@ class Exercise17a extends Component {
                     navigationButtons: true,
                     selectable: true,
                     selectConnectedEdges: false,
-                    tooltipDelay: 0,
+                    tooltipDelay: 300,
                     zoomView: true
                 }
             },
@@ -95,14 +127,14 @@ class Exercise17a extends Component {
     };
 
     nextStep = () => {
-        if (this.state.currentStep <= 5) {
+        if (this.state.currentStep < 4) {
             if (this.state.currentStep === 0) {
                 this.setState(this.step1);
                 this.setState(this.step1Texts);
             }
 
             if (this.state.currentStep === 1) {
-                this.setState(this.step2);
+                this.step2();
                 let interval1 = setInterval(this.step2, 7000);
                 this.setState({intervals: [interval1]});
                 this.setState(this.step2Texts);
@@ -112,7 +144,7 @@ class Exercise17a extends Component {
                 this.clearAllTimers(this.state);
                 this.setState(this.stepReset);
                 this.setState(this.step1);
-                this.setState(this.step3);
+                this.step3();
                 let interval2 = setInterval(this.step3, 13000);
                 this.setState({intervals: [interval2]});
                 this.setState(this.step3Texts);
@@ -141,7 +173,7 @@ class Exercise17a extends Component {
                 this.clearAllTimers(this.state);
                 this.setState(this.stepReset);
                 this.setState(this.step1);
-                this.setState(this.step2);
+                this.step2();
                 let interval1 = setInterval(this.step2, 7000);
                 this.setState({intervals: [interval1]});
                 this.setState(this.step2Texts);
@@ -317,8 +349,18 @@ class Exercise17a extends Component {
                         <PageHeading headingTitle={"Příklad 17 a)"} breadcrumbsCurrent={"Ostatní příklady"} />
                         <div className="page-content">
                             <Row className="page-row">
-                                <main>
-                                    <Col xs={6} md={6} lg={6}>
+                                <Col xs={12} md={12} lg={12}>
+                                    <M.Context input='tex'>
+                                        <div className="bg-info" id="definition">
+                                            Dokažte, nebo vyvraťte: <cite><q>Když v grafu <MN>G</MN> existují dva
+                                            různé <MN>u</MN>-<MN>v</MN> sledy, tak <MN>G</MN> obsahuje kružnici.</q></cite>
+                                        </div>
+                                    </M.Context>
+                                </Col>
+                            </Row>
+                            <Row className="page-row">
+                                <Col xs={6} md={6} lg={6}>
+                                    <main>
                                         {sketch}
                                         <div className={"GraphBox"}>
                                             <GraphVis graph={this.state.graphVis} options={this.state.options}
@@ -332,40 +374,46 @@ class Exercise17a extends Component {
                                         <div className={"controls-panel"}>
                                             <div id="divStepButtons">
                                                 <Button clicked={this.previousStep}>Předchozí</Button>
-                                                <StepCounter currentStep={this.state.currentStep} stepSum={3} />
+                                                <StepCounter currentStep={this.state.currentStep} stepSum={4} />
                                                 <Button clicked={this.nextStep}>Další</Button>
                                                 <Button clicked={this.sketchAllowance}>Kreslit</Button>
                                             </div>
                                         </div>
-                                    </Col>
-                                </main>
-                                <aside>
-                                    <Col xs={5} md={5} lg={5} smOffset={1} mdOffset={1} lgOffset={1}>
-                                        <M.Context input='tex'>
-                                            <div className="bg-info" id="definition">
-                                                Dokažte, nebo vyvraťte: když v grafu <MN>G</MN> existují dva
-                                                různé <MN>u</MN>-<MN>v</MN> sledy, tak <MN>G</MN> obsahuje kružnici.
-                                            </div>
-                                        </M.Context>
-                                        <br/>
+                                    </main>
+                                </Col>
+                                <Col xs={5} md={5} lg={5} smOffset={1} mdOffset={1} lgOffset={1}>
+                                    <aside>
                                         <div id="divProofContainer">
-                                            <h3>Důkaz</h3>
                                             <M.Context input='tex'>
                                                 <div className="bg-warning" id="proofBox">
-                                                    <p className="text-red"><b>Tvrzení:</b></p>
-                                                    <p>Když v grafu <MN>G</MN> existují dva
-                                                        různé <MN>u</MN>-<MN>v</MN> sledy, tak <MN>G</MN> obsahuje
+                                                    <div className={1 === this.state.currentStep ? 'proof-active' : ''}>
+                                                        <p className="text-red"><b>Tvrzení:</b></p>
+                                                        <p>Když v grafu <MN>G</MN> existují dva různé <MN>u</MN>-
+                                                            <MN>v</MN> sledy, tak <MN>G</MN> obsahuje
                                                         kružnici.</p>
-                                                    <p className="text-blue">Neplatí, protože existuje
-                                                        kontrapříklad.</p>
-                                                    <br />
-                                                    <p>Existují dva různé <MN>u</MN>-<MN>v</MN> sledy:</p>
-                                                    <p id="pCurrent"><MN>S_1 = (u,e_1,w,e_2,v)</MN></p>
+                                                        <p className="text-blue">Neplatí, protože existuje
+                                                            kontrapříklad.</p>
+                                                    </div>
+                                                    <div className={2 === this.state.currentStep ? 'proof-active' : ''}>
+                                                        <p>Existují dva různé <MN>u</MN>-<MN>v</MN> sledy:</p>
+                                                        <p>Příkladem prvního budiž sled <MN>S_1 = (u,e_1,w,e_2,v)</MN>.
+                                                        </p>
+                                                    </div>
+                                                    <div className={3 === this.state.currentStep ? 'proof-active' : ''}>
+                                                        <p>Příkladem druhého může být sled <MN>S_2 = (u,e_1,w,e_1,
+                                                            u,e_1,w,e_2,v)</MN>.</p>
+                                                    </div>
+                                                    <div className={'borderless' +
+                                                    (4 === this.state.currentStep ? ' proof-active' : '')}>
+                                                        <p>Přitom graf <MN>G</MN> neobsahuje kružnici.</p>
+                                                        <p className="text-center">
+                                                            <MN>\dagger</MN> Tím je vyvráceno stanovené tvrzení.</p>
+                                                    </div>
                                                 </div>
                                             </M.Context>
                                         </div>
-                                    </Col>
-                                </aside>
+                                    </aside>
+                                </Col>
                             </Row>
                         </div>
                     </div>

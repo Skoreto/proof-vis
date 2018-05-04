@@ -103,15 +103,6 @@ aside h3 {
   .pull-left {
     float: none !important;
   }
-  .logo {
-    text-align: center;
-  }
-  .header .contact p {
-    text-align: center;
-    margin-right: 0;
-    margin-bottom: 5px;
-    float: none;
-  }
   .header .menu-top {
     text-align: center;
     margin-top: 10px;
