@@ -3,11 +3,12 @@
     background: #264011;
     color: #fff;
     /* Stick to the bottom */
-    height: 30px;
     position: absolute;
-    left: 0;
     bottom: 0;
     width: 100%;
+    height: 10px;
+    line-height: 10px;
+    left: 0;
 }
 .footer ul {
     padding-left: 0;
@@ -43,7 +44,14 @@
 }
 @media (max-width: 767px) {
     .footer {
+        background: #264011;
+        color: #fff;
+        /* Stick to the bottom */
         height: 30px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
     }
     .footer-col-inner {
         /*margin-bottom: 30px;*/
@@ -52,16 +60,28 @@
 /* MQ - Střední úhlopříčka (tablety, 768px a více) */
 @media (min-width: 768px) {
     .footer {
-        height: 30px;
-    }
-    .footer-col-inner {
-        /*margin-bottom: 15px;*/
+        background: #264011;
+        color: #fff;
+        /* Stick to the bottom */
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 10px;
+        line-height: 10px;
+        left: 0;
     }
 }
 /* Velká úhlopříčka (desktopy, 992px a víc) */
 @media (min-width: 992px) {
     .footer {
-        height: auto;
-        /* musí mít stejnou výšku jako patička */
+        background: #264011;
+        color: #fff;
+        /* Stick to the bottom */
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 10px;
+        line-height: 10px;
+        left: 0;
     }
 }
