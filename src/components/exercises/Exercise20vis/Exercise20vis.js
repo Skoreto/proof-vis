@@ -123,7 +123,7 @@ class Exercise20vis extends Component {
             }
 
             if (this.state.currentStep === 5) {
-                this.setState(this.step6);
+                this.step6();
                 let interval1 = setInterval(this.step6, 4000);
                 this.setState({interval1: interval1});
             }

@@ -28,7 +28,7 @@ const CustomNavbar = () => (
                         Příklad 20 (vis.js)
                     </MenuItem>
                     <MenuItem eventKey={1.3} href="/" to="/">Příklad 23</MenuItem>
-                    <MenuItem eventKey={1.4} href="/" to="/">Příklad 26</MenuItem>
+                    <MenuItem eventKey={1.4} href="/priklad26" to="/priklad26">Příklad 26</MenuItem>
                 </NavDropdown>
                 <NavDropdown eventKey={2} title={<span><FontAwesomeIcon icon={faSyncAlt} /> Důkazy nepřímo</span>} id="basic-nav-dropdown" className={"nav-item"}>
                     <MenuItem eventKey={2.1} href="/" to="/">Příklad 21</MenuItem>
