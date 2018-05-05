@@ -269,7 +269,6 @@ class Exercise17a extends Component {
     };
 
     step1 = () => {
-        const description = (<p>Příklad grafu <MN>G</MN></p>);
         return {
             graphVis: {
                 nodes: [
@@ -281,8 +280,7 @@ class Exercise17a extends Component {
                     {id: 1, from: 1, to: 2, label: 'e1' },
                     {id: 2, from: 2, to: 3, label: 'e2' }
                 ]
-            },
-            descriptionBox: description
+            }
         }
     };
 
