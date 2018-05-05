@@ -22,7 +22,7 @@ class App extends Component {
                     <Route path="/priklad26" component={Exercise26} />
                     <Route path="/priklad17a" component={Exercise17a} />
                     {/*<Footer/>*/}
-                    <BottomBar/>
+                    {/*<BottomBar/>*/}
                 </div>
             </BrowserRouter>
         );

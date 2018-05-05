@@ -37,6 +37,8 @@ const locales = {
     }
 };
 
+const eXY = 'e=\\{x,y\\}';
+
 class Exercise26 extends Component {
     constructor(props) {
         super(props);
@@ -59,6 +61,8 @@ class Exercise26 extends Component {
             btnLineD: true,
             btnCircleA: false,
             btnCircleD: true,
+            repeatBoxHidden: true,
+            repeatBoxContent: '',
             options: {
                 autoResize: true,
                 height: '100%',
@@ -83,7 +87,7 @@ class Exercise26 extends Component {
                     color: {color: '#000000', hover: '#000000'},
                     width: 1,
                     dashes: false,
-                    label: undefined,
+                    label: '   ',
                     font: {align: 'top'}
                 },
                 configure: {
@@ -207,7 +211,7 @@ class Exercise26 extends Component {
     };
 
     nextStep = () => {
-        if (this.state.currentStep < 4) {
+        if (this.state.currentStep < 5) {
             if (this.state.currentStep === 0) {
                 this.setState(this.step1);
                 this.setState(this.step1Texts);
@@ -215,12 +219,14 @@ class Exercise26 extends Component {
 
             if (this.state.currentStep === 1) {
                 this.setState(this.step2);
+                this.setState(this.step2Texts);
             }
 
             if (this.state.currentStep === 2) {
                 this.step3();
                 let interval1 = setInterval(this.step3, 3000);
                 this.setState({intervals: [interval1]});
+                // this.setState(this.step3Texts);
             }
 
             if (this.state.currentStep === 3) {
@@ -228,6 +234,13 @@ class Exercise26 extends Component {
                 this.step4();
                 let interval2 = setInterval(this.step4, 3000);
                 this.setState({intervals: [interval2]});
+                this.setState(this.step4Texts);
+            }
+
+            if (this.state.currentStep === 4) {
+                this.clearAllTimers(this.state);
+                this.setState(this.step4a);
+                this.setState(this.step5Texts);
             }
 
             // Increase currentStep after a step was executed
@@ -244,6 +257,7 @@ class Exercise26 extends Component {
             if (this.state.currentStep === 2) {
                 this.setState(this.stepReset);
                 this.setState(this.step1);
+                this.setState(this.step1Texts);
             }
 
             if (this.state.currentStep === 3) {
@@ -261,6 +275,15 @@ class Exercise26 extends Component {
                 this.step3();
                 let interval1 = setInterval(this.step3, 3000);
                 this.setState({intervals: [interval1]});
+                // this.setState(this.step3Texts);
+            }
+
+            if (this.state.currentStep === 5) {
+                this.clearAllTimers(this.state);
+                this.step4();
+                let interval2 = setInterval(this.step4, 3000);
+                this.setState({intervals: [interval2]});
+                this.setState(this.step4Texts);
             }
 
             // Reduce currentStep after a step was executed
@@ -269,22 +292,21 @@ class Exercise26 extends Component {
     };
 
     stepReset = () => {
-        return {graphVis: {nodes: [], edges: []}, descriptionBox: ''}
+        return {graphVis: {nodes: [], edges: []}, descriptionBox: '', repeatBoxHidden: true, repeatBoxContent: ''}
     };
 
     step1 = () => {
-        const description = (<p>Příklad grafu <MN>G</MN></p>);
         return {
             graphVis: {
                 nodes: [
-                    {id: 1, x: 0, y: -120, color: {background: '#ffff08'}},
-                    {id: 2, x: -50, y: -50, color: {background: '#ffff08'}},
-                    {id: 3, x: -100, y: 20, color: {background: '#ffff08'}},
-                    {id: 4, x: 0, y: 20, color: {background: '#ffff08'}},
-                    {id: 5, x: -50, y: 90, color: {background: '#ffff08'}},
-                    {id: 6, x: 50, y: 90, color: {background: '#ffff08'}},
-                    {id: 7, x: 50, y: -50, color: {background: '#ffff08'}},
-                    {id: 8, x: 100, y: 20, color: {background: '#ffff08'}}
+                    {id: 1, x: 0, y: -120, color: {background: '#ffff08'}, label: '   '},
+                    {id: 2, x: -50, y: -50, color: {background: '#ffff08'}, label: '   '},
+                    {id: 3, x: -100, y: 20, color: {background: '#ffff08'}, label: '   '},
+                    {id: 4, x: 0, y: 20, color: {background: '#ffff08'}, label: '   '},
+                    {id: 5, x: -50, y: 90, color: {background: '#ffff08'}, label: '   '},
+                    {id: 6, x: 50, y: 90, color: {background: '#ffff08'}, label: '   '},
+                    {id: 7, x: 50, y: -50, color: {background: '#ffff08'}, label: '   '},
+                    {id: 8, x: 100, y: 20, color: {background: '#ffff08'}, label: '   '}
                 ],
                 edges: [
                     {id: 1, from: 1, to: 2},
@@ -295,14 +317,25 @@ class Exercise26 extends Component {
                     {id: 6, from: 1, to: 7},
                     {id: 7, from: 7, to: 8}
                 ]
-            },
-            descriptionBox: description
+            }
         }
     };
 
     step1Texts = () => {
-        const description = (<p>Příklad grafu <MN>G</MN></p>);
-        return {descriptionBox: description}
+        const description = (<p>Příklad grafu <MN>G</MN>, který je strom</p>);
+        const repeatBox = (
+            <div>
+                <p>VĚTA O STROMECH (4.1)
+                    <br/>Pro každý graf <MN>G=(V,E)</MN> jsou následující podmínky ekvivalentní:</p>
+                <p>
+                    I. graf <MN>G</MN> je strom.<br/>
+                    II. Pro každé dva vrcholy <MN>x,y \in V</MN> existuje
+                    právě jedna cesta z vrcholu <MN>x</MN> do vrcholu <MN>y</MN>.
+                </p>
+            </div>
+        );
+
+        return {descriptionBox: description, repeatBoxHidden: false, repeatBoxContent: repeatBox}
     };
 
     step2 = (state) => {
@@ -317,7 +350,12 @@ class Exercise26 extends Component {
         newEdges = this.updateEdge(newEdges, 4, '#B39DDB', 2, false, undefined);
         newEdges = this.updateEdge(newEdges, 5, '#B39DDB', 2, false, undefined);
 
-        return {graphVis: {nodes: newNodes, edges: newEdges}}
+        return {graphVis: {nodes: newNodes, edges: newEdges}, descriptionBox: ''}
+    };
+
+    step2Texts = () => {
+        const description = (<p>Mezi libovolně zvolenými vrcholy <MN>u,v</MN> existuje jediná cesta.</p>);
+        return {descriptionBox: description}
     };
 
     step3 = () => {
@@ -325,7 +363,7 @@ class Exercise26 extends Component {
         let timeout3a = setTimeout(()=> {this.setState(this.step3a);}, 1000);
         let timeout3b = setTimeout(()=> {this.setState(this.step3b);}, 2000);
 
-        this.setState({timeouts: [timeout3a, timeout3b]});
+        this.setState({timeouts: [timeout3a, timeout3b], repeatBoxHidden: true, repeatBoxContent: ''});
     };
 
     step3a = (state) => {
@@ -342,12 +380,18 @@ class Exercise26 extends Component {
         return {graphVis: {nodes: newNodes, edges: newEdges}}
     };
 
+    step3Texts = () => {
+        const description = (<p style={{fontSize: 15}}>Cesta mezi vrcholy <MN>u,v</MN>, musí vždy vést přes libovolně
+            zvolenou hranu <MN>{eXY}</MN> z této cesty.</p>);
+        return {descriptionBox: description}
+    };
+
     step4 = () => {
         this.setState(this.step3a);
         let timeout4a = setTimeout(()=> {this.setState(this.step4a);}, 1000);
         let timeout4b = setTimeout(()=> {this.setState(this.step3a);}, 2000);
 
-        this.setState({timeouts: [timeout4a, timeout4b]});
+        this.setState({timeouts: [timeout4a, timeout4b], repeatBoxHidden: true, repeatBoxContent: ''});
     };
 
     step4a = (state) => {
@@ -355,6 +399,24 @@ class Exercise26 extends Component {
         newNodes = this.updateNode(newNodes, 3, '#B39DDB', ' y ');
         let newEdges = this.updateEdge(state.graphVis.edges, 2, '#FFFFFF', 2, false, '   ');
         return {graphVis: {nodes: newNodes, edges: newEdges}}
+    };
+
+    step4Texts = () => {
+        const description = (<p>Odebráním hrany <MN>e</MN> se vrcholy <MN>u</MN> a <MN>v</MN> ocitnou v různých
+            komponentách souvislosti.</p>);
+        return {descriptionBox: description}
+    };
+
+    step5Texts = () => {
+        const description = (<p>Graf <MN>G-e</MN> není souvislý a není tedy ani stromem.</p>);
+        const repeatBox = (
+            <div>
+                <p>DEFINICE STROMU (4.3)<br/>
+                    Strom je <u>souvislý</u> graf, který neobsahuje kružnici.</p>
+            </div>
+        );
+
+        return {descriptionBox: description, repeatBoxHidden: false, repeatBoxContent: repeatBox}
     };
 
     render() {
@@ -407,7 +469,7 @@ class Exercise26 extends Component {
                                             <span className="step-buttons">
                                                 <Button clicked={this.previousStep}>
                                                     <FontAwesomeIcon icon={faChevronLeft}/></Button>
-                                                <StepCounter currentStep={this.state.currentStep} stepSum={4} />
+                                                <StepCounter currentStep={this.state.currentStep} stepSum={5} />
                                                 <Button clicked={this.nextStep}>
                                                     <FontAwesomeIcon icon={faChevronRight}/></Button>
                                             </span>
@@ -433,24 +495,47 @@ class Exercise26 extends Component {
                                         <div id="divProofContainer">
                                             <M.Context input='tex'>
                                                 <div className="bg-warning" id="proofBox">
-                                                    <div className={1 === this.state.currentStep ? 'proof-active' : ''}>
-                                                        <p>Dané tvrzení neplatí, protože existuje kontra-příklad.</p>
-                                                    </div>
-                                                    <div className={2 === this.state.currentStep ? 'proof-active' : ''}>
-                                                        <p>Existují dva různé <MN>u</MN>-<MN>v</MN> sledy:</p>
-                                                        <p>Příkladem prvního budiž sled <MN>S_1 = (u,e_1,w,e_2,v)</MN>.
+                                                    <div className={(1 === this.state.currentStep) ||
+                                                    (2 === this.state.currentStep) ? 'proof-active' : ''}>
+                                                        <p>Pokud graf <MN>G</MN> je strom <br/>
+                                                            <MN>\Rightarrow</MN> pak dle věty o stromech platí, že pro
+                                                            každé dva vrcholy v grafu <MN>G</MN> existuje jediná cesta.
                                                         </p>
                                                     </div>
+                                                    {/*<div className={2 === this.state.currentStep ? 'proof-active' : ''}>*/}
+                                                        {/*<p>Mezi libovolně zvolenými vrcholy <MN>u</MN> a <MN>v</MN> existuje jediná cesta.</p>*/}
+                                                    {/*</div>*/}
                                                     <div className={3 === this.state.currentStep ? 'proof-active' : ''}>
-                                                        <p>Příkladem druhého může být sled <MN>S_2 = (u,e_1,w,e_1,
-                                                            u,e_1,w,e_2,v)</MN>.</p>
+                                                        <p><MN>\Rightarrow</MN> Protože existuje právě jediná cesta mezi
+                                                            vrcholy <MN>u,v</MN>, musí vždy vést přes libovolně
+                                                            zvolenou hranu <MN>{eXY}</MN> z této cesty.</p>
+                                                    </div>
+                                                    <div className={4 === this.state.currentStep ? ' proof-active' : ''}>
+                                                        <p>
+                                                            <MN>\Rightarrow</MN> v <MN>G-e</MN> neexistuje
+                                                            cesta <MN>u</MN>-<MN>v</MN>
+                                                            <br/><MN>\Rightarrow</MN> vrcholy <MN>u</MN>,<MN>v</MN> se
+                                                            v <MN>G-e</MN> nacházejí v různých komponentách souvislosti
+                                                        </p>
                                                     </div>
                                                     <div className={'borderless' +
-                                                    (4 === this.state.currentStep ? ' proof-active' : '')}>
-                                                        <p>Přitom graf <MN>G</MN> neobsahuje kružnici.</p>
+                                                    (5 === this.state.currentStep ? ' proof-active' : '')}>
+                                                        <p>
+                                                            <MN>\Rightarrow</MN> <MN>G-e</MN> není souvislý
+                                                            <br/><MN>\Rightarrow</MN> z definice stromu platí,
+                                                            že <MN>G-e</MN> není strom
+                                                        </p>
                                                         <p className="text-center">
-                                                            <MN>\dagger</MN> Tím je vyvráceno stanovené tvrzení.</p>
+                                                            <MN>\dagger</MN> Tím je dokázáno stanovené tvrzení.
+                                                        </p>
                                                     </div>
+                                                </div>
+                                            </M.Context>
+                                        </div>
+                                        <div className={'repeat-box'} hidden={this.state.repeatBoxHidden}>
+                                            <M.Context input='tex'>
+                                                <div>
+                                                    {this.state.repeatBoxContent}
                                                 </div>
                                             </M.Context>
                                         </div>
