@@ -51,14 +51,14 @@ class Exercise17a extends Component {
             isSketchAllowed: false,
             sketchTool: Tools.Pencil,
             descriptionBox: '',
-            btnSketchA: '',
+            btnSketchA: false,
             btnSketchC: '',
-            btnPencilA: '',
-            btnPencilD: 'disabled',
-            btnLineA: '',
-            btnLineD: 'disabled',
-            btnCircleA: '',
-            btnCircleD: 'disabled',
+            btnPencilA: false,
+            btnPencilD: true,
+            btnLineA: false,
+            btnLineD: true,
+            btnCircleA: false,
+            btnCircleD: true,
             options: {
                 autoResize: true,
                 height: '100%',
@@ -77,8 +77,8 @@ class Exercise17a extends Component {
                 },
                 edges: {
                     arrows: {
-                        to: {enabled: false},
-                        from: {enabled: false}
+                        to: {enabled: false, scaleFactor: 2},
+                        from: {enabled: false, scaleFactor: 2}
                     },
                     color: {color: '#000000', hover: '#000000'},
                     width: 1,
@@ -142,20 +142,20 @@ class Exercise17a extends Component {
         if (this.state.isSketchAllowed) {
             this.setState({
                 isSketchAllowed: false,
-                btnSketchA: '',
+                btnSketchA: false,
                 btnSketchC: '',
-                btnPencilD: 'disabled',
-                btnLineD: 'disabled',
-                btnCircleD: 'disabled'
+                btnPencilD: true,
+                btnLineD: true,
+                btnCircleD: true
             })
         } else {
             this.setState({
                 isSketchAllowed: true,
-                btnSketchA: 'active',
+                btnSketchA: true,
                 btnSketchC: 'btnSketchActive',
-                btnPencilD: '',
-                btnLineD: '',
-                btnCircleD: ''
+                btnPencilD: false,
+                btnLineD: false,
+                btnCircleD: false
             })
         }
     };
@@ -170,36 +170,36 @@ class Exercise17a extends Component {
             case 1: {
                 this.setState({
                     sketchTool: Tools.Pencil,
-                    btnPencilA: 'active',
-                    btnLineA: '',
-                    btnCircleA: ''
+                    btnPencilA: true,
+                    btnLineA: false,
+                    btnCircleA: false
                 });
                 break;
             }
             case 2: {
                 this.setState({
                     sketchTool: Tools.Line,
-                    btnPencilA: '',
-                    btnLineA: 'active',
-                    btnCircleA: ''
+                    btnPencilA: false,
+                    btnLineA: true,
+                    btnCircleA: false
                 });
                 break;
             }
             case 3: {
                 this.setState({
                     sketchTool: Tools.Circle,
-                    btnPencilA: '',
-                    btnLineA: '',
-                    btnCircleA: 'active'
+                    btnPencilA: false,
+                    btnLineA: false,
+                    btnCircleA: true
                 });
                 break;
             }
             default: {
                 this.setState({
                     sketchTool: Tools.Pencil,
-                    btnPencilA: 'active',
-                    btnLineA: '',
-                    btnCircleA: ''
+                    btnPencilA: true,
+                    btnLineA: false,
+                    btnCircleA: false
                 });
                 break;
             }
@@ -215,7 +215,7 @@ class Exercise17a extends Component {
 
             if (this.state.currentStep === 1) {
                 this.step2();
-                let interval1 = setInterval(this.step2, 7000);
+                let interval1 = setInterval(this.step2, 8000);
                 this.setState({intervals: [interval1]});
                 this.setState(this.step2Texts);
             }
@@ -225,7 +225,7 @@ class Exercise17a extends Component {
                 this.setState(this.stepReset);
                 this.setState(this.step1);
                 this.step3();
-                let interval2 = setInterval(this.step3, 13000);
+                let interval2 = setInterval(this.step3, 14000);
                 this.setState({intervals: [interval2]});
                 this.setState(this.step3Texts);
             }
@@ -254,7 +254,7 @@ class Exercise17a extends Component {
                 this.setState(this.stepReset);
                 this.setState(this.step1);
                 this.step2();
-                let interval1 = setInterval(this.step2, 7000);
+                let interval1 = setInterval(this.step2, 8000);
                 this.setState({intervals: [interval1]});
                 this.setState(this.step2Texts);
             }
@@ -301,7 +301,7 @@ class Exercise17a extends Component {
             this.setState(this.stepReset);
             this.setState(this.step1);
             this.setState(this.step2Texts);
-        }, 6000);
+        }, 7000);
 
         this.setState({timeouts: [timeout2a, timeout2b, timeout2c, timeout2d, timeout2e, timeout2f]});
     };
@@ -354,7 +354,7 @@ class Exercise17a extends Component {
             this.setState(this.stepReset);
             this.setState(this.step1);
             this.setState(this.step3Texts);
-        }, 12000);
+        }, 13000);
 
         this.setState({timeouts: [timeout3a, timeout3b, timeout3c, timeout3d, timeout3e, timeout3f, timeout3g,
                 timeout3h, timeout3i, timeout3j, timeout3k, timeout3l]});
