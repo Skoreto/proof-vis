@@ -1,7 +1,7 @@
 import GraphVis from 'react-graph-vis'
 import React, {Component} from 'react';
 import {Row, Col, ListGroup, ListGroupItem} from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import {BrowserRouter, Link} from 'react-router-dom';
 import {SketchField, Tools} from 'react-sketch';
 import '../../../App.css';
 import '../../../customMainTheme.css'
@@ -277,26 +277,28 @@ class Overview extends Component {
                                 </Col>
                                 <Col xs={5} md={5} lg={5} smOffset={1} mdOffset={1} lgOffset={1}>
                                     <aside>
-                                        <div>
-                                            <ListGroup>
-                                                <ListGroupItem bsStyle="success">Důkazy přímo</ListGroupItem>
-                                                <ListGroupItem componentClass={Link} href="/priklad26" to="/priklad26">
-                                                    Příklad 26
-                                                </ListGroupItem>
-                                            </ListGroup>
-                                            <ListGroup>
-                                                <ListGroupItem bsStyle="warning">Důkazy nepřímo</ListGroupItem>
-                                            </ListGroup>
-                                            <ListGroup>
-                                                <ListGroupItem bsStyle="danger">Důkazy sporem</ListGroupItem>
-                                            </ListGroup>
-                                            <ListGroup>
-                                                <ListGroupItem bsStyle="info">Ostatní</ListGroupItem>
-                                                <ListGroupItem componentClass={Link} href="/priklad17a" to="/priklad17a">
-                                                    Příklad 17 a)
-                                                </ListGroupItem>
-                                            </ListGroup>
-                                        </div>
+                                        <BrowserRouter basename={process.env.PUBLIC_URL}>
+                                            <div>
+                                                <ListGroup>
+                                                    <ListGroupItem bsStyle="success">Důkazy přímo</ListGroupItem>
+                                                    <ListGroupItem componentClass={Link} href="/priklad26" to="/priklad26">
+                                                        Příklad 26
+                                                    </ListGroupItem>
+                                                </ListGroup>
+                                                <ListGroup>
+                                                    <ListGroupItem bsStyle="warning">Důkazy nepřímo</ListGroupItem>
+                                                </ListGroup>
+                                                <ListGroup>
+                                                    <ListGroupItem bsStyle="danger">Důkazy sporem</ListGroupItem>
+                                                </ListGroup>
+                                                <ListGroup>
+                                                    <ListGroupItem bsStyle="info">Ostatní</ListGroupItem>
+                                                    <ListGroupItem componentClass={Link} href="/priklad17a" to="/priklad17a">
+                                                        Příklad 17 a)
+                                                    </ListGroupItem>
+                                                </ListGroup>
+                                            </div>
+                                        </BrowserRouter>
                                     </aside>
                                 </Col>
                             </Row>
