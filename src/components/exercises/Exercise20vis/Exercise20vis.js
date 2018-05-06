@@ -1,6 +1,6 @@
 import GraphVis from 'react-graph-vis'
 import React, {Component} from 'react';
-import {updateNode, updateEdge} from '../../../functionality/GraphFunctions'
+import {updateNode, updateEdge, updateEdgeWithArrow, clearAllTimers} from '../../../functionality/GraphFunctions'
 import {Row, Col} from 'react-bootstrap';
 import {SketchField, Tools} from 'react-sketch';
 import M from 'react-mathjax2';
@@ -11,12 +11,33 @@ import '../../../main.css'
 import PageHeading from "../../../components/UI/PageHeading/PageHeading";
 import Button from '../../../components/UI/Button/Button'
 import StepCounter from '../../../components/UI/StepCounter/StepCounter'
+import FontAwesomeIcon from '@fortawesome/react-fontawesome'
+import faChevronRight from '@fortawesome/fontawesome-free-solid/faChevronRight'
+import faChevronLeft from '@fortawesome/fontawesome-free-solid/faChevronLeft'
+import faPaintBrush from '@fortawesome/fontawesome-free-solid/faPaintBrush'
+import faPencilAlt from '@fortawesome/fontawesome-free-solid/faPencilAlt'
+import faMinus from '@fortawesome/fontawesome-free-solid/faMinus'
+import faCircle from '@fortawesome/fontawesome-free-solid/faCircleNotch'
 
-const events = {
-    select: function(event) {
-        let { nodes, edges } = event;
+const locales = {
+    cs: {
+        edit: 'Upravit',
+        del: 'Smazat vybrané',
+        back: 'Zpět',
+        addNode: 'Přidat vrchol',
+        addEdge: 'Přidat hranu',
+        editNode: 'Upravit vrchol',
+        editEdge: 'Upravit hranu',
+        addDescription: 'Klikněte do prázdného prostoru pro umístění nového vrcholu.',
+        edgeDescription: 'Táhnutím hrany od vybraného vrcholu ji spojte s jiným vrcholem.',
+        editEdgeDescription: 'Přetáhněte konec hrany na vrchol, se kterým ji chcete spojit.',
+        createEdgeError: 'Nelze připojit hrany ke clusteru.',
+        deleteClusterError: 'Clustery nemohou být smazány.',
+        editClusterError: 'Clustery nemohou být upraveny.'
     }
 };
+
+const eXY = 'e=\\{x,y\\}';
 
 class Exercise20vis extends Component {
     constructor(props) {
@@ -27,12 +48,29 @@ class Exercise20vis extends Component {
                 edges: []
             },
             timeouts: [],
+            intervals: [],
             currentStep: 0,
             isSketchAllowed: false,
+            sketchTool: Tools.Pencil,
+            descriptionBox: '',
+            btnPrevD: true,
+            btnNextD: false,
+            btnSketchA: false,
+            btnSketchC: '',
+            btnPencilA: false,
+            btnPencilD: true,
+            btnLineA: false,
+            btnLineD: true,
+            btnCircleA: false,
+            btnCircleD: true,
+            repeatBoxHidden: true,
+            repeatBoxContent: '',
             options: {
                 autoResize: true,
                 height: '100%',
                 width: '100%',
+                locale: 'cs',
+                locales: locales,
                 clickToUse: false,
                 physics: false,
                 layout: {},
@@ -40,18 +78,19 @@ class Exercise20vis extends Component {
                     shape: 'circle',
                     color: {background: '#ffff08', border: '#000000'},
                     label: '   ',
-                    margin: 10,
-                    font: {size: 16, }
+                    margin: 12,
+                    font: {size: 18}
                 },
                 edges: {
                     arrows: {
-                        to: {enabled: false}
+                        to: {enabled: false, scaleFactor: 2},
+                        from: {enabled: false, scaleFactor: 2}
                     },
                     color: {color: '#000000', hover: '#000000'},
                     width: 1,
                     dashes: false,
-                    label: undefined,
-                    font: {align: 'top'}
+                    label: '   ',
+                    font: {align: 'top', size: 18}
                 },
                 configure: {
                     enabled: false,
@@ -61,6 +100,18 @@ class Exercise20vis extends Component {
                 manipulation: {
                     enabled: true,
                     initiallyActive: false,
+                    addNode: function(nodeData, callback) {
+                        // Nastaveni parametru noveho vrcholu
+                        let color = { background:'#FFFF00', border:'#000000' };
+                        let shadow = { enabled: false };
+                        nodeData.shape = 'dot';
+                        nodeData.size = 18;
+                        nodeData.label = null;
+                        nodeData.color = color;
+                        nodeData.borderWidth = 1;
+                        nodeData.shadow = shadow;
+                        callback(nodeData);
+                    },
                     editEdge: true,
                     deleteNode: true,
                     deleteEdge: true,
@@ -82,22 +133,95 @@ class Exercise20vis extends Component {
                     navigationButtons: true,
                     selectable: true,
                     selectConnectedEdges: false,
-                    tooltipDelay: 0,
+                    tooltipDelay: 300,
                     zoomView: true
                 }
             },
         };
         this.updateNode = updateNode.bind(this);
         this.updateEdge = updateEdge.bind(this);
+        this.updateEdgeWithArrow = updateEdgeWithArrow.bind(this);
+        this.clearAllTimers = clearAllTimers.bind(this);
     }
 
-    sketchAllowance = () => {
-        this.setState(this.state.isSketchAllowed ? {isSketchAllowed: false} : {isSketchAllowed: true});
+    /**
+     * Handler for activating drawing over graph.
+     * @param state - State of the component.
+     */
+    handlerSketchAllowance = (state) => {
+        if (state.isSketchAllowed) {
+            this.setState({
+                isSketchAllowed: false,
+                btnSketchA: false,
+                btnSketchC: '',
+                btnPencilD: true,
+                btnLineD: true,
+                btnCircleD: true
+            })
+        } else {
+            const isAnyToolActive = state.btnLineA || state.btnCircleA;
+            this.setState({
+                isSketchAllowed: true,
+                btnSketchA: true,
+                btnSketchC: 'btnSketchActive',
+                btnPencilA: !isAnyToolActive,
+                btnPencilD: false,
+                btnLineD: false,
+                btnCircleD: false
+            })
+        }
+    };
+
+    /**
+     * Handler for changing drawing tool.
+     * Activates the right tool button and deactivates others.
+     * @param {number} tool - Number for assigned tool.
+     */
+    handlerSelectedTool = (tool) => {
+        switch (tool) {
+            case 1: {
+                this.setState({
+                    sketchTool: Tools.Pencil,
+                    btnPencilA: true,
+                    btnLineA: false,
+                    btnCircleA: false
+                });
+                break;
+            }
+            case 2: {
+                this.setState({
+                    sketchTool: Tools.Line,
+                    btnPencilA: false,
+                    btnLineA: true,
+                    btnCircleA: false
+                });
+                break;
+            }
+            case 3: {
+                this.setState({
+                    sketchTool: Tools.Circle,
+                    btnPencilA: false,
+                    btnLineA: false,
+                    btnCircleA: true
+                });
+                break;
+            }
+            default: {
+                this.setState({
+                    sketchTool: Tools.Pencil,
+                    btnPencilA: true,
+                    btnLineA: false,
+                    btnCircleA: false
+                });
+                break;
+            }
+        }
     };
 
     nextStep = () => {
         if (this.state.currentStep <= 5) {
             if (this.state.currentStep === 0) {
+                this.setState({btnPrevD: false});
                 this.setState(this.step1);
             }
 
@@ -123,6 +247,7 @@ class Exercise20vis extends Component {
             }
 
             if (this.state.currentStep === 5) {
+                this.setState({btnNextD: true});
                 this.step6();
                 let interval1 = setInterval(this.step6, 4000);
                 this.setState({interval1: interval1});
@@ -136,6 +261,7 @@ class Exercise20vis extends Component {
     previousStep = () => {
         if (this.state.currentStep > 0) {
             if (this.state.currentStep === 1) {
+                this.setState({btnPrevD: true});
                 this.setState(this.stepReset);
             }
 
@@ -165,6 +291,7 @@ class Exercise20vis extends Component {
             }
 
             if (this.state.currentStep === 6) {
+                this.setState({btnNextD: false});
                 clearInterval(this.state.interval1);
                 this.clearAllTimers(this.state);
                 this.setState(this.stepReset);
@@ -177,25 +304,8 @@ class Exercise20vis extends Component {
         }
     };
 
-    /**
-     * Clears all used Timeouts and Intervals.
-     * @param state
-     */
-    clearAllTimers = (state) => {
-        if (state.timeouts.length > 0) {
-            state.timeouts.forEach(function (value, index) {
-                clearTimeout(value);
-            });
-        }
-    };
-
     stepReset = () => {
-        return {
-            graphVis: {
-                nodes: [],
-                edges: []
-            }
-        }
+        return {graphVis: {nodes: [], edges: []}, descriptionBox: '', repeatBoxHidden: true, repeatBoxContent: ''}
     };
 
     step1 = () => {
@@ -227,12 +337,7 @@ class Exercise20vis extends Component {
 
         let newEdges = this.updateEdge(state.graphVis.edges, 2, '#000000', 1, false, ' e ');
 
-        return {
-            graphVis: {
-                nodes: newNodes,
-                edges: newEdges
-            }
-        }
+        return {graphVis: {nodes: newNodes, edges: newEdges}}
     };
 
     step3 = (state) => {
@@ -245,12 +350,7 @@ class Exercise20vis extends Component {
         newEdges = this.updateEdge(newEdges, 2, '#B39DDB', 2, [8, 8], ' e ');
         newEdges = this.updateEdge(newEdges, 4, '#B39DDB', 2, false, undefined);
 
-        return {
-            graphVis: {
-                nodes: newNodes,
-                edges: newEdges
-            }
-        }
+        return {graphVis: {nodes: newNodes, edges: newEdges}}
     };
 
     step4 = (state) => {
@@ -265,12 +365,7 @@ class Exercise20vis extends Component {
         newEdges = this.updateEdge(newEdges, 2, 'red', 2, [8, 8], ' e ');
         newEdges = this.updateEdge(newEdges, 3, '#B39DDB', 2, false, undefined);
 
-        return {
-            graphVis: {
-                nodes: newNodes,
-                edges: newEdges
-            }
-        }
+        return {graphVis: {nodes: newNodes, edges: newEdges}}
     };
 
     step5 = (state) => {
@@ -284,12 +379,7 @@ class Exercise20vis extends Component {
         newEdges = this.updateEdge(newEdges, 3, '#81C784', 2, false, undefined);
         newEdges = this.updateEdge(newEdges, 4, '#81C784', 2, false, undefined);
 
-        return {
-            graphVis: {
-                nodes: newNodes,
-                edges: newEdges
-            }
-        }
+        return {graphVis: {nodes: newNodes, edges: newEdges}}
     };
 
     step6 = () => {
@@ -306,31 +396,21 @@ class Exercise20vis extends Component {
 
     step6a = (state) => {
         let newEdges = this.updateEdge(state.graphVis.edges, 2, '#81C784', 2, false, ' e ');
-
-        return {
-            graphVis: {
-                nodes: state.graphVis.nodes,
-                edges: newEdges
-            }
-        }
+        return {graphVis: {nodes: state.graphVis.nodes, edges: newEdges}}
     };
 
     step6b = (state) => {
         let newEdges = this.updateEdge(state.graphVis.edges, 2, 'red', 2, [8, 8], ' e ');
-
-        return {
-            graphVis: {
-                nodes: state.graphVis.nodes,
-                edges: newEdges
-            }
-        }
+        return {graphVis: {nodes: state.graphVis.nodes, edges: newEdges}}
     };
 
     render() {
+        const events = {};
+
         const isSketchAllowed = this.state.isSketchAllowed;
         const sketch = isSketchAllowed ? (
             <div className={"over-component"}>
-                <SketchField width='650px' height='400px' tool={Tools.Pencil} lineColor='#1E88E5' lineWidth={3}/>
+                <SketchField width='650px' height='400px' tool={this.state.sketchTool} lineColor='#1E88E5' lineWidth={3}/>
             </div>
         ) : (<div></div>);
 
@@ -338,42 +418,101 @@ class Exercise20vis extends Component {
             <div>
                 <div className={"container"}>
                     <div className="page-wrapper">
-                        <PageHeading headingTitle={"Příklad 20 (vis.js)"} breadcrumbsCurrent={"Důkazy přímo"} />
+                        <PageHeading headingTitle={"Příklad 20"} breadcrumbsCurrent={"Důkazy přímo"} />
                         <div className="page-content">
                             <Row className="page-row">
-                                <main>
-                                    <Col xs={6} md={6} lg={6}>
+                                <Col xs={12} md={12} lg={12}>
+                                    <M.Context input='tex'>
+                                        <div className="bg-info" id="definition">
+                                            <cite><q>Nechť <MN>G</MN> je souvislý graf. Jestliže <MN>e</MN> není most
+                                            v <MN>G</MN>, pak v <MN>G</MN> existuje kružnice obsahující
+                                            hranu <MN>e</MN>.</q></cite> Dokažte přímo.
+                                        </div>
+                                    </M.Context>
+                                </Col>
+                            </Row>
+                            <Row className="page-row">
+                                <Col xs={6} md={6} lg={6}>
+                                    <main>
                                         {sketch}
-                                        <div className={"GraphBox"}>
+                                        <div className="GraphBox">
                                             <GraphVis graph={this.state.graphVis} options={this.state.options}
                                                       events={events} style={{width: "650px", height: "400px" }} />
                                         </div>
-                                        <div className={"controls-panel"}>
-                                            <div id="divStepButtons">
-                                                <Button clicked={this.previousStep}>Předchozí</Button>
-                                                <StepCounter currentStep={this.state.currentStep} stepSum={6} />
-                                                <Button clicked={this.nextStep}>Další</Button>
-                                                <Button clicked={this.sketchAllowance}>Kreslit</Button>
-                                            </div>
-                                        </div>
-                                    </Col>
-                                </main>
-                                <aside>
-                                    <Col xs={5} md={5} lg={5} smOffset={1} mdOffset={1} lgOffset={1}>
                                         <M.Context input='tex'>
-                                            <div className="bg-info" id="definition">
-                                                Nechť <MN>G</MN> je souvislý graf. Jestliže <MN>e</MN> není most
-                                                v <MN>G</MN>, pak v <MN>G</MN> existuje kružnice obsahující
-                                                hranu <MN>e</MN>. Dokažte přímo.
+                                            <div className="descriptionBox">
+                                                {this.state.descriptionBox}
                                             </div>
                                         </M.Context>
-                                        <br/>
-                                        <div id="divProofContainer">
-                                            <h3>Důkaz přímo</h3>
-                                            <div className="bg-warning" id="proofBox"></div>
+                                        <div className="controls-panel">
+                                            <span className="step-panel">
+                                                <Button clicked={this.previousStep} disabled={this.state.btnPrevD}>
+                                                    <FontAwesomeIcon icon={faChevronLeft}/></Button>
+                                                <StepCounter currentStep={this.state.currentStep} stepSum={6} />
+                                                <Button clicked={this.nextStep} disabled={this.state.btnNextD}>
+                                                    <FontAwesomeIcon icon={faChevronRight}/></Button>
+                                            </span>
+                                            <span className="sketch-buttons">
+                                                <Button clicked={() => this.handlerSketchAllowance(this.state)}
+                                                        active={this.state.btnSketchA} addClass={this.state.btnSketchC}>
+                                                    <FontAwesomeIcon icon={faPaintBrush}/></Button>
+                                                <Button clicked={() => this.handlerSelectedTool(1)}
+                                                        active={this.state.btnPencilA} disabled={this.state.btnPencilD}>
+                                                    <FontAwesomeIcon icon={faPencilAlt}/></Button>
+                                                <Button clicked={() => this.handlerSelectedTool(2)}
+                                                        active={this.state.btnLineA} disabled={this.state.btnLineD}>
+                                                    <FontAwesomeIcon icon={faMinus}/></Button>
+                                                <Button clicked={() => this.handlerSelectedTool(3)}
+                                                        active={this.state.btnCircleA} disabled={this.state.btnCircleD}>
+                                                    <FontAwesomeIcon icon={faCircle}/></Button>
+                                            </span>
                                         </div>
-                                    </Col>
-                                </aside>
+                                    </main>
+                                </Col>
+                                <Col xs={5} md={5} lg={5} smOffset={1} mdOffset={1} lgOffset={1}>
+                                    <aside>
+                                        <div id="divProofContainer">
+                                            <M.Context input='tex'>
+                                                <div className="bg-warning" id="proofBox">
+                                                    <div className={1 === this.state.currentStep ? 'proof-active' : ''}>
+                                                        <p>
+                                                            Pokud <MN>{eXY}</MN> není most v <MN>G</MN>, poté z definice
+                                                            mostu platí, že graf <MN>G-e</MN> má stejný počet komponent
+                                                            jako <MN>G</MN> a platí:
+                                                        </p>
+                                                    </div>
+                                                    <div className={2 === this.state.currentStep ? 'proof-active' : ''}>
+                                                        <p>Mezi libovolně zvolenými vrcholy <MN>u</MN> a <MN>v</MN> existuje jediná cesta.</p>
+                                                        <p><MN>\forall u,v \in V(G):</MN> Když
+                                                            existuje <MN>u-v</MN> cesta <MN>P</MN> v <MN>G</MN>, tak
+                                                            existuje <MN>u-v</MN> cesta <MN>P'</MN> v <MN>G-e</MN> (pozn
+                                                            .: <MN>P'</MN> se nemusí nutně <MN>=P</MN>)</p>
+                                                    </div>
+                                                    <div className={3 === this.state.currentStep ? 'proof-active' : ''}>
+
+                                                    </div>
+                                                    <div className={4 === this.state.currentStep ? ' proof-active' : ''}>
+
+                                                    </div>
+                                                    <div className={'borderless' +
+                                                    (5 === this.state.currentStep ? ' proof-active' : '')}>
+
+                                                        <p className="text-center">
+                                                            <MN>\dagger</MN> Tím je dokázáno stanovené tvrzení.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </M.Context>
+                                        </div>
+                                        <div className={'repeat-box'} hidden={this.state.repeatBoxHidden}>
+                                            <M.Context input='tex'>
+                                                <div>
+                                                    {this.state.repeatBoxContent}
+                                                </div>
+                                            </M.Context>
+                                        </div>
+                                    </aside>
+                                </Col>
                             </Row>
                         </div>
                     </div>
