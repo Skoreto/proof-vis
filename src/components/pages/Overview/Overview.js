@@ -90,7 +90,7 @@ class Overview extends Component {
                 },
                 manipulation: {
                     enabled: true,
-                    initiallyActive: false,
+                    initiallyActive: true,
                     addNode: function(nodeData, callback) {
                         // Nastaveni parametru noveho vrcholu
                         let color = { background:'#FFFF00', border:'#000000' };
@@ -281,7 +281,7 @@ class Overview extends Component {
                                             <div>
                                                 <ListGroup>
                                                     <ListGroupItem bsStyle="success">Důkazy přímo</ListGroupItem>
-                                                    <ListGroupItem componentClass={Link} href="/priklad26" to="/priklad26">
+                                                    <ListGroupItem>
                                                         Příklad 26
                                                     </ListGroupItem>
                                                 </ListGroup>
@@ -293,7 +293,7 @@ class Overview extends Component {
                                                 </ListGroup>
                                                 <ListGroup>
                                                     <ListGroupItem bsStyle="info">Ostatní</ListGroupItem>
-                                                    <ListGroupItem componentClass={Link} href="/priklad17a" to="/priklad17a">
+                                                    <ListGroupItem>
                                                         Příklad 17 a)
                                                     </ListGroupItem>
                                                 </ListGroup>
