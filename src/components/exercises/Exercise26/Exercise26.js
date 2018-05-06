@@ -144,6 +144,10 @@ class Exercise26 extends Component {
         this.clearAllTimers = clearAllTimers.bind(this);
     }
 
+    /**
+     * Handler for activating drawing over graph.
+     * @param state - State of the component.
+     */
     handlerSketchAllowance = (state) => {
         if (state.isSketchAllowed) {
             this.setState({
