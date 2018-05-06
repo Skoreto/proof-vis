@@ -51,6 +51,8 @@ class Exercise17a extends Component {
             isSketchAllowed: false,
             sketchTool: Tools.Pencil,
             descriptionBox: '',
+            btnPrevD: true,
+            btnNextD: false,
             btnSketchA: false,
             btnSketchC: '',
             btnPencilA: false,
@@ -211,6 +213,7 @@ class Exercise17a extends Component {
     nextStep = () => {
         if (this.state.currentStep < 4) {
             if (this.state.currentStep === 0) {
+                this.setState({btnPrevD: false});
                 this.setState(this.step1);
                 this.setState(this.step1Texts);
             }
@@ -232,6 +235,10 @@ class Exercise17a extends Component {
                 this.setState(this.step3Texts);
             }
 
+            if (this.state.currentStep === 3) {
+                this.setState({btnNextD: true});
+            }
+
             // Increase currentStep after a step was executed
             this.setState((state) => {return {currentStep: ++state.currentStep}});
         }
@@ -240,6 +247,7 @@ class Exercise17a extends Component {
     previousStep = () => {
         if (this.state.currentStep > 0) {
             if (this.state.currentStep === 1) {
+                this.setState({btnPrevD: true});
                 this.clearAllTimers(this.state);
                 this.setState(this.stepReset);
             }
@@ -252,6 +260,7 @@ class Exercise17a extends Component {
             }
 
             if (this.state.currentStep === 3) {
+                this.setState({btnNextD: false});
                 this.clearAllTimers(this.state);
                 this.setState(this.stepReset);
                 this.setState(this.step1);
@@ -259,6 +268,10 @@ class Exercise17a extends Component {
                 let interval1 = setInterval(this.step2, 8000);
                 this.setState({intervals: [interval1]});
                 this.setState(this.step2Texts);
+            }
+
+            if (this.state.currentStep === 4) {
+                this.setState({btnNextD: false});
             }
 
             // Reduce currentStep after a step was executed
@@ -453,10 +466,10 @@ class Exercise17a extends Component {
                                         </M.Context>
                                         <div className="controls-panel">
                                             <span className="step-panel">
-                                                <Button clicked={this.previousStep}>
+                                                <Button clicked={this.previousStep} disabled={this.state.btnPrevD}>
                                                     <FontAwesomeIcon icon={faChevronLeft}/></Button>
                                                 <StepCounter currentStep={this.state.currentStep} stepSum={4} />
-                                                <Button clicked={this.nextStep}>
+                                                <Button clicked={this.nextStep} disabled={this.state.btnNextD}>
                                                     <FontAwesomeIcon icon={faChevronRight}/></Button>
                                             </span>
                                             <span className="sketch-buttons">

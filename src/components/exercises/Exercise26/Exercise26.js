@@ -53,6 +53,8 @@ class Exercise26 extends Component {
             isSketchAllowed: false,
             sketchTool: Tools.Pencil,
             descriptionBox: '',
+            btnPrevD: true,
+            btnNextD: false,
             btnSketchA: false,
             btnSketchC: '',
             btnPencilA: false,
@@ -215,6 +217,7 @@ class Exercise26 extends Component {
     nextStep = () => {
         if (this.state.currentStep < 5) {
             if (this.state.currentStep === 0) {
+                this.setState({btnPrevD: false});
                 this.setState(this.step1);
                 this.setState(this.step1Texts);
             }
@@ -239,6 +242,7 @@ class Exercise26 extends Component {
             }
 
             if (this.state.currentStep === 4) {
+                this.setState({btnNextD: true});
                 this.clearAllTimers(this.state);
                 this.setState(this.step4a);
                 this.setState(this.step5Texts);
@@ -252,6 +256,7 @@ class Exercise26 extends Component {
     previousStep = () => {
         if (this.state.currentStep > 0) {
             if (this.state.currentStep === 1) {
+                this.setState({btnPrevD: true});
                 this.setState(this.stepReset);
             }
 
@@ -280,6 +285,7 @@ class Exercise26 extends Component {
             }
 
             if (this.state.currentStep === 5) {
+                this.setState({btnNextD: false});
                 this.clearAllTimers(this.state);
                 this.step4();
                 let interval2 = setInterval(this.step4, 3000);
@@ -474,10 +480,10 @@ class Exercise26 extends Component {
                                         </M.Context>
                                         <div className="controls-panel">
                                             <span className="step-panel">
-                                                <Button clicked={this.previousStep}>
+                                                <Button clicked={this.previousStep} disabled={this.state.btnPrevD}>
                                                     <FontAwesomeIcon icon={faChevronLeft}/></Button>
                                                 <StepCounter currentStep={this.state.currentStep} stepSum={5} />
-                                                <Button clicked={this.nextStep}>
+                                                <Button clicked={this.nextStep} disabled={this.state.btnNextD}>
                                                     <FontAwesomeIcon icon={faChevronRight}/></Button>
                                             </span>
                                             <span className="sketch-buttons">
