@@ -21,7 +21,8 @@
 .navbar-brand>img {
     padding: 5px 5px;
     margin-right: 3px;
-    width: 50px;
+    width: 45px;
+    height: 45px;
 }
 .main-nav button {
     background: #5a2727;
