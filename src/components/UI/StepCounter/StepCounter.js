@@ -1,9 +1,8 @@
 import React from 'react';
-
-import cssClasses from './StepCounter.css';
+import './StepCounter.css';
 
 const StepCounter = (props) => (
-    <span className={cssClasses.StepCounter}>
+    <span className={'step-counter'}>
         <span>{props.currentStep}</span>
         <span>/</span>
         <span>{props.stepSum}</span>

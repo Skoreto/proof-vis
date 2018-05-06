@@ -72,8 +72,8 @@ class Exercise17a extends Component {
                     shape: 'circle',
                     color: {background: '#ffff08', border: '#000000'},
                     label: '   ',
-                    margin: 10,
-                    font: {size: 16, }
+                    margin: 12,
+                    font: {size: 18}
                 },
                 edges: {
                     arrows: {
@@ -84,7 +84,7 @@ class Exercise17a extends Component {
                     width: 1,
                     dashes: false,
                     label: undefined,
-                    font: {align: 'top'}
+                    font: {align: 'top', size: 18}
                 },
                 configure: {
                     enabled: false,
@@ -138,8 +138,8 @@ class Exercise17a extends Component {
         this.clearAllTimers = clearAllTimers.bind(this);
     }
 
-    handlerSketchAllowance = () => {
-        if (this.state.isSketchAllowed) {
+    handlerSketchAllowance = (state) => {
+        if (state.isSketchAllowed) {
             this.setState({
                 isSketchAllowed: false,
                 btnSketchA: false,
@@ -149,10 +149,12 @@ class Exercise17a extends Component {
                 btnCircleD: true
             })
         } else {
+            const isAnyToolActive = state.btnLineA || state.btnCircleA;
             this.setState({
                 isSketchAllowed: true,
                 btnSketchA: true,
                 btnSketchC: 'btnSketchActive',
+                btnPencilA: !isAnyToolActive,
                 btnPencilD: false,
                 btnLineD: false,
                 btnCircleD: false
@@ -272,9 +274,9 @@ class Exercise17a extends Component {
         return {
             graphVis: {
                 nodes: [
-                    {id: 1, x: -200, y: 0, color: {background: '#ffff08'}, label: ' u '},
+                    {id: 1, x: -240, y: 0, color: {background: '#ffff08'}, label: ' u '},
                     {id: 2, x: 0, y: 0, color: {background: '#ffff08'}, label: ' w '},
-                    {id: 3, x: 200, y: 0, color: {background: '#ffff08'}, label: ' v '}
+                    {id: 3, x: 240, y: 0, color: {background: '#ffff08'}, label: ' v '}
                 ],
                 edges: [
                     {id: 1, from: 1, to: 2, label: 'e1' },
@@ -450,7 +452,7 @@ class Exercise17a extends Component {
                                             </div>
                                         </M.Context>
                                         <div className="controls-panel">
-                                            <span className="step-buttons">
+                                            <span className="step-panel">
                                                 <Button clicked={this.previousStep}>
                                                     <FontAwesomeIcon icon={faChevronLeft}/></Button>
                                                 <StepCounter currentStep={this.state.currentStep} stepSum={4} />
@@ -458,7 +460,7 @@ class Exercise17a extends Component {
                                                     <FontAwesomeIcon icon={faChevronRight}/></Button>
                                             </span>
                                             <span className="sketch-buttons">
-                                                <Button clicked={this.handlerSketchAllowance}
+                                                <Button clicked={() => this.handlerSketchAllowance(this.state)}
                                                         active={this.state.btnSketchA} addClass={this.state.btnSketchC}>
                                                     <FontAwesomeIcon icon={faPaintBrush}/></Button>
                                                 <Button clicked={() => this.handlerSelectedTool(1)}

@@ -90,6 +90,7 @@
     width: 650px;
     height: 40px;
     margin-top: 10px;
+    margin-bottom: 10px;
     /*border: 1px solid lightgray;*/
 }
 .descriptionBox p {
@@ -110,10 +111,8 @@
     padding: 5px;
     text-align: center;
 }
-.step-buttons Button {
-    padding: 10px;
-    margin-left: 20px;
-    margin-right: 20px;
+.step-panel {
+    margin-right: 30px;
 }
 .sketch-buttons {
     border-left: 1px solid #fafafa;

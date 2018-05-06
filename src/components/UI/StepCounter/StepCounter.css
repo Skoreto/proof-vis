@@ -1,7 +1,4 @@
-.StepCounter {
-    font: inherit;
-    font-weight: bold;
-    padding: 10px;
-    margin: 20px;
-    display: inline-block;
+.step-counter {
+    margin-left: 5px;
+    margin-right: 5px;
 }

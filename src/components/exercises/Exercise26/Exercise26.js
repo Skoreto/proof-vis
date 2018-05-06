@@ -76,8 +76,8 @@ class Exercise26 extends Component {
                     shape: 'circle',
                     color: {background: '#ffff08', border: '#000000'},
                     label: '   ',
-                    margin: 10,
-                    font: {size: 16, }
+                    margin: 12,
+                    font: {size: 18}
                 },
                 edges: {
                     arrows: {
@@ -88,7 +88,7 @@ class Exercise26 extends Component {
                     width: 1,
                     dashes: false,
                     label: '   ',
-                    font: {align: 'top'}
+                    font: {align: 'top', size: 18}
                 },
                 configure: {
                     enabled: false,
@@ -142,8 +142,8 @@ class Exercise26 extends Component {
         this.clearAllTimers = clearAllTimers.bind(this);
     }
 
-    handlerSketchAllowance = () => {
-        if (this.state.isSketchAllowed) {
+    handlerSketchAllowance = (state) => {
+        if (state.isSketchAllowed) {
             this.setState({
                 isSketchAllowed: false,
                 btnSketchA: false,
@@ -153,10 +153,12 @@ class Exercise26 extends Component {
                 btnCircleD: true
             })
         } else {
+            const isAnyToolActive = state.btnLineA || state.btnCircleA;
             this.setState({
                 isSketchAllowed: true,
                 btnSketchA: true,
                 btnSketchC: 'btnSketchActive',
+                btnPencilA: !isAnyToolActive,
                 btnPencilD: false,
                 btnLineD: false,
                 btnCircleD: false
@@ -226,7 +228,6 @@ class Exercise26 extends Component {
                 this.step3();
                 let interval1 = setInterval(this.step3, 3000);
                 this.setState({intervals: [interval1]});
-                // this.setState(this.step3Texts);
             }
 
             if (this.state.currentStep === 3) {
@@ -265,6 +266,7 @@ class Exercise26 extends Component {
                 this.setState(this.stepReset);
                 this.setState(this.step1);
                 this.setState(this.step2);
+                this.setState(this.step2Texts);
             }
 
             if (this.state.currentStep === 4) {
@@ -275,7 +277,6 @@ class Exercise26 extends Component {
                 this.step3();
                 let interval1 = setInterval(this.step3, 3000);
                 this.setState({intervals: [interval1]});
-                // this.setState(this.step3Texts);
             }
 
             if (this.state.currentStep === 5) {
@@ -299,14 +300,14 @@ class Exercise26 extends Component {
         return {
             graphVis: {
                 nodes: [
-                    {id: 1, x: 0, y: -120, color: {background: '#ffff08'}, label: '   '},
-                    {id: 2, x: -50, y: -50, color: {background: '#ffff08'}, label: '   '},
-                    {id: 3, x: -100, y: 20, color: {background: '#ffff08'}, label: '   '},
-                    {id: 4, x: 0, y: 20, color: {background: '#ffff08'}, label: '   '},
-                    {id: 5, x: -50, y: 90, color: {background: '#ffff08'}, label: '   '},
-                    {id: 6, x: 50, y: 90, color: {background: '#ffff08'}, label: '   '},
-                    {id: 7, x: 50, y: -50, color: {background: '#ffff08'}, label: '   '},
-                    {id: 8, x: 100, y: 20, color: {background: '#ffff08'}, label: '   '}
+                    {id: 1, x: 0, y: -150, color: {background: '#ffff08'}, label: '   '},
+                    {id: 2, x: -70, y: -50, color: {background: '#ffff08'}, label: '   '},
+                    {id: 3, x: -140, y: 50, color: {background: '#ffff08'}, label: '   '},
+                    {id: 4, x: 0, y: 50, color: {background: '#ffff08'}, label: '   '},
+                    {id: 5, x: -70, y: 150, color: {background: '#ffff08'}, label: '   '},
+                    {id: 6, x: 70, y: 150, color: {background: '#ffff08'}, label: '   '},
+                    {id: 7, x: 70, y: -50, color: {background: '#ffff08'}, label: '   '},
+                    {id: 8, x: 140, y: 50, color: {background: '#ffff08'}, label: '   '}
                 ],
                 edges: [
                     {id: 1, from: 1, to: 2},
@@ -355,7 +356,18 @@ class Exercise26 extends Component {
 
     step2Texts = () => {
         const description = (<p>Mezi libovolně zvolenými vrcholy <MN>u,v</MN> existuje jediná cesta.</p>);
-        return {descriptionBox: description}
+        const repeatBox = (
+            <div>
+                <p>VĚTA O STROMECH (4.1)
+                    <br/>Pro každý graf <MN>G=(V,E)</MN> jsou následující podmínky ekvivalentní:</p>
+                <p>
+                    I. graf <MN>G</MN> je strom.<br/>
+                    II. Pro každé dva vrcholy <MN>x,y \in V</MN> existuje
+                    právě jedna cesta z vrcholu <MN>x</MN> do vrcholu <MN>y</MN>.
+                </p>
+            </div>
+        );
+        return {descriptionBox: description, repeatBoxHidden: false, repeatBoxContent: repeatBox}
     };
 
     step3 = () => {
@@ -363,7 +375,8 @@ class Exercise26 extends Component {
         let timeout3a = setTimeout(()=> {this.setState(this.step3a);}, 1000);
         let timeout3b = setTimeout(()=> {this.setState(this.step3b);}, 2000);
 
-        this.setState({timeouts: [timeout3a, timeout3b], repeatBoxHidden: true, repeatBoxContent: ''});
+        this.setState({timeouts: [timeout3a, timeout3b], descriptionBox: '', repeatBoxHidden: true,
+            repeatBoxContent: ''});
     };
 
     step3a = (state) => {
@@ -378,12 +391,6 @@ class Exercise26 extends Component {
         newNodes = this.updateNode(newNodes, 3, '#B39DDB', ' y ');
         let newEdges = this.updateEdge(state.graphVis.edges, 2, '#B39DDB', 2, false, ' e ');
         return {graphVis: {nodes: newNodes, edges: newEdges}}
-    };
-
-    step3Texts = () => {
-        const description = (<p style={{fontSize: 15}}>Cesta mezi vrcholy <MN>u,v</MN>, musí vždy vést přes libovolně
-            zvolenou hranu <MN>{eXY}</MN> z této cesty.</p>);
-        return {descriptionBox: description}
     };
 
     step4 = () => {
@@ -466,7 +473,7 @@ class Exercise26 extends Component {
                                             </div>
                                         </M.Context>
                                         <div className="controls-panel">
-                                            <span className="step-buttons">
+                                            <span className="step-panel">
                                                 <Button clicked={this.previousStep}>
                                                     <FontAwesomeIcon icon={faChevronLeft}/></Button>
                                                 <StepCounter currentStep={this.state.currentStep} stepSum={5} />
@@ -474,7 +481,7 @@ class Exercise26 extends Component {
                                                     <FontAwesomeIcon icon={faChevronRight}/></Button>
                                             </span>
                                             <span className="sketch-buttons">
-                                                <Button clicked={this.handlerSketchAllowance}
+                                                <Button clicked={() => this.handlerSketchAllowance(this.state)}
                                                         active={this.state.btnSketchA} addClass={this.state.btnSketchC}>
                                                     <FontAwesomeIcon icon={faPaintBrush}/></Button>
                                                 <Button clicked={() => this.handlerSelectedTool(1)}
