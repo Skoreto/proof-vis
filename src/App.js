@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {BrowserRouter, Route} from 'react-router-dom';
+import Overview from './components/pages/Overview/Overview'
 import Exercise20svg from './components/exercises/Exercise20svg/Exercise20svg'
 import Exercise20vis from './components/exercises/Exercise20vis/Exercise20vis'
 import Exercise26 from './components/exercises/Exercise26/Exercise26'
@@ -17,7 +18,7 @@ class App extends Component {
                 <div>
                     {/*<MainHeader/>*/}
                     <CustomNavbar/>
-                    <Route exact path="/" component={Exercise17a} />
+                    <Route exact path="/" component={Overview} />
                     <Route path="/priklad20svg" component={Exercise20svg} />
                     <Route path="/priklad20vis" component={Exercise20vis} />
                     <Route path="/priklad26" component={Exercise26} />
