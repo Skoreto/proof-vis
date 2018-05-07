@@ -47,6 +47,7 @@ class Exercise20vis extends Component {
                 nodes: [],
                 edges: []
             },
+            network: null,
             timeouts: [],
             intervals: [],
             currentStep: 0,
@@ -142,7 +143,28 @@ class Exercise20vis extends Component {
         this.updateEdge = updateEdge.bind(this);
         this.updateEdgeWithArrow = updateEdgeWithArrow.bind(this);
         this.clearAllTimers = clearAllTimers.bind(this);
+        this.initNetworkInstance = this.initNetworkInstance.bind(this);
     }
+
+    /**
+     * Initialize graphVis network instance.
+     * @param {Object} nw - Object of network instance returned by getNetwork() callback function.
+     */
+    initNetworkInstance(nw) {
+        this.setState({network: nw});
+    }
+
+    tryNetwork = (state) => {
+        const newOptions = {
+            position: {x: 165, y: -10},
+            scale: 0.85,
+            offset: {x: 0, y: 0},
+            animation: {duration: 1000, easingFunction: "easeInOutQuad"}
+        };
+        this.setState({
+            network: state.network.moveTo(newOptions)
+        });
+    };
 
     /**
      * Handler for activating drawing over graph.
@@ -437,7 +459,8 @@ class Exercise20vis extends Component {
                                         {sketch}
                                         <div className="GraphBox">
                                             <GraphVis graph={this.state.graphVis} options={this.state.options}
-                                                      events={events} style={{width: "650px", height: "400px" }} />
+                                                      events={events} style={{width: "650px", height: "400px" }}
+                                                      getNetwork={this.initNetworkInstance} />
                                         </div>
                                         <M.Context input='tex'>
                                             <div className="descriptionBox">
@@ -465,6 +488,7 @@ class Exercise20vis extends Component {
                                                 <Button clicked={() => this.handlerSelectedTool(3)}
                                                         active={this.state.btnCircleA} disabled={this.state.btnCircleD}>
                                                     <FontAwesomeIcon icon={faCircle}/></Button>
+                                                <Button clicked={() => this.tryNetwork(this.state)}>Network</Button>
                                             </span>
                                         </div>
                                     </main>
@@ -491,7 +515,7 @@ class Exercise20vis extends Component {
                                                     <div className={3 === this.state.currentStep ? 'proof-active' : ''}>
 
                                                     </div>
-                                                    <div className={4 === this.state.currentStep ? ' proof-active' : ''}>
+                                                    <div className={4 === this.state.currentStep ? 'proof-active' : ''}>
 
                                                     </div>
                                                     <div className={'borderless' +
