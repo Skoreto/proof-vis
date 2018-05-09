@@ -1,20 +1,30 @@
-import imUpdate from 'immutability-helper';
+import imHelp from 'immutability-helper';
 
 /**
  * Method for updating node properties.
- * @param nodes Array of nodes from the state of component.
- * @param nodeIndex Index of node in the array.
- * @param background Fill color of the node.
- * @param label Text inside the node.
+ * @param nodesState - Array of nodes from the state of component.
+ * @param nodeIndex - Index of node in the array.
+ * @param background - Fill color of the node.
+ * @param label - Text inside the node.
  * @returns {ReadonlyArray<any> | ReadonlySet<any> | ReadonlyMap<any, any> | any}
  */
-export function updateNode(nodes, nodeIndex, background, label) {
-    return imUpdate(nodes, {[nodeIndex]: {color: {$set: {background: background}}, label: {$set: label}}});
+export function updateNode(nodesState, nodeIndex, background, label) {
+    return imHelp(nodesState, {[nodeIndex]: {color: {$set: {background: background}}, label: {$set: label}}});
+}
+
+/**
+ * Method for pushing new array of nodes or edges into current array.
+ * @param {Object[]} objectsState - Array of nodes or edges from the state of component.
+ * @param {Object[]} newObjectsArray - Array of new node or edge objects.
+ * @returns {ReadonlyArray<any> | ReadonlySet<any> | ReadonlyMap<any, any> | any}
+ */
+export function addObjectArray(objectsState, newObjectsArray) {
+    return imHelp(objectsState, {$push: newObjectsArray});
 }
 
 /**
  * Method for updating edge properties.
- * @param {Object[]} edges - Array of edges from the state of component.
+ * @param {Object[]} edgesState - Array of edges from the state of component.
  * @param {number} edgeIndex - Index of edge in the array.
  * @param {string} color - Color of the edge.
  * @param {number} width - Number determining width of the edge.
@@ -22,14 +32,14 @@ export function updateNode(nodes, nodeIndex, background, label) {
  * @param {string} label - Text above the edge.
  * @returns {ReadonlyArray<any> | ReadonlySet<any> | ReadonlyMap<any, any> | any}
  */
-export function updateEdge(edges, edgeIndex, color, width, dashes, label) {
-    return imUpdate(edges, {[edgeIndex]: {color: {$set: {color: color, highlight: color, hover: color}},
+export function updateEdge(edgesState, edgeIndex, color, width, dashes, label) {
+    return imHelp(edgesState, {[edgeIndex]: {color: {$set: {color: color, highlight: color, hover: color}},
             width: {$set: width}, dashes: {$set: dashes}, label: {$set: label}}});
 }
 
 /**
  * Method for updating edge properties.
- * @param {Object[]} edges - Array of edges from the state of component.
+ * @param {Object[]} edgesState - Array of edges from the state of component.
  * @param {number} edgeIndex - Index of edge in the array.
  * @param {string} color - Color of the edge.
  * @param {number} width - Number determining width of the edge.
@@ -39,8 +49,8 @@ export function updateEdge(edges, edgeIndex, color, width, dashes, label) {
  * @param {boolean} enableArrowFrom - Determines whether to show arrow pointing from ending node to starting node.
  * @returns {ReadonlyArray<any> | ReadonlySet<any> | ReadonlyMap<any, any> | any}
  */
-export function updateEdgeWithArrow(edges, edgeIndex, color, width, dashes, label, enableArrowTo, enableArrowFrom) {
-    return imUpdate(edges, {[edgeIndex]: {color: {$set: {color: color, highlight: color, hover: color}},
+export function updateEdgeWithArrow(edgesState, edgeIndex, color, width, dashes, label, enableArrowTo, enableArrowFrom) {
+    return imHelp(edgesState, {[edgeIndex]: {color: {$set: {color: color, highlight: color, hover: color}},
             width: {$set: width}, dashes: {$set: dashes}, label: {$set: label},
             arrows: {$set: {to: {enabled: enableArrowTo}, from: {enabled: enableArrowFrom}}}}});
 }
