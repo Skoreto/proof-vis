@@ -5,9 +5,7 @@ import {Row, Col} from 'react-bootstrap';
 import {SketchField, Tools} from 'react-sketch';
 import M from 'react-mathjax2';
 import MN from '../../../components/MathJax/MathJaxNode'
-import '../../../App.css';
 import '../../../customMainTheme.css'
-import '../../../main.css'
 import PageHeading from "../../../components/UI/PageHeading/PageHeading";
 import Button from '../../../components/UI/Button/Button'
 import StepCounter from '../../../components/UI/StepCounter/StepCounter'

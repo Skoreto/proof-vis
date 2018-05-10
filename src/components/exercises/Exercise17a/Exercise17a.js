@@ -1,13 +1,11 @@
 import GraphVis from 'react-graph-vis'
 import React, {Component} from 'react';
 import {updateNode, updateEdge, updateEdgeWithArrow, clearAllTimers} from '../../../functionality/GraphFunctions'
-import {Row, Col} from 'react-bootstrap';
+import {Grid, Row, Col} from 'react-bootstrap';
 import {SketchField, Tools} from 'react-sketch';
 import M from 'react-mathjax2';
 import MN from '../../../components/MathJax/MathJaxNode'
-import '../../../App.css';
 import '../../../customMainTheme.css'
-import '../../../main.css'
 import PageHeading from "../../../components/UI/PageHeading/PageHeading";
 import Button from '../../../components/UI/Button/Button'
 import StepCounter from '../../../components/UI/StepCounter/StepCounter'
@@ -440,7 +438,7 @@ class Exercise17a extends Component {
         ) : (<div></div>);
 
         return (
-            <div>
+            <Grid>
                 <div className={"container"}>
                     <div className="page-wrapper">
                         <PageHeading headingTitle={"Příklad 17 a)"} breadcrumbsCurrent={"Ostatní příklady"} />
@@ -456,7 +454,7 @@ class Exercise17a extends Component {
                                 </Col>
                             </Row>
                             <Row className="page-row">
-                                <Col xs={6} md={6} lg={6}>
+                                <Col xs={12} md={12} lg={6}>
                                     <main>
                                         {sketch}
                                         <div className="GraphBox">
@@ -493,7 +491,7 @@ class Exercise17a extends Component {
                                         </div>
                                     </main>
                                 </Col>
-                                <Col xs={5} md={5} lg={5} smOffset={1} mdOffset={1} lgOffset={1}>
+                                <Col xs={12} md={12} lg={5} smOffset={0} mdOffset={0} lgOffset={1}>
                                     <aside>
                                         <div id="divProofContainer">
                                             <M.Context input='tex'>
@@ -525,7 +523,7 @@ class Exercise17a extends Component {
                         </div>
                     </div>
                 </div>
-            </div>
+            </Grid>
         );
     }
 }

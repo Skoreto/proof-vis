@@ -3,9 +3,7 @@ import React, {Component} from 'react';
 import {Row, Col, ListGroup, ListGroupItem} from 'react-bootstrap';
 import {BrowserRouter, Link} from 'react-router-dom';
 import {SketchField, Tools} from 'react-sketch';
-import '../../../App.css';
 import '../../../customMainTheme.css'
-import '../../../main.css'
 import PageHeading from "../../../components/UI/PageHeading/PageHeading";
 import Button from '../../../components/UI/Button/Button'
 import StepCounter from '../../../components/UI/StepCounter/StepCounter'
