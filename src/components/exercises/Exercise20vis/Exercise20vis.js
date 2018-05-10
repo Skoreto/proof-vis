@@ -513,7 +513,6 @@ class Exercise20vis extends Component {
 
     render() {
         const events = {};
-
         const isSketchAllowed = this.state.isSketchAllowed;
         const sketch = isSketchAllowed ? (
             <div className={"over-component"}>
