@@ -6,17 +6,14 @@ import Exercise20vis from './components/exercises/Exercise20vis/Exercise20vis'
 import Exercise26 from './components/exercises/Exercise26/Exercise26'
 import Exercise17a from './components/exercises/Exercise17a/Exercise17a'
 import SingleDrawing from './components/pages/SingleDrawing/SingleDrawing'
-import MainHeader from './components/UI/MainHeader/MainHeader'
 import CustomNavbar from './components/UI/CustomNavbar/CustomNavbar'
 import Footer from './components/UI/Footer/Footer'
-import BottomBar from './components/UI/Footer/BottomBar'
 
 class App extends Component {
     render() {
         return (
             <BrowserRouter basename={process.env.PUBLIC_URL}>
                 <div>
-                    {/*<MainHeader/>*/}
                     <CustomNavbar/>
                     <Route exact path="/" component={Overview} />
                     <Route path="/priklad20svg" component={Exercise20svg} />
@@ -25,7 +22,6 @@ class App extends Component {
                     <Route path="/priklad17a" component={Exercise17a} />
                     <Route path="/platno" component={SingleDrawing} />
                     {/*<Footer/>*/}
-                    {/*<BottomBar/>*/}
                 </div>
             </BrowserRouter>
         );
