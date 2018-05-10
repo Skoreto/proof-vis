@@ -37,9 +37,6 @@ const locales = {
     }
 };
 
-const eXY = 'e=\\{x,y\\}';
-const Pxy = 'P_{xy}';
-
 class Exercise20vis extends Component {
     constructor(props) {
         super(props);
@@ -267,6 +264,7 @@ class Exercise20vis extends Component {
 
             if (this.state.currentStep === 4) {
                 this.setState(this.step5);
+                this.setState(this.step5Texts);
             }
 
             if (this.state.currentStep === 5) {
@@ -292,12 +290,14 @@ class Exercise20vis extends Component {
             if (this.state.currentStep === 2) {
                 this.setState(this.stepReset);
                 this.setState(this.step1);
+                this.setState(this.step1Texts);
             }
 
             if (this.state.currentStep === 3) {
                 this.setState(this.stepReset);
                 this.setState(this.step1);
                 this.setState(this.step2);
+                this.setState(this.step2Texts);
             }
 
             if (this.state.currentStep === 4) {
@@ -305,13 +305,16 @@ class Exercise20vis extends Component {
                 this.setState(this.step1);
                 this.setState(this.step2);
                 this.setState(this.step3);
+                this.setState(this.step3Texts);
             }
 
             if (this.state.currentStep === 5) {
                 this.setState(this.stepReset);
                 this.setState(this.step1);
                 this.setState(this.step2);
+                this.setState(this.step3);
                 this.setState(this.step4);
+                this.setState(this.step4Texts);
             }
 
             if (this.state.currentStep === 6) {
@@ -320,7 +323,11 @@ class Exercise20vis extends Component {
                 this.clearAllTimers(this.state);
                 this.setState(this.stepReset);
                 this.setState(this.step1);
+                this.setState(this.step2);
+                this.setState(this.step3);
+                this.setState(this.step4);
                 this.setState(this.step5);
+                this.setState(this.step5Texts);
             }
 
             // Reduce currentStep after a step was executed
@@ -357,12 +364,12 @@ class Exercise20vis extends Component {
         const description = (<p>Sestrojení příkladu grafu <MN>G</MN></p>);
         const repeatBox = (
             <div>
-                <p>DEFINICE MOSTU
-                    <br/>Pro každý graf <MN>G=(V,E)</MN> jsou následující podmínky ekvivalentní:</p>
+                <p>DEFINICE MOSTU (1.11)
+                    <br/>Nechť je dán graf <MN>G=(V,E)</MN>, vrchol <MN>v \in V</MN> a hrana <MN>e \in E</MN>.
+                </p>
                 <p>
-                    I. graf <MN>G</MN> je strom.<br/>
-                    II. Pro každé dva vrcholy <MN>x,y \in V</MN> existuje
-                    právě jedna cesta z vrcholu <MN>x</MN> do vrcholu <MN>y</MN>.
+                    Hrana <MN>e</MN> je most grafu <MN>G</MN>, jestliže graf <MN>G-e</MN> má více komponent než
+                    graf <MN>G</MN>.
                 </p>
             </div>
         );
@@ -466,7 +473,7 @@ class Exercise20vis extends Component {
 
     step5Texts = () => {
         const description = (<p>Protože existence cesty platí pro libovolná <MN>u</MN> a <MN>v</MN>, platí také,
-            že <MN>\exists</MN> <MN>x-y</MN> cesta <MN>{Pxy}</MN> v <MN>G</MN> i v <MN>G-e</MN></p>);
+            že <MN>\exists</MN> <MN>x-y</MN> cesta <MN>{'P_{xy}'}</MN> v <MN>G</MN> i v <MN>G-e</MN></p>);
         return {descriptionBox: description, repeatBoxHidden: true, repeatBoxContent: ''}
     };
 
@@ -491,6 +498,7 @@ class Exercise20vis extends Component {
             offset: { x: 0, y: 0 },
             animation: {duration: 1500, easingFunction: "easeInOutQuad"}
         };
+        // TODO Fix second repositioning of camera
         // return {graphVis: {nodes: state.graphVis.nodes, edges: newEdges}, network: state.network.moveTo(newOptions)}
         return {graphVis: {nodes: state.graphVis.nodes, edges: newEdges}}
     };
@@ -501,7 +509,7 @@ class Exercise20vis extends Component {
     };
 
     step6Texts = () => {
-        const description = (<p>Cesta <MN>{Pxy}</MN> spolu s hranou <MN>{eXY}</MN> tvoří kružnici v <MN>G</MN> obsahující hranu <MN>e</MN></p>);
+        const description = (<p>Cesta <MN>{'P_{xy}'}</MN> spolu s hranou <MN>{'e=\\{x,y\\}'}</MN> tvoří kružnici v <MN>G</MN> obsahující hranu <MN>e</MN></p>);
         return {descriptionBox: description, repeatBoxHidden: true, repeatBoxContent: ''}
     };
 
@@ -584,18 +592,14 @@ class Exercise20vis extends Component {
                                                             jako <MN>G</MN> a platí:
                                                         </p>
                                                     </div>
-                                                    <div className={2 === this.state.currentStep ? 'proof-active' : ''}>
+                                                    <div className={(2 === this.state.currentStep) ||
+                                                    (3 === this.state.currentStep) ||
+                                                    (4 === this.state.currentStep) ? 'proof-active' : ''}>
                                                         <p>Mezi libovolně zvolenými vrcholy <MN>u</MN> a <MN>v</MN> existuje jediná cesta.</p>
                                                         <p><MN>\forall u,v \in V(G):</MN> Když
                                                             existuje <MN>u-v</MN> cesta <MN>P</MN> v <MN>G</MN>, tak
                                                             existuje <MN>u-v</MN> cesta <MN>P'</MN> v <MN>G-e</MN> (pozn
                                                             .: <MN>P'</MN> se nemusí nutně <MN>=P</MN>)</p>
-                                                    </div>
-                                                    <div className={3 === this.state.currentStep ? 'proof-active' : ''}>
-
-                                                    </div>
-                                                    <div className={4 === this.state.currentStep ? 'proof-active' : ''}>
-
                                                     </div>
                                                     <div className={5 === this.state.currentStep ? 'proof-active' : ''}>
                                                         <p>
