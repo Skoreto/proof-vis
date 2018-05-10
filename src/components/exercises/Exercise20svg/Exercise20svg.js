@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import imUpdate from 'immutability-helper';
 import { Row, Col } from 'react-bootstrap';
-import '../../../App.css';
 import '../../../customMainTheme.css'
-import '../../../main.css'
 import PageHeading from "../../../components/UI/PageHeading/PageHeading";
 import Graph from '../../../components/Graph/Graph';
 import Button from '../../../components/UI/Button/Button'
