@@ -7,6 +7,7 @@ import M from 'react-mathjax2';
 import MN from '../../../components/MathJax/MathJaxNode'
 import '../../../customMainTheme.css'
 import PageHeading from "../../../components/UI/PageHeading/PageHeading";
+import DefinitionPanel from "../../../components/UI/DefinitionPanel/DefinitionPanel";
 import Button from '../../../components/UI/Button/Button'
 import StepCounter from '../../../components/UI/StepCounter/StepCounter'
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
@@ -34,8 +35,6 @@ const locales = {
         editClusterError: 'Clustery nemohou být upraveny.'
     }
 };
-
-const eXY = 'e=\\{x,y\\}';
 
 class Exercise26 extends Component {
     constructor(props) {
@@ -148,7 +147,7 @@ class Exercise26 extends Component {
      */
     handlerSketchAllowance = (state) => {
         if (state.isSketchAllowed) {
-            this.setState({
+            return ({
                 isSketchAllowed: false,
                 btnSketchA: false,
                 btnSketchC: '',
@@ -158,7 +157,7 @@ class Exercise26 extends Component {
             })
         } else {
             const isAnyToolActive = state.btnLineA || state.btnCircleA;
-            this.setState({
+            return ({
                 isSketchAllowed: true,
                 btnSketchA: true,
                 btnSketchC: 'btnSketchActive',
@@ -450,19 +449,13 @@ class Exercise26 extends Component {
                     <div className="page-wrapper">
                         <PageHeading headingTitle={"Příklad 26"} breadcrumbsCurrent={"Důkazy přímo"} />
                         <div className="page-content">
-                            <Row className="page-row">
-                                <Col xs={12} md={12} lg={12}>
-                                    <M.Context input='tex'>
-                                        <div className="bg-info" id="definition">
-                                            Dokažte přímo tvrzení:
-                                            <cite><q>Jestliže graf <MN>G</MN> je strom, pak graf <MN>G-e</MN>, kde <MN>e</MN> je libovolná
-                                            hrana grafu <MN>G</MN>, již není strom.</q></cite>
-                                            <br/>
-                                            (K důkazu použijte známé definice a věty týkající se stromů.)
-                                        </div>
-                                    </M.Context>
-                                </Col>
-                            </Row>
+                            <DefinitionPanel>
+                                Dokažte přímo tvrzení:
+                                <cite><q>Jestliže graf <MN>G</MN> je strom, pak graf <MN>G-e</MN>, kde <MN>e</MN> je libovolná
+                                    hrana grafu <MN>G</MN>, již není strom.</q></cite>
+                                <br/>
+                                (K důkazu použijte známé definice a věty týkající se stromů.)
+                            </DefinitionPanel>
                             <Row className="page-row">
                                 <Col xs={6} md={6} lg={6}>
                                     <main>
@@ -485,7 +478,7 @@ class Exercise26 extends Component {
                                                     <FontAwesomeIcon icon={faChevronRight}/></Button>
                                             </span>
                                             <span className="sketch-buttons">
-                                                <Button clicked={() => this.handlerSketchAllowance(this.state)}
+                                                <Button clicked={() => this.setState(() => this.handlerSketchAllowance(this.state))}
                                                         active={this.state.btnSketchA} addClass={this.state.btnSketchC}>
                                                     <FontAwesomeIcon icon={faPaintBrush}/></Button>
                                                 <Button clicked={() => this.handlerSelectedTool(1)}
@@ -519,7 +512,7 @@ class Exercise26 extends Component {
                                                     <div className={3 === this.state.currentStep ? 'proof-active' : ''}>
                                                         <p><MN>\Rightarrow</MN> Protože existuje právě jediná cesta mezi
                                                             vrcholy <MN>u,v</MN>, musí vždy vést přes libovolně
-                                                            zvolenou hranu <MN>{eXY}</MN> z této cesty.</p>
+                                                            zvolenou hranu <MN>{'e=\\{x,y\\}'}</MN> z této cesty.</p>
                                                     </div>
                                                     <div className={4 === this.state.currentStep ? ' proof-active' : ''}>
                                                         <p>
