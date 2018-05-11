@@ -1,4 +1,5 @@
 import imHelp from 'immutability-helper';
+import {Tools} from 'react-sketch';
 
 /**
  * Method for updating node properties.
@@ -69,5 +70,75 @@ export function clearAllTimers(state) {
         state.intervals.forEach(function (value, index) {
             clearInterval(value);
         });
+    }
+}
+
+/**
+ * Handler for activating drawing over graph.
+ * @param state - State of the component.
+ */
+export function handlerSketchAllowance(state) {
+    if (state.isSketchAllowed) {
+        return ({
+            isSketchAllowed: false,
+            btnSketchA: false,
+            btnSketchC: '',
+            btnPencilD: true,
+            btnLineD: true,
+            btnCircleD: true
+        })
+    } else {
+        const isAnyToolActive = state.btnLineA || state.btnCircleA;
+        return ({
+            isSketchAllowed: true,
+            btnSketchA: true,
+            btnSketchC: 'btnSketchActive',
+            btnPencilA: !isAnyToolActive,
+            btnPencilD: false,
+            btnLineD: false,
+            btnCircleD: false
+        })
+    }
+}
+
+/**
+ * Handler for changing drawing tool.
+ * Activates the right tool button and deactivates others.
+ * @param {number} tool - Number for assigned tool.
+ */
+export function handlerSelectedTool(tool) {
+    switch (tool) {
+        case 1: {
+            return ({
+                sketchTool: Tools.Pencil,
+                btnPencilA: true,
+                btnLineA: false,
+                btnCircleA: false
+            });
+        }
+        case 2: {
+            return ({
+                sketchTool: Tools.Line,
+                btnPencilA: false,
+                btnLineA: true,
+                btnCircleA: false
+            });
+        }
+        case 3: {
+            return ({
+                sketchTool: Tools.Circle,
+                btnPencilA: false,
+                btnLineA: false,
+                btnCircleA: true
+            });
+        }
+        default: {
+            return ({
+                sketchTool: Tools.Pencil,
+                btnPencilA: true,
+                btnLineA: false,
+                btnCircleA: false
+            });
+        }
     }
 }
