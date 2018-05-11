@@ -1,12 +1,14 @@
 import GraphVis from 'react-graph-vis'
 import React, {Component} from 'react';
-import {updateNode, addObjectArray, updateEdge, updateEdgeWithArrow, clearAllTimers} from '../../../functionality/GraphFunctions'
+import {updateNode, updateEdge, updateEdgeWithArrow, addObjectArray, clearAllTimers,
+    handlerSketchAllowance, handlerSelectedTool} from '../../../functionality/GraphFunctions'
 import {Row, Col} from 'react-bootstrap';
 import {SketchField, Tools} from 'react-sketch';
 import M from 'react-mathjax2';
 import MN from '../../../components/MathJax/MathJaxNode'
 import '../../../customMainTheme.css'
 import PageHeading from "../../../components/UI/PageHeading/PageHeading";
+import DefinitionPanel from "../../../components/UI/DefinitionPanel/DefinitionPanel";
 import Button from '../../../components/UI/Button/Button'
 import StepCounter from '../../../components/UI/StepCounter/StepCounter'
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
@@ -141,6 +143,8 @@ class Exercise20vis extends Component {
         this.updateEdgeWithArrow = updateEdgeWithArrow.bind(this);
         this.clearAllTimers = clearAllTimers.bind(this);
         this.initNetworkInstance = this.initNetworkInstance.bind(this);
+        this.handlerSketchAllowance = handlerSketchAllowance.bind(this);
+        this.handlerSelectedTool = handlerSelectedTool.bind(this);
     }
 
     /**
@@ -161,80 +165,6 @@ class Exercise20vis extends Component {
         this.setState({
             network: state.network.moveTo(newOptions)
         });
-    };
-
-    /**
-     * Handler for activating drawing over graph.
-     * @param state - State of the component.
-     */
-    handlerSketchAllowance = (state) => {
-        if (state.isSketchAllowed) {
-            this.setState({
-                isSketchAllowed: false,
-                btnSketchA: false,
-                btnSketchC: '',
-                btnPencilD: true,
-                btnLineD: true,
-                btnCircleD: true
-            })
-        } else {
-            const isAnyToolActive = state.btnLineA || state.btnCircleA;
-            this.setState({
-                isSketchAllowed: true,
-                btnSketchA: true,
-                btnSketchC: 'btnSketchActive',
-                btnPencilA: !isAnyToolActive,
-                btnPencilD: false,
-                btnLineD: false,
-                btnCircleD: false
-            })
-        }
-    };
-
-    /**
-     * Handler for changing drawing tool.
-     * Activates the right tool button and deactivates others.
-     * @param {number} tool - Number for assigned tool.
-     */
-    handlerSelectedTool = (tool) => {
-        switch (tool) {
-            case 1: {
-                this.setState({
-                    sketchTool: Tools.Pencil,
-                    btnPencilA: true,
-                    btnLineA: false,
-                    btnCircleA: false
-                });
-                break;
-            }
-            case 2: {
-                this.setState({
-                    sketchTool: Tools.Line,
-                    btnPencilA: false,
-                    btnLineA: true,
-                    btnCircleA: false
-                });
-                break;
-            }
-            case 3: {
-                this.setState({
-                    sketchTool: Tools.Circle,
-                    btnPencilA: false,
-                    btnLineA: false,
-                    btnCircleA: true
-                });
-                break;
-            }
-            default: {
-                this.setState({
-                    sketchTool: Tools.Pencil,
-                    btnPencilA: true,
-                    btnLineA: false,
-                    btnCircleA: false
-                });
-                break;
-            }
-        }
     };
 
     nextStep = () => {
@@ -526,17 +456,11 @@ class Exercise20vis extends Component {
                     <div className="page-wrapper">
                         <PageHeading headingTitle={"Příklad 20"} breadcrumbsCurrent={"Důkazy přímo"} />
                         <div className="page-content">
-                            <Row className="page-row">
-                                <Col xs={12} md={12} lg={12}>
-                                    <M.Context input='tex'>
-                                        <div className="bg-info" id="definition">
-                                            <cite><q>Nechť <MN>G</MN> je souvislý graf. Jestliže <MN>e</MN> není most
-                                            v <MN>G</MN>, pak v <MN>G</MN> existuje kružnice obsahující
-                                            hranu <MN>e</MN>.</q></cite> Dokažte přímo.
-                                        </div>
-                                    </M.Context>
-                                </Col>
-                            </Row>
+                            <DefinitionPanel>
+                                <cite><q>Nechť <MN>G</MN> je souvislý graf. Jestliže <MN>e</MN> není most
+                                v <MN>G</MN>, pak v <MN>G</MN> existuje kružnice obsahující
+                                hranu <MN>e</MN>.</q></cite> Dokažte přímo.
+                            </DefinitionPanel>
                             <Row className="page-row">
                                 <Col xs={6} md={6} lg={6}>
                                     <main>
@@ -560,16 +484,16 @@ class Exercise20vis extends Component {
                                                     <FontAwesomeIcon icon={faChevronRight}/></Button>
                                             </span>
                                             <span className="sketch-buttons">
-                                                <Button clicked={() => this.handlerSketchAllowance(this.state)}
+                                                <Button clicked={() => this.setState(() => this.handlerSketchAllowance(this.state))}
                                                         active={this.state.btnSketchA} addClass={this.state.btnSketchC}>
                                                     <FontAwesomeIcon icon={faPaintBrush}/></Button>
-                                                <Button clicked={() => this.handlerSelectedTool(1)}
+                                                <Button clicked={() => this.setState(() => this.handlerSelectedTool(1))}
                                                         active={this.state.btnPencilA} disabled={this.state.btnPencilD}>
                                                     <FontAwesomeIcon icon={faPencilAlt}/></Button>
-                                                <Button clicked={() => this.handlerSelectedTool(2)}
+                                                <Button clicked={() => this.setState(() => this.handlerSelectedTool(2))}
                                                         active={this.state.btnLineA} disabled={this.state.btnLineD}>
                                                     <FontAwesomeIcon icon={faMinus}/></Button>
-                                                <Button clicked={() => this.handlerSelectedTool(3)}
+                                                <Button clicked={() => this.setState(() => this.handlerSelectedTool(3))}
                                                         active={this.state.btnCircleA} disabled={this.state.btnCircleD}>
                                                     <FontAwesomeIcon icon={faCircle}/></Button>
                                                 <Button clicked={() => this.tryNetwork(this.state)}>Network</Button>

@@ -1,6 +1,7 @@
 import GraphVis from 'react-graph-vis'
 import React, {Component} from 'react';
-import {updateNode, updateEdge, updateEdgeWithArrow, clearAllTimers} from '../../../functionality/GraphFunctions'
+import {updateNode, updateEdge, updateEdgeWithArrow, clearAllTimers,
+    handlerSketchAllowance, handlerSelectedTool} from '../../../functionality/GraphFunctions'
 import {Row, Col} from 'react-bootstrap';
 import {SketchField, Tools} from 'react-sketch';
 import M from 'react-mathjax2';
@@ -139,81 +140,9 @@ class Exercise26 extends Component {
         this.updateEdge = updateEdge.bind(this);
         this.updateEdgeWithArrow = updateEdgeWithArrow.bind(this);
         this.clearAllTimers = clearAllTimers.bind(this);
+        this.handlerSketchAllowance = handlerSketchAllowance.bind(this);
+        this.handlerSelectedTool = handlerSelectedTool.bind(this);
     }
-
-    /**
-     * Handler for activating drawing over graph.
-     * @param state - State of the component.
-     */
-    handlerSketchAllowance = (state) => {
-        if (state.isSketchAllowed) {
-            return ({
-                isSketchAllowed: false,
-                btnSketchA: false,
-                btnSketchC: '',
-                btnPencilD: true,
-                btnLineD: true,
-                btnCircleD: true
-            })
-        } else {
-            const isAnyToolActive = state.btnLineA || state.btnCircleA;
-            return ({
-                isSketchAllowed: true,
-                btnSketchA: true,
-                btnSketchC: 'btnSketchActive',
-                btnPencilA: !isAnyToolActive,
-                btnPencilD: false,
-                btnLineD: false,
-                btnCircleD: false
-            })
-        }
-    };
-
-    /**
-     * Handler for changing drawing tool.
-     * Activates the right tool button and deactivates others.
-     * @param {number} tool - Number for assigned tool.
-     */
-    handlerSelectedTool = (tool) => {
-        switch (tool) {
-            case 1: {
-                this.setState({
-                    sketchTool: Tools.Pencil,
-                    btnPencilA: true,
-                    btnLineA: false,
-                    btnCircleA: false
-                });
-                break;
-            }
-            case 2: {
-                this.setState({
-                    sketchTool: Tools.Line,
-                    btnPencilA: false,
-                    btnLineA: true,
-                    btnCircleA: false
-                });
-                break;
-            }
-            case 3: {
-                this.setState({
-                    sketchTool: Tools.Circle,
-                    btnPencilA: false,
-                    btnLineA: false,
-                    btnCircleA: true
-                });
-                break;
-            }
-            default: {
-                this.setState({
-                    sketchTool: Tools.Pencil,
-                    btnPencilA: true,
-                    btnLineA: false,
-                    btnCircleA: false
-                });
-                break;
-            }
-        }
-    };
 
     nextStep = () => {
         if (this.state.currentStep < 5) {
@@ -481,13 +410,13 @@ class Exercise26 extends Component {
                                                 <Button clicked={() => this.setState(() => this.handlerSketchAllowance(this.state))}
                                                         active={this.state.btnSketchA} addClass={this.state.btnSketchC}>
                                                     <FontAwesomeIcon icon={faPaintBrush}/></Button>
-                                                <Button clicked={() => this.handlerSelectedTool(1)}
+                                                <Button clicked={() => this.setState(() => this.handlerSelectedTool(1))}
                                                         active={this.state.btnPencilA} disabled={this.state.btnPencilD}>
                                                     <FontAwesomeIcon icon={faPencilAlt}/></Button>
-                                                <Button clicked={() => this.handlerSelectedTool(2)}
+                                                <Button clicked={() => this.setState(() => this.handlerSelectedTool(2))}
                                                         active={this.state.btnLineA} disabled={this.state.btnLineD}>
                                                     <FontAwesomeIcon icon={faMinus}/></Button>
-                                                <Button clicked={() => this.handlerSelectedTool(3)}
+                                                <Button clicked={() => this.setState(() => this.handlerSelectedTool(3))}
                                                         active={this.state.btnCircleA} disabled={this.state.btnCircleD}>
                                                     <FontAwesomeIcon icon={faCircle}/></Button>
                                             </span>
