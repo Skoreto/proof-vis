@@ -1,23 +1,6 @@
 import GraphVis from 'react-graph-vis'
 import React, {Component} from 'react';
-
-const locales = {
-    cs: {
-        edit: 'Upravit',
-        del: 'Smazat vybrané',
-        back: 'Zpět',
-        addNode: 'Přidat vrchol',
-        addEdge: 'Přidat hranu',
-        editNode: 'Upravit vrchol',
-        editEdge: 'Upravit hranu',
-        addDescription: 'Klikněte do prázdného prostoru pro umístění nového vrcholu.',
-        edgeDescription: 'Táhnutím hrany od vybraného vrcholu ji spojte s jiným vrcholem.',
-        editEdgeDescription: 'Přetáhněte konec hrany na vrchol, se kterým ji chcete spojit.',
-        createEdgeError: 'Nelze připojit hrany ke clusteru.',
-        deleteClusterError: 'Clustery nemohou být smazány.',
-        editClusterError: 'Clustery nemohou být upraveny.'
-    }
-};
+import {graphVisLocales} from '../../../functionality/GraphFunctions'
 
 class SingleDrawing extends Component {
     constructor(props) {
@@ -32,7 +15,7 @@ class SingleDrawing extends Component {
                 height: '100%',
                 width: '100%',
                 locale: 'cs',
-                locales: locales,
+                locales: graphVisLocales,
                 clickToUse: false,
                 physics: false,
                 layout: {},
