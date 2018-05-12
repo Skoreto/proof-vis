@@ -14,24 +14,7 @@ import faPaintBrush from '@fortawesome/fontawesome-free-solid/faPaintBrush'
 import faPencilAlt from '@fortawesome/fontawesome-free-solid/faPencilAlt'
 import faMinus from '@fortawesome/fontawesome-free-solid/faMinus'
 import faCircle from '@fortawesome/fontawesome-free-solid/faCircleNotch'
-
-const locales = {
-    cs: {
-        edit: 'Upravit',
-        del: 'Smazat vybrané',
-        back: 'Zpět',
-        addNode: 'Přidat vrchol',
-        addEdge: 'Přidat hranu',
-        editNode: 'Upravit vrchol',
-        editEdge: 'Upravit hranu',
-        addDescription: 'Klikněte do prázdného prostoru pro umístění nového vrcholu.',
-        edgeDescription: 'Táhnutím hrany od vybraného vrcholu ji spojte s jiným vrcholem.',
-        editEdgeDescription: 'Přetáhněte konec hrany na vrchol, se kterým ji chcete spojit.',
-        createEdgeError: 'Nelze připojit hrany ke clusteru.',
-        deleteClusterError: 'Clustery nemohou být smazány.',
-        editClusterError: 'Clustery nemohou být upraveny.'
-    }
-};
+import {graphVisOptions, handlerSelectedTool, handlerSketchAllowance} from "../../../functionality/GraphFunctions";
 
 class Overview extends Component {
     constructor(props) {
@@ -41,11 +24,12 @@ class Overview extends Component {
                 nodes: [],
                 edges: []
             },
+            options: graphVisOptions,
             currentStep: 0,
             isSketchAllowed: false,
             sketchTool: Tools.Pencil,
-            btnPrevD: false,
-            btnNextD: false,
+            btnPrevD: true,
+            btnNextD: true,
             btnSketchA: false,
             btnSketchC: '',
             btnPencilA: false,
@@ -53,155 +37,11 @@ class Overview extends Component {
             btnLineA: false,
             btnLineD: true,
             btnCircleA: false,
-            btnCircleD: true,
-            options: {
-                autoResize: true,
-                height: '100%',
-                width: '100%',
-                locale: 'cs',
-                locales: locales,
-                clickToUse: false,
-                physics: false,
-                layout: {},
-                nodes: {
-                    shape: 'circle',
-                    color: {background: '#ffff08', border: '#000000'},
-                    label: '   ',
-                    margin: 12,
-                    font: {size: 18}
-                },
-                edges: {
-                    arrows: {
-                        to: {enabled: false, scaleFactor: 2},
-                        from: {enabled: false, scaleFactor: 2}
-                    },
-                    color: {color: '#000000', hover: '#000000'},
-                    width: 1,
-                    dashes: false,
-                    label: '   ',
-                    font: {align: 'top', size: 18}
-                },
-                configure: {
-                    enabled: false,
-                    filter: 'nodes,edges',
-                    showButton: true
-                },
-                manipulation: {
-                    enabled: true,
-                    initiallyActive: true,
-                    addNode: function(nodeData, callback) {
-                        // Nastaveni parametru noveho vrcholu
-                        let color = { background:'#FFFF00', border:'#000000' };
-                        let shadow = { enabled: false };
-                        nodeData.shape = 'dot';
-                        nodeData.size = 18;
-                        nodeData.label = null;
-                        nodeData.color = color;
-                        nodeData.borderWidth = 1;
-                        nodeData.shadow = shadow;
-                        callback(nodeData);
-                    },
-                    editEdge: true,
-                    deleteNode: true,
-                    deleteEdge: true,
-                    controlNodeStyle: {}
-                },
-                interaction: {
-                    dragNodes: true,
-                    dragView: true,
-                    hideEdgesOnDrag: false,
-                    hideNodesOnDrag: false,
-                    hover: true,
-                    hoverConnectedEdges: false,
-                    keyboard: {
-                        enabled: false,
-                        speed: {x: 10, y: 10, zoom: 0.02},
-                        bindToWindow: true
-                    },
-                    multiselect: true,
-                    navigationButtons: true,
-                    selectable: true,
-                    selectConnectedEdges: false,
-                    tooltipDelay: 300,
-                    zoomView: true
-                }
-            },
+            btnCircleD: true
         };
+        this.handlerSketchAllowance = handlerSketchAllowance.bind(this);
+        this.handlerSelectedTool = handlerSelectedTool.bind(this);
     }
-
-    /**
-     * Handler for activating drawing over graph.
-     * @param state - State of the component.
-     */
-    handlerSketchAllowance = (state) => {
-        if (state.isSketchAllowed) {
-            this.setState({
-                isSketchAllowed: false,
-                btnSketchA: false,
-                btnSketchC: '',
-                btnPencilD: true,
-                btnLineD: true,
-                btnCircleD: true
-            })
-        } else {
-            const isAnyToolActive = state.btnLineA || state.btnCircleA;
-            this.setState({
-                isSketchAllowed: true,
-                btnSketchA: true,
-                btnSketchC: 'btnSketchActive',
-                btnPencilA: !isAnyToolActive,
-                btnPencilD: false,
-                btnLineD: false,
-                btnCircleD: false
-            })
-        }
-    };
-
-    /**
-     * Handler for changing drawing tool.
-     * Activates the right tool button and deactivates others.
-     * @param {number} tool - Number for assigned tool.
-     */
-    handlerSelectedTool = (tool) => {
-        switch (tool) {
-            case 1: {
-                this.setState({
-                    sketchTool: Tools.Pencil,
-                    btnPencilA: true,
-                    btnLineA: false,
-                    btnCircleA: false
-                });
-                break;
-            }
-            case 2: {
-                this.setState({
-                    sketchTool: Tools.Line,
-                    btnPencilA: false,
-                    btnLineA: true,
-                    btnCircleA: false
-                });
-                break;
-            }
-            case 3: {
-                this.setState({
-                    sketchTool: Tools.Circle,
-                    btnPencilA: false,
-                    btnLineA: false,
-                    btnCircleA: true
-                });
-                break;
-            }
-            default: {
-                this.setState({
-                    sketchTool: Tools.Pencil,
-                    btnPencilA: true,
-                    btnLineA: false,
-                    btnCircleA: false
-                });
-                break;
-            }
-        }
-    };
 
     render() {
         const events = {};
@@ -236,16 +76,16 @@ class Overview extends Component {
                                                     <FontAwesomeIcon icon={faChevronRight}/></Button>
                                             </span>
                                             <span className="sketch-buttons">
-                                                <Button clicked={() => this.handlerSketchAllowance(this.state)}
+                                                <Button clicked={() => this.setState(() => this.handlerSketchAllowance(this.state))}
                                                         active={this.state.btnSketchA} addClass={this.state.btnSketchC}>
                                                     <FontAwesomeIcon icon={faPaintBrush}/></Button>
-                                                <Button clicked={() => this.handlerSelectedTool(1)}
+                                                <Button clicked={() => this.setState(() => this.handlerSelectedTool(1))}
                                                         active={this.state.btnPencilA} disabled={this.state.btnPencilD}>
                                                     <FontAwesomeIcon icon={faPencilAlt}/></Button>
-                                                <Button clicked={() => this.handlerSelectedTool(2)}
+                                                <Button clicked={() => this.setState(() => this.handlerSelectedTool(2))}
                                                         active={this.state.btnLineA} disabled={this.state.btnLineD}>
                                                     <FontAwesomeIcon icon={faMinus}/></Button>
-                                                <Button clicked={() => this.handlerSelectedTool(3)}
+                                                <Button clicked={() => this.setState(() => this.handlerSelectedTool(3))}
                                                         active={this.state.btnCircleA} disabled={this.state.btnCircleD}>
                                                     <FontAwesomeIcon icon={faCircle}/></Button>
                                             </span>
