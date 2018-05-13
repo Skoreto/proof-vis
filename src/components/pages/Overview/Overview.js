@@ -119,19 +119,24 @@ class Overview extends Component {
                                             <div>
                                                 <ListGroup>
                                                     <ListGroupItem bsStyle="success">Důkazy přímo</ListGroupItem>
-                                                    <ListGroupItem>
-                                                        Příklad 26
+                                                    <ListGroupItem componentClass={Link}
+                                                                   href={process.env.PUBLIC_URL + "/priklad26"}
+                                                                   to={process.env.PUBLIC_URL + "/priklad26"}>
+                                                            Příklad 26
                                                     </ListGroupItem>
                                                 </ListGroup>
                                                 <ListGroup>
                                                     <ListGroupItem bsStyle="warning">Důkazy nepřímo</ListGroupItem>
                                                 </ListGroup>
                                                 <ListGroup>
-                                                    <ListGroupItem bsStyle="danger">Důkazy sporem</ListGroupItem>
+                                                    <ListGroupItem bsStyle="danger">
+                                                        Důkazy sporem</ListGroupItem>
                                                 </ListGroup>
                                                 <ListGroup>
                                                     <ListGroupItem bsStyle="info">Ostatní</ListGroupItem>
-                                                    <ListGroupItem>
+                                                    <ListGroupItem componentClass={Link}
+                                                                   href={process.env.PUBLIC_URL + "/priklad17a"}
+                                                                   to={process.env.PUBLIC_URL + "/priklad17a"}>
                                                         Příklad 17 a)
                                                     </ListGroupItem>
                                                 </ListGroup>
