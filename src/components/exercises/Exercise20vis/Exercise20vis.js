@@ -60,21 +60,21 @@ class Exercise20vis extends Component {
 
     /**
      * Initialize graphVis network instance.
-     * @param {Object} network - Object of network instance returned by getNetwork() callback function.
+     * @param {Object} networkInstance - Object of network instance returned by getNetwork() callback function.
      */
-    initNetworkInstance(network) {
-        this.setState({network: network});
+    initNetworkInstance(networkInstance) {
+        this.setState({network: networkInstance});
     }
 
-    tryNetwork = (state) => {
-        const newOptions = {
+    tryMoveNetworkCamera = (state) => {
+        const newCameraPosition = {
             position: {x: 165, y: -10},
             scale: 0.85,
             offset: {x: 0, y: 0},
             animation: {duration: 1000, easingFunction: "easeInOutQuad"}
         };
         this.setState({
-            network: state.network.moveTo(newOptions)
+            network: state.network.moveTo(newCameraPosition)
         });
     };
 
@@ -407,7 +407,7 @@ class Exercise20vis extends Component {
                                                 <Button clicked={() => this.setState(() => this.handlerSelectedTool(3))}
                                                         active={this.state.btnCircleA} disabled={this.state.btnCircleD}>
                                                     <FontAwesomeIcon icon={faCircle}/></Button>
-                                                <Button clicked={() => this.tryNetwork(this.state)}>Network</Button>
+                                                <Button clicked={() => this.tryMoveNetworkCamera(this.state)}>Network</Button>
                                             </span>
                                         </div>
                                     </main>

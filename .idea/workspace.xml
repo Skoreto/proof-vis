@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="daa44ed9-404f-45c0-a4b5-d9b994cc961e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/customMainTheme.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/customMainTheme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/exercises/Exercise20vis/Exercise20vis.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/exercises/Exercise20vis/Exercise20vis.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -22,17 +21,8 @@
           <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/App.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="238">
-                  <caret line="17" column="65" selection-start-line="17" selection-start-column="65" selection-end-line="17" selection-end-column="65" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/package.json">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="255">
-                  <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
+                <state relative-caret-position="204">
+                  <caret line="18" column="65" selection-start-line="18" selection-start-column="65" selection-end-line="18" selection-end-column="65" />
                 </state>
               </provider>
             </entry>
@@ -40,17 +30,37 @@
           <file leaf-file-name="Exercise20vis.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/components/exercises/Exercise20vis/Exercise20vis.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="799">
+                <state relative-caret-position="255">
                   <caret line="49" column="10" selection-start-line="49" selection-start-column="10" selection-end-line="49" selection-end-column="10" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="customMainTheme.css" pinned="false" current-in-tab="true">
+          <file leaf-file-name="Exercise26gen.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/components/exercises/Exercise26gen/Exercise26gen.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-3825">
+                  <folding>
+                    <element signature="e#0#39#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="670">
+                  <caret line="1371" column="10" selection-start-line="1371" selection-start-column="10" selection-end-line="1371" selection-end-column="10" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="customMainTheme.css" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/customMainTheme.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="432">
-                  <caret line="288" column="5" lean-forward="true" selection-start-line="288" selection-start-column="5" selection-end-line="288" selection-end-column="5" />
+                <state relative-caret-position="619">
+                  <caret line="287" column="39" selection-start-line="287" selection-start-column="39" selection-end-line="287" selection-end-column="39" />
                 </state>
               </provider>
             </entry>
@@ -117,8 +127,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -131,11 +141,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="master" />
-      </map>
-    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -157,34 +162,34 @@
         <option value="$PROJECT_DIR$/src/components/Graph/Node/Node.js" />
         <option value="$PROJECT_DIR$/src/components/UI/PageHeading/PageHeading.css" />
         <option value="$PROJECT_DIR$/src/components/UI/PageHeading/PageHeading.js" />
+        <option value="$PROJECT_DIR$/src/App.css" />
         <option value="$PROJECT_DIR$/src/components/exercises/Exercise20/Exercise20.js" />
         <option value="$PROJECT_DIR$/src/components/UI/Footer/Footer.js" />
+        <option value="$PROJECT_DIR$/src/components/MathJax/MathJaxNode.js" />
+        <option value="$PROJECT_DIR$/src/components/UI/Button/Button.js" />
+        <option value="$PROJECT_DIR$/public/index.html" />
+        <option value="$PROJECT_DIR$/src/components/UI/Button/Button.css" />
         <option value="$PROJECT_DIR$/src/components/UI/StepCounter/StepCounter.js" />
         <option value="$PROJECT_DIR$/src/components/UI/StepCounter/StepCounter.css" />
         <option value="$PROJECT_DIR$/src/components/UI/CustomNavbar/CustomNavbar.css" />
         <option value="$PROJECT_DIR$/src/components/pages/SingleDrawing/SingleDrawing.css" />
         <option value="$PROJECT_DIR$/src/index.css" />
+        <option value="$PROJECT_DIR$/src/main.css" />
+        <option value="$PROJECT_DIR$/src/customMainTheme.css" />
         <option value="$PROJECT_DIR$/config/env.js" />
         <option value="$PROJECT_DIR$/src/components/UI/CustomNavbar/CustomNavbar.js" />
         <option value="$PROJECT_DIR$/src/components/exercises/Exercise20svg/Exercise20svg.js" />
         <option value="$PROJECT_DIR$/src/components/UI/Footer/BottomBar.css" />
         <option value="$PROJECT_DIR$/src/components/UI/Footer/Footer.css" />
         <option value="$PROJECT_DIR$/src/components/UI/Footer/BottomBar.js" />
+        <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/components/UI/DefinitionPanel/DefinitionPanel.js" />
         <option value="$PROJECT_DIR$/src/components/exercises/Exercise26/Exercise26.js" />
         <option value="$PROJECT_DIR$/src/components/pages/SingleDrawing/SingleDrawing.js" />
         <option value="$PROJECT_DIR$/src/functionality/GraphFunctions.js" />
-        <option value="$PROJECT_DIR$/src/components/pages/Overview/Overview.js" />
-        <option value="$PROJECT_DIR$/src/components/UI/Button/Button.css" />
-        <option value="$PROJECT_DIR$/src/components/UI/Button/Button.js" />
-        <option value="$PROJECT_DIR$/public/index.html" />
-        <option value="$PROJECT_DIR$/src/App.css" />
-        <option value="$PROJECT_DIR$/src/App.js" />
-        <option value="$PROJECT_DIR$/src/components/MathJax/MathJaxNode.js" />
-        <option value="$PROJECT_DIR$/src/components/exercises/Exercise20vis/Exercise20vis.js" />
         <option value="$PROJECT_DIR$/src/components/exercises/Exercise17a/Exercise17a.js" />
-        <option value="$PROJECT_DIR$/src/main.css" />
-        <option value="$PROJECT_DIR$/src/customMainTheme.css" />
+        <option value="$PROJECT_DIR$/src/components/pages/Overview/Overview.js" />
+        <option value="$PROJECT_DIR$/src/components/exercises/Exercise20vis/Exercise20vis.js" />
       </list>
     </option>
   </component>
@@ -209,7 +214,7 @@
     <option name="height" value="1408" />
   </component>
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="Scope" currentSubView="Default" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
@@ -219,6 +224,16 @@
             <path>
               <item name="proof-vis" type="b2602c69:ProjectViewProjectNode" />
               <item name="proof-vis" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proof-vis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="proof-vis" type="462c0819:PsiDirectoryNode" />
+              <item name=".vscode" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proof-vis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="proof-vis" type="462c0819:PsiDirectoryNode" />
+              <item name="build" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="proof-vis" type="b2602c69:ProjectViewProjectNode" />
@@ -287,6 +302,14 @@
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="exercises" type="462c0819:PsiDirectoryNode" />
               <item name="Exercise26" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proof-vis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="proof-vis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="exercises" type="462c0819:PsiDirectoryNode" />
+              <item name="Exercise26gen" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="proof-vis" type="b2602c69:ProjectViewProjectNode" />
@@ -378,6 +401,22 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="UI" type="462c0819:PsiDirectoryNode" />
+              <item name="DefinitionPanel" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proof-vis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="proof-vis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="UI" type="462c0819:PsiDirectoryNode" />
+              <item name="ExerciseWrapper" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proof-vis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="proof-vis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="UI" type="462c0819:PsiDirectoryNode" />
               <item name="Footer" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -417,6 +456,46 @@
               <item name="Root" type="cbb8eebc:String" user="Root" />
               <item name="proof-vis" type="cbb8eebc:String" user="proof-vis" />
               <item name="config" type="cbb8eebc:String" user="config" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+        <subPane subId="Default">
+          <expand>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="proof-vis" type="cbb8eebc:String" user="proof-vis" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="proof-vis" type="cbb8eebc:String" user="proof-vis" />
+              <item name=".idea" type="cbb8eebc:String" user=".idea" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="proof-vis" type="cbb8eebc:String" user="proof-vis" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="proof-vis" type="cbb8eebc:String" user="proof-vis" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="components" type="cbb8eebc:String" user="components" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="proof-vis" type="cbb8eebc:String" user="proof-vis" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="components" type="cbb8eebc:String" user="components" />
+              <item name="exercises" type="cbb8eebc:String" user="exercises" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="proof-vis" type="cbb8eebc:String" user="proof-vis" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="components" type="cbb8eebc:String" user="components" />
+              <item name="exercises" type="cbb8eebc:String" user="exercises" />
+              <item name="Exercise26gen" type="cbb8eebc:String" user="Exercise26gen" />
             </path>
           </expand>
           <select />
@@ -489,7 +568,118 @@
       <workItem from="1526147229273" duration="35000" />
       <workItem from="1526147326304" duration="3712000" />
       <workItem from="1526227312918" duration="9428000" />
-      <workItem from="1527495093047" duration="12222000" />
+    </task>
+    <task id="LOCAL-00028" summary="Install react-bootstrap">
+      <created>1524942287229</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1524942287229</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Begin to build default template">
+      <created>1525010569466</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1525010569466</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Disable CSS Modules">
+      <created>1525011231239</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1525011231239</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Improve overall initial layout">
+      <created>1525021454508</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1525021454508</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Fix header indent&#10;&#10;Split media queries into scoped CSS files.">
+      <created>1525022651094</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1525022651094</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Implement initial Navbar layout&#10;&#10;Change website title.">
+      <created>1525078981275</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1525078981275</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Add PageHeading component">
+      <created>1525090525630</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1525090525630</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Install react-router and react-router-dom packages">
+      <created>1525098617569</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1525098617569</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Set up Routes">
+      <created>1525103328186</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1525103328186</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Install react-graph-vis package">
+      <created>1525103782898</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1525103782898</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Add initial implementation of graph-vis">
+      <created>1525115330240</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1525115330240</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Reimplement Exercise20 with graph-vis">
+      <created>1525167188426</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1525167188426</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Install react-sketch package">
+      <created>1525174107614</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1525174107614</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Implement initial sketch drawing functionality">
+      <created>1525176058065</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1525176058065</updated>
+    </task>
+    <task id="LOCAL-00042" summary="Fix GitHub pages deploy">
+      <created>1525178613434</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1525178613434</updated>
+    </task>
+    <task id="LOCAL-00043" summary="Exclude repeated layout components into App.js">
+      <created>1525185498555</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1525185498555</updated>
     </task>
     <task id="LOCAL-00044" summary="Add basename prop to BrowserRouter">
       <created>1525186790837</created>
@@ -722,129 +912,17 @@
       <option name="project" value="LOCAL" />
       <updated>1526229620138</updated>
     </task>
-    <task id="LOCAL-00077" summary="Skip over 'Eject and enable CSS Modules' commit 18d8a091ddc6770d3d3f2c72b3b99899af8db7f1">
-      <created>1527497849247</created>
-      <option name="number" value="00077" />
-      <option name="presentableId" value="LOCAL-00077" />
-      <option name="project" value="LOCAL" />
-      <updated>1527497849247</updated>
-    </task>
-    <task id="LOCAL-00078" summary="Skip over 'Eject and enable CSS Modules' commit 4b46f74484993bfac8876082da10aa13d0c50753">
-      <created>1527522944079</created>
-      <option name="number" value="00078" />
-      <option name="presentableId" value="LOCAL-00078" />
-      <option name="project" value="LOCAL" />
-      <updated>1527522944079</updated>
-    </task>
-    <task id="LOCAL-00079" summary="Skip over 'Install immutability-helper' commit c6b5ec2c2ab0ae5cbadbe85bfc8f1d5575d9fe54&#10;&#10;# Conflicts:&#10;#&#9;package.json">
-      <created>1527524966592</created>
-      <option name="number" value="00079" />
-      <option name="presentableId" value="LOCAL-00079" />
-      <option name="project" value="LOCAL" />
-      <updated>1527524966592</updated>
-    </task>
-    <task id="LOCAL-00080" summary="Skip over 'Install react-bootstrap' commit cb81cd00c0a2fbae9591671dc23df737d8eb0722">
-      <created>1527525648664</created>
-      <option name="number" value="00080" />
-      <option name="presentableId" value="LOCAL-00080" />
-      <option name="project" value="LOCAL" />
-      <updated>1527525648665</updated>
-    </task>
-    <task id="LOCAL-00081" summary="Resolve 'Improve overall initial layout' commit e359c210fe1efd277623dd4c204a9c7728a64e1e&#10;&#10;# Conflicts:&#10;#&#9;src/App.css">
-      <created>1527526252178</created>
-      <option name="number" value="00081" />
-      <option name="presentableId" value="LOCAL-00081" />
-      <option name="project" value="LOCAL" />
-      <updated>1527526252178</updated>
-    </task>
-    <task id="LOCAL-00082" summary="Resolve 'Improve overall initial layout' commit e359c210fe1efd277623dd4c204a9c7728a64e1e&#10;&#10;# Conflicts:&#10;#&#9;src/App.css">
-      <created>1527526324181</created>
-      <option name="number" value="00082" />
-      <option name="presentableId" value="LOCAL-00082" />
-      <option name="project" value="LOCAL" />
-      <updated>1527526324181</updated>
-    </task>
-    <task id="LOCAL-00083" summary="Skip over 'Install react-router and react-router-dom packages' commit f38a3c882289e33318bfe0550c16251016a00a5f">
-      <created>1527527584821</created>
-      <option name="number" value="00083" />
-      <option name="presentableId" value="LOCAL-00083" />
-      <option name="project" value="LOCAL" />
-      <updated>1527527584822</updated>
-    </task>
-    <task id="LOCAL-00084" summary="Resolve 'Set up Routes' commit 7896e71c8e60927113da0771059407d552b6715d&#10;&#10;Apparently git cherry-pick cannot delete the App.css file.&#10;# Conflicts:&#10;#&#9;src/App.css">
-      <created>1527527870829</created>
-      <option name="number" value="00084" />
-      <option name="presentableId" value="LOCAL-00084" />
-      <option name="project" value="LOCAL" />
-      <updated>1527527870829</updated>
-    </task>
-    <task id="LOCAL-00085" summary="Substitute 'Install react-graph-vis package' commit 6998479876e7f04a305e80d368f32cda155b2497">
-      <created>1527528143595</created>
-      <option name="number" value="00085" />
-      <option name="presentableId" value="LOCAL-00085" />
-      <option name="project" value="LOCAL" />
-      <updated>1527528143595</updated>
-    </task>
-    <task id="LOCAL-00086" summary="Substitute 'Install react-sketch package' commit d18f20a037ecc801ec3d63702e99dc98ec74e67b">
-      <created>1527528738913</created>
-      <option name="number" value="00086" />
-      <option name="presentableId" value="LOCAL-00086" />
-      <option name="project" value="LOCAL" />
-      <updated>1527528738913</updated>
-    </task>
-    <task id="LOCAL-00087" summary="Substitute 'Install react-mathjax (SamyPesse) and react-mathjax2 (wko27) packages' commit 97c6e401998cb4321733a5abd1bc764f468eb5d4">
-      <created>1527529242082</created>
-      <option name="number" value="00087" />
-      <option name="presentableId" value="LOCAL-00087" />
-      <option name="project" value="LOCAL" />
-      <updated>1527529242082</updated>
-    </task>
-    <task id="LOCAL-00088" summary="Substitute 'Uninstall react-mathjax package, add MathJaxNode component' commit df5ed5fe8563044e7d0b1db277f4688f2328f9d0">
-      <created>1527529437821</created>
-      <option name="number" value="00088" />
-      <option name="presentableId" value="LOCAL-00088" />
-      <option name="project" value="LOCAL" />
-      <updated>1527529437821</updated>
-    </task>
-    <task id="LOCAL-00089" summary="Substitute 'Install Font Awesome packages by @fortawesome' commit a9ebb607a3866939034c1d14d035ae6407968aa8">
-      <created>1527530044349</created>
-      <option name="number" value="00089" />
-      <option name="presentableId" value="LOCAL-00089" />
-      <option name="project" value="LOCAL" />
-      <updated>1527530044349</updated>
-    </task>
-    <task id="LOCAL-00090" summary="Resolve 'Improve sticky footer' commit 87489b5760cc4d4a20e28289415e62ef4356c7cb">
-      <created>1527533082595</created>
-      <option name="number" value="00090" />
-      <option name="presentableId" value="LOCAL-00090" />
-      <option name="project" value="LOCAL" />
-      <updated>1527533082595</updated>
-    </task>
-    <task id="LOCAL-00091" summary="Fix merge">
-      <created>1527533482529</created>
-      <option name="number" value="00091" />
-      <option name="presentableId" value="LOCAL-00091" />
-      <option name="project" value="LOCAL" />
-      <updated>1527533482530</updated>
-    </task>
-    <task id="LOCAL-00092" summary="Resolve 'Improve layout' commit aeb5e700a450267d4eff31f0a30272babc1cc749&#10;&#10;# Conflicts:&#10;#&#9;src/customMainTheme.css&#10;#&#9;src/main.css">
-      <created>1527533721861</created>
-      <option name="number" value="00092" />
-      <option name="presentableId" value="LOCAL-00092" />
-      <option name="project" value="LOCAL" />
-      <updated>1527533721861</updated>
-    </task>
-    <option name="localTasksCounter" value="93" />
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="391844000" />
+    <option name="totallyTimeSpent" value="379622000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="2062" height="1126" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.110839844" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.110839844" />
       <window_info anchor="bottom" id="TODO" order="7" />
       <window_info anchor="bottom" id="Messages" order="0" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
@@ -852,17 +930,28 @@
       <window_info anchor="bottom" id="Run" order="3" weight="0.32971373" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.6035156" visible="true" weight="0.25765055" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.6035156" visible="true" weight="0.25765055" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.110839844" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="7" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Run" order="3" weight="0.32971373" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
+      <window_info anchor="bottom" id="Messages" order="0" />
       <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5019531" side_tool="true" weight="0.19249754" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.32971373" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49804688" visible="true" weight="0.116485685" />
+      <window_info id="Favorites" order="3" side_tool="true" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -872,6 +961,21 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add initial Proof box implementation (Exercise 17a)" />
+    <MESSAGE value="Install Font Awesome packages by @fortawesome&#10;&#10;(fontawesome, react-fontawesome, fontawesome-free-solid)" />
+    <MESSAGE value="Add Font Awesome icons" />
+    <MESSAGE value="Implement drawing tools" />
+    <MESSAGE value="Improve sticky footer" />
+    <MESSAGE value="Link vis.js Manipulation module files by CDN" />
+    <MESSAGE value="Fix sending invalid type for Button active and disabled parameters" />
+    <MESSAGE value="Add Exercise26 visualization" />
+    <MESSAGE value="Add Exercise 26 texts" />
+    <MESSAGE value="Add miscellaneous improvements" />
+    <MESSAGE value="Implement disabling and enabling of step buttons" />
+    <MESSAGE value="Add initial implementation of SingleDrawing page" />
+    <MESSAGE value="Add Overview" />
+    <MESSAGE value="Fix GitHub pages routing by adding basename" />
+    <MESSAGE value="Update Exercise 20 (vis)" />
     <MESSAGE value="Implement network camera movement" />
     <MESSAGE value="Add next steps visualization to Exercise 20" />
     <MESSAGE value="Reimplement Exercise 20&#10;&#10;TODO Fix reusing camera movements" />
@@ -882,29 +986,56 @@
     <MESSAGE value="Move Sketch handlers into GraphFunctions file&#10;&#10;Use DefinitionPanel in other exercises" />
     <MESSAGE value="Move graphVis options and locales into GraphFunctions file" />
     <MESSAGE value="Add links to Overview" />
-    <MESSAGE value="Skip over 'Eject and enable CSS Modules' commit 18d8a091ddc6770d3d3f2c72b3b99899af8db7f1" />
-    <MESSAGE value="Skip over 'Eject and enable CSS Modules' commit 4b46f74484993bfac8876082da10aa13d0c50753" />
-    <MESSAGE value="Skip over 'Install immutability-helper' commit c6b5ec2c2ab0ae5cbadbe85bfc8f1d5575d9fe54&#10;&#10;# Conflicts:&#10;#&#9;package.json" />
-    <MESSAGE value="Skip over 'Install react-bootstrap' commit cb81cd00c0a2fbae9591671dc23df737d8eb0722" />
-    <MESSAGE value="Resolve 'Improve overall initial layout' commit e359c210fe1efd277623dd4c204a9c7728a64e1e&#10;&#10;# Conflicts:&#10;#&#9;src/App.css" />
-    <MESSAGE value="Skip over 'Install react-router and react-router-dom packages' commit f38a3c882289e33318bfe0550c16251016a00a5f" />
-    <MESSAGE value="Resolve 'Set up Routes' commit 7896e71c8e60927113da0771059407d552b6715d&#10;&#10;Apparently git cherry-pick cannot delete the App.css file.&#10;# Conflicts:&#10;#&#9;src/App.css" />
-    <MESSAGE value="Substitute 'Install react-graph-vis package' commit 6998479876e7f04a305e80d368f32cda155b2497" />
-    <MESSAGE value="Substitute 'Install react-sketch package' commit d18f20a037ecc801ec3d63702e99dc98ec74e67b" />
-    <MESSAGE value="Substitute 'Install react-mathjax (SamyPesse) and react-mathjax2 (wko27) packages' commit 97c6e401998cb4321733a5abd1bc764f468eb5d4" />
-    <MESSAGE value="Substitute 'Uninstall react-mathjax package, add MathJaxNode component' commit df5ed5fe8563044e7d0b1db277f4688f2328f9d0" />
-    <MESSAGE value="Substitute 'Install Font Awesome packages by @fortawesome' commit a9ebb607a3866939034c1d14d035ae6407968aa8" />
-    <MESSAGE value="Resolve 'Improve sticky footer' commit 87489b5760cc4d4a20e28289415e62ef4356c7cb" />
-    <MESSAGE value="Fix merge" />
-    <MESSAGE value="Resolve 'Improve layout' commit aeb5e700a450267d4eff31f0a30272babc1cc749&#10;&#10;# Conflicts:&#10;#&#9;src/customMainTheme.css&#10;#&#9;src/main.css" />
-    <option name="LAST_COMMIT_MESSAGE" value="Resolve 'Improve layout' commit aeb5e700a450267d4eff31f0a30272babc1cc749&#10;&#10;# Conflicts:&#10;#&#9;src/customMainTheme.css&#10;#&#9;src/main.css" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add links to Overview" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="6" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/components/exercises/Exercise20vis/Exercise20vis.js</url>
+          <line>8</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="4" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/components/UI/StepCounter/StepCounter.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/UI/Footer/Footer.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="37" column="5" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Graph/Graph.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="32" column="21" lean-forward="true" selection-start-line="32" selection-start-column="21" selection-end-line="32" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/UI/Button/Button.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="29" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Graph/Edge/Edge.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -948,20 +1079,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/webpack.config.dev.js">
+    <entry file="file://$PROJECT_DIR$/package-lock.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="166" column="18" lean-forward="true" selection-start-line="166" selection-start-column="18" selection-end-line="166" selection-end-column="18" />
+        <state relative-caret-position="637">
+          <caret line="11791" column="1" selection-start-line="11791" selection-start-column="1" selection-end-line="11791" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/webpack.config.prod.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="178" column="24" lean-forward="true" selection-start-line="178" selection-start-column="24" selection-end-line="178" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/config/webpack.config.dev.js" />
+    <entry file="file://$PROJECT_DIR$/config/webpack.config.prod.js" />
     <entry file="file://$PROJECT_DIR$/public/manifest.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -1004,6 +1130,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/MathJax/MathJaxNode.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="27" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/UI/PageHeading/PageHeading.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="697">
@@ -1011,7 +1144,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="37" column="65" selection-start-line="37" selection-start-column="65" selection-end-line="37" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/UI/StepCounter/StepCounter.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/pages/SingleDrawing/SingleDrawing.css" />
+    <entry file="file://$PROJECT_DIR$/src/components/UI/CustomNavbar/CustomNavbar.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/UI/StepCounter/StepCounter.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -1019,22 +1173,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/env.js">
+    <entry file="file://$PROJECT_DIR$/config/env.js" />
+    <entry file="file://$PROJECT_DIR$/src/App.css" />
+    <entry file="file://$PROJECT_DIR$/src/components/UI/MainHeader/MainHeader.js" />
+    <entry file="file://$PROJECT_DIR$/src/components/UI/MainHeader/MainHeader.css" />
+    <entry file="file://$PROJECT_DIR$/src/components/UI/Button/Button.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="557">
-          <caret line="75" column="69" lean-forward="true" selection-start-line="75" selection-start-column="69" selection-end-line="75" selection-end-column="69" />
+        <state relative-caret-position="85">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/UI/MainHeader/MainHeader.js" />
-    <entry file="file://$PROJECT_DIR$/src/components/UI/MainHeader/MainHeader.css" />
+    <entry file="file://$PROJECT_DIR$/src/customMainTheme.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="619">
+          <caret line="287" column="39" selection-start-line="287" selection-start-column="39" selection-end-line="287" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/UI/Footer/Footer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="19" column="26" lean-forward="true" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/UI/Footer/Footer.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="918">
+          <caret line="54" column="27" selection-start-line="54" selection-start-column="27" selection-end-line="54" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="43" column="32" lean-forward="true" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -1052,33 +1233,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/UI/CustomNavbar/CustomNavbar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="30" column="100" selection-start-line="30" selection-start-column="100" selection-end-line="30" selection-end-column="100" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/exercises/Exercise20svg/Exercise20svg.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/exercises/Exercise26/Exercise26.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="53" column="8" selection-start-line="53" selection-start-column="8" selection-end-line="54" selection-end-column="66" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1086,9 +1244,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1096,164 +1251,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/pages/Overview/Overview.js">
+    <entry file="file://$PROJECT_DIR$/src/components/exercises/Exercise26/Exercise26.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2635">
-          <caret line="172" column="5" selection-start-line="172" selection-start-column="5" selection-end-line="172" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="578">
+          <caret line="53" column="8" selection-start-line="53" selection-start-column="8" selection-end-line="54" selection-end-column="66" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/functionality/GraphFunctions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="836">
-          <caret line="187" selection-start-line="187" selection-end-line="187" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/UI/CustomNavbar/CustomNavbar.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/UI/Footer/Footer.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="54" column="27" selection-start-line="54" selection-start-column="27" selection-end-line="54" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/UI/StepCounter/StepCounter.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/exercises/Exercise17a/Exercise17av2.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="42" column="10" lean-forward="true" selection-start-line="42" selection-start-column="10" selection-end-line="42" selection-end-column="10" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/UI/Button/Button.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package-lock.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3938">
-          <caret line="11753" lean-forward="true" selection-start-line="11753" selection-end-line="11753" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="37" column="65" selection-start-line="37" selection-start-column="65" selection-end-line="37" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/exercises/Exercise20/Exercise20.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="17" column="65" selection-start-line="17" selection-start-column="65" selection-end-line="17" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/MathJax/MathJaxNode.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="27" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/UI/Button/Button.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="127" column="16" selection-start-line="127" selection-start-column="16" selection-end-line="127" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/UI/Footer/BottomBar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="736">
+          <caret line="165" selection-start-line="165" selection-end-line="165" />
         </state>
       </provider>
     </entry>
@@ -1267,17 +1278,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/exercises/Exercise20vis/Exercise20vis.js">
+    <entry file="file://$PROJECT_DIR$/src/components/UI/CustomNavbar/CustomNavbar.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="49" column="10" selection-start-line="49" selection-start-column="10" selection-end-line="49" selection-end-column="10" />
+        <state relative-caret-position="510">
+          <caret line="30" column="100" selection-start-line="30" selection-start-column="45" selection-end-line="30" selection-end-column="100" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/customMainTheme.css">
+    <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="288" column="5" lean-forward="true" selection-start-line="288" selection-start-column="5" selection-end-line="288" selection-end-column="5" />
+        <state relative-caret-position="204">
+          <caret line="18" column="65" selection-start-line="18" selection-start-column="65" selection-end-line="18" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/pages/Overview/Overview.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="152" column="5" selection-start-line="152" selection-start-column="5" selection-end-line="152" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/UI/Button/Button.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/exercises/Exercise20vis/Exercise20vis.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="49" column="10" selection-start-line="49" selection-start-column="10" selection-end-line="49" selection-end-column="10" />
         </state>
       </provider>
     </entry>
