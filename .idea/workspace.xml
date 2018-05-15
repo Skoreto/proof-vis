@@ -1,0 +1,1372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="daa44ed9-404f-45c0-a4b5-d9b994cc961e" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/src/components/exercises/Exercise20vis/Exercise20vis.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/exercises/Exercise20vis/Exercise20vis.js" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <splitter split-orientation="horizontal" split-proportion="0.5727622">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+          <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/App.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="238">
+                  <caret line="14" column="59" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="59" />
+                  <folding>
+                    <element signature="e#0#41#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="CustomNavbar.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/components/UI/CustomNavbar/CustomNavbar.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="510">
+                  <caret line="30" column="100" selection-start-line="30" selection-start-column="45" selection-end-line="30" selection-end-column="100" />
+                  <folding>
+                    <element signature="e#0#26#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Exercise20vis.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/components/exercises/Exercise20vis/Exercise20vis.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="629">
+                  <caret line="79" lean-forward="true" selection-start-line="79" selection-end-line="79" />
+                  <folding>
+                    <element signature="e#0#38#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Button.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/components/UI/Button/Button.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="85">
+                  <caret line="7" column="15" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="15" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Exercise17a.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/components/exercises/Exercise17a/Exercise17a.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1326">
+                  <caret line="78" column="13" selection-start-line="78" selection-start-column="13" selection-end-line="78" selection-end-column="13" />
+                  <folding>
+                    <element signature="e#0#38#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Exercise20svg.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/components/exercises/Exercise20svg/Exercise20svg.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="170">
+                  <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
+                  <folding>
+                    <element signature="e#0#41#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Exercise26.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/components/exercises/Exercise26/Exercise26.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="578">
+                  <caret line="53" column="8" selection-start-line="53" selection-start-column="8" selection-end-line="54" selection-end-column="66" />
+                  <folding>
+                    <element signature="e#0#38#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Footer.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/components/UI/Footer/Footer.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="34">
+                  <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="22" />
+                  <folding>
+                    <element signature="e#0#26#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="SingleDrawing.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/components/pages/SingleDrawing/SingleDrawing.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="170">
+                  <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+                  <folding>
+                    <element signature="e#0#38#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Overview.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/components/pages/Overview/Overview.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="765">
+                  <caret line="152" column="5" selection-start-line="152" selection-start-column="5" selection-end-line="152" selection-end-column="5" />
+                  <folding>
+                    <element signature="e#0#38#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="GraphFunctions.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/functionality/GraphFunctions.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="736">
+                  <caret line="165" selection-start-line="165" selection-end-line="165" />
+                  <folding>
+                    <element signature="e#0#41#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="index.css" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/index.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="323">
+                  <caret line="19" column="3" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="customMainTheme.css" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/customMainTheme.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="2890">
+                  <caret line="170" column="24" selection-start-line="170" selection-start-column="24" selection-end-line="170" selection-end-column="24" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="CustomNavbar.css" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/components/UI/CustomNavbar/CustomNavbar.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="323">
+                  <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Footer.css" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/components/UI/Footer/Footer.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="918">
+                  <caret line="54" column="27" selection-start-line="54" selection-start-column="27" selection-end-line="54" selection-end-column="27" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Button.css" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/components/UI/Button/Button.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="51">
+                  <caret line="3" column="20" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="StepCounter.css" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/components/UI/StepCounter/StepCounter.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="51">
+                  <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>hoek</find>
+      <find>page</find>
+      <find>React App</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/components/Graph/Text.js" />
+        <option value="$PROJECT_DIR$/src/components/Graph/Graph.js" />
+        <option value="$PROJECT_DIR$/src/components/Graph/Text/Text.js" />
+        <option value="$PROJECT_DIR$/package-lock.json" />
+        <option value="$PROJECT_DIR$/src/index.js" />
+        <option value="$PROJECT_DIR$/src/components/UI/Header.js" />
+        <option value="$PROJECT_DIR$/src/components/UI/MainHeader.js" />
+        <option value="$PROJECT_DIR$/src/components/UI/CustomNavbar.js" />
+        <option value="$PROJECT_DIR$/config/webpack.config.dev.js" />
+        <option value="$PROJECT_DIR$/config/webpack.config.prod.js" />
+        <option value="$PROJECT_DIR$/src/components/UI/MainHeader/MainHeader.css" />
+        <option value="$PROJECT_DIR$/src/components/UI/MainHeader/MainHeader.js" />
+        <option value="$PROJECT_DIR$/public/manifest.json" />
+        <option value="$PROJECT_DIR$/src/components/Graph/Edge/Edge.js" />
+        <option value="$PROJECT_DIR$/src/components/Graph/Node/Node.js" />
+        <option value="$PROJECT_DIR$/src/components/UI/PageHeading/PageHeading.css" />
+        <option value="$PROJECT_DIR$/src/components/UI/PageHeading/PageHeading.js" />
+        <option value="$PROJECT_DIR$/src/App.css" />
+        <option value="$PROJECT_DIR$/src/components/exercises/Exercise20/Exercise20.js" />
+        <option value="$PROJECT_DIR$/src/components/UI/Footer/Footer.js" />
+        <option value="$PROJECT_DIR$/src/components/MathJax/MathJaxNode.js" />
+        <option value="$PROJECT_DIR$/src/components/UI/Button/Button.js" />
+        <option value="$PROJECT_DIR$/public/index.html" />
+        <option value="$PROJECT_DIR$/src/components/UI/Button/Button.css" />
+        <option value="$PROJECT_DIR$/src/components/UI/StepCounter/StepCounter.js" />
+        <option value="$PROJECT_DIR$/src/components/UI/StepCounter/StepCounter.css" />
+        <option value="$PROJECT_DIR$/src/components/UI/CustomNavbar/CustomNavbar.css" />
+        <option value="$PROJECT_DIR$/src/components/pages/SingleDrawing/SingleDrawing.css" />
+        <option value="$PROJECT_DIR$/src/index.css" />
+        <option value="$PROJECT_DIR$/src/main.css" />
+        <option value="$PROJECT_DIR$/src/customMainTheme.css" />
+        <option value="$PROJECT_DIR$/config/env.js" />
+        <option value="$PROJECT_DIR$/src/components/UI/CustomNavbar/CustomNavbar.js" />
+        <option value="$PROJECT_DIR$/src/components/exercises/Exercise20svg/Exercise20svg.js" />
+        <option value="$PROJECT_DIR$/src/components/UI/Footer/BottomBar.css" />
+        <option value="$PROJECT_DIR$/src/components/UI/Footer/Footer.css" />
+        <option value="$PROJECT_DIR$/src/components/UI/Footer/BottomBar.js" />
+        <option value="$PROJECT_DIR$/src/App.js" />
+        <option value="$PROJECT_DIR$/src/components/UI/DefinitionPanel/DefinitionPanel.js" />
+        <option value="$PROJECT_DIR$/src/components/exercises/Exercise26/Exercise26.js" />
+        <option value="$PROJECT_DIR$/src/components/pages/SingleDrawing/SingleDrawing.js" />
+        <option value="$PROJECT_DIR$/src/functionality/GraphFunctions.js" />
+        <option value="$PROJECT_DIR$/src/components/exercises/Exercise17a/Exercise17a.js" />
+        <option value="$PROJECT_DIR$/src/components/pages/Overview/Overview.js" />
+        <option value="$PROJECT_DIR$/src/components/exercises/Exercise20vis/Exercise20vis.js" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/node_modules" />
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/package.json" />
+    </packageJsonPaths>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="2578" />
+    <option name="height" value="1408" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="proof-vis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="proof-vis" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proof-vis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="proof-vis" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proof-vis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="proof-vis" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proof-vis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="proof-vis" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="image" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proof-vis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="proof-vis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proof-vis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="proof-vis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proof-vis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="proof-vis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="exercises" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proof-vis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="proof-vis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="exercises" type="462c0819:PsiDirectoryNode" />
+              <item name="Exercise17a" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proof-vis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="proof-vis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="exercises" type="462c0819:PsiDirectoryNode" />
+              <item name="Exercise20svg" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proof-vis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="proof-vis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="exercises" type="462c0819:PsiDirectoryNode" />
+              <item name="Exercise20vis" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proof-vis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="proof-vis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="exercises" type="462c0819:PsiDirectoryNode" />
+              <item name="Exercise26" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proof-vis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="proof-vis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Graph" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proof-vis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="proof-vis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Graph" type="462c0819:PsiDirectoryNode" />
+              <item name="Edge" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proof-vis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="proof-vis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Graph" type="462c0819:PsiDirectoryNode" />
+              <item name="Node" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proof-vis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="proof-vis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Graph" type="462c0819:PsiDirectoryNode" />
+              <item name="Text" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proof-vis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="proof-vis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="MathJax" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proof-vis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="proof-vis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proof-vis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="proof-vis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="Overview" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proof-vis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="proof-vis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="SingleDrawing" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proof-vis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="proof-vis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="UI" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proof-vis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="proof-vis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="UI" type="462c0819:PsiDirectoryNode" />
+              <item name="Button" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proof-vis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="proof-vis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="UI" type="462c0819:PsiDirectoryNode" />
+              <item name="CustomNavbar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proof-vis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="proof-vis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="UI" type="462c0819:PsiDirectoryNode" />
+              <item name="DefinitionPanel" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proof-vis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="proof-vis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="UI" type="462c0819:PsiDirectoryNode" />
+              <item name="Footer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proof-vis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="proof-vis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="UI" type="462c0819:PsiDirectoryNode" />
+              <item name="PageHeading" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proof-vis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="proof-vis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="UI" type="462c0819:PsiDirectoryNode" />
+              <item name="StepCounter" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proof-vis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="proof-vis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="functionality" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <expand>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="proof-vis" type="cbb8eebc:String" user="proof-vis" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="proof-vis" type="cbb8eebc:String" user="proof-vis" />
+              <item name="config" type="cbb8eebc:String" user="config" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../MathematicalProofsGuide" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="node.js.detected.package.prettier" value="true" />
+    <property name="node.js.path.for.package.prettier" value="project" />
+    <property name="node.js.selected.package.prettier" value="" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Tomas\WebstormProjects\proof-vis\public" />
+      <recent name="C:\Users\Tomas\WebstormProjects\proof-vis\src\components\exercises\Exercise20" />
+      <recent name="C:\Users\Tomas\WebstormProjects\proof-vis\src\components\UI\MainHeader" />
+      <recent name="C:\Users\Tomas\WebstormProjects\proof-vis\src\components\UI\CustomNavbar" />
+      <recent name="C:\Users\Tomas\WebstormProjects\proof-vis\src\components\Graph" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Tomas\WebstormProjects\proof-vis\public\assets\image" />
+      <recent name="C:\Users\Tomas\WebstormProjects\proof-vis\public\assets" />
+      <recent name="C:\Users\Tomas\WebstormProjects\proof-vis\src\components\exercises" />
+      <recent name="C:\Users\Tomas\WebstormProjects\proof-vis\src" />
+      <recent name="C:\Users\Tomas\WebstormProjects\proof-vis\src\components\UI" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="daa44ed9-404f-45c0-a4b5-d9b994cc961e" name="Default" comment="" />
+      <created>1522684891725</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1522684891725</updated>
+      <workItem from="1522684895578" duration="3155000" />
+      <workItem from="1522748232746" duration="598000" />
+      <workItem from="1522873944483" duration="598000" />
+      <workItem from="1523266676381" duration="597000" />
+      <workItem from="1523557524692" duration="19975000" />
+      <workItem from="1523719720293" duration="15827000" />
+      <workItem from="1523893550661" duration="17786000" />
+      <workItem from="1524430960177" duration="796000" />
+      <workItem from="1524494983721" duration="39122000" />
+      <workItem from="1524823467832" duration="34529000" />
+      <workItem from="1525077110312" duration="80830000" />
+      <workItem from="1525332924867" duration="96641000" />
+      <workItem from="1525681733183" duration="48976000" />
+      <workItem from="1526058960606" duration="7017000" />
+      <workItem from="1526147229273" duration="35000" />
+      <workItem from="1526147326304" duration="3712000" />
+      <workItem from="1526227312918" duration="9428000" />
+    </task>
+    <task id="LOCAL-00028" summary="Install react-bootstrap">
+      <created>1524942287229</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1524942287229</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Begin to build default template">
+      <created>1525010569466</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1525010569466</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Disable CSS Modules">
+      <created>1525011231239</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1525011231239</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Improve overall initial layout">
+      <created>1525021454508</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1525021454508</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Fix header indent&#10;&#10;Split media queries into scoped CSS files.">
+      <created>1525022651094</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1525022651094</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Implement initial Navbar layout&#10;&#10;Change website title.">
+      <created>1525078981275</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1525078981275</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Add PageHeading component">
+      <created>1525090525630</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1525090525630</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Install react-router and react-router-dom packages">
+      <created>1525098617569</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1525098617569</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Set up Routes">
+      <created>1525103328186</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1525103328186</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Install react-graph-vis package">
+      <created>1525103782898</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1525103782898</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Add initial implementation of graph-vis">
+      <created>1525115330240</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1525115330240</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Reimplement Exercise20 with graph-vis">
+      <created>1525167188426</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1525167188426</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Install react-sketch package">
+      <created>1525174107614</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1525174107614</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Implement initial sketch drawing functionality">
+      <created>1525176058065</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1525176058065</updated>
+    </task>
+    <task id="LOCAL-00042" summary="Fix GitHub pages deploy">
+      <created>1525178613434</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1525178613434</updated>
+    </task>
+    <task id="LOCAL-00043" summary="Exclude repeated layout components into App.js">
+      <created>1525185498555</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1525185498555</updated>
+    </task>
+    <task id="LOCAL-00044" summary="Add basename prop to BrowserRouter">
+      <created>1525186790837</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1525186790837</updated>
+    </task>
+    <task id="LOCAL-00045" summary="Rearrange layout, add favicon and logo">
+      <created>1525196814404</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1525196814404</updated>
+    </task>
+    <task id="LOCAL-00046" summary="Install react-mathjax (SamyPesse) and react-mathjax2 (wko27) packages">
+      <created>1525253098328</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1525253098328</updated>
+    </task>
+    <task id="LOCAL-00047" summary="Uninstall react-mathjax package, add MathJaxNode component">
+      <created>1525254885034</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1525254885034</updated>
+    </task>
+    <task id="LOCAL-00048" summary="Move graph functions into separate file">
+      <created>1525273311977</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1525273311977</updated>
+    </task>
+    <task id="LOCAL-00049" summary="Add Exercise 17a">
+      <created>1525283390637</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1525283390637</updated>
+    </task>
+    <task id="LOCAL-00050" summary="Add Description box (Exercise 17a)">
+      <created>1525337648617</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1525337648619</updated>
+    </task>
+    <task id="LOCAL-00051" summary="Move ClearAllTimers function into GraphFunctions file">
+      <created>1525338619571</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1525338619571</updated>
+    </task>
+    <task id="LOCAL-00052" summary="Add initial Proof box implementation (Exercise 17a)">
+      <created>1525423365078</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1525423365078</updated>
+    </task>
+    <task id="LOCAL-00053" summary="Install Font Awesome packages by @fortawesome&#10;&#10;(fontawesome, react-fontawesome, fontawesome-free-solid)">
+      <created>1525434803638</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1525434803638</updated>
+    </task>
+    <task id="LOCAL-00054" summary="Add Font Awesome icons">
+      <created>1525437806153</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1525437806153</updated>
+    </task>
+    <task id="LOCAL-00055" summary="Implement drawing tools">
+      <created>1525450392300</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1525450392300</updated>
+    </task>
+    <task id="LOCAL-00056" summary="Improve sticky footer">
+      <created>1525466973979</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1525466973979</updated>
+    </task>
+    <task id="LOCAL-00057" summary="Link vis.js Manipulation module files by CDN">
+      <created>1525512168250</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1525512168251</updated>
+    </task>
+    <task id="LOCAL-00058" summary="Fix sending invalid type for Button active and disabled parameters">
+      <created>1525520739053</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1525520739054</updated>
+    </task>
+    <task id="LOCAL-00059" summary="Add Exercise26 visualization">
+      <created>1525521719365</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1525521719365</updated>
+    </task>
+    <task id="LOCAL-00060" summary="Add Exercise 26 texts">
+      <created>1525543553890</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1525543553891</updated>
+    </task>
+    <task id="LOCAL-00061" summary="Add miscellaneous improvements">
+      <created>1525608569595</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1525608569597</updated>
+    </task>
+    <task id="LOCAL-00062" summary="Implement disabling and enabling of step buttons">
+      <created>1525611546089</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1525611546090</updated>
+    </task>
+    <task id="LOCAL-00063" summary="Add initial implementation of SingleDrawing page">
+      <created>1525623275316</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1525623275316</updated>
+    </task>
+    <task id="LOCAL-00064" summary="Add Overview">
+      <created>1525630619046</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1525630619046</updated>
+    </task>
+    <task id="LOCAL-00065" summary="Fix GitHub pages routing by adding basename">
+      <created>1525631069094</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1525631069094</updated>
+    </task>
+    <task id="LOCAL-00066" summary="Update Exercise 20 (vis)">
+      <created>1525635890081</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1525635890081</updated>
+    </task>
+    <task id="LOCAL-00067" summary="Implement network camera movement">
+      <created>1525685921899</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1525685921901</updated>
+    </task>
+    <task id="LOCAL-00068" summary="Add next steps visualization to Exercise 20">
+      <created>1525900678948</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1525900678948</updated>
+    </task>
+    <task id="LOCAL-00069" summary="Reimplement Exercise 20&#10;&#10;TODO Fix reusing camera movements">
+      <created>1525944581395</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1525944581396</updated>
+    </task>
+    <task id="LOCAL-00070" summary="Add editNode dialog (SingleDrawing)">
+      <created>1525945807403</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1525945807403</updated>
+    </task>
+    <task id="LOCAL-00071" summary="Improve layout">
+      <created>1525966236315</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1525966236315</updated>
+    </task>
+    <task id="LOCAL-00072" summary="Delete unnecessary code and layout files">
+      <created>1525967029263</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1525967029263</updated>
+    </task>
+    <task id="LOCAL-00073" summary="Add DefinitionPanel component">
+      <created>1526059812358</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1526059812358</updated>
+    </task>
+    <task id="LOCAL-00074" summary="Move Sketch handlers into GraphFunctions file&#10;&#10;Use DefinitionPanel in other exercises">
+      <created>1526061425655</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1526061425655</updated>
+    </task>
+    <task id="LOCAL-00075" summary="Move graphVis options and locales into GraphFunctions file">
+      <created>1526143632098</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1526143632098</updated>
+    </task>
+    <task id="LOCAL-00076" summary="Add links to Overview">
+      <created>1526229620136</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1526229620138</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="379622000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="2062" height="1126" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.110839844" />
+      <window_info anchor="bottom" id="TODO" order="7" />
+      <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5019531" side_tool="true" weight="0.19249754" />
+      <window_info anchor="bottom" id="Run" order="3" weight="0.32971373" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49804688" visible="true" weight="0.116485685" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info id="npm" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Messages" order="0" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.32971373" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add initial Proof box implementation (Exercise 17a)" />
+    <MESSAGE value="Install Font Awesome packages by @fortawesome&#10;&#10;(fontawesome, react-fontawesome, fontawesome-free-solid)" />
+    <MESSAGE value="Add Font Awesome icons" />
+    <MESSAGE value="Implement drawing tools" />
+    <MESSAGE value="Improve sticky footer" />
+    <MESSAGE value="Link vis.js Manipulation module files by CDN" />
+    <MESSAGE value="Fix sending invalid type for Button active and disabled parameters" />
+    <MESSAGE value="Add Exercise26 visualization" />
+    <MESSAGE value="Add Exercise 26 texts" />
+    <MESSAGE value="Add miscellaneous improvements" />
+    <MESSAGE value="Implement disabling and enabling of step buttons" />
+    <MESSAGE value="Add initial implementation of SingleDrawing page" />
+    <MESSAGE value="Add Overview" />
+    <MESSAGE value="Fix GitHub pages routing by adding basename" />
+    <MESSAGE value="Update Exercise 20 (vis)" />
+    <MESSAGE value="Implement network camera movement" />
+    <MESSAGE value="Add next steps visualization to Exercise 20" />
+    <MESSAGE value="Reimplement Exercise 20&#10;&#10;TODO Fix reusing camera movements" />
+    <MESSAGE value="Add editNode dialog (SingleDrawing)" />
+    <MESSAGE value="Improve layout" />
+    <MESSAGE value="Delete unnecessary code and layout files" />
+    <MESSAGE value="Add DefinitionPanel component" />
+    <MESSAGE value="Move Sketch handlers into GraphFunctions file&#10;&#10;Use DefinitionPanel in other exercises" />
+    <MESSAGE value="Move graphVis options and locales into GraphFunctions file" />
+    <MESSAGE value="Add links to Overview" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add links to Overview" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/components/exercises/Exercise20vis/Exercise20vis.js</url>
+          <line>8</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="4" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/components/UI/StepCounter/StepCounter.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/UI/Footer/Footer.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="37" column="5" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Graph/Graph.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="32" column="21" lean-forward="true" selection-start-line="32" selection-start-column="21" selection-end-line="32" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/UI/Button/Button.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="29" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Graph/Edge/Edge.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Graph/Node/Node.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.css" />
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Graph/Edge/Edge.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Graph/Node/Node.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="34" column="100" selection-start-line="34" selection-start-column="100" selection-end-line="34" selection-end-column="100" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Graph/Graph.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="28" column="21" lean-forward="true" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package-lock.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="637">
+          <caret line="11791" column="1" selection-start-line="11791" selection-start-column="1" selection-end-line="11791" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/webpack.config.dev.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="166" column="18" lean-forward="true" selection-start-line="166" selection-start-column="18" selection-end-line="166" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/webpack.config.prod.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="178" column="24" lean-forward="true" selection-start-line="178" selection-start-column="24" selection-end-line="178" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/manifest.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Graph/Node/Node.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="38" column="15" selection-start-line="38" selection-start-column="15" selection-end-line="38" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Graph/Graph.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Graph/Text/Text.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="109" selection-start-line="5" selection-start-column="109" selection-end-line="5" selection-end-column="109" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="21" lean-forward="true" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Graph/Edge/Edge.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="44" column="15" selection-start-line="44" selection-start-column="15" selection-end-line="44" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/MathJax/MathJaxNode.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="27" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/UI/PageHeading/PageHeading.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="41" column="1" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="53" lean-forward="true" selection-start-line="8" selection-start-column="53" selection-end-line="8" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/UI/StepCounter/StepCounter.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/pages/SingleDrawing/SingleDrawing.css" />
+    <entry file="file://$PROJECT_DIR$/src/components/UI/CustomNavbar/CustomNavbar.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/UI/StepCounter/StepCounter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/env.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="557">
+          <caret line="75" column="69" lean-forward="true" selection-start-line="75" selection-start-column="69" selection-end-line="75" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.css" />
+    <entry file="file://$PROJECT_DIR$/src/components/UI/MainHeader/MainHeader.js" />
+    <entry file="file://$PROJECT_DIR$/src/components/UI/MainHeader/MainHeader.css" />
+    <entry file="file://$PROJECT_DIR$/src/components/UI/Button/Button.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="20" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/customMainTheme.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2890">
+          <caret line="170" column="24" selection-start-line="170" selection-start-column="24" selection-end-line="170" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="3" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/UI/Footer/Footer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="19" column="26" lean-forward="true" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/UI/Footer/Footer.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="918">
+          <caret line="54" column="27" selection-start-line="54" selection-start-column="27" selection-end-line="54" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="43" column="32" lean-forward="true" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/UI/PageHeading/PageHeading.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="18" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/UI/DefinitionPanel/DefinitionPanel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="10" lean-forward="true" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/exercises/Exercise20svg/Exercise20svg.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/UI/Footer/Footer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/pages/SingleDrawing/SingleDrawing.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/exercises/Exercise26/Exercise26.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="53" column="8" selection-start-line="53" selection-start-column="8" selection-end-line="54" selection-end-column="66" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/functionality/GraphFunctions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="736">
+          <caret line="165" selection-start-line="165" selection-end-line="165" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/exercises/Exercise17a/Exercise17a.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1326">
+          <caret line="78" column="13" selection-start-line="78" selection-start-column="13" selection-end-line="78" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/UI/CustomNavbar/CustomNavbar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="30" column="100" selection-start-line="30" selection-start-column="45" selection-end-line="30" selection-end-column="100" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="59" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="59" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/pages/Overview/Overview.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="152" column="5" selection-start-line="152" selection-start-column="5" selection-end-line="152" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/UI/Button/Button.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="7" column="15" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/exercises/Exercise20vis/Exercise20vis.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="79" lean-forward="true" selection-start-line="79" selection-end-line="79" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
