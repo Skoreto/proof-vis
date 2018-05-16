@@ -13,6 +13,7 @@ import faPaintBrush from '@fortawesome/fontawesome-free-solid/faPaintBrush'
 import faPencilAlt from '@fortawesome/fontawesome-free-solid/faPencilAlt'
 import faMinus from '@fortawesome/fontawesome-free-solid/faMinus'
 import faCircle from '@fortawesome/fontawesome-free-solid/faCircleNotch'
+import faRedoAlt from '@fortawesome/fontawesome-free-solid/faRedoAlt'
 
 const ExerciseWrapper = (props) => (
     <div className={'container'}>
@@ -61,6 +62,10 @@ const ExerciseWrapper = (props) => (
                                     <Button clicked={props.handleSketchCircle}
                                             active={props.btnCircleA} disabled={props.btnCircleD}>
                                         <FontAwesomeIcon icon={faCircle}/></Button>
+                                </span>
+                                <span className='animation-panel'>
+                                    <Button clicked={props.repeatStep} disabled={props.btnRepeatD}>
+                                        <FontAwesomeIcon icon={faRedoAlt}/></Button>
                                 </span>
                             </div>
                         </main>

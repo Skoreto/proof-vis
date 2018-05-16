@@ -153,6 +153,9 @@
 .sketch-buttons {
     border-left: 1px solid #fafafa;
 }
+.animation-panel {
+  margin-left: 15px;
+}
 /* == CONTEXTOVE MENU UPRAVY VRCHOLU == */
 #operation {
     font-size: 18px;

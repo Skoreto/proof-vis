@@ -36,7 +36,8 @@ class Exercise26gen extends Component {
             btnCircleA: false,
             btnCircleD: true,
             repeatBoxHidden: true,
-            repeatBoxContent: ''
+            repeatBoxContent: '',
+            btnRepeatD: true
         };
         this.updateNode = updateNode.bind(this);
         this.updateEdge = updateEdge.bind(this);
@@ -129,6 +130,8 @@ class Exercise26gen extends Component {
             this.setState((state) => {return {currentStep: --state.currentStep}});
         }
     };
+
+    repeatStep = () => {};
 
     stepReset = () => {
         return {graphVis: {nodes: [], edges: []}, descriptionBox: '', repeatBoxHidden: true, repeatBoxContent: ''}
