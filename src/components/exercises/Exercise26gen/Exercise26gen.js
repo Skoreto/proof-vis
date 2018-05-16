@@ -24,6 +24,8 @@ class Exercise26gen extends Component {
             breadcrumbsCurrent: 'Důkazy přímo',
             isSketchAllowed: false,
             sketchTool: Tools.Pencil,
+            isSVGCoverShowed: false,
+            svgContent: 'Ahoj, jak se máte',
             description: '',
             btnPrevD: true,
             btnNextD: false,
@@ -53,6 +55,7 @@ class Exercise26gen extends Component {
                 this.setState({btnPrevD: false});
                 this.setState(this.step1);
                 this.setState(this.step1Texts);
+                this.setState(this.step1SVGContent);
             }
 
             if (this.state.currentStep === 1) {
@@ -179,6 +182,24 @@ class Exercise26gen extends Component {
 
         return {description: description, repeatBoxHidden: false, repeatBoxContent: repeatBox}
     };
+
+    step1SVGContent = () => {
+        const svgContent = (
+            <svg>
+                <text textAnchor={'middle'} x={300} y={50} stroke={'black'} strokeWidth={1} fontSize={22}>
+                    Zkouška znaků &forall; ⇒ ⇔ <tspan font-style='italic'>&isin; italic</tspan>
+                </text>
+                <g>
+                    <rect x={100} y={100} width={100} height={30} fill={'green'} strokeWidth={2} opacity={0.6} />
+                    <text x={120} y={125} stroke={'black'} strokeWidth={1} fontSize={22}>
+                    Graf <tspan font-style='italic'>G</tspan>
+                    </text>
+                </g>
+            </svg>
+        );
+
+        return {isSVGCoverShowed: true, svgContent: svgContent}
+    }
 
     step2 = (state) => {
         let newNodes = this.updateNode(state.graphVis.nodes, 0, '#B39DDB', '   ');
@@ -317,8 +338,10 @@ class Exercise26gen extends Component {
             </div>
         );
 
+
+
         return (
-            <ExerciseWrapper {...this.state} definitionPanel={definitionPanel} proofBox={proofBox} 
+            <ExerciseWrapper {...this.state} definitionPanel={definitionPanel} proofBox={proofBox}
                 previousStep={this.previousStep} nextStep={this.nextStep} 
                 handleSketchAllowance={() => this.setState(() => this.handlerSketchAllowance(this.state))}
                 handleSketchPencil={() => this.setState(() => this.handlerSelectedTool(1))}

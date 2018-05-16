@@ -32,6 +32,15 @@ const ExerciseWrapper = (props) => (
                                     </div>
                                 ) : (<div></div>)
                             }
+                            {
+                                props.isSVGCoverShowed ? (
+                                    <div className={'svg-cover-panel'}>
+                                        <svg width={650} height={400} stroke={'black'} strokeWidth={1}>
+                                            {props.svgContent}
+                                        </svg>
+                                    </div>
+                                ) : (<div></div>)
+                            }
                             <div className='GraphBox'>
                                 <GraphVis graph={props.graphVis} options={props.options} events={props.events} 
                                 style={{width: '650px', height: '400px'}} />
