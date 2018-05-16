@@ -18,6 +18,7 @@ import faPaintBrush from '@fortawesome/fontawesome-free-solid/faPaintBrush'
 import faPencilAlt from '@fortawesome/fontawesome-free-solid/faPencilAlt'
 import faMinus from '@fortawesome/fontawesome-free-solid/faMinus'
 import faCircle from '@fortawesome/fontawesome-free-solid/faCircleNotch'
+import faRedoAlt from '@fortawesome/fontawesome-free-solid/faRedoAlt'
 
 class Exercise17a extends Component {
     constructor(props) {
@@ -43,7 +44,8 @@ class Exercise17a extends Component {
             btnLineA: false,
             btnLineD: true,
             btnCircleA: false,
-            btnCircleD: true
+            btnCircleD: true,
+            btnRepeatD: true
         };
         this.updateNode = updateNode.bind(this);
         this.updateEdge = updateEdge.bind(this);
@@ -62,6 +64,7 @@ class Exercise17a extends Component {
             }
 
             if (this.state.currentStep === 1) {
+                this.setState({btnRepeatD: false});
                 this.step2();
                 let interval1 = setInterval(this.step2, 8000);
                 this.setState({intervals: [interval1]});
@@ -96,6 +99,7 @@ class Exercise17a extends Component {
             }
 
             if (this.state.currentStep === 2) {
+                this.setState({btnRepeatD: true});
                 this.clearAllTimers(this.state);
                 this.setState(this.stepReset);
                 this.setState(this.step1);
@@ -104,6 +108,7 @@ class Exercise17a extends Component {
 
             if (this.state.currentStep === 3) {
                 this.setState({btnNextD: false});
+                this.setState({btnRepeatD: false});
                 this.clearAllTimers(this.state);
                 this.setState(this.stepReset);
                 this.setState(this.step1);
@@ -119,6 +124,25 @@ class Exercise17a extends Component {
 
             // Reduce currentStep after a step was executed
             this.setState((state) => {return {currentStep: --state.currentStep}});
+        }
+    };
+
+    repeatStep = () => {
+        this.clearAllTimers(this.state);
+
+        if (this.state.currentStep === 2) {
+            this.setState(this.stepReset);
+            this.setState(this.step1);
+            this.setState(this.step1Texts);
+        }
+
+        if (this.state.currentStep === 2) {
+            this.setState(this.stepReset);
+            this.setState(this.step1);
+            this.step2();
+            let interval1 = setInterval(this.step2, 8000);
+            this.setState({intervals: [interval1]});
+            this.setState(this.step2Texts);
         }
     };
 
@@ -317,6 +341,10 @@ class Exercise17a extends Component {
                                                 <Button clicked={() => this.setState(() => this.handlerSelectedTool(3))}
                                                         active={this.state.btnCircleA} disabled={this.state.btnCircleD}>
                                                     <FontAwesomeIcon icon={faCircle}/></Button>
+                                            </span>
+                                            <span className='animation-panel'>
+                                                <Button clicked={this.repeatStep} disabled={this.state.btnRepeatD}>
+                                                    <FontAwesomeIcon icon={faRedoAlt}/></Button>
                                             </span>
                                         </div>
                                     </main>
