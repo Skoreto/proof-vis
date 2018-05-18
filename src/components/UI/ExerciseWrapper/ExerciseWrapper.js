@@ -22,7 +22,7 @@ const ExerciseWrapper = (props) => (
             <div className='page-content'>
                 {props.definitionPanel}
                 <Row className='page-row'>
-                    <Col xs={6} md={6} lg={6}>
+                    <Col xs={12} md={12} lg={7}>
                         <main>
                             {
                                 props.isSketchAllowed ? (
@@ -43,7 +43,7 @@ const ExerciseWrapper = (props) => (
                             }
                             <div className='GraphBox'>
                                 <GraphVis graph={props.graphVis} options={props.options} events={props.events} 
-                                style={{width: '650px', height: '400px'}} />
+                                style={{height: '400px'}} />
                             </div>
                             <M.Context input='tex'>
                                 <div className='descriptionBox'>
@@ -79,7 +79,7 @@ const ExerciseWrapper = (props) => (
                             </div>
                         </main>
                     </Col>
-                    <Col xs={5} md={5} lg={5} smOffset={1} mdOffset={1} lgOffset={1}>
+                    <Col xs={12} md={12} lg={5}>
                         <aside>
                             <div id='divProofContainer'>
                                 <M.Context input='tex'>

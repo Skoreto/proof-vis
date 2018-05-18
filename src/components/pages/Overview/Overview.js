@@ -1,7 +1,7 @@
 import GraphVis from 'react-graph-vis'
 import React, {Component} from 'react';
 import {Row, Col, ListGroup, ListGroupItem} from 'react-bootstrap';
-import {BrowserRouter, Link} from 'react-router-dom';
+import {BrowserRouter} from 'react-router-dom';
 import {SketchField, Tools} from 'react-sketch';
 import '../../../customMainTheme.css'
 import PageHeading from "../../../components/UI/PageHeading/PageHeading";
@@ -60,12 +60,12 @@ class Overview extends Component {
                         <PageHeading headingTitle={"Zkušební kreslící plátno"} breadcrumbsCurrent={"Přehled"} />
                         <div className="page-content">
                             <Row className="page-row">
-                                <Col xs={6} md={6} lg={6}>
+                                <Col xs={12} md={12} lg={7}>
                                     <main>
                                         {sketch}
                                         <div className="GraphBox">
                                             <GraphVis graph={this.state.graphVis} options={this.state.options}
-                                                      events={events} style={{width: "650px", height: "400px" }} />
+                                                      events={events} style={{height: "400px"}} />
                                         </div>
                                         <div className="controls-panel">
                                             <span className="step-panel">
@@ -113,14 +113,13 @@ class Overview extends Component {
                                         </div>
                                     </main>
                                 </Col>
-                                <Col xs={5} md={5} lg={5} smOffset={1} mdOffset={1} lgOffset={1}>
+                                <Col xs={12} md={12} lg={5}>
                                     <aside>
                                         <BrowserRouter basename={process.env.PUBLIC_URL}>
                                             <div>
                                                 <ListGroup>
                                                     <ListGroupItem bsStyle="success">Důkazy přímo</ListGroupItem>
-                                                    <ListGroupItem componentClass={Link}
-                                                                   href={process.env.PUBLIC_URL + "/priklad26"}
+                                                    <ListGroupItem href={process.env.PUBLIC_URL + "/priklad26"}
                                                                    to={process.env.PUBLIC_URL + "/priklad26"}>
                                                             Příklad 26
                                                     </ListGroupItem>
@@ -134,8 +133,7 @@ class Overview extends Component {
                                                 </ListGroup>
                                                 <ListGroup>
                                                     <ListGroupItem bsStyle="info">Ostatní</ListGroupItem>
-                                                    <ListGroupItem componentClass={Link}
-                                                                   href={process.env.PUBLIC_URL + "/priklad17a"}
+                                                    <ListGroupItem href={process.env.PUBLIC_URL + "/priklad17a"}
                                                                    to={process.env.PUBLIC_URL + "/priklad17a"}>
                                                         Příklad 17 a)
                                                     </ListGroupItem>

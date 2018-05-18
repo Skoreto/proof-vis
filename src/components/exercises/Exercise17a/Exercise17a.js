@@ -2,7 +2,7 @@ import GraphVis from 'react-graph-vis'
 import React, {Component} from 'react';
 import {updateNode, updateEdge, updateEdgeWithArrow, clearAllTimers,
     handlerSketchAllowance, handlerSelectedTool, graphVisOptions} from '../../../functionality/GraphFunctions'
-import {Grid, Row, Col} from 'react-bootstrap';
+import {Row, Col} from 'react-bootstrap';
 import {SketchField, Tools} from 'react-sketch';
 import M from 'react-mathjax2';
 import MN from '../../../components/MathJax/MathJaxNode'
@@ -298,90 +298,88 @@ class Exercise17a extends Component {
         ) : (<div></div>);
 
         return (
-            <Grid>
-                <div className={"container"}>
-                    <div className="page-wrapper">
-                        <PageHeading headingTitle={"Příklad 17 a)"} breadcrumbsCurrent={"Ostatní příklady"} />
-                        <div className="page-content">
-                            <DefinitionPanel>
-                                Dokažte, nebo vyvraťte: <cite><q>Když v grafu <MN>G</MN> existují dva
-                                různé <MN>u</MN>-<MN>v</MN> sledy, tak <MN>G</MN> obsahuje kružnici.</q></cite>
-                            </DefinitionPanel>
-                            <Row className="page-row">
-                                <Col xs={12} md={12} lg={6}>
-                                    <main>
-                                        {sketch}
-                                        <div className="GraphBox">
-                                            <GraphVis graph={this.state.graphVis} options={this.state.options}
-                                                      events={events} style={{width: "650px", height: "400px" }} />
+            <div className={"container"}>
+                <div className="page-wrapper">
+                    <PageHeading headingTitle={"Příklad 17 a)"} breadcrumbsCurrent={"Ostatní příklady"} />
+                    <div className="page-content">
+                        <DefinitionPanel>
+                            Dokažte, nebo vyvraťte: <cite><q>Když v grafu <MN>G</MN> existují dva
+                            různé <MN>u</MN>-<MN>v</MN> sledy, tak <MN>G</MN> obsahuje kružnici.</q></cite>
+                        </DefinitionPanel>
+                        <Row className="page-row">
+                            <Col xs={12} md={12} lg={7}>
+                                <main>
+                                    {sketch}
+                                    <div className="GraphBox">
+                                        <GraphVis graph={this.state.graphVis} options={this.state.options}
+                                                    events={events} style={{height: "400px"}} />
+                                    </div>
+                                    <M.Context input='tex'>
+                                        <div className="descriptionBox">
+                                            {this.state.descriptionBox}
                                         </div>
+                                    </M.Context>
+                                    <div className="controls-panel">
+                                        <span className="step-panel">
+                                            <Button clicked={this.previousStep} disabled={this.state.btnPrevD}>
+                                                <FontAwesomeIcon icon={faChevronLeft}/></Button>
+                                            <StepCounter currentStep={this.state.currentStep} stepSum={4} />
+                                            <Button clicked={this.nextStep} disabled={this.state.btnNextD}>
+                                                <FontAwesomeIcon icon={faChevronRight}/></Button>
+                                        </span>
+                                        <span className="sketch-buttons">
+                                            <Button clicked={() => this.setState(() => this.handlerSketchAllowance(this.state))}
+                                                    active={this.state.btnSketchA} addClass={this.state.btnSketchC}>
+                                                <FontAwesomeIcon icon={faPaintBrush}/></Button>
+                                            <Button clicked={() => this.setState(() => this.handlerSelectedTool(1))}
+                                                    active={this.state.btnPencilA} disabled={this.state.btnPencilD}>
+                                                <FontAwesomeIcon icon={faPencilAlt}/></Button>
+                                            <Button clicked={() => this.setState(() => this.handlerSelectedTool(2))}
+                                                    active={this.state.btnLineA} disabled={this.state.btnLineD}>
+                                                <FontAwesomeIcon icon={faMinus}/></Button>
+                                            <Button clicked={() => this.setState(() => this.handlerSelectedTool(3))}
+                                                    active={this.state.btnCircleA} disabled={this.state.btnCircleD}>
+                                                <FontAwesomeIcon icon={faCircle}/></Button>
+                                        </span>
+                                        <span className='animation-panel'>
+                                            <Button clicked={this.repeatStep} disabled={this.state.btnRepeatD}>
+                                                <FontAwesomeIcon icon={faRedoAlt}/></Button>
+                                        </span>
+                                    </div>
+                                </main>
+                            </Col>
+                            <Col xs={12} md={12} lg={5}>
+                                <aside>
+                                    <div id="divProofContainer">
                                         <M.Context input='tex'>
-                                            <div className="descriptionBox">
-                                                {this.state.descriptionBox}
+                                            <div className="bg-warning" id="proofBox">
+                                                <div className={1 === this.state.currentStep ? 'proof-active' : ''}>
+                                                    <p>Dané tvrzení neplatí, protože existuje kontra-příklad.</p>
+                                                </div>
+                                                <div className={2 === this.state.currentStep ? 'proof-active' : ''}>
+                                                    <p>Existují dva různé <MN>u</MN>-<MN>v</MN> sledy:</p>
+                                                    <p>Příkladem prvního budiž sled <MN>S_1 = (u,e_1,w,e_2,v)</MN>.
+                                                    </p>
+                                                </div>
+                                                <div className={3 === this.state.currentStep ? 'proof-active' : ''}>
+                                                    <p>Příkladem druhého může být sled <MN>S_2 = (u,e_1,w,e_1,
+                                                        u,e_1,w,e_2,v)</MN>.</p>
+                                                </div>
+                                                <div className={'borderless' +
+                                                (4 === this.state.currentStep ? ' proof-active' : '')}>
+                                                    <p>Přitom graf <MN>G</MN> neobsahuje kružnici.</p>
+                                                    <p className="text-center">
+                                                        <MN>\dagger</MN> Tím je vyvráceno stanovené tvrzení.</p>
+                                                </div>
                                             </div>
                                         </M.Context>
-                                        <div className="controls-panel">
-                                            <span className="step-panel">
-                                                <Button clicked={this.previousStep} disabled={this.state.btnPrevD}>
-                                                    <FontAwesomeIcon icon={faChevronLeft}/></Button>
-                                                <StepCounter currentStep={this.state.currentStep} stepSum={4} />
-                                                <Button clicked={this.nextStep} disabled={this.state.btnNextD}>
-                                                    <FontAwesomeIcon icon={faChevronRight}/></Button>
-                                            </span>
-                                            <span className="sketch-buttons">
-                                                <Button clicked={() => this.setState(() => this.handlerSketchAllowance(this.state))}
-                                                        active={this.state.btnSketchA} addClass={this.state.btnSketchC}>
-                                                    <FontAwesomeIcon icon={faPaintBrush}/></Button>
-                                                <Button clicked={() => this.setState(() => this.handlerSelectedTool(1))}
-                                                        active={this.state.btnPencilA} disabled={this.state.btnPencilD}>
-                                                    <FontAwesomeIcon icon={faPencilAlt}/></Button>
-                                                <Button clicked={() => this.setState(() => this.handlerSelectedTool(2))}
-                                                        active={this.state.btnLineA} disabled={this.state.btnLineD}>
-                                                    <FontAwesomeIcon icon={faMinus}/></Button>
-                                                <Button clicked={() => this.setState(() => this.handlerSelectedTool(3))}
-                                                        active={this.state.btnCircleA} disabled={this.state.btnCircleD}>
-                                                    <FontAwesomeIcon icon={faCircle}/></Button>
-                                            </span>
-                                            <span className='animation-panel'>
-                                                <Button clicked={this.repeatStep} disabled={this.state.btnRepeatD}>
-                                                    <FontAwesomeIcon icon={faRedoAlt}/></Button>
-                                            </span>
-                                        </div>
-                                    </main>
-                                </Col>
-                                <Col xs={12} md={12} lg={5} smOffset={0} mdOffset={0} lgOffset={1}>
-                                    <aside>
-                                        <div id="divProofContainer">
-                                            <M.Context input='tex'>
-                                                <div className="bg-warning" id="proofBox">
-                                                    <div className={1 === this.state.currentStep ? 'proof-active' : ''}>
-                                                        <p>Dané tvrzení neplatí, protože existuje kontra-příklad.</p>
-                                                    </div>
-                                                    <div className={2 === this.state.currentStep ? 'proof-active' : ''}>
-                                                        <p>Existují dva různé <MN>u</MN>-<MN>v</MN> sledy:</p>
-                                                        <p>Příkladem prvního budiž sled <MN>S_1 = (u,e_1,w,e_2,v)</MN>.
-                                                        </p>
-                                                    </div>
-                                                    <div className={3 === this.state.currentStep ? 'proof-active' : ''}>
-                                                        <p>Příkladem druhého může být sled <MN>S_2 = (u,e_1,w,e_1,
-                                                            u,e_1,w,e_2,v)</MN>.</p>
-                                                    </div>
-                                                    <div className={'borderless' +
-                                                    (4 === this.state.currentStep ? ' proof-active' : '')}>
-                                                        <p>Přitom graf <MN>G</MN> neobsahuje kružnici.</p>
-                                                        <p className="text-center">
-                                                            <MN>\dagger</MN> Tím je vyvráceno stanovené tvrzení.</p>
-                                                    </div>
-                                                </div>
-                                            </M.Context>
-                                        </div>
-                                    </aside>
-                                </Col>
-                            </Row>
-                        </div>
+                                    </div>
+                                </aside>
+                            </Col>
+                        </Row>
                     </div>
                 </div>
-            </Grid>
+            </div>
         );
     }
 }
