@@ -129,20 +129,18 @@ class Exercise17a extends Component {
 
     repeatStep = () => {
         this.clearAllTimers(this.state);
+        this.setState(this.step1);
 
         if (this.state.currentStep === 2) {
-            this.setState(this.stepReset);
-            this.setState(this.step1);
-            this.setState(this.step1Texts);
-        }
-
-        if (this.state.currentStep === 2) {
-            this.setState(this.stepReset);
-            this.setState(this.step1);
             this.step2();
             let interval1 = setInterval(this.step2, 8000);
             this.setState({intervals: [interval1]});
-            this.setState(this.step2Texts);
+        }
+
+        if (this.state.currentStep === 3) {
+            this.step3();
+            let interval2 = setInterval(this.step3, 14000);
+            this.setState({intervals: [interval2]});
         }
     };
 
