@@ -373,12 +373,12 @@ class Exercise20vis extends Component {
                                 hranu <MN>e</MN>.</q></cite> Dokažte přímo.
                             </DefinitionPanel>
                             <Row className="page-row">
-                                <Col xs={6} md={6} lg={6}>
+                                <Col xs={12} md={12} lg={7}>
                                     <main>
                                         {sketch}
                                         <div className="GraphBox">
                                             <GraphVis graph={this.state.graphVis} options={this.state.options}
-                                                      events={events} style={{width: "650px", height: "400px"}}
+                                                      events={events} style={{height: "400px"}}
                                                       getNetwork={this.initNetworkInstance} />
                                         </div>
                                         <M.Context input='tex'>
@@ -412,7 +412,7 @@ class Exercise20vis extends Component {
                                         </div>
                                     </main>
                                 </Col>
-                                <Col xs={5} md={5} lg={5} smOffset={1} mdOffset={1} lgOffset={1}>
+                                <Col xs={12} md={12} lg={5}>
                                     <aside>
                                         <div id="divProofContainer">
                                             <M.Context input='tex'>
