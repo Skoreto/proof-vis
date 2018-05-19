@@ -137,7 +137,8 @@ class Exercise17a extends Component {
             this.setState({intervals: [interval1]});
         }
 
-        if (this.state.currentStep === 3) {
+        if (this.state.currentStep === 3 ||
+            this.state.currentStep === 4) {
             this.step3();
             let interval2 = setInterval(this.step3, 14000);
             this.setState({intervals: [interval2]});
@@ -298,7 +299,7 @@ class Exercise17a extends Component {
         return (
             <div className={"container"}>
                 <div className="page-wrapper">
-                    <PageHeading headingTitle={"Příklad 17 a)"} breadcrumbsCurrent={"Ostatní příklady"} />
+                    <PageHeading headingTitle={"Příklad 17 a) (v1)"} breadcrumbsCurrent={"Ostatní příklady"} />
                     <div className="page-content">
                         <DefinitionPanel>
                             Dokažte, nebo vyvraťte: <cite><q>Když v grafu <MN>G</MN> existují dva

@@ -119,9 +119,9 @@ class Overview extends Component {
                                             <div>
                                                 <ListGroup>
                                                     <ListGroupItem bsStyle="success">Důkazy přímo</ListGroupItem>
-                                                    <ListGroupItem href={process.env.PUBLIC_URL + "/priklad26"}
-                                                                   to={process.env.PUBLIC_URL + "/priklad26"}>
-                                                            Příklad 26
+                                                    <ListGroupItem href={process.env.PUBLIC_URL + "/priklad26v2"}
+                                                                   to={process.env.PUBLIC_URL + "/priklad26v2"}>
+                                                            Příklad 26 (v2)
                                                     </ListGroupItem>
                                                 </ListGroup>
                                                 <ListGroup>
@@ -135,7 +135,7 @@ class Overview extends Component {
                                                     <ListGroupItem bsStyle="info">Ostatní</ListGroupItem>
                                                     <ListGroupItem href={process.env.PUBLIC_URL + "/priklad17a"}
                                                                    to={process.env.PUBLIC_URL + "/priklad17a"}>
-                                                        Příklad 17 a)
+                                                        Příklad 17 a) (v1)
                                                     </ListGroupItem>
                                                 </ListGroup>
                                             </div>

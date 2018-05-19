@@ -28,8 +28,8 @@ const CustomNavbar = () => (
                         Příklad 20
                     </MenuItem>
                     <MenuItem eventKey={1.3}>Příklad 23</MenuItem>
-                    <MenuItem eventKey={1.4} componentClass={Link} href="/priklad26" to="/priklad26">Příklad 26</MenuItem>
-                    <MenuItem eventKey={1.5} componentClass={Link} href="/priklad26gen" to="/priklad26gen">Příklad 26 (generalized)</MenuItem>
+                    <MenuItem eventKey={1.4} componentClass={Link} href="/priklad26" to="/priklad26">Příklad 26 (v1)</MenuItem>
+                    <MenuItem eventKey={1.5} componentClass={Link} href="/priklad26v2" to="/priklad26v2">Příklad 26 (v2)</MenuItem>
                 </NavDropdown>
                 <NavDropdown eventKey={2} title={<span><FontAwesomeIcon icon={faSyncAlt} /> Důkazy nepřímo</span>} id="basic-nav-dropdown" className={"nav-item"}>
                     <MenuItem eventKey={2.1}>Příklad 21</MenuItem>
@@ -39,7 +39,10 @@ const CustomNavbar = () => (
                 </NavDropdown>
                 <NavDropdown eventKey={4} title="Ostatní" id="basic-nav-dropdown" className={"nav-item"}>
                     <MenuItem eventKey={4.1} componentClass={Link} href="/priklad17a" to="/priklad17a">
-                        Příklad 17 a)
+                        Příklad 17 a) (v1)
+                    </MenuItem>
+                    <MenuItem eventKey={4.2} componentClass={Link} href="/priklad17av2" to="/priklad17av2">
+                        Příklad 17 a) (v2)
                     </MenuItem>
                 </NavDropdown>
                 <NavItem eventKey={5} componentClass={Link} href="/platno" to="/platno" className={"nav-item"}>

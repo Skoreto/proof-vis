@@ -20,7 +20,7 @@ class Exercise26gen extends Component {
             intervals: [],
             currentStep: 0,
             stepSum: 5,
-            headingTitle: 'Příklad 26 (generalized)',
+            headingTitle: 'Příklad 26 (v2)',
             breadcrumbsCurrent: 'Důkazy přímo',
             isSketchAllowed: false,
             sketchTool: Tools.Pencil,
@@ -66,6 +66,7 @@ class Exercise26gen extends Component {
                 this.step3();
                 let interval1 = setInterval(this.step3, 3000);
                 this.setState({intervals: [interval1]});
+                this.setState(this.step3Texts);
             }
 
             if (this.state.currentStep === 3) {
@@ -117,6 +118,7 @@ class Exercise26gen extends Component {
                 this.step3();
                 let interval1 = setInterval(this.step3, 3000);
                 this.setState({intervals: [interval1]});
+                this.setState(this.step3Texts);
             }
 
             if (this.state.currentStep === 5) {
@@ -136,7 +138,7 @@ class Exercise26gen extends Component {
     repeatStep = () => {};
 
     stepReset = () => {
-        return {graphVis: {nodes: [], edges: []}, descriptionBox: '', repeatBoxHidden: true, repeatBoxContent: ''}
+        return {graphVis: {nodes: [], edges: []}, description: '', repeatBoxHidden: true, repeatBoxContent: ''}
     };
 
     step1 = () => {
@@ -172,9 +174,9 @@ class Exercise26gen extends Component {
                 <p>VĚTA O STROMECH (4.1)
                     <br/>Pro každý graf <MN>G=(V,E)</MN> jsou následující podmínky ekvivalentní:</p>
                 <p>
-                    I. graf <MN>G</MN> je strom.<br/>
-                    II. Pro každé dva vrcholy <MN>x,y \in V</MN> existuje
-                    právě jedna cesta z vrcholu <MN>x</MN> do vrcholu <MN>y</MN>.
+                    I. Graf <MN>G</MN> je strom.<br/>
+                    II. Pro každé dva vrcholy <MN>u,v \in V</MN> existuje
+                    právě jedna cesta z vrcholu <MN>u</MN> do vrcholu <MN>v</MN>.
                 </p>
             </div>
         );
@@ -222,9 +224,9 @@ class Exercise26gen extends Component {
                 <p>VĚTA O STROMECH (4.1)
                     <br/>Pro každý graf <MN>G=(V,E)</MN> jsou následující podmínky ekvivalentní:</p>
                 <p>
-                    I. graf <MN>G</MN> je strom.<br/>
-                    II. Pro každé dva vrcholy <MN>x,y \in V</MN> existuje
-                    právě jedna cesta z vrcholu <MN>x</MN> do vrcholu <MN>y</MN>.
+                    I. Graf <MN>G</MN> je strom.<br/>
+                    II. Pro každé dva vrcholy <MN>u,v \in V</MN> existuje
+                    právě jedna cesta z vrcholu <MN>u</MN> do vrcholu <MN>v</MN>.
                 </p>
             </div>
         );
@@ -236,7 +238,7 @@ class Exercise26gen extends Component {
         let timeout3a = setTimeout(()=> {this.setState(this.step3a);}, 1000);
         let timeout3b = setTimeout(()=> {this.setState(this.step3b);}, 2000);
 
-        this.setState({timeouts: [timeout3a, timeout3b], description: '', repeatBoxHidden: true,
+        this.setState({timeouts: [timeout3a, timeout3b], repeatBoxHidden: true,
             repeatBoxContent: ''});
     };
 
@@ -252,6 +254,11 @@ class Exercise26gen extends Component {
         newNodes = this.updateNode(newNodes, 3, '#B39DDB', ' y ');
         let newEdges = this.updateEdge(state.graphVis.edges, 2, '#B39DDB', 2, false, ' e ');
         return {graphVis: {nodes: newNodes, edges: newEdges}}
+    };
+
+    step3Texts = () => {
+        const description = (<p>Libovolně zvolená hrana <MN>{'e=\\{x,y\\}'}</MN> z cesty <MN>u</MN>-<MN>v</MN>.</p>);
+        return {description: description}
     };
 
     step4 = () => {
@@ -317,18 +324,18 @@ class Exercise26gen extends Component {
                 </div>
                 <div className={4 === this.state.currentStep ? ' proof-active' : ''}>
                     <p>
-                        <MN>\Rightarrow</MN> v <MN>G-e</MN> neexistuje
-                        cesta <MN>u</MN>-<MN>v</MN>
-                        <br/><MN>\Rightarrow</MN> vrcholy <MN>u</MN>,<MN>v</MN> se
-                        v <MN>G-e</MN> nacházejí v různých komponentách souvislosti
+                        <MN>\Rightarrow</MN> Nicméně, v <MN>G-e</MN> neexistuje
+                        cesta <MN>u</MN>-<MN>v</MN>.<br/>
+                        <MN>\Rightarrow</MN> Tudíž vrcholy <MN>u</MN>,<MN>v</MN> se
+                        v <MN>G-e</MN> nacházejí v různých komponentách souvislosti.
                     </p>
                 </div>
                 <div className={'borderless' +
                 (5 === this.state.currentStep ? ' proof-active' : '')}>
                     <p>
-                        <MN>\Rightarrow</MN> <MN>G-e</MN> není souvislý
-                        <br/><MN>\Rightarrow</MN> z definice stromu platí,
-                        že <MN>G-e</MN> není strom
+                        <MN>\Rightarrow</MN> To znamená, že <MN>G-e</MN> není souvislý.<br/>
+                        <MN>\Rightarrow</MN> Z definice stromu pak platí,
+                        že <MN>G-e</MN> není strom.
                     </p>
                     <p className="text-center">
                         <MN>\dagger</MN> Tím je dokázáno stanovené tvrzení.
