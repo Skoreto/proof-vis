@@ -168,7 +168,7 @@ class Exercise26gen extends Component {
     };
 
     step1Texts = () => {
-        const description = (<p>Příklad grafu <MN>G</MN>, který je strom</p>);
+        const description = (<p>Příklad grafu <MN>G</MN>, který je strom.</p>);
         const repeatBox = (
             <div>
                 <p>VĚTA O STROMECH (4.1)
