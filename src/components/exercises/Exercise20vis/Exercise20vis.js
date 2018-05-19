@@ -49,9 +49,9 @@ class Exercise20vis extends Component {
             repeatBoxContent: ''
         };
         this.updateNode = updateNode.bind(this);
-        this.addObjectArray = addObjectArray.bind(this);
         this.updateEdge = updateEdge.bind(this);
         this.updateEdgeWithArrow = updateEdgeWithArrow.bind(this);
+        this.addObjectArray = addObjectArray.bind(this);
         this.clearAllTimers = clearAllTimers.bind(this);
         this.initNetworkInstance = this.initNetworkInstance.bind(this);
         this.handlerSketchAllowance = handlerSketchAllowance.bind(this);
