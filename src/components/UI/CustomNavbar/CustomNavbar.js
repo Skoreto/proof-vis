@@ -41,9 +41,9 @@ const CustomNavbar = () => (
                     <MenuItem eventKey={4.1} componentClass={Link} href="/priklad17a" to="/priklad17a">
                         Příklad 17 a) (v1)
                     </MenuItem>
-                    <MenuItem eventKey={4.2} componentClass={Link} href="/priklad17av2" to="/priklad17av2">
+                    {/* <MenuItem eventKey={4.2} componentClass={Link} href="/priklad17av2" to="/priklad17av2">
                         Příklad 17 a) (v2)
-                    </MenuItem>
+                    </MenuItem> */}
                 </NavDropdown>
                 <NavItem eventKey={5} componentClass={Link} href="/platno" to="/platno" className={"nav-item"}>
                     {<span><FontAwesomeIcon icon={faPaintBrush} /> Plátno</span>}
