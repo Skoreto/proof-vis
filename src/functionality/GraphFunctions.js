@@ -14,16 +14,6 @@ export function updateNode(nodesState, nodeIndex, background, label) {
 }
 
 /**
- * Method for pushing new array of nodes or edges into current array.
- * @param {Object[]} objectsState - Array of nodes or edges from the state of component.
- * @param {Object[]} newObjectsArray - Array of new node or edge objects.
- * @returns {ReadonlyArray<any> | ReadonlySet<any> | ReadonlyMap<any, any> | any}
- */
-export function addObjectArray(objectsState, newObjectsArray) {
-    return imHelp(objectsState, {$push: newObjectsArray});
-}
-
-/**
  * Method for updating edge properties.
  * @param {Object[]} edgesState - Array of edges from the state of component.
  * @param {number} edgeIndex - Index of edge in the array.
@@ -54,6 +44,38 @@ export function updateEdgeWithArrow(edgesState, edgeIndex, color, width, dashes,
     return imHelp(edgesState, {[edgeIndex]: {color: {$set: {color: color, highlight: color, hover: color}},
             width: {$set: width}, dashes: {$set: dashes}, label: {$set: label},
             arrows: {$set: {to: {enabled: enableArrowTo}, from: {enabled: enableArrowFrom}}}}});
+}
+
+/**
+ * Method for updating edge properties.
+ * @param {Object[]} edgesState - Array of edges from the state of component.
+ * @param {number} edgeIndex - Index of edge in the array.
+ * @param {string} color - Color of the edge.
+ * @param {number} width - Number determining width of the edge.
+ * @param {Object[]} dashes - Array of numbers determining length of lines and spaces or value false for full line.
+ * @param {string} label - Text above the edge.
+ * @param {boolean} enableArrowTo - Determines whether to show arrow pointing from starting node to ending node.
+ * @param {boolean} enableArrowFrom - Determines whether to show arrow pointing from ending node to starting node.
+ * @param {*} enableSmooth 
+ * @param {*} smoothType 
+ * @param {*} roundness 
+ */
+export function updateEdgeSmooth(edgesState, edgeIndex, color, width, dashes, label, enableArrowTo, enableArrowFrom,
+    enableSmooth, smoothType, roundness) {
+    return imHelp(edgesState, {[edgeIndex]: {color: {$set: {color: color, highlight: color, hover: color}},
+            width: {$set: width}, dashes: {$set: dashes}, label: {$set: label},
+            arrows: {$set: {to: {enabled: enableArrowTo}, from: {enabled: enableArrowFrom}}},
+            smooth: {$set: {enabled: enableSmooth, type: smoothType, roundness: roundness}}}});
+}
+
+/**
+ * Method for pushing new array of nodes or edges into current array.
+ * @param {Object[]} objectsState - Array of nodes or edges from the state of component.
+ * @param {Object[]} newObjectsArray - Array of new node or edge objects.
+ * @returns {ReadonlyArray<any> | ReadonlySet<any> | ReadonlyMap<any, any> | any}
+ */
+export function addObjectArray(objectsState, newObjectsArray) {
+    return imHelp(objectsState, {$push: newObjectsArray});
 }
 
 /**

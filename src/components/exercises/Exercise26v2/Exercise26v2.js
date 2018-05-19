@@ -346,7 +346,7 @@ class Exercise26gen extends Component {
 
         return (
             <ExerciseWrapper {...this.state} definitionPanel={definitionPanel} proofBox={proofBox}
-                previousStep={this.previousStep} nextStep={this.nextStep} 
+                previousStep={this.previousStep} nextStep={this.nextStep} repeatStep={this.repeatStep} 
                 handleSketchAllowance={() => this.setState(() => this.handlerSketchAllowance(this.state))}
                 handleSketchPencil={() => this.setState(() => this.handlerSelectedTool(1))}
                 handleSketchLine={() => this.setState(() => this.handlerSelectedTool(2))}
