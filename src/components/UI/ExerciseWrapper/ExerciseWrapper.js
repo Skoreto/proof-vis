@@ -22,6 +22,24 @@ const ExerciseWrapper = (props) => (
             <div className='page-content'>
                 {props.definitionPanel}
                 <Row className='page-row'>
+                    <Col xs={12} md={12} lg={5}>
+                        <aside>
+                            <div id='divProofContainer'>
+                                <M.Context input='tex'>
+                                    <div> 
+                                        {props.proofBox}
+                                    </div>
+                                </M.Context>
+                            </div>
+                            <div className={'repeat-box'} hidden={props.repeatBoxHidden}>
+                                <M.Context input='tex'>
+                                    <div>
+                                        {props.repeatBoxContent}
+                                    </div>
+                                </M.Context>
+                            </div>
+                        </aside>
+                    </Col>
                     <Col xs={12} md={12} lg={7}>
                         <main>
                             {
@@ -78,24 +96,6 @@ const ExerciseWrapper = (props) => (
                                 </span>
                             </div>
                         </main>
-                    </Col>
-                    <Col xs={12} md={12} lg={5}>
-                        <aside>
-                            <div id='divProofContainer'>
-                                <M.Context input='tex'>
-                                    <div> 
-                                        {props.proofBox}
-                                    </div>
-                                </M.Context>
-                            </div>
-                            <div className={'repeat-box'} hidden={props.repeatBoxHidden}>
-                                <M.Context input='tex'>
-                                    <div>
-                                        {props.repeatBoxContent}
-                                    </div>
-                                </M.Context>
-                            </div>
-                        </aside>
                     </Col>
                 </Row>
             </div>

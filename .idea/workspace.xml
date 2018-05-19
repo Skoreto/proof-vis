@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="daa44ed9-404f-45c0-a4b5-d9b994cc961e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/CustomNavbar/CustomNavbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/CustomNavbar/CustomNavbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/ExerciseWrapper/ExerciseWrapper.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/ExerciseWrapper/ExerciseWrapper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/exercises/Exercise17a/Exercise17a.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/exercises/Exercise17a/Exercise17a.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/exercises/Exercise26/Exercise26.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/exercises/Exercise26/Exercise26.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/exercises/Exercise26gen/Exercise26gen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/exercises/Exercise26v2/Exercise26v2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Overview/Overview.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Overview/Overview.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/customMainTheme.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/customMainTheme.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -32,7 +38,7 @@
             <entry file="file://$PROJECT_DIR$/package.json">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="544">
-                  <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+                  <caret line="32" selection-start-line="32" selection-end-line="32" />
                 </state>
               </provider>
             </entry>
@@ -41,19 +47,7 @@
             <entry file="file://$PROJECT_DIR$/src/components/exercises/Exercise20vis/Exercise20vis.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="442">
-                  <caret line="60" column="7" lean-forward="true" selection-start-line="60" selection-start-column="7" selection-end-line="60" selection-end-column="7" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Exercise26gen.js" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/components/exercises/Exercise26gen/Exercise26gen.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="517">
-                  <caret line="198" lean-forward="true" selection-start-line="198" selection-end-line="198" />
-                  <folding>
-                    <element signature="e#0#39#0" expanded="true" />
-                  </folding>
+                  <caret line="60" column="7" selection-start-line="60" selection-start-column="7" selection-end-line="60" selection-end-column="7" />
                 </state>
               </provider>
             </entry>
@@ -61,17 +55,17 @@
           <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="92">
-                  <caret line="1288" column="44" selection-start-line="1288" selection-start-column="44" selection-end-line="1288" selection-end-column="44" />
+                <state relative-caret-position="-10">
+                  <caret line="1282" column="44" selection-start-line="1282" selection-start-column="44" selection-end-line="1282" selection-end-column="44" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="customMainTheme.css" pinned="false" current-in-tab="false">
+          <file leaf-file-name="customMainTheme.css" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/customMainTheme.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="160">
-                  <caret line="258" column="20" lean-forward="true" selection-start-line="258" selection-start-column="20" selection-end-line="258" selection-end-column="20" />
+                <state relative-caret-position="670">
+                  <caret line="304" column="1" selection-start-line="304" selection-start-column="1" selection-end-line="304" selection-end-column="1" />
                 </state>
               </provider>
             </entry>
@@ -101,7 +95,7 @@
             <entry file="file://$PROJECT_DIR$/src/components/exercises/Exercise17a/Exercise17a.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="198">
-                  <caret line="377" column="26" selection-start-line="377" selection-start-column="26" selection-end-line="377" selection-end-column="26" />
+                  <caret line="378" column="26" selection-start-line="378" selection-start-column="26" selection-end-line="378" selection-end-column="26" />
                   <folding>
                     <element signature="e#0#38#0" expanded="true" />
                   </folding>
@@ -313,14 +307,6 @@
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="exercises" type="462c0819:PsiDirectoryNode" />
               <item name="Exercise26" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="proof-vis" type="b2602c69:ProjectViewProjectNode" />
-              <item name="proof-vis" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="exercises" type="462c0819:PsiDirectoryNode" />
-              <item name="Exercise26gen" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="proof-vis" type="b2602c69:ProjectViewProjectNode" />
@@ -581,13 +567,6 @@
       <workItem from="1526147229273" duration="35000" />
       <workItem from="1526147326304" duration="3712000" />
       <workItem from="1526227312918" duration="9428000" />
-    </task>
-    <task id="LOCAL-00032" summary="Fix header indent&#10;&#10;Split media queries into scoped CSS files.">
-      <created>1525022651094</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1525022651094</updated>
     </task>
     <task id="LOCAL-00033" summary="Implement initial Navbar layout&#10;&#10;Change website title.">
       <created>1525078981275</created>
@@ -925,17 +904,24 @@
       <option name="project" value="LOCAL" />
       <updated>1527534785001</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="Resolve customMainTheme&#10;&#10;# Conflicts:&#10;#&#9;src/customMainTheme.css">
+      <created>1527535042452</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1527535042452</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="380274000" />
+    <option name="totallyTimeSpent" value="380434000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="2062" height="1126" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.110839844" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.110839844" />
       <window_info anchor="bottom" id="TODO" order="7" />
       <window_info anchor="bottom" id="Messages" order="0" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
@@ -943,7 +929,7 @@
       <window_info anchor="bottom" id="Run" order="3" weight="0.32971373" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.6035156" visible="true" weight="0.25765055" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.6035156" visible="true" weight="0.25765055" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -974,7 +960,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Implement drawing tools" />
     <MESSAGE value="Improve sticky footer" />
     <MESSAGE value="Link vis.js Manipulation module files by CDN" />
     <MESSAGE value="Fix sending invalid type for Button active and disabled parameters" />
@@ -999,7 +984,8 @@
     <MESSAGE value="Resolve 'Add ExerciseWrapper component' commit 3fecfb26ef63aae5e31fa63a674a187e229253d0&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
     <MESSAGE value="Resolve 'Try out SVG content cover implementation' commit e77bf034fea1e4b8d3b053eccba5b552a645d353&#10;&#10;# Conflicts:&#10;#&#9;src/customMainTheme.css" />
     <MESSAGE value="Resolve 'Add various layout improvements' commit 3980260ff290798326128b52f9cad074e08ecbe9&#10;&#10;Remove Grid component.&#10;Remove componentClass Link from Overview.&#10;&#10;# Conflicts:&#10;#&#9;src/customMainTheme.css" />
-    <option name="LAST_COMMIT_MESSAGE" value="Resolve 'Add various layout improvements' commit 3980260ff290798326128b52f9cad074e08ecbe9&#10;&#10;Remove Grid component.&#10;Remove componentClass Link from Overview.&#10;&#10;# Conflicts:&#10;#&#9;src/customMainTheme.css" />
+    <MESSAGE value="Resolve customMainTheme&#10;&#10;# Conflicts:&#10;#&#9;src/customMainTheme.css" />
+    <option name="LAST_COMMIT_MESSAGE" value="Resolve customMainTheme&#10;&#10;# Conflicts:&#10;#&#9;src/customMainTheme.css" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1268,7 +1254,7 @@
     <entry file="file://$PROJECT_DIR$/src/components/exercises/Exercise17a/Exercise17a.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
-          <caret line="377" column="26" selection-start-line="377" selection-start-column="26" selection-end-line="377" selection-end-column="26" />
+          <caret line="378" column="26" selection-start-line="378" selection-start-column="26" selection-end-line="378" selection-end-column="26" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>
@@ -1315,38 +1301,38 @@
     <entry file="file://$PROJECT_DIR$/src/components/exercises/Exercise20vis/Exercise20vis.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
-          <caret line="60" column="7" lean-forward="true" selection-start-line="60" selection-start-column="7" selection-end-line="60" selection-end-column="7" />
+          <caret line="60" column="7" selection-start-line="60" selection-start-column="7" selection-end-line="60" selection-end-column="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
-          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="1288" column="44" selection-start-line="1288" selection-start-column="44" selection-end-line="1288" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/customMainTheme.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="258" column="20" lean-forward="true" selection-start-line="258" selection-start-column="20" selection-end-line="258" selection-end-column="20" />
+        <state relative-caret-position="-10">
+          <caret line="1282" column="44" selection-start-line="1282" selection-start-column="44" selection-end-line="1282" selection-end-column="44" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/exercises/Exercise26gen/Exercise26gen.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="517">
-          <caret line="198" lean-forward="true" selection-start-line="198" selection-end-line="198" />
+        <state relative-caret-position="24">
+          <caret line="184" column="32" lean-forward="true" selection-start-line="184" selection-start-column="32" selection-end-line="184" selection-end-column="32" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/customMainTheme.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="670">
+          <caret line="304" column="1" selection-start-line="304" selection-start-column="1" selection-end-line="304" selection-end-column="1" />
         </state>
       </provider>
     </entry>
