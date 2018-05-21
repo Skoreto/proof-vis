@@ -243,7 +243,7 @@ export const graphVisOptions = {
         },
         interaction: {
             dragNodes: true,
-            dragView: false,
+            dragView: true,
             hideEdgesOnDrag: false,
             hideNodesOnDrag: false,
             hover: true,
@@ -258,6 +258,6 @@ export const graphVisOptions = {
             selectable: true,
             selectConnectedEdges: false,
             tooltipDelay: 300,
-            zoomView: false
+            zoomView: true
         }
 };
