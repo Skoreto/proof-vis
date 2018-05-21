@@ -162,7 +162,7 @@ class Exercise17av2 extends Component {
     };
 
     step1Texts = () => {
-        const description = (<p>Příklad grafu <MN>G</MN></p>);
+        const description = (<p>Příklad grafu <MN>G</MN>, který neobsahuje kružnici.</p>);
         return {description: description}
     };
 
@@ -283,7 +283,7 @@ class Exercise17av2 extends Component {
         const definitionPanel = (
             <DefinitionPanel>
                 Dokažte, nebo vyvraťte: <cite><q>Když v grafu <MN>G</MN> existují dva
-                různé <MN>u</MN>-<MN>v</MN> sledy, tak <MN>G</MN> obsahuje kružnici.</q></cite>
+                různé <MN>u</MN>-<MN>v</MN> sledy, tak graf <MN>G</MN> obsahuje kružnici.</q></cite>
             </DefinitionPanel>
         );
 

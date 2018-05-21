@@ -297,10 +297,8 @@ class Exercise26gen extends Component {
     render() {
         const definitionPanel = (
             <DefinitionPanel>
-                Dokažte přímo tvrzení:
-                <cite><q>Jestliže graf <MN>G</MN> je strom, pak graf <MN>G-e</MN>, kde <MN>e</MN> je libovolná
-                    hrana grafu <MN>G</MN>, již není strom.</q></cite>
-                <br/>
+                Dokažte přímo tvrzení: <cite><q>Jestliže graf <MN>G</MN> je strom, pak graf <MN>G-e</MN>, 
+                kde <MN>e</MN> je libovolná hrana grafu <MN>G</MN>, již není strom.</q></cite><br/>
                 (K důkazu použijte známé definice a věty týkající se stromů.)
             </DefinitionPanel>
         );
