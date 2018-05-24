@@ -183,29 +183,34 @@ class Exercise17av2 extends Component {
 
     step2a = (state) => {
         let newNodes = this.updateNode(state.graphVis.nodes, 0, '#D1C4E9', ' u ');
-        return {graphVis: {nodes: newNodes, edges: state.graphVis.edges}}
+        const description = (<p>Konstrukce sledu <MN>S_1 = (</MN><MN classes='text-purple'>u</MN><MN>,e_1,w,e_2,v)</MN></p>);
+        return {graphVis: {nodes: newNodes, edges: state.graphVis.edges}, description: description}
     };
 
     step2b = (state) => {
         let newEdges = this.updateEdgeWithArrow(state.graphVis.edges, 0, '#D1C4E9', 3, false, ' e1 ', true, false);
-        return {graphVis: {nodes: state.graphVis.nodes, edges: newEdges}}
+        const description = (<p>Konstrukce sledu <MN>S_1 = (</MN><MN classes='text-purple'>u,e_1</MN><MN>,w,e_2,v)</MN></p>);
+        return {graphVis: {nodes: state.graphVis.nodes, edges: newEdges}, description: description}
     };
 
     step2c = (state) => {
         let newNodes = this.updateNode(state.graphVis.nodes, 1, '#D1C4E9', ' w ');
         let newEdges = this.updateEdgeWithArrow(state.graphVis.edges, 0, '#D1C4E9', 3, false, ' e1 ', false, false);
-        return {graphVis: {nodes: newNodes, edges: newEdges}}
+        const description = (<p>Konstrukce sledu <MN>S_1 = (</MN><MN classes='text-purple'>u,e_1,w</MN><MN>,e_2,v)</MN></p>);
+        return {graphVis: {nodes: newNodes, edges: newEdges}, description: description}
     };
 
     step2d = (state) => {
         let newEdges = this.updateEdgeWithArrow(state.graphVis.edges, 1, '#D1C4E9', 3, false, ' e2 ', true, false);
-        return {graphVis: {nodes: state.graphVis.nodes, edges: newEdges}}
+        const description = (<p>Konstrukce sledu <MN>S_1 = (</MN><MN classes='text-purple'>u,e_1,w,e_2</MN><MN>,v)</MN></p>);
+        return {graphVis: {nodes: state.graphVis.nodes, edges: newEdges}, description: description}
     };
 
     step2e = (state) => {
         let newNodes = this.updateNode(state.graphVis.nodes, 2, '#D1C4E9', ' v ');
         let newEdges = this.updateEdgeWithArrow(state.graphVis.edges, 1, '#D1C4E9', 3, false, ' e2 ', false, false);
-        return {graphVis: {nodes: newNodes, edges: newEdges}}
+        const description = (<p>Konstrukce sledu <MN>S_1 = (</MN><MN classes='text-purple'>u,e_1,w,e_2,v</MN><MN>)</MN></p>);
+        return {graphVis: {nodes: newNodes, edges: newEdges}, description: description}
     };
 
     step2Texts = () => {

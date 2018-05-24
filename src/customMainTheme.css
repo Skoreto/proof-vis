@@ -147,6 +147,9 @@
   /*Brown 500*/
   color: #795548;
 }
+.text-purple {
+  color: #B39DDB;
+}
 /* == CONTEXTOVE MENU UPRAVY VRCHOLU == */
 #operation {
   font-size: 18px;
