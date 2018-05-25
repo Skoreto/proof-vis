@@ -28,7 +28,6 @@ class Exercise20vis extends Component {
                 edges: []
             },
             options: graphVisOptions,
-            network: null,
             timeouts: [],
             intervals: [],
             currentStep: 0,
@@ -48,6 +47,7 @@ class Exercise20vis extends Component {
             repeatBoxHidden: true,
             repeatBoxContent: ''
         };
+        const network = null;
         this.updateNode = updateNode.bind(this);
         this.updateEdge = updateEdge.bind(this);
         this.updateEdgeWithArrow = updateEdgeWithArrow.bind(this);
@@ -63,19 +63,15 @@ class Exercise20vis extends Component {
      * @param {Object} networkInstance - Object of network instance returned by getNetwork() callback function.
      */
     initNetworkInstance(networkInstance) {
-        this.setState({network: networkInstance});
+        this.network = networkInstance;
     }
 
     tryMoveNetworkCamera = (state) => {
         const newCameraPosition = {
-            position: {x: 165, y: -10},
-            scale: 0.85,
-            offset: {x: 0, y: 0},
+            position: {x: 165, y: -10}, scale: 0.85,
             animation: {duration: 1000, easingFunction: "easeInOutQuad"}
         };
-        this.setState({
-            network: state.network.moveTo(newCameraPosition)
-        });
+        this.network.moveTo(newCameraPosition);
     };
 
     nextStep = () => {
@@ -268,14 +264,13 @@ class Exercise20vis extends Component {
         ]);
 
         // Move camera to new position
-        const newOptions = {
-            position: {x: 170, y: -10},
-            scale: 0.82,
-            offset: {x: 0, y: 0},
+        const newCameraPosition = {
+            position: {x: 170, y: -10}, scale: 0.82, 
             animation: {duration: 1000, easingFunction: "easeInOutQuad"}
         };
+        this.network.moveTo(newCameraPosition);
 
-        return {graphVis: {nodes: newNodes, edges: newEdges}, network: state.network.moveTo(newOptions)}
+        return {graphVis: {nodes: newNodes, edges: newEdges}}
     };
 
     step4Texts = () => {
@@ -326,19 +321,17 @@ class Exercise20vis extends Component {
         }, 2000);
 
         this.setState({timeouts: [timeout1, timeout2]});
+
+        // Move camera to new position
+        const newCameraPosition = {
+            position: {x: 0, y: -10}, scale: 1.4, 
+            animation: {duration: 1500, easingFunction: "easeInOutQuad"}
+        };
+        this.network.moveTo(newCameraPosition);
     };
 
     step6a = (state) => {
         let newEdges = this.updateEdge(state.graphVis.edges, 2, '#81C784', 3, false, ' e ');
-        // Move camera to new position
-        const newOptions = {
-            position: { x: 0, y: -10 },
-            scale: 1.4,
-            offset: { x: 0, y: 0 },
-            animation: {duration: 1500, easingFunction: "easeInOutQuad"}
-        };
-        // TODO Fix second repositioning of camera
-        // return {graphVis: {nodes: state.graphVis.nodes, edges: newEdges}, network: state.network.moveTo(newOptions)}
         return {graphVis: {nodes: state.graphVis.nodes, edges: newEdges}}
     };
 
