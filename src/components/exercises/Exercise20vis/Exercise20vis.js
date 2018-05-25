@@ -19,6 +19,16 @@ import faPencilAlt from '@fortawesome/fontawesome-free-solid/faPencilAlt'
 import faMinus from '@fortawesome/fontawesome-free-solid/faMinus'
 import faCircle from '@fortawesome/fontawesome-free-solid/faCircleNotch'
 
+const cameraPosition1 = {
+    position: {x: 0, y: -10}, scale: 1.4, 
+    animation: {duration: 1500, easingFunction: "easeInOutQuad"}
+};
+
+const cameraPosition2 = {
+    position: {x: 170, y: -10}, scale: 0.82, 
+    animation: {duration: 1000, easingFunction: "easeInOutQuad"}
+};
+
 class Exercise20vis extends Component {
     constructor(props) {
         super(props);
@@ -48,12 +58,12 @@ class Exercise20vis extends Component {
             repeatBoxContent: ''
         };
         const network = null;
+        this.initNetworkInstance = this.initNetworkInstance.bind(this);
         this.updateNode = updateNode.bind(this);
         this.updateEdge = updateEdge.bind(this);
         this.updateEdgeWithArrow = updateEdgeWithArrow.bind(this);
         this.addObjectArray = addObjectArray.bind(this);
         this.clearAllTimers = clearAllTimers.bind(this);
-        this.initNetworkInstance = this.initNetworkInstance.bind(this);
         this.handlerSketchAllowance = handlerSketchAllowance.bind(this);
         this.handlerSelectedTool = handlerSelectedTool.bind(this);
     }
@@ -64,15 +74,8 @@ class Exercise20vis extends Component {
      */
     initNetworkInstance(networkInstance) {
         this.network = networkInstance;
+        // this.network.moveTo(cameraPosition1);    // For skipping initial animation
     }
-
-    tryMoveNetworkCamera = (state) => {
-        const newCameraPosition = {
-            position: {x: 165, y: -10}, scale: 0.85,
-            animation: {duration: 1000, easingFunction: "easeInOutQuad"}
-        };
-        this.network.moveTo(newCameraPosition);
-    };
 
     nextStep = () => {
         if (this.state.currentStep <= 5) {
@@ -80,6 +83,7 @@ class Exercise20vis extends Component {
                 this.setState({btnPrevD: false});
                 this.setState(this.step1);
                 this.setState(this.step1Texts);
+                this.network.moveTo(cameraPosition1);
             }
 
             if (this.state.currentStep === 1) {
@@ -95,6 +99,7 @@ class Exercise20vis extends Component {
             if (this.state.currentStep === 3) {
                 this.setState(this.step4);
                 this.setState(this.step4Texts);
+                this.network.moveTo(cameraPosition2);
             }
 
             if (this.state.currentStep === 4) {
@@ -105,9 +110,10 @@ class Exercise20vis extends Component {
             if (this.state.currentStep === 5) {
                 this.setState({btnNextD: true});
                 this.step6();
-                let interval1 = setInterval(this.step6, 4000);
+                let interval1 = setInterval(this.step6, 2000);
                 this.setState({interval1: interval1});
                 this.setState(this.step6Texts);
+                this.network.moveTo(cameraPosition1);
             }
 
             // Increase currentStep after a step was executed
@@ -141,6 +147,7 @@ class Exercise20vis extends Component {
                 this.setState(this.step2);
                 this.setState(this.step3);
                 this.setState(this.step3Texts);
+                this.network.moveTo(cameraPosition1);
             }
 
             if (this.state.currentStep === 5) {
@@ -163,6 +170,7 @@ class Exercise20vis extends Component {
                 this.setState(this.step4);
                 this.setState(this.step5);
                 this.setState(this.step5Texts);
+                this.network.moveTo(cameraPosition2);
             }
 
             // Reduce currentStep after a step was executed
@@ -263,13 +271,6 @@ class Exercise20vis extends Component {
             {id: 10, from: 9, to: 10}
         ]);
 
-        // Move camera to new position
-        const newCameraPosition = {
-            position: {x: 170, y: -10}, scale: 0.82, 
-            animation: {duration: 1000, easingFunction: "easeInOutQuad"}
-        };
-        this.network.moveTo(newCameraPosition);
-
         return {graphVis: {nodes: newNodes, edges: newEdges}}
     };
 
@@ -314,20 +315,13 @@ class Exercise20vis extends Component {
     step6 = () => {
         let timeout1 = setTimeout(()=> {
             this.setState(this.step6a);
-        }, 1000);
+        }, 500);
 
         let timeout2 = setTimeout(()=> {
             this.setState(this.step6b);
         }, 2000);
 
         this.setState({timeouts: [timeout1, timeout2]});
-
-        // Move camera to new position
-        const newCameraPosition = {
-            position: {x: 0, y: -10}, scale: 1.4, 
-            animation: {duration: 1500, easingFunction: "easeInOutQuad"}
-        };
-        this.network.moveTo(newCameraPosition);
     };
 
     step6a = (state) => {
@@ -400,7 +394,6 @@ class Exercise20vis extends Component {
                                                 <Button clicked={() => this.setState(() => this.handlerSelectedTool(3))}
                                                         active={this.state.btnCircleA} disabled={this.state.btnCircleD}>
                                                     <FontAwesomeIcon icon={faCircle}/></Button>
-                                                <Button clicked={() => this.tryMoveNetworkCamera(this.state)}>Network</Button>
                                             </span>
                                         </div>
                                     </main>
