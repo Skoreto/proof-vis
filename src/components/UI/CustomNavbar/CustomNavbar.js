@@ -24,11 +24,8 @@ const CustomNavbar = () => (
                     {/* <MenuItem eventKey={1.1} componentClass={Link} href="/priklad20svg" to="/priklad20svg">
                         Příklad 20 (SVG)
                     </MenuItem> */}
-                    <MenuItem eventKey={1.2} componentClass={Link} href="/priklad20vis" to="/priklad20vis">
-                        Příklad 20 (příprava)
-                    </MenuItem>
-                    <MenuItem eventKey={1.6} componentClass={Link} href="/priklad20v2" to="/priklad20v2">
-                        Příklad 20 (verze 2)
+                    <MenuItem eventKey={1.2} componentClass={Link} href="/priklad20v2" to="/priklad20v2">
+                        Příklad 20
                     </MenuItem>
                     {/* <MenuItem eventKey={1.3}>Příklad 23</MenuItem> */}
                     <MenuItem eventKey={1.4} componentClass={Link} href="/priklad26" to="/priklad26">Příklad 26 (verze 1)</MenuItem>
