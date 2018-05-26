@@ -16,6 +16,11 @@ const cameraPosition2 = {
     animation: {duration: 1000, easingFunction: "easeInOutQuad"}
 };
 
+const cameraPosition3 = {
+    position: {x: 400, y: -10}, scale: 1.4, 
+    animation: {duration: 4000, easingFunction: "easeInOutQuad"}
+};
+
 class Exercise20v2 extends Component {
     constructor(props) {
         super(props);
@@ -29,7 +34,7 @@ class Exercise20v2 extends Component {
             timeouts: [],
             intervals: [],
             currentStep: 0,
-            stepSum: 6,
+            stepSum: 7,
             headingTitle: 'Příklad 20',
             breadcrumbsCurrent: 'Důkazy přímo',
             isSketchAllowed: false,
@@ -71,7 +76,7 @@ class Exercise20v2 extends Component {
     }
 
     nextStep = () => {
-        if (this.state.currentStep <= 5) {
+        if (this.state.currentStep <= 6) {
             if (this.state.currentStep === 0) {
                 this.setState({btnPrevD: false});
                 this.setState(this.step1);
@@ -98,15 +103,20 @@ class Exercise20v2 extends Component {
             if (this.state.currentStep === 4) {
                 this.setState(this.step5);
                 this.setState(this.step5Texts);
+                this.network.moveTo(cameraPosition3);
             }
 
             if (this.state.currentStep === 5) {
-                this.setState({btnNextD: true});
-                this.step6();
-                let interval1 = setInterval(this.step6, 2000);
-                this.setState({interval1: interval1});
                 this.setState(this.step6Texts);
                 this.network.moveTo(cameraPosition1);
+            }
+
+            if (this.state.currentStep === 6) {
+                this.setState({btnNextD: true});
+                this.step7();
+                let interval1 = setInterval(this.step7, 2000);
+                this.setState({interval1: interval1});
+                this.setState(this.step7Texts);
             }
 
             // Increase currentStep after a step was executed
@@ -130,6 +140,7 @@ class Exercise20v2 extends Component {
             if (this.state.currentStep === 3) {
                 this.setState(this.stepReset);
                 this.setState(this.step1);
+                this.setState(this.step1Texts); // keep
                 this.setState(this.step2);
                 this.setState(this.step2Texts);
             }
@@ -150,9 +161,15 @@ class Exercise20v2 extends Component {
                 this.setState(this.step3);
                 this.setState(this.step4);
                 this.setState(this.step4Texts);
+                this.network.moveTo(cameraPosition2);
             }
 
             if (this.state.currentStep === 6) {
+                this.setState(this.step5Texts);
+                this.network.moveTo(cameraPosition3);
+            }
+
+            if (this.state.currentStep === 7) {
                 this.setState({btnNextD: false});
                 clearInterval(this.state.interval1);
                 this.clearAllTimers(this.state);
@@ -162,8 +179,7 @@ class Exercise20v2 extends Component {
                 this.setState(this.step3);
                 this.setState(this.step4);
                 this.setState(this.step5);
-                this.setState(this.step5Texts);
-                this.network.moveTo(cameraPosition2);
+                this.setState(this.step6Texts);
             }
 
             // Reduce currentStep after a step was executed
@@ -172,7 +188,7 @@ class Exercise20v2 extends Component {
     };
 
     stepReset = () => {
-        return {graphVis: {nodes: [], edges: []}, descriptionBox: '', repeatBoxHidden: true, repeatBoxContent: ''}
+        return {graphVis: {nodes: [], edges: []}, description: '', repeatBoxHidden: true, repeatBoxContent: ''}
     };
 
     step1 = () => {
@@ -197,7 +213,7 @@ class Exercise20v2 extends Component {
     };
 
     step1Texts = () => {
-        const description = (<p>Sestrojení příkladu grafu <MN>G</MN></p>);
+        const description = (<p>Sestrojení příkladu souvislého grafu <MN>G</MN>.</p>);
         const repeatBox = (
             <div>
                 <p>DEFINICE MOSTU (1.11)
@@ -210,7 +226,7 @@ class Exercise20v2 extends Component {
             </div>
         );
 
-        return {descriptionBox: description, repeatBoxHidden: false, repeatBoxContent: repeatBox}
+        return {description: description, repeatBoxHidden: false, repeatBoxContent: repeatBox}
     };
 
     step2 = (state) => {
@@ -225,8 +241,8 @@ class Exercise20v2 extends Component {
     };
 
     step2Texts = () => {
-        const description = (<p>Zvolení hrany <MN>e</MN> a libovolných vrcholů <MN>u</MN> a <MN>v</MN></p>);
-        return {descriptionBox: description, repeatBoxHidden: true, repeatBoxContent: ''}
+        const description = (<p>Zvolení hrany <MN>{'e=\\{x,y\\}'}</MN>, která není mostem, a libovolných vrcholů <MN>u</MN> a <MN>v</MN>.</p>);
+        return {description: description}
     };
 
     step3 = (state) => {
@@ -243,8 +259,9 @@ class Exercise20v2 extends Component {
     };
 
     step3Texts = () => {
-        const description = (<p>Sestrojení cesty <MN>P</MN> mezi <MN>u-v</MN> v grafu <MN>G</MN></p>);
-        return {descriptionBox: description, repeatBoxHidden: true, repeatBoxContent: ''}
+        const description = (<p>Příklad sestrojení <MN>u</MN>-<MN>v</MN> cesty <MN>{'P_{uv}'}</MN> v 
+        grafu <MN>G</MN>.</p>);
+        return {description: description, repeatBoxHidden: true, repeatBoxContent: ''}
     };
 
     step4 = (state) => {
@@ -268,9 +285,10 @@ class Exercise20v2 extends Component {
     };
 
     step4Texts = () => {
-        const description = (<p>Když existuje <MN>u-v</MN> cesta <MN>P</MN> v <MN>G</MN>, tak
-            existuje <MN>u-v</MN> cesta <MN>P'</MN> v <MN>G-e</MN> (pozn.: nemusí platit <MN>P'=P</MN>)</p>);
-        return {descriptionBox: description, repeatBoxHidden: true, repeatBoxContent: ''}
+        const description = (<p>Vlevo předchozí příklad <MN>u</MN>-<MN>v</MN> cesty <MN>{'P_{uv}'}</MN> v 
+        grafu <MN>G</MN>.<br/>
+        Vpravo příklad <MN>u</MN>-<MN>v</MN> cesty <MN>{"P'_{uv}"}</MN> v grafu <MN>G-e</MN>.</p>);
+        return {description: description, repeatBoxHidden: true, repeatBoxContent: ''}
     };
 
     step5 = (state) => {
@@ -300,44 +318,61 @@ class Exercise20v2 extends Component {
     };
 
     step5Texts = () => {
-        const description = (<p>Protože existence cesty platí pro libovolná <MN>u</MN> a <MN>v</MN>, platí také,
-            že <MN>\exists</MN> <MN>x-y</MN> cesta <MN>{'P_{xy}'}</MN> v <MN>G</MN> i v <MN>G-e</MN></p>);
-        return {descriptionBox: description, repeatBoxHidden: true, repeatBoxContent: ''}
+        const description = (<p><MN>x</MN>-<MN>y</MN> cesta <MN>{'P_{xy}'}</MN> v grafu <MN>G-e</MN></p>);
+        return {description: description, repeatBoxHidden: true, repeatBoxContent: ''}
     };
 
-    step6 = () => {
+    step6Texts = () => {
+        const description = (<p><MN>x</MN>-<MN>y</MN> cesta <MN>{'P_{xy}'}</MN> v grafu <MN>G</MN></p>);
+        return {description: description, repeatBoxHidden: true, repeatBoxContent: ''}
+    };
+
+    step7 = () => {
         let timeout1 = setTimeout(()=> {
-            this.setState(this.step6a);
+            this.setState(this.step7a);
         }, 500);
 
         let timeout2 = setTimeout(()=> {
-            this.setState(this.step6b);
+            this.setState(this.step7b);
         }, 2000);
 
         this.setState({timeouts: [timeout1, timeout2]});
     };
 
-    step6a = (state) => {
+    step7a = (state) => {
         let newEdges = this.updateEdge(state.graphVis.edges, 2, '#81C784', 3, false, ' e ');
         return {graphVis: {nodes: state.graphVis.nodes, edges: newEdges}}
     };
 
-    step6b = (state) => {
+    step7b = (state) => {
         let newEdges = this.updateEdge(state.graphVis.edges, 2, '#000000', 1, false, ' e ');
         return {graphVis: {nodes: state.graphVis.nodes, edges: newEdges}}
     };
 
-    step6Texts = () => {
-        const description = (<p>Cesta <MN>{'P_{xy}'}</MN> spolu s hranou <MN>{'e=\\{x,y\\}'}</MN> tvoří kružnici v <MN>G</MN> obsahující hranu <MN>e</MN></p>);
-        return {descriptionBox: description, repeatBoxHidden: true, repeatBoxContent: ''}
+    step7Texts = () => {
+        const description = (<p>Cesta <MN>{'P_{xy}'}</MN> spolu s hranou <MN>{'e=\\{x,y\\}'}</MN> tvoří 
+        kružnici v <MN>G</MN> obsahující hranu <MN>e</MN>.</p>);
+        const repeatBox = (
+            <div>
+                <p>
+                    KRUŽNICE (Definice 1.8)<br/>
+                    Kružnice délky <MN>k, k \geq 3</MN>, v grafu <MN>G</MN> je 
+                    posloupnost <MN>{'(v_{0}, e_{1}, v_{1},...,e_{k}, v_{0})'}</MN>, 
+                    kde <MN>{'e_{i}=\\{v_{i-1}, v_{i}\\}'}</MN>, <MN>i=1,...,k-1</MN>, <MN>{'e_{k}=\\{v_{k-1}, v_{0}\\}'}</MN> a 
+                    pro <MN>i \neq j</MN> platí <MN>{'v_{i} \\neq v_{j}'}</MN>.
+                    
+                </p>
+            </div>
+        );
+        return {description: description, repeatBoxHidden: false, repeatBoxContent: repeatBox}
     };
 
     render() {
         const definitionPanel = (
             <DefinitionPanel>
-                Dokažte přímo tvrzení: <cite><q>Jestliže graf <MN>G</MN> je strom, pak graf <MN>G-e</MN>, 
-                kde <MN>e</MN> je libovolná hrana grafu <MN>G</MN>, již není strom.</q></cite><br/>
-                (K důkazu použijte známé definice a věty týkající se stromů.)
+                <cite><q>Nechť <MN>G</MN> je souvislý graf. Jestliže hrana <MN>e</MN> není most
+                v <MN>G</MN>, pak v <MN>G</MN> existuje kružnice obsahující
+                hranu <MN>e</MN>.</q></cite> Dokažte přímo.
             </DefinitionPanel>
         );
 
@@ -345,33 +380,44 @@ class Exercise20v2 extends Component {
             <div className='bg-warning' id='proofBox'>
                 <div className={(1 === this.state.currentStep) ||
                 (2 === this.state.currentStep) ? 'proof-active' : ''}>
-                    <p>Pokud graf <MN>G</MN> je strom <br/>
-                        <MN>\Rightarrow</MN> pak dle věty o stromech platí, že pro
-                        každé dva vrcholy v grafu <MN>G</MN> existuje jediná cesta.
+                    <p>
+                        Pokud <MN>{'e=\\{x,y\\}'}</MN> není most v <MN>G</MN>, poté z definice
+                        mostu platí, že graf <MN>G-e</MN> má stejný počet komponent
+                        jako <MN>G</MN> a platí:
                     </p>
                 </div>
-                {/*<div className={2 === this.state.currentStep ? 'proof-active' : ''}>*/}
-                    {/*<p>Mezi libovolně zvolenými vrcholy <MN>u</MN> a <MN>v</MN> existuje jediná cesta.</p>*/}
-                {/*</div>*/}
                 <div className={3 === this.state.currentStep ? 'proof-active' : ''}>
-                    <p><MN>\Rightarrow</MN> Protože existuje právě jediná cesta mezi
-                        vrcholy <MN>u,v</MN>, musí vždy vést přes libovolně
-                        zvolenou hranu <MN>{'e=\\{x,y\\}'}</MN> z této cesty.</p>
-                </div>
-                <div className={4 === this.state.currentStep ? ' proof-active' : ''}>
                     <p>
-                        <MN>\Rightarrow</MN> Nicméně, v <MN>G-e</MN> neexistuje
-                        cesta <MN>u</MN>-<MN>v</MN>.<br/>
-                        <MN>\Rightarrow</MN> Tudíž vrcholy <MN>u</MN>,<MN>v</MN> se
-                        v <MN>G-e</MN> nacházejí v různých komponentách souvislosti.
+                        Protože uvažujeme souvislý graf <MN>G</MN>, musí mezi libovolně zvolenými 
+                        vrcholy <MN>u</MN> a <MN>v</MN> existovat cesta.
+                    </p>
+                </div>
+                <div className={4 === this.state.currentStep ? 'proof-active' : ''}>
+                    <p>
+                        Když existuje <MN>u</MN>-<MN>v</MN> cesta <MN>{'P_{uv}'}</MN> v <MN>G</MN>, tak
+                        existuje <MN>u</MN>-<MN>v</MN> cesta <MN>{"P'_{uv}"}</MN> v <MN>G-e</MN>.
+                        (Uvažujeme totiž stále hranu <MN>e</MN>, která není mostem.)<br/><br/> 
+                        Poznámka:  <MN>{"P'_{uv}"}</MN> se nemusí nutně  <MN>{'=P_{uv}'}</MN>.
+                    </p>
+                </div>
+                <div className={5 === this.state.currentStep ? 'proof-active' : ''}>
+                    <p>
+                        Z toho vyplývá, že v <MN>G-e</MN> musí v existovat také cesta <MN>{'P_{xy}'}</MN> mezi
+                        vrcholy <MN>x</MN> a <MN>y</MN> z hrany <MN>e</MN>.
+                    </p>
+                </div>
+                <div className={6 === this.state.currentStep ? 'proof-active' : ''}>
+                    <p>
+                        Protože <MN>G</MN> vznikne z <MN>G-e</MN> přidáním hrany <MN>e</MN>,
+                        musí se <MN>x</MN>-<MN>y</MN> cesta <MN>{'P_{xy}'}</MN> nacházet také v <MN>G</MN>.
                     </p>
                 </div>
                 <div className={'borderless' +
-                (5 === this.state.currentStep ? ' proof-active' : '')}>
+                (7 === this.state.currentStep ? ' proof-active' : '')}>
                     <p>
-                        <MN>\Rightarrow</MN> To znamená, že <MN>G-e</MN> není souvislý.<br/>
-                        <MN>\Rightarrow</MN> Z definice stromu pak platí,
-                        že <MN>G-e</MN> není strom.
+                        Poté dle definice kružnice platí, 
+                        že <MN>x</MN>-<MN>y</MN> cesta <MN>{'P_{xy}'}</MN> spolu s
+                        hranou <MN>{'e=\\{x,y\\}'}</MN> tvoří kružnici v <MN>G</MN> obsahující  hranu <MN>e</MN>.
                     </p>
                     <p className="text-center">
                         <MN>\dagger</MN> Tím je dokázáno stanovené tvrzení.
