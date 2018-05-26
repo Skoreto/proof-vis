@@ -61,7 +61,7 @@ const ExerciseWrapper = (props) => (
                             }
                             <div className='GraphBox'>
                                 <GraphVis graph={props.graphVis} options={props.options} events={props.events} 
-                                style={{height: '400px'}} />
+                                style={{height: '400px'}} getNetwork={props.initNetworkInstance} />
                             </div>
                             <M.Context input='tex'>
                                 <div className='descriptionBox'>
