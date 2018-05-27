@@ -219,8 +219,8 @@ class Exercise17av2 extends Component {
     };
 
     step3 = () => {
-        let timeout3a = setTimeout(()=> {this.setState(this.step2a);}, 1000);
-        let timeout3b = setTimeout(()=> {this.setState(this.step2b);}, 2500);
+        let timeout3a = setTimeout(()=> {this.setState(this.step3a);}, 1000);
+        let timeout3b = setTimeout(()=> {this.setState(this.step3b);}, 2500);
         let timeout3c = setTimeout(()=> {this.setState(this.step3c);}, 4000);
         let timeout3e = setTimeout(()=> {this.setState(this.step3e);}, 5500);
         let timeout3f = setTimeout(()=> {this.setState(this.step3f);}, 7000);
@@ -236,6 +236,16 @@ class Exercise17av2 extends Component {
 
         this.setState({timeouts: [timeout3a, timeout3b, timeout3c, timeout3e, timeout3f, timeout3h, timeout3i, 
             timeout3j, timeout3k, timeout3l]});
+    };
+
+    step3a = (state) => {
+        let newNodes = this.updateNode(state.graphVis.nodes, 0, '#D1C4E9', ' u ');
+        return {graphVis: {nodes: newNodes, edges: state.graphVis.edges}}
+    };
+
+    step3b = (state) => {
+        let newEdges = this.updateEdgeWithArrow(state.graphVis.edges, 0, '#D1C4E9', 3, false, ' e1 ', true, false);
+        return {graphVis: {nodes: state.graphVis.nodes, edges: newEdges}}
     };
 
     step3c = (state) => {
