@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="daa44ed9-404f-45c0-a4b5-d9b994cc961e" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/exercises/Exercise17a/Exercise17a.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/exercises/Exercise17a/Exercise17a.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/customMainTheme.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/customMainTheme.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -25,8 +22,8 @@
           <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/App.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="255">
-                  <caret line="17" column="70" selection-start-line="17" selection-start-column="70" selection-end-line="17" selection-end-column="70" />
+                <state relative-caret-position="289">
+                  <caret line="20" column="65" selection-start-line="20" selection-start-column="65" selection-end-line="20" selection-end-column="65" />
                 </state>
               </provider>
             </entry>
@@ -43,17 +40,17 @@
           <file leaf-file-name="Exercise20vis.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/components/exercises/Exercise20vis/Exercise20vis.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="459">
-                  <caret line="39" column="36" selection-start-line="39" selection-start-column="36" selection-end-line="39" selection-end-column="36" />
+                <state relative-caret-position="1258">
+                  <caret line="76" column="36" selection-start-line="76" selection-start-column="36" selection-end-line="76" selection-end-column="36" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="customMainTheme.css" pinned="false" current-in-tab="false">
+          <file leaf-file-name="customMainTheme.css" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/customMainTheme.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="568">
-                  <caret line="157" column="35" selection-start-line="157" selection-start-column="35" selection-end-line="157" selection-end-column="35" />
+                <state relative-caret-position="2499">
+                  <caret line="147" column="5" lean-forward="true" selection-start-line="147" selection-start-column="5" selection-end-line="147" selection-end-column="5" />
                 </state>
               </provider>
             </entry>
@@ -62,7 +59,7 @@
             <entry file="file://$PROJECT_DIR$/public/index.html">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="527">
-                  <caret line="34" column="65" selection-start-line="34" selection-start-column="65" selection-end-line="34" selection-end-column="65" />
+                  <caret line="37" column="65" selection-start-line="37" selection-start-column="65" selection-end-line="37" selection-end-column="65" />
                 </state>
               </provider>
             </entry>
@@ -71,7 +68,7 @@
             <entry file="file://$PROJECT_DIR$/src/components/UI/Button/Button.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="170">
-                  <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+                  <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
                   <folding>
                     <element signature="e#0#26#0" expanded="true" />
                   </folding>
@@ -82,8 +79,8 @@
           <file leaf-file-name="Exercise17a.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/components/exercises/Exercise17a/Exercise17a.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="510">
-                  <caret line="391" column="117" selection-start-line="391" selection-start-column="117" selection-end-line="391" selection-end-column="117" />
+                <state relative-caret-position="272">
+                  <caret line="487" column="29" selection-start-line="487" selection-start-column="29" selection-end-line="487" selection-end-column="29" />
                   <folding>
                     <element signature="e#0#38#0" expanded="true" />
                   </folding>
@@ -91,11 +88,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="main.css" pinned="false" current-in-tab="true">
+          <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="670">
-                  <caret line="120" column="1" selection-start-line="120" selection-start-column="1" selection-end-line="120" selection-end-column="1" />
+                <state relative-caret-position="500">
+                  <caret line="127" column="16" selection-start-line="127" selection-start-column="16" selection-end-line="127" selection-end-column="16" />
                 </state>
               </provider>
             </entry>
@@ -107,7 +104,7 @@
           <file leaf-file-name="index.css" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/index.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="68">
+                <state relative-caret-position="153">
                   <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
                 </state>
               </provider>
@@ -117,7 +114,7 @@
             <entry file="file://$PROJECT_DIR$/src/components/UI/Button/Button.css">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="85">
-                  <caret line="5" selection-start-line="5" selection-end-line="5" />
+                  <caret line="13" selection-start-line="13" selection-end-line="13" />
                 </state>
               </provider>
             </entry>
@@ -129,8 +126,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -191,12 +188,12 @@
         <option value="$PROJECT_DIR$/src/components/UI/Button/Button.js" />
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/src/App.css" />
-        <option value="$PROJECT_DIR$/src/customMainTheme.css" />
         <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/components/MathJax/MathJaxNode.js" />
         <option value="$PROJECT_DIR$/src/components/exercises/Exercise20vis/Exercise20vis.js" />
         <option value="$PROJECT_DIR$/src/components/exercises/Exercise17a/Exercise17a.js" />
         <option value="$PROJECT_DIR$/src/main.css" />
+        <option value="$PROJECT_DIR$/src/customMainTheme.css" />
       </list>
     </option>
   </component>
@@ -235,11 +232,6 @@
             <path>
               <item name="proof-vis" type="b2602c69:ProjectViewProjectNode" />
               <item name="proof-vis" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="proof-vis" type="b2602c69:ProjectViewProjectNode" />
-              <item name="proof-vis" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -269,7 +261,23 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="exercises" type="462c0819:PsiDirectoryNode" />
+              <item name="Exercise20svg" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proof-vis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="proof-vis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="exercises" type="462c0819:PsiDirectoryNode" />
               <item name="Exercise20vis" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proof-vis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="proof-vis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="exercises" type="462c0819:PsiDirectoryNode" />
+              <item name="Exercise26" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="proof-vis" type="b2602c69:ProjectViewProjectNode" />
@@ -299,7 +307,22 @@
               <item name="proof-vis" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Graph" type="462c0819:PsiDirectoryNode" />
+              <item name="Text" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proof-vis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="proof-vis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="MathJax" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proof-vis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="proof-vis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="proof-vis" type="b2602c69:ProjectViewProjectNode" />
@@ -315,6 +338,52 @@
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="UI" type="462c0819:PsiDirectoryNode" />
               <item name="Button" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proof-vis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="proof-vis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="UI" type="462c0819:PsiDirectoryNode" />
+              <item name="CustomNavbar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proof-vis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="proof-vis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="UI" type="462c0819:PsiDirectoryNode" />
+              <item name="Footer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proof-vis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="proof-vis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="UI" type="462c0819:PsiDirectoryNode" />
+              <item name="MainHeader" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proof-vis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="proof-vis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="UI" type="462c0819:PsiDirectoryNode" />
+              <item name="PageHeading" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proof-vis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="proof-vis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="UI" type="462c0819:PsiDirectoryNode" />
+              <item name="StepCounter" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proof-vis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="proof-vis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="functionality" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -403,21 +472,7 @@
       <workItem from="1526147229273" duration="35000" />
       <workItem from="1526147326304" duration="3712000" />
       <workItem from="1526227312918" duration="9428000" />
-      <workItem from="1527495093047" duration="10342000" />
-    </task>
-    <task id="LOCAL-00040" summary="Install react-sketch package">
-      <created>1525174107614</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1525174107614</updated>
-    </task>
-    <task id="LOCAL-00041" summary="Implement initial sketch drawing functionality">
-      <created>1525176058065</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1525176058065</updated>
+      <workItem from="1527495093047" duration="11799000" />
     </task>
     <task id="LOCAL-00042" summary="Fix GitHub pages deploy">
       <created>1525178613434</created>
@@ -748,11 +803,25 @@
       <option name="project" value="LOCAL" />
       <updated>1527529437821</updated>
     </task>
-    <option name="localTasksCounter" value="89" />
+    <task id="LOCAL-00089" summary="Substitute 'Install Font Awesome packages by @fortawesome' commit a9ebb607a3866939034c1d14d035ae6407968aa8">
+      <created>1527530044349</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1527530044349</updated>
+    </task>
+    <task id="LOCAL-00090" summary="Resolve 'Improve sticky footer' commit 87489b5760cc4d4a20e28289415e62ef4356c7cb">
+      <created>1527533082595</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1527533082595</updated>
+    </task>
+    <option name="localTasksCounter" value="91" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="389964000" />
+    <option name="totallyTimeSpent" value="391421000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="2062" height="1126" extended-state="6" />
@@ -762,11 +831,11 @@
       <window_info anchor="bottom" id="TODO" order="7" />
       <window_info anchor="bottom" id="Messages" order="0" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.3959961" side_tool="true" visible="true" weight="0.25765055" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.39648438" side_tool="true" visible="true" weight="0.25765055" />
       <window_info anchor="bottom" id="Run" order="3" weight="0.32971373" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.6040039" visible="true" weight="0.25765055" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.6035156" visible="true" weight="0.25765055" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -786,8 +855,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add initial implementation of SingleDrawing page" />
-    <MESSAGE value="Add Overview" />
     <MESSAGE value="Fix GitHub pages routing by adding basename" />
     <MESSAGE value="Update Exercise 20 (vis)" />
     <MESSAGE value="Implement network camera movement" />
@@ -811,7 +878,9 @@
     <MESSAGE value="Substitute 'Install react-sketch package' commit d18f20a037ecc801ec3d63702e99dc98ec74e67b" />
     <MESSAGE value="Substitute 'Install react-mathjax (SamyPesse) and react-mathjax2 (wko27) packages' commit 97c6e401998cb4321733a5abd1bc764f468eb5d4" />
     <MESSAGE value="Substitute 'Uninstall react-mathjax package, add MathJaxNode component' commit df5ed5fe8563044e7d0b1db277f4688f2328f9d0" />
-    <option name="LAST_COMMIT_MESSAGE" value="Substitute 'Uninstall react-mathjax package, add MathJaxNode component' commit df5ed5fe8563044e7d0b1db277f4688f2328f9d0" />
+    <MESSAGE value="Substitute 'Install Font Awesome packages by @fortawesome' commit a9ebb607a3866939034c1d14d035ae6407968aa8" />
+    <MESSAGE value="Resolve 'Improve sticky footer' commit 87489b5760cc4d4a20e28289415e62ef4356c7cb" />
+    <option name="LAST_COMMIT_MESSAGE" value="Resolve 'Improve sticky footer' commit 87489b5760cc4d4a20e28289415e62ef4356c7cb" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -819,20 +888,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/components/Graph/Graph.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="32" column="21" lean-forward="true" selection-start-line="32" selection-start-column="21" selection-end-line="32" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/UI/Button/Button.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="29" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Graph/Edge/Edge.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -1083,7 +1138,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/index.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
+        <state relative-caret-position="153">
           <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
         </state>
       </provider>
@@ -1091,7 +1146,7 @@
     <entry file="file://$PROJECT_DIR$/src/components/UI/Button/Button.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
-          <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -1108,7 +1163,7 @@
     <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
-          <caret line="34" column="65" selection-start-line="34" selection-start-column="65" selection-end-line="34" selection-end-column="65" />
+          <caret line="37" column="65" selection-start-line="37" selection-start-column="65" selection-end-line="37" selection-end-column="65" />
         </state>
       </provider>
     </entry>
@@ -1136,17 +1191,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/customMainTheme.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="568">
-          <caret line="157" column="35" selection-start-line="157" selection-start-column="35" selection-end-line="157" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="70" selection-start-line="17" selection-start-column="70" selection-end-line="17" selection-end-column="70" />
+        <state relative-caret-position="289">
+          <caret line="20" column="65" selection-start-line="20" selection-start-column="65" selection-end-line="20" selection-end-column="65" />
         </state>
       </provider>
     </entry>
@@ -1160,34 +1208,59 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/exercises/Exercise20vis/Exercise20vis.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="39" column="36" selection-start-line="39" selection-start-column="36" selection-end-line="39" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/UI/Button/Button.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="127" column="16" selection-start-line="127" selection-start-column="16" selection-end-line="127" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/exercises/Exercise20vis/Exercise20vis.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1258">
+          <caret line="76" column="36" selection-start-line="76" selection-start-column="36" selection-end-line="76" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/UI/Footer/BottomBar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/exercises/Exercise17a/Exercise17a.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="391" column="117" selection-start-line="391" selection-start-column="117" selection-end-line="391" selection-end-column="117" />
+        <state relative-caret-position="272">
+          <caret line="487" column="29" selection-start-line="487" selection-start-column="29" selection-end-line="487" selection-end-column="29" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.css">
+    <entry file="file://$PROJECT_DIR$/src/customMainTheme.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="670">
-          <caret line="120" column="1" selection-start-line="120" selection-start-column="1" selection-end-line="120" selection-end-column="1" />
+        <state relative-caret-position="2499">
+          <caret line="147" column="5" lean-forward="true" selection-start-line="147" selection-start-column="5" selection-end-line="147" selection-end-column="5" />
         </state>
       </provider>
     </entry>
