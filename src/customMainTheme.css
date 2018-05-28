@@ -27,6 +27,14 @@
   border: 1px solid #858585;
   width: 650px;
   height: 400px;
+  z-index: 1;
+}
+.over-component {
+  position: absolute;
+  width: 400px;
+  height: 200px;
+  background-color: #3f51b5;
+  z-index: 2;
 }
 /* === SEZNAMY OBSAHU === */
 .page-wrapper ul li {
@@ -77,7 +85,7 @@ aside h3 {
   font-size: 20px;
 }
 /* MQ - Malé úhlopříčky (telefony, méně než 768px) */
-@media (max-width: 767px) {  
+@media (max-width: 767px) {
   .wrapper {
     min-height: inherit;
     margin-bottom: 0;
@@ -142,7 +150,7 @@ aside h3 {
   }
 }
 /* MQ - Střední úhlopříčka (tablety, 768px a více) */
-@media (min-width: 768px) {   
+@media (min-width: 768px) {
   .wrapper {
     min-height: inherit;
     margin-bottom: 0;
@@ -162,9 +170,9 @@ aside h3 {
     content: "";
     display: block;
     height: 324px;
-    /* musí mít stejnou výšku jako patička */ 
+    /* musí mít stejnou výšku jako patička */
   }
   .page-wrapper {
-      min-height: 600px;
+    min-height: 600px;
   }
 }
