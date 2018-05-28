@@ -22,8 +22,8 @@
           <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/App.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="289">
-                  <caret line="20" column="65" selection-start-line="20" selection-start-column="65" selection-end-line="20" selection-end-column="65" />
+                <state relative-caret-position="238">
+                  <caret line="17" column="65" selection-start-line="17" selection-start-column="65" selection-end-line="17" selection-end-column="65" />
                 </state>
               </provider>
             </entry>
@@ -40,8 +40,8 @@
           <file leaf-file-name="Exercise20vis.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/components/exercises/Exercise20vis/Exercise20vis.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1258">
-                  <caret line="76" column="36" selection-start-line="76" selection-start-column="36" selection-end-line="76" selection-end-column="36" />
+                <state relative-caret-position="799">
+                  <caret line="49" column="10" selection-start-line="49" selection-start-column="10" selection-end-line="49" selection-end-column="10" />
                 </state>
               </provider>
             </entry>
@@ -49,8 +49,8 @@
           <file leaf-file-name="customMainTheme.css" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/customMainTheme.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2499">
-                  <caret line="147" column="5" lean-forward="true" selection-start-line="147" selection-start-column="5" selection-end-line="147" selection-end-column="5" />
+                <state relative-caret-position="432">
+                  <caret line="288" column="5" lean-forward="true" selection-start-line="288" selection-start-column="5" selection-end-line="288" selection-end-column="5" />
                 </state>
               </provider>
             </entry>
@@ -79,20 +79,11 @@
           <file leaf-file-name="Exercise17a.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/components/exercises/Exercise17a/Exercise17a.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="272">
-                  <caret line="487" column="29" selection-start-line="487" selection-start-column="29" selection-end-line="487" selection-end-column="29" />
+                <state relative-caret-position="-890">
+                  <caret line="315" column="29" selection-start-line="315" selection-start-column="29" selection-end-line="315" selection-end-column="29" />
                   <folding>
                     <element signature="e#0#38#0" expanded="true" />
                   </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="500">
-                  <caret line="127" column="16" selection-start-line="127" selection-start-column="16" selection-end-line="127" selection-end-column="16" />
                 </state>
               </provider>
             </entry>
@@ -232,6 +223,24 @@
             <path>
               <item name="proof-vis" type="b2602c69:ProjectViewProjectNode" />
               <item name="proof-vis" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proof-vis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="proof-vis" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proof-vis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="proof-vis" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="image" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proof-vis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="proof-vis" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -329,6 +338,22 @@
               <item name="proof-vis" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="Overview" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proof-vis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="proof-vis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="SingleDrawing" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proof-vis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="proof-vis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="UI" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -354,14 +379,6 @@
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="UI" type="462c0819:PsiDirectoryNode" />
               <item name="Footer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="proof-vis" type="b2602c69:ProjectViewProjectNode" />
-              <item name="proof-vis" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="UI" type="462c0819:PsiDirectoryNode" />
-              <item name="MainHeader" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="proof-vis" type="b2602c69:ProjectViewProjectNode" />
@@ -472,21 +489,7 @@
       <workItem from="1526147229273" duration="35000" />
       <workItem from="1526147326304" duration="3712000" />
       <workItem from="1526227312918" duration="9428000" />
-      <workItem from="1527495093047" duration="11799000" />
-    </task>
-    <task id="LOCAL-00042" summary="Fix GitHub pages deploy">
-      <created>1525178613434</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1525178613434</updated>
-    </task>
-    <task id="LOCAL-00043" summary="Exclude repeated layout components into App.js">
-      <created>1525185498555</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1525185498555</updated>
+      <workItem from="1527495093047" duration="12222000" />
     </task>
     <task id="LOCAL-00044" summary="Add basename prop to BrowserRouter">
       <created>1525186790837</created>
@@ -817,17 +820,31 @@
       <option name="project" value="LOCAL" />
       <updated>1527533082595</updated>
     </task>
-    <option name="localTasksCounter" value="91" />
+    <task id="LOCAL-00091" summary="Fix merge">
+      <created>1527533482529</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1527533482530</updated>
+    </task>
+    <task id="LOCAL-00092" summary="Resolve 'Improve layout' commit aeb5e700a450267d4eff31f0a30272babc1cc749&#10;&#10;# Conflicts:&#10;#&#9;src/customMainTheme.css&#10;#&#9;src/main.css">
+      <created>1527533721861</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1527533721861</updated>
+    </task>
+    <option name="localTasksCounter" value="93" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="391421000" />
+    <option name="totallyTimeSpent" value="391844000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="2062" height="1126" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.110839844" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.110839844" />
       <window_info anchor="bottom" id="TODO" order="7" />
       <window_info anchor="bottom" id="Messages" order="0" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
@@ -835,7 +852,7 @@
       <window_info anchor="bottom" id="Run" order="3" weight="0.32971373" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.6035156" visible="true" weight="0.25765055" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.6035156" visible="true" weight="0.25765055" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -855,8 +872,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fix GitHub pages routing by adding basename" />
-    <MESSAGE value="Update Exercise 20 (vis)" />
     <MESSAGE value="Implement network camera movement" />
     <MESSAGE value="Add next steps visualization to Exercise 20" />
     <MESSAGE value="Reimplement Exercise 20&#10;&#10;TODO Fix reusing camera movements" />
@@ -880,7 +895,9 @@
     <MESSAGE value="Substitute 'Uninstall react-mathjax package, add MathJaxNode component' commit df5ed5fe8563044e7d0b1db277f4688f2328f9d0" />
     <MESSAGE value="Substitute 'Install Font Awesome packages by @fortawesome' commit a9ebb607a3866939034c1d14d035ae6407968aa8" />
     <MESSAGE value="Resolve 'Improve sticky footer' commit 87489b5760cc4d4a20e28289415e62ef4356c7cb" />
-    <option name="LAST_COMMIT_MESSAGE" value="Resolve 'Improve sticky footer' commit 87489b5760cc4d4a20e28289415e62ef4356c7cb" />
+    <MESSAGE value="Fix merge" />
+    <MESSAGE value="Resolve 'Improve layout' commit aeb5e700a450267d4eff31f0a30272babc1cc749&#10;&#10;# Conflicts:&#10;#&#9;src/customMainTheme.css&#10;#&#9;src/main.css" />
+    <option name="LAST_COMMIT_MESSAGE" value="Resolve 'Improve layout' commit aeb5e700a450267d4eff31f0a30272babc1cc749&#10;&#10;# Conflicts:&#10;#&#9;src/customMainTheme.css&#10;#&#9;src/main.css" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1193,8 +1210,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="20" column="65" selection-start-line="20" selection-start-column="65" selection-end-line="20" selection-end-column="65" />
+        <state relative-caret-position="238">
+          <caret line="17" column="65" selection-start-line="17" selection-start-column="65" selection-end-line="17" selection-end-column="65" />
         </state>
       </provider>
     </entry>
@@ -1231,13 +1248,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/exercises/Exercise20vis/Exercise20vis.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1258">
-          <caret line="76" column="36" selection-start-line="76" selection-start-column="36" selection-end-line="76" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/UI/Footer/BottomBar.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1249,18 +1259,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/exercises/Exercise17a/Exercise17a.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="487" column="29" selection-start-line="487" selection-start-column="29" selection-end-line="487" selection-end-column="29" />
+        <state relative-caret-position="-890">
+          <caret line="315" column="29" selection-start-line="315" selection-start-column="29" selection-end-line="315" selection-end-column="29" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/exercises/Exercise20vis/Exercise20vis.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="799">
+          <caret line="49" column="10" selection-start-line="49" selection-start-column="10" selection-end-line="49" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/customMainTheme.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2499">
-          <caret line="147" column="5" lean-forward="true" selection-start-line="147" selection-start-column="5" selection-end-line="147" selection-end-column="5" />
+        <state relative-caret-position="432">
+          <caret line="288" column="5" lean-forward="true" selection-start-line="288" selection-start-column="5" selection-end-line="288" selection-end-column="5" />
         </state>
       </provider>
     </entry>
