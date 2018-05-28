@@ -47,10 +47,32 @@
     height: 400px;
     z-index: 1;
 }
+.descriptionBox {
+    min-height: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    /*border: 1px solid lightgray;*/
+}
+.descriptionBox p {
+    /*border: 1px solid lightgray;*/
+    font-size: 16px;
+    text-align: center;
+}
 .controls-panel {
     width: 100%;
     border: 1px solid lightgrey;
     background-color: #fafafa;
+    padding: 5px;
+    text-align: center;
+}
+.step-panel {
+    margin-right: 30px;
+}
+.sketch-buttons {
+    border-left: 1px solid #fafafa;
+}
+.animation-panel {
+    margin-left: 15px;
 }
 #proofBox {
     border: 1px solid rgba(235, 150, 0, 0.5);
@@ -87,6 +109,15 @@
 #proofBox .proof-active p {
     font-size: 18px;
 }
+.repeat-box {
+    background-color: #fafafa;
+    border: 1px solid lightgrey;
+    padding: 10px 10px 0 10px;
+    margin-top: 15px;
+}
+.repeat-box p {
+    text-align: left;
+}
 #divSentenceBox {
     max-width: 600px;
     background-color: #EEEEEE;
@@ -115,39 +146,6 @@
 .text-brown {
     /*Brown 500*/
     color: #795548;
-}
-.descriptionBox {
-    min-height: 40px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    /*border: 1px solid lightgray;*/
-}
-.descriptionBox p {
-    /*border: 1px solid lightgray;*/
-    font-size: 16px;
-    text-align: center;
-}
-.repeat-box {
-    background-color: #fafafa;
-    border: 1px solid lightgrey;
-    padding: 10px 10px 0 10px;
-    margin-top: 15px;
-}
-.repeat-box p {
-    text-align: left;
-}
-.controls-panel {
-    padding: 5px;
-    text-align: center;
-}
-.step-panel {
-    margin-right: 30px;
-}
-.sketch-buttons {
-    border-left: 1px solid #fafafa;
-}
-.animation-panel {
-    margin-left: 15px;
 }
 /* == CONTEXTOVE MENU UPRAVY VRCHOLU == */
 #operation {
@@ -208,7 +206,7 @@
     font-weight: 300;
 }
 .page-wrapper .page-content .page-row {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 /* MQ - Malé úhlopříčky (telefony, méně než 768px) */
 @media (max-width: 767px) {
@@ -224,6 +222,7 @@
     }
     aside {
         margin-top: 10px;
+        margin-bottom: 10px;
     }
     /* Pro malé úhlopříčky centrujeme na střed a ke stranám */
     .pull-right,
@@ -263,11 +262,17 @@
         max-width: inherit;
         overflow: visible;
     }
-    /* .form-group {
-      padding-bottom: 10px;
-    } */
     #definition {
         padding: 5px;
+        font-size: 16px;
+    }
+    .descriptionBox p {
+        font-size: 14px;
+    }
+    #proofBox p {
+        font-size: 14px;
+    }
+    #proofBox .proof-active p {
         font-size: 16px;
     }
 }
