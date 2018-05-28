@@ -4,8 +4,10 @@
   "private": true,
   "homepage": "https://skoreto.github.io/proof-vis/",
   "dependencies": {
-    "react": "^16.3.0",
-    "react-dom": "^16.3.0",
+    "immutability-helper": "^2.7.0",
+    "react": "^16.4.0",
+    "react-bootstrap": "^0.32.1",
+    "react-dom": "^16.4.0",
     "react-scripts": "1.1.1"
   },
   "scripts": {
