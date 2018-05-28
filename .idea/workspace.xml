@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="daa44ed9-404f-45c0-a4b5-d9b994cc961e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/components/UI/ExerciseWrapper/ExerciseWrapper.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/ExerciseWrapper/ExerciseWrapper.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/exercises/Exercise26gen/Exercise26gen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/exercises/Exercise26gen/Exercise26gen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/customMainTheme.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/customMainTheme.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -47,10 +46,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Exercise26gen.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="Exercise26gen.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/components/exercises/Exercise26gen/Exercise26gen.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-3825">
+                <state relative-caret-position="517">
+                  <caret line="198" lean-forward="true" selection-start-line="198" selection-end-line="198" />
                   <folding>
                     <element signature="e#0#39#0" expanded="true" />
                   </folding>
@@ -61,17 +61,17 @@
           <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="41">
-                  <caret line="1285" column="44" selection-start-line="1285" selection-start-column="44" selection-end-line="1285" selection-end-column="44" />
+                <state relative-caret-position="92">
+                  <caret line="1288" column="44" selection-start-line="1288" selection-start-column="44" selection-end-line="1288" selection-end-column="44" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="customMainTheme.css" pinned="false" current-in-tab="true">
+          <file leaf-file-name="customMainTheme.css" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/customMainTheme.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="670">
-                  <caret line="304" column="1" selection-start-line="304" selection-start-column="1" selection-end-line="304" selection-end-column="1" />
+                <state relative-caret-position="160">
+                  <caret line="258" column="20" lean-forward="true" selection-start-line="258" selection-start-column="20" selection-end-line="258" selection-end-column="20" />
                 </state>
               </provider>
             </entry>
@@ -100,8 +100,8 @@
           <file leaf-file-name="Exercise17a.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/components/exercises/Exercise17a/Exercise17a.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-482">
-                  <caret line="339" column="29" selection-start-line="339" selection-start-column="29" selection-end-line="339" selection-end-column="29" />
+                <state relative-caret-position="198">
+                  <caret line="377" column="26" selection-start-line="377" selection-start-column="26" selection-end-line="377" selection-end-column="26" />
                   <folding>
                     <element signature="e#0#38#0" expanded="true" />
                   </folding>
@@ -582,27 +582,6 @@
       <workItem from="1526147326304" duration="3712000" />
       <workItem from="1526227312918" duration="9428000" />
     </task>
-    <task id="LOCAL-00029" summary="Begin to build default template">
-      <created>1525010569466</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1525010569466</updated>
-    </task>
-    <task id="LOCAL-00030" summary="Disable CSS Modules">
-      <created>1525011231239</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1525011231239</updated>
-    </task>
-    <task id="LOCAL-00031" summary="Improve overall initial layout">
-      <created>1525021454508</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1525021454508</updated>
-    </task>
     <task id="LOCAL-00032" summary="Fix header indent&#10;&#10;Split media queries into scoped CSS files.">
       <created>1525022651094</created>
       <option name="number" value="00032" />
@@ -925,17 +904,38 @@
       <option name="project" value="LOCAL" />
       <updated>1527534351770</updated>
     </task>
-    <option name="localTasksCounter" value="78" />
+    <task id="LOCAL-00078" summary="Resolve 'Try out SVG content cover implementation' commit e77bf034fea1e4b8d3b053eccba5b552a645d353&#10;&#10;# Conflicts:&#10;#&#9;src/customMainTheme.css">
+      <created>1527534545623</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1527534545623</updated>
+    </task>
+    <task id="LOCAL-00079" summary="Resolve 'Try out SVG content cover implementation' commit e77bf034fea1e4b8d3b053eccba5b552a645d353&#10;&#10;# Conflicts:&#10;#&#9;src/customMainTheme.css">
+      <created>1527534604217</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1527534604217</updated>
+    </task>
+    <task id="LOCAL-00080" summary="Resolve 'Add various layout improvements' commit 3980260ff290798326128b52f9cad074e08ecbe9&#10;&#10;Remove Grid component.&#10;Remove componentClass Link from Overview.&#10;&#10;# Conflicts:&#10;#&#9;src/customMainTheme.css">
+      <created>1527534785001</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1527534785001</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="379815000" />
+    <option name="totallyTimeSpent" value="380274000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="2062" height="1126" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.110839844" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.110839844" />
       <window_info anchor="bottom" id="TODO" order="7" />
       <window_info anchor="bottom" id="Messages" order="0" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
@@ -943,7 +943,7 @@
       <window_info anchor="bottom" id="Run" order="3" weight="0.32971373" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.6035156" visible="true" weight="0.25765055" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.6035156" visible="true" weight="0.25765055" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -974,8 +974,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Install Font Awesome packages by @fortawesome&#10;&#10;(fontawesome, react-fontawesome, fontawesome-free-solid)" />
-    <MESSAGE value="Add Font Awesome icons" />
     <MESSAGE value="Implement drawing tools" />
     <MESSAGE value="Improve sticky footer" />
     <MESSAGE value="Link vis.js Manipulation module files by CDN" />
@@ -999,7 +997,9 @@
     <MESSAGE value="Move graphVis options and locales into GraphFunctions file" />
     <MESSAGE value="Add links to Overview" />
     <MESSAGE value="Resolve 'Add ExerciseWrapper component' commit 3fecfb26ef63aae5e31fa63a674a187e229253d0&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="Resolve 'Add ExerciseWrapper component' commit 3fecfb26ef63aae5e31fa63a674a187e229253d0&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
+    <MESSAGE value="Resolve 'Try out SVG content cover implementation' commit e77bf034fea1e4b8d3b053eccba5b552a645d353&#10;&#10;# Conflicts:&#10;#&#9;src/customMainTheme.css" />
+    <MESSAGE value="Resolve 'Add various layout improvements' commit 3980260ff290798326128b52f9cad074e08ecbe9&#10;&#10;Remove Grid component.&#10;Remove componentClass Link from Overview.&#10;&#10;# Conflicts:&#10;#&#9;src/customMainTheme.css" />
+    <option name="LAST_COMMIT_MESSAGE" value="Resolve 'Add various layout improvements' commit 3980260ff290798326128b52f9cad074e08ecbe9&#10;&#10;Remove Grid component.&#10;Remove componentClass Link from Overview.&#10;&#10;# Conflicts:&#10;#&#9;src/customMainTheme.css" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1014,13 +1014,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/components/UI/Footer/Footer.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="37" column="5" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="714">
@@ -1246,6 +1239,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1263,13 +1259,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="736">
           <caret line="165" selection-start-line="165" selection-end-line="165" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/exercises/Exercise17a/Exercise17a.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-482">
-          <caret line="339" column="29" selection-start-line="339" selection-start-column="29" selection-end-line="339" selection-end-column="29" />
+        <state relative-caret-position="198">
+          <caret line="377" column="26" selection-start-line="377" selection-start-column="26" selection-end-line="377" selection-end-column="26" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>
@@ -1329,15 +1328,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="41">
-          <caret line="1285" column="44" selection-start-line="1285" selection-start-column="44" selection-end-line="1285" selection-end-column="44" />
+        <state relative-caret-position="92">
+          <caret line="1288" column="44" selection-start-line="1288" selection-start-column="44" selection-end-line="1288" selection-end-column="44" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/customMainTheme.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="670">
-          <caret line="304" column="1" selection-start-line="304" selection-start-column="1" selection-end-line="304" selection-end-column="1" />
+        <state relative-caret-position="160">
+          <caret line="258" column="20" lean-forward="true" selection-start-line="258" selection-start-column="20" selection-end-line="258" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/exercises/Exercise26gen/Exercise26gen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="517">
+          <caret line="198" lean-forward="true" selection-start-line="198" selection-end-line="198" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
