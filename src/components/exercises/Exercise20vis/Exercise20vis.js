@@ -4,6 +4,7 @@ import imUpdate from 'immutability-helper';
 import { Row, Col } from 'react-bootstrap';
 import {SketchField, Tools} from 'react-sketch';
 import M from 'react-mathjax2';
+import MN from '../../../components/MathJax/MathJaxNode'
 import '../../../App.css';
 import '../../../customMainTheme.css'
 import '../../../main.css'
@@ -388,10 +389,9 @@ class Exercise20vis extends Component {
                                     <Col xs={5} md={5} lg={5} smOffset={1} mdOffset={1} lgOffset={1}>
                                         <M.Context input='tex'>
                                             <div className="bg-info" id="definition">
-                                                Nechť <M.Node inline>{'G'}</M.Node> je souvislý graf.
-                                                Jestliže <M.Node inline>{'e'}</M.Node> není most v $G$, pak v $G$ existuje
-                                                kružnice
-                                                obsahující hranu $e$. Dokažte přímo.
+                                                Nechť <MN>G</MN> je souvislý graf. Jestliže <MN>e</MN> není most
+                                                v <MN>G</MN>, pak v <MN>G</MN> existuje kružnice obsahující
+                                                hranu <MN>e</MN>. Dokažte přímo.
                                             </div>
                                         </M.Context>
                                         <br/>
