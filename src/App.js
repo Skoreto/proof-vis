@@ -14,7 +14,7 @@ class App extends Component {
                 <div>
                     {/*<MainHeader/>*/}
                     <CustomNavbar/>
-                    <Route exact path="/" component={Exercise20} />
+                    <Route exact path="/" component={Exercise20vis} />
                     <Route path="/priklad20" component={Exercise20} />
                     <Route path="/priklad20vis" component={Exercise20vis} />
                     {/*<Footer/>*/}

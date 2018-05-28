@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import imUpdate from 'immutability-helper';
 import { Row, Col } from 'react-bootstrap';
 import {SketchField, Tools} from 'react-sketch';
+import M from 'react-mathjax2';
 import '../../../App.css';
 import '../../../customMainTheme.css'
 import '../../../main.css'
@@ -357,10 +358,7 @@ class Exercise20vis extends Component {
             <div className={"over-component"}>
                 <SketchField width='650px' height='400px' tool={Tools.Pencil} lineColor='#1E88E5' lineWidth={3}/>
             </div>
-        ) : (
-            <div>
-            </div>
-        );
+        ) : (<div></div>);
 
         return (
             <div>
@@ -376,27 +374,32 @@ class Exercise20vis extends Component {
                                             <GraphVis graph={this.state.graphVis} options={this.state.options}
                                                       events={events} style={{width: "650px", height: "400px" }} />
                                         </div>
+                                        <div className={"controls-panel"}>
+                                            <div id="divStepButtons">
+                                                <Button clicked={this.previousStep}>Předchozí</Button>
+                                                <StepCounter currentStep={this.state.currentStep} stepSum={6} />
+                                                <Button clicked={this.nextStep}>Další</Button>
+                                                <Button clicked={this.sketchAllowance}>Kreslit</Button>
+                                            </div>
+                                        </div>
                                     </Col>
                                 </main>
                                 <aside>
                                     <Col xs={5} md={5} lg={5} smOffset={1} mdOffset={1} lgOffset={1}>
-                                        <div className="bg-info" id="definition">
-                                            Nechť $G$ je souvislý graf. Jestliže $e$ není most v $G$, pak v $G$ existuje
-                                            kružnice
-                                            obsahující hranu $e$. Dokažte přímo.
-                                        </div>
+                                        <M.Context input='tex'>
+                                            <div className="bg-info" id="definition">
+                                                Nechť <M.Node inline>{'G'}</M.Node> je souvislý graf.
+                                                Jestliže <M.Node inline>{'e'}</M.Node> není most v $G$, pak v $G$ existuje
+                                                kružnice
+                                                obsahující hranu $e$. Dokažte přímo.
+                                            </div>
+                                        </M.Context>
                                         <br/>
                                         <div id="divProofContainer">
                                             <h3>Důkaz přímo</h3>
                                             <div className="bg-warning" id="proofBox"></div>
                                         </div>
                                         <br/>
-                                        <div id="divStepButtons">
-                                            <Button clicked={this.previousStep}>Předchozí</Button>
-                                            <StepCounter currentStep={this.state.currentStep} stepSum={6} />
-                                            <Button clicked={this.nextStep}>Další</Button>
-                                        </div>
-                                        <Button clicked={this.sketchAllowance}>Kreslit</Button>
                                     </Col>
                                 </aside>
                             </Row>
