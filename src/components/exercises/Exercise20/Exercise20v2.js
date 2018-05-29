@@ -30,13 +30,9 @@ class Exercise20v2 extends Component {
                 edges: []
             },
             options: graphVisOptions,
-            events: {},
             timeouts: [],
             intervals: [],
             currentStep: 0,
-            stepSum: 7,
-            headingTitle: 'Příklad 20',
-            breadcrumbsCurrent: 'Důkazy přímo',
             isSketchAllowed: false,
             sketchTool: Tools.Pencil,
             isSVGCoverShowed: false,
@@ -368,6 +364,11 @@ class Exercise20v2 extends Component {
     };
 
     render() {
+        const events = {};
+        const headingTitle = 'Příklad 20';
+        const breadcrumbsCurrent = 'Důkazy přímo';
+        const stepSum = 7;
+
         const definitionPanel = (
             <DefinitionPanel>
                 <cite><q>Nechť <MN>G</MN> je souvislý graf. Jestliže hrana <MN>e</MN> není most
@@ -427,8 +428,9 @@ class Exercise20v2 extends Component {
         );
 
         return (
-            <ExerciseWrapper {...this.state} initNetworkInstance={this.initNetworkInstance}
-                definitionPanel={definitionPanel} proofBox={proofBox}
+            <ExerciseWrapper {...this.state} events={events} initNetworkInstance={this.initNetworkInstance}
+                headingTitle={headingTitle} breadcrumbsCurrent={breadcrumbsCurrent}
+                definitionPanel={definitionPanel} proofBox={proofBox} stepSum={stepSum}
                 previousStep={this.previousStep} nextStep={this.nextStep} repeatStep={this.repeatStep} 
                 handleSketchAllowance={() => this.setState(() => this.handlerSketchAllowance(this.state))}
                 handleSketchPencil={() => this.setState(() => this.handlerSelectedTool(1))}
