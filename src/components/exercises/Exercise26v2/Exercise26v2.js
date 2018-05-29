@@ -15,17 +15,13 @@ class Exercise26gen extends Component {
                 edges: []
             },
             options: graphVisOptions,
-            events: {},
             timeouts: [],
             intervals: [],
             currentStep: 0,
-            stepSum: 5,
-            headingTitle: 'Příklad 26 (v2)',
-            breadcrumbsCurrent: 'Důkazy přímo',
             isSketchAllowed: false,
             sketchTool: Tools.Pencil,
             isSVGCoverShowed: false,
-            svgContent: 'Ahoj, jak se máte',
+            svgContent: '',
             description: '',
             btnPrevD: true,
             btnNextD: false,
@@ -295,6 +291,11 @@ class Exercise26gen extends Component {
     };
 
     render() {
+        const events = {};
+        const headingTitle = 'Příklad 26 (v2)';
+        const breadcrumbsCurrent = 'Důkazy přímo';
+        const stepSum = 5;
+
         const definitionPanel = (
             <DefinitionPanel>
                 Dokažte přímo tvrzení: <cite><q>Jestliže graf <MN>G</MN> je strom, pak graf <MN>G-e</MN>, 
@@ -343,7 +344,9 @@ class Exercise26gen extends Component {
         );
 
         return (
-            <ExerciseWrapper {...this.state} definitionPanel={definitionPanel} proofBox={proofBox}
+            <ExerciseWrapper {...this.state} events={events}
+                headingTitle={headingTitle} breadcrumbsCurrent={breadcrumbsCurrent}
+                definitionPanel={definitionPanel} proofBox={proofBox} stepSum={stepSum}
                 previousStep={this.previousStep} nextStep={this.nextStep} repeatStep={this.repeatStep} 
                 handleSketchAllowance={() => this.setState(() => this.handlerSketchAllowance(this.state))}
                 handleSketchPencil={() => this.setState(() => this.handlerSelectedTool(1))}

@@ -15,13 +15,9 @@ class Exercise17av2 extends Component {
                 edges: []
             },
             options: graphVisOptions,
-            events: {},
             timeouts: [],
             intervals: [],
             currentStep: 0,
-            stepSum: 4,
-            headingTitle: 'Příklad 17 a) (v2)',
-            breadcrumbsCurrent: 'Ostatní',
             isSketchAllowed: false,
             sketchTool: Tools.Pencil,
             isSVGCoverShowed: false,
@@ -295,6 +291,11 @@ class Exercise17av2 extends Component {
     };
 
     render() {
+        const events = {};
+        const headingTitle = 'Příklad 17 a) (v2)';
+        const breadcrumbsCurrent = 'Ostatní';
+        const stepSum = 4;
+
         const definitionPanel = (
             <DefinitionPanel>
                 Dokažte, nebo vyvraťte: <cite><q>Když v grafu <MN>G</MN> existují dva
@@ -326,7 +327,9 @@ class Exercise17av2 extends Component {
         );
 
         return (
-            <ExerciseWrapper {...this.state} definitionPanel={definitionPanel} proofBox={proofBox}
+            <ExerciseWrapper {...this.state} events={events}
+                headingTitle={headingTitle} breadcrumbsCurrent={breadcrumbsCurrent}
+                definitionPanel={definitionPanel} proofBox={proofBox} stepSum={stepSum}
                 previousStep={this.previousStep} nextStep={this.nextStep} repeatStep={this.repeatStep}
                 handleSketchAllowance={() => this.setState(() => this.handlerSketchAllowance(this.state))}
                 handleSketchPencil={() => this.setState(() => this.handlerSelectedTool(1))}
