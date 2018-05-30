@@ -1,6 +1,6 @@
 import GraphVis from 'react-graph-vis'
 import React, {Component} from 'react';
-import {graphVisLocales} from '../../../functionality/GraphFunctions'
+import {graphVisLocales} from '../../../functionality/GlobalExerciseConstants';
 
 class SingleDrawing extends Component {
     constructor(props) {

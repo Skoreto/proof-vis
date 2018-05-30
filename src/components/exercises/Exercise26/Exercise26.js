@@ -1,52 +1,29 @@
-import GraphVis from 'react-graph-vis'
+import GraphVis from 'react-graph-vis';
 import React, {Component} from 'react';
+import {initialExerciseState, events} from '../../../functionality/GlobalExerciseConstants';
 import {updateNode, updateEdge, updateEdgeWithArrow, clearAllTimers,
-    handlerSketchAllowance, handlerSelectedTool, graphVisOptions} from '../../../functionality/GraphFunctions'
+    handlerSketchAllowance, handlerSelectedTool} from '../../../functionality/GraphFunctions';
 import {Row, Col} from 'react-bootstrap';
-import {SketchField, Tools} from 'react-sketch';
+import {SketchField} from 'react-sketch';
 import M from 'react-mathjax2';
-import MN from '../../../components/MathJax/MathJaxNode'
-import '../../../customMainTheme.css'
+import MN from '../../../components/MathJax/MathJaxNode';
+import '../../../customMainTheme.css';
 import PageHeading from "../../../components/UI/PageHeading/PageHeading";
 import DefinitionPanel from "../../../components/UI/DefinitionPanel/DefinitionPanel";
-import Button from '../../../components/UI/Button/Button'
-import StepCounter from '../../../components/UI/StepCounter/StepCounter'
-import FontAwesomeIcon from '@fortawesome/react-fontawesome'
-import faChevronRight from '@fortawesome/fontawesome-free-solid/faChevronRight'
-import faChevronLeft from '@fortawesome/fontawesome-free-solid/faChevronLeft'
-import faPaintBrush from '@fortawesome/fontawesome-free-solid/faPaintBrush'
-import faPencilAlt from '@fortawesome/fontawesome-free-solid/faPencilAlt'
-import faMinus from '@fortawesome/fontawesome-free-solid/faMinus'
-import faCircle from '@fortawesome/fontawesome-free-solid/faCircleNotch'
+import Button from '../../../components/UI/Button/Button';
+import StepCounter from '../../../components/UI/StepCounter/StepCounter';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import faChevronRight from '@fortawesome/fontawesome-free-solid/faChevronRight';
+import faChevronLeft from '@fortawesome/fontawesome-free-solid/faChevronLeft';
+import faPaintBrush from '@fortawesome/fontawesome-free-solid/faPaintBrush';
+import faPencilAlt from '@fortawesome/fontawesome-free-solid/faPencilAlt';
+import faMinus from '@fortawesome/fontawesome-free-solid/faMinus';
+import faCircle from '@fortawesome/fontawesome-free-solid/faCircleNotch';
 
 class Exercise26 extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            graphVis: {
-                nodes: [],
-                edges: []
-            },
-            options: graphVisOptions,
-            timeouts: [],
-            intervals: [],
-            currentStep: 0,
-            isSketchAllowed: false,
-            sketchTool: Tools.Pencil,
-            descriptionBox: '',
-            btnPrevD: true,
-            btnNextD: false,
-            btnSketchA: false,
-            btnSketchC: '',
-            btnPencilA: false,
-            btnPencilD: true,
-            btnLineA: false,
-            btnLineD: true,
-            btnCircleA: false,
-            btnCircleD: true,
-            repeatBoxHidden: true,
-            repeatBoxContent: ''
-        };
+        this.state = initialExerciseState;
         this.updateNode = updateNode.bind(this);
         this.updateEdge = updateEdge.bind(this);
         this.updateEdgeWithArrow = updateEdgeWithArrow.bind(this);
@@ -142,7 +119,7 @@ class Exercise26 extends Component {
     };
 
     stepReset = () => {
-        return {graphVis: {nodes: [], edges: []}, descriptionBox: '', repeatBoxHidden: true, repeatBoxContent: ''}
+        return {graphVis: {nodes: [], edges: []}, description: '', repeatBoxHidden: true, repeatBoxContent: ''}
     };
 
     step1 = () => {
@@ -185,7 +162,7 @@ class Exercise26 extends Component {
             </div>
         );
 
-        return {descriptionBox: description, repeatBoxHidden: false, repeatBoxContent: repeatBox}
+        return {description: description, repeatBoxHidden: false, repeatBoxContent: repeatBox}
     };
 
     step2 = (state) => {
@@ -200,7 +177,7 @@ class Exercise26 extends Component {
         newEdges = this.updateEdge(newEdges, 4, '#B39DDB', 2, false, undefined);
         newEdges = this.updateEdge(newEdges, 5, '#B39DDB', 2, false, undefined);
 
-        return {graphVis: {nodes: newNodes, edges: newEdges}, descriptionBox: ''}
+        return {graphVis: {nodes: newNodes, edges: newEdges}, description: ''}
     };
 
     step2Texts = () => {
@@ -216,7 +193,7 @@ class Exercise26 extends Component {
                 </p>
             </div>
         );
-        return {descriptionBox: description, repeatBoxHidden: false, repeatBoxContent: repeatBox}
+        return {description: description, repeatBoxHidden: false, repeatBoxContent: repeatBox}
     };
 
     step3 = () => {
@@ -244,7 +221,7 @@ class Exercise26 extends Component {
 
     step3Texts = () => {
         const description = (<p>Libovolně zvolená hrana <MN>{'e=\\{x,y\\}'}</MN> z cesty <MN>u</MN>-<MN>v</MN>.</p>);
-        return {descriptionBox: description}
+        return {description: description}
     };
 
     step4 = () => {
@@ -265,7 +242,7 @@ class Exercise26 extends Component {
     step4Texts = () => {
         const description = (<p>Odebráním hrany <MN>e</MN> se vrcholy <MN>u</MN> a <MN>v</MN> ocitnou v různých
             komponentách souvislosti.</p>);
-        return {descriptionBox: description}
+        return {description: description}
     };
 
     step5Texts = () => {
@@ -277,12 +254,10 @@ class Exercise26 extends Component {
             </div>
         );
 
-        return {descriptionBox: description, repeatBoxHidden: false, repeatBoxContent: repeatBox}
+        return {description: description, repeatBoxHidden: false, repeatBoxContent: repeatBox}
     };
 
     render() {
-        const events = {};
-
         const isSketchAllowed = this.state.isSketchAllowed;
         const sketch = isSketchAllowed ? (
             <div className={"over-component"}>
@@ -313,7 +288,7 @@ class Exercise26 extends Component {
                                         </div>
                                         <M.Context input='tex'>
                                             <div className="descriptionBox">
-                                                {this.state.descriptionBox}
+                                                {this.state.description}
                                             </div>
                                         </M.Context>
                                         <div className="controls-panel">

@@ -1,42 +1,15 @@
 import React, {Component} from 'react';
-import {Tools} from 'react-sketch';
+import {initialExerciseState, events} from '../../../functionality/GlobalExerciseConstants';
 import {updateNode, updateEdge, updateEdgeWithArrow, updateEdgeSmooth, addObjectArray, clearAllTimers,
-    handlerSketchAllowance, handlerSelectedTool, graphVisOptions} from '../../../functionality/GraphFunctions'
+    handlerSketchAllowance, handlerSelectedTool} from '../../../functionality/GraphFunctions';
 import ExerciseWrapper from '../../../components/UI/ExerciseWrapper/ExerciseWrapper';
 import DefinitionPanel from '../../../components/UI/DefinitionPanel/DefinitionPanel';
-import MN from '../../../components/MathJax/MathJaxNode'
+import MN from '../../../components/MathJax/MathJaxNode';
 
 class Exercise17av2 extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            graphVis: {
-                nodes: [],
-                edges: []
-            },
-            options: graphVisOptions,
-            timeouts: [],
-            intervals: [],
-            currentStep: 0,
-            isSketchAllowed: false,
-            sketchTool: Tools.Pencil,
-            isSVGCoverShowed: false,
-            svgContent: '',
-            description: '',
-            btnPrevD: true,
-            btnNextD: false,
-            btnSketchA: false,
-            btnSketchC: '',
-            btnPencilA: false,
-            btnPencilD: true,
-            btnLineA: false,
-            btnLineD: true,
-            btnCircleA: false,
-            btnCircleD: true,
-            repeatBoxHidden: true,
-            repeatBoxContent: '',
-            btnRepeatD: true
-        };
+        this.state = initialExerciseState;
         this.updateNode = updateNode.bind(this);
         this.updateEdge = updateEdge.bind(this);
         this.updateEdgeWithArrow = updateEdgeWithArrow.bind(this);
@@ -291,7 +264,6 @@ class Exercise17av2 extends Component {
     };
 
     render() {
-        const events = {};
         const headingTitle = 'Příklad 17 a) (v2)';
         const breadcrumbsCurrent = 'Ostatní';
         const stepSum = 4;
