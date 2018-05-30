@@ -1,9 +1,10 @@
 import GraphVis from 'react-graph-vis'
 import React, {Component} from 'react';
+import {graphVisOptions, events} from '../../../functionality/GlobalExerciseConstants';
 import {Row, Col, ListGroup, ListGroupItem} from 'react-bootstrap';
 import {BrowserRouter} from 'react-router-dom';
 import {SketchField, Tools} from 'react-sketch';
-import {graphVisOptions, handlerSelectedTool, handlerSketchAllowance} from '../../../functionality/GraphFunctions';
+import {handlerSelectedTool, handlerSketchAllowance} from '../../../functionality/GraphFunctions';
 import '../../../customMainTheme.css'
 import PageHeading from "../../../components/UI/PageHeading/PageHeading";
 import Button from '../../../components/UI/Button/Button'
@@ -46,8 +47,6 @@ class Overview extends Component {
     }
 
     render() {
-        const events = {};
-
         const isSketchAllowed = this.state.isSketchAllowed;
         const sketch = isSketchAllowed ? (
             <div className={"over-component"}>
