@@ -4,11 +4,13 @@
   margin-bottom: -30px;
   /* stejná jako výška patičky */
 }
+
 .wrapper:after {
   display: block;
   height: 30px;
   /* musí mít stejnou výšku jako patička */
 }
+
 .btn {
   transition: all 0.4s ease-in-out;
   -webkit-border-radius: 0;
@@ -25,39 +27,46 @@
   padding: 5px;
   margin: 0 0 5px 0;
 }
+
 #definition {
   border: 1px solid rgba(97, 173, 255, 0.51);
   padding: 10px;
   font-size: 20px;
   text-align: center;
 }
+
 .over-component {
   position: absolute;
   height: 400px;
   /*background-color: #3f51b5;*/
   z-index: 3;
 }
+
 .svg-cover-panel {
   position: absolute;
   height: 400px;
   z-index: 2;
 }
+
 .GraphBox {
   border: 1px solid lightgray;
   height: 400px;
   z-index: 1;
 }
+
 .descriptionBox {
   min-height: 40px;
   margin-top: 10px;
   margin-bottom: 10px;
   /*border: 1px solid lightgray;*/
 }
+
 .descriptionBox p {
   /*border: 1px solid lightgray;*/
   font-size: 16px;
   text-align: center;
 }
+
 .controls-panel {
   width: 100%;
   border: 1px solid lightgrey;
@@ -65,30 +74,37 @@
   padding: 5px;
   text-align: center;
 }
+
 .step-panel {
   margin-right: 30px;
 }
+
 .sketch-buttons {
   border-left: 1px solid #fafafa;
 }
+
 .animation-panel {
   margin-left: 15px;
 }
+
 #proofBox {
   border: 1px solid rgba(235, 150, 0, 0.5);
   padding: 5px;
   /* max-height: 500px; */
   /*overflow-y: scroll;*/
 }
+
 #proofBox p {
   font-size: 15px;
   text-align: left;
   margin-bottom: 5px;
   vertical-align: middle;
 }
+
 #proofBox p.text-center {
   text-align: center;
 }
+
 #proofBox>div {
   padding-top: 15px;
   padding-bottom: 10px;
@@ -96,28 +112,34 @@
   padding-right: 5px;
   border-bottom: 1px solid rgba(235, 150, 0, 0.5);
   /*max-height: 150px;
-  overflow-y: scroll;*/
+    overflow-y: scroll;*/
   opacity: 0.4;
 }
+
 #proofBox>div.borderless {
   border-bottom: 0;
 }
+
 #proofBox .proof-active {
   opacity: 1;
   /*background-color: #a14646;*/
 }
+
 #proofBox .proof-active p {
   font-size: 18px;
 }
+
 .repeat-box {
   background-color: #fafafa;
   border: 1px solid lightgrey;
   padding: 10px 10px 0 10px;
   margin-top: 15px;
 }
+
 .repeat-box p {
   text-align: left;
 }
+
 #divSentenceBox {
   max-width: 600px;
   background-color: #EEEEEE;
@@ -125,35 +147,43 @@
   margin-top: 10px;
   padding: 5px;
   /*max-height: 150px;
-  overflow-y: scroll;*/
+    overflow-y: scroll;*/
 }
+
 .text-green {
   /*Green 800*/
   color: #2E7D32;
 }
+
 .text-blue {
   /*Blue A700*/
   color: #2962FF;
 }
+
 .text-indigo {
   /*Indigo 500*/
   color: #3F51B5;
 }
+
 .text-red {
   /*Red A700*/
   color: #D50000;
 }
+
 .text-brown {
   /*Brown 500*/
   color: #795548;
 }
+
 .text-purple {
   color: #B39DDB;
 }
+
 /* == CONTEXTOVE MENU UPRAVY VRCHOLU == */
 #operation {
   font-size: 18px;
 }
+
 #editNodeDialog {
   display: none;
   position: absolute;
@@ -173,46 +203,57 @@
 .page-wrapper ul li {
   margin-bottom: 5px;
 }
+
 .page-wrapper ul li.list-group-item {
   margin-bottom: -1px;
 }
+
 .page-wrapper ul.nav li {
   margin-bottom: 0;
 }
+
 .page-wrapper ol li {
   margin-bottom: 5px;
 }
+
 .page-wrapper dl dd {
   margin-bottom: 5px;
 }
+
 /* === NADPISY OBSAHU === */
 .page-wrapper .page-content h1 {
   font-size: 26px;
   font-weight: normal;
 }
+
 .page-wrapper .page-content h2 {
   font-size: 24px;
   font-weight: normal;
 }
+
 .page-wrapper .page-content h3 {
   font-size: 20px;
   font-weight: normal;
   color: #303079
 }
+
 .page-wrapper .page-content h4 {
   font-size: 18px;
   font-weight: normal;
 }
+
 .page-wrapper .page-content .title {
   margin-top: 0;
   margin-bottom: 15px;
   font-weight: 300;
 }
+
 .page-wrapper .page-content .page-row {
   margin-bottom: 20px;
 }
+
 /* MQ - Malé úhlopříčky (telefony, méně než 768px) */
-@media (max-width: 767px) {  
+@media (max-width: 767px) {
   .wrapper {
     min-height: inherit;
     margin-bottom: 0;
@@ -279,8 +320,9 @@
     font-size: 16px;
   }
 }
+
 /* MQ - Střední úhlopříčka (tablety, 768px a více) */
-@media (min-width: 768px) {   
+@media (min-width: 768px) {
   .wrapper {
     min-height: inherit;
     margin-bottom: -30px;
@@ -289,6 +331,7 @@
     content: none;
   }
 }
+
 /* Velká úhlopříčka (desktopy, 992px a víc) */
 @media (min-width: 992px) {
   .wrapper {
@@ -300,9 +343,9 @@
     content: "";
     display: block;
     height: 30px;
-    /* musí mít stejnou výšku jako patička */ 
+    /* musí mít stejnou výšku jako patička */
   }
   .page-wrapper {
-      min-height: 700px;
+    min-height: 700px;
   }
 }
