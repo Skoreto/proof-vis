@@ -1,5 +1,5 @@
 import imHelp from 'immutability-helper';
-import {Tools} from 'react-sketch';
+import { Tools } from 'react-sketch';
 
 /**
  * Method for updating node properties.
@@ -10,7 +10,12 @@ import {Tools} from 'react-sketch';
  * @returns {ReadonlyArray<any> | ReadonlySet<any> | ReadonlyMap<any, any> | any}
  */
 export function updateNode(nodesState, nodeIndex, background, label) {
-    return imHelp(nodesState, {[nodeIndex]: {color: {$set: {background: background}}, label: {$set: label}}});
+  return imHelp(nodesState, { 
+    [nodeIndex]: { 
+      color: { $set: { background: background } },
+      label: { $set: label },
+    }
+  });
 }
 
 /**
@@ -24,8 +29,12 @@ export function updateNode(nodesState, nodeIndex, background, label) {
  * @returns {ReadonlyArray<any> | ReadonlySet<any> | ReadonlyMap<any, any> | any}
  */
 export function updateEdge(edgesState, edgeIndex, color, width, dashes, label) {
-    return imHelp(edgesState, {[edgeIndex]: {color: {$set: {color: color, highlight: color, hover: color}},
-            width: {$set: width}, dashes: {$set: dashes}, label: {$set: label}}});
+  return imHelp(edgesState, {
+    [edgeIndex]: {
+      color: { $set: { color: color, highlight: color, hover: color } },
+      width: { $set: width }, dashes: { $set: dashes }, label: { $set: label },
+    }
+  });
 }
 
 /**
@@ -40,10 +49,23 @@ export function updateEdge(edgesState, edgeIndex, color, width, dashes, label) {
  * @param {boolean} enableArrowFrom - Determines whether to show arrow pointing from ending node to starting node.
  * @returns {ReadonlyArray<any> | ReadonlySet<any> | ReadonlyMap<any, any> | any}
  */
-export function updateEdgeWithArrow(edgesState, edgeIndex, color, width, dashes, label, enableArrowTo, enableArrowFrom) {
-    return imHelp(edgesState, {[edgeIndex]: {color: {$set: {color: color, highlight: color, hover: color}},
-            width: {$set: width}, dashes: {$set: dashes}, label: {$set: label},
-            arrows: {$set: {to: {enabled: enableArrowTo}, from: {enabled: enableArrowFrom}}}}});
+export function updateEdgeWithArrow(
+  edgesState,
+  edgeIndex,
+  color,
+  width,
+  dashes,
+  label,
+  enableArrowTo,
+  enableArrowFrom,
+) {
+  return imHelp(edgesState, {
+    [edgeIndex]: {
+      color: { $set: { color: color, highlight: color, hover: color } },
+      width: { $set: width }, dashes: { $set: dashes }, label: { $set: label },
+      arrows: { $set: { to: { enabled: enableArrowTo }, from: { enabled: enableArrowFrom } } },
+    }
+  });
 }
 
 /**
@@ -60,12 +82,27 @@ export function updateEdgeWithArrow(edgesState, edgeIndex, color, width, dashes,
  * @param {*} smoothType 
  * @param {*} roundness 
  */
-export function updateEdgeSmooth(edgesState, edgeIndex, color, width, dashes, label, enableArrowTo, enableArrowFrom,
-    enableSmooth, smoothType, roundness) {
-    return imHelp(edgesState, {[edgeIndex]: {color: {$set: {color: color, highlight: color, hover: color}},
-            width: {$set: width}, dashes: {$set: dashes}, label: {$set: label},
-            arrows: {$set: {to: {enabled: enableArrowTo}, from: {enabled: enableArrowFrom}}},
-            smooth: {$set: {enabled: enableSmooth, type: smoothType, roundness: roundness}}}});
+export function updateEdgeSmooth(
+  edgesState,
+  edgeIndex,
+  color,
+  width,
+  dashes,
+  label,
+  enableArrowTo,
+  enableArrowFrom,
+  enableSmooth,
+  smoothType,
+  roundness,
+) {
+  return imHelp(edgesState, {
+    [edgeIndex]: {
+      color: { $set: { color: color, highlight: color, hover: color } },
+      width: { $set: width }, dashes: { $set: dashes }, label: { $set: label },
+      arrows: { $set: { to: { enabled: enableArrowTo }, from: { enabled: enableArrowFrom } } },
+      smooth: { $set: { enabled: enableSmooth, type: smoothType, roundness: roundness } },
+    }
+  });
 }
 
 /**
@@ -75,7 +112,7 @@ export function updateEdgeSmooth(edgesState, edgeIndex, color, width, dashes, la
  * @returns {ReadonlyArray<any> | ReadonlySet<any> | ReadonlyMap<any, any> | any}
  */
 export function addObjectArray(objectsState, newObjectsArray) {
-    return imHelp(objectsState, {$push: newObjectsArray});
+  return imHelp(objectsState, { $push: newObjectsArray });
 }
 
 /**
@@ -83,16 +120,16 @@ export function addObjectArray(objectsState, newObjectsArray) {
  * @param state State of the updated component.
  */
 export function clearAllTimers(state) {
-    if (state.timeouts.length > 0) {
-        state.timeouts.forEach(function (value, index) {
-            clearTimeout(value);
-        });
-    }
-    if (state.intervals.length > 0) {
-        state.intervals.forEach(function (value, index) {
-            clearInterval(value);
-        });
-    }
+  if (state.timeouts.length > 0) {
+    state.timeouts.forEach(function (value, index) {
+      clearTimeout(value);
+    });
+  }
+  if (state.intervals.length > 0) {
+    state.intervals.forEach(function (value, index) {
+      clearInterval(value);
+    });
+  }
 }
 
 /**
@@ -100,27 +137,27 @@ export function clearAllTimers(state) {
  * @param state - State of the component.
  */
 export function handlerSketchAllowance(state) {
-    if (state.isSketchAllowed) {
-        return ({
-            isSketchAllowed: false,
-            btnSketchA: false,
-            btnSketchC: '',
-            btnPencilD: true,
-            btnLineD: true,
-            btnCircleD: true
-        })
-    } else {
-        const isAnyToolActive = state.btnLineA || state.btnCircleA;
-        return ({
-            isSketchAllowed: true,
-            btnSketchA: true,
-            btnSketchC: 'btnSketchActive',
-            btnPencilA: !isAnyToolActive,
-            btnPencilD: false,
-            btnLineD: false,
-            btnCircleD: false
-        })
-    }
+  if (state.isSketchAllowed) {
+    return ({
+      isSketchAllowed: false,
+      btnSketchA: false,
+      btnSketchC: '',
+      btnPencilD: true,
+      btnLineD: true,
+      btnCircleD: true,
+    })
+  } else {
+    const isAnyToolActive = state.btnLineA || state.btnCircleA;
+    return ({
+      isSketchAllowed: true,
+      btnSketchA: true,
+      btnSketchC: 'btnSketchActive',
+      btnPencilA: !isAnyToolActive,
+      btnPencilD: false,
+      btnLineD: false,
+      btnCircleD: false,
+    })
+  }
 }
 
 /**
@@ -129,38 +166,38 @@ export function handlerSketchAllowance(state) {
  * @param {number} tool - Number for assigned tool.
  */
 export function handlerSelectedTool(tool) {
-    switch (tool) {
-        case 1: {
-            return ({
-                sketchTool: Tools.Pencil,
-                btnPencilA: true,
-                btnLineA: false,
-                btnCircleA: false
-            });
-        }
-        case 2: {
-            return ({
-                sketchTool: Tools.Line,
-                btnPencilA: false,
-                btnLineA: true,
-                btnCircleA: false
-            });
-        }
-        case 3: {
-            return ({
-                sketchTool: Tools.Circle,
-                btnPencilA: false,
-                btnLineA: false,
-                btnCircleA: true
-            });
-        }
-        default: {
-            return ({
-                sketchTool: Tools.Pencil,
-                btnPencilA: true,
-                btnLineA: false,
-                btnCircleA: false
-            });
-        }
+  switch (tool) {
+    case 1: {
+      return ({
+        sketchTool: Tools.Pencil,
+        btnPencilA: true,
+        btnLineA: false,
+        btnCircleA: false,
+      });
     }
+    case 2: {
+      return ({
+        sketchTool: Tools.Line,
+        btnPencilA: false,
+        btnLineA: true,
+        btnCircleA: false,
+      });
+    }
+    case 3: {
+      return ({
+        sketchTool: Tools.Circle,
+        btnPencilA: false,
+        btnLineA: false,
+        btnCircleA: true,
+      });
+    }
+    default: {
+      return ({
+        sketchTool: Tools.Pencil,
+        btnPencilA: true,
+        btnLineA: false,
+        btnCircleA: false,
+      });
+    }
+  }
 }

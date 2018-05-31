@@ -1,13 +1,13 @@
 .button {
-    background-image: none;
-    background-color: #fafafa;
-    box-shadow: none;
-    border: 0;
-    font-size: 16px;
+  background-image: none;
+  background-color: #fafafa;
+  box-shadow: none;
+  border: 0;
+  font-size: 16px;
 }
+
 .btn-default:focus.btnSketchActive,
 .btn-default:active.btnSketchActive,
 .btn-default.active.btnSketchActive {
-    background-color: #C8E6C9;
+  background-color: #C8E6C9;
 }
-

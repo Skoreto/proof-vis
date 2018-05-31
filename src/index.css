@@ -1,22 +1,32 @@
 /* ======= Základ ======= */
-html, body {
+html,
+body {
   min-height: 100%;
   font-family: 'Roboto', sans-serif;
 }
+
 body {
   font-size: 14px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-h1, h2, h3, h4, h5, h6 {
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 400;
 }
+
 p {
   color: #444444;
   font-size: 14px;
   line-height: 1.5em;
   text-align: justify;
 }
+
 a {
   color: #ba6060;
   /*text-decoration: underline;*/
@@ -25,10 +35,12 @@ a {
   -ms-transition: all 0.4s ease-in-out;
   -o-transition: all 0.4s ease-in-out;
 }
+
 a:hover {
   text-decoration: none;
   color: #7e3636;
 }
+
 /* Velká úhlopříčka (desktopy, 992px a víc) */
 @media (min-width: 992px) {
   /* Sticky Footer */
