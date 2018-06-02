@@ -22,7 +22,6 @@ class Exercise26gen extends React.Component {
   constructor(props) {
     super(props);
     this.state = initialExerciseState;
-    this.getProofBox = getProofBox.bind(this);
     this.updateNode = updateNode.bind(this);
     this.updateEdge = updateEdge.bind(this);
     this.updateEdgeWithArrow = updateEdgeWithArrow.bind(this);
@@ -303,7 +302,7 @@ class Exercise26gen extends React.Component {
         headingTitle={headingTitle}
         breadcrumbsCurrent={breadcrumbsCurrent}
         definitionPanel={definitionPanel}
-        proofBox={this.getProofBox(this.state.currentStep)}
+        proofBox={getProofBox(this.state.currentStep)}
         stepSum={stepSum}
         previousStep={this.previousStep}
         nextStep={this.nextStep}
