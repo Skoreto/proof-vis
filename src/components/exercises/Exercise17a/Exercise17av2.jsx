@@ -1,6 +1,13 @@
 import React from 'react';
 import { initialExerciseState, events } from '../../../functionality/GlobalExerciseConstants';
 import {
+  headingTitle,
+  breadcrumbsCurrent,
+  stepSum,
+  definitionPanel,
+  getProofBox,
+} from './constants';
+import {
   updateNode, 
   updateEdge, 
   updateEdgeWithArrow, 
@@ -330,52 +337,17 @@ class Exercise17av2 extends React.Component {
   };
 
   render() {
-    const headingTitle = 'Příklad 17 a) (v2)';
-    const breadcrumbsCurrent = 'Ostatní';
-    const stepSum = 4;
-
-    const definitionPanel = (
-      <DefinitionPanel>
-        Dokažte, nebo vyvraťte: <cite><q>Když v grafu <MN>G</MN> existují dva různé <MN>u</MN>-<MN>v</MN> sledy, tak graf <MN>G</MN> obsahuje kružnici.</q></cite>
-      </DefinitionPanel>
-    );
-
-    const proofBox = (
-      <div className='bg-warning' id='proofBox'>
-        <div className={1 === this.state.currentStep ? 'proof-active' : ''}>
-          <p>Dané tvrzení neplatí, protože existuje kontra-příklad.</p>
-        </div>
-        <div className={2 === this.state.currentStep ? 'proof-active' : ''}>
-          <p>Existují dva různé <MN>u</MN>-<MN>v</MN> sledy:</p>
-          <p>
-            Příkladem prvního budiž sled <MN>S_1 = (u,e_1,w,e_2,v)</MN>.
-          </p>
-        </div>
-        <div className={3 === this.state.currentStep ? 'proof-active' : ''}>
-          <p>
-            Příkladem druhého může být sled <MN>S_2 = (u,e_1,w,e_1,u,e_1,w,e_2,v)</MN>.
-          </p>
-        </div>
-        <div className={'borderless' +
-          (4 === this.state.currentStep ? ' proof-active' : '')}>
-          <p>Přitom graf <MN>G</MN> neobsahuje kružnici.</p>
-          <p className="text-center">
-            <MN>\dagger</MN> Tím je vyvráceno stanovené tvrzení.
-          </p>
-        </div>
-      </div>
-    );
-
     return (
       <ExerciseWrapper 
-        {...this.state} 
+        {...this.state}
         events={events}
-        headingTitle={headingTitle} 
+        headingTitle={headingTitle}
         breadcrumbsCurrent={breadcrumbsCurrent}
-        definitionPanel={definitionPanel} 
-        proofBox={proofBox} stepSum={stepSum}
-        previousStep={this.previousStep} 
-        nextStep={this.nextStep} 
+        definitionPanel={definitionPanel}
+        proofBox={getProofBox(this.state.currentStep)}
+        stepSum={stepSum}
+        previousStep={this.previousStep}
+        nextStep={this.nextStep}
         repeatStep={this.repeatStep}
         handleSketchAllowance={() => this.setState(() => this.handlerSketchAllowance(this.state))}
         handleSketchPencil={() => this.setState(() => this.handlerSelectedTool(1))}

@@ -1,12 +1,19 @@
 import React from 'react';
 import { initialExerciseState, events } from '../../../functionality/GlobalExerciseConstants';
 import {
-  updateNode, 
-  updateEdge, 
-  updateEdgeWithArrow, 
-  addObjectArray, 
+  headingTitle,
+  breadcrumbsCurrent,
+  stepSum,
+  definitionPanel,
+  getProofBox,
+} from './constants';
+import {
+  updateNode,
+  updateEdge,
+  updateEdgeWithArrow,
+  addObjectArray,
   clearAllTimers,
-  handlerSketchAllowance, 
+  handlerSketchAllowance,
   handlerSelectedTool,
 } from '../../../functionality/GraphFunctions';
 import ExerciseWrapper from '../../../components/UI/ExerciseWrapper/ExerciseWrapper';
@@ -16,19 +23,19 @@ import MN from '../../../components/MathJax/MathJaxNode';
 const cameraPosition1 = {
   position: { x: 0, y: -10 }, 
   scale: 1.4,
-  animation: { duration: 1500, easingFunction: "easeInOutQuad" }
+  animation: { duration: 1500, easingFunction: "easeInOutQuad" },
 };
 
 const cameraPosition2 = {
   position: { x: 170, y: -10 }, 
   scale: 0.82,
-  animation: { duration: 1000, easingFunction: "easeInOutQuad" }
+  animation: { duration: 1000, easingFunction: "easeInOutQuad" },
 };
 
 const cameraPosition3 = {
   position: { x: 400, y: -10 }, 
   scale: 1.4,
-  animation: { duration: 4000, easingFunction: "easeInOutQuad" }
+  animation: { duration: 4000, easingFunction: "easeInOutQuad" },
 };
 
 class Exercise20v2 extends React.Component {
@@ -377,70 +384,19 @@ class Exercise20v2 extends React.Component {
   };
 
   render() {
-    const headingTitle = 'Příklad 20';
-    const breadcrumbsCurrent = 'Důkazy přímo';
-    const stepSum = 7;
-
-    const definitionPanel = (
-      <DefinitionPanel>
-        <cite><q>Nechť <MN>G</MN> je souvislý graf. Jestliže hrana <MN>e</MN> není most v <MN>G</MN>, pak v <MN>G</MN> existuje kružnice obsahující hranu <MN>e</MN>.</q></cite> Dokažte přímo.
-      </DefinitionPanel>
-    );
-
-    const proofBox = (
-      <div className='bg-warning' id='proofBox'>
-        <div 
-          className={
-            (1 === this.state.currentStep) || (2 === this.state.currentStep) ? 'proof-active' : ''
-          }
-        >
-          <p>
-            Pokud <MN>{'e=\\{x,y\\}'}</MN> není most v <MN>G</MN>, poté z definice mostu platí, že graf <MN>G-e</MN> má stejný počet komponent jako <MN>G</MN> a platí:
-          </p>
-        </div>
-        <div className={3 === this.state.currentStep ? 'proof-active' : ''}>
-          <p>
-            Protože uvažujeme souvislý graf <MN>G</MN>, musí mezi libovolně zvolenými vrcholy <MN>u</MN> a <MN>v</MN> existovat cesta.
-          </p>
-        </div>
-        <div className={4 === this.state.currentStep ? 'proof-active' : ''}>
-          <p>
-            Když existuje <MN>u</MN>-<MN>v</MN> cesta <MN>{'P_{uv}'}</MN> v <MN>G</MN>, tak existuje <MN>u</MN>-<MN>v</MN> cesta <MN>{"P'_{uv}"}</MN> v <MN>G-e</MN>. (Uvažujeme totiž stále hranu <MN>e</MN>, která není mostem.)
-            <br /><br />
-            Poznámka:  <MN>{"P'_{uv}"}</MN> se nemusí nutně  <MN>{'=P_{uv}'}</MN>.
-          </p>
-        </div>
-        <div className={5 === this.state.currentStep ? 'proof-active' : ''}>
-          <p>
-            Z toho vyplývá, že v <MN>G-e</MN> musí v existovat také cesta <MN>{'P_{xy}'}</MN> mezi vrcholy <MN>x</MN> a <MN>y</MN> z hrany <MN>e</MN>.
-          </p>
-        </div>
-        <div className={6 === this.state.currentStep ? 'proof-active' : ''}>
-          <p>
-            Protože <MN>G</MN> vznikne z <MN>G-e</MN> přidáním hrany <MN>e</MN>, musí se <MN>x</MN>-<MN>y</MN> cesta <MN>{'P_{xy}'}</MN> nacházet také v <MN>G</MN>.
-          </p>
-        </div>
-        <div className={'borderless' + (7 === this.state.currentStep ? ' proof-active' : '')}>
-          <p>
-            Poté dle definice kružnice platí, že <MN>x</MN>-<MN>y</MN> cesta <MN>{'P_{xy}'}</MN> spolu s hranou <MN>{'e=\\{x,y\\}'}</MN> tvoří kružnici v <MN>G</MN> obsahující  hranu <MN>e</MN>.
-          </p>
-          <p className="text-center">
-            <MN>\dagger</MN> Tím je dokázáno stanovené tvrzení.
-          </p>
-        </div>
-      </div>
-    );
-
     return (
       <ExerciseWrapper
-        {...this.state} events={events}
+        {...this.state}
+        events={events}
         initNetworkInstance={this.initNetworkInstance}
         headingTitle={headingTitle}
         breadcrumbsCurrent={breadcrumbsCurrent}
         definitionPanel={definitionPanel}
-        proofBox={proofBox} stepSum={stepSum}
+        proofBox={getProofBox(this.state.currentStep)}
+        stepSum={stepSum}
         previousStep={this.previousStep}
-        nextStep={this.nextStep} repeatStep={this.repeatStep}
+        nextStep={this.nextStep}
+        repeatStep={this.repeatStep}
         handleSketchAllowance={() => this.setState(() => this.handlerSketchAllowance(this.state))}
         handleSketchPencil={() => this.setState(() => this.handlerSelectedTool(1))}
         handleSketchLine={() => this.setState(() => this.handlerSelectedTool(2))}
