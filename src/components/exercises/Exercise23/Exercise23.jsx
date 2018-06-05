@@ -56,8 +56,6 @@ class Exercise23 extends React.Component {
         this.setState(this.step1Texts);
       }
 
-
-
       // Reduce currentStep after a step was executed
       this.setState((state) => { return { currentStep: state.currentStep -= 1 } });
     }

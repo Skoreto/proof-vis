@@ -4,6 +4,7 @@
   color: #fff;
   /*background: #ad2121;*/
   margin-bottom: 30px;
+  border-radius: 0;
 }
 
 /* = Navbar Icon = */
@@ -34,7 +35,6 @@
   background: #5a2727;
   color: #fff;
   border-radius: 0;
-  /*nezakulacovat rohy*/
 }
 
 /* barva čar vysunovacího tlačítka */
@@ -127,15 +127,26 @@
 
 /* MQ - Malé úhlopříčky (telefony, méně než 768px) */
 @media (max-width: 767px) {
+  .main-nav {
+    min-width: 615px;
+    margin-bottom: 20px;
+  }
   .main-nav .navbar-collapse {
-    padding-left: 15px;
-    padding-right: 15px;
     border-top: 0;
   }
   .navbar-nav {
     margin-top: 0;
   }
+  .main-nav .nav .nav-item a {
+    color: #fff;
+    text-decoration: none;
+    padding-left: 20px;
+  }
   .main-nav .nav .nav-item.active>a:before {
     content: none;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu>li>a {
+    color: #fff;
+    padding-left: 30px;
   }
 }

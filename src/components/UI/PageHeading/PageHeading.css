@@ -24,7 +24,6 @@
 .page-wrapper .breadcrumbs ul li {
   color: #ad2121;
   font-size: 14px;
-  float: left;
   list-style: none;
   display: inline-block;
 }
@@ -47,4 +46,37 @@
 .page-wrapper .breadcrumbs ul li.current {
   max-width: 250px;
   margin-left: 5px;
+}
+
+/* MQ - Malé úhlopříčky (telefony, méně než 768px) */
+@media (max-width: 767px) {
+  .page-wrapper .page-heading {
+    min-width: 600px;
+    float: none;
+    text-align: center;
+    display: block;
+  }
+  .page-wrapper .page-heading h1.heading-title {
+    float: none;
+    text-align: center;
+    display: block;
+  }
+  .page-wrapper .breadcrumbs {
+    float: none;
+    text-align: center;
+    display: block;
+  }
+  .page-wrapper .breadcrumbs ul {
+    padding-top: 0;
+    padding-left: 0;
+    margin: 0 auto;
+  }
+  .page-wrapper .breadcrumbs ul li {
+    float: none;
+    display: inline-block;
+  }
+  .page-wrapper .breadcrumbs ul li.current {
+    max-width: inherit;
+    overflow: visible;
+  }
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Grid } from 'react-bootstrap';
 import { BrowserRouter, Route } from 'react-router-dom';
 import Overview from './components/pages/Overview/Overview';
 import Exercise20svg from './components/exercises/Exercise20svg/Exercise20svg';
@@ -18,16 +19,18 @@ class App extends React.Component {
       <BrowserRouter basename={process.env.PUBLIC_URL}>
         <div>
           <CustomNavbar />
-          <Route exact path="/" component={Overview} />
-          <Route path="/priklad20svg" component={Exercise20svg} />
-          <Route path="/priklad20v2" component={Exercise20v2} />
-          <Route path="/priklad23" component={Exercise23} />
-          <Route path="/priklad26" component={Exercise26} />
-          <Route path="/priklad26v2" component={Exercise26v2} />
-          <Route path="/priklad17a" component={Exercise17a} />
-          <Route path="/priklad17av2" component={Exercise17av2} />
-          <Route path="/platno" component={SingleDrawing} />
-          {/*<Footer/>*/}
+          <Grid>
+            <Route exact path="/" component={Overview} />
+            <Route path="/priklad20svg" component={Exercise20svg} />
+            <Route path="/priklad20v2" component={Exercise20v2} />
+            <Route path="/priklad23" component={Exercise23} />
+            <Route path="/priklad26" component={Exercise26} />
+            <Route path="/priklad26v2" component={Exercise26v2} />
+            <Route path="/priklad17a" component={Exercise17a} />
+            <Route path="/priklad17av2" component={Exercise17av2} />
+            <Route path="/platno" component={SingleDrawing} />
+          </Grid>
+          {/* <Footer/> */}
         </div>
       </BrowserRouter>
     );

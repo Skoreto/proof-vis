@@ -23,21 +23,19 @@
   background-clip: padding-box;
 }
 
-/* ==== MAIN ČÁST ==== */
-.bg-info {
-  padding: 5px;
-  margin: 0 0 5px 0;
-}
+/* ==== MAIN ČÁST ====  */
 
 #definition {
   border: 1px solid rgba(97, 173, 255, 0.51);
   padding: 10px;
+  margin: 0 0 5px 0;
   font-size: 20px;
   text-align: center;
 }
 
 .over-component {
   position: absolute;
+  min-width: 600px;
   height: 400px;
   /*background-color: #3f51b5;*/
   z-index: 3;
@@ -45,12 +43,14 @@
 
 .svg-cover-panel {
   position: absolute;
+  min-width: 600px;
   height: 400px;
   z-index: 2;
 }
 
 .GraphBox {
   border: 1px solid lightgray;
+  min-width: 600px;
   height: 400px;
   z-index: 1;
 }
@@ -142,7 +142,6 @@
 }
 
 #divSentenceBox {
-  max-width: 600px;
   background-color: #EEEEEE;
   border: 2px solid #E0E0E0;
   margin-top: 10px;
@@ -263,6 +262,11 @@
   .wrapper:after {
     content: none;
   }
+  /* For .page-heading  */
+  .page-wrapper>.row {
+    margin-left: 0;
+    margin-right: 0;
+  }
   .page-wrapper .page-content .page-row {
     margin-bottom: 10px;
   }
@@ -273,53 +277,38 @@
   /* Pro malé úhlopříčky centrujeme na střed a ke stranám */
   .pull-right,
   .pull-left {
-    float: none !important;
-  }
-  .header .menu-top {
-    text-align: center;
-    margin-top: 10px;
-  }
-  .header .menu-top li {
     float: none;
-    display: inline-block;
-  }
-  .header br {
-    display: none;
-  }
-  .page-wrapper .page-heading h1.heading-title {
-    float: none;
-    text-align: center;
-    display: block;
-  }
-  .page-wrapper .breadcrumbs {
-    text-align: center;
-    display: block;
-  }
-  .page-wrapper .breadcrumbs ul {
-    padding-top: 0;
-    padding-left: 0;
-    margin: 0 auto;
-  }
-  .page-wrapper .breadcrumbs ul li {
-    float: none;
-    display: inline-block;
-  }
-  .page-wrapper .breadcrumbs ul li.current {
-    max-width: inherit;
-    overflow: visible;
   }
   #definition {
+    min-width: 600px;
     padding: 5px;
+    margin: 0;
     font-size: 16px;
+  }
+  .descriptionBox {
+    min-width: 600px;
   }
   .descriptionBox p {
     font-size: 14px;
+  }
+  #proofBox {
+    min-width: 600px;
   }
   #proofBox p {
     font-size: 14px;
   }
   #proofBox .proof-active p {
     font-size: 16px;
+  }
+  .repeat-box {
+    min-width: 600px;
+    margin-top: 15px;
+  }
+  #divSentenceBox {
+    min-width: 600px;
+  }
+  .controls-panel {
+    min-width: 600px;
   }
 }
 

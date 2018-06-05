@@ -1,6 +1,6 @@
 import React from 'react';
 import GraphVis from 'react-graph-vis';
-import { Row, Col } from 'react-bootstrap';
+import { Grid, Row, Col } from 'react-bootstrap';
 import { SketchField } from 'react-sketch';
 import M from 'react-mathjax2';
 import PageHeading from '../../../components/UI/PageHeading/PageHeading';
@@ -16,7 +16,7 @@ import faCircle from '@fortawesome/fontawesome-free-solid/faCircleNotch';
 import faRedoAlt from '@fortawesome/fontawesome-free-solid/faRedoAlt';
 
 const ExerciseWrapper = (props) => (
-  <div className={'container'}>
+  <div>
     <div className='page-wrapper'>
       <PageHeading
         headingTitle={props.headingTitle}
@@ -77,7 +77,7 @@ const ExerciseWrapper = (props) => (
                   graph={props.graphVis}
                   options={props.options}
                   events={props.events}
-                  style={{ height: '400px' }}
+                  style={{ width: '100%', height: '400px' }}
                   getNetwork={props.initNetworkInstance}
                 />
               </div>
