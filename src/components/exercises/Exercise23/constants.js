@@ -19,11 +19,11 @@ export const getProofBox = currentStep => {
         <p>
           Nechť <MN>{'e=\\{u,v\\}'}</MN> a <MN>C_1 = (u=x_1,x_2,...,x_k=v,u)</MN> a <MN>C_2 = (u=y_1,y_2,...,y_l=v,u)</MN> jsou dvě různé kružnice, které obsahují hranu <MN>e</MN>.
         </p>
+        <p>Mohou nastat dvě možnosti:</p>
       </div>
       <div className={2 === currentStep ? "proof-active" : ""}>
         <p>
-          Mohou nastat dvě možnosti:
-          <br /><b>1.</b> <MN>{'C_1 \\cap C_2=\\{u,v\\}'}</MN> (tj. kružnice mají společnou jenom hranu <MN>e</MN>)
+          <b>1.</b> <MN>{'C_1 \\cap C_2=\\{u,v\\}'}</MN> (tj. kružnice mají společnou jenom hranu <MN>e</MN>)
           <br/><MN>\Rightarrow</MN> pak dle definice kružnice
           <br/><MN>{'(u,x_2,...,x_k=v=y_l,y_{l-1},...y_2,y_1=u)'}</MN>
           <br/>je kružnice neobsahující hranu <MN>e</MN>
