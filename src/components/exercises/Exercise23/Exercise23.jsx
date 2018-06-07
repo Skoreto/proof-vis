@@ -24,6 +24,12 @@ const cameraPosition1 = {
   animation: { duration: 1500, easingFunction: "easeInOutQuad" },
 };
 
+const cameraPosition2 = {
+  position: { x: 0, y: -130 }, 
+  scale: 1.15,
+  animation: { duration: 1500, easingFunction: "easeInOutQuad" },
+};
+
 class Exercise23 extends React.Component {
   constructor(props) {
     super(props);
@@ -55,6 +61,12 @@ class Exercise23 extends React.Component {
         this.network.moveTo(cameraPosition1);
       }
 
+      if (this.state.currentStep === 1) {
+        this.setState(this.step2preset);
+        this.setState(this.step2Texts);
+        this.network.moveTo(cameraPosition2);
+      }
+
       // Increase currentStep after a step was executed
       this.setState((state) => { return { currentStep: state.currentStep += 1 } });
     }
@@ -71,6 +83,7 @@ class Exercise23 extends React.Component {
         this.setState(this.stepReset);
         this.setState(this.step1);
         this.setState(this.step1Texts);
+        this.network.moveTo(cameraPosition1);
       }
 
       // Reduce currentStep after a step was executed
@@ -101,13 +114,13 @@ class Exercise23 extends React.Component {
           { id: 6, x: 140, y: -260, color: { background: '#ffff08' }, label: '   ' },
           { id: 7, x: 140, y: -20, color: { background: '#ffff08' }, label: '   ' },
           { id: 8, x: 240, y: -140, color: { background: '#ffff08' }, label: '   ' },
-          { id: 9, x: -240, y: 200, color: { background: '#ffff08' }, label: '   ' },
-          { id: 10, x: -130, y: 110, color: { background: '#ffff08' }, label: '   ' },
+          { id: 9, x: -240, y: 195, color: { background: '#ffff08' }, label: '   ' },
+          { id: 10, x: -130, y: 100, color: { background: '#ffff08' }, label: '   ' },
           { id: 11, x: -130, y: 290, color: { background: '#ffff08' }, label: '   ' },
-          { id: 12, x: 0, y: 200, color: { background: '#ffff08' }, label: '   ' },
-          { id: 13, x: 130, y: 110, color: { background: '#ffff08' }, label: '   ' },
+          { id: 12, x: 0, y: 195, color: { background: '#ffff08' }, label: '   ' },
+          { id: 13, x: 130, y: 100, color: { background: '#ffff08' }, label: '   ' },
           { id: 14, x: 130, y: 290, color: { background: '#ffff08' }, label: '   ' },
-          { id: 15, x: 240, y: 200, color: { background: '#ffff08' }, label: '   ' },
+          { id: 15, x: 240, y: 195, color: { background: '#ffff08' }, label: '   ' },
         ],
         edges: [
           { id: 1, from: 1, to: 2 },
@@ -133,7 +146,7 @@ class Exercise23 extends React.Component {
   };
 
   step1Texts = () => {
-    const description = (<p>Příklad grafů obsahujících kružnice.</p>);
+    const description = (<p>Příklad dvou grafů obsahujících kružnice.</p>);
     const repeatBox = (
       <div>
         <p>
@@ -144,6 +157,31 @@ class Exercise23 extends React.Component {
     );
 
     return { description: description, repeatBoxHidden: false, repeatBoxContent: repeatBox };
+  };
+
+  step2preset = (state) => {
+    let newEdges = this.updateEdge(state.graphVis.edges, 4, '#000000', 1, false, 'e');
+    return { graphVis: { nodes: state.graphVis.nodes, edges: newEdges } };
+  };
+
+  step2Texts = () => {
+    const description = (
+      <p>
+        Příklad grafu <MN>G</MN>, kde kružnice <MN>C_1</MN> a <MN>C_2</MN> sdílejí hranu <MN>e</MN>.
+      </p>
+    );
+
+    return { description: description, repeatBoxHidden: true };
+  };
+
+  step3Texts = () => {
+    const description = (
+      <p>
+        Poté v grafu <MN>G</MN> existuje také kružnice <MN>C_3</MN> neobsahující hranu <MN>e</MN>.
+      </p>
+    );
+
+    return { description: description };
   };
 
   render() {

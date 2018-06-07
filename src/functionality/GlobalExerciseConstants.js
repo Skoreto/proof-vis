@@ -78,14 +78,14 @@ export const graphVisOptions = {
   },
   interaction: {
     dragNodes: true,
-    dragView: true,
+    dragView: false,
     hideEdgesOnDrag: false,
     hideNodesOnDrag: false,
     hover: true,
     hoverConnectedEdges: false,
     keyboard: {
       enabled: false,
-      speed: { x: 10, y: 10, zoom: 0.02 },
+      speed: { x: 5, y: 5, zoom: 0.02 },
       bindToWindow: true,
     },
     multiselect: true,

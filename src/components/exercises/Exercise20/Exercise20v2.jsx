@@ -344,13 +344,8 @@ class Exercise20v2 extends React.Component {
   };
 
   step7 = () => {
-    let timeout1 = setTimeout(() => {
-      this.setState(this.step7a);
-    }, 500);
-
-    let timeout2 = setTimeout(() => {
-      this.setState(this.step7b);
-    }, 2000);
+    let timeout1 = setTimeout(() => { this.setState(this.step7a); }, 500);
+    let timeout2 = setTimeout(() => { this.setState(this.step7b); }, 2000);
 
     this.setState({ timeouts: [timeout1, timeout2] });
   };

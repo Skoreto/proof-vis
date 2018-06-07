@@ -24,14 +24,13 @@ export const getProofBox = currentStep => {
       <div className={2 === currentStep ? "proof-active" : ""}>
         <p>
           <b>1.</b> <MN>{'C_1 \\cap C_2=\\{u,v\\}'}</MN> (tj. kružnice mají společnou jenom hranu <MN>e</MN>)
-          <br/><MN>\Rightarrow</MN> pak dle definice kružnice
-          <br/><MN>{'(u,x_2,...,x_k=v=y_l,y_{l-1},...y_2,y_1=u)'}</MN>
-          <br/>je kružnice neobsahující hranu <MN>e</MN>
         </p>
       </div>
       <div className={3 === currentStep ? "proof-active" : ""}>
         <p>
-          Poté v grafu <MN>G</MN> existuje také kružnice <MN>C_3</MN> neobsahující hranu <MN>e</MN>.
+          <MN>\Rightarrow</MN> pak dle definice kružnice
+          <br/><MN>{'(u,x_2,...,x_k=v=y_l,y_{l-1},...y_2,y_1=u)'}</MN>
+          <br/>je kružnice neobsahující hranu <MN>e</MN>
         </p>
       </div>
       <div className={4 === currentStep ? "proof-active" : ""}>
