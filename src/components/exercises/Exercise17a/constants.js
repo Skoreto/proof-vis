@@ -30,9 +30,9 @@ export const getProofBox = currentStep => {
         </p>
       </div>
       <div className={"borderless" + (4 === currentStep ? " proof-active" : "")}>
-        <p>Přitom graf <MN>G</MN> neobsahuje kružnici.</p>
+        <p>Přitom graf <MN>G</MN> neobsahuje kružnici. <MN>\Box</MN></p>
         <p className="text-center">
-          <MN>\dagger</MN> Tím je vyvráceno stanovené tvrzení.
+          Tím je vyvráceno stanovené tvrzení.
         </p>
       </div>
     </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import GraphVis from 'react-graph-vis';
-import { Grid, Row, Col } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import { SketchField } from 'react-sketch';
 import M from 'react-mathjax2';
 import PageHeading from '../../../components/UI/PageHeading/PageHeading';

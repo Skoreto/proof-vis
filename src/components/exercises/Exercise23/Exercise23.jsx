@@ -30,6 +30,12 @@ const cameraPosition2 = {
   animation: { duration: 1500, easingFunction: "easeInOutQuad" },
 };
 
+const cameraPosition3 = {
+  position: { x: 0, y: 200 }, 
+  scale: 1.15,
+  animation: { duration: 1500, easingFunction: "easeInOutQuad" },
+};
+
 class Exercise23 extends React.Component {
   constructor(props) {
     super(props);
@@ -62,9 +68,24 @@ class Exercise23 extends React.Component {
       }
 
       if (this.state.currentStep === 1) {
-        this.setState(this.step2preset);
+        this.step2Animation();
+        let interval1 = setInterval(this.step2Animation, 5000);
+        this.setState({ intervals: [interval1] });
         this.setState(this.step2Texts);
         this.network.moveTo(cameraPosition2);
+      }
+
+      if (this.state.currentStep === 2) {
+        this.clearAllTimers(this.state);
+        this.setState(this.step1);
+        this.setState(this.step3);
+        this.setState(this.step3Texts);
+      }
+
+      if (this.state.currentStep === 3) {
+        this.setState(this.step4);
+        this.setState(this.step4Texts);
+        this.network.moveTo(cameraPosition3);
       }
 
       // Increase currentStep after a step was executed
@@ -80,10 +101,26 @@ class Exercise23 extends React.Component {
       }
 
       if (this.state.currentStep === 2) {
-        this.setState(this.stepReset);
+        this.clearAllTimers(this.state);
         this.setState(this.step1);
         this.setState(this.step1Texts);
         this.network.moveTo(cameraPosition1);
+      }
+
+      if (this.state.currentStep === 3) {
+        this.setState(this.step1);
+        this.step2Animation();
+        let interval1 = setInterval(this.step2Animation, 5000);
+        this.setState({ intervals: [interval1] });
+        this.setState(this.step2Texts);
+      }
+
+      if (this.state.currentStep === 4) {
+        this.clearAllTimers(this.state);
+        this.setState(this.step1);
+        this.setState(this.step3);
+        this.setState(this.step3Texts);
+        this.network.moveTo(cameraPosition2);
       }
 
       // Reduce currentStep after a step was executed
@@ -109,15 +146,15 @@ class Exercise23 extends React.Component {
           { id: 1, x: -240, y: -140, color: { background: '#ffff08' }, label: '   ' },
           { id: 2, x: -140, y: -260, color: { background: '#ffff08' }, label: '   ' },
           { id: 3, x: -140, y: -20, color: { background: '#ffff08' }, label: '   ' },
-          { id: 4, x: 0, y: -200, color: { background: '#ffff08' }, label: '   ' },
-          { id: 5, x: 0, y: -80, color: { background: '#ffff08' }, label: '   ' },
+          { id: 4, x: 0, y: -200, color: { background: '#ffff08' }, label: ' u ' },
+          { id: 5, x: 0, y: -80, color: { background: '#ffff08' }, label: ' v ' },
           { id: 6, x: 140, y: -260, color: { background: '#ffff08' }, label: '   ' },
           { id: 7, x: 140, y: -20, color: { background: '#ffff08' }, label: '   ' },
           { id: 8, x: 240, y: -140, color: { background: '#ffff08' }, label: '   ' },
-          { id: 9, x: -240, y: 195, color: { background: '#ffff08' }, label: '   ' },
+          { id: 9, x: -240, y: 195, color: { background: '#ffff08' }, label: ' u ' },
           { id: 10, x: -130, y: 100, color: { background: '#ffff08' }, label: '   ' },
           { id: 11, x: -130, y: 290, color: { background: '#ffff08' }, label: '   ' },
-          { id: 12, x: 0, y: 195, color: { background: '#ffff08' }, label: '   ' },
+          { id: 12, x: 0, y: 195, color: { background: '#ffff08' }, label: ' v ' },
           { id: 13, x: 130, y: 100, color: { background: '#ffff08' }, label: '   ' },
           { id: 14, x: 130, y: 290, color: { background: '#ffff08' }, label: '   ' },
           { id: 15, x: 240, y: 195, color: { background: '#ffff08' }, label: '   ' },
@@ -127,14 +164,14 @@ class Exercise23 extends React.Component {
           { id: 2, from: 1, to: 3 },
           { id: 3, from: 2, to: 4 },
           { id: 4, from: 3, to: 5 },
-          { id: 5, from: 4, to: 5 },
+          { id: 5, from: 4, to: 5, label: 'e' },
           { id: 6, from: 4, to: 6 },
           { id: 7, from: 5, to: 7 },
           { id: 8, from: 6, to: 8 },
           { id: 9, from: 7, to: 8 },
           { id: 10, from: 9, to: 10 },
           { id: 11, from: 9, to: 11 },
-          { id: 12, from: 9, to: 12 },
+          { id: 12, from: 9, to: 12, label: 'e' },
           { id: 13, from: 10, to: 13 },
           { id: 14, from: 11, to: 14 },
           { id: 15, from: 12, to: 15 },
@@ -147,21 +184,48 @@ class Exercise23 extends React.Component {
 
   step1Texts = () => {
     const description = (<p>Příklad dvou grafů obsahujících kružnice.</p>);
-    const repeatBox = (
-      <div>
-        <p>
-          KRUŽNICE (Definice 1.8)
-          <br />Kružnice délky <MN>k, k \geq 3</MN>, v grafu <MN>G</MN> je posloupnost <MN>{'(v_{0}, e_{1}, v_{1},...,e_{k}, v_{0})'}</MN>, kde <MN>{'e_{i}=\\{v_{i-1}, v_{i}\\}'}</MN>, <MN>i=1,...,k-1</MN>, <MN>{'e_{k}=\\{v_{k-1}, v_{0}\\}'}</MN> a pro <MN>i \neq j</MN> platí <MN>{'v_{i} \\neq v_{j}'}</MN>.
-        </p>
-      </div>
-    );
-
-    return { description: description, repeatBoxHidden: false, repeatBoxContent: repeatBox };
+    return { description: description };
   };
 
-  step2preset = (state) => {
-    let newEdges = this.updateEdge(state.graphVis.edges, 4, '#000000', 1, false, 'e');
-    return { graphVis: { nodes: state.graphVis.nodes, edges: newEdges } };
+  step2Animation = () => {
+    let timeout1 = setTimeout(() => { this.setState(this.step2a); }, 1000);
+    let timeout2 = setTimeout(() => { this.setState(this.step1); }, 2000);
+    let timeout3 = setTimeout(() => { this.setState(this.step2c); }, 3000);
+    let timeout4 = setTimeout(() => { this.setState(this.step1); }, 4000);
+
+    this.setState({ timeouts: [timeout1, timeout2, timeout3, timeout4] });
+  };
+
+  step2a = (state) => {
+    let newNodes = this.updateNode(state.graphVis.nodes, 0, '#EC407A', '   ');
+    newNodes = this.updateNode(newNodes, 1, '#EC407A', '   ');
+    newNodes = this.updateNode(newNodes, 2, '#EC407A', '   ');
+    newNodes = this.updateNode(newNodes, 3, '#EC407A', ' u ');
+    newNodes = this.updateNode(newNodes, 4, '#EC407A', ' v ');
+
+    let newEdges = this.updateEdge(state.graphVis.edges, 0, '#EC407A', 3, false, '');
+    newEdges = this.updateEdge(newEdges, 1, '#EC407A', 3, false, '');
+    newEdges = this.updateEdge(newEdges, 2, '#EC407A', 3, false, '');
+    newEdges = this.updateEdge(newEdges, 3, '#EC407A', 3, false, '');
+    newEdges = this.updateEdge(newEdges, 4, '#EC407A', 3, false, 'e');
+
+    return { graphVis: { nodes: newNodes, edges: newEdges } };
+  };
+
+  step2c = (state) => {
+    let newNodes = this.updateNode(state.graphVis.nodes, 3, '#4DB6AC', ' u ');
+    newNodes = this.updateNode(newNodes, 4, '#4DB6AC', ' v ');
+    newNodes = this.updateNode(newNodes, 5, '#4DB6AC', '   ');
+    newNodes = this.updateNode(newNodes, 6, '#4DB6AC', '   ');
+    newNodes = this.updateNode(newNodes, 7, '#4DB6AC', '   ');
+
+    let newEdges = this.updateEdge(state.graphVis.edges, 4, '#4DB6AC', 3, false, 'e');
+    newEdges = this.updateEdge(newEdges, 5, '#4DB6AC', 3, false, '');
+    newEdges = this.updateEdge(newEdges, 6, '#4DB6AC', 3, false, '');
+    newEdges = this.updateEdge(newEdges, 7, '#4DB6AC', 3, false, '');
+    newEdges = this.updateEdge(newEdges, 8, '#4DB6AC', 3, false, '');
+
+    return { graphVis: { nodes: newNodes, edges: newEdges } };
   };
 
   step2Texts = () => {
@@ -174,13 +238,56 @@ class Exercise23 extends React.Component {
     return { description: description, repeatBoxHidden: true };
   };
 
+  step3 = (state) => {
+    let newNodes = this.updateNode(state.graphVis.nodes, 0, '#FF7043', '   ');
+    newNodes = this.updateNode(newNodes, 1, '#FF7043', '   ');
+    newNodes = this.updateNode(newNodes, 2, '#FF7043', '   ');
+    newNodes = this.updateNode(newNodes, 3, '#FF7043', ' u ');
+    newNodes = this.updateNode(newNodes, 4, '#FF7043', ' v ');
+    newNodes = this.updateNode(newNodes, 5, '#FF7043', '   ');
+    newNodes = this.updateNode(newNodes, 6, '#FF7043', '   ');
+    newNodes = this.updateNode(newNodes, 7, '#FF7043', '   ');
+
+    let newEdges = this.updateEdge(state.graphVis.edges, 0, '#FF7043', 3, false, '');
+    newEdges = this.updateEdge(newEdges, 1, '#FF7043', 3, false, '');
+    newEdges = this.updateEdge(newEdges, 2, '#FF7043', 3, false, '');
+    newEdges = this.updateEdge(newEdges, 3, '#FF7043', 3, false, '');
+    newEdges = this.updateEdge(newEdges, 5, '#FF7043', 3, false, '');
+    newEdges = this.updateEdge(newEdges, 6, '#FF7043', 3, false, '');
+    newEdges = this.updateEdge(newEdges, 7, '#FF7043', 3, false, '');
+    newEdges = this.updateEdge(newEdges, 8, '#FF7043', 3, false, '');
+
+    return { graphVis: { nodes: newNodes, edges: newEdges } };
+  };
+
   step3Texts = () => {
     const description = (
       <p>
         Poté v grafu <MN>G</MN> existuje také kružnice <MN>C_3</MN> neobsahující hranu <MN>e</MN>.
       </p>
     );
+    const repeatBox = (
+      <div>
+        <p>
+          KRUŽNICE (Definice 1.8)
+          <br />Kružnice délky <MN>k, k \geq 3</MN>, v grafu <MN>G</MN> je posloupnost <MN>{'(v_{0}, e_{1}, v_{1},...,e_{k}, v_{0})'}</MN>, kde <MN>{'e_{i}=\\{v_{i-1}, v_{i}\\}'}</MN>, <MN>i=1,...,k-1</MN>, <MN>{'e_{k}=\\{v_{k-1}, v_{0}\\}'}</MN> a pro <MN>i \neq j</MN> platí <MN>{'v_{i} \\neq v_{j}'}</MN>.
+        </p>
+      </div>
+    );
+    return { description: description, repeatBoxHidden: false, repeatBoxContent: repeatBox };
+  };
 
+  step4 = (state) => {
+    let newEdges = this.updateEdge(state.graphVis.edges, 14, '#000000', 1, false, 'e1');
+    return { graphVis: { nodes: state.graphVis.nodes, edges: newEdges } };
+  };
+
+  step4Texts = () => {
+    const description = (
+      <p>
+        Příklad grafu <MN>G</MN>, kde kružnice <MN>C_1</MN> a <MN>C_2</MN> sdílejí hranu <MN>e</MN> a navíc další hranu <MN>e_1</MN>.
+      </p>
+    );
     return { description: description };
   };
 
