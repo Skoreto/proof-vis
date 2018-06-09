@@ -17,7 +17,6 @@ import {
   handlerSelectedTool,
 } from '../../../functionality/GraphFunctions';
 import ExerciseWrapper from '../../../components/UI/ExerciseWrapper/ExerciseWrapper';
-import DefinitionPanel from '../../../components/UI/DefinitionPanel/DefinitionPanel';
 import MN from '../../../components/MathJax/MathJaxNode';
 
 const cameraPosition1 = {

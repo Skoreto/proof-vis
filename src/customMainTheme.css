@@ -243,6 +243,10 @@
   font-weight: normal;
 }
 
+.page-wrapper .page-content .first-heading {
+  margin-top: 0;
+}
+
 .page-wrapper .page-content .title {
   margin-top: 0;
   margin-bottom: 15px;
