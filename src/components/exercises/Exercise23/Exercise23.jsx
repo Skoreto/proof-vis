@@ -88,6 +88,11 @@ class Exercise23 extends React.Component {
         this.network.moveTo(cameraPosition3);
       }
 
+      if (this.state.currentStep === 4) {
+        this.setState(this.step5);
+        this.setState(this.step5Texts);
+      }
+
       // Increase currentStep after a step was executed
       this.setState((state) => { return { currentStep: state.currentStep += 1 } });
     }
@@ -288,6 +293,27 @@ class Exercise23 extends React.Component {
         Příklad grafu <MN>G</MN>, kde kružnice <MN>C_1</MN> a <MN>C_2</MN> sdílejí hranu <MN>e</MN> a navíc další hranu <MN>e_1</MN>.
       </p>
     );
+    return { description: description };
+  };
+
+  step5 = (state) => {
+    let newNodes = this.updateNode(state.graphVis.nodes, 8, '#EC407A', ' u ');
+    newNodes = this.updateNode(newNodes, 9, '#EC407A', '   ');
+    newNodes = this.updateNode(newNodes, 11, '#EC407A', ' v ');
+    newNodes = this.updateNode(newNodes, 12, '#EC407A', '   ');
+    newNodes = this.updateNode(newNodes, 14, '#EC407A', '   ');
+
+    let newEdges = this.updateEdge(state.graphVis.edges, 9, '#EC407A', 3, false, '');
+    newEdges = this.updateEdge(newEdges, 11, '#EC407A', 3, false, '');
+    newEdges = this.updateEdge(newEdges, 12, '#EC407A', 3, false, '');
+    newEdges = this.updateEdge(newEdges, 14, '#EC407A', 3, false, '');
+    newEdges = this.updateEdge(newEdges, 15, '#EC407A', 3, false, '');
+
+    return { graphVis: { nodes: newNodes, edges: newEdges } };
+  };
+
+  step5Texts = () => {
+    const description = (<p>Vyznačení kružnice <MN>C_1</MN>.</p>);
     return { description: description };
   };
 
