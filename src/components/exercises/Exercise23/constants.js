@@ -40,7 +40,7 @@ export const getProofBox = currentStep => {
       </div>
       <div className={5 === currentStep ? "proof-active" : ""}>
         <p>
-          <MN>\Rightarrow</MN> pak máme dvě různé <MN>u-v</MN> cesty <MN>P_1=C_1=e=(u=x_1,x_2,...,x_k=v)</MN> a <MN>P_2=C_2=e=(u=y_1,y_2,...,y_l=v)</MN> a žádná z cest neobsahuje hranu <MN>e</MN>
+          <MN>\Rightarrow</MN> pak máme dvě různé <MN>u-v</MN> cesty <MN>P_1=C_1-e=(u=x_1,x_2,...,x_k=v)</MN> a <MN>P_2=C_2-e=(u=y_1,y_2,...,y_l=v)</MN> a žádná z cest neobsahuje hranu <MN>e</MN>
         </p>
       </div>
       <div className={'borderless' + (10 === currentStep ? " proof-active" : "")}>

@@ -93,6 +93,11 @@ class Exercise23 extends React.Component {
         this.setState(this.step5Texts);
       }
 
+      if (this.state.currentStep === 5) {
+        this.setState(this.step6);
+        this.setState(this.step6Texts);
+      }
+
       // Increase currentStep after a step was executed
       this.setState((state) => { return { currentStep: state.currentStep += 1 } });
     }
@@ -316,6 +321,32 @@ class Exercise23 extends React.Component {
     const description = (<p>Vyznačení kružnice <MN>C_1</MN>.</p>);
     return { description: description };
   };
+
+  step6 = (state) => {
+    let newNodes = this.updateNode(state.graphVis.nodes, 8, '#B388FF', ' u ');
+    newNodes = this.updateNode(newNodes, 9, '#B388FF', '   ');
+    newNodes = this.updateNode(newNodes, 11, '#B388FF', ' v ');
+    newNodes = this.updateNode(newNodes, 12, '#B388FF', '   ');
+    newNodes = this.updateNode(newNodes, 14, '#B388FF', '   ');
+
+    let newEdges = this.updateEdge(state.graphVis.edges, 9, '#B388FF', 3, false, '');
+    newEdges = this.updateEdge(newEdges, 11, '#000000', 1, false, '');
+    newEdges = this.updateEdge(newEdges, 12, '#B388FF', 3, false, '');
+    newEdges = this.updateEdge(newEdges, 14, '#B388FF', 3, false, '');
+    newEdges = this.updateEdge(newEdges, 15, '#B388FF', 3, false, '');
+
+    return { graphVis: { nodes: newNodes, edges: newEdges } };
+  };
+
+  step6Texts = () => {
+    const description = (
+      <p>
+        Vyznačení cesty <MN>P_1=C_1 - e</MN>, tedy přes kružnici <MN>C_1</MN> bez hrany <MN>e</MN>.
+      </p>
+    );
+    return { description: description };
+  };
+
 
   render() {
     return (
