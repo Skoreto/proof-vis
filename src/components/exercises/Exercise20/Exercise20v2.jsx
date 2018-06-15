@@ -317,7 +317,7 @@ class Exercise20v2 extends React.Component {
     newEdges = this.updateEdge(newEdges, 4, '#81C784', 3, false, undefined);
     newEdges = this.updateEdge(newEdges, 5, '#000000', 1, false, undefined);
     newEdges = this.updateEdge(newEdges, 6, '#81C784', 3, false, undefined);
-    newEdges = this.updateEdge(newEdges, 7, 'red', 2, [8, 8], ' e ');
+    newEdges = this.updateEdge(newEdges, 7, '#FFFFFF', 2, false, '   ');
     newEdges = this.updateEdge(newEdges, 8, '#81C784', 3, false, undefined);
     newEdges = this.updateEdge(newEdges, 9, '#81C784', 3, false, undefined);
 
