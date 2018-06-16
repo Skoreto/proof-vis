@@ -69,7 +69,7 @@ class Exercise23 extends React.Component {
 
       if (this.state.currentStep === 1) {
         this.step2Animation();
-        let interval1 = setInterval(this.step2Animation, 5000);
+        let interval1 = setInterval(this.step2Animation, 6000);
         this.setState({ intervals: [interval1] });
         this.setState(this.step2Texts);
         this.network.moveTo(cameraPosition2);
@@ -98,6 +98,12 @@ class Exercise23 extends React.Component {
         this.setState(this.step6Texts);
       }
 
+      if (this.state.currentStep === 6) {
+        this.setState(this.step1);
+        this.setState(this.step7);
+        this.setState(this.step7Texts);
+      }
+
       // Increase currentStep after a step was executed
       this.setState((state) => { return { currentStep: state.currentStep += 1 } });
     }
@@ -120,7 +126,7 @@ class Exercise23 extends React.Component {
       if (this.state.currentStep === 3) {
         this.setState(this.step1);
         this.step2Animation();
-        let interval1 = setInterval(this.step2Animation, 5000);
+        let interval1 = setInterval(this.step2Animation, 6000);
         this.setState({ intervals: [interval1] });
         this.setState(this.step2Texts);
       }
@@ -199,9 +205,9 @@ class Exercise23 extends React.Component {
 
   step2Animation = () => {
     let timeout1 = setTimeout(() => { this.setState(this.step2a); }, 1000);
-    let timeout2 = setTimeout(() => { this.setState(this.step1); }, 2000);
+    let timeout2 = setTimeout(() => { this.setState(this.step1); }, 2500);
     let timeout3 = setTimeout(() => { this.setState(this.step2c); }, 3000);
-    let timeout4 = setTimeout(() => { this.setState(this.step1); }, 4000);
+    let timeout4 = setTimeout(() => { this.setState(this.step1); }, 4500);
 
     this.setState({ timeouts: [timeout1, timeout2, timeout3, timeout4] });
   };
@@ -347,6 +353,26 @@ class Exercise23 extends React.Component {
     return { description: description };
   };
 
+  step7 = (state) => {
+    let newNodes = this.updateNode(state.graphVis.nodes, 8, '#EC407A', ' u ');
+    newNodes = this.updateNode(newNodes, 10, '#EC407A', '   ');
+    newNodes = this.updateNode(newNodes, 11, '#EC407A', ' v ');
+    newNodes = this.updateNode(newNodes, 13, '#EC407A', '   ');
+    newNodes = this.updateNode(newNodes, 14, '#EC407A', '   ');
+
+    let newEdges = this.updateEdge(state.graphVis.edges, 10, '#EC407A', 3, false, '');
+    newEdges = this.updateEdge(newEdges, 11, '#EC407A', 3, false, '');
+    newEdges = this.updateEdge(newEdges, 13, '#EC407A', 3, false, '');
+    newEdges = this.updateEdge(newEdges, 14, '#EC407A', 3, false, '');
+    newEdges = this.updateEdge(newEdges, 16, '#EC407A', 3, false, '');
+
+    return { graphVis: { nodes: newNodes, edges: newEdges } };
+  };
+
+  step7Texts = () => {
+    const description = (<p>Vyznačení kružnice <MN>C_2</MN>.</p>);
+    return { description: description };
+  };
 
   render() {
     return (
