@@ -104,6 +104,11 @@ class Exercise23 extends React.Component {
         this.setState(this.step7Texts);
       }
 
+      if (this.state.currentStep === 7) {
+        this.setState(this.step8);
+        this.setState(this.step8Texts);
+      }
+
       // Increase currentStep after a step was executed
       this.setState((state) => { return { currentStep: state.currentStep += 1 } });
     }
@@ -371,6 +376,31 @@ class Exercise23 extends React.Component {
 
   step7Texts = () => {
     const description = (<p>Vyznačení kružnice <MN>C_2</MN>.</p>);
+    return { description: description };
+  };
+
+  step8 = (state) => {
+    let newNodes = this.updateNode(state.graphVis.nodes, 8, '#B388FF', ' u ');
+    newNodes = this.updateNode(newNodes, 10, '#B388FF', '   ');
+    newNodes = this.updateNode(newNodes, 11, '#B388FF', ' v ');
+    newNodes = this.updateNode(newNodes, 13, '#B388FF', '   ');
+    newNodes = this.updateNode(newNodes, 14, '#B388FF', '   ');
+
+    let newEdges = this.updateEdge(state.graphVis.edges, 10, '#B388FF', 3, false, '');
+    newEdges = this.updateEdge(newEdges, 11, '#000000', 1, false, '');
+    newEdges = this.updateEdge(newEdges, 13, '#B388FF', 3, false, '');
+    newEdges = this.updateEdge(newEdges, 14, '#B388FF', 3, false, '');
+    newEdges = this.updateEdge(newEdges, 16, '#B388FF', 3, false, '');
+
+    return { graphVis: { nodes: newNodes, edges: newEdges } };
+  };
+
+  step8Texts = () => {
+    const description = (
+      <p>
+        Vyznačení cesty <MN>P_2=C_2 - e</MN>, tedy přes kružnici <MN>C_2</MN> bez hrany <MN>e</MN>.
+      </p>
+    );
     return { description: description };
   };
 
