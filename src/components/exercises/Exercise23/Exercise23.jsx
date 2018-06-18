@@ -144,6 +144,36 @@ class Exercise23 extends React.Component {
         this.network.moveTo(cameraPosition2);
       }
 
+      if (this.state.currentStep === 5) {
+        this.setState(this.step1);
+        this.setState(this.step4);
+        this.setState(this.step4Texts);
+      }
+
+      if (this.state.currentStep === 6) {
+        this.setState(this.step5);
+        this.setState(this.step5Texts);
+      }
+
+      if (this.state.currentStep === 7) {
+        this.setState(this.step1);
+        this.setState(this.step6);
+        this.setState(this.step6Texts);
+      }
+
+      if (this.state.currentStep === 8) {
+        this.setState(this.step1);
+        this.setState(this.step7);
+        this.setState(this.step7Texts);
+      }
+
+      if (this.state.currentStep === 9) {
+        this.setState(this.step1);
+        this.setState(this.step8);
+        this.setState(this.step8Texts);
+        this.network.moveTo(cameraPosition3);
+      }
+
       // Reduce currentStep after a step was executed
       this.setState((state) => { return { currentStep: state.currentStep -= 1 } });
     }
