@@ -47,6 +47,13 @@ export const getProofBox = currentStep => {
           <MN>\Rightarrow</MN> pak máme dvě různé <MN>u-v</MN> cesty <MN>P_1=C_1-e=(u=x_1,x_2,...,x_k=v)</MN> a <MN>P_2=C_2-e=(u=y_1,y_2,...,y_l=v)</MN> a žádná z cest neobsahuje hranu <MN>e</MN>
         </p>
       </div>
+      <div className={9 === currentStep ? "proof-active" : ""}>
+        <p>
+          <MN>\Rightarrow</MN> Pak existuje vrchol, ve kterém se cesty rozcházejí a také vrchol, ve kterém se cesty scházejí. 
+          <br />
+          <br />(Mohou to být vrcholy <MN>u</MN> a <MN>v</MN>)
+        </p>
+      </div>
       <div className={'borderless' + (10 === currentStep ? " proof-active" : "")}>
         <p>
           Pak podle definice kružnice je <MN>{'(x_i,x_{i+1},...,x_s = y_r,...,y_j=x_i)'}</MN> kružnice neobsahující hranu <MN>e</MN>, protože ani jedna z cest ji neobsahovala. <MN>\Box</MN>

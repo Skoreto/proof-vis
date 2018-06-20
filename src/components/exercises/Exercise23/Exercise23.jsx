@@ -109,6 +109,12 @@ class Exercise23 extends React.Component {
         this.setState(this.step8Texts);
       }
 
+      // if (this.state.currentStep === 8) {
+      //   this.setState(this.step1);
+      //   this.setState(this.step9);
+      //   this.setState(this.step9Texts);
+      // }
+
       // Increase currentStep after a step was executed
       this.setState((state) => { return { currentStep: state.currentStep += 1 } });
     }
@@ -433,6 +439,8 @@ class Exercise23 extends React.Component {
     );
     return { description: description };
   };
+
+
 
   render() {
     return (
