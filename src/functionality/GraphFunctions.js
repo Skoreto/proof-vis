@@ -19,6 +19,48 @@ export function updateNode(nodesState, nodeIndex, background, label) {
 }
 
 /**
+ * Method for updating node properties and its label font properties.
+ * @param nodesState - Array of nodes from the state of component.
+ * @param nodeIndex - Index of node in the array.
+ * @param background - Fill color of the node.
+ * @param label - Text inside the node.
+ * @param margin - Label margin inside the node.
+ * @param fontSize - Font size of the label.
+ * @returns {ReadonlyArray<any> | ReadonlySet<any> | ReadonlyMap<any, any> | any}
+ */
+export function updateNodeFont(nodesState, nodeIndex, background, label, margin, fontSize) {
+  return imHelp(nodesState, { 
+    [nodeIndex]: { 
+      color: { $set: { background: background } },
+      label: { $set: label },
+      margin: { $set: margin },
+      font: { $set: { size: fontSize } },
+    }
+  });
+}
+
+/**
+ * Method for updating node properties and its label font properties.
+ * @param nodesState - Array of nodes from the state of component.
+ * @param nodeIndex - Index of node in the array.
+ * @param background - Fill color of the node.
+ * @param label - Text inside the node.
+ * @param shape - Shape of the node.
+ * @param size - Size of the node.
+ * @returns {ReadonlyArray<any> | ReadonlySet<any> | ReadonlyMap<any, any> | any}
+ */
+export function updateNodeShape(nodesState, nodeIndex, background, label, shape, size) {
+  return imHelp(nodesState, { 
+    [nodeIndex]: { 
+      color: { $set: { background: background } },
+      label: { $set: label },
+      shape: { $set: shape },
+      size: { $set: size },
+    }
+  });
+}
+
+/**
  * Method for updating edge properties.
  * @param {Object[]} edgesState - Array of edges from the state of component.
  * @param {number} edgeIndex - Index of edge in the array.
