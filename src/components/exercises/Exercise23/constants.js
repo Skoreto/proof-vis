@@ -28,7 +28,7 @@ export const getProofBox = currentStep => {
       </div>
       <div className={3 === currentStep ? "proof-active" : ""}>
         <p>
-          <MN>\Rightarrow</MN> pak dle definice kružnice
+          <MN>\Rightarrow</MN> Pak dle definice kružnice
           <br/><MN>{'(u,x_2,...,x_k=v=y_l,y_{l-1},...y_2,y_1=u)'}</MN>
           <br/>je kružnice neobsahující hranu <MN>e</MN>.
         </p>
@@ -44,22 +44,23 @@ export const getProofBox = currentStep => {
         || (7 === currentStep)
         || (8 === currentStep)) ? "proof-active" : ""}>
         <p>
-          <MN>\Rightarrow</MN> pak máme dvě různé <MN>u-v</MN> cesty <MN>P_1=C_1-e=(u=x_1,x_2,...,x_k=v)</MN> a <MN>P_2=C_2-e=(u=y_1,y_2,...,y_l=v)</MN> a žádná z cest neobsahuje hranu <MN>e</MN>
+          <MN>\Rightarrow</MN> Pak máme dvě různé <MN>u-v</MN> cesty <MN>P_1=C_1-e=(u=x_1,x_2,...,x_k=v)</MN> a <MN>P_2=C_2-e=(u=y_1,y_2,...,y_l=v)</MN> a žádná z cest neobsahuje hranu <MN>e</MN>.
         </p>
       </div>
       <div className={9 === currentStep ? "proof-active" : ""}>
         <p>
-          <MN>\Rightarrow</MN> Pak existuje vrchol, ve kterém se cesty rozcházejí a také vrchol, ve kterém se cesty scházejí. 
+          <MN>\Rightarrow</MN> Pak existuje vrchol, ve kterém se cesty rozcházejí, a také vrchol, ve kterém se cesty scházejí. 
           <br />
-          <br />(Mohou to být vrcholy <MN>u</MN> a <MN>v</MN>)
+          <br />(Mohou to být vrcholy <MN>u</MN> a <MN>v</MN> nebo některé vnitřní.)
         </p>
       </div>
       <div className={'borderless' + (10 === currentStep ? " proof-active" : "")}>
         <p>
-          Pak podle definice kružnice je <MN>{'(x_i,x_{i+1},...,x_s = y_r,...,y_j=x_i)'}</MN> kružnice neobsahující hranu <MN>e</MN>, protože ani jedna z cest ji neobsahovala. <MN>\Box</MN>
+          Nechť prvním vrcholem, ve kterém se cesty rozcházejí, je <MN>{'x_i=y_j,i \\in \\{1,2,...,k \\}'}</MN>, <MN>{'j \\in \\{1,2,...,l \\}'}</MN> a vrchol, ve kterém se scházejí, je <MN>{'x_s=y_r'}</MN>, <MN>{'s \\in \\{1,2,...,k \\}'}</MN>, <MN>{'r \\in \\{1,2,...,l \\} \\wedge s > i \\wedge r > j'}</MN>.
         </p>
-        <p className="text-center">
-          <MN>\square</MN> Tím je dokázáno stanovené tvrzení.
+        <br />
+        <p>
+          Pak podle definice kružnice je <MN>{'(x_i,x_{i+1},...,x_s = y_r,...,y_j=x_i)'}</MN> kružnice neobsahující hranu <MN>e</MN>, protože ani jedna z cest ji neobsahovala. <MN>\Box</MN>
         </p>
       </div>
     </div>

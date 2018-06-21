@@ -49,11 +49,12 @@ export function updateNodeFont(nodesState, nodeIndex, background, label, margin,
  * @param size - Size of the node.
  * @returns {ReadonlyArray<any> | ReadonlySet<any> | ReadonlyMap<any, any> | any}
  */
-export function updateNodeShape(nodesState, nodeIndex, background, label, shape, size) {
+export function updateNodeShape(nodesState, nodeIndex, background, label, vadjust, shape, size) {
   return imHelp(nodesState, { 
     [nodeIndex]: { 
       color: { $set: { background: background } },
       label: { $set: label },
+      font: { $set: { vadjust: vadjust } },
       shape: { $set: shape },
       size: { $set: size },
     }
