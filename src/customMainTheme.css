@@ -91,8 +91,8 @@
 #proofBox {
   border: 1px solid rgba(235, 150, 0, 0.5);
   padding: 5px;
-  /* max-height: 500px; */
-  /*overflow-y: scroll;*/
+  max-height: 650px;
+  overflow-y: scroll;
 }
 
 #proofBox p {

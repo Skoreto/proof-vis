@@ -88,7 +88,7 @@ class Overview extends React.Component {
                           </ListGroupItem>
                         </ListGroup>
                         <ListGroup>
-                          <ListGroupItem bsStyle="info">Ostatní</ListGroupItem>
+                          <ListGroupItem bsStyle="info">Protipříklady</ListGroupItem>
                           <ListGroupItem 
                             href={process.env.PUBLIC_URL + "/priklad17a"}
                             to={process.env.PUBLIC_URL + "/priklad17a"}

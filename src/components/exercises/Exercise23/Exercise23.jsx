@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, Element , Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 import { initialExerciseState, events } from '../../../functionality/GlobalExerciseConstants';
 import {
   headingTitle,
@@ -50,6 +51,23 @@ class Exercise23 extends React.Component {
     this.clearAllTimers = clearAllTimers.bind(this);
     this.handlerSketchAllowance = handlerSketchAllowance.bind(this);
     this.handlerSelectedTool = handlerSelectedTool.bind(this);
+  }
+
+  componentDidMount() {
+    Events.scrollEvent.register('begin', function(to, element) {
+      console.log("begin", arguments);
+    });
+
+    Events.scrollEvent.register('end', function(to, element) {
+      console.log("end", arguments);
+    });
+
+    scrollSpy.update();
+  }
+
+  componentWillUnmount() {
+    Events.scrollEvent.remove('begin');
+    Events.scrollEvent.remove('end');
   }
 
   /**
@@ -115,12 +133,26 @@ class Exercise23 extends React.Component {
         this.setState(this.step1);
         this.setState(this.step9);
         this.setState(this.step9Texts);
+        scroller.scrollTo('proofPanel6', {
+          duration: 1500,
+          delay: 100,
+          smooth: true,
+          containerId: 'proofBox',
+          offset: 500, // Scrolls to element + 50 pixels down the page
+        })
       }
 
       if (this.state.currentStep === 9) {
         this.setState({ btnNextD: true });
         this.setState(this.step10);
         this.setState(this.step10Texts);
+        scroller.scrollTo('proofPanel7', {
+          duration: 1500,
+          delay: 100,
+          smooth: true,
+          containerId: 'proofBox',
+          offset: 500, // Scrolls to element + 50 pixels down the page
+        })
       }
 
       // Increase currentStep after a step was executed
