@@ -15,7 +15,7 @@ export const definitionPanel = (
 
 export const getProofBox = currentStep => {
   return (
-    <div className="bg-warning" id="proofBox">
+    <Element className="bg-warning" id="proofBox">
       <Element name="proofPanel1" className={1 === currentStep ? "proof-active" : ""}>
         <p>
           Nechť <MN>{'e=\\{u,v\\}'}</MN> a <MN>C_1 = (u=x_1,x_2,...,x_k=v,u)</MN> a <MN>C_2 = (u=y_1,y_2,...,y_l=v,u)</MN> jsou dvě různé kružnice, které obsahují hranu <MN>e</MN>.
@@ -64,6 +64,6 @@ export const getProofBox = currentStep => {
           Pak podle definice kružnice je <MN>{'(x_i,x_{i+1},...,x_s = y_r,...,y_j=x_i)'}</MN> kružnice neobsahující hranu <MN>e</MN>, protože ani jedna z cest ji neobsahovala. <MN>\Box</MN>
         </p>
       </Element>
-    </div>
+    </Element>
   )
 };

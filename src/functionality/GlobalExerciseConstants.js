@@ -130,3 +130,14 @@ export const initialExerciseState = {
  * GraphVis events object.
  */
 export const events = {};
+
+export const scrollOptions = {
+  duration: 800,
+  delay: 0,
+  smooth: 'linear',
+  containerId: 'proofBox',
+  offset: -245,
+  isDynamic: true,
+  ignoreCancelEvents: true,
+  spy: true
+}
