@@ -81,20 +81,19 @@ class Exercise23 extends React.Component {
   nextStep = () => {
     if (this.state.currentStep < 10) {
       if (this.state.currentStep === 0) {
-        scroller.scrollTo('proofPanel1', scrollOptions);
         this.setState({ btnPrevD: false });
         this.setState(this.step1);
         this.setState(this.step1Texts);
         this.network.moveTo(cameraPosition1);
       }
 
-      if (this.state.currentStep === 1) {
-        scroller.scrollTo('proofPanel2', scrollOptions);
+      if (this.state.currentStep === 1) {    
         this.step2Animation();
         let interval1 = setInterval(this.step2Animation, 6000);
         this.setState({ intervals: [interval1] });
         this.setState(this.step2Texts);
         this.network.moveTo(cameraPosition2);
+        scroller.scrollTo('proofPanel2', scrollOptions);
       }
 
       if (this.state.currentStep === 2) {
@@ -159,7 +158,6 @@ class Exercise23 extends React.Component {
       if (this.state.currentStep === 1) {
         this.setState({ btnPrevD: true });
         this.setState(this.stepReset);
-        scroll.scrollToTop(scrollOptions);
       }
 
       if (this.state.currentStep === 2) {
@@ -167,7 +165,7 @@ class Exercise23 extends React.Component {
         this.setState(this.step1);
         this.setState(this.step1Texts);
         this.network.moveTo(cameraPosition1);
-        scroller.scrollTo('proofPanel1', scrollOptions);
+        scroll.scrollToTop(scrollOptions);
       }
 
       if (this.state.currentStep === 3) {
@@ -198,7 +196,6 @@ class Exercise23 extends React.Component {
       if (this.state.currentStep === 6) {
         this.setState(this.step5);
         this.setState(this.step5Texts);
-        scroller.scrollTo('proofPanel5', scrollOptions);
       }
 
       if (this.state.currentStep === 7) {
@@ -217,6 +214,7 @@ class Exercise23 extends React.Component {
         this.setState(this.step1);
         this.setState(this.step8);
         this.setState(this.step8Texts);
+        scroller.scrollTo('proofPanel5', scrollOptions);
       }
 
       if (this.state.currentStep === 10) {
@@ -224,6 +222,7 @@ class Exercise23 extends React.Component {
         this.setState(this.step1);
         this.setState(this.step9);
         this.setState(this.step9Texts);
+        scroller.scrollTo('proofPanel6', scrollOptions);
       }
 
       // Reduce currentStep after a step was executed
@@ -379,9 +378,6 @@ class Exercise23 extends React.Component {
     );
     const repeatBox = (
       <div>
-        <Link activeClass="active" to="proofPanel3" spy={true} smooth={true} duration={250} containerId="proofBox" style={{ display: 'inline-block', margin: '20px' }}>
-            Go to first element inside container
-        </Link>
         <p>
           KRUŽNICE (Definice 1.8)
           <br />Kružnice délky <MN>k, k \geq 3</MN>, v grafu <MN>G</MN> je posloupnost <MN>{'(v_{0}, e_{1}, v_{1},...,e_{k}, v_{0})'}</MN>, kde <MN>{'e_{i}=\\{v_{i-1}, v_{i}\\}'}</MN>, <MN>i=1,...,k-1</MN>, <MN>{'e_{k}=\\{v_{k-1}, v_{0}\\}'}</MN> a pro <MN>i \neq j</MN> platí <MN>{'v_{i} \\neq v_{j}'}</MN>.

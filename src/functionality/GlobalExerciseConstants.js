@@ -131,13 +131,13 @@ export const initialExerciseState = {
  */
 export const events = {};
 
+/**
+ * Options for proofBox scrolling to element.
+ */
 export const scrollOptions = {
   duration: 800,
   delay: 0,
   smooth: 'linear',
   containerId: 'proofBox',
-  offset: -245,
-  isDynamic: true,
-  ignoreCancelEvents: true,
-  spy: true
+  offset: -240,
 }

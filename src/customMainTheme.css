@@ -33,6 +33,63 @@
   text-align: center;
 }
 
+#proofBox {
+  border: 1px solid rgba(235, 150, 0, 0.5);
+  padding: 5px;
+  max-height: 650px;
+  overflow-y: scroll;
+}
+
+#proofBox p {
+  font-size: 17px;
+  text-align: left;
+  margin-bottom: 5px;
+  vertical-align: middle;
+}
+
+#proofBox p.text-center {
+  text-align: center;
+}
+
+#proofBox>div {
+  padding-top: 15px;
+  padding-bottom: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom: 1px solid rgba(235, 150, 0, 0.5);
+  /*max-height: 150px;
+    overflow-y: scroll;*/
+  opacity: 0.4;
+}
+
+#proofBox>div.borderless {
+  border-bottom: 0;
+}
+
+#proofBox .proof-active {
+  opacity: 1;
+}
+
+.repeat-box {
+  background-color: #fafafa;
+  border: 1px solid lightgrey;
+  padding: 10px 10px 0 10px;
+  margin-top: 15px;
+}
+
+.repeat-box p {
+  text-align: left;
+}
+
+#divSentenceBox {
+  background-color: #EEEEEE;
+  border: 2px solid #E0E0E0;
+  margin-top: 10px;
+  padding: 5px;
+  /*max-height: 150px;
+    overflow-y: scroll;*/
+}
+
 .over-component {
   position: absolute;
   min-width: 600px;
@@ -86,68 +143,6 @@
 
 .animation-panel {
   margin-left: 15px;
-}
-
-#proofBox {
-  border: 1px solid rgba(235, 150, 0, 0.5);
-  padding: 5px;
-  height: 150px;
-  overflow-y: scroll;
-}
-
-#proofBox p {
-  font-size: 15px;
-  text-align: left;
-  margin-bottom: 5px;
-  vertical-align: middle;
-}
-
-#proofBox p.text-center {
-  text-align: center;
-}
-
-#proofBox>div {
-  /* padding-top: 15px;
-  padding-bottom: 10px; */
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom: 1px solid rgba(235, 150, 0, 0.5);
-  /*max-height: 150px;
-    overflow-y: scroll;*/
-  opacity: 0.4;
-}
-
-#proofBox>div.borderless {
-  border-bottom: 0;
-}
-
-#proofBox .proof-active {
-  opacity: 1;
-  /*background-color: #a14646;*/
-}
-
-/* #proofBox .proof-active p {
-  font-size: 18px;
-} */
-
-.repeat-box {
-  background-color: #fafafa;
-  border: 1px solid lightgrey;
-  padding: 10px 10px 0 10px;
-  margin-top: 15px;
-}
-
-.repeat-box p {
-  text-align: left;
-}
-
-#divSentenceBox {
-  background-color: #EEEEEE;
-  border: 2px solid #E0E0E0;
-  margin-top: 10px;
-  padding: 5px;
-  /*max-height: 150px;
-    overflow-y: scroll;*/
 }
 
 .text-green {
@@ -297,7 +292,6 @@
   }
   #proofBox {
     min-width: 600px;
-    overflow: scroll;
   }
   #proofBox p {
     font-size: 14px;
