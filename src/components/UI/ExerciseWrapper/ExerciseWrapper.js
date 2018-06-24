@@ -34,13 +34,6 @@ const ExerciseWrapper = (props) => (
                   </div>
                 </M.Context>
               </div>
-              <div className={'repeat-box'} hidden={props.repeatBoxHidden}>
-                <M.Context input='tex'>
-                  <div>
-                    {props.repeatBoxContent}
-                  </div>
-                </M.Context>
-              </div>
             </aside>
           </Col>
           <Col xs={12} md={12} lg={7}>
@@ -131,6 +124,13 @@ const ExerciseWrapper = (props) => (
                     <FontAwesomeIcon icon={faRedoAlt} />
                   </Button>
                 </span>
+              </div>
+              <div className={'repeat-box'} hidden={props.repeatBoxHidden}>
+                <M.Context input='tex'>
+                  <div>
+                    {props.repeatBoxContent}
+                  </div>
+                </M.Context>
               </div>
             </main>
           </Col>

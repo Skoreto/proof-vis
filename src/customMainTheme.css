@@ -81,6 +81,7 @@
 
 .repeat-box p {
   text-align: left;
+  font-size: 16px;
 }
 
 #divSentenceBox {
@@ -338,6 +339,6 @@
     /* musí mít stejnou výšku jako patička */
   }
   .page-wrapper {
-    min-height: 700px;
+    min-height: 830px;
   }
 }

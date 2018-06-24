@@ -140,4 +140,6 @@ export const scrollOptions = {
   smooth: 'linear',
   containerId: 'proofBox',
   offset: -240,
+  // Prevent canceling of scroll by fast switching between steps
+  ignoreCancelEvents: true,
 }
