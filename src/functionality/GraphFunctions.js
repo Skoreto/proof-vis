@@ -244,3 +244,19 @@ export function handlerSelectedTool(tool) {
     }
   }
 }
+
+/**
+ * Returns proofBox scroll options to element corrected by actual scroll position of window.
+ * @param {number} windowScrollY - Y scroll position of window in pixels.
+ */
+export function getScrollOptions(windowScrollY) {
+  return {
+    duration: 800,
+    delay: 0,
+    smooth: 'linear',
+    containerId: 'proofBox',
+    offset: (-240 + windowScrollY),
+    // Prevent canceling of scroll by fast switching between steps
+    ignoreCancelEvents: true,
+  }
+}

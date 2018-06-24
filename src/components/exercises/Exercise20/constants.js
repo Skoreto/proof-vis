@@ -44,10 +44,10 @@ export const getProofBox = currentStep => {
       </div>
       <div className={'borderless' + (7 === currentStep ? " proof-active" : "")}>
         <p>
-          Poté dle definice kružnice platí, že <MN>x</MN>-<MN>y</MN> cesta <MN>{'P_{xy}'}</MN> spolu s hranou <MN>{'e=\\{x,y\\}'}</MN> tvoří kružnici v <MN>G</MN> obsahující  hranu <MN>e</MN>.
+          Pak podle definice kružnice platí, že cesta <MN>{'P_{xy}'}</MN> spolu s hranou <MN>{'e=\\{x,y\\}'}</MN> tvoří v <MN>G</MN> kružnici obsahující hranu <MN>e</MN>.
         </p>
         <p className="text-center">
-          <MN>\dagger</MN> Tím je dokázáno stanovené tvrzení.
+          Tím je dokázáno stanovené tvrzení. <MN>\Box</MN>
         </p>
       </div>
     </div>

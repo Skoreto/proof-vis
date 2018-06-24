@@ -53,6 +53,10 @@
   text-align: center;
 }
 
+#proofBox p.align-right {
+  text-align: right;
+}
+
 #proofBox>div {
   padding-top: 15px;
   padding-bottom: 10px;

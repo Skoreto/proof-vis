@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Element , Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
+import { Element } from 'react-scroll'
 import DefinitionPanel from '../../../components/UI/DefinitionPanel/DefinitionPanel';
 import MN from '../../../components/MathJax/MathJaxNode';
 
