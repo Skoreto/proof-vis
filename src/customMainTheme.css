@@ -34,10 +34,11 @@
 }
 
 #proofBox {
+  direction: rtl;
   border: 1px solid rgba(235, 150, 0, 0.5);
   padding: 5px;
   max-height: 650px;
-  overflow-y: scroll;
+  overflow: auto;
 }
 
 #proofBox p {
@@ -45,6 +46,7 @@
   text-align: left;
   margin-bottom: 5px;
   vertical-align: middle;
+  direction:ltr;
 }
 
 #proofBox p.text-center {
