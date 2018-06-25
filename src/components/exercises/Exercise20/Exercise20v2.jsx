@@ -186,15 +186,15 @@ class Exercise20v2 extends React.Component {
       graphVis: {
         nodes: [
           { id: 1, x: -180, y: -40, color: { background: '#ffff08' }, label: '   ' },
-          { id: 2, x: -40, y: -100, color: { background: '#ffff08' }, label: '   ' },
+          { id: 2, x: -40, y: -100, color: { background: '#ffff08' }, label: ' x ' },
           { id: 3, x: -30, y: 50, color: { background: '#ffff08' }, label: '   ' },
-          { id: 4, x: 110, y: -50, color: { background: '#ffff08' }, label: '   ' },
+          { id: 4, x: 110, y: -50, color: { background: '#ffff08' }, label: ' y ' },
           { id: 5, x: 120, y: 80, color: { background: '#ffff08' }, label: '   ' },
         ],
         edges: [
           { id: 1, from: 1, to: 2 },
           { id: 2, from: 2, to: 3 },
-          { id: 3, from: 2, to: 4 },
+          { id: 3, from: 2, to: 4, label: 'e' },
           { id: 4, from: 3, to: 5 },
           { id: 5, from: 4, to: 5 },
         ]
@@ -203,7 +203,7 @@ class Exercise20v2 extends React.Component {
   };
 
   step1Texts = () => {
-    const description = (<p>Sestrojení příkladu souvislého grafu <MN>G</MN>.</p>);
+    const description = (<p>Sestrojení příkladu souvislého grafu <MN>G</MN>, kde existuje hrana <MN>e</MN>, která není most.</p>);
     const repeatBox = (
       <div>
         <p>DEFINICE MOSTU (1.11)
@@ -230,12 +230,16 @@ class Exercise20v2 extends React.Component {
   };
 
   step2Texts = () => {
-    const description = (
-      <p>
-        Zvolení hrany <MN>{'e=\\{x,y\\}'}</MN>, která není mostem, a libovolných vrcholů <MN>u</MN> a <MN>v</MN>.
-      </p>
+    const description = (<p>Zvolení libovolných vrcholů <MN>u</MN> a <MN>v</MN>.</p>);
+    const repeatBox = (
+      <div>
+        <p>DEFINICE SOUVISLÉHO GRAFU (1.9)
+          <br />Souvislý graf je graf, ve kterém mezi každými jeho dvěma vrcholy existuje cesta.
+        </p>
+      </div>
     );
-    return { description: description };
+
+    return { description: description, repeatBoxHidden: false, repeatBoxContent: repeatBox };
   };
 
   step3 = (state) => {
@@ -258,6 +262,23 @@ class Exercise20v2 extends React.Component {
       </p>
     );
     return { description: description, repeatBoxHidden: true, repeatBoxContent: '' };
+  };
+
+  step3Texts = () => {
+    const description = (
+      <p>
+        Příklad sestrojení <MN>u</MN>-<MN>v</MN> cesty <MN>{'P_{uv}'}</MN> v grafu <MN>G</MN>.
+      </p>
+    );
+    const repeatBox = (
+      <div>
+        <p>DEFINICE SOUVISLÉHO GRAFU (1.9)
+          <br />Souvislý graf je graf, ve kterém mezi každými jeho dvěma vrcholy existuje cesta.
+        </p>
+      </div>
+    );
+
+    return { description: description, repeatBoxHidden: false, repeatBoxContent: repeatBox };
   };
 
   step4 = (state) => {

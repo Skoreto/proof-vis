@@ -22,12 +22,12 @@ export const getProofBox = currentStep => {
           <br />V tomto případě bude znít: <cite><q>Jestliže existuje hrana v <MN>G</MN>, která není most, pak v <MN>G</MN> existuje kružnice.</q></cite>
         </p>
       </div>
-      <div className={(2 === currentStep) || (3 === currentStep) ? "proof-active" : ""}>
+      <div className={2 === currentStep ? "proof-active" : ""}>
         <p>
-          Pokud <MN>{'e=\\{x,y\\}'}</MN> není most v <MN>G</MN>, poté z definice mostu platí, že graf <MN>G-e</MN> má stejný počet komponent jako <MN>G</MN> a platí:
+          Pokud existuje hrana <MN>{'e=\\{x,y\\}'}</MN>, která není most v <MN>G</MN>, poté z definice mostu platí, že graf <MN>G-e</MN> má stejný počet komponent jako <MN>G</MN>.
         </p>
       </div>
-      <div className={4 === currentStep ? "proof-active" : ""}>
+      <div className={(3 === currentStep) || (4 === currentStep) ? "proof-active" : ""}>
         <p>
           Protože uvažujeme souvislý graf <MN>G</MN>, musí mezi libovolně zvolenými vrcholy <MN>u</MN> a <MN>v</MN> existovat cesta.
         </p>

@@ -15,12 +15,12 @@ export const definitionPanel = (
 export const getProofBox = currentStep => {
   return (
     <div className="bg-warning" id="proofBox">
-      <div className={(1 === currentStep) || (2 === currentStep) ? "proof-active" : ""}>
+      <div className={1 === currentStep ? "proof-active" : ""}>
         <p>
-          Pokud <MN>{'e=\\{x,y\\}'}</MN> není most v <MN>G</MN>, poté z definice mostu platí, že graf <MN>G-e</MN> má stejný počet komponent jako <MN>G</MN> a platí:
+          Pokud <MN>{'e=\\{x,y\\}'}</MN> není most v <MN>G</MN>, poté z definice mostu platí, že graf <MN>G-e</MN> má stejný počet komponent jako <MN>G</MN>.
         </p>
       </div>
-      <div className={3 === currentStep ? "proof-active" : ""}>
+      <div className={(2 === currentStep) || (3 === currentStep) ? "proof-active" : ""}>
         <p>
           Protože uvažujeme souvislý graf <MN>G</MN>, musí mezi libovolně zvolenými vrcholy <MN>u</MN> a <MN>v</MN> existovat cesta.
         </p>
