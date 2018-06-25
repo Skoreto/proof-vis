@@ -110,6 +110,8 @@
   min-width: 600px;
   height: 400px;
   z-index: 2;
+  background-color: #FFFFFF;
+  border: 1px solid lightgray;
 }
 
 .GraphBox {

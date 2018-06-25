@@ -20,9 +20,14 @@ const CustomNavbar = () => (
     </Navbar.Header>
     <Navbar.Collapse>
       <Nav>
-        <NavDropdown eventKey={1} title={
+        <NavDropdown
+          eventKey={1}
+          title={
             <span><FontAwesomeIcon icon={faArrowRight} /> Důkazy přímo</span>
-          } id="basic-nav-dropdown" className={"nav-item"}>
+          }
+          id="basic-nav-dropdown"
+          className={"nav-item"}
+        >
           {/* <MenuItem eventKey={1.1} componentClass={Link} href="/priklad20svg" to="/priklad20svg">
                         Příklad 20 (SVG)
                     </MenuItem> */}
@@ -39,14 +44,26 @@ const CustomNavbar = () => (
             Příklad 26 (verze 2)
           </MenuItem>
         </NavDropdown>
-        <NavDropdown eventKey={2} title={
+        <NavDropdown
+          eventKey={2}
+          title={
             <span><FontAwesomeIcon icon={faSyncAlt} /> Důkazy nepřímo</span>
-          } id="basic-nav-dropdown" className={"nav-item"}>
-          {/* <MenuItem eventKey={2.1}>Příklad 21</MenuItem> */}
+          }
+          id="basic-nav-dropdown"
+          className={"nav-item"}
+        >
+          <MenuItem eventKey={2.1} componentClass={Link} href="/priklad21" to="/priklad21">
+            Příklad 21
+          </MenuItem>
         </NavDropdown>
-        <NavDropdown eventKey={3} title={
+        <NavDropdown
+          eventKey={3}
+          title={
             <span><FontAwesomeIcon icon={faBolt} /> Důkazy sporem</span>
-          } id="basic-nav-dropdown" className={"nav-item"}>
+          }
+          id="basic-nav-dropdown"
+          className={"nav-item"}
+        >
           {/* <MenuItem eventKey={3.1}>Příklad 19</MenuItem> */}
         </NavDropdown>
         <NavDropdown eventKey={4} title="Protipříklady" id="basic-nav-dropdown" className={"nav-item"}>
