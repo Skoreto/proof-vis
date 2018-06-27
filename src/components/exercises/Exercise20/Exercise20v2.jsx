@@ -261,15 +261,6 @@ class Exercise20v2 extends React.Component {
         Příklad sestrojení <MN>u</MN>-<MN>v</MN> cesty <MN>{'P_{uv}'}</MN> v grafu <MN>G</MN>.
       </p>
     );
-    return { description: description, repeatBoxHidden: true, repeatBoxContent: '' };
-  };
-
-  step3Texts = () => {
-    const description = (
-      <p>
-        Příklad sestrojení <MN>u</MN>-<MN>v</MN> cesty <MN>{'P_{uv}'}</MN> v grafu <MN>G</MN>.
-      </p>
-    );
     const repeatBox = (
       <div>
         <p>DEFINICE SOUVISLÉHO GRAFU (1.9)

@@ -29,6 +29,7 @@ export const getProofBox = currentStep => {
       </div>
       <div className={(3 === currentStep) || (4 === currentStep) ? "proof-active" : ""}>
         <p>
+          Před následující úvahou zvolíme libovolné vrcholy u a v, mezi kterými lze sestrojit cestu procházející přes hranu e. (Uvažujeme i možnost nesouvislého grafu.)
           Protože uvažujeme souvislý graf <MN>G</MN>, musí mezi libovolně zvolenými vrcholy <MN>u</MN> a <MN>v</MN> existovat cesta.
         </p>
       </div>
