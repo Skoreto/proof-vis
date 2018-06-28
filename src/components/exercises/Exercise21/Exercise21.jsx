@@ -407,8 +407,8 @@ class Exercise21 extends React.Component {
   };
 
   step8 = () => {
-    let timeout1 = setTimeout(() => { this.setState(this.step7a); }, 500);
-    let timeout2 = setTimeout(() => { this.setState(this.step7b); }, 2000);
+    let timeout1 = setTimeout(() => { this.setState(this.step8a); }, 500);
+    let timeout2 = setTimeout(() => { this.setState(this.step8b); }, 2000);
 
     this.setState({ timeouts: [timeout1, timeout2] });
   };

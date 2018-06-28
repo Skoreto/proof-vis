@@ -29,8 +29,9 @@ export const getProofBox = currentStep => {
       </div>
       <div className={(3 === currentStep) || (4 === currentStep) ? "proof-active" : ""}>
         <p>
-          Před následující úvahou zvolíme libovolné vrcholy u a v, mezi kterými lze sestrojit cestu procházející přes hranu e. (Uvažujeme i možnost nesouvislého grafu.)
-          Protože uvažujeme souvislý graf <MN>G</MN>, musí mezi libovolně zvolenými vrcholy <MN>u</MN> a <MN>v</MN> existovat cesta.
+          Před následující úvahou zvolíme libovolné vrcholy u a v, mezi kterými lze sestrojit cestu procházející přes hranu e. 
+          <br />
+          <br /> <i>Poznámka: V případě nesouvislého grafu není možné sestrojit cestu mezi všemi dvojicemi vrcholů.</i>
         </p>
       </div>
       <div className={5 === currentStep ? "proof-active" : ""}>
@@ -52,10 +53,10 @@ export const getProofBox = currentStep => {
       </div>
       <div className={'borderless' + (8 === currentStep ? " proof-active" : "")}>
         <p>
-          Pak podle definice kružnice platí, že cesta <MN>{'P_{xy}'}</MN> spolu s hranou <MN>{'e=\\{x,y\\}'}</MN> tvoří v <MN>G</MN> kružnici obsahující hranu <MN>e</MN>.
+          Pak podle definice kružnice platí, že cesta <MN>{'P_{xy}'}</MN> spolu s hranou <MN>{'e=\\{x,y\\}'}</MN> tvoří v <MN>G</MN> kružnici.
         </p>
-        <p className="text-center">
-          Tím je dokázáno také původní tvrzení. <MN>\Box</MN>
+        <p>
+          Hrana, která není most, tedy nutně musí ležet na kružnici. Tím je zárověň dokázáno původní ekvivalentní tvrzení. <MN>\Box</MN>
         </p>
       </div>
     </div>
