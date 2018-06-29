@@ -1,6 +1,6 @@
 import React from 'react';
-import { scrollSpy, scroller } from 'react-scroll'
 import { initialExerciseState, events } from '../../../functionality/GlobalExerciseConstants';
+import { scrollSpy, scroller } from 'react-scroll';
 import {
   headingTitle,
   breadcrumbsCurrent,

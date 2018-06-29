@@ -1,5 +1,6 @@
 import React from 'react';
 import { initialExerciseState, events } from '../../../functionality/GlobalExerciseConstants';
+import { scrollSpy, scroller } from 'react-scroll';
 import {
   headingTitle,
   breadcrumbsCurrent,
@@ -15,6 +16,7 @@ import {
   clearAllTimers,
   handlerSketchAllowance,
   handlerSelectedTool,
+  getScrollOptions,
 } from '../../../functionality/GraphFunctions';
 import ExerciseWrapper from '../../../components/UI/ExerciseWrapper/ExerciseWrapper';
 import MN from '../../../components/MathJax/MathJaxNode';
@@ -72,11 +74,13 @@ class Exercise21 extends React.Component {
         this.setState(this.step2);
         this.setState(this.step2Texts);
         this.network.moveTo(cameraPosition1);
+        scroller.scrollTo('proofPanel2', getScrollOptions(window.scrollY));
       }
 
       if (this.state.currentStep === 2) {
         this.setState(this.step3);
         this.setState(this.step3Texts);
+        scroller.scrollTo('proofPanel3', getScrollOptions(window.scrollY));
       }
 
       if (this.state.currentStep === 3) {
@@ -88,17 +92,20 @@ class Exercise21 extends React.Component {
         this.setState(this.step5);
         this.setState(this.step5Texts);
         this.network.moveTo(cameraPosition2);
+        scroller.scrollTo('proofPanel4', getScrollOptions(window.scrollY));
       }
 
       if (this.state.currentStep === 5) {
         this.setState(this.step6);
         this.setState(this.step6Texts);
         this.network.moveTo(cameraPosition3);
+        scroller.scrollTo('proofPanel5', getScrollOptions(window.scrollY));
       }
 
       if (this.state.currentStep === 6) {
         this.setState(this.step7Texts);
         this.network.moveTo(cameraPosition1);
+        scroller.scrollTo('proofPanel6', getScrollOptions(window.scrollY));
       }
 
       if (this.state.currentStep === 7) {
@@ -107,6 +114,7 @@ class Exercise21 extends React.Component {
         let interval1 = setInterval(this.step8, 2000);
         this.setState({ interval1: interval1 });
         this.setState(this.step8Texts);
+        scroller.scrollTo('proofPanel7', getScrollOptions(window.scrollY));
       }
 
       // Increase currentStep after a step was executed
@@ -124,12 +132,14 @@ class Exercise21 extends React.Component {
       if (this.state.currentStep === 2) {
         this.setState(this.step1SVGContent);
         this.setState(this.step1Texts);
+        scroller.scrollTo('proofPanel1', getScrollOptions(window.scrollY));
       }
 
       if (this.state.currentStep === 3) {
         this.setState(this.stepReset);
         this.setState(this.step2);
         this.setState(this.step2Texts);
+        scroller.scrollTo('proofPanel2', getScrollOptions(window.scrollY));
       }
 
       if (this.state.currentStep === 4) {
@@ -147,6 +157,7 @@ class Exercise21 extends React.Component {
         this.setState(this.step4);
         this.setState(this.step4Texts);
         this.network.moveTo(cameraPosition1);
+        scroller.scrollTo('proofPanel3', getScrollOptions(window.scrollY));
       }
 
       if (this.state.currentStep === 6) {
@@ -157,11 +168,13 @@ class Exercise21 extends React.Component {
         this.setState(this.step5);
         this.setState(this.step5Texts);
         this.network.moveTo(cameraPosition2);
+        scroller.scrollTo('proofPanel4', getScrollOptions(window.scrollY));
       }
 
       if (this.state.currentStep === 7) {
         this.setState(this.step6Texts);
         this.network.moveTo(cameraPosition3);
+        scroller.scrollTo('proofPanel5', getScrollOptions(window.scrollY));
       }
 
       if (this.state.currentStep === 8) {
@@ -175,6 +188,7 @@ class Exercise21 extends React.Component {
         this.setState(this.step5);
         this.setState(this.step6);
         this.setState(this.step7Texts);
+        scroller.scrollTo('proofPanel6', getScrollOptions(window.scrollY));
       }
 
       // Reduce currentStep after a step was executed
@@ -195,24 +209,18 @@ class Exercise21 extends React.Component {
   step1SVGContent = () => {
     const svgContent = (
       <svg>
-        {/* <text textAnchor={'middle'} x={300} y={50} stroke={'black'} strokeWidth={1} fontSize={22}>
-          Zkouška znaků &forall; ⇒ ⇔ <tspan font-style='italic'>&isin; italic</tspan>
-        </text> */}
         <text textAnchor={'middle'} x={318} y={80} fill={'green'} strokeWidth={0} fontSize={26}>
           A: v <tspan font-style='italic'>G</tspan> neexistuje kružnice
         </text>
         <text textAnchor={'middle'} x={325} y={110} fill={'red'} strokeWidth={0} fontSize={26}>
           B: každá hrana v <tspan font-style='italic'>G</tspan> je most 
         </text>
-
         <text textAnchor={'middle'} x={325} y={180} stroke={'black'} strokeWidth={0} fontSize={28}>
           (<tspan fill={'green'}>A</tspan>⇒<tspan fill={'red'}>B</tspan>) ⇔ (<tspan fill={'red'}>&not;B</tspan>&rArr;<tspan fill={'green'}>&not;A</tspan>)
         </text>
-
         <text textAnchor={'middle'} x={325} y={250} fill={'red'} strokeWidth={0} fontSize={26}>
           &not;B: existuje hrana v <tspan font-style='italic'>G</tspan>, která není most
         </text>
-
         <text textAnchor={'middle'} x={245} y={290} fill={'green'} strokeWidth={0} fontSize={26}>
           &not;A: v <tspan font-style='italic'>G</tspan> existuje kružnice
         </text>
