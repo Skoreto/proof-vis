@@ -53,3 +53,21 @@ export const getProofBox = currentStep => {
     </div>
   )
 };
+
+export const cameraPosition1 = {
+  position: { x: 0, y: -10 }, 
+  scale: 1.4,
+  animation: { duration: 1500, easingFunction: "easeInOutQuad" },
+};
+
+export const cameraPosition2 = {
+  position: { x: 170, y: -10 }, 
+  scale: 0.82,
+  animation: { duration: 1000, easingFunction: "easeInOutQuad" },
+};
+
+export const cameraPosition3 = {
+  position: { x: 400, y: -10 }, 
+  scale: 1.4,
+  animation: { duration: 4000, easingFunction: "easeInOutQuad" },
+};

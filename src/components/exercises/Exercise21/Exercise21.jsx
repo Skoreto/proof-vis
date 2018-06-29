@@ -1,12 +1,15 @@
 import React from 'react';
 import { initialExerciseState, events } from '../../../functionality/GlobalExerciseConstants';
-import { scrollSpy, scroller } from 'react-scroll';
+import { scroller } from 'react-scroll';
 import {
   headingTitle,
   breadcrumbsCurrent,
   stepSum,
   definitionPanel,
   getProofBox,
+  cameraPosition1,
+  cameraPosition2,
+  cameraPosition3,
 } from './constants';
 import {
   updateNode,
@@ -21,29 +24,10 @@ import {
 import ExerciseWrapper from '../../../components/UI/ExerciseWrapper/ExerciseWrapper';
 import MN from '../../../components/MathJax/MathJaxNode';
 
-const cameraPosition1 = {
-  position: { x: 0, y: -10 }, 
-  scale: 1.4,
-  animation: { duration: 1500, easingFunction: "easeInOutQuad" },
-};
-
-const cameraPosition2 = {
-  position: { x: 170, y: -10 }, 
-  scale: 0.82,
-  animation: { duration: 1000, easingFunction: "easeInOutQuad" },
-};
-
-const cameraPosition3 = {
-  position: { x: 400, y: -10 }, 
-  scale: 1.4,
-  animation: { duration: 4000, easingFunction: "easeInOutQuad" },
-};
-
 class Exercise21 extends React.Component {
   constructor(props) {
     super(props);
     this.state = initialExerciseState;
-    const network = null;
     this.initNetworkInstance = this.initNetworkInstance.bind(this);
     this.updateNode = updateNode.bind(this);
     this.updateEdge = updateEdge.bind(this);
@@ -210,19 +194,19 @@ class Exercise21 extends React.Component {
     const svgContent = (
       <svg>
         <text textAnchor={'middle'} x={318} y={80} fill={'green'} strokeWidth={0} fontSize={26}>
-          A: v <tspan font-style='italic'>G</tspan> neexistuje kružnice
+          A: v <tspan fontStyle='italic'>G</tspan> neexistuje kružnice
         </text>
         <text textAnchor={'middle'} x={325} y={110} fill={'red'} strokeWidth={0} fontSize={26}>
-          B: každá hrana v <tspan font-style='italic'>G</tspan> je most 
+          B: každá hrana v <tspan fontStyle='italic'>G</tspan> je most 
         </text>
         <text textAnchor={'middle'} x={325} y={180} stroke={'black'} strokeWidth={0} fontSize={28}>
           (<tspan fill={'green'}>A</tspan>⇒<tspan fill={'red'}>B</tspan>) ⇔ (<tspan fill={'red'}>&not;B</tspan>&rArr;<tspan fill={'green'}>&not;A</tspan>)
         </text>
         <text textAnchor={'middle'} x={325} y={250} fill={'red'} strokeWidth={0} fontSize={26}>
-          &not;B: existuje hrana v <tspan font-style='italic'>G</tspan>, která není most
+          &not;B: existuje hrana v <tspan fontStyle='italic'>G</tspan>, která není most
         </text>
         <text textAnchor={'middle'} x={245} y={290} fill={'green'} strokeWidth={0} fontSize={26}>
-          &not;A: v <tspan font-style='italic'>G</tspan> existuje kružnice
+          &not;A: v <tspan fontStyle='italic'>G</tspan> existuje kružnice
         </text>
       </svg>
     );

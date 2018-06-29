@@ -6,6 +6,9 @@ import {
   stepSum,
   definitionPanel,
   getProofBox,
+  cameraPosition1,
+  cameraPosition2,
+  cameraPosition3,
 } from './constants';
 import {
   updateNode,
@@ -19,29 +22,10 @@ import {
 import ExerciseWrapper from '../../../components/UI/ExerciseWrapper/ExerciseWrapper';
 import MN from '../../../components/MathJax/MathJaxNode';
 
-const cameraPosition1 = {
-  position: { x: 0, y: -10 }, 
-  scale: 1.4,
-  animation: { duration: 1500, easingFunction: "easeInOutQuad" },
-};
-
-const cameraPosition2 = {
-  position: { x: 170, y: -10 }, 
-  scale: 0.82,
-  animation: { duration: 1000, easingFunction: "easeInOutQuad" },
-};
-
-const cameraPosition3 = {
-  position: { x: 400, y: -10 }, 
-  scale: 1.4,
-  animation: { duration: 4000, easingFunction: "easeInOutQuad" },
-};
-
 class Exercise20v2 extends React.Component {
   constructor(props) {
     super(props);
     this.state = initialExerciseState;
-    const network = null;
     this.initNetworkInstance = this.initNetworkInstance.bind(this);
     this.updateNode = updateNode.bind(this);
     this.updateEdge = updateEdge.bind(this);

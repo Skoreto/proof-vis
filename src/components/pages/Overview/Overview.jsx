@@ -81,6 +81,12 @@ class Overview extends React.Component {
                         </ListGroup>
                         <ListGroup>
                           <ListGroupItem bsStyle="warning">Důkazy nepřímo</ListGroupItem>
+                          <ListGroupItem 
+                            href={process.env.PUBLIC_URL + "/priklad21"}
+                            to={process.env.PUBLIC_URL + "/priklad21"}
+                          >
+                            Příklad 21
+                          </ListGroupItem>
                         </ListGroup>
                         <ListGroup>
                           <ListGroupItem bsStyle="danger">
