@@ -1,5 +1,9 @@
 import React from 'react';
-import { initialExerciseState, events } from '../../../functionality/GlobalExerciseConstants';
+import {
+  initialExerciseState,
+  events,
+  palette,
+} from '../../../functionality/GlobalExerciseConstants';
 import { scroller } from 'react-scroll';
 import {
   headingTitle,
@@ -287,14 +291,14 @@ class Exercise21 extends React.Component {
   };
 
   step4 = (state) => {
-    let newNodes = this.updateNode(state.graphVis.nodes, 0, '#B39DDB', ' u ');
-    newNodes = this.updateNode(newNodes, 1, '#B39DDB', ' x ');
-    newNodes = this.updateNode(newNodes, 3, '#B39DDB', ' y ');
-    newNodes = this.updateNode(newNodes, 4, '#B39DDB', ' v ');
+    let newNodes = this.updateNode(state.graphVis.nodes, 0, palette.purple, ' u ');
+    newNodes = this.updateNode(newNodes, 1, palette.purple, ' x ');
+    newNodes = this.updateNode(newNodes, 3, palette.purple, ' y ');
+    newNodes = this.updateNode(newNodes, 4, palette.purple, ' v ');
 
-    let newEdges = this.updateEdge(state.graphVis.edges, 0, '#B39DDB', 2, false, undefined);
-    newEdges = this.updateEdge(newEdges, 2, '#B39DDB', 2, false, ' e ');
-    newEdges = this.updateEdge(newEdges, 4, '#B39DDB', 2, false, undefined);
+    let newEdges = this.updateEdge(state.graphVis.edges, 0, palette.purple, 2, false, undefined);
+    newEdges = this.updateEdge(newEdges, 2, palette.purple, 2, false, ' e ');
+    newEdges = this.updateEdge(newEdges, 4, palette.purple, 2, false, undefined);
 
     return { graphVis: { nodes: newNodes, edges: newEdges } };
   };

@@ -130,3 +130,10 @@ export const initialExerciseState = {
  * GraphVis events object.
  */
 export const events = {};
+
+/**
+ * Palette of global color presets.
+ */
+export const palette = {
+  purple: '#B39DDB',
+};
