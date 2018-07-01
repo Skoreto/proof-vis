@@ -135,5 +135,9 @@ export const events = {};
  * Palette of global color presets.
  */
 export const palette = {
+  yellow: '#FFFF08',
+  black: '#000000',
+  white: '#FFFFFF',
   purple: '#B39DDB',
+  red: 'red',
 };
