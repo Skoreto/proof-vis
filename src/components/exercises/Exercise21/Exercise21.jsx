@@ -360,26 +360,26 @@ class Exercise21 extends React.Component {
 
   step6 = (state) => {
     let newNodes = this.updateNode(state.graphVis.nodes, 0, palette.yellow, '   ');
-    newNodes = this.updateNode(newNodes, 1, '#81C784', ' x ');
-    newNodes = this.updateNode(newNodes, 2, '#81C784', '   ');
-    newNodes = this.updateNode(newNodes, 3, '#81C784', ' y ');
-    newNodes = this.updateNode(newNodes, 4, '#81C784', '   ');
+    newNodes = this.updateNode(newNodes, 1, palette.green, ' x ');
+    newNodes = this.updateNode(newNodes, 2, palette.green, '   ');
+    newNodes = this.updateNode(newNodes, 3, palette.green, ' y ');
+    newNodes = this.updateNode(newNodes, 4, palette.green, '   ');
     newNodes = this.updateNode(newNodes, 5, palette.yellow, '   ');
-    newNodes = this.updateNode(newNodes, 6, '#81C784', ' x ');
-    newNodes = this.updateNode(newNodes, 7, '#81C784', '   ');
-    newNodes = this.updateNode(newNodes, 8, '#81C784', ' y ');
-    newNodes = this.updateNode(newNodes, 9, '#81C784', '   ');
+    newNodes = this.updateNode(newNodes, 6, palette.green, ' x ');
+    newNodes = this.updateNode(newNodes, 7, palette.green, '   ');
+    newNodes = this.updateNode(newNodes, 8, palette.green, ' y ');
+    newNodes = this.updateNode(newNodes, 9, palette.green, '   ');
 
     let newEdges = this.updateEdge(state.graphVis.edges, 0, palette.black, 1, false, undefined);
-    newEdges = this.updateEdge(newEdges, 1, '#81C784', 3, false, undefined);
+    newEdges = this.updateEdge(newEdges, 1, palette.green, 3, false, undefined);
     newEdges = this.updateEdge(newEdges, 2, palette.black, 1, false, ' e ');
-    newEdges = this.updateEdge(newEdges, 3, '#81C784', 3, false, undefined);
-    newEdges = this.updateEdge(newEdges, 4, '#81C784', 3, false, undefined);
+    newEdges = this.updateEdge(newEdges, 3, palette.green, 3, false, undefined);
+    newEdges = this.updateEdge(newEdges, 4, palette.green, 3, false, undefined);
     newEdges = this.updateEdge(newEdges, 5, palette.black, 1, false, undefined);
-    newEdges = this.updateEdge(newEdges, 6, '#81C784', 3, false, undefined);
+    newEdges = this.updateEdge(newEdges, 6, palette.green, 3, false, undefined);
     newEdges = this.updateEdge(newEdges, 7, palette.white, 2, false, '   ');
-    newEdges = this.updateEdge(newEdges, 8, '#81C784', 3, false, undefined);
-    newEdges = this.updateEdge(newEdges, 9, '#81C784', 3, false, undefined);
+    newEdges = this.updateEdge(newEdges, 8, palette.green, 3, false, undefined);
+    newEdges = this.updateEdge(newEdges, 9, palette.green, 3, false, undefined);
 
     return { graphVis: { nodes: newNodes, edges: newEdges } };
   };
@@ -410,7 +410,7 @@ class Exercise21 extends React.Component {
   };
 
   step8a = (state) => {
-    let newEdges = this.updateEdge(state.graphVis.edges, 2, '#81C784', 3, false, ' e ');
+    let newEdges = this.updateEdge(state.graphVis.edges, 2, palette.green, 3, false, ' e ');
     return { graphVis: { nodes: state.graphVis.nodes, edges: newEdges } };
   };
 

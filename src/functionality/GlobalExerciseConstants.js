@@ -139,5 +139,6 @@ export const palette = {
   black: '#000000',
   white: '#FFFFFF',
   purple: '#B39DDB',
-  red: 'red',
+  green: '#81C784',
+  red: '#F06292',
 };

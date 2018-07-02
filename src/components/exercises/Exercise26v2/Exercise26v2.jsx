@@ -1,5 +1,9 @@
 import React from 'react';
-import { initialExerciseState, events } from '../../../functionality/GlobalExerciseConstants';
+import {
+  initialExerciseState,
+  events,
+  palette,
+} from '../../../functionality/GlobalExerciseConstants';
 import {
   headingTitle,
   breadcrumbsCurrent,
@@ -131,14 +135,14 @@ class Exercise26gen extends React.Component {
     return {
       graphVis: {
         nodes: [
-          { id: 1, x: 0, y: -150, color: { background: '#ffff08' }, label: '   ' },
-          { id: 2, x: -70, y: -50, color: { background: '#ffff08' }, label: '   ' },
-          { id: 3, x: -140, y: 50, color: { background: '#ffff08' }, label: '   ' },
-          { id: 4, x: 0, y: 50, color: { background: '#ffff08' }, label: '   ' },
-          { id: 5, x: -70, y: 150, color: { background: '#ffff08' }, label: '   ' },
-          { id: 6, x: 70, y: 150, color: { background: '#ffff08' }, label: '   ' },
-          { id: 7, x: 70, y: -50, color: { background: '#ffff08' }, label: '   ' },
-          { id: 8, x: 140, y: 50, color: { background: '#ffff08' }, label: '   ' },
+          { id: 1, x: 0, y: -150, color: { background: palette.yellow }, label: '   ' },
+          { id: 2, x: -70, y: -50, color: { background: palette.yellow }, label: '   ' },
+          { id: 3, x: -140, y: 50, color: { background: palette.yellow }, label: '   ' },
+          { id: 4, x: 0, y: 50, color: { background: palette.yellow }, label: '   ' },
+          { id: 5, x: -70, y: 150, color: { background: palette.yellow }, label: '   ' },
+          { id: 6, x: 70, y: 150, color: { background: palette.yellow }, label: '   ' },
+          { id: 7, x: 70, y: -50, color: { background: palette.yellow }, label: '   ' },
+          { id: 8, x: 140, y: 50, color: { background: palette.yellow }, label: '   ' },
         ],
         edges: [
           { id: 1, from: 1, to: 2 },
@@ -190,16 +194,16 @@ class Exercise26gen extends React.Component {
   // }
 
   step2 = (state) => {
-    let newNodes = this.updateNode(state.graphVis.nodes, 0, '#B39DDB', '   ');
-    newNodes = this.updateNode(newNodes, 1, '#B39DDB', '   ');
-    newNodes = this.updateNode(newNodes, 3, '#B39DDB', '   ');
-    newNodes = this.updateNode(newNodes, 5, '#B39DDB', ' v ');
-    newNodes = this.updateNode(newNodes, 6, '#B39DDB', ' u ');
+    let newNodes = this.updateNode(state.graphVis.nodes, 0, palette.purple, '   ');
+    newNodes = this.updateNode(newNodes, 1, palette.purple, '   ');
+    newNodes = this.updateNode(newNodes, 3, palette.purple, '   ');
+    newNodes = this.updateNode(newNodes, 5, palette.purple, ' v ');
+    newNodes = this.updateNode(newNodes, 6, palette.purple, ' u ');
 
-    let newEdges = this.updateEdge(state.graphVis.edges, 0, '#B39DDB', 2, false, undefined);
-    newEdges = this.updateEdge(newEdges, 2, '#B39DDB', 2, false, undefined);
-    newEdges = this.updateEdge(newEdges, 4, '#B39DDB', 2, false, undefined);
-    newEdges = this.updateEdge(newEdges, 5, '#B39DDB', 2, false, undefined);
+    let newEdges = this.updateEdge(state.graphVis.edges, 0, palette.purple, 2, false, undefined);
+    newEdges = this.updateEdge(newEdges, 2, palette.purple, 2, false, undefined);
+    newEdges = this.updateEdge(newEdges, 4, palette.purple, 2, false, undefined);
+    newEdges = this.updateEdge(newEdges, 5, palette.purple, 2, false, undefined);
 
     return { graphVis: { nodes: newNodes, edges: newEdges }, descriptionBox: '' };
   };
@@ -234,16 +238,16 @@ class Exercise26gen extends React.Component {
   };
 
   step3a = (state) => {
-    let newNodes = this.updateNode(state.graphVis.nodes, 1, '#B39DDB', ' x ');
-    newNodes = this.updateNode(newNodes, 3, '#B39DDB', ' y ');
-    let newEdges = this.updateEdge(state.graphVis.edges, 2, '#F06292', 2, [8, 8], ' e ');
+    let newNodes = this.updateNode(state.graphVis.nodes, 1, palette.purple, ' x ');
+    newNodes = this.updateNode(newNodes, 3, palette.purple, ' y ');
+    let newEdges = this.updateEdge(state.graphVis.edges, 2, palette.red, 2, [8, 8], ' e ');
     return { graphVis: { nodes: newNodes, edges: newEdges } };
   };
 
   step3b = (state) => {
-    let newNodes = this.updateNode(state.graphVis.nodes, 1, '#B39DDB', ' x ');
-    newNodes = this.updateNode(newNodes, 3, '#B39DDB', ' y ');
-    let newEdges = this.updateEdge(state.graphVis.edges, 2, '#B39DDB', 2, false, ' e ');
+    let newNodes = this.updateNode(state.graphVis.nodes, 1, palette.purple, ' x ');
+    newNodes = this.updateNode(newNodes, 3, palette.purple, ' y ');
+    let newEdges = this.updateEdge(state.graphVis.edges, 2, palette.purple, 2, false, ' e ');
     return { graphVis: { nodes: newNodes, edges: newEdges } };
   };
 
@@ -265,9 +269,9 @@ class Exercise26gen extends React.Component {
   };
 
   step4a = (state) => {
-    let newNodes = this.updateNode(state.graphVis.nodes, 1, '#B39DDB', ' x ');
-    newNodes = this.updateNode(newNodes, 3, '#B39DDB', ' y ');
-    let newEdges = this.updateEdge(state.graphVis.edges, 2, '#FFFFFF', 2, false, '   ');
+    let newNodes = this.updateNode(state.graphVis.nodes, 1, palette.purple, ' x ');
+    newNodes = this.updateNode(newNodes, 3, palette.purple, ' y ');
+    let newEdges = this.updateEdge(state.graphVis.edges, 2, palette.white, 2, false, '   ');
     return { graphVis: { nodes: newNodes, edges: newEdges } };
   };
 
