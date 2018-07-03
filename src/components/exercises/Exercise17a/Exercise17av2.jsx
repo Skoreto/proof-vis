@@ -1,5 +1,9 @@
 import React from 'react';
-import { initialExerciseState, events } from '../../../functionality/GlobalExerciseConstants';
+import {
+  initialExerciseState,
+  events,
+  palette,
+} from '../../../functionality/GlobalExerciseConstants';
 import {
   headingTitle,
   breadcrumbsCurrent,
@@ -8,13 +12,13 @@ import {
   getProofBox,
 } from './constants';
 import {
-  updateNode, 
-  updateEdge, 
-  updateEdgeWithArrow, 
-  updateEdgeSmooth, 
-  addObjectArray, 
+  updateNode,
+  updateEdge,
+  updateEdgeWithArrow,
+  updateEdgeSmooth,
+  addObjectArray,
   clearAllTimers,
-  handlerSketchAllowance, 
+  handlerSketchAllowance,
   handlerSelectedTool,
 } from '../../../functionality/GraphFunctions';
 import ExerciseWrapper from '../../../components/UI/ExerciseWrapper/ExerciseWrapper';
@@ -132,15 +136,15 @@ class Exercise17av2 extends React.Component {
     return {
       graphVis: {
         nodes: [
-          { id: 1, x: -240, y: 0, color: { background: '#ffff08' }, label: ' u ' },
-          { id: 2, x: 0, y: 0, color: { background: '#ffff08' }, label: ' w ' },
-          { id: 3, x: 240, y: 0, color: { background: '#ffff08' }, label: ' v ' },
+          { id: 1, x: -240, y: 0, color: { background: palette.yellow }, label: ' u ' },
+          { id: 2, x: 0, y: 0, color: { background: palette.yellow }, label: ' w ' },
+          { id: 3, x: 240, y: 0, color: { background: palette.yellow }, label: ' v ' },
         ],
         edges: [
           { id: 1, from: 1, to: 2, label: 'e1' },
           { id: 2, from: 2, to: 3, label: 'e2' },
-        ]
-      }
+        ],
+      },
     };
   };
 
@@ -165,7 +169,7 @@ class Exercise17av2 extends React.Component {
   };
 
   step2a = (state) => {
-    let newNodes = this.updateNode(state.graphVis.nodes, 0, '#D1C4E9', ' u ');
+    let newNodes = this.updateNode(state.graphVis.nodes, 0, palette.lightpurple, ' u ');
     const description = (
       <p>
         Konstrukce sledu <MN>S_1 = (</MN><MN classes='text-purple'>u</MN><MN>,e_1,w,e_2,v)</MN>
@@ -176,7 +180,7 @@ class Exercise17av2 extends React.Component {
 
   step2b = (state) => {
     let newEdges = this.updateEdgeWithArrow(
-      state.graphVis.edges, 0, '#D1C4E9', 3, false, ' e1 ', true, false
+      state.graphVis.edges, 0, palette.lightpurple, 3, false, ' e1 ', true, false
     );
     const description = (
       <p>
@@ -187,9 +191,9 @@ class Exercise17av2 extends React.Component {
   };
 
   step2c = (state) => {
-    let newNodes = this.updateNode(state.graphVis.nodes, 1, '#D1C4E9', ' w ');
+    let newNodes = this.updateNode(state.graphVis.nodes, 1, palette.lightpurple, ' w ');
     let newEdges = this.updateEdgeWithArrow(
-      state.graphVis.edges, 0, '#D1C4E9', 3, false, ' e1 ', false, false
+      state.graphVis.edges, 0, palette.lightpurple, 3, false, ' e1 ', false, false
     );
     const description = (
       <p>
@@ -201,7 +205,7 @@ class Exercise17av2 extends React.Component {
 
   step2d = (state) => {
     let newEdges = this.updateEdgeWithArrow(
-      state.graphVis.edges, 1, '#D1C4E9', 3, false, ' e2 ', true, false
+      state.graphVis.edges, 1, palette.lightpurple, 3, false, ' e2 ', true, false
     );
     const description = (
       <p>
@@ -212,9 +216,9 @@ class Exercise17av2 extends React.Component {
   };
 
   step2e = (state) => {
-    let newNodes = this.updateNode(state.graphVis.nodes, 2, '#D1C4E9', ' v ');
+    let newNodes = this.updateNode(state.graphVis.nodes, 2, palette.lightpurple, ' v ');
     let newEdges = this.updateEdgeWithArrow(
-      state.graphVis.edges, 1, '#D1C4E9', 3, false, ' e2 ', false, false
+      state.graphVis.edges, 1, palette.lightpurple, 3, false, ' e2 ', false, false
     );
     const description = (
       <p>
@@ -262,19 +266,19 @@ class Exercise17av2 extends React.Component {
   };
 
   step3a = (state) => {
-    let newNodes = this.updateNode(state.graphVis.nodes, 0, '#D1C4E9', ' u ');
+    let newNodes = this.updateNode(state.graphVis.nodes, 0, palette.lightpurple, ' u ');
     return { graphVis: { nodes: newNodes, edges: state.graphVis.edges } };
   };
 
   step3b = (state) => {
     let newEdges = this.updateEdgeWithArrow(
-      state.graphVis.edges, 0, '#D1C4E9', 3, false, ' e1 ', true, false
+      state.graphVis.edges, 0, palette.lightpurple, 3, false, ' e1 ', true, false
     );
     return { graphVis: { nodes: state.graphVis.nodes, edges: newEdges } };
   };
 
   step3c = (state) => {
-    let newNodes = this.updateNode(state.graphVis.nodes, 1, '#D1C4E9', ' w ');
+    let newNodes = this.updateNode(state.graphVis.nodes, 1, palette.lightpurple, ' w ');
     return { graphVis: { nodes: newNodes, edges: this.state.graphVis.edges } };
   };
 
@@ -284,7 +288,7 @@ class Exercise17av2 extends React.Component {
         id: 3, 
         from: 2, 
         to: 1, 
-        color: { color: '#D1C4E9', hover: '#D1C4E9' }, 
+        color: { color: palette.lightpurple, hover: palette.lightpurple }, 
         width: 3,
         arrows: { to: { enabled: true } }, 
         smooth: { enabled: true, type: "curvedCW", roundness: 0.3 },
@@ -294,7 +298,7 @@ class Exercise17av2 extends React.Component {
   };
 
   step3f = (state) => {
-    let newNodes = this.updateNode(state.graphVis.nodes, 0, '#B39DDB', ' u ');
+    let newNodes = this.updateNode(state.graphVis.nodes, 0, palette.purple, ' u ');
     return { graphVis: { nodes: newNodes, edges: this.state.graphVis.edges } };
   };
 
@@ -304,7 +308,7 @@ class Exercise17av2 extends React.Component {
         id: 4, 
         from: 1, 
         to: 2, 
-        color: { color: '#D1C4E9', hover: '#D1C4E9' }, 
+        color: { color: palette.lightpurple, hover: palette.lightpurple }, 
         width: 3,
         arrows: { to: { enabled: true } }, 
         smooth: { enabled: true, type: "curvedCW", roundness: 0.3 },
@@ -314,19 +318,19 @@ class Exercise17av2 extends React.Component {
   };
 
   step3i = (state) => {
-    let newNodes = this.updateNode(state.graphVis.nodes, 1, '#B39DDB', ' w ');
+    let newNodes = this.updateNode(state.graphVis.nodes, 1, palette.purple, ' w ');
     return { graphVis: { nodes: newNodes, edges: state.graphVis.edges } };
   }; 
 
   step3j = (state) => {
     let newEdges = this.updateEdgeWithArrow(
-      state.graphVis.edges, 1, '#D1C4E9', 3, false, ' e2 ', true, false
+      state.graphVis.edges, 1, palette.lightpurple, 3, false, ' e2 ', true, false
     );
     return { graphVis: { nodes: state.graphVis.nodes, edges: newEdges } };
   };
 
   step3k = (state) => {
-    let newNodes = this.updateNode(state.graphVis.nodes, 2, '#D1C4E9', ' v ');
+    let newNodes = this.updateNode(state.graphVis.nodes, 2, palette.lightpurple, ' v ');
     return { graphVis: { nodes: newNodes, edges: state.graphVis.edges } };
   };
 

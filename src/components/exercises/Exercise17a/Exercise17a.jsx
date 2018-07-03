@@ -1,6 +1,10 @@
 import GraphVis from 'react-graph-vis';
 import React from 'react';
-import { initialExerciseState, events } from '../../../functionality/GlobalExerciseConstants';
+import {
+  initialExerciseState,
+  events,
+  palette,
+} from '../../../functionality/GlobalExerciseConstants';
 import {
   updateNode, 
   updateEdge, 
@@ -238,21 +242,21 @@ class Exercise17a extends React.Component {
   };
 
   step3d = (state) => {
-    let newNodes = this.updateNode(state.graphVis.nodes, 1, '#B39DDB', ' w ');
+    let newNodes = this.updateNode(state.graphVis.nodes, 1, palette.purple, ' w ');
     return { graphVis: { nodes: newNodes, edges: this.state.graphVis.edges } };
   };
 
   step3e = (state) => {
     let newEdges = this.updateEdgeWithArrow(
-      state.graphVis.edges, 0, '#B39DDB', 3, false, ' e1 ', false, true
+      state.graphVis.edges, 0, palette.purple, 3, false, ' e1 ', false, true
     );
     return { graphVis: { nodes: state.graphVis.nodes, edges: newEdges } };
   };
 
   step3f = (state) => {
-    let newNodes = this.updateNode(state.graphVis.nodes, 0, '#B39DDB', ' u ');
+    let newNodes = this.updateNode(state.graphVis.nodes, 0, palette.purple, ' u ');
     let newEdges = this.updateEdgeWithArrow(
-      state.graphVis.edges, 0, '#B39DDB', 3, false, ' e1 ', false, false
+      state.graphVis.edges, 0, palette.purple, 3, false, ' e1 ', false, false
     );
     return { graphVis: { nodes: newNodes, edges: newEdges } };
   };

@@ -1,5 +1,9 @@
 import React from 'react';
-import { initialExerciseState, events } from '../../../functionality/GlobalExerciseConstants';
+import {
+  initialExerciseState,
+  events,
+  palette,
+} from '../../../functionality/GlobalExerciseConstants';
 import { scrollSpy, scroller } from 'react-scroll';
 import {
   headingTitle,
@@ -7,6 +11,9 @@ import {
   stepSum,
   definitionPanel,
   getProofBox,
+  cameraPosition1,
+  cameraPosition2,
+  cameraPosition3,
 } from './constants';
 import {
   updateNode,
@@ -20,24 +27,6 @@ import {
 } from '../../../functionality/GraphFunctions';
 import ExerciseWrapper from '../../../components/UI/ExerciseWrapper/ExerciseWrapper';
 import MN from '../../../components/MathJax/MathJaxNode';
-
-const cameraPosition1 = {
-  position: { x: 0, y: 15 }, 
-  scale: 0.65,
-  animation: { duration: 1500, easingFunction: "easeInOutQuad" },
-};
-
-const cameraPosition2 = {
-  position: { x: 0, y: -130 }, 
-  scale: 1.15,
-  animation: { duration: 1500, easingFunction: "easeInOutQuad" },
-};
-
-const cameraPosition3 = {
-  position: { x: 0, y: 200 }, 
-  scale: 1.15,
-  animation: { duration: 1500, easingFunction: "easeInOutQuad" },
-};
 
 class Exercise23 extends React.Component {
   constructor(props) {
@@ -233,28 +222,28 @@ class Exercise23 extends React.Component {
     return {
       graphVis: {
         nodes: [
-          { id: 1, x: -240, y: -140, color: { background: '#ffff08' }, label: '   ' },
-          { id: 2, x: -140, y: -260, color: { background: '#ffff08' }, label: '   ' },
-          { id: 3, x: -140, y: -20, color: { background: '#ffff08' }, label: '   ' },
-          { id: 4, x: 0, y: -200, color: { background: '#ffff08' }, label: ' u ' },
-          { id: 5, x: 0, y: -80, color: { background: '#ffff08' }, label: ' v ' },
-          { id: 6, x: 140, y: -260, color: { background: '#ffff08' }, label: '   ' },
-          { id: 7, x: 140, y: -20, color: { background: '#ffff08' }, label: '   ' },
-          { id: 8, x: 240, y: -140, color: { background: '#ffff08' }, label: '   ',
+          { id: 1, x: -240, y: -140, color: { background: palette.yellow }, label: '   ' },
+          { id: 2, x: -140, y: -260, color: { background: palette.yellow }, label: '   ' },
+          { id: 3, x: -140, y: -20, color: { background: palette.yellow }, label: '   ' },
+          { id: 4, x: 0, y: -200, color: { background: palette.yellow }, label: ' u ' },
+          { id: 5, x: 0, y: -80, color: { background: palette.yellow }, label: ' v ' },
+          { id: 6, x: 140, y: -260, color: { background: palette.yellow }, label: '   ' },
+          { id: 7, x: 140, y: -20, color: { background: palette.yellow }, label: '   ' },
+          { id: 8, x: 240, y: -140, color: { background: palette.yellow }, label: '   ',
           font: { vadjust: 0 }, shape: 'circle' },
-          { id: 9, x: -240, y: 195, color: { background: '#ffff08' }, label: ' u ',
+          { id: 9, x: -240, y: 195, color: { background: palette.yellow }, label: ' u ',
           font: { vadjust: 0 }, shape: 'circle' },
-          { id: 10, x: -130, y: 100, color: { background: '#ffff08' }, label: '   ',
+          { id: 10, x: -130, y: 100, color: { background: palette.yellow }, label: '   ',
           font: { vadjust: 0 }, shape: 'circle' },
-          { id: 11, x: -130, y: 290, color: { background: '#ffff08' }, label: '   ',
+          { id: 11, x: -130, y: 290, color: { background: palette.yellow }, label: '   ',
           font: { vadjust: 0 }, shape: 'circle' },
-          { id: 12, x: 0, y: 195, color: { background: '#ffff08' }, label: ' v ',
+          { id: 12, x: 0, y: 195, color: { background: palette.yellow }, label: ' v ',
           font: { vadjust: 0 }, shape: 'circle' },
-          { id: 13, x: 130, y: 100, color: { background: '#ffff08' }, label: '   ',
+          { id: 13, x: 130, y: 100, color: { background: palette.yellow }, label: '   ',
           font: { vadjust: 0 }, shape: 'circle' },
-          { id: 14, x: 130, y: 290, color: { background: '#ffff08' }, label: '   ',
+          { id: 14, x: 130, y: 290, color: { background: palette.yellow }, label: '   ',
           font: { vadjust: 0 }, shape: 'circle' },
-          { id: 15, x: 240, y: 195, color: { background: '#ffff08' }, label: '   ',
+          { id: 15, x: 240, y: 195, color: { background: palette.yellow }, label: '   ',
           font: { vadjust: 0 }, shape: 'circle' },
         ],
         edges: [
@@ -275,8 +264,8 @@ class Exercise23 extends React.Component {
           { id: 15, from: 12, to: 15 },
           { id: 16, from: 13, to: 15 },
           { id: 17, from: 14, to: 15 },
-        ]
-      }
+        ],
+      },
     };
   };
 
@@ -295,33 +284,33 @@ class Exercise23 extends React.Component {
   };
 
   step2a = (state) => {
-    let newNodes = this.updateNode(state.graphVis.nodes, 0, '#EC407A', '   ');
-    newNodes = this.updateNode(newNodes, 1, '#EC407A', '   ');
-    newNodes = this.updateNode(newNodes, 2, '#EC407A', '   ');
-    newNodes = this.updateNode(newNodes, 3, '#EC407A', ' u ');
-    newNodes = this.updateNode(newNodes, 4, '#EC407A', ' v ');
+    let newNodes = this.updateNode(state.graphVis.nodes, 0, palette.ruby, '   ');
+    newNodes = this.updateNode(newNodes, 1, palette.ruby, '   ');
+    newNodes = this.updateNode(newNodes, 2, palette.ruby, '   ');
+    newNodes = this.updateNode(newNodes, 3, palette.ruby, ' u ');
+    newNodes = this.updateNode(newNodes, 4, palette.ruby, ' v ');
 
-    let newEdges = this.updateEdge(state.graphVis.edges, 0, '#EC407A', 3, false, '');
-    newEdges = this.updateEdge(newEdges, 1, '#EC407A', 3, false, '');
-    newEdges = this.updateEdge(newEdges, 2, '#EC407A', 3, false, '');
-    newEdges = this.updateEdge(newEdges, 3, '#EC407A', 3, false, '');
-    newEdges = this.updateEdge(newEdges, 4, '#EC407A', 3, false, 'e');
+    let newEdges = this.updateEdge(state.graphVis.edges, 0, palette.ruby, 3, false, '');
+    newEdges = this.updateEdge(newEdges, 1, palette.ruby, 3, false, '');
+    newEdges = this.updateEdge(newEdges, 2, palette.ruby, 3, false, '');
+    newEdges = this.updateEdge(newEdges, 3, palette.ruby, 3, false, '');
+    newEdges = this.updateEdge(newEdges, 4, palette.ruby, 3, false, 'e');
 
     return { graphVis: { nodes: newNodes, edges: newEdges } };
   };
 
   step2c = (state) => {
-    let newNodes = this.updateNode(state.graphVis.nodes, 3, '#4DB6AC', ' u ');
-    newNodes = this.updateNode(newNodes, 4, '#4DB6AC', ' v ');
-    newNodes = this.updateNode(newNodes, 5, '#4DB6AC', '   ');
-    newNodes = this.updateNode(newNodes, 6, '#4DB6AC', '   ');
-    newNodes = this.updateNode(newNodes, 7, '#4DB6AC', '   ');
+    let newNodes = this.updateNode(state.graphVis.nodes, 3, palette.jade, ' u ');
+    newNodes = this.updateNode(newNodes, 4, palette.jade, ' v ');
+    newNodes = this.updateNode(newNodes, 5, palette.jade, '   ');
+    newNodes = this.updateNode(newNodes, 6, palette.jade, '   ');
+    newNodes = this.updateNode(newNodes, 7, palette.jade, '   ');
 
-    let newEdges = this.updateEdge(state.graphVis.edges, 4, '#4DB6AC', 3, false, 'e');
-    newEdges = this.updateEdge(newEdges, 5, '#4DB6AC', 3, false, '');
-    newEdges = this.updateEdge(newEdges, 6, '#4DB6AC', 3, false, '');
-    newEdges = this.updateEdge(newEdges, 7, '#4DB6AC', 3, false, '');
-    newEdges = this.updateEdge(newEdges, 8, '#4DB6AC', 3, false, '');
+    let newEdges = this.updateEdge(state.graphVis.edges, 4, palette.jade, 3, false, 'e');
+    newEdges = this.updateEdge(newEdges, 5, palette.jade, 3, false, '');
+    newEdges = this.updateEdge(newEdges, 6, palette.jade, 3, false, '');
+    newEdges = this.updateEdge(newEdges, 7, palette.jade, 3, false, '');
+    newEdges = this.updateEdge(newEdges, 8, palette.jade, 3, false, '');
 
     return { graphVis: { nodes: newNodes, edges: newEdges } };
   };
@@ -337,23 +326,23 @@ class Exercise23 extends React.Component {
   };
 
   step3 = (state) => {
-    let newNodes = this.updateNode(state.graphVis.nodes, 0, '#FF7043', '   ');
-    newNodes = this.updateNode(newNodes, 1, '#FF7043', '   ');
-    newNodes = this.updateNode(newNodes, 2, '#FF7043', '   ');
-    newNodes = this.updateNode(newNodes, 3, '#FF7043', ' u ');
-    newNodes = this.updateNode(newNodes, 4, '#FF7043', ' v ');
-    newNodes = this.updateNode(newNodes, 5, '#FF7043', '   ');
-    newNodes = this.updateNode(newNodes, 6, '#FF7043', '   ');
-    newNodes = this.updateNode(newNodes, 7, '#FF7043', '   ');
+    let newNodes = this.updateNode(state.graphVis.nodes, 0, palette.orange, '   ');
+    newNodes = this.updateNode(newNodes, 1, palette.orange, '   ');
+    newNodes = this.updateNode(newNodes, 2, palette.orange, '   ');
+    newNodes = this.updateNode(newNodes, 3, palette.orange, ' u ');
+    newNodes = this.updateNode(newNodes, 4, palette.orange, ' v ');
+    newNodes = this.updateNode(newNodes, 5, palette.orange, '   ');
+    newNodes = this.updateNode(newNodes, 6, palette.orange, '   ');
+    newNodes = this.updateNode(newNodes, 7, palette.orange, '   ');
 
-    let newEdges = this.updateEdge(state.graphVis.edges, 0, '#FF7043', 3, false, '');
-    newEdges = this.updateEdge(newEdges, 1, '#FF7043', 3, false, '');
-    newEdges = this.updateEdge(newEdges, 2, '#FF7043', 3, false, '');
-    newEdges = this.updateEdge(newEdges, 3, '#FF7043', 3, false, '');
-    newEdges = this.updateEdge(newEdges, 5, '#FF7043', 3, false, '');
-    newEdges = this.updateEdge(newEdges, 6, '#FF7043', 3, false, '');
-    newEdges = this.updateEdge(newEdges, 7, '#FF7043', 3, false, '');
-    newEdges = this.updateEdge(newEdges, 8, '#FF7043', 3, false, '');
+    let newEdges = this.updateEdge(state.graphVis.edges, 0, palette.orange, 3, false, '');
+    newEdges = this.updateEdge(newEdges, 1, palette.orange, 3, false, '');
+    newEdges = this.updateEdge(newEdges, 2, palette.orange, 3, false, '');
+    newEdges = this.updateEdge(newEdges, 3, palette.orange, 3, false, '');
+    newEdges = this.updateEdge(newEdges, 5, palette.orange, 3, false, '');
+    newEdges = this.updateEdge(newEdges, 6, palette.orange, 3, false, '');
+    newEdges = this.updateEdge(newEdges, 7, palette.orange, 3, false, '');
+    newEdges = this.updateEdge(newEdges, 8, palette.orange, 3, false, '');
 
     return { graphVis: { nodes: newNodes, edges: newEdges } };
   };
@@ -376,7 +365,7 @@ class Exercise23 extends React.Component {
   };
 
   step4 = (state) => {
-    let newEdges = this.updateEdge(state.graphVis.edges, 14, '#000000', 1, false, 'e1');
+    let newEdges = this.updateEdge(state.graphVis.edges, 14, palette.black, 1, false, 'e1');
     return { graphVis: { nodes: state.graphVis.nodes, edges: newEdges } };
   };
 
@@ -390,17 +379,17 @@ class Exercise23 extends React.Component {
   };
 
   step5 = (state) => {
-    let newNodes = this.updateNode(state.graphVis.nodes, 8, '#EC407A', ' u ');
-    newNodes = this.updateNode(newNodes, 9, '#EC407A', '   ');
-    newNodes = this.updateNode(newNodes, 11, '#EC407A', ' v ');
-    newNodes = this.updateNode(newNodes, 12, '#EC407A', '   ');
-    newNodes = this.updateNode(newNodes, 14, '#EC407A', '   ');
+    let newNodes = this.updateNode(state.graphVis.nodes, 8, palette.ruby, ' u ');
+    newNodes = this.updateNode(newNodes, 9, palette.ruby, '   ');
+    newNodes = this.updateNode(newNodes, 11, palette.ruby, ' v ');
+    newNodes = this.updateNode(newNodes, 12, palette.ruby, '   ');
+    newNodes = this.updateNode(newNodes, 14, palette.ruby, '   ');
 
-    let newEdges = this.updateEdge(state.graphVis.edges, 9, '#EC407A', 3, false, '');
-    newEdges = this.updateEdge(newEdges, 11, '#EC407A', 3, false, 'e');
-    newEdges = this.updateEdge(newEdges, 12, '#EC407A', 3, false, '');
-    newEdges = this.updateEdge(newEdges, 14, '#EC407A', 3, false, '');
-    newEdges = this.updateEdge(newEdges, 15, '#EC407A', 3, false, '');
+    let newEdges = this.updateEdge(state.graphVis.edges, 9, palette.ruby, 3, false, '');
+    newEdges = this.updateEdge(newEdges, 11, palette.ruby, 3, false, 'e');
+    newEdges = this.updateEdge(newEdges, 12, palette.ruby, 3, false, '');
+    newEdges = this.updateEdge(newEdges, 14, palette.ruby, 3, false, '');
+    newEdges = this.updateEdge(newEdges, 15, palette.ruby, 3, false, '');
 
     return { graphVis: { nodes: newNodes, edges: newEdges } };
   };
@@ -411,17 +400,17 @@ class Exercise23 extends React.Component {
   };
 
   step6 = (state) => {
-    let newNodes = this.updateNodeShape(state.graphVis.nodes, 8, '#B388FF', 'u = x1', -75, 'dot', 21);
-    newNodes = this.updateNodeShape(newNodes, 9, '#B388FF', 'x2', -75, 'dot', 21);
-    newNodes = this.updateNodeShape(newNodes, 11, '#B388FF', 'v = x5', -75, 'dot', 21);
-    newNodes = this.updateNodeShape(newNodes, 12, '#B388FF', 'x3', -75, 'dot', 21);
-    newNodes = this.updateNodeShape(newNodes, 14, '#B388FF', 'x4', -75, 'dot', 21);
+    let newNodes = this.updateNodeShape(state.graphVis.nodes, 8, palette.purple, 'u = x1', -75, 'dot', 21);
+    newNodes = this.updateNodeShape(newNodes, 9, palette.purple, 'x2', -75, 'dot', 21);
+    newNodes = this.updateNodeShape(newNodes, 11, palette.purple, 'v = x5', -75, 'dot', 21);
+    newNodes = this.updateNodeShape(newNodes, 12, palette.purple, 'x3', -75, 'dot', 21);
+    newNodes = this.updateNodeShape(newNodes, 14, palette.purple, 'x4', -75, 'dot', 21);
 
-    let newEdges = this.updateEdge(state.graphVis.edges, 9, '#B388FF', 3, false, '');
-    newEdges = this.updateEdge(newEdges, 11, '#000000', 1, false, 'e');
-    newEdges = this.updateEdge(newEdges, 12, '#B388FF', 3, false, '');
-    newEdges = this.updateEdge(newEdges, 14, '#B388FF', 3, false, '');
-    newEdges = this.updateEdge(newEdges, 15, '#B388FF', 3, false, '');
+    let newEdges = this.updateEdge(state.graphVis.edges, 9, palette.purple, 3, false, '');
+    newEdges = this.updateEdge(newEdges, 11, palette.black, 1, false, 'e');
+    newEdges = this.updateEdge(newEdges, 12, palette.purple, 3, false, '');
+    newEdges = this.updateEdge(newEdges, 14, palette.purple, 3, false, '');
+    newEdges = this.updateEdge(newEdges, 15, palette.purple, 3, false, '');
 
     return { graphVis: { nodes: newNodes, edges: newEdges } };
   };
@@ -436,17 +425,17 @@ class Exercise23 extends React.Component {
   };
 
   step7 = (state) => {
-    let newNodes = this.updateNode(state.graphVis.nodes, 8, '#4DB6AC', ' u ');
-    newNodes = this.updateNode(newNodes, 10, '#4DB6AC', '   ');
-    newNodes = this.updateNode(newNodes, 11, '#4DB6AC', ' v ');
-    newNodes = this.updateNode(newNodes, 13, '#4DB6AC', '   ');
-    newNodes = this.updateNode(newNodes, 14, '#4DB6AC', '   ');
+    let newNodes = this.updateNode(state.graphVis.nodes, 8, palette.jade, ' u ');
+    newNodes = this.updateNode(newNodes, 10, palette.jade, '   ');
+    newNodes = this.updateNode(newNodes, 11, palette.jade, ' v ');
+    newNodes = this.updateNode(newNodes, 13, palette.jade, '   ');
+    newNodes = this.updateNode(newNodes, 14, palette.jade, '   ');
 
-    let newEdges = this.updateEdge(state.graphVis.edges, 10, '#4DB6AC', 3, false, '');
-    newEdges = this.updateEdge(newEdges, 11, '#4DB6AC', 3, false, 'e');
-    newEdges = this.updateEdge(newEdges, 13, '#4DB6AC', 3, false, '');
-    newEdges = this.updateEdge(newEdges, 14, '#4DB6AC', 3, false, '');
-    newEdges = this.updateEdge(newEdges, 16, '#4DB6AC', 3, false, '');
+    let newEdges = this.updateEdge(state.graphVis.edges, 10, palette.jade, 3, false, '');
+    newEdges = this.updateEdge(newEdges, 11, palette.jade, 3, false, 'e');
+    newEdges = this.updateEdge(newEdges, 13, palette.jade, 3, false, '');
+    newEdges = this.updateEdge(newEdges, 14, palette.jade, 3, false, '');
+    newEdges = this.updateEdge(newEdges, 16, palette.jade, 3, false, '');
 
     return { graphVis: { nodes: newNodes, edges: newEdges } };
   };
@@ -460,22 +449,22 @@ class Exercise23 extends React.Component {
     let newNodes = this.updateNodeShape(
       state.graphVis.nodes,
       8,
-      '#B388FF',
+      palette.purple,
       'u = y1',
       -75,
       'dot',
       21,
     );
-    newNodes = this.updateNodeShape(newNodes, 10, '#B388FF', 'y2', -75, 'dot', 21);
-    newNodes = this.updateNodeShape(newNodes, 11, '#B388FF', 'v = y5', -75, 'dot', 21);
-    newNodes = this.updateNodeShape(newNodes, 13, '#B388FF', 'y3', -75, 'dot', 21);
-    newNodes = this.updateNodeShape(newNodes, 14, '#B388FF', 'y4', -75, 'dot', 21);
+    newNodes = this.updateNodeShape(newNodes, 10, palette.purple, 'y2', -75, 'dot', 21);
+    newNodes = this.updateNodeShape(newNodes, 11, palette.purple, 'v = y5', -75, 'dot', 21);
+    newNodes = this.updateNodeShape(newNodes, 13, palette.purple, 'y3', -75, 'dot', 21);
+    newNodes = this.updateNodeShape(newNodes, 14, palette.purple, 'y4', -75, 'dot', 21);
 
-    let newEdges = this.updateEdge(state.graphVis.edges, 10, '#B388FF', 3, false, '');
-    newEdges = this.updateEdge(newEdges, 11, '#000000', 1, false, 'e');
-    newEdges = this.updateEdge(newEdges, 13, '#B388FF', 3, false, '');
-    newEdges = this.updateEdge(newEdges, 14, '#B388FF', 3, false, '');
-    newEdges = this.updateEdge(newEdges, 16, '#B388FF', 3, false, '');
+    let newEdges = this.updateEdge(state.graphVis.edges, 10, palette.purple, 3, false, '');
+    newEdges = this.updateEdge(newEdges, 11, palette.black, 1, false, 'e');
+    newEdges = this.updateEdge(newEdges, 13, palette.purple, 3, false, '');
+    newEdges = this.updateEdge(newEdges, 14, palette.purple, 3, false, '');
+    newEdges = this.updateEdge(newEdges, 16, palette.purple, 3, false, '');
 
     return { graphVis: { nodes: newNodes, edges: newEdges } };
   };
@@ -493,13 +482,13 @@ class Exercise23 extends React.Component {
     let newNodes = this.updateNodeShape(
       state.graphVis.nodes,
       8,
-      '#FF7043',
+      palette.orange,
       'x1 = y1',
       -75,
       'dot',
       21,
     );
-    newNodes = this.updateNodeShape(newNodes, 14, '#FF7043', 'x4 = y4', -75, 'dot', 21);
+    newNodes = this.updateNodeShape(newNodes, 14, palette.orange, 'x4 = y4', -75, 'dot', 21);
 
     return { graphVis: { nodes: newNodes, edges: state.graphVis.edges } };
   };
@@ -517,24 +506,24 @@ class Exercise23 extends React.Component {
     let newNodes = this.updateNodeShape(
       state.graphVis.nodes,
       8,
-      '#FF7043',
+      palette.orange,
       'x1 = y1',
       -75,
       'dot',
       21,
     );
-    newNodes = this.updateNodeShape(newNodes, 9, '#FF7043', 'x2', -75, 'dot', 21);
-    newNodes = this.updateNodeShape(newNodes, 10, '#FF7043', 'y2', -75, 'dot', 21);
-    newNodes = this.updateNodeShape(newNodes, 12, '#FF7043', 'x3', -75, 'dot', 21);
-    newNodes = this.updateNodeShape(newNodes, 13, '#FF7043', 'y3', -75, 'dot', 21);
-    newNodes = this.updateNodeShape(newNodes, 14, '#FF7043', 'x4 = y4', -75, 'dot', 21);
+    newNodes = this.updateNodeShape(newNodes, 9, palette.orange, 'x2', -75, 'dot', 21);
+    newNodes = this.updateNodeShape(newNodes, 10, palette.orange, 'y2', -75, 'dot', 21);
+    newNodes = this.updateNodeShape(newNodes, 12, palette.orange, 'x3', -75, 'dot', 21);
+    newNodes = this.updateNodeShape(newNodes, 13, palette.orange, 'y3', -75, 'dot', 21);
+    newNodes = this.updateNodeShape(newNodes, 14, palette.orange, 'x4 = y4', -75, 'dot', 21);
 
-    let newEdges = this.updateEdge(state.graphVis.edges, 9, '#FF7043', 3, false, '');
-    newEdges = this.updateEdge(newEdges, 10, '#FF7043', 3, false, '');
-    newEdges = this.updateEdge(newEdges, 12, '#FF7043', 3, false, '');
-    newEdges = this.updateEdge(newEdges, 13, '#FF7043', 3, false, '');
-    newEdges = this.updateEdge(newEdges, 15, '#FF7043', 3, false, '');
-    newEdges = this.updateEdge(newEdges, 16, '#FF7043', 3, false, '');
+    let newEdges = this.updateEdge(state.graphVis.edges, 9, palette.orange, 3, false, '');
+    newEdges = this.updateEdge(newEdges, 10, palette.orange, 3, false, '');
+    newEdges = this.updateEdge(newEdges, 12, palette.orange, 3, false, '');
+    newEdges = this.updateEdge(newEdges, 13, palette.orange, 3, false, '');
+    newEdges = this.updateEdge(newEdges, 15, palette.orange, 3, false, '');
+    newEdges = this.updateEdge(newEdges, 16, palette.orange, 3, false, '');
 
     return { graphVis: { nodes: newNodes, edges: newEdges } };
   };

@@ -181,8 +181,8 @@ class Exercise20v2 extends React.Component {
           { id: 3, from: 2, to: 4, label: 'e' },
           { id: 4, from: 3, to: 5 },
           { id: 5, from: 4, to: 5 },
-        ]
-      }
+        ],
+      },
     }
   };
 
