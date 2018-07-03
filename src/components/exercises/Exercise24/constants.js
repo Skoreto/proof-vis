@@ -3,13 +3,13 @@ import { Element } from 'react-scroll';
 import DefinitionPanel from '../../../components/UI/DefinitionPanel/DefinitionPanel';
 import MN from '../../../components/MathJax/MathJaxNode';
 
-export const headingTitle = 'Příklad 21';
+export const headingTitle = 'Příklad 24';
 export const breadcrumbsCurrent = 'Důkazy nepřímo';
-export const stepSum = 8;
+export const stepSum = 5;
 
 export const definitionPanel = (
   <DefinitionPanel>
-    <cite><q>Nechť <MN>G</MN> je graf. Jestliže v <MN>G</MN> neexistuje kružnice, pak každá hrana v <MN>G</MN> je most.</q></cite> Dokažte nepřímo.
+    Dokažte nepřímo tvrzení: <cite><q>Jestliže graf <MN>G</MN> je strom, pak graf <MN>G</MN> je souvislý a každá jeho hrana je most.</q></cite>
   </DefinitionPanel>
 );
 
@@ -20,7 +20,7 @@ export const getProofBox = currentStep => {
         <p>
           Dokazujeme-li nepřímo, snažíme se přímou metodou dokázat tvrzení <MN>\neg B \Rightarrow \neg A</MN>, které je dle zásad výrokové logiky ekvivalentní s původním tvrzením.
           <br />
-          <br />V tomto případě bude znít: <cite><q>Jestliže existuje hrana v <MN>G</MN>, která není most, pak v <MN>G</MN> existuje kružnice.</q></cite>
+          <br />V tomto případě bude znít: <cite><q>Jestliže <MN>G</MN> není strom, pak graf <MN>G</MN> je nesouvislý a existuje hrana <MN>e</MN>, která není most v <MN>G</MN>.</q></cite>
         </p>
       </Element>
       <Element name="proofPanel2" className={2 === currentStep ? "proof-active" : ""}>
@@ -62,22 +62,4 @@ export const getProofBox = currentStep => {
       </Element>
     </Element>
   )
-};
-
-export const cameraPosition1 = {
-  position: { x: 0, y: -10 }, 
-  scale: 1.4,
-  animation: { duration: 1500, easingFunction: "easeInOutQuad" },
-};
-
-export const cameraPosition2 = {
-  position: { x: 170, y: -10 }, 
-  scale: 0.82,
-  animation: { duration: 1000, easingFunction: "easeInOutQuad" },
-};
-
-export const cameraPosition3 = {
-  position: { x: 400, y: -10 }, 
-  scale: 1.4,
-  animation: { duration: 4000, easingFunction: "easeInOutQuad" },
 };

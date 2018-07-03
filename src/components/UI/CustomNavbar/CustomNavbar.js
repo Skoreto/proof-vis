@@ -28,9 +28,6 @@ const CustomNavbar = () => (
           id="basic-nav-dropdown"
           className={"nav-item"}
         >
-          {/* <MenuItem eventKey={1.1} componentClass={Link} href="/priklad20svg" to="/priklad20svg">
-                        Příklad 20 (SVG)
-                    </MenuItem> */}
           <MenuItem eventKey={1.2} componentClass={Link} href="/priklad20v2" to="/priklad20v2">
             Příklad 20
           </MenuItem>
@@ -54,6 +51,9 @@ const CustomNavbar = () => (
         >
           <MenuItem eventKey={2.1} componentClass={Link} href="/priklad21" to="/priklad21">
             Příklad 21
+          </MenuItem>
+          <MenuItem eventKey={2.2} componentClass={Link} href="/priklad24" to="/priklad24">
+            Příklad 24
           </MenuItem>
         </NavDropdown>
         <NavDropdown
