@@ -5,7 +5,7 @@ import MN from '../../../components/MathJax/MathJaxNode';
 
 export const headingTitle = 'Příklad 24';
 export const breadcrumbsCurrent = 'Důkazy nepřímo';
-export const stepSum = 5;
+export const stepSum = 10;
 
 export const definitionPanel = (
   <DefinitionPanel>
@@ -20,44 +20,52 @@ export const getProofBox = currentStep => {
         <p>
           Dokazujeme-li nepřímo, snažíme se přímou metodou dokázat tvrzení <MN>\neg B \Rightarrow \neg A</MN>, které je dle zásad výrokové logiky ekvivalentní s původním tvrzením.
           <br />
-          <br />V tomto případě bude znít: <cite><q>Jestliže <MN>G</MN> není strom, pak graf <MN>G</MN> je nesouvislý a existuje hrana <MN>e</MN>, která není most v <MN>G</MN>.</q></cite>
+          <br />V tomto případě bude znít: <cite><q>Jestliže <MN>G</MN> není strom, pak graf <MN>G</MN> je nesouvislý nebo existuje hrana <MN>e</MN>, která není most v <MN>G</MN>.</q></cite>
+          <br />
+          <br />A dostáváme dvě části implikované věty, které je třeba dokázat:
         </p>
       </Element>
       <Element name="proofPanel2" className={2 === currentStep ? "proof-active" : ""}>
         <p>
-          Pokud existuje hrana <MN>{'e=\\{x,y\\}'}</MN>, která není most v <MN>G</MN>, poté z definice mostu platí, že graf <MN>G-e</MN> má stejný počet komponent jako <MN>G</MN>.
-        </p>
-      </Element>
-      <Element name="proofPanel3" className={(3 === currentStep) || (4 === currentStep) ? "proof-active" : ""}>
-        <p>
-          Před následující úvahou zvolíme libovolné vrcholy u a v, mezi kterými lze sestrojit cestu procházející přes hranu e. 
+          <b>1. část:</b> <cite><q>graf <MN>G</MN> je nesouvislý</q></cite>
           <br />
-          <br /> <i>Poznámka: V případě nesouvislého grafu není možné sestrojit cestu mezi všemi dvojicemi vrcholů.</i>
+          <br />Jestliže graf <MN>G</MN> je nesouvislý, pak přímo z definice stromu platí, že není strom.
         </p>
       </Element>
-      <Element name="proofPanel4" className={5 === currentStep ? "proof-active" : ""}>
+      <Element name="proofPanel3" className={3 === currentStep ? "proof-active" : ""}>
         <p>
-          Když existuje <MN>u</MN>-<MN>v</MN> cesta <MN>{'P_{uv}'}</MN> v <MN>G</MN>, tak existuje <MN>u</MN>-<MN>v</MN> cesta <MN>{"P'_{uv}"}</MN> v <MN>G-e</MN>. (Uvažujeme totiž stále hranu <MN>e</MN>, která není mostem.)
-          <br /><br />
-          Poznámka:  <MN>{"P'_{uv}"}</MN> se nemusí nutně  <MN>{'=P_{uv}'}</MN>.
+          <b>2. část:</b> <cite><q>existuje hrana <MN>e</MN>, která není most v grafu <MN>G</MN></q></cite>
+          <br />
+          <br /> Příklad takového grafu zobrazuje vizualizace.
         </p>
       </Element>
-      <Element name="proofPanel5" className={6 === currentStep ? "proof-active" : ""}>
+      <Element name="proofPanel4" className={4 === currentStep ? "proof-active" : ""}>
         <p>
-          Z toho vyplývá, že v <MN>G-e</MN> musí v existovat také cesta <MN>{'P_{xy}'}</MN> mezi vrcholy <MN>x</MN> a <MN>y</MN> z hrany <MN>e</MN>.
+          Z definice mostu víme, že jeho odebráním vznikne v grafu více komponent.
+          <br />
+          <br />Jestliže však v grafu <MN>G</MN> existuje hrana <MN>{'e=\\{x,y\\}'}</MN>, která <u>není</u> most, pak po jejím odebrání graf <MN>G-e</MN> nebude mít více komponent. Vrcholy <MN>x</MN> a <MN>y</MN> se tedy budou nacházet stále v jedné souvislé komponentě.
         </p>
       </Element>
-      <Element name="proofPanel6" className={7 === currentStep ? "proof-active" : ""}>
+      <Element name="proofPanel5" className={5 === currentStep ? "proof-active" : ""}>
         <p>
-          Protože <MN>G</MN> vznikne z <MN>G-e</MN> přidáním hrany <MN>e</MN>, musí se <MN>x</MN>-<MN>y</MN> cesta <MN>{'P_{xy}'}</MN> nacházet také v <MN>G</MN>.
+          Protože komponenta je sama o sobě souvislý graf. Musí mezi každou dvojicí jejích vrcholů existovat cesta.
+          <br />
+          <br />Tudíž v grafu <MN>G-e</MN> musí nadále existovat také cesta Pxy mezi vrcholy hrany <MN>{'e=\\{x,y\\}'}</MN>.
         </p>
       </Element>
-      <Element name="proofPanel7" className={'borderless' + (8 === currentStep ? " proof-active" : "")}>
+      <Element name="proofPanel6" className={6 === currentStep ? "proof-active" : ""}>
         <p>
-          Pak podle definice kružnice platí, že cesta <MN>{'P_{xy}'}</MN> spolu s hranou <MN>{'e=\\{x,y\\}'}</MN> tvoří v <MN>G</MN> kružnici.
+          Pak ale cesta Pxy musela existovat také v grafu G, protože graf G-e vznikl z grafu G pouze odebráním grany e.
         </p>
+      </Element>
+      <Element name="proofPanel7" className={7 === currentStep ? "proof-active" : ""}>
         <p>
-          Hrana, která není most, tedy nutně musí ležet na kružnici. Tím je zárověň dokázáno původní ekvivalentní tvrzení. <MN>\Box</MN>
+          Z definice kružnice pak vyplývá, že cesta Pxy spolu s hranou e tvoří kružnici v grafu G.
+        </p>
+      </Element>
+      <Element name="proofPanel8" className={8 === currentStep ? "proof-active" : ""}>
+        <p>
+          Protože graf G obsahuje kružnici, není podle definice stromu stromem.
         </p>
       </Element>
     </Element>
