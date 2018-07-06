@@ -59,7 +59,9 @@ class Exercise26gen extends React.Component {
       }
 
       if (this.state.currentStep === 3) {
-        this.setState(this.step4);
+        this.step4();
+        let interval = setInterval(this.step4, 3000);
+        this.setState({ intervals: [interval] });
         this.setState(this.step4Texts);
       }
 
@@ -75,13 +77,6 @@ class Exercise26gen extends React.Component {
       //   this.setState(this.step3Texts);
       // }
 
-      // if (this.state.currentStep === 3) {
-      //   this.clearAllTimers(this.state);
-      //   this.step4();
-      //   let interval2 = setInterval(this.step4, 3000);
-      //   this.setState({ intervals: [interval2] });
-      //   this.setState(this.step4Texts);
-      // }
 
       // if (this.state.currentStep === 4) {
       //   this.setState({ btnNextD: true });
@@ -261,6 +256,26 @@ class Exercise26gen extends React.Component {
     return { description: description, repeatBoxHidden: false, repeatBoxContent: repeatBox };
   };
 
+  step4 = () => {
+    this.setState(this.step4a);
+    let timeout4a = setTimeout(() => { this.setState(this.step4b); }, 1000);
+    let timeout4b = setTimeout(() => { this.setState(this.step4a); }, 2000);
+
+    this.setState({ 
+      timeouts: [timeout4a, timeout4b], repeatBoxHidden: true, repeatBoxContent: '' 
+    });
+  };
+
+  step4a = (state) => {
+    let newEdges = this.updateEdge(state.graphVis.edges, 6, palette.red, 2, [8, 8], 'e');
+    return { graphVis: { nodes: state.graphVis.nodes, edges: newEdges } };
+  };
+
+  step4b = (state) => {
+    let newEdges = this.updateEdge(state.graphVis.edges, 6, palette.white, 2, false, '');
+    return { graphVis: { nodes: state.graphVis.nodes, edges: newEdges } };
+  };
+
   step4Texts = () => {
     const description = (
       <p>
@@ -366,22 +381,7 @@ class Exercise26gen extends React.Component {
   //   return { description: description };
   // };
 
-  // step4 = () => {
-  //   this.setState(this.step3a);
-  //   let timeout4a = setTimeout(() => { this.setState(this.step4a); }, 1000);
-  //   let timeout4b = setTimeout(() => { this.setState(this.step3a); }, 2000);
 
-  //   this.setState({ 
-  //     timeouts: [timeout4a, timeout4b], repeatBoxHidden: true, repeatBoxContent: '' 
-  //   });
-  // };
-
-  // step4a = (state) => {
-  //   let newNodes = this.updateNode(state.graphVis.nodes, 1, palette.purple, ' x ');
-  //   newNodes = this.updateNode(newNodes, 3, palette.purple, ' y ');
-  //   let newEdges = this.updateEdge(state.graphVis.edges, 2, palette.white, 2, false, '   ');
-  //   return { graphVis: { nodes: newNodes, edges: newEdges } };
-  // };
 
   // step4Texts = () => {
   //   const description = (
