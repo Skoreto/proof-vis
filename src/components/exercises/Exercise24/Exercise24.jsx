@@ -36,53 +36,44 @@ class Exercise26gen extends React.Component {
 
   nextStep = () => {
     if (this.state.currentStep < 9) {
-      if (this.state.currentStep === 0) {
-        this.setState({ btnPrevD: false });
-        this.setState(this.step1SVGContent);
-        this.setState(this.step1Texts);
+      switch (this.state.currentStep) {
+        case 0:
+          this.setState({ btnPrevD: false });
+          this.setState(this.step1SVGContent);
+          this.setState(this.step1Texts);
+          break;
+
+        case 1:
+          this.setState(this.step2);
+          this.setState(this.step2Texts);
+          break;
+      
+        case 2:
+          this.setState(this.step3);
+          this.setState(this.step3Texts);
+          break;
+
+        case 3:
+          this.step4();
+          let interval = setInterval(this.step4, 3000);
+          this.setState({ intervals: [interval] });
+          this.setState(this.step4Texts);
+          break;
+
+        case 4:
+          this.clearAllTimers(this.state);
+          this.setState(this.step5);
+          this.setState(this.step5Texts);
+          break;
+
+        case 5:
+          this.setState(this.step6);
+          this.setState(this.step6Texts);
+          break;
+
+        default:
+          break;
       }
-
-      // if (this.state.currentStep === 0) {
-      //   this.setState({ btnPrevD: false });
-      //   this.setState(this.step1);
-      //   this.setState(this.step1Texts);
-      // }
-
-      if (this.state.currentStep === 1) {
-        this.setState(this.step2);
-        this.setState(this.step2Texts);
-      }
-
-      if (this.state.currentStep === 2) {
-        this.setState(this.step3);
-        this.setState(this.step3Texts);
-      }
-
-      if (this.state.currentStep === 3) {
-        this.step4();
-        let interval = setInterval(this.step4, 3000);
-        this.setState({ intervals: [interval] });
-        this.setState(this.step4Texts);
-      }
-
-      if (this.state.currentStep === 4) {
-        this.clearAllTimers(this.state);
-        this.setState(this.step5);
-        this.setState(this.step5Texts);
-      }
-
-      if (this.state.currentStep === 5) {
-        this.setState(this.step6);
-        this.setState(this.step6Texts);
-      }
-
-      // if (this.state.currentStep === 2) {
-      //   this.step3();
-      //   let interval1 = setInterval(this.step3, 3000);
-      //   this.setState({ intervals: [interval1] });
-      //   this.setState(this.step3Texts);
-      // }
-
 
       // if (this.state.currentStep === 4) {
       //   this.setState({ btnNextD: true });
