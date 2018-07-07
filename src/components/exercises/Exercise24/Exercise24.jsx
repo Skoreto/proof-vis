@@ -66,8 +66,14 @@ class Exercise26gen extends React.Component {
       }
 
       if (this.state.currentStep === 4) {
+        this.clearAllTimers(this.state);
         this.setState(this.step5);
         this.setState(this.step5Texts);
+      }
+
+      if (this.state.currentStep === 5) {
+        this.setState(this.step6);
+        this.setState(this.step6Texts);
       }
 
       // if (this.state.currentStep === 2) {
@@ -294,6 +300,19 @@ class Exercise26gen extends React.Component {
   //   return { description: description };
   // };
 
+  step5 = (state) => {
+    let newNodes = this.updateNode(state.graphVis.nodes, 0, palette.green, '   ');
+    newNodes = this.updateNode(newNodes, 1, palette.green, ' x ');
+    newNodes = this.updateNode(newNodes, 3, palette.green, ' y ');
+    newNodes = this.updateNode(newNodes, 6, palette.green, '   ');
+    
+    let newEdges = this.updateEdge(state.graphVis.edges, 0, palette.green, 3, false, '');
+    newEdges = this.updateEdge(newEdges, 4, palette.green, 3, false, '');
+    newEdges = this.updateEdge(newEdges, 6, palette.white, 2, false, '');
+    newEdges = this.updateEdge(newEdges, 7, palette.green, 3, false, '');
+    return { graphVis: { nodes: newNodes, edges: newEdges } };
+  };
+
   step5Texts = () => {
     const description = (
       <p>
@@ -314,6 +333,20 @@ class Exercise26gen extends React.Component {
     );
 
     return { description: description, repeatBoxHidden: false, repeatBoxContent: repeatBox };
+  };
+
+  step6 = (state) => {
+    let newEdges = this.updateEdge(state.graphVis.edges, 6, palette.black, 1, false, 'e');
+    return { graphVis: { nodes: state.graphVis.nodes, edges: newEdges } };
+  };
+
+  step6Texts = () => {
+    const description = (
+      <p>
+        Cesta <MN>Pxy</MN> existovala také v grafu <MN>G</MN>.
+      </p>
+    );
+    return { description: description, repeatBoxHidden: true, repeatBoxContent: '' };
   };
 
   // step2 = (state) => {
