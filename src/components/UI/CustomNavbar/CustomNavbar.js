@@ -28,17 +28,14 @@ const CustomNavbar = () => (
           id="basic-nav-dropdown"
           className={"nav-item"}
         >
-          <MenuItem eventKey={1.2} componentClass={Link} href="/priklad20v2" to="/priklad20v2">
+          <MenuItem eventKey={1.1} componentClass={Link} href="/priklad20v2" to="/priklad20v2">
             Příklad 20
           </MenuItem>
-          <MenuItem eventKey={1.3} componentClass={Link} href="/priklad23" to="/priklad23">
+          <MenuItem eventKey={1.2} componentClass={Link} href="/priklad23" to="/priklad23">
             Příklad 23
           </MenuItem>
-          <MenuItem eventKey={1.4} componentClass={Link} href="/priklad26" to="/priklad26">
-            Příklad 26 (verze 1)
-          </MenuItem>
-          <MenuItem eventKey={1.5} componentClass={Link} href="/priklad26v2" to="/priklad26v2">
-            Příklad 26 (verze 2)
+          <MenuItem eventKey={1.3} componentClass={Link} href="/priklad26v2" to="/priklad26v2">
+            Příklad 26
           </MenuItem>
         </NavDropdown>
         <NavDropdown
