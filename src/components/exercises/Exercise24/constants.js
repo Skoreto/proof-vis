@@ -5,7 +5,7 @@ import MN from '../../../components/MathJax/MathJaxNode';
 
 export const headingTitle = 'Příklad 24';
 export const breadcrumbsCurrent = 'Důkazy nepřímo';
-export const stepSum = 10;
+export const stepSum = 8;
 
 export const definitionPanel = (
   <DefinitionPanel>
@@ -50,22 +50,22 @@ export const getProofBox = currentStep => {
         <p>
           Protože komponenta je sama o sobě souvislý graf. Musí mezi každou dvojicí jejích vrcholů existovat cesta.
           <br />
-          <br />Tudíž v grafu <MN>G-e</MN> musí nadále existovat také cesta Pxy mezi vrcholy hrany <MN>{'e=\\{x,y\\}'}</MN>.
+          <br />Tudíž v grafu <MN>G-e</MN> musí nadále existovat také cesta <MN>{'P_{xy}'}</MN> mezi vrcholy hrany <MN>{'e=\\{x,y\\}'}</MN>.
         </p>
       </Element>
       <Element name="proofPanel6" className={6 === currentStep ? "proof-active" : ""}>
         <p>
-          Pak ale cesta Pxy musela existovat také v grafu G, protože graf G-e vznikl z grafu G pouze odebráním grany e.
+          Pak ale cesta <MN>{'P_{xy}'}</MN> musela existovat také v grafu <MN>G</MN>, protože graf <MN>G-e</MN> vznikl z grafu <MN>G</MN> pouze odebráním hrany <MN>e</MN>.
         </p>
       </Element>
       <Element name="proofPanel7" className={7 === currentStep ? "proof-active" : ""}>
         <p>
-          Z definice kružnice pak vyplývá, že cesta Pxy spolu s hranou e tvoří kružnici v grafu G.
+          Z definice kružnice pak vyplývá, že cesta <MN>{'P_{xy}'}</MN> spolu s hranou e tvoří kružnici v grafu <MN>G</MN>.
         </p>
       </Element>
-      <Element name="proofPanel8" className={8 === currentStep ? "proof-active" : ""}>
+      <Element name="proofPanel8" className={'borderless' + (8 === currentStep ? " proof-active" : "")}>
         <p>
-          Protože graf G obsahuje kružnici, není podle definice stromu stromem.
+          Protože graf <MN>G</MN> obsahuje kružnici, není podle definice stromu stromem.
         </p>
       </Element>
     </Element>
