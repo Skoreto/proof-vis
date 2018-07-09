@@ -9,8 +9,8 @@ class DialogDrawing extends React.Component {
       graphVis: { nodes: [], edges: [] },
       options: {
         autoResize: true,
+        width: '606',
         height: '400',
-        width: '600',
         locale: 'cs',
         locales: graphVisLocales,
         clickToUse: false,
@@ -102,8 +102,7 @@ class DialogDrawing extends React.Component {
           <GraphVis
             graph={this.state.graphVis}
             options={this.state.options}
-            events={events}
-            style={{ width: "100%", height: "100%" }} />
+            events={events} />
         </div>
         <div id="editNodeDialog">
           <span id="operation">Upravit vrchol</span>
