@@ -19,6 +19,7 @@ import {
   clearAllTimers,
   handlerSketchAllowance,
   handlerSelectedTool,
+  handlerDrawingDialog,
   getScrollOptions,
 } from '../../../functionality/GraphFunctions';
 import ExerciseWrapper from '../../../components/UI/ExerciseWrapper/ExerciseWrapper';
@@ -34,6 +35,7 @@ class Exercise24 extends React.Component {
     this.clearAllTimers = clearAllTimers.bind(this);
     this.handlerSketchAllowance = handlerSketchAllowance.bind(this);
     this.handlerSelectedTool = handlerSelectedTool.bind(this);
+    this.handlerDrawingDialog = handlerDrawingDialog.bind(this);
   }
 
   nextStep = () => {
@@ -166,18 +168,6 @@ class Exercise24 extends React.Component {
       // Reduce currentStep after a step was executed
       this.setState((state) => { return { currentStep: state.currentStep -= 1 } });
     }
-  };
-
-  handleDrawingDialog = state => {
-    if (state.isDrawingDialogOpen) {
-      return ({
-        isDrawingDialogOpen: false
-      });
-    } else {
-      return ({
-        isDrawingDialogOpen: true
-      });
-    } 
   };
 
   stepReset = () => {
@@ -433,7 +423,9 @@ class Exercise24 extends React.Component {
         handleSketchPencil={() => this.setState(() => this.handlerSelectedTool(1))}
         handleSketchLine={() => this.setState(() => this.handlerSelectedTool(2))}
         handleSketchCircle={() => this.setState(() => this.handlerSelectedTool(3))}
-        handleDrawingDialog={() => this.setState(() => this.handleDrawingDialog(this.state))}
+        handleDrawingDialog={
+          () => this.setState(() => this.handlerDrawingDialog(this.state.isDrawingDialogOpen))
+        }
       />
     );
   }

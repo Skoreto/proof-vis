@@ -43,7 +43,7 @@ const ExerciseWrapper = (props) => (
           <Col xs={12} md={12} lg={7}>
             <main>
               {
-                props.isSketchAllowed ? (
+                props.isSketchAllowed &&
                   <div className={'over-component'}>
                     <SketchField
                       width='650px'
@@ -53,10 +53,9 @@ const ExerciseWrapper = (props) => (
                       lineWidth={3}
                     />
                   </div>
-                ) : (<div></div>)
               }
               {
-                props.isSVGCoverShowed ? (
+                props.isSVGCoverShowed &&
                   <div className={'svg-cover-panel'}>
                     <svg
                       width={650}
@@ -67,7 +66,6 @@ const ExerciseWrapper = (props) => (
                       {props.svgContent}
                     </svg>
                   </div>
-                ) : (<div></div>)
               }
               <div className='GraphBox'>
                 <GraphVis
@@ -140,7 +138,7 @@ const ExerciseWrapper = (props) => (
                 </M.Context>
               </div>
               {
-                props.isDrawingDialogOpen ? (
+                props.isDrawingDialogOpen &&
                   <Dialog  
                     width={610}
                     height={444}
@@ -153,7 +151,6 @@ const ExerciseWrapper = (props) => (
                   >
                     <DialogDrawing />
                   </Dialog>
-                ) : (<div></div>)
               }
             </main>
           </Col>

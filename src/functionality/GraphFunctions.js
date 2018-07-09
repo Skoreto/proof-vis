@@ -246,6 +246,13 @@ export function handlerSelectedTool(tool) {
 }
 
 /**
+ * Handle opening and closing of Drawing Dialog.
+ */
+export const handlerDrawingDialog = isDrawingDialogOpen => {
+  return { isDrawingDialogOpen: !isDrawingDialogOpen };
+};
+
+/**
  * Returns proofBox scroll options to element corrected by actual scroll position of window.
  * @param {number} windowScrollY - Y scroll position of window in pixels.
  */
