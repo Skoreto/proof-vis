@@ -124,6 +124,7 @@ export const initialExerciseState = {
   repeatBoxHidden: true,
   repeatBoxContent: '',
   btnRepeatD: true,
+  isDrawingDialogOpen: false,
 };
 
 /**

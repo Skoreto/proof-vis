@@ -168,6 +168,18 @@ class Exercise24 extends React.Component {
     }
   };
 
+  handleDrawingDialog = state => {
+    if (state.isDrawingDialogOpen) {
+      return ({
+        isDrawingDialogOpen: false
+      });
+    } else {
+      return ({
+        isDrawingDialogOpen: true
+      });
+    } 
+  };
+
   stepReset = () => {
     return {
       graphVis: { nodes: [], edges: [] },
@@ -421,6 +433,7 @@ class Exercise24 extends React.Component {
         handleSketchPencil={() => this.setState(() => this.handlerSelectedTool(1))}
         handleSketchLine={() => this.setState(() => this.handlerSelectedTool(2))}
         handleSketchCircle={() => this.setState(() => this.handlerSelectedTool(3))}
+        handleDrawingDialog={() => this.setState(() => this.handleDrawingDialog(this.state))}
       />
     );
   }

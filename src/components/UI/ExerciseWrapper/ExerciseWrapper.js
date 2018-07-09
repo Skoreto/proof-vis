@@ -14,6 +14,9 @@ import faPencilAlt from '@fortawesome/fontawesome-free-solid/faPencilAlt';
 import faMinus from '@fortawesome/fontawesome-free-solid/faMinus';
 import faCircle from '@fortawesome/fontawesome-free-solid/faCircleNotch';
 import faRedoAlt from '@fortawesome/fontawesome-free-solid/faRedoAlt';
+import Dialog from 'react-dialog';
+import '../../../drawingDialog.css';
+import DialogDrawing from '../../../components/DialogDrawing/DialogDrawing';
 
 const ExerciseWrapper = (props) => (
   <div>
@@ -120,6 +123,9 @@ const ExerciseWrapper = (props) => (
                   </Button>
                 </span>
                 <span className='animation-panel'>
+                  <Button clicked={props.handleDrawingDialog}>
+                    <FontAwesomeIcon icon={faMinus} />
+                  </Button>
                   <Button clicked={props.repeatStep} disabled={props.btnRepeatD}>
                     <FontAwesomeIcon icon={faRedoAlt} />
                   </Button>
@@ -132,6 +138,29 @@ const ExerciseWrapper = (props) => (
                   </div>
                 </M.Context>
               </div>
+              {
+                props.isDrawingDialogOpen ? (
+                  <Dialog  
+                    width={650}
+                    height={450}
+                    modal={false}
+                    closeOnEscape={true}
+                    isDraggable={true}
+                    // isResizable={true}
+                    title="Pomocné plátno"
+                    // allowMinimize={true}
+                    onClose={props.handleDrawingDialog}
+                    // buttons={
+                    //   [{
+                    //     text: "Close",
+                    //     onClick: () => props.handleDrawingDialog
+                    //   }]
+                    // }
+                  >
+                    <DialogDrawing />
+                  </Dialog>
+                ) : (<div></div>)
+              }
             </main>
           </Col>
         </Row>
