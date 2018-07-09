@@ -82,6 +82,11 @@ const ExerciseWrapper = (props) => (
                 </div>
               </M.Context>
               <div className='controls-panel'>
+              <span className='animation-panel'>
+                  <Button clicked={props.repeatStep} disabled={props.btnRepeatD}>
+                    <FontAwesomeIcon icon={faRedoAlt} />
+                  </Button>
+                </span>
                 <span className='step-panel'>
                   <Button clicked={props.previousStep} disabled={props.btnPrevD}>
                     <FontAwesomeIcon icon={faChevronLeft} />
@@ -91,7 +96,7 @@ const ExerciseWrapper = (props) => (
                     <FontAwesomeIcon icon={faChevronRight} />
                   </Button>
                 </span>
-                <span className='sketch-buttons'>
+                <span className="sketch-buttons">
                   <Button
                     clicked={props.handleSketchAllowance}
                     active={props.btnSketchA}
@@ -121,12 +126,9 @@ const ExerciseWrapper = (props) => (
                     <FontAwesomeIcon icon={faCircle} />
                   </Button>
                 </span>
-                <span className='animation-panel'>
+                <span className="drawing-dialog-panel">
                   <Button clicked={props.handleDrawingDialog}>
                     <FontAwesomeIcon icon={faEdit} />
-                  </Button>
-                  <Button clicked={props.repeatStep} disabled={props.btnRepeatD}>
-                    <FontAwesomeIcon icon={faRedoAlt} />
                   </Button>
                 </span>
               </div>
@@ -145,7 +147,6 @@ const ExerciseWrapper = (props) => (
                     modal={false}
                     closeOnEscape={true}
                     isDraggable={true}
-                    // isResizable={true}
                     title="Pomocné plátno"
                     onClose={props.handleDrawingDialog}
                   >

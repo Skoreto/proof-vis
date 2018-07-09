@@ -23,6 +23,7 @@ import {
   clearAllTimers,
   handlerSketchAllowance,
   handlerSelectedTool,
+  handlerDrawingDialog,
   getScrollOptions,
 } from '../../../functionality/GraphFunctions';
 import ExerciseWrapper from '../../../components/UI/ExerciseWrapper/ExerciseWrapper';
@@ -40,6 +41,7 @@ class Exercise21 extends React.Component {
     this.clearAllTimers = clearAllTimers.bind(this);
     this.handlerSketchAllowance = handlerSketchAllowance.bind(this);
     this.handlerSelectedTool = handlerSelectedTool.bind(this);
+    this.handlerDrawingDialog = handlerDrawingDialog.bind(this);
   }
 
   /**
@@ -455,6 +457,9 @@ class Exercise21 extends React.Component {
         handleSketchPencil={() => this.setState(() => this.handlerSelectedTool(1))}
         handleSketchLine={() => this.setState(() => this.handlerSelectedTool(2))}
         handleSketchCircle={() => this.setState(() => this.handlerSelectedTool(3))}
+        handleDrawingDialog={
+          () => this.setState(() => this.handlerDrawingDialog(this.state.isDrawingDialogOpen))
+        }
       />
     );
   }
