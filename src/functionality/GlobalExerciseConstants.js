@@ -57,7 +57,7 @@ export const graphVisOptions = {
     showButton: true,
   },
   manipulation: {
-    enabled: true,
+    enabled: false,
     initiallyActive: false,
     addNode: function (nodeData, callback) {
       // Nastaveni parametru noveho vrcholu

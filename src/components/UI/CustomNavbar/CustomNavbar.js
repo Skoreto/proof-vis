@@ -13,7 +13,7 @@ const CustomNavbar = () => (
     <Navbar.Header>
       <Navbar.Brand>
         <Link to="/">
-          <Image src="assets/image/logo.png" alt="Vizualizace důkazů" />VIZUALIZACE DŮKAZŮ
+          <Image src="assets/image/logo.png" alt="Vizualizace důkazů" />ProofVis
         </Link>
       </Navbar.Brand>
       <Navbar.Toggle />

@@ -21,6 +21,7 @@
 .navbar-brand {
   display: flex;
   align-items: center;
+  font-size: 22px;
   color: #fff;
 }
 

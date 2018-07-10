@@ -1,6 +1,25 @@
 import GraphVis from 'react-graph-vis';
 import React from 'react';
 import { graphVisLocales } from '../../functionality/GlobalExerciseConstants';
+import { saveNode, cancelNodeEdit } from '../../functionality/nodeEditFunctions';
+
+// function saveNode(data, callback) {
+//   // data.id = document.getElementById('node-id').value;
+//   data.label = document.getElementById('inpNodeLabel').value;
+//   clearPopUp();
+//   callback(data);
+// }
+
+// function cancelNodeEdit(callback) {
+//   clearPopUp();
+//   callback(null);
+// }
+
+// function clearPopUp() {
+//   // document.getElementById('saveButton').onclick = null;
+//   // document.getElementById('cancelButton').onclick = null;
+//   document.getElementById('editNodeDialog').style.display = 'none';
+// }
 
 class DialogDrawing extends React.Component {
   constructor(props) {
@@ -55,12 +74,12 @@ class DialogDrawing extends React.Component {
             callback(nodeData);
           },
           editNode: function (nodeData, callback) {
-            // Predvyplneni dialog upravy vrcholu aktualnimi daty
+            // Fill node edit dialog by current data
             document.getElementById('inpNodeLabel').value = nodeData.label;
             document.getElementById('inpColorBackground').value = nodeData.color.background;
             document.getElementById('inpNodeSize').value = nodeData.size;
-            // document.getElementById('btnSave').onclick = saveNode.bind(this, nodeData, callback);
-            // document.getElementById('btnCancel').onclick = cancelNodeEdit.bind(this, callback);
+            document.getElementById('btnSave').onclick = saveNode.bind(this, nodeData, document, callback);
+            document.getElementById('btnCancel').onclick = cancelNodeEdit.bind(this, document, callback);
             document.getElementById('editNodeDialog').style.display = 'block';
           },
           editEdge: true,
