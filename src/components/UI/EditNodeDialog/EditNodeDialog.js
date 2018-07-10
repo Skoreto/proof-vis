@@ -1,10 +1,9 @@
 import React from 'react';
+import './EditNodeDialog.css';
 
 const EditNodeDialog = () => (
   <div id="editNodeDialog">
-    <span id="operation">Úprava vrcholu</span>
-    <br />
-    <br />
+    <div className="operationName">Úprava vrcholu</div>
     <form className="form-horizontal">
       <div className="form-group">
         <label htmlFor="inpNodeLabel" className="col-sm-4 control-label">Popisek</label>
@@ -12,22 +11,22 @@ const EditNodeDialog = () => (
           <input type="text" className="form-control" id="inpNodeLabel" />
         </div>
       </div>
-      <div className="form-group">
-        <label htmlFor="inpNodeColor" className="col-sm-4 control-label">Barva vrcholu</label>
-        <div className="col-sm-7">
-          <input type="color" className="form-control" id="inpNodeColor" />
-        </div>
-      </div>
       {/* <div className="form-group">
-        <label htmlFor="inpNodeSize" className="col-sm-4 control-label">Velikost vrcholu</label>
+        <label htmlFor="inpNodeMargin" className="col-sm-4 control-label">Velikost okolí</label>
         <div className="col-sm-7">
-          <input type="number" className="form-control" id="inpNodeSize" />
+          <input type="number" className="form-control" id="inpNodeMargin" />
         </div>
       </div> */}
       <div className="form-group">
         <label htmlFor="inpLabelColor" className="col-sm-4 control-label">Barva textu</label>
         <div className="col-sm-7">
           <input type="color" className="form-control" id="inpLabelColor" />
+        </div>
+      </div>
+      <div className="form-group">
+        <label htmlFor="inpNodeColor" className="col-sm-4 control-label">Barva vrcholu</label>
+        <div className="col-sm-7">
+          <input type="color" className="form-control" id="inpNodeColor" />
         </div>
       </div>
       <div className="form-group">
