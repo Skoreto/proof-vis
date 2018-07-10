@@ -1,25 +1,8 @@
-import GraphVis from 'react-graph-vis';
 import React from 'react';
+import GraphVis from 'react-graph-vis';
 import { graphVisLocales } from '../../functionality/GlobalExerciseConstants';
-import { saveNode, cancelNodeEdit } from '../../functionality/nodeEditFunctions';
-
-// function saveNode(data, callback) {
-//   // data.id = document.getElementById('node-id').value;
-//   data.label = document.getElementById('inpNodeLabel').value;
-//   clearPopUp();
-//   callback(data);
-// }
-
-// function cancelNodeEdit(callback) {
-//   clearPopUp();
-//   callback(null);
-// }
-
-// function clearPopUp() {
-//   // document.getElementById('saveButton').onclick = null;
-//   // document.getElementById('cancelButton').onclick = null;
-//   document.getElementById('editNodeDialog').style.display = 'none';
-// }
+import { addNode, showEditNodeDialog } from '../../functionality/nodeEditFunctions';
+import EditNodeDialog from '../../components/UI/EditNodeDialog/EditNodeDialog';
 
 class DialogDrawing extends React.Component {
   constructor(props) {
@@ -61,27 +44,8 @@ class DialogDrawing extends React.Component {
         manipulation: {
           enabled: true,
           initiallyActive: true,
-          addNode: function (nodeData, callback) {
-            // Nastaveni parametru noveho vrcholu
-            let color = { background: '#FFFF00', border: '#000000' };
-            let shadow = { enabled: false };
-            nodeData.shape = 'dot';
-            nodeData.size = 18;
-            nodeData.label = null;
-            nodeData.color = color;
-            nodeData.borderWidth = 1;
-            nodeData.shadow = shadow;
-            callback(nodeData);
-          },
-          editNode: function (nodeData, callback) {
-            // Fill node edit dialog by current data
-            document.getElementById('inpNodeLabel').value = nodeData.label;
-            document.getElementById('inpColorBackground').value = nodeData.color.background;
-            document.getElementById('inpNodeSize').value = nodeData.size;
-            document.getElementById('btnSave').onclick = saveNode.bind(this, nodeData, document, callback);
-            document.getElementById('btnCancel').onclick = cancelNodeEdit.bind(this, document, callback);
-            document.getElementById('editNodeDialog').style.display = 'block';
-          },
+          addNode: addNode,
+          editNode: showEditNodeDialog,
           editEdge: true,
           deleteNode: true,
           deleteEdge: true,
@@ -111,49 +75,12 @@ class DialogDrawing extends React.Component {
   }
 
   render() {
-    const events = {
-      select: function (event) { }
-    };
+    const events = { };
 
     return (
       <div>
-        <div>
-          <GraphVis
-            graph={this.state.graphVis}
-            options={this.state.options}
-            events={events} />
-        </div>
-        <div id="editNodeDialog">
-          <span id="operation">Upravit vrchol</span>
-          <br />
-          <br />
-          <form className="form-horizontal">
-            <div className="form-group">
-              <label htmlFor="inpNodeLabel" className="col-sm-2 control-label">Popisek</label>
-              <div className="col-sm-10">
-                <input type="text" className="form-control" id="inpNodeLabel" />
-              </div>
-            </div>
-            <div className="form-group">
-              <label htmlFor="inpColorBackground" className="col-sm-2 control-label">Barva</label>
-              <div className="col-sm-10">
-                <input type="color" className="form-control" id="inpColorBackground" />
-              </div>
-            </div>
-            <div className="form-group">
-              <label htmlFor="inpNodeSize" className="col-sm-2 control-label">Velikost</label>
-              <div className="col-sm-10">
-                <input type="number" className="form-control" id="inpNodeSize" />
-              </div>
-            </div>
-            <div className="form-group">
-              <div className="col-sm-12">
-                <button type="button" className="btn btn-success" id="btnSave">Uložit</button>
-                <button type="button" className="btn btn-default" id="btnCancel">Zrušit</button>
-              </div>
-            </div>
-          </form>
-        </div>
+        <GraphVis graph={this.state.graphVis} options={this.state.options} events={events} />
+        <EditNodeDialog />
       </div>
     );
   }
