@@ -2,6 +2,7 @@ import React from 'react';
 import { Grid } from 'react-bootstrap';
 import { BrowserRouter, Route } from 'react-router-dom';
 import Overview from './components/pages/Overview/Overview';
+import Exercise19 from './components/exercises/Exercise19/Exercise19';
 import Exercise20svg from './components/exercises/Exercise20svg/Exercise20svg';
 import Exercise20v2 from './components/exercises/Exercise20/Exercise20v2';
 import Exercise21 from './components/exercises/Exercise21/Exercise21';
@@ -23,6 +24,9 @@ class App extends React.Component {
           <CustomNavbar />
           <Grid>
             <Route exact path="/" component={Overview} />
+            <Route path="/priklad17a" component={Exercise17a} />
+            <Route path="/priklad17av2" component={Exercise17av2} />
+            <Route path="/priklad19" component={Exercise19} />
             <Route path="/priklad20svg" component={Exercise20svg} />
             <Route path="/priklad20v2" component={Exercise20v2} />
             <Route path="/priklad21" component={Exercise21} />
@@ -30,8 +34,6 @@ class App extends React.Component {
             <Route path="/priklad24" component={Exercise24} />
             <Route path="/priklad26" component={Exercise26} />
             <Route path="/priklad26v2" component={Exercise26v2} />
-            <Route path="/priklad17a" component={Exercise17a} />
-            <Route path="/priklad17av2" component={Exercise17av2} />
             <Route path="/platno" component={SingleDrawing} />
           </Grid>
           {/* <Footer/> */}

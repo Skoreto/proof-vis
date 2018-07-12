@@ -37,7 +37,7 @@ export function showEditNodeDialog(nodeData, callback) {
 function saveNode(nodeData, document, callback) {
   let newLabel = document.getElementById('inpNodeLabel').value;
   if (newLabel.length === 1)
-    newLabel = ' ' + document.getElementById('inpNodeLabel').value + ' ';
+    newLabel = ' ' + newLabel + ' ';
 
   if (newLabel === '')
     newLabel = '   ';
