@@ -99,14 +99,17 @@ class Exercise19 extends React.Component {
   step1SVGContent = () => {
     const svgContent = (
       <svg>
-        <text textAnchor={'middle'} x={155} y={40} fill={'green'} strokeWidth={0} fontSize={26}>
-          A: graf <tspan fontStyle='italic'>G</tspan> je strom
+        <text textAnchor={'middle'} x={325} y={40} stroke={'black'} strokeWidth={0} fontSize={28}>
+          &forall;<tspan fill={'green'}>A</tspan>⇒<tspan fill={'red'}>B</tspan>
         </text>
-        <text textAnchor={'middle'} x={325} y={80} fill={'red'} strokeWidth={0} fontSize={26}>
-          B: graf <tspan fontStyle='italic'>G</tspan> je souvislý a každá jeho hrana je most
+        <text textAnchor={'middle'} x={155} y={80} fill={'green'} strokeWidth={0} fontSize={26}>
+          A: hrana <tspan fontStyle='italic'>e</tspan> je most
         </text>
-        <text textAnchor={'middle'} x={325} y={140} stroke={'black'} strokeWidth={0} fontSize={28}>
-          (<tspan fill={'green'}>A</tspan>⇒<tspan fill={'red'}>B</tspan>) ⇔ (<tspan fill={'red'}>&not;B</tspan>&rArr;<tspan fill={'green'}>&not;A</tspan>)
+        <text textAnchor={'middle'} x={325} y={120} fill={'red'} strokeWidth={0} fontSize={26}>
+          B: v grafu <tspan fontStyle='italic'>G</tspan> neexistuje kružnice obsahující hranu <tspan fontStyle='italic'>e</tspan>
+        </text>
+        <text textAnchor={'middle'} x={325} y={180} stroke={'black'} strokeWidth={0} fontSize={28}>
+        &not;(&forall;<tspan fill={'green'}>A</tspan>⇒<tspan fill={'red'}>B</tspan>) ⇔
         </text>
         <text textAnchor={'middle'} x={180} y={200} fill={'red'} strokeWidth={0} fontSize={26}>
           &not;B: <tspan fontStyle='italic'>G</tspan> není strom
