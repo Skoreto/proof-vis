@@ -108,21 +108,18 @@ class Exercise19 extends React.Component {
         <text textAnchor={'middle'} x={325} y={120} fill={'red'} strokeWidth={0} fontSize={26}>
           B: v grafu <tspan fontStyle='italic'>G</tspan> neexistuje kružnice obsahující hranu <tspan fontStyle='italic'>e</tspan>
         </text>
-        <text textAnchor={'middle'} x={325} y={180} stroke={'black'} strokeWidth={0} fontSize={28}>
-        &not;(&forall;<tspan fill={'green'}>A</tspan>⇒<tspan fill={'red'}>B</tspan>) ⇔
+        <text textAnchor={'middle'} x={325} y={170} stroke={'black'} strokeWidth={0} fontSize={28}>
+        &not;(&forall;<tspan fill={'green'}>A</tspan>⇒<tspan fill={'red'}>B</tspan>) ⇔ (&exist; A &and; &not; B)  
         </text>
-        <text textAnchor={'middle'} x={180} y={200} fill={'red'} strokeWidth={0} fontSize={26}>
-          &not;B: <tspan fontStyle='italic'>G</tspan> není strom
+        <text textAnchor={'middle'} x={155} y={220} fill={'green'} strokeWidth={0} fontSize={26}>
+          A: hrana <tspan fontStyle='italic'>e</tspan> je most
         </text>
-        <text textAnchor={'middle'} x={325} y={240} fill={'green'} strokeWidth={0} fontSize={26}>
-          &not;A: graf <tspan fontStyle='italic'>G</tspan> je nesouvislý a existuje hrana <tspan fontStyle='italic'>e</tspan>,
-        </text>
-        <text textAnchor={'middle'} x={275} y={270} fill={'green'} strokeWidth={0} fontSize={26}>
-          která není most v grafu <tspan fontStyle='italic'>G</tspan>
+        <text textAnchor={'middle'} x={325} y={260} fill={'red'} strokeWidth={0} fontSize={26}>
+          &not;B: v grafu <tspan fontStyle='italic'>G</tspan> existuje kružnice obsahující hranu <tspan fontStyle='italic'>e</tspan>
         </text>
         <text textAnchor={'middle'} x={325} y={330} strokeWidth={0} fontSize={26}>
-          Jestliže <tspan fill={'red'}>G není strom</tspan>, pak <tspan fill={'green'}>graf G je nesouvislý</tspan>
-          <tspan x={325} dy={40} fill={'green'}>nebo existuje hrana e, která není most v grafu G</tspan>.
+          Existuje graf G, ve kterém <tspan fill={'green'}>hrana e je most</tspan>, a zároveň 
+          <tspan x={325} dy={40} fill={'red'}> v grafu G existuje kružnice obsahující hranu e</tspan>.
         </text>
       </svg>
     );
