@@ -48,9 +48,13 @@ class Exercise19 extends React.Component {
           break;
 
         case 1:
-          this.setState(this.step2);
-          this.setState(this.step2Texts);
+          this.setState(this.step2SVGContent);
           scroller.scrollTo('proofPanel2', getScrollOptions(window.scrollY));
+          break;
+
+        case 2:
+          this.setState(this.step3SVGContent);
+          scroller.scrollTo('proofPanel3', getScrollOptions(window.scrollY));
           break;
       
         default:
@@ -108,6 +112,66 @@ class Exercise19 extends React.Component {
         <text textAnchor={'middle'} x={325} y={120} fill={'red'} strokeWidth={0} fontSize={26}>
           B: v grafu <tspan fontStyle='italic'>G</tspan> neexistuje kružnice obsahující hranu <tspan fontStyle='italic'>e</tspan>
         </text>
+      </svg>
+    );
+
+    return {
+      isSVGCoverShowed: true,
+      svgContent: svgContent,
+      repeatBoxHidden: true,
+      repeatBoxContent: '',
+    }
+  }
+
+  step1Texts = () => {
+    const description = (<p>Provedení negace původního výroku.</p>);
+    return { description: description };
+  };
+
+  step2SVGContent = () => {
+    const svgContent = (
+      <svg>
+        <text textAnchor={'middle'} x={325} y={40} stroke={'black'} strokeWidth={0} fontSize={28}>
+          &forall;<tspan fill={'green'}>A</tspan>⇒<tspan fill={'red'}>B</tspan>
+        </text>
+        <text textAnchor={'middle'} x={155} y={80} fill={'green'} strokeWidth={0} fontSize={26}>
+          A: hrana <tspan fontStyle='italic'>e</tspan> je most
+        </text>
+        <text textAnchor={'middle'} x={325} y={120} fill={'red'} strokeWidth={0} fontSize={26}>
+          B: v grafu <tspan fontStyle='italic'>G</tspan> neexistuje kružnice obsahující hranu <tspan fontStyle='italic'>e</tspan>
+        </text>
+        <text textAnchor={'middle'} x={325} y={170} stroke={'black'} strokeWidth={0} fontSize={28}>
+        &not;(&forall;<tspan fill={'green'}>A</tspan>⇒<tspan fill={'red'}>B</tspan>) ⇔ (&exist; A &and; &not; B)  
+        </text>
+        <text textAnchor={'middle'} x={155} y={220} fill={'green'} strokeWidth={0} fontSize={26}>
+          A: hrana <tspan fontStyle='italic'>e</tspan> je most
+        </text>
+        <text textAnchor={'middle'} x={325} y={260} fill={'red'} strokeWidth={0} fontSize={26}>
+          &not;B: v grafu <tspan fontStyle='italic'>G</tspan> existuje kružnice obsahující hranu <tspan fontStyle='italic'>e</tspan>
+        </text>
+      </svg>
+    );
+
+    return {
+      isSVGCoverShowed: true,
+      svgContent: svgContent,
+      repeatBoxHidden: true,
+      repeatBoxContent: '',
+    }
+  }
+
+  step3SVGContent = () => {
+    const svgContent = (
+      <svg>
+        <text textAnchor={'middle'} x={325} y={40} stroke={'black'} strokeWidth={0} fontSize={28}>
+          &forall;<tspan fill={'green'}>A</tspan>⇒<tspan fill={'red'}>B</tspan>
+        </text>
+        <text textAnchor={'middle'} x={155} y={80} fill={'green'} strokeWidth={0} fontSize={26}>
+          A: hrana <tspan fontStyle='italic'>e</tspan> je most
+        </text>
+        <text textAnchor={'middle'} x={325} y={120} fill={'red'} strokeWidth={0} fontSize={26}>
+          B: v grafu <tspan fontStyle='italic'>G</tspan> neexistuje kružnice obsahující hranu <tspan fontStyle='italic'>e</tspan>
+        </text>
         <text textAnchor={'middle'} x={325} y={170} stroke={'black'} strokeWidth={0} fontSize={28}>
         &not;(&forall;<tspan fill={'green'}>A</tspan>⇒<tspan fill={'red'}>B</tspan>) ⇔ (&exist; A &and; &not; B)  
         </text>
@@ -131,11 +195,6 @@ class Exercise19 extends React.Component {
       repeatBoxContent: '',
     }
   }
-
-  step1Texts = () => {
-    const description = (<p>Provedení negace původního výroku.</p>);
-    return { description: description };
-  };
 
   render() {
     return (

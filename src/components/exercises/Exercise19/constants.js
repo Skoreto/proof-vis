@@ -20,9 +20,19 @@ export const getProofBox = currentStep => {
         <p>
           Při dokazování sporem vycházíme z negace původního tvrzení.
           <br />
-          Původní tvrzení odpovídá implikaci ve tvaru <MN>\forall A \Rightarrow B</MN>.
+          Původní tvrzení odpovídá implikaci ve tvaru <MN>\forall A \Rightarrow B</MN>. Vyznačíme v tvrzení výrok A i B.
         </p>
-      </Element>   
+      </Element>
+      <Element name="proofPanel2" className={2 === currentStep ? "proof-active" : ""}>
+        <p>
+          Negace původního tvrzení se skládá z výroku A a &not; B.
+        </p>
+      </Element>
+      <Element name="proofPanel3" className={3 === currentStep ? "proof-active" : ""}>
+        <p>
+          Sestavíme výslednou negaci původního tvrzení.
+        </p>
+      </Element>
     </Element>
   )
 };
