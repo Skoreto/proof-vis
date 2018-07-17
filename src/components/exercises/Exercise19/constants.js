@@ -33,6 +33,21 @@ export const getProofBox = currentStep => {
           Sestavíme výslednou negaci původního tvrzení.
         </p>
       </Element>
+      <Element name="proofPanel4" className={4 === currentStep ? "proof-active" : ""}>
+        <p>
+          Pokud v <MN>G</MN> existuje kružnice <MN>C</MN> obsahující hranu <MN>{'e=\\{x,y\\}'}</MN>, pak v grafu <MN>G</MN> existují minimálně 2 <MN>x-y</MN> cesty.
+        </p>
+      </Element>
+      <Element name="proofPanel5" className={5 === currentStep ? "proof-active" : ""}>
+        <p>
+          <b>1.</b> <MN>{'P_{x,y}=e=\\{x,y\\}'}</MN> (samotná hrana <MN>e</MN>)
+        </p>
+      </Element>
+      <Element name="proofPanel6" className={5 === currentStep ? "proof-active" : ""}>
+        <p>
+          <b>2.</b> <MN>{"P'_{x,y}=C-e=(x,v_1,v_2,...,v_3,y)"}</MN> (kružnice bez hrany <MN>e</MN>)
+        </p>
+      </Element>
     </Element>
   )
 };
