@@ -56,6 +56,11 @@ class Exercise19 extends React.Component {
           this.setState(this.step3SVGContent);
           scroller.scrollTo('proofPanel3', getScrollOptions(window.scrollY));
           break;
+
+        case 3:
+          this.setState(this.step4);
+          scroller.scrollTo('proofPanel4', getScrollOptions(window.scrollY));
+          break;
       
         default:
           break;
@@ -195,6 +200,34 @@ class Exercise19 extends React.Component {
       repeatBoxContent: '',
     }
   }
+
+  step4 = () => {
+    return {
+      graphVis: {
+        nodes: [
+          { id: 1, x: -250, y: 0, color: { background: palette.yellow }, label: '   ' },
+          { id: 2, x: -130, y: -80, color: { background: palette.yellow }, label: '   ' },
+          { id: 3, x: -130, y: 80, color: { background: palette.yellow }, label: '   ' },
+          { id: 4, x: 0, y: -150, color: { background: palette.yellow }, label: '   ' },
+          { id: 5, x: 0, y: 150, color: { background: palette.yellow }, label: ' x ' },
+          { id: 6, x: 130, y: -80, color: { background: palette.yellow }, label: '   ' },
+          { id: 7, x: 130, y: 80, color: { background: palette.yellow }, label: ' y ' },
+          { id: 8, x: 250, y: 0, color: { background: palette.yellow }, label: '   ' },
+        ],
+        edges: [
+          { id: 1, from: 1, to: 2 },
+          { id: 2, from: 2, to: 3 },
+          { id: 3, from: 2, to: 4},
+          { id: 4, from: 3, to: 5 },
+          { id: 5, from: 4, to: 6 },
+          { id: 6, from: 5, to: 7, label: 'e' },
+          { id: 7, from: 6, to: 7 },
+          { id: 8, from: 7, to: 8 },
+        ],
+      },
+      isSVGCoverShowed: false,
+    }
+  };
 
   render() {
     return (
