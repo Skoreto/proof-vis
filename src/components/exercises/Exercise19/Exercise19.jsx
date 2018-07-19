@@ -62,6 +62,11 @@ class Exercise19 extends React.Component {
           scroller.scrollTo('proofPanel4', getScrollOptions(window.scrollY));
           break;
       
+        case 4:
+          this.setState(this.step5);
+          scroller.scrollTo('proofPanel5', getScrollOptions(window.scrollY));
+          break;
+      
         default:
           break;
       }
@@ -227,6 +232,15 @@ class Exercise19 extends React.Component {
       },
       isSVGCoverShowed: false,
     }
+  };
+
+  step5 = (state) => {
+    let newNodes = this.updateNode(state.graphVis.nodes, 4, palette.purple, ' x ');
+    newNodes = this.updateNode(newNodes, 6, palette.purple, ' y ');
+    
+    let newEdges = this.updateEdge(state.graphVis.edges, 5, palette.purple, 3, false, 'e');
+
+    return { graphVis: { nodes: newNodes, edges: newEdges } };
   };
 
   render() {

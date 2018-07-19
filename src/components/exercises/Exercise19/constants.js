@@ -43,7 +43,7 @@ export const getProofBox = currentStep => {
           <b>1.</b> <MN>{'P_{x,y}=e=\\{x,y\\}'}</MN> (samotná hrana <MN>e</MN>)
         </p>
       </Element>
-      <Element name="proofPanel6" className={5 === currentStep ? "proof-active" : ""}>
+      <Element name="proofPanel6" className={6 === currentStep ? "proof-active" : ""}>
         <p>
           <b>2.</b> <MN>{"P'_{x,y}=C-e=(x,v_1,v_2,...,v_3,y)"}</MN> (kružnice bez hrany <MN>e</MN>)
         </p>
