@@ -211,12 +211,12 @@ class Exercise19 extends React.Component {
       graphVis: {
         nodes: [
           { id: 1, x: -250, y: 0, color: { background: palette.yellow }, label: '   ' },
-          { id: 2, x: -130, y: -80, color: { background: palette.yellow }, label: '   ' },
-          { id: 3, x: -130, y: 80, color: { background: palette.yellow }, label: '   ' },
-          { id: 4, x: 0, y: -150, color: { background: palette.yellow }, label: '   ' },
-          { id: 5, x: 0, y: 150, color: { background: palette.yellow }, label: ' x ' },
-          { id: 6, x: 130, y: -80, color: { background: palette.yellow }, label: '   ' },
-          { id: 7, x: 130, y: 80, color: { background: palette.yellow }, label: ' y ' },
+          { id: 2, x: -130, y: -80, color: { background: palette.green }, label: '   ' },
+          { id: 3, x: -130, y: 80, color: { background: palette.green }, label: '   ' },
+          { id: 4, x: 0, y: -150, color: { background: palette.green }, label: '   ' },
+          { id: 5, x: 0, y: 150, color: { background: palette.green }, label: ' x ' },
+          { id: 6, x: 130, y: -80, color: { background: palette.green }, label: '   ' },
+          { id: 7, x: 130, y: 80, color: { background: palette.green }, label: ' y ' },
           { id: 8, x: 250, y: 0, color: { background: palette.yellow }, label: '   ' },
         ],
         edges: [
@@ -235,8 +235,8 @@ class Exercise19 extends React.Component {
   };
 
   step5 = (state) => {
-    let newNodes = this.updateNode(state.graphVis.nodes, 4, palette.purple, ' x ');
-    newNodes = this.updateNode(newNodes, 6, palette.purple, ' y ');
+    let newNodes = this.updateNode(state.graphVis.nodes, 4, palette.purple, 'x');
+    newNodes = this.updateNode(newNodes, 6, palette.purple, 'y');
     
     let newEdges = this.updateEdge(state.graphVis.edges, 5, palette.purple, 3, false, 'e');
 
