@@ -234,40 +234,20 @@ class Exercise19 extends React.Component {
     }
   };
 
-  // step5 = () => {
-  //   return {
-  //     graphVis: {
-  //       nodes: [
-  //         { id: 1, x: -250, y: 0, color: { background: palette.yellow }, label: '   ' },
-  //         { id: 2, x: -130, y: -80, color: { background: palette.green }, label: '   ' },
-  //         { id: 3, x: -130, y: 80, color: { background: palette.green }, label: '   ' },
-  //         { id: 4, x: 0, y: -150, color: { background: palette.green }, label: '   ' },
-  //         { id: 5, x: 0, y: 150, color: { background: palette.green }, label: ' x ' },
-  //         { id: 6, x: 130, y: -80, color: { background: palette.green }, label: '   ' },
-  //         { id: 7, x: 130, y: 80, color: { background: palette.green }, label: ' y ' },
-  //         { id: 8, x: 250, y: 0, color: { background: palette.yellow }, label: '   ' },
-  //       ],
-  //       edges: [
-  //         { id: 1, from: 1, to: 2 },
-  //         { id: 2, from: 2, to: 3 },
-  //         { id: 3, from: 2, to: 4},
-  //         { id: 4, from: 3, to: 5 },
-  //         { id: 5, from: 4, to: 6 },
-  //         { id: 6, from: 5, to: 7, label: 'e' },
-  //         { id: 7, from: 6, to: 7 },
-  //         { id: 8, from: 7, to: 8 },
-  //       ],
-  //     },
-  //     isSVGCoverShowed: false,
-  //   }
-  // };
-
   step5 = (state) => {
-    let newNodes = this.updateNode(state.graphVis.nodes, 1, palette.green, 'x');
-    newNodes = this.updateNode(newNodes, 2, palette.green, 'y');
+    let newNodes = this.updateNode(state.graphVis.nodes, 1, palette.green, '');
+    newNodes = this.updateNode(newNodes, 2, palette.green, '');
     newNodes = this.updateNode(newNodes, 3, palette.green, '');
+    newNodes = this.updateNode(newNodes, 4, palette.green, 'x');
+    newNodes = this.updateNode(newNodes, 5, palette.green, '');
+    newNodes = this.updateNode(newNodes, 6, palette.green, 'y');
     
-    let newEdges = this.updateEdge(state.graphVis.edges, 2, palette.green, 3, false, '');
+    let newEdges = this.updateEdge(state.graphVis.edges, 1, palette.green, 3, false, '');
+    newEdges = this.updateEdge(newEdges, 2, palette.green, 3, false, '');
+    newEdges = this.updateEdge(newEdges, 3, palette.green, 3, false, '');
+    newEdges = this.updateEdge(newEdges, 4, palette.green, 3, false, '');
+    newEdges = this.updateEdge(newEdges, 5, palette.green, 3, false, 'e');
+    newEdges = this.updateEdge(newEdges, 6, palette.green, 3, false, '');
 
     return { graphVis: { nodes: newNodes, edges: newEdges } };
   };
