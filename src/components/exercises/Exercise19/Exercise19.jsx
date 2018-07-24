@@ -66,6 +66,12 @@ class Exercise19 extends React.Component {
           this.setState(this.step5);
           scroller.scrollTo('proofPanel4', getScrollOptions(window.scrollY));
           break;
+
+        case 5:
+          this.setState(this.step4);
+          this.setState(this.step6);
+          scroller.scrollTo('proofPanel5', getScrollOptions(window.scrollY));
+          break;
       
         default:
           break;
