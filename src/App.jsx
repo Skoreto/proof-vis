@@ -1,6 +1,22 @@
 import React from 'react';
 import { Grid } from 'react-bootstrap';
 import { BrowserRouter, Route } from 'react-router-dom';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import {
+  faArrowRight,
+  faSyncAlt,
+  faBolt,
+  faStickyNote,
+  faTimes,
+  faChevronRight,
+  faChevronLeft,
+  faPaintBrush,
+  faPencilAlt,
+  faMinus,
+  faCircleNotch,
+  faRedoAlt,
+  faEdit,
+} from '@fortawesome/free-solid-svg-icons';
 import Overview from './components/pages/Overview/Overview';
 import Exercise19 from './components/exercises/Exercise19/Exercise19';
 import Exercise20svg from './components/exercises/Exercise20svg/Exercise20svg';
@@ -15,6 +31,23 @@ import Exercise17av2 from './components/exercises/Exercise17a/Exercise17av2';
 import SingleDrawing from './components/pages/SingleDrawing/SingleDrawing';
 import CustomNavbar from './components/UI/CustomNavbar/CustomNavbar';
 import Footer from './components/UI/Footer/Footer';
+
+// Add Font Awesome icons into global library for accesing them via FontAwesomeIcon component
+library.add(
+  faArrowRight,
+  faSyncAlt,
+  faBolt,
+  faStickyNote,
+  faTimes,
+  faChevronRight,
+  faChevronLeft,
+  faPaintBrush,
+  faPencilAlt,
+  faMinus,
+  faCircleNotch,
+  faRedoAlt,
+  faEdit,
+);
 
 class App extends React.Component {
   render() {

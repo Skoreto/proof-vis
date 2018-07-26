@@ -1,12 +1,8 @@
 import React from 'react';
 import { Navbar, Nav, NavItem, NavDropdown, MenuItem, Image } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './CustomNavbar.css';
-import FontAwesomeIcon from '@fortawesome/react-fontawesome';
-import faArrowRight from '@fortawesome/fontawesome-free-solid/faArrowRight';
-import faSyncAlt from '@fortawesome/fontawesome-free-solid/faSyncAlt';
-import faBolt from '@fortawesome/fontawesome-free-solid/faBolt';
-import faPaintBrush from '@fortawesome/fontawesome-free-solid/faPaintBrush';
 
 const CustomNavbar = () => (
   <Navbar className="main-nav" default collapseOnSelect>
@@ -23,7 +19,7 @@ const CustomNavbar = () => (
         <NavDropdown
           eventKey={1}
           title={
-            <span><FontAwesomeIcon icon={faArrowRight} /> Důkazy přímo</span>
+            <span><FontAwesomeIcon icon="arrow-right" /> Důkazy přímo</span>
           }
           id="basic-nav-dropdown"
           className={"nav-item"}
@@ -41,7 +37,7 @@ const CustomNavbar = () => (
         <NavDropdown
           eventKey={2}
           title={
-            <span><FontAwesomeIcon icon={faSyncAlt} /> Důkazy nepřímo</span>
+            <span><FontAwesomeIcon icon="sync-alt" /> Důkazy nepřímo</span>
           }
           id="basic-nav-dropdown"
           className={"nav-item"}
@@ -56,7 +52,7 @@ const CustomNavbar = () => (
         <NavDropdown
           eventKey={3}
           title={
-            <span><FontAwesomeIcon icon={faBolt} /> Důkazy sporem</span>
+            <span><FontAwesomeIcon icon="bolt" /> Důkazy sporem</span>
           }
           id="basic-nav-dropdown"
           className={"nav-item"}
@@ -65,7 +61,14 @@ const CustomNavbar = () => (
             Příklad 19
           </MenuItem>
         </NavDropdown>
-        <NavDropdown eventKey={4} title="Protipříklady" id="basic-nav-dropdown" className={"nav-item"}>
+        <NavDropdown
+          eventKey={4}
+          title={
+            <span><FontAwesomeIcon icon="times" /> Protipříklady</span>
+          }
+          id="basic-nav-dropdown"
+          className={"nav-item"}
+        >
           <MenuItem eventKey={4.1} componentClass={Link} href="/priklad17a" to="/priklad17a">
             Příklad 17 a) (verze 1)
           </MenuItem>
@@ -80,7 +83,7 @@ const CustomNavbar = () => (
           to="/platno"
           className={"nav-item"}
         >
-          {<span><FontAwesomeIcon icon={faPaintBrush} /> Plátno</span>}
+          {<span><FontAwesomeIcon icon="edit" /> Plátno</span>}
         </NavItem>
       </Nav>
     </Navbar.Collapse>

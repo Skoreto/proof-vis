@@ -1,5 +1,6 @@
 import GraphVis from 'react-graph-vis';
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { initialExerciseState, events } from '../../../functionality/GlobalExerciseConstants';
 import {
   updateNode, 
@@ -18,13 +19,6 @@ import PageHeading from "../../../components/UI/PageHeading/PageHeading";
 import DefinitionPanel from "../../../components/UI/DefinitionPanel/DefinitionPanel";
 import Button from '../../../components/UI/Button/Button';
 import StepCounter from '../../../components/UI/StepCounter/StepCounter';
-import FontAwesomeIcon from '@fortawesome/react-fontawesome';
-import faChevronRight from '@fortawesome/fontawesome-free-solid/faChevronRight';
-import faChevronLeft from '@fortawesome/fontawesome-free-solid/faChevronLeft';
-import faPaintBrush from '@fortawesome/fontawesome-free-solid/faPaintBrush';
-import faPencilAlt from '@fortawesome/fontawesome-free-solid/faPencilAlt';
-import faMinus from '@fortawesome/fontawesome-free-solid/faMinus';
-import faCircle from '@fortawesome/fontawesome-free-solid/faCircleNotch';
 
 class Exercise26 extends React.Component {
   constructor(props) {
@@ -330,11 +324,11 @@ class Exercise26 extends React.Component {
                     <div className="controls-panel">
                       <span className="step-panel">
                         <Button clicked={this.previousStep} disabled={this.state.btnPrevD}>
-                          <FontAwesomeIcon icon={faChevronLeft} />
+                          <FontAwesomeIcon icon="faChevronLeft" />
                         </Button>
                         <StepCounter currentStep={this.state.currentStep} stepSum={5} />
                         <Button clicked={this.nextStep} disabled={this.state.btnNextD}>
-                          <FontAwesomeIcon icon={faChevronRight} />
+                          <FontAwesomeIcon icon="faChevronRight" />
                         </Button>
                       </span>
                       <span className="sketch-buttons">
@@ -345,28 +339,28 @@ class Exercise26 extends React.Component {
                           active={this.state.btnSketchA} 
                           addClass={this.state.btnSketchC}
                         >
-                          <FontAwesomeIcon icon={faPaintBrush} />
+                          <FontAwesomeIcon icon="faPaintBrush" />
                         </Button>
                         <Button 
                           clicked={() => this.setState(() => this.handlerSelectedTool(1))}
                           active={this.state.btnPencilA} 
                           disabled={this.state.btnPencilD}
                         >
-                          <FontAwesomeIcon icon={faPencilAlt} />
+                          <FontAwesomeIcon icon="faPencilAlt" />
                         </Button>
                         <Button 
                           clicked={() => this.setState(() => this.handlerSelectedTool(2))}
                           active={this.state.btnLineA} 
                           disabled={this.state.btnLineD}
                         >
-                          <FontAwesomeIcon icon={faMinus} />
+                          <FontAwesomeIcon icon="faMinus" />
                         </Button>
                         <Button 
                           clicked={() => this.setState(() => this.handlerSelectedTool(3))}
                           active={this.state.btnCircleA} 
                           disabled={this.state.btnCircleD}
                         >
-                          <FontAwesomeIcon icon={faCircle} />
+                          <FontAwesomeIcon icon="faCircle" />
                         </Button>
                       </span>
                     </div>

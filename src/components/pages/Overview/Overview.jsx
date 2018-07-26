@@ -1,16 +1,9 @@
 import React from 'react';
 import { Row, Col, ListGroup, ListGroupItem } from 'react-bootstrap';
 import { BrowserRouter } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../../../customMainTheme.css';
 import PageHeading from "../../../components/UI/PageHeading/PageHeading";
-import FontAwesomeIcon from '@fortawesome/react-fontawesome';
-import faChevronRight from '@fortawesome/fontawesome-free-solid/faChevronRight';
-import faChevronLeft from '@fortawesome/fontawesome-free-solid/faChevronLeft';
-import faPaintBrush from '@fortawesome/fontawesome-free-solid/faPaintBrush';
-import faMinus from '@fortawesome/fontawesome-free-solid/faMinus';
-import faCircle from '@fortawesome/fontawesome-free-solid/faCircleNotch';
-import faRedoAlt from '@fortawesome/fontawesome-free-solid/faRedoAlt';
-import faEdit from '@fortawesome/fontawesome-free-solid/faEdit';
 
 class Overview extends React.Component {
   render() {
@@ -29,10 +22,10 @@ class Overview extends React.Component {
                     <h3 className="first-heading">Pro studium</h3>
                     <ul>
                       <li>
-                        Černými šipkami vlevo <FontAwesomeIcon icon={faChevronLeft} /> a vpravo <FontAwesomeIcon icon={faChevronRight} /> se lze pohybovat v příkladu důkazu o krok zpět či vpřed. Aktuální krok z celkového počtu kroků zobrazuje ukazadlo mezi šipkami.
+                        Černými šipkami vlevo <FontAwesomeIcon icon="chevron-left" /> a vpravo <FontAwesomeIcon icon="chevron-right" /> se lze pohybovat v příkladu důkazu o krok zpět či vpřed. Aktuální krok z celkového počtu kroků zobrazuje ukazadlo mezi šipkami.
                       </li>                     
                       <li>
-                        V průběhu více-krokových animací je aktivní tlačítko "šipky zopakovat" <FontAwesomeIcon icon={faRedoAlt} /> v pravé části panelu. Ta slouží k okamžitému <b>zopakování animace</b> od začátku.
+                        V průběhu více-krokových animací je aktivní tlačítko "šipky zopakovat" <FontAwesomeIcon icon="redo-alt" /> v pravé části panelu. Ta slouží k okamžitému <b>zopakování animace</b> od začátku.
                       </li>
                       <li>
                         Otáčením kolečka myši na plátně <i>(aktuálně deaktivováno)</i> či klikáním na tlačítka + a - v pravém dolním rohu plátna lze <b>přibližovat/oddalovat</b> pohled kamery.
@@ -47,13 +40,13 @@ class Overview extends React.Component {
                     <h3>Pro výuku</h3>
                     <ul>
                       <li>
-                        Tlačítko štětce <FontAwesomeIcon icon={faPaintBrush} /> slouží k volnému <b>kreslení přes plátno</b> důkazu. Po aktivaci kreslení jsou zpřístupněny k výběru další kreslící nástroje - čára <FontAwesomeIcon icon={faMinus} /> a kruh <FontAwesomeIcon icon={faCircle} />. Opětovným stistknutím tlačítka štětce je kreslení deaktivováno a kresba vymazána.
+                        Tlačítko štětce <FontAwesomeIcon icon="paint-brush" /> slouží k volnému <b>kreslení přes plátno</b> důkazu. Po aktivaci kreslení jsou zpřístupněny k výběru další kreslící nástroje - čára <FontAwesomeIcon icon="minus" /> a kruh <FontAwesomeIcon icon="circle-notch" />. Opětovným stistknutím tlačítka štětce je kreslení deaktivováno a kresba vymazána.
                       </li>
                       <li>
                         Dlouhým podržením levého tlačítka myši či klikáním při držení levého tlačítka CTRL nad vrcholem či hranou lze <b>označit více prvků zároveň</b>. To lze využít k vyznačování prvků grafu, ale také k jejich jednotnému přesunu.
                       </li>
                       <li>
-                        Pro účely výuky byly do aplikace přidány <b>prázdná plátna</b>, ve kterých může vyučující sám sestrojovat grafy. Z hlavní nabídky je dostupné velké plátno, roztažené přes celou obrazovku. Z panelu ovládání důkazu lze tlačítkem <FontAwesomeIcon icon={faEdit} /> zobrazit menší pomocné plátno, které lze snadněji kombinovat s výkladem k danému důkazu.
+                        Pro účely výuky byly do aplikace přidány <b>prázdná plátna</b>, ve kterých může vyučující sám sestrojovat grafy. Z hlavní nabídky je dostupné velké plátno, roztažené přes celou obrazovku. Z panelu ovládání důkazu lze tlačítkem <FontAwesomeIcon icon="edit" /> zobrazit menší pomocné plátno, které lze snadněji kombinovat s výkladem k danému důkazu.
                       </li>
                         <ul>
                           <li>

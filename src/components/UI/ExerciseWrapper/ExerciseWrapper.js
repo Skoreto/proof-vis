@@ -2,22 +2,14 @@ import React from 'react';
 import GraphVis from 'react-graph-vis';
 import { Row, Col } from 'react-bootstrap';
 import { SketchField } from 'react-sketch';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import M from 'react-mathjax2';
 import PageHeading from '../../../components/UI/PageHeading/PageHeading';
 import Button from '../../../components/UI/Button/Button';
 import StepCounter from '../../../components/UI/StepCounter/StepCounter';
-import FontAwesomeIcon from '@fortawesome/react-fontawesome';
-import faChevronRight from '@fortawesome/fontawesome-free-solid/faChevronRight';
-import faChevronLeft from '@fortawesome/fontawesome-free-solid/faChevronLeft';
-import faPaintBrush from '@fortawesome/fontawesome-free-solid/faPaintBrush';
-import faPencilAlt from '@fortawesome/fontawesome-free-solid/faPencilAlt';
-import faMinus from '@fortawesome/fontawesome-free-solid/faMinus';
-import faCircle from '@fortawesome/fontawesome-free-solid/faCircleNotch';
-import faRedoAlt from '@fortawesome/fontawesome-free-solid/faRedoAlt';
-import faEdit from '@fortawesome/fontawesome-free-solid/faEdit';
 import Dialog from 'react-dialog';
-import '../../../drawingDialog.css';
 import DialogDrawing from '../../../components/DialogDrawing/DialogDrawing';
+import '../../../drawingDialog.css';
 
 const ExerciseWrapper = (props) => (
   <div>
@@ -84,16 +76,16 @@ const ExerciseWrapper = (props) => (
               <div className='controls-panel'>
               <span className='animation-panel'>
                   <Button clicked={props.repeatStep} disabled={props.btnRepeatD}>
-                    <FontAwesomeIcon icon={faRedoAlt} />
+                    <FontAwesomeIcon icon="redo-alt" />
                   </Button>
                 </span>
                 <span className='step-panel'>
                   <Button clicked={props.previousStep} disabled={props.btnPrevD}>
-                    <FontAwesomeIcon icon={faChevronLeft} />
+                    <FontAwesomeIcon icon="chevron-left" />
                   </Button>
                   <StepCounter currentStep={props.currentStep} stepSum={props.stepSum} />
                   <Button clicked={props.nextStep} disabled={props.btnNextD}>
-                    <FontAwesomeIcon icon={faChevronRight} />
+                    <FontAwesomeIcon icon="chevron-right" />
                   </Button>
                 </span>
                 <span className="sketch-buttons">
@@ -102,33 +94,33 @@ const ExerciseWrapper = (props) => (
                     active={props.btnSketchA}
                     addClass={props.btnSketchC}
                   >
-                    <FontAwesomeIcon icon={faPaintBrush} />
+                    <FontAwesomeIcon icon="paint-brush" />
                   </Button>
                   <Button
                     clicked={props.handleSketchPencil}
                     active={props.btnPencilA}
                     disabled={props.btnPencilD}
                   >
-                    <FontAwesomeIcon icon={faPencilAlt} />
+                    <FontAwesomeIcon icon="pencil-alt" />
                   </Button>
                   <Button
                     clicked={props.handleSketchLine}
                     active={props.btnLineA}
                     disabled={props.btnLineD}
                   >
-                    <FontAwesomeIcon icon={faMinus} />
+                    <FontAwesomeIcon icon="minus" />
                   </Button>
                   <Button
                     clicked={props.handleSketchCircle}
                     active={props.btnCircleA}
                     disabled={props.btnCircleD}
                   >
-                    <FontAwesomeIcon icon={faCircle} />
+                    <FontAwesomeIcon icon="circle-notch" />
                   </Button>
                 </span>
                 <span className="drawing-dialog-panel">
                   <Button clicked={props.handleDrawingDialog}>
-                    <FontAwesomeIcon icon={faEdit} />
+                    <FontAwesomeIcon icon="edit" />
                   </Button>
                 </span>
               </div>

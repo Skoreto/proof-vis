@@ -15,6 +15,7 @@ import {
 } from '../../../functionality/GraphFunctions';
 import { Row, Col } from 'react-bootstrap';
 import { SketchField } from 'react-sketch';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import M from 'react-mathjax2';
 import MN from '../../../components/MathJax/MathJaxNode';
 import '../../../customMainTheme.css';
@@ -22,7 +23,7 @@ import PageHeading from "../../../components/UI/PageHeading/PageHeading";
 import DefinitionPanel from "../../../components/UI/DefinitionPanel/DefinitionPanel";
 import Button from '../../../components/UI/Button/Button';
 import StepCounter from '../../../components/UI/StepCounter/StepCounter';
-import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+// import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import faChevronRight from '@fortawesome/fontawesome-free-solid/faChevronRight';
 import faChevronLeft from '@fortawesome/fontawesome-free-solid/faChevronLeft';
 import faPaintBrush from '@fortawesome/fontawesome-free-solid/faPaintBrush';
