@@ -46,33 +46,33 @@ class Exercise19 extends React.Component {
           this.setState(this.step1SVGContent);
           this.setState(this.step1Texts);
           break;
-
         case 1:
           this.setState(this.step2SVGContent);
           scroller.scrollTo('proofPanel2', getScrollOptions(window.scrollY));
           break;
-
         case 2:
           this.setState(this.step3SVGContent);
           scroller.scrollTo('proofPanel3', getScrollOptions(window.scrollY));
           break;
-
         case 3:
           this.setState(this.step4);
           scroller.scrollTo('proofPanel4', getScrollOptions(window.scrollY));
           break;
-      
         case 4:
           this.setState(this.step5);
           scroller.scrollTo('proofPanel4', getScrollOptions(window.scrollY));
           break;
-
         case 5:
           this.setState(this.step4);
           this.setState(this.step6);
           scroller.scrollTo('proofPanel5', getScrollOptions(window.scrollY));
           break;
-      
+        case 6:
+          this.setState(this.step4);
+          this.setState(this.step7);
+          scroller.scrollTo('proofPanel6', getScrollOptions(window.scrollY));
+          break;
+
         default:
           break;
       }
@@ -198,7 +198,7 @@ class Exercise19 extends React.Component {
           &not;B: v grafu <tspan fontStyle='italic'>G</tspan> existuje kružnice obsahující hranu <tspan fontStyle='italic'>e</tspan>
         </text>
         <text textAnchor={'middle'} x={325} y={330} strokeWidth={0} fontSize={26}>
-          Existuje graf G, ve kterém <tspan fill={'green'}>hrana e je most</tspan>, a zároveň 
+          Existuje graf G, ve kterém <tspan fill={'green'}>hrana e je most</tspan> a zároveň 
           <tspan x={325} dy={40} fill={'red'}> v grafu G existuje kružnice obsahující hranu e</tspan>.
         </text>
       </svg>
@@ -263,6 +263,23 @@ class Exercise19 extends React.Component {
     newNodes = this.updateNode(newNodes, 6, palette.purple, 'y');
     
     let newEdges = this.updateEdge(state.graphVis.edges, 5, palette.purple, 3, false, 'e');
+
+    return { graphVis: { nodes: newNodes, edges: newEdges } };
+  };
+
+  step7 = (state) => {
+    let newNodes = this.updateNode(state.graphVis.nodes, 1, palette.purple, '');
+    newNodes = this.updateNode(newNodes, 2, palette.purple, '');
+    newNodes = this.updateNode(newNodes, 3, palette.purple, '');
+    newNodes = this.updateNode(newNodes, 4, palette.purple, 'x');
+    newNodes = this.updateNode(newNodes, 5, palette.purple, '');
+    newNodes = this.updateNode(newNodes, 6, palette.purple, 'y');
+    
+    let newEdges = this.updateEdge(state.graphVis.edges, 1, palette.purple, 3, false, '');
+    newEdges = this.updateEdge(newEdges, 2, palette.purple, 3, false, '');
+    newEdges = this.updateEdge(newEdges, 3, palette.purple, 3, false, '');
+    newEdges = this.updateEdge(newEdges, 4, palette.purple, 3, false, '');
+    newEdges = this.updateEdge(newEdges, 6, palette.purple, 3, false, '');
 
     return { graphVis: { nodes: newNodes, edges: newEdges } };
   };

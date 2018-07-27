@@ -31,6 +31,8 @@ export const getProofBox = currentStep => {
       <Element name="proofPanel3" className={3 === currentStep ? "proof-active" : ""}>
         <p>
           Sestavíme výslednou negaci původního tvrzení.
+          <br /><br />
+          Pro spor tedy předpokládejme tvrzení: <cite><q>Existuje graf G, ve kterém hrana <MN>e</MN> je most a zároveň v grafu <MN>G</MN> existuje kružnice obsahující hranu <MN>e</MN>.</q></cite>
         </p>
       </Element>
       <Element name="proofPanel4" className={(4 === currentStep) || (5 === currentStep) ? "proof-active" : ""}>
@@ -51,3 +53,25 @@ export const getProofBox = currentStep => {
     </Element>
   )
 };
+
+
+const posts = [
+  {
+    name: 1,
+    title: 'Hello World',
+    content:
+      <p>
+        Při dokazování sporem vycházíme z negace původního tvrzení.
+        <br />
+        Původní tvrzení odpovídá implikaci ve tvaru <MN>\forall A \Rightarrow B</MN>. Vyznačíme v tvrzení výrok A i B.
+      </p>
+  },
+  {
+    name: 2,
+    title: 'Installation', 
+    content:
+      <p>
+        <b>2.</b> <MN>{"P'_{x,y}=C-e=(x,v_1,v_2,...,v_3,y)"}</MN> (kružnice bez hrany <MN>e</MN>)
+      </p>
+  },
+];
