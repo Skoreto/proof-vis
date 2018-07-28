@@ -54,11 +54,10 @@ export const getProofBox = currentStep => {
   )
 };
 
-
-const posts = [
+export const proofPanels = [
   {
-    name: 1,
-    title: 'Hello World',
+    id: 1,
+    activeForSteps: [1],
     content:
       <p>
         Při dokazování sporem vycházíme z negace původního tvrzení.
@@ -67,8 +66,42 @@ const posts = [
       </p>
   },
   {
-    name: 2,
-    title: 'Installation', 
+    id: 2,
+    activeForSteps: [2],
+    content:
+      <p>
+        Negace původního tvrzení se skládá z výroku A a &not; B.
+      </p>
+  },
+  {
+    id: 3,
+    activeForSteps: [3],
+    content:
+      <p>
+        Sestavíme výslednou negaci původního tvrzení.
+        <br /><br />
+        Pro spor tedy předpokládejme tvrzení: <cite><q>Existuje graf G, ve kterém hrana <MN>e</MN> je most a zároveň v grafu <MN>G</MN> existuje kružnice obsahující hranu <MN>e</MN>.</q></cite>
+      </p>
+  },
+  {
+    id: 4,
+    activeForSteps: [4, 5],
+    content:
+      <p>
+        Pokud v <MN>G</MN> existuje kružnice <MN>C</MN> obsahující hranu <MN>{'e=\\{x,y\\}'}</MN>, pak v grafu <MN>G</MN> existují minimálně 2 <MN>x-y</MN> cesty.
+      </p>
+  },
+  {
+    id: 5,
+    activeForSteps: [6],
+    content:
+      <p>
+        <b>1.</b> <MN>{'P_{x,y}=e=\\{x,y\\}'}</MN> (samotná hrana <MN>e</MN>)
+      </p>
+  },
+  {
+    id: 6,
+    activeForSteps: [7],
     content:
       <p>
         <b>2.</b> <MN>{"P'_{x,y}=C-e=(x,v_1,v_2,...,v_3,y)"}</MN> (kružnice bez hrany <MN>e</MN>)

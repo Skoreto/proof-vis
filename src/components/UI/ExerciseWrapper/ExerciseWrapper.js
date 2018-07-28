@@ -5,6 +5,7 @@ import { SketchField } from 'react-sketch';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import M from 'react-mathjax2';
 import PageHeading from '../../../components/UI/PageHeading/PageHeading';
+import ProofBox from '../../../components/UI/ProofBox/ProofBox';
 import Button from '../../../components/UI/Button/Button';
 import StepCounter from '../../../components/UI/StepCounter/StepCounter';
 import Dialog from 'react-dialog';
@@ -24,11 +25,12 @@ const ExerciseWrapper = (props) => (
           <Col xs={12} md={12} lg={5}>
             <aside>
               <div id='divProofContainer'>
-                <M.Context input='tex'>
+                <ProofBox proofPanels={props.proofPanels} currentStep={props.currentStep} />
+                {/* <M.Context input='tex'>
                   <div>
                     {props.proofBox}
                   </div>
-                </M.Context>
+                </M.Context> */}
               </div>
             </aside>
           </Col>
