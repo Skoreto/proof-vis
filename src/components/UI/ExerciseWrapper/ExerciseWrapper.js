@@ -26,11 +26,6 @@ const ExerciseWrapper = (props) => (
             <aside>
               <div id='divProofContainer'>
                 <ProofBox proofPanels={props.proofPanels} currentStep={props.currentStep} />
-                {/* <M.Context input='tex'>
-                  <div>
-                    {props.proofBox}
-                  </div>
-                </M.Context> */}
               </div>
             </aside>
           </Col>

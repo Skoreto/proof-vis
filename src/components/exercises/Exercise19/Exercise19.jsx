@@ -10,7 +10,6 @@ import {
   breadcrumbsCurrent,
   stepSum,
   definitionPanel,
-  getProofBox,
   proofPanels,
 } from './constants';
 import {
@@ -24,7 +23,6 @@ import {
   getScrollOptions,
 } from '../../../functionality/GraphFunctions';
 import ExerciseWrapper from '../../../components/UI/ExerciseWrapper/ExerciseWrapper';
-import ProofBox from '../../../components/UI/ProofBox/ProofBox';
 import MN from '../../../components/MathJax/MathJaxNode';
 
 class Exercise19 extends React.Component {
@@ -288,14 +286,12 @@ class Exercise19 extends React.Component {
 
   render() {
     return (
-      <div>
       <ExerciseWrapper
         {...this.state}
         events={events}
         headingTitle={headingTitle}
         breadcrumbsCurrent={breadcrumbsCurrent}
         definitionPanel={definitionPanel}
-        // proofBox={getProofBox(this.state.currentStep)}
         proofPanels={proofPanels}
         stepSum={stepSum}
         previousStep={this.previousStep}
@@ -309,8 +305,6 @@ class Exercise19 extends React.Component {
           () => this.setState(() => this.handlerDrawingDialog(this.state.isDrawingDialogOpen))
         }
       />
-      {/* <ProofBox proofPanels={proofPanels} currentStep={this.state.currentStep} /> */}
-      </div>
     );
   }
 }

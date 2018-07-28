@@ -12,37 +12,54 @@ export const definitionPanel = (
   </DefinitionPanel>
 );
 
-export const getProofBox = currentStep => {
-  return (
-    <div className="bg-warning" id="proofBox">
-      <div className={1 === currentStep ? "proof-active" : ""}>
-        <p>
-          Pokud <MN>{'e=\\{x,y\\}'}</MN> není most v <MN>G</MN>, poté z definice mostu platí, že graf <MN>G-e</MN> má stejný počet komponent jako <MN>G</MN>.
-        </p>
-      </div>
-      <div className={(2 === currentStep) || (3 === currentStep) ? "proof-active" : ""}>
-        <p>
-          Protože uvažujeme souvislý graf <MN>G</MN>, musí mezi libovolně zvolenými vrcholy <MN>u</MN> a <MN>v</MN> existovat cesta.
-        </p>
-      </div>
-      <div className={4 === currentStep ? "proof-active" : ""}>
-        <p>
-          Když existuje <MN>u</MN>-<MN>v</MN> cesta <MN>{'P_{uv}'}</MN> v <MN>G</MN>, tak existuje <MN>u</MN>-<MN>v</MN> cesta <MN>{"P'_{uv}"}</MN> v <MN>G-e</MN>. (Uvažujeme totiž stále hranu <MN>e</MN>, která není mostem.)
-          <br /><br />
-          Poznámka:  <MN>{"P'_{uv}"}</MN> se nemusí nutně  <MN>{'=P_{uv}'}</MN>.
-        </p>
-      </div>
-      <div className={5 === currentStep ? "proof-active" : ""}>
-        <p>
-          Z toho vyplývá, že v <MN>G-e</MN> musí v existovat také cesta <MN>{'P_{xy}'}</MN> mezi vrcholy <MN>x</MN> a <MN>y</MN> z hrany <MN>e</MN>.
-        </p>
-      </div>
-      <div className={6 === currentStep ? "proof-active" : ""}>
-        <p>
-          Protože <MN>G</MN> vznikne z <MN>G-e</MN> přidáním hrany <MN>e</MN>, musí se <MN>x</MN>-<MN>y</MN> cesta <MN>{'P_{xy}'}</MN> nacházet také v <MN>G</MN>.
-        </p>
-      </div>
-      <div className={'borderless' + (7 === currentStep ? " proof-active" : "")}>
+export const proofPanels = [
+  {
+    name: "proofPanel1",
+    activeForSteps: [1],
+    content:
+      <p>
+        Pokud <MN>{'e=\\{x,y\\}'}</MN> není most v <MN>G</MN>, poté z definice mostu platí, že graf <MN>G-e</MN> má stejný počet komponent jako <MN>G</MN>.
+      </p>
+  },
+  {
+    name: "proofPanel2",
+    activeForSteps: [2, 3],
+    content:
+      <p>
+        Protože uvažujeme souvislý graf <MN>G</MN>, musí mezi libovolně zvolenými vrcholy <MN>u</MN> a <MN>v</MN> existovat cesta.
+      </p>
+  },
+  {
+    name: "proofPanel3",
+    activeForSteps: [4],
+    content:
+      <p>
+        Když existuje <MN>u</MN>-<MN>v</MN> cesta <MN>{'P_{uv}'}</MN> v <MN>G</MN>, tak existuje <MN>u</MN>-<MN>v</MN> cesta <MN>{"P'_{uv}"}</MN> v <MN>G-e</MN>. (Uvažujeme totiž stále hranu <MN>e</MN>, která není mostem.)
+        <br /><br />
+        Poznámka:  <MN>{"P'_{uv}"}</MN> se nemusí nutně  <MN>{'=P_{uv}'}</MN>.
+      </p>
+  },
+  {
+    name: "proofPanel4",
+    activeForSteps: [5],
+    content:
+      <p>
+        Z toho vyplývá, že v <MN>G-e</MN> musí v existovat také cesta <MN>{'P_{xy}'}</MN> mezi vrcholy <MN>x</MN> a <MN>y</MN> z hrany <MN>e</MN>.
+      </p>
+  },
+  {
+    name: "proofPanel5",
+    activeForSteps: [6],
+    content:
+      <p>
+        Protože <MN>G</MN> vznikne z <MN>G-e</MN> přidáním hrany <MN>e</MN>, musí se <MN>x</MN>-<MN>y</MN> cesta <MN>{'P_{xy}'}</MN> nacházet také v <MN>G</MN>.
+      </p>
+  },
+  {
+    name: "proofPanel6",
+    activeForSteps: [7],
+    content:
+      <div>
         <p>
           Pak podle definice kružnice platí, že cesta <MN>{'P_{xy}'}</MN> spolu s hranou <MN>{'e=\\{x,y\\}'}</MN> tvoří v <MN>G</MN> kružnici obsahující hranu <MN>e</MN>.
         </p>
@@ -50,9 +67,8 @@ export const getProofBox = currentStep => {
           Tím je dokázáno stanovené tvrzení. <MN>\Box</MN>
         </p>
       </div>
-    </div>
-  )
-};
+  },
+];
 
 export const cameraPosition1 = {
   position: { x: 0, y: -10 }, 

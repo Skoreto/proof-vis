@@ -5,7 +5,7 @@ import {
   breadcrumbsCurrent,
   stepSum,
   definitionPanel,
-  getProofBox,
+  proofPanels,
   cameraPosition1,
   cameraPosition2,
   cameraPosition3,
@@ -384,7 +384,7 @@ class Exercise20v2 extends React.Component {
         headingTitle={headingTitle}
         breadcrumbsCurrent={breadcrumbsCurrent}
         definitionPanel={definitionPanel}
-        proofBox={getProofBox(this.state.currentStep)}
+        proofPanels={proofPanels}
         stepSum={stepSum}
         previousStep={this.previousStep}
         nextStep={this.nextStep}
