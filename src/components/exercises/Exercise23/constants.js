@@ -25,7 +25,7 @@ export const proofPanels = [
       </div>
   },
   {
-    name: "proofPanel2",
+    name: 'proofPanel2',
     activeForSteps: [2],
     content:
       <p>
@@ -33,7 +33,7 @@ export const proofPanels = [
       </p>
   },
   {
-    name: "proofPanel3",
+    name: 'proofPanel3',
     activeForSteps: [3],
     content:
       <p>
@@ -41,7 +41,7 @@ export const proofPanels = [
       </p>
   },
   {
-    name: "proofPanel4",
+    name: 'proofPanel4',
     activeForSteps: [4],
     content:
       <p>
@@ -49,7 +49,7 @@ export const proofPanels = [
       </p>
   },
   {
-    name: "proofPanel5",
+    name: 'proofPanel5',
     activeForSteps: [5, 6, 7, 8],
     content:
       <p>
@@ -57,7 +57,7 @@ export const proofPanels = [
       </p>
   },
   {
-    name: "proofPanel6",
+    name: 'proofPanel6',
     activeForSteps: [9],
     content:
       <p>
@@ -67,7 +67,7 @@ export const proofPanels = [
       </p>
   },
   {
-    name: "proofPanel7",
+    name: 'proofPanel7',
     activeForSteps: [10],
     content:
       <p>

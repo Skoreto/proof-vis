@@ -24,9 +24,7 @@ const ExerciseWrapper = (props) => (
         <Row className='page-row'>
           <Col xs={12} md={12} lg={5}>
             <aside>
-              <div id='divProofContainer'>
-                <ProofBox proofPanels={props.proofPanels} currentStep={props.currentStep} />
-              </div>
+              <ProofBox proofPanels={props.proofPanels} currentStep={props.currentStep} />
             </aside>
           </Col>
           <Col xs={12} md={12} lg={7}>

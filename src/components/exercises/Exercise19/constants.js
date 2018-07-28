@@ -56,7 +56,7 @@ export const getProofBox = currentStep => {
 
 export const proofPanels = [
   {
-    id: 1,
+    name: 'proofPanel1',
     activeForSteps: [1],
     content:
       <p>
@@ -66,7 +66,7 @@ export const proofPanels = [
       </p>
   },
   {
-    id: 2,
+    name: 'proofPanel2',
     activeForSteps: [2],
     content:
       <p>
@@ -74,7 +74,7 @@ export const proofPanels = [
       </p>
   },
   {
-    id: 3,
+    name: 'proofPanel3',
     activeForSteps: [3],
     content:
       <p>
@@ -84,7 +84,7 @@ export const proofPanels = [
       </p>
   },
   {
-    id: 4,
+    name: 'proofPanel4',
     activeForSteps: [4, 5],
     content:
       <p>
@@ -92,7 +92,7 @@ export const proofPanels = [
       </p>
   },
   {
-    id: 5,
+    name: 'proofPanel5',
     activeForSteps: [6],
     content:
       <p>
@@ -100,7 +100,7 @@ export const proofPanels = [
       </p>
   },
   {
-    id: 6,
+    name: 'proofPanel6',
     activeForSteps: [7],
     content:
       <p>
