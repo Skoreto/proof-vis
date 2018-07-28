@@ -1,5 +1,4 @@
 import React from 'react';
-import { Element } from 'react-scroll';
 import DefinitionPanel from '../../../components/UI/DefinitionPanel/DefinitionPanel';
 import MN from '../../../components/MathJax/MathJaxNode';
 
@@ -15,7 +14,7 @@ export const definitionPanel = (
 
 export const proofPanels = [
   {
-    name: "proofPanel1",
+    name: 'proofPanel1',
     activeForSteps: [1],
     content:
       <p>
