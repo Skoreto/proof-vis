@@ -3,7 +3,7 @@ import { Row, Col, ListGroup, ListGroupItem } from 'react-bootstrap';
 import { BrowserRouter } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../../../customMainTheme.css';
-import PageHeading from "../../../components/UI/PageHeading/PageHeading";
+import PageHeading from "../../../components/UI/PageHeading/PageHeader";
 
 class Overview extends React.Component {
   render() {

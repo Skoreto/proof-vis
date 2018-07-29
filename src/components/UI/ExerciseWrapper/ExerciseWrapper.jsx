@@ -4,7 +4,7 @@ import { Row, Col } from 'react-bootstrap';
 import { SketchField } from 'react-sketch';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import M from 'react-mathjax2';
-import PageHeading from '../../../components/UI/PageHeading/PageHeading';
+import PageHeading from '../../../components/UI/PageHeading/PageHeader';
 import ProofBox from '../../../components/UI/ProofBox/ProofBox';
 import Button from '../../../components/UI/Button/Button';
 import StepCounter from '../../../components/UI/StepCounter/StepCounter';

@@ -19,7 +19,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import M from 'react-mathjax2';
 import MN from '../../../components/MathJax/MathJaxNode';
 import '../../../customMainTheme.css';
-import PageHeading from "../../../components/UI/PageHeading/PageHeading";
+import PageHeading from "../../../components/UI/PageHeading/PageHeader";
 import DefinitionPanel from "../../../components/UI/DefinitionPanel/DefinitionPanel";
 import Button from '../../../components/UI/Button/Button';
 import StepCounter from '../../../components/UI/StepCounter/StepCounter';
