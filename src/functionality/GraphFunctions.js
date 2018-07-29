@@ -267,3 +267,12 @@ export function getScrollOptions(windowScrollY) {
     ignoreCancelEvents: true,
   }
 }
+
+// TODO Fix the use of the function for label correcting, so it doesn't flicker on hover over node
+function fixNodeLabel(label) {
+  let newLabel = label;
+  if (newLabel.length === 1)
+    return newLabel = ' ' + newLabel + ' ';
+  else if (newLabel === '')
+    return newLabel = '   ';
+}

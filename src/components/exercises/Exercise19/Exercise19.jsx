@@ -39,7 +39,7 @@ class Exercise19 extends React.Component {
   }
 
   nextStep = () => {
-    if (this.state.currentStep < 8) {
+    if (this.state.currentStep < 10) {
       switch (this.state.currentStep) {
         case 0:
           this.setState({ btnPrevD: false });
@@ -244,9 +244,9 @@ class Exercise19 extends React.Component {
     let newNodes = this.updateNode(state.graphVis.nodes, 1, palette.green, '');
     newNodes = this.updateNode(newNodes, 2, palette.green, '');
     newNodes = this.updateNode(newNodes, 3, palette.green, '');
-    newNodes = this.updateNode(newNodes, 4, palette.green, 'x');
+    newNodes = this.updateNode(newNodes, 4, palette.green, ' x ');
     newNodes = this.updateNode(newNodes, 5, palette.green, '');
-    newNodes = this.updateNode(newNodes, 6, palette.green, 'y');
+    newNodes = this.updateNode(newNodes, 6, palette.green, ' y ');
     
     let newEdges = this.updateEdge(state.graphVis.edges, 1, palette.green, 3, false, '');
     newEdges = this.updateEdge(newEdges, 2, palette.green, 3, false, '');
@@ -259,8 +259,8 @@ class Exercise19 extends React.Component {
   };
 
   step6 = (state) => {
-    let newNodes = this.updateNode(state.graphVis.nodes, 4, palette.purple, 'x');
-    newNodes = this.updateNode(newNodes, 6, palette.purple, 'y');
+    let newNodes = this.updateNode(state.graphVis.nodes, 4, palette.purple, ' x ');
+    newNodes = this.updateNode(newNodes, 6, palette.purple, ' y ');
     
     let newEdges = this.updateEdge(state.graphVis.edges, 5, palette.purple, 3, false, 'e');
 
@@ -271,9 +271,9 @@ class Exercise19 extends React.Component {
     let newNodes = this.updateNode(state.graphVis.nodes, 1, palette.purple, '');
     newNodes = this.updateNode(newNodes, 2, palette.purple, '');
     newNodes = this.updateNode(newNodes, 3, palette.purple, '');
-    newNodes = this.updateNode(newNodes, 4, palette.purple, 'x');
+    newNodes = this.updateNode(newNodes, 4, palette.purple, ' x ');
     newNodes = this.updateNode(newNodes, 5, palette.purple, '');
-    newNodes = this.updateNode(newNodes, 6, palette.purple, 'y');
+    newNodes = this.updateNode(newNodes, 6, palette.purple, ' y ');
     
     let newEdges = this.updateEdge(state.graphVis.edges, 1, palette.purple, 3, false, '');
     newEdges = this.updateEdge(newEdges, 2, palette.purple, 3, false, '');
