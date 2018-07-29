@@ -12,29 +12,40 @@ export const definitionPanel = (
   </DefinitionPanel>
 );
 
-export const getProofBox = currentStep => {
-  return (
-    <div className="bg-warning" id="proofBox">
-      <div className={1 === currentStep ? "proof-active" : ""}>
-        <p>Dané tvrzení neplatí, protože existuje kontra-příklad.</p>
-      </div>
-      <div className={2 === currentStep ? "proof-active" : ""}>
-        <p>Existují dva různé <MN>u</MN>-<MN>v</MN> sledy:</p>
-        <p>
-          Příkladem prvního budiž sled <MN>S_1 = (u,e_1,w,e_2,v)</MN>.
-        </p>
-      </div>
-      <div className={3 === currentStep ? "proof-active" : ""}>
-        <p>
-          Příkladem druhého může být sled <MN>S_2 = (u,e_1,w,e_1,u,e_1,w,e_2,v)</MN>.
-        </p>
-      </div>
-      <div className={"borderless" + (4 === currentStep ? " proof-active" : "")}>
+export const proofPanels = [
+  {
+    name: 'proofPanel1',
+    activeForSteps: [1],
+    content:
+      <p>Dané tvrzení neplatí, protože existuje kontra-příklad.</p>
+  },
+  {
+    name: 'proofPanel2',
+    activeForSteps: [2],
+    content:
+      <p>
+        Existují dva různé <MN>u</MN>-<MN>v</MN> sledy:
+        <br /><br />
+        Příkladem prvního budiž sled <MN>S_1 = (u,e_1,w,e_2,v)</MN>.
+      </p>
+  },
+  {
+    name: 'proofPanel3',
+    activeForSteps: [3],
+    content:
+      <p>
+        Příkladem druhého může být sled <MN>S_2 = (u,e_1,w,e_1,u,e_1,w,e_2,v)</MN>.
+      </p>
+  },
+  {
+    name: 'proofPanel4',
+    activeForSteps: [4],
+    content:
+      <div>
         <p>Přitom graf <MN>G</MN> neobsahuje kružnici.</p>
         <p className="text-center">
           <MN>\dagger</MN> Tím je vyvráceno stanovené tvrzení.
         </p>
       </div>
-    </div>
-  )
-};
+  },
+];

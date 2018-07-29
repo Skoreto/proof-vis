@@ -9,7 +9,7 @@ import {
   breadcrumbsCurrent,
   stepSum,
   definitionPanel,
-  getProofBox,
+  proofPanels,
 } from './constants';
 import {
   updateNode,
@@ -349,7 +349,7 @@ class Exercise17av2 extends React.Component {
         headingTitle={headingTitle}
         breadcrumbsCurrent={breadcrumbsCurrent}
         definitionPanel={definitionPanel}
-        proofBox={getProofBox(this.state.currentStep)}
+        proofPanels={proofPanels}
         stepSum={stepSum}
         previousStep={this.previousStep}
         nextStep={this.nextStep}
