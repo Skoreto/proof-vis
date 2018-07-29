@@ -121,14 +121,14 @@
   z-index: 1;
 }
 
-.descriptionBox {
+.description-panel {
   min-height: 50px;
   margin-top: 10px;
   margin-bottom: 10px;
   /*border: 1px solid lightgray;*/
 }
 
-.descriptionBox p {
+.description-panel p {
   /*border: 1px solid lightgray;*/
   font-size: 16px;
   text-align: center;
@@ -271,10 +271,10 @@
     margin: 0;
     font-size: 16px;
   }
-  .descriptionBox {
+  .description-panel {
     min-width: 600px;
   }
-  .descriptionBox p {
+  .description-panel p {
     font-size: 14px;
   }
   #proofBox {

@@ -4,10 +4,11 @@ import { Row, Col } from 'react-bootstrap';
 import { SketchField } from 'react-sketch';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import M from 'react-mathjax2';
-import PageHeading from '../../../components/UI/PageHeading/PageHeader';
+import PageHeader from '../../../components/UI/PageHeading/PageHeader';
 import ProofBox from '../../../components/UI/ProofBox/ProofBox';
 import Button from '../../../components/UI/Button/Button';
 import StepCounter from '../../../components/UI/StepCounter/StepCounter';
+import DescriptionPanel from '../../../components/UI/DescriptionPanel/DescriptionPanel';
 import Dialog from 'react-dialog';
 import DialogDrawing from '../../../components/DialogDrawing/DialogDrawing';
 import '../../../drawingDialog.css';
@@ -15,7 +16,7 @@ import '../../../drawingDialog.css';
 const ExerciseWrapper = (props) => (
   <div>
     <div className='page-wrapper'>
-      <PageHeading
+      <PageHeader
         headingTitle={props.headingTitle}
         breadcrumbsCurrent={props.breadcrumbsCurrent}
       />
@@ -63,13 +64,11 @@ const ExerciseWrapper = (props) => (
                   getNetwork={props.initNetworkInstance}
                 />
               </div>
-              <M.Context input='tex'>
-                <div className='descriptionBox'>
-                  {props.description}
-                </div>
-              </M.Context>
+              <DescriptionPanel>
+                {props.description}
+              </DescriptionPanel>
               <div className='controls-panel'>
-              <span className='animation-panel'>
+                <span className='animation-panel'>
                   <Button clicked={props.repeatStep} disabled={props.btnRepeatD}>
                     <FontAwesomeIcon icon="redo-alt" />
                   </Button>
