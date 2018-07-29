@@ -18,7 +18,6 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import Overview from './components/pages/Overview/Overview';
 import Exercise19 from './components/exercises/Exercise19/Exercise19';
-import Exercise20svg from './components/exercises/Exercise20svg/Exercise20svg';
 import Exercise20v2 from './components/exercises/Exercise20/Exercise20v2';
 import Exercise21 from './components/exercises/Exercise21/Exercise21';
 import Exercise23 from './components/exercises/Exercise23/Exercise23';
@@ -58,7 +57,6 @@ class App extends React.Component {
             <Route path="/priklad17a" component={Exercise17a} />
             <Route path="/priklad17av2" component={Exercise17av2} />
             <Route path="/priklad19" component={Exercise19} />
-            <Route path="/priklad20svg" component={Exercise20svg} />
             <Route path="/priklad20v2" component={Exercise20v2} />
             <Route path="/priklad21" component={Exercise21} />
             <Route path="/priklad23" component={Exercise23} />

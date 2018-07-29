@@ -7,7 +7,11 @@ import MathJax from 'react-mathjax2';
  * @constructor
  */
 const MathJaxNode = (props) => (
-  <span className={props.classes}><MathJax.Node inline>{props.children}</MathJax.Node></span>
+  <span className={props.classes}>
+    <MathJax.Node inline>
+      {props.children}
+    </MathJax.Node>
+  </span>
 );
 
 export default MathJaxNode;
