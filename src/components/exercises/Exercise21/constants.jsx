@@ -83,8 +83,7 @@ const descriptionPanels = [
   {
     id: 1,
     showForSteps: [1],
-    content:
-      <p>Provedení obměny původního výroku.</p>
+    content: <p>Provedení obměny původního výroku.</p>
   },
   {
     id: 2,
@@ -95,8 +94,7 @@ const descriptionPanels = [
   {
     id: 3,
     showForSteps: [3],
-    content:
-      <p>Zvolení libovolných vrcholů <MN>u</MN> a <MN>v</MN>.</p>
+    content: <p>Zvolení libovolných vrcholů <MN>u</MN> a <MN>v</MN>.</p>
   },
   {
     id: 4,
