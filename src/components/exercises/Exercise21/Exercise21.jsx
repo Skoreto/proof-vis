@@ -12,6 +12,7 @@ import {
   claimPanel,
   proofPanels,
   descriptionPanels,
+  definitionPanels,
   cameraPosition1,
   cameraPosition2,
   cameraPosition3,
@@ -29,6 +30,7 @@ import {
 } from '../../../functionality/GraphFunctions';
 import ExerciseWrapper from '../../../components/UI/ExerciseWrapper/ExerciseWrapper';
 import DescriptionPanel2 from '../../../components/UI/DescriptionPanel2/DescriptionPanel2';
+import DefinitionPanel2 from '../../../components/UI/DefinitionPanel/DefinitionPanel2';
 import MN from '../../../components/MathJax/MathJaxNode';
 
 class Exercise21 extends React.Component {
@@ -466,6 +468,10 @@ class Exercise21 extends React.Component {
       />
         <DescriptionPanel2
           descriptionPanels={descriptionPanels}
+          currentStep={this.state.currentStep}
+        />
+        <DefinitionPanel2
+          definitionPanels={definitionPanels}
           currentStep={this.state.currentStep}
         />
       </div>

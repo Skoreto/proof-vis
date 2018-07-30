@@ -82,13 +82,13 @@ export const proofPanels = [
 export const descriptionPanels = [
   {
     id: 1,
-    showForSteps: [1, 4],
+    showForSteps: [1],
     content:
       <p>Provedení obměny původního výroku.</p>
   },
   {
     id: 2,
-    showForSteps: [2, 4],
+    showForSteps: [2],
     content:
       <p>Sestrojení příkladu grafu <MN>G</MN>, kde existuje hrana <MN>e</MN>, která není most.</p>
   },
@@ -97,6 +97,85 @@ export const descriptionPanels = [
     showForSteps: [3],
     content:
       <p>Zvolení libovolných vrcholů <MN>u</MN> a <MN>v</MN>.</p>
+  },
+  {
+    id: 4,
+    showForSteps: [4],
+    content:
+      <p>
+        Příklad sestrojení <MN>u</MN>-<MN>v</MN> cesty <MN>{'P_{uv}'}</MN> v grafu <MN>G</MN>.
+      </p>
+  },
+  {
+    id: 5,
+    showForSteps: [5],
+    content:
+      <p>
+        Vlevo předchozí příklad <MN>u</MN>-<MN>v</MN> cesty <MN>{'P_{uv}'}</MN> v grafu <MN>G</MN>.
+        <br />Vpravo příklad <MN>u</MN>-<MN>v</MN> cesty <MN>{"P'_{uv}"}</MN> v grafu <MN>G-e</MN>.
+      </p>
+  },
+  {
+    id: 6,
+    showForSteps: [6],
+    content:
+      <p>
+        <MN>x</MN>-<MN>y</MN> cesta <MN>{'P_{xy}'}</MN> v grafu <MN>G-e</MN>
+      </p>
+  },
+  {
+    id: 7,
+    showForSteps: [7],
+    content:
+      <p>
+        <MN>x</MN>-<MN>y</MN> cesta <MN>{'P_{xy}'}</MN> v grafu <MN>G</MN>
+      </p>
+  },
+  {
+    id: 8,
+    showForSteps: [8],
+    content:
+      <p>
+        Cesta <MN>{'P_{xy}'}</MN> spolu s hranou <MN>{'e=\\{x,y\\}'}</MN> tvoří kružnici v <MN>G</MN> obsahující hranu <MN>e</MN>.
+      </p>
+  },
+];
+
+export const definitionPanels = [
+  {
+    id: 1,
+    showForSteps: [2],
+    content:
+      <div>
+        <p>
+          DEFINICE MOSTU (1.11)
+          <br />Nechť je dán graf <MN>G=(V,E)</MN>, vrchol <MN>v \in V</MN> a hrana <MN>e \in E</MN>.
+        </p>
+        <p>
+          Hrana <MN>e</MN> je most grafu <MN>G</MN>, jestliže graf <MN>G-e</MN> má více komponent než graf <MN>G</MN>.
+        </p>
+      </div>
+  },
+  {
+    id: 2,
+    showForSteps: [3, 4],
+    content:
+      <div>
+        <p>DEFINICE SOUVISLÉHO GRAFU (1.9)
+          <br />Souvislý graf je graf, ve kterém mezi každými jeho dvěma vrcholy existuje cesta.
+        </p>
+      </div>
+  },
+  {
+    id: 3,
+    showForSteps: [8],
+    content:
+      <div>
+        <p>
+          KRUŽNICE (Definice 1.8)
+          <br />Kružnice délky <MN>k, k \geq 3</MN>, v grafu <MN>G</MN> je posloupnost <MN>{'(v_{0}, e_{1}, v_{1},...,e_{k}, v_{0})'}</MN>, kde <MN>{'e_{i}=\\{v_{i-1}, v_{i}\\}'}</MN>, <MN>i=1,...,k-1</MN>, <MN>{'e_{k}=\\{v_{k-1}, v_{0}\\}'}</MN> a pro <MN>i \neq j</MN> platí <MN>{'v_{i} \\neq v_{j}'}</MN>.
+        </p>
+      </div>
   },
 ];
 
