@@ -75,7 +75,9 @@ export const descriptionPanels = [
     id: 1,
     showForSteps: [1],
     content:
-    <p>Sestrojení příkladu souvislého grafu <MN>G</MN>, kde existuje hrana <MN>e</MN>, která není most.</p>
+      <p>
+        Sestrojení příkladu souvislého grafu <MN>G</MN>, kde existuje hrana <MN>e</MN>, která není most.
+      </p>
   },
   {
     id: 2,
@@ -145,7 +147,8 @@ export const definitionPanels = [
     showForSteps: [2, 3],
     content:
       <div>
-        <p>DEFINICE SOUVISLÉHO GRAFU (1.9)
+        <p>
+          DEFINICE SOUVISLÉHO GRAFU (1.9)
           <br />Souvislý graf je graf, ve kterém mezi každými jeho dvěma vrcholy existuje cesta.
         </p>
       </div>

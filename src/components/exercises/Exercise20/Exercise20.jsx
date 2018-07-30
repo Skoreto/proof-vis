@@ -23,11 +23,8 @@ import {
   handlerDrawingDialog,
 } from '../../../functionality/GraphFunctions';
 import ExerciseWrapper from '../../../components/UI/ExerciseWrapper/ExerciseWrapper';
-import DescriptionPanel2 from '../../../components/UI/DescriptionPanel/DescriptionPanel';
-import DefinitionPanel2 from '../../../components/UI/DefinitionPanel/DefinitionPanel';
-import MN from '../../../components/MathJax/MathJaxNode';
 
-class Exercise20v2 extends React.Component {
+class Exercise20 extends React.Component {
   constructor(props) {
     super(props);
     this.state = initialExerciseState;
@@ -55,34 +52,28 @@ class Exercise20v2 extends React.Component {
       if (this.state.currentStep === 0) {
         this.setState({ btnPrevD: false });
         this.setState(this.step1);
-        this.setState(this.step1Texts);
         this.network.moveTo(cameraPosition1);
       }
 
       if (this.state.currentStep === 1) {
         this.setState(this.step2);
-        this.setState(this.step2Texts);
       }
 
       if (this.state.currentStep === 2) {
         this.setState(this.step3);
-        this.setState(this.step3Texts);
       }
 
       if (this.state.currentStep === 3) {
         this.setState(this.step4);
-        this.setState(this.step4Texts);
         this.network.moveTo(cameraPosition2);
       }
 
       if (this.state.currentStep === 4) {
         this.setState(this.step5);
-        this.setState(this.step5Texts);
         this.network.moveTo(cameraPosition3);
       }
 
       if (this.state.currentStep === 5) {
-        this.setState(this.step6Texts);
         this.network.moveTo(cameraPosition1);
       }
 
@@ -91,7 +82,6 @@ class Exercise20v2 extends React.Component {
         this.step7();
         let interval1 = setInterval(this.step7, 2000);
         this.setState({ interval1: interval1 });
-        this.setState(this.step7Texts);
       }
 
       // Increase currentStep after a step was executed
@@ -109,15 +99,12 @@ class Exercise20v2 extends React.Component {
       if (this.state.currentStep === 2) {
         this.setState(this.stepReset);
         this.setState(this.step1);
-        this.setState(this.step1Texts);
       }
 
       if (this.state.currentStep === 3) {
         this.setState(this.stepReset);
         this.setState(this.step1);
-        this.setState(this.step1Texts); // keep
         this.setState(this.step2);
-        this.setState(this.step2Texts);
       }
 
       if (this.state.currentStep === 4) {
@@ -125,7 +112,7 @@ class Exercise20v2 extends React.Component {
         this.setState(this.step1);
         this.setState(this.step2);
         this.setState(this.step3);
-        this.setState(this.step3Texts);
+
         this.network.moveTo(cameraPosition1);
       }
 
@@ -135,12 +122,10 @@ class Exercise20v2 extends React.Component {
         this.setState(this.step2);
         this.setState(this.step3);
         this.setState(this.step4);
-        this.setState(this.step4Texts);
         this.network.moveTo(cameraPosition2);
       }
 
       if (this.state.currentStep === 6) {
-        this.setState(this.step5Texts);
         this.network.moveTo(cameraPosition3);
       }
 
@@ -154,7 +139,6 @@ class Exercise20v2 extends React.Component {
         this.setState(this.step3);
         this.setState(this.step4);
         this.setState(this.step5);
-        this.setState(this.step6Texts);
       }
 
       // Reduce currentStep after a step was executed
@@ -192,22 +176,6 @@ class Exercise20v2 extends React.Component {
     }
   };
 
-  step1Texts = () => {
-    const description = (<p>Sestrojení příkladu souvislého grafu <MN>G</MN>, kde existuje hrana <MN>e</MN>, která není most.</p>);
-    const repeatBox = (
-      <div>
-        <p>DEFINICE MOSTU (1.11)
-          <br />Nechť je dán graf <MN>G=(V,E)</MN>, vrchol <MN>v \in V</MN> a hrana <MN>e \in E</MN>.
-        </p>
-        <p>
-          Hrana <MN>e</MN> je most grafu <MN>G</MN>, jestliže graf <MN>G-e</MN> má více komponent než graf <MN>G</MN>.
-        </p>
-      </div>
-    );
-
-    return { description: description, repeatBoxHidden: false, repeatBoxContent: repeatBox };
-  };
-
   step2 = (state) => {
     let newNodes = this.updateNode(state.graphVis.nodes, 0, '#ffff08', ' u ');
     newNodes = this.updateNode(newNodes, 1, '#ffff08', ' x ');
@@ -217,19 +185,6 @@ class Exercise20v2 extends React.Component {
     let newEdges = this.updateEdge(state.graphVis.edges, 2, '#000000', 1, false, ' e ');
 
     return { graphVis: { nodes: newNodes, edges: newEdges } };
-  };
-
-  step2Texts = () => {
-    const description = (<p>Zvolení libovolných vrcholů <MN>u</MN> a <MN>v</MN>.</p>);
-    const repeatBox = (
-      <div>
-        <p>DEFINICE SOUVISLÉHO GRAFU (1.9)
-          <br />Souvislý graf je graf, ve kterém mezi každými jeho dvěma vrcholy existuje cesta.
-        </p>
-      </div>
-    );
-
-    return { description: description, repeatBoxHidden: false, repeatBoxContent: repeatBox };
   };
 
   step3 = (state) => {
@@ -243,23 +198,6 @@ class Exercise20v2 extends React.Component {
     newEdges = this.updateEdge(newEdges, 4, '#B39DDB', 2, false, undefined);
 
     return { graphVis: { nodes: newNodes, edges: newEdges } };
-  };
-
-  step3Texts = () => {
-    const description = (
-      <p>
-        Příklad sestrojení <MN>u</MN>-<MN>v</MN> cesty <MN>{'P_{uv}'}</MN> v grafu <MN>G</MN>.
-      </p>
-    );
-    const repeatBox = (
-      <div>
-        <p>DEFINICE SOUVISLÉHO GRAFU (1.9)
-          <br />Souvislý graf je graf, ve kterém mezi každými jeho dvěma vrcholy existuje cesta.
-        </p>
-      </div>
-    );
-
-    return { description: description, repeatBoxHidden: false, repeatBoxContent: repeatBox };
   };
 
   step4 = (state) => {
@@ -290,16 +228,6 @@ class Exercise20v2 extends React.Component {
     return { graphVis: { nodes: newNodes, edges: newEdges } };
   };
 
-  step4Texts = () => {
-    const description = (
-      <p>
-        Vlevo předchozí příklad <MN>u</MN>-<MN>v</MN> cesty <MN>{'P_{uv}'}</MN> v grafu <MN>G</MN>.
-        <br />Vpravo příklad <MN>u</MN>-<MN>v</MN> cesty <MN>{"P'_{uv}"}</MN> v grafu <MN>G-e</MN>.
-      </p>
-    );
-    return { description: description, repeatBoxHidden: true, repeatBoxContent: '' };
-  };
-
   step5 = (state) => {
     let newNodes = this.updateNode(state.graphVis.nodes, 0, '#FFFF08', '   ');
     newNodes = this.updateNode(newNodes, 1, '#81C784', ' x ');
@@ -326,24 +254,6 @@ class Exercise20v2 extends React.Component {
     return { graphVis: { nodes: newNodes, edges: newEdges } };
   };
 
-  step5Texts = () => {
-    const description = (
-      <p>
-        <MN>x</MN>-<MN>y</MN> cesta <MN>{'P_{xy}'}</MN> v grafu <MN>G-e</MN>
-      </p>
-    );
-    return { description: description, repeatBoxHidden: true, repeatBoxContent: '' };
-  };
-
-  step6Texts = () => {
-    const description = (
-      <p>
-        <MN>x</MN>-<MN>y</MN> cesta <MN>{'P_{xy}'}</MN> v grafu <MN>G</MN>
-      </p>
-    );
-    return { description: description, repeatBoxHidden: true, repeatBoxContent: '' };
-  };
-
   step7 = () => {
     let timeout1 = setTimeout(() => { this.setState(this.step7a); }, 500);
     let timeout2 = setTimeout(() => { this.setState(this.step7b); }, 2000);
@@ -361,27 +271,8 @@ class Exercise20v2 extends React.Component {
     return { graphVis: { nodes: state.graphVis.nodes, edges: newEdges } };
   };
 
-  step7Texts = () => {
-    const description = (
-      <p>
-        Cesta <MN>{'P_{xy}'}</MN> spolu s hranou <MN>{'e=\\{x,y\\}'}</MN> tvoří kružnici v <MN>G</MN> obsahující hranu <MN>e</MN>.
-      </p>
-    );
-
-    const repeatBox = (
-      <div>
-        <p>
-          KRUŽNICE (Definice 1.8)
-          <br />Kružnice délky <MN>k, k \geq 3</MN>, v grafu <MN>G</MN> je posloupnost <MN>{'(v_{0}, e_{1}, v_{1},...,e_{k}, v_{0})'}</MN>, kde <MN>{'e_{i}=\\{v_{i-1}, v_{i}\\}'}</MN>, <MN>i=1,...,k-1</MN>, <MN>{'e_{k}=\\{v_{k-1}, v_{0}\\}'}</MN> a pro <MN>i \neq j</MN> platí <MN>{'v_{i} \\neq v_{j}'}</MN>.
-        </p>
-      </div>
-    );
-    return { description: description, repeatBoxHidden: false, repeatBoxContent: repeatBox };
-  };
-
   render() {
     return (
-      <div>
       <ExerciseWrapper
         {...this.state}
         events={events}
@@ -390,6 +281,8 @@ class Exercise20v2 extends React.Component {
         breadcrumbsCurrent={breadcrumbsCurrent}
         claimPanel={claimPanel}
         proofPanels={proofPanels}
+        descriptionPanels={descriptionPanels}
+        definitionPanels={definitionPanels}
         stepSum={stepSum}
         previousStep={this.previousStep}
         nextStep={this.nextStep}
@@ -402,17 +295,8 @@ class Exercise20v2 extends React.Component {
           () => this.setState(() => this.handlerDrawingDialog(this.state.isDrawingDialogOpen))
         }
       />
-      <DescriptionPanel2
-          descriptionPanels={descriptionPanels}
-          currentStep={this.state.currentStep}
-        />
-        <DefinitionPanel2
-          definitionPanels={definitionPanels}
-          currentStep={this.state.currentStep}
-        />
-      </div>
     );
   }
 }
 
-export default Exercise20v2;
+export default Exercise20;
