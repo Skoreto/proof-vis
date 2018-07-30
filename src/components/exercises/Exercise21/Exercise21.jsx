@@ -163,9 +163,6 @@ class Exercise21 extends React.Component {
   stepReset = () => {
     return {
       graphVis: { nodes: [], edges: [] },
-      description: '',
-      repeatBoxHidden: true,
-      repeatBoxContent: '',
       isSVGCoverShowed: false,
     }
   };
@@ -194,8 +191,6 @@ class Exercise21 extends React.Component {
     return {
       isSVGCoverShowed: true,
       svgContent: svgContent,
-      repeatBoxHidden: true,
-      repeatBoxContent: '',
     }
   }
 

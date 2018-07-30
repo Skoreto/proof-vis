@@ -158,22 +158,19 @@ const definitionPanels = [
     id: 2,
     showForSteps: [3, 4],
     content:
-      <div>
-        <p>DEFINICE SOUVISLÉHO GRAFU (1.9)
-          <br />Souvislý graf je graf, ve kterém mezi každými jeho dvěma vrcholy existuje cesta.
-        </p>
-      </div>
+      <p>
+        DEFINICE SOUVISLÉHO GRAFU (1.9)
+        <br />Souvislý graf je graf, ve kterém mezi každými jeho dvěma vrcholy existuje cesta.
+      </p>
   },
   {
     id: 3,
     showForSteps: [8],
     content:
-      <div>
-        <p>
-          KRUŽNICE (Definice 1.8)
-          <br />Kružnice délky <MN>k, k \geq 3</MN>, v grafu <MN>G</MN> je posloupnost <MN>{'(v_{0}, e_{1}, v_{1},...,e_{k}, v_{0})'}</MN>, kde <MN>{'e_{i}=\\{v_{i-1}, v_{i}\\}'}</MN>, <MN>i=1,...,k-1</MN>, <MN>{'e_{k}=\\{v_{k-1}, v_{0}\\}'}</MN> a pro <MN>i \neq j</MN> platí <MN>{'v_{i} \\neq v_{j}'}</MN>.
-        </p>
-      </div>
+      <p>
+        KRUŽNICE (Definice 1.8)
+        <br />Kružnice délky <MN>k, k \geq 3</MN>, v grafu <MN>G</MN> je posloupnost <MN>{'(v_{0}, e_{1}, v_{1},...,e_{k}, v_{0})'}</MN>, kde <MN>{'e_{i}=\\{v_{i-1}, v_{i}\\}'}</MN>, <MN>i=1,...,k-1</MN>, <MN>{'e_{k}=\\{v_{k-1}, v_{0}\\}'}</MN> a pro <MN>i \neq j</MN> platí <MN>{'v_{i} \\neq v_{j}'}</MN>.
+      </p>
   },
 ];
 

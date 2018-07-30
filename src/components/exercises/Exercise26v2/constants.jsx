@@ -2,18 +2,18 @@ import React from 'react';
 import ClaimPanel from '../../../components/UI/ClaimPanel/ClaimPanel';
 import MN from '../../../components/MathJax/MathJaxNode';
 
-export const headingTitle = 'Příklad 26';
-export const breadcrumbsCurrent = 'Důkazy přímo';
-export const stepSum = 5;
+const headingTitle = 'Příklad 26';
+const breadcrumbsCurrent = 'Důkazy přímo';
+const stepSum = 5;
 
-export const claimPanel = (
+const claimPanel = (
   <ClaimPanel>
     Dokažte přímo tvrzení: <cite><q>Jestliže graf <MN>G</MN> je strom, pak graf <MN>G-e</MN>, kde <MN>e</MN> je libovolná hrana grafu <MN>G</MN>, již není strom.</q></cite>
     <br />(Při dokazování použijte definice a věty z teorie týkající se stromů.)
   </ClaimPanel>
 );
 
-export const proofPanels = [
+const proofPanels = [
   {
     name: 'proofPanel1',
     activeForSteps: [1, 2],
@@ -55,3 +55,72 @@ export const proofPanels = [
       </div>
   },
 ];
+
+const descriptionPanels = [
+  {
+    id: 1,
+    showForSteps: [1],
+    content: <p>Příklad grafu <MN>G</MN>, který je strom.</p>
+  },
+  {
+    id: 2,
+    showForSteps: [2],
+    content: <p>Mezi libovolně zvolenými vrcholy <MN>u,v</MN> existuje jediná cesta.</p>
+  },
+  {
+    id: 3,
+    showForSteps: [3],
+    content: <p>Libovolně zvolená hrana <MN>{'e=\\{x,y\\}'}</MN> z cesty <MN>u</MN>-<MN>v</MN>.</p>
+  },
+  {
+    id: 4,
+    showForSteps: [4],
+    content:
+      <p>
+        Odebráním hrany <MN>e</MN> se vrcholy <MN>u</MN> a <MN>v</MN> ocitnou v různých komponentách souvislosti.
+      </p>
+  },
+  {
+    id: 5,
+    showForSteps: [5],
+    content: <p>Graf <MN>G-e</MN> není souvislý a není tedy ani stromem.</p>
+  },
+
+];
+
+const definitionPanels = [
+  {
+    id: 1,
+    showForSteps: [1, 2],
+    content:
+      <div>
+        <p>
+          VĚTA O STROMECH (4.1)
+          <br />Pro každý graf <MN>G=(V,E)</MN> jsou následující podmínky ekvivalentní:
+        </p>
+        <p>
+          I. Graf <MN>G</MN> je strom.
+          <br />II. Pro každé dva vrcholy <MN>u,v \in V</MN> existuje právě jedna cesta z vrcholu <MN>u</MN> do vrcholu <MN>v</MN>.
+        </p>
+      </div>
+  },
+  {
+    id: 2,
+    showForSteps: [5],
+    content:
+      <p>
+        DEFINICE STROMU (4.3)
+        <br />Strom je <u>souvislý</u> graf, který neobsahuje kružnici.
+      </p>
+  },
+];
+
+export const constants = {
+  headingTitle: headingTitle,
+  breadcrumbsCurrent: breadcrumbsCurrent,
+  stepSum: stepSum,
+  claimPanel: claimPanel,
+  proofPanels: proofPanels,
+  descriptionPanels: descriptionPanels,
+  definitionPanels: definitionPanels,
+};

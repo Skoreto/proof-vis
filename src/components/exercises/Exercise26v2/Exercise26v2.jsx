@@ -4,13 +4,7 @@ import {
   events,
   palette,
 } from '../../../functionality/GlobalExerciseConstants';
-import {
-  headingTitle,
-  breadcrumbsCurrent,
-  stepSum,
-  claimPanel,
-  proofPanels,
-} from './constants';
+import { constants } from './constants';
 import {
   updateNode,
   updateEdge,
@@ -21,9 +15,8 @@ import {
   handlerDrawingDialog,
 } from '../../../functionality/GraphFunctions';
 import ExerciseWrapper from '../../../components/UI/ExerciseWrapper/ExerciseWrapper';
-import MN from '../../../components/MathJax/MathJaxNode';
 
-class Exercise26gen extends React.Component {
+class Exercise26v2 extends React.Component {
   constructor(props) {
     super(props);
     this.state = initialExerciseState;
@@ -41,19 +34,16 @@ class Exercise26gen extends React.Component {
       if (this.state.currentStep === 0) {
         this.setState({ btnPrevD: false });
         this.setState(this.step1);
-        this.setState(this.step1Texts);
       }
 
       if (this.state.currentStep === 1) {
         this.setState(this.step2);
-        this.setState(this.step2Texts);
       }
 
       if (this.state.currentStep === 2) {
         this.step3();
         let interval1 = setInterval(this.step3, 3000);
         this.setState({ intervals: [interval1] });
-        this.setState(this.step3Texts);
       }
 
       if (this.state.currentStep === 3) {
@@ -61,14 +51,12 @@ class Exercise26gen extends React.Component {
         this.step4();
         let interval2 = setInterval(this.step4, 3000);
         this.setState({ intervals: [interval2] });
-        this.setState(this.step4Texts);
       }
 
       if (this.state.currentStep === 4) {
         this.setState({ btnNextD: true });
         this.clearAllTimers(this.state);
         this.setState(this.step4a);
-        this.setState(this.step5Texts);
       }
 
       // Increase currentStep after a step was executed
@@ -86,7 +74,6 @@ class Exercise26gen extends React.Component {
       if (this.state.currentStep === 2) {
         this.setState(this.stepReset);
         this.setState(this.step1);
-        this.setState(this.step1Texts);
       }
 
       if (this.state.currentStep === 3) {
@@ -94,7 +81,6 @@ class Exercise26gen extends React.Component {
         this.setState(this.stepReset);
         this.setState(this.step1);
         this.setState(this.step2);
-        this.setState(this.step2Texts);
       }
 
       if (this.state.currentStep === 4) {
@@ -105,7 +91,6 @@ class Exercise26gen extends React.Component {
         this.step3();
         let interval1 = setInterval(this.step3, 3000);
         this.setState({ intervals: [interval1] });
-        this.setState(this.step3Texts);
       }
 
       if (this.state.currentStep === 5) {
@@ -114,7 +99,6 @@ class Exercise26gen extends React.Component {
         this.step4();
         let interval2 = setInterval(this.step4, 3000);
         this.setState({ intervals: [interval2] });
-        this.setState(this.step4Texts);
       }
 
       // Reduce currentStep after a step was executed
@@ -127,9 +111,6 @@ class Exercise26gen extends React.Component {
   stepReset = () => {
     return {
       graphVis: { nodes: [], edges: [] },
-      description: '',
-      repeatBoxHidden: true,
-      repeatBoxContent: '',
     };
   };
 
@@ -159,42 +140,6 @@ class Exercise26gen extends React.Component {
     };
   };
 
-  step1Texts = () => {
-    const description = (<p>Příklad grafu <MN>G</MN>, který je strom.</p>);
-    const repeatBox = (
-      <div>
-        <p>
-          VĚTA O STROMECH (4.1)
-          <br />Pro každý graf <MN>G=(V,E)</MN> jsou následující podmínky ekvivalentní:
-        </p>
-        <p>
-          I. Graf <MN>G</MN> je strom.
-          <br />II. Pro každé dva vrcholy <MN>u,v \in V</MN> existuje právě jedna cesta z vrcholu <MN>u</MN> do vrcholu <MN>v</MN>.
-        </p>
-      </div>
-    );
-
-    return { description: description, repeatBoxHidden: false, repeatBoxContent: repeatBox };
-  };
-
-  // step1SVGContent = () => {
-  //     const svgContent = (
-  //         <svg>
-  //             <text textAnchor={'middle'} x={300} y={50} stroke={'black'} strokeWidth={1} fontSize={22}>
-  //                 Zkouška znaků &forall; ⇒ ⇔ <tspan font-style='italic'>&isin; italic</tspan>
-  //             </text>
-  //             <g>
-  //                 <rect x={100} y={100} width={100} height={30} fill={'green'} strokeWidth={2} opacity={0.6} />
-  //                 <text x={120} y={125} stroke={'black'} strokeWidth={1} fontSize={22}>
-  //                 Graf <tspan font-style='italic'>G</tspan>
-  //                 </text>
-  //             </g>
-  //         </svg>
-  //     );
-
-  //     return {isSVGCoverShowed: true, svgContent: svgContent}
-  // }
-
   step2 = (state) => {
     let newNodes = this.updateNode(state.graphVis.nodes, 0, palette.purple, '   ');
     newNodes = this.updateNode(newNodes, 1, palette.purple, '   ');
@@ -207,26 +152,7 @@ class Exercise26gen extends React.Component {
     newEdges = this.updateEdge(newEdges, 4, palette.purple, 2, false, undefined);
     newEdges = this.updateEdge(newEdges, 5, palette.purple, 2, false, undefined);
 
-    return { graphVis: { nodes: newNodes, edges: newEdges }, descriptionBox: '' };
-  };
-
-  step2Texts = () => {
-    const description = (
-      <p>Mezi libovolně zvolenými vrcholy <MN>u,v</MN> existuje jediná cesta.</p>
-    );
-    const repeatBox = (
-      <div>
-        <p>
-          VĚTA O STROMECH (4.1)
-          <br />Pro každý graf <MN>G=(V,E)</MN> jsou následující podmínky ekvivalentní:
-        </p>
-        <p>
-          I. Graf <MN>G</MN> je strom.<br />
-          II. Pro každé dva vrcholy <MN>u,v \in V</MN> existuje právě jedna cesta z vrcholu <MN>u</MN> do vrcholu <MN>v</MN>.
-        </p>
-      </div>
-    );
-    return { description: description, repeatBoxHidden: false, repeatBoxContent: repeatBox };
+    return { graphVis: { nodes: newNodes, edges: newEdges } };
   };
 
   step3 = () => {
@@ -234,9 +160,7 @@ class Exercise26gen extends React.Component {
     let timeout3a = setTimeout(() => { this.setState(this.step3a); }, 1000);
     let timeout3b = setTimeout(() => { this.setState(this.step3b); }, 2000);
 
-    this.setState({
-      timeouts: [timeout3a, timeout3b], repeatBoxHidden: true, repeatBoxContent: ''
-    });
+    this.setState({ timeouts: [timeout3a, timeout3b] });
   };
 
   step3a = (state) => {
@@ -253,21 +177,12 @@ class Exercise26gen extends React.Component {
     return { graphVis: { nodes: newNodes, edges: newEdges } };
   };
 
-  step3Texts = () => {
-    const description = (
-      <p>Libovolně zvolená hrana <MN>{'e=\\{x,y\\}'}</MN> z cesty <MN>u</MN>-<MN>v</MN>.</p>
-    );
-    return { description: description };
-  };
-
   step4 = () => {
     this.setState(this.step3a);
     let timeout4a = setTimeout(() => { this.setState(this.step4a); }, 1000);
     let timeout4b = setTimeout(() => { this.setState(this.step3a); }, 2000);
 
-    this.setState({ 
-      timeouts: [timeout4a, timeout4b], repeatBoxHidden: true, repeatBoxContent: '' 
-    });
+    this.setState({ timeouts: [timeout4a, timeout4b] });
   };
 
   step4a = (state) => {
@@ -277,39 +192,12 @@ class Exercise26gen extends React.Component {
     return { graphVis: { nodes: newNodes, edges: newEdges } };
   };
 
-  step4Texts = () => {
-    const description = (
-      <p>
-        Odebráním hrany <MN>e</MN> se vrcholy <MN>u</MN> a <MN>v</MN> ocitnou v různých komponentách souvislosti.
-      </p>
-    );
-    return { description: description };
-  };
-
-  step5Texts = () => {
-    const description = (<p>Graf <MN>G-e</MN> není souvislý a není tedy ani stromem.</p>);
-    const repeatBox = (
-      <div>
-        <p>
-          DEFINICE STROMU (4.3)
-          <br />Strom je <u>souvislý</u> graf, který neobsahuje kružnici.
-        </p>
-      </div>
-    );
-
-    return { description: description, repeatBoxHidden: false, repeatBoxContent: repeatBox };
-  };
-
   render() {
     return (
       <ExerciseWrapper
         {...this.state}
         events={events}
-        headingTitle={headingTitle}
-        breadcrumbsCurrent={breadcrumbsCurrent}
-        claimPanel={claimPanel}
-        proofPanels={proofPanels}
-        stepSum={stepSum}
+        constants={constants}
         previousStep={this.previousStep}
         nextStep={this.nextStep}
         repeatStep={this.repeatStep}
@@ -325,4 +213,4 @@ class Exercise26gen extends React.Component {
   }
 }
 
-export default Exercise26gen;
+export default Exercise26v2;
