@@ -2,17 +2,17 @@ import React from 'react';
 import ClaimPanel from '../../../components/UI/ClaimPanel/ClaimPanel';
 import MN from '../../../components/MathJax/MathJaxNode';
 
-export const headingTitle = 'Příklad 20';
-export const breadcrumbsCurrent = 'Důkazy přímo';
-export const stepSum = 7;
+const headingTitle = 'Příklad 20';
+const breadcrumbsCurrent = 'Důkazy přímo';
+const stepSum = 7;
 
-export const claimPanel = (
+const claimPanel = (
   <ClaimPanel>
     <cite><q>Nechť <MN>G</MN> je souvislý graf. Jestliže hrana <MN>e</MN> není most v <MN>G</MN>, pak v <MN>G</MN> existuje kružnice obsahující hranu <MN>e</MN>.</q> </cite> Dokažte přímo.
   </ClaimPanel>
 );
 
-export const proofPanels = [
+const proofPanels = [
   {
     name: 'proofPanel1',
     activeForSteps: [1],
@@ -70,7 +70,7 @@ export const proofPanels = [
   },
 ];
 
-export const descriptionPanels = [
+const descriptionPanels = [
   {
     id: 1,
     showForSteps: [1],
@@ -128,7 +128,7 @@ export const descriptionPanels = [
   },
 ];
 
-export const definitionPanels = [
+const definitionPanels = [
   {
     id: 1,
     showForSteps: [1],
@@ -166,20 +166,32 @@ export const definitionPanels = [
   },
 ];
 
-export const cameraPosition1 = {
+const cameraPosition0 = {
   position: { x: 0, y: -10 }, 
   scale: 1.4,
   animation: { duration: 1500, easingFunction: "easeInOutQuad" },
 };
 
-export const cameraPosition2 = {
+const cameraPosition1 = {
   position: { x: 170, y: -10 }, 
   scale: 0.82,
   animation: { duration: 1000, easingFunction: "easeInOutQuad" },
 };
 
-export const cameraPosition3 = {
+const cameraPosition2 = {
   position: { x: 400, y: -10 }, 
   scale: 1.4,
   animation: { duration: 4000, easingFunction: "easeInOutQuad" },
 };
+
+export const constants = {
+  headingTitle: headingTitle,
+  breadcrumbsCurrent: breadcrumbsCurrent,
+  stepSum: stepSum,
+  claimPanel: claimPanel,
+  proofPanels: proofPanels,
+  descriptionPanels: descriptionPanels,
+  definitionPanels: definitionPanels,
+};
+
+export const cameraPositions = [cameraPosition0, cameraPosition1, cameraPosition2];

@@ -17,15 +17,18 @@ const ExerciseWrapper = (props) => (
   <div>
     <div className='page-wrapper'>
       <PageHeader
-        headingTitle={props.headingTitle}
-        breadcrumbsCurrent={props.breadcrumbsCurrent}
+        headingTitle={props.constants.headingTitle}
+        breadcrumbsCurrent={props.constants.breadcrumbsCurrent}
       />
       <div className='page-content'>
-        {props.claimPanel}
+        {props.constants.claimPanel}
         <Row className='page-row'>
           <Col xs={12} md={12} lg={5}>
             <aside>
-              <ProofBox proofPanels={props.proofPanels} currentStep={props.currentStep} />
+              <ProofBox
+                proofPanels={props.constants.proofPanels}
+                currentStep={props.currentStep} 
+              />
             </aside>
           </Col>
           <Col xs={12} md={12} lg={7}>
@@ -65,7 +68,7 @@ const ExerciseWrapper = (props) => (
                 />
               </div>
               <DescriptionPanel
-                descriptionPanels={props.descriptionPanels}
+                descriptionPanels={props.constants.descriptionPanels}
                 currentStep={props.currentStep}
               />
               <div className='controls-panel'>
@@ -78,7 +81,7 @@ const ExerciseWrapper = (props) => (
                   <Button clicked={props.previousStep} disabled={props.btnPrevD}>
                     <FontAwesomeIcon icon="chevron-left" />
                   </Button>
-                  <StepCounter currentStep={props.currentStep} stepSum={props.stepSum} />
+                  <StepCounter currentStep={props.currentStep} stepSum={props.constants.stepSum} />
                   <Button clicked={props.nextStep} disabled={props.btnNextD}>
                     <FontAwesomeIcon icon="chevron-right" />
                   </Button>
@@ -120,7 +123,7 @@ const ExerciseWrapper = (props) => (
                 </span>
               </div>
               <DefinitionPanel
-                definitionPanels={props.definitionPanels}
+                definitionPanels={props.constants.definitionPanels}
                 currentStep={props.currentStep}
               />
               {

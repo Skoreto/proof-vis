@@ -1,17 +1,6 @@
 import React from 'react';
 import { initialExerciseState, events } from '../../../functionality/GlobalExerciseConstants';
-import {
-  headingTitle,
-  breadcrumbsCurrent,
-  stepSum,
-  claimPanel,
-  proofPanels,
-  descriptionPanels,
-  definitionPanels,
-  cameraPosition1,
-  cameraPosition2,
-  cameraPosition3,
-} from './constants';
+import { constants, cameraPositions } from './constants';
 import {
   updateNode,
   updateEdge,
@@ -52,7 +41,7 @@ class Exercise20 extends React.Component {
       if (this.state.currentStep === 0) {
         this.setState({ btnPrevD: false });
         this.setState(this.step1);
-        this.network.moveTo(cameraPosition1);
+        this.network.moveTo(cameraPositions[0]);
       }
 
       if (this.state.currentStep === 1) {
@@ -65,16 +54,16 @@ class Exercise20 extends React.Component {
 
       if (this.state.currentStep === 3) {
         this.setState(this.step4);
-        this.network.moveTo(cameraPosition2);
+        this.network.moveTo(cameraPositions[1]);
       }
 
       if (this.state.currentStep === 4) {
         this.setState(this.step5);
-        this.network.moveTo(cameraPosition3);
+        this.network.moveTo(cameraPositions[2]);
       }
 
       if (this.state.currentStep === 5) {
-        this.network.moveTo(cameraPosition1);
+        this.network.moveTo(cameraPositions[0]);
       }
 
       if (this.state.currentStep === 6) {
@@ -112,8 +101,7 @@ class Exercise20 extends React.Component {
         this.setState(this.step1);
         this.setState(this.step2);
         this.setState(this.step3);
-
-        this.network.moveTo(cameraPosition1);
+        this.network.moveTo(cameraPositions[0]);
       }
 
       if (this.state.currentStep === 5) {
@@ -122,11 +110,11 @@ class Exercise20 extends React.Component {
         this.setState(this.step2);
         this.setState(this.step3);
         this.setState(this.step4);
-        this.network.moveTo(cameraPosition2);
+        this.network.moveTo(cameraPositions[1]);
       }
 
       if (this.state.currentStep === 6) {
-        this.network.moveTo(cameraPosition3);
+        this.network.moveTo(cameraPositions[2]);
       }
 
       if (this.state.currentStep === 7) {
@@ -277,13 +265,7 @@ class Exercise20 extends React.Component {
         {...this.state}
         events={events}
         initNetworkInstance={this.initNetworkInstance}
-        headingTitle={headingTitle}
-        breadcrumbsCurrent={breadcrumbsCurrent}
-        claimPanel={claimPanel}
-        proofPanels={proofPanels}
-        descriptionPanels={descriptionPanels}
-        definitionPanels={definitionPanels}
-        stepSum={stepSum}
+        constants={constants}
         previousStep={this.previousStep}
         nextStep={this.nextStep}
         repeatStep={this.repeatStep}
