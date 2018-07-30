@@ -11,6 +11,7 @@ import {
   stepSum,
   claimPanel,
   proofPanels,
+  descriptionPanels,
   cameraPosition1,
   cameraPosition2,
   cameraPosition3,
@@ -27,6 +28,7 @@ import {
   getScrollOptions,
 } from '../../../functionality/GraphFunctions';
 import ExerciseWrapper from '../../../components/UI/ExerciseWrapper/ExerciseWrapper';
+import DescriptionPanel2 from '../../../components/UI/DescriptionPanel2/DescriptionPanel2';
 import MN from '../../../components/MathJax/MathJaxNode';
 
 class Exercise21 extends React.Component {
@@ -441,6 +443,7 @@ class Exercise21 extends React.Component {
 
   render() {
     return (
+      <div>
       <ExerciseWrapper
         {...this.state}
         events={events}
@@ -461,6 +464,11 @@ class Exercise21 extends React.Component {
           () => this.setState(() => this.handlerDrawingDialog(this.state.isDrawingDialogOpen))
         }
       />
+        <DescriptionPanel2
+          descriptionPanels={descriptionPanels}
+          currentStep={this.state.currentStep}
+        />
+      </div>
     );
   }
 }

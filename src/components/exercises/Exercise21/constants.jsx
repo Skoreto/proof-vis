@@ -79,6 +79,27 @@ export const proofPanels = [
   },
 ];
 
+export const descriptionPanels = [
+  {
+    id: 1,
+    showForSteps: [1, 4],
+    content:
+      <p>Provedení obměny původního výroku.</p>
+  },
+  {
+    id: 2,
+    showForSteps: [2, 4],
+    content:
+      <p>Sestrojení příkladu grafu <MN>G</MN>, kde existuje hrana <MN>e</MN>, která není most.</p>
+  },
+  {
+    id: 3,
+    showForSteps: [3],
+    content:
+      <p>Zvolení libovolných vrcholů <MN>u</MN> a <MN>v</MN>.</p>
+  },
+];
+
 export const cameraPosition1 = {
   position: { x: 0, y: -10 }, 
   scale: 1.4,

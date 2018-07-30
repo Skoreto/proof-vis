@@ -8,6 +8,7 @@ import ProofBox from '../../../components/UI/ProofBox/ProofBox';
 import Button from '../../../components/UI/Button/Button';
 import StepCounter from '../../../components/UI/StepCounter/StepCounter';
 import DescriptionPanel from '../../../components/UI/DescriptionPanel/DescriptionPanel';
+import DescriptionPanel2 from '../../../components/UI/DescriptionPanel2/DescriptionPanel2';
 import DefinitionPanel from '../../../components/UI/DefinitionPanel/DefinitionPanel';
 import Dialog from 'react-dialog';
 import DialogDrawing from '../../../components/DialogDrawing/DialogDrawing';
@@ -67,6 +68,9 @@ const ExerciseWrapper = (props) => (
               <DescriptionPanel>
                 {props.description}
               </DescriptionPanel>
+              {/* <DescriptionPanel2>
+                
+              </DescriptionPanel2> */}
               <div className='controls-panel'>
                 <span className='animation-panel'>
                   <Button clicked={props.repeatStep} disabled={props.btnRepeatD}>
