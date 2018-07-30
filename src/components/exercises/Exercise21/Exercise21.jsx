@@ -446,26 +446,26 @@ class Exercise21 extends React.Component {
   render() {
     return (
       <div>
-      <ExerciseWrapper
-        {...this.state}
-        events={events}
-        initNetworkInstance={this.initNetworkInstance}
-        headingTitle={headingTitle}
-        breadcrumbsCurrent={breadcrumbsCurrent}
-        claimPanel={claimPanel}
-        proofPanels={proofPanels}
-        stepSum={stepSum}
-        previousStep={this.previousStep}
-        nextStep={this.nextStep}
-        repeatStep={this.repeatStep}
-        handleSketchAllowance={() => this.setState(() => this.handlerSketchAllowance(this.state))}
-        handleSketchPencil={() => this.setState(() => this.handlerSelectedTool(1))}
-        handleSketchLine={() => this.setState(() => this.handlerSelectedTool(2))}
-        handleSketchCircle={() => this.setState(() => this.handlerSelectedTool(3))}
-        handleDrawingDialog={
-          () => this.setState(() => this.handlerDrawingDialog(this.state.isDrawingDialogOpen))
-        }
-      />
+        <ExerciseWrapper
+          {...this.state}
+          events={events}
+          initNetworkInstance={this.initNetworkInstance}
+          headingTitle={headingTitle}
+          breadcrumbsCurrent={breadcrumbsCurrent}
+          claimPanel={claimPanel}
+          proofPanels={proofPanels}
+          stepSum={stepSum}
+          previousStep={this.previousStep}
+          nextStep={this.nextStep}
+          repeatStep={this.repeatStep}
+          handleSketchAllowance={() => this.setState(() => this.handlerSketchAllowance(this.state))}
+          handleSketchPencil={() => this.setState(() => this.handlerSelectedTool(1))}
+          handleSketchLine={() => this.setState(() => this.handlerSelectedTool(2))}
+          handleSketchCircle={() => this.setState(() => this.handlerSelectedTool(3))}
+          handleDrawingDialog={
+            () => this.setState(() => this.handlerDrawingDialog(this.state.isDrawingDialogOpen))
+          }
+        />
         <DescriptionPanel2
           descriptionPanels={descriptionPanels}
           currentStep={this.state.currentStep}

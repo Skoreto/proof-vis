@@ -24,7 +24,7 @@ const CustomNavbar = () => (
           id="basic-nav-dropdown"
           className={"nav-item"}
         >
-          <MenuItem eventKey={1.1} componentClass={Link} href="/priklad20v2" to="/priklad20v2">
+          <MenuItem eventKey={1.1} componentClass={Link} href="/priklad20" to="/priklad20">
             Příklad 20
           </MenuItem>
           <MenuItem eventKey={1.2} componentClass={Link} href="/priklad23" to="/priklad23">

@@ -72,8 +72,8 @@ class Overview extends React.Component {
                         <ListGroup>
                           <ListGroupItem bsStyle="success">Důkazy přímo</ListGroupItem>
                           <ListGroupItem 
-                            href={process.env.PUBLIC_URL + "/priklad20v2"}
-                            to={process.env.PUBLIC_URL + "/priklad20v2"}
+                            href={process.env.PUBLIC_URL + "/priklad20"}
+                            to={process.env.PUBLIC_URL + "/priklad20"}
                           >
                             Příklad 20
                           </ListGroupItem>
