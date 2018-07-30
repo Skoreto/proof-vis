@@ -4,13 +4,7 @@ import {
   events,
   palette,
 } from '../../../functionality/GlobalExerciseConstants';
-import {
-  headingTitle,
-  breadcrumbsCurrent,
-  stepSum,
-  claimPanel,
-  proofPanels,
-} from './constants';
+import { constants } from './constants';
 import {
   updateNode,
   updateEdge,
@@ -45,7 +39,6 @@ class Exercise17av2 extends React.Component {
       if (this.state.currentStep === 0) {
         this.setState({ btnPrevD: false });
         this.setState(this.step1);
-        this.setState(this.step1Texts);
       }
 
       if (this.state.currentStep === 1) {
@@ -63,7 +56,6 @@ class Exercise17av2 extends React.Component {
         this.step3();
         let interval2 = setInterval(this.step3, 17000);
         this.setState({ intervals: [interval2] });
-        this.setState(this.step3Texts);
       }
 
       if (this.state.currentStep === 3) {
@@ -88,7 +80,6 @@ class Exercise17av2 extends React.Component {
         this.clearAllTimers(this.state);
         this.setState(this.stepReset);
         this.setState(this.step1);
-        this.setState(this.step1Texts);
       }
 
       if (this.state.currentStep === 3) {
@@ -131,7 +122,7 @@ class Exercise17av2 extends React.Component {
   };
 
   stepReset = () => {
-    return { graphVis: { nodes: [], edges: [] }, description: '' };
+    return { graphVis: { nodes: [], edges: [] } };
   };
 
   step1 = () => {
@@ -148,11 +139,6 @@ class Exercise17av2 extends React.Component {
         ],
       },
     };
-  };
-
-  step1Texts = () => {
-    const description = (<p>Příklad grafu <MN>G</MN>, který neobsahuje kružnici.</p>);
-    return { description: description };
   };
 
   step2 = () => {
@@ -177,7 +163,7 @@ class Exercise17av2 extends React.Component {
         Konstrukce sledu <MN>S_1 = (</MN><MN classes='text-purple'>u</MN><MN>,e_1,w,e_2,v)</MN>
       </p>
     );
-    return { graphVis: { nodes: newNodes, edges: state.graphVis.edges }, description: description };
+    return { graphVis: { nodes: newNodes, edges: state.graphVis.edges } };
   };
 
   step2b = (state) => {
@@ -248,7 +234,6 @@ class Exercise17av2 extends React.Component {
     let timeout3l = setTimeout(() => {
       this.setState(this.stepReset);
       this.setState(this.step1);
-      this.setState(this.step3Texts);
     }, 16000);
 
     this.setState({
@@ -336,21 +321,12 @@ class Exercise17av2 extends React.Component {
     return { graphVis: { nodes: newNodes, edges: state.graphVis.edges } };
   };
 
-  step3Texts = () => {
-    const description = (<p>Konstrukce sledu <MN>S_2 = (u,e_1,w,e_1,u,e_1,w,e_2,v)</MN></p>);
-    return { description: description };
-  };
-
   render() {
     return (
       <ExerciseWrapper 
         {...this.state}
         events={events}
-        headingTitle={headingTitle}
-        breadcrumbsCurrent={breadcrumbsCurrent}
-        claimPanel={claimPanel}
-        proofPanels={proofPanels}
-        stepSum={stepSum}
+        constants={constants}
         previousStep={this.previousStep}
         nextStep={this.nextStep}
         repeatStep={this.repeatStep}

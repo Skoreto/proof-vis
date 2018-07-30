@@ -24,6 +24,10 @@
 }
 
 /* ==== MAIN ČÁST ====  */
+.overview ul {
+  text-align: justify;
+  font-size: 14px;
+}
 
 #definition {
   border: 1px solid rgba(97, 173, 255, 0.51);
