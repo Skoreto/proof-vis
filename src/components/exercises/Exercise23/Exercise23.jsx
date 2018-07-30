@@ -5,16 +5,7 @@ import {
   palette,
 } from '../../../functionality/GlobalExerciseConstants';
 import { scrollSpy, scroller } from 'react-scroll';
-import {
-  headingTitle,
-  breadcrumbsCurrent,
-  stepSum,
-  claimPanel,
-  proofPanels,
-  cameraPosition1,
-  cameraPosition2,
-  cameraPosition3,
-} from './constants';
+import { constants, cameraPositions } from './constants';
 import {
   updateNode,
   updateNodeShape,
@@ -27,7 +18,6 @@ import {
   getScrollOptions,
 } from '../../../functionality/GraphFunctions';
 import ExerciseWrapper from '../../../components/UI/ExerciseWrapper/ExerciseWrapper';
-import MN from '../../../components/MathJax/MathJaxNode';
 
 class Exercise23 extends React.Component {
   constructor(props) {
@@ -62,16 +52,14 @@ class Exercise23 extends React.Component {
       if (this.state.currentStep === 0) {
         this.setState({ btnPrevD: false });
         this.setState(this.step1);
-        this.setState(this.step1Texts);
-        this.network.moveTo(cameraPosition1);
+        this.network.moveTo(cameraPositions[0]);
       }
 
       if (this.state.currentStep === 1) {    
         this.step2Animation();
         let interval1 = setInterval(this.step2Animation, 6000);
         this.setState({ intervals: [interval1] });
-        this.setState(this.step2Texts);
-        this.network.moveTo(cameraPosition2);
+        this.network.moveTo(cameraPositions[1]);
         scroller.scrollTo('proofPanel2', getScrollOptions(window.scrollY));
       }
 
@@ -79,51 +67,42 @@ class Exercise23 extends React.Component {
         this.clearAllTimers(this.state);
         this.setState(this.step1);
         this.setState(this.step3);
-        this.setState(this.step3Texts);
         scroller.scrollTo('proofPanel3', getScrollOptions(window.scrollY));
       }
 
       if (this.state.currentStep === 3) {
         this.setState(this.step4);
-        this.setState(this.step4Texts);
-        this.network.moveTo(cameraPosition3);
+        this.network.moveTo(cameraPositions[2]);
         scroller.scrollTo('proofPanel4', getScrollOptions(window.scrollY));
       }
 
       if (this.state.currentStep === 4) {
         this.setState(this.step5);
-        this.setState(this.step5Texts);
         scroller.scrollTo('proofPanel5', getScrollOptions(window.scrollY));
       }
 
       if (this.state.currentStep === 5) {
         this.setState(this.step6);
-        this.setState(this.step6Texts);
-        
       }
 
       if (this.state.currentStep === 6) {
         this.setState(this.step1);
         this.setState(this.step7);
-        this.setState(this.step7Texts);
       }
 
       if (this.state.currentStep === 7) {
         this.setState(this.step8);
-        this.setState(this.step8Texts);
       }
 
       if (this.state.currentStep === 8) {
         this.setState(this.step1);
         this.setState(this.step9);
-        this.setState(this.step9Texts);
         scroller.scrollTo('proofPanel6', getScrollOptions(window.scrollY));
       }
 
       if (this.state.currentStep === 9) {
         this.setState({ btnNextD: true });
         this.setState(this.step10);
-        this.setState(this.step10Texts);
         scroller.scrollTo('proofPanel7', getScrollOptions(window.scrollY));
       }
 
@@ -142,8 +121,7 @@ class Exercise23 extends React.Component {
       if (this.state.currentStep === 2) {
         this.clearAllTimers(this.state);
         this.setState(this.step1);
-        this.setState(this.step1Texts);
-        this.network.moveTo(cameraPosition1);
+        this.network.moveTo(cameraPositions[0]);
         scroller.scrollTo('proofPanel1', getScrollOptions(window.scrollY));
       }
 
@@ -152,7 +130,6 @@ class Exercise23 extends React.Component {
         this.step2Animation();
         let interval1 = setInterval(this.step2Animation, 6000);
         this.setState({ intervals: [interval1] });
-        this.setState(this.step2Texts);
         scroller.scrollTo('proofPanel2', getScrollOptions(window.scrollY));
       }
 
@@ -160,39 +137,33 @@ class Exercise23 extends React.Component {
         this.clearAllTimers(this.state);
         this.setState(this.step1);
         this.setState(this.step3);
-        this.setState(this.step3Texts);
-        this.network.moveTo(cameraPosition2);
+        this.network.moveTo(cameraPositions[1]);
         scroller.scrollTo('proofPanel3', getScrollOptions(window.scrollY));
       }
 
       if (this.state.currentStep === 5) {
         this.setState(this.step1);
         this.setState(this.step4);
-        this.setState(this.step4Texts);
         scroller.scrollTo('proofPanel4', getScrollOptions(window.scrollY));
       }
 
       if (this.state.currentStep === 6) {
         this.setState(this.step5);
-        this.setState(this.step5Texts);
       }
 
       if (this.state.currentStep === 7) {
         this.setState(this.step1);
         this.setState(this.step6);
-        this.setState(this.step6Texts);
       }
 
       if (this.state.currentStep === 8) {
         this.setState(this.step1);
         this.setState(this.step7);
-        this.setState(this.step7Texts);
       }
 
       if (this.state.currentStep === 9) {
         this.setState(this.step1);
         this.setState(this.step8);
-        this.setState(this.step8Texts);
         scroller.scrollTo('proofPanel5', getScrollOptions(window.scrollY));
       }
 
@@ -200,7 +171,6 @@ class Exercise23 extends React.Component {
         this.setState({ btnNextD: false });
         this.setState(this.step1);
         this.setState(this.step9);
-        this.setState(this.step9Texts);
         scroller.scrollTo('proofPanel6', getScrollOptions(window.scrollY));
       }
 
@@ -271,11 +241,6 @@ class Exercise23 extends React.Component {
     };
   };
 
-  step1Texts = () => {
-    const description = (<p>Příklad dvou grafů obsahujících kružnice.</p>);
-    return { description: description };
-  };
-
   step2Animation = () => {
     let timeout1 = setTimeout(() => { this.setState(this.step2a); }, 1000);
     let timeout2 = setTimeout(() => { this.setState(this.step1); }, 2500);
@@ -317,16 +282,6 @@ class Exercise23 extends React.Component {
     return { graphVis: { nodes: newNodes, edges: newEdges } };
   };
 
-  step2Texts = () => {
-    const description = (
-      <p>
-        Příklad grafu <MN>G</MN>, kde kružnice <MN>C_1</MN> a <MN>C_2</MN> sdílejí hranu <MN>e</MN>.
-      </p>
-    );
-
-    return { description: description, repeatBoxHidden: true };
-  };
-
   step3 = (state) => {
     let newNodes = this.updateNode(state.graphVis.nodes, 0, palette.orange, '   ');
     newNodes = this.updateNode(newNodes, 1, palette.orange, '   ');
@@ -349,35 +304,9 @@ class Exercise23 extends React.Component {
     return { graphVis: { nodes: newNodes, edges: newEdges } };
   };
 
-  step3Texts = () => {
-    const description = (
-      <p>
-        Poté v grafu <MN>G</MN> existuje také kružnice <MN>C_3</MN> neobsahující hranu <MN>e</MN>.
-      </p>
-    );
-    const repeatBox = (
-      <div>
-        <p>
-          KRUŽNICE (Definice 1.8)
-          <br />Kružnice délky <MN>k, k \geq 3</MN>, v grafu <MN>G</MN> je posloupnost <MN>{'(v_{0}, e_{1}, v_{1},...,e_{k}, v_{0})'}</MN>, kde <MN>{'e_{i}=\\{v_{i-1}, v_{i}\\}'}</MN>, <MN>i=1,...,k-1</MN>, <MN>{'e_{k}=\\{v_{k-1}, v_{0}\\}'}</MN> a pro <MN>i \neq j</MN> platí <MN>{'v_{i} \\neq v_{j}'}</MN>.
-        </p>
-      </div>
-    );
-    return { description: description, repeatBoxHidden: false, repeatBoxContent: repeatBox };
-  };
-
   step4 = (state) => {
     let newEdges = this.updateEdge(state.graphVis.edges, 14, palette.black, 1, false, 'e1');
     return { graphVis: { nodes: state.graphVis.nodes, edges: newEdges } };
-  };
-
-  step4Texts = () => {
-    const description = (
-      <p>
-        Příklad grafu <MN>G</MN>, kde kružnice <MN>C_1</MN> a <MN>C_2</MN> sdílejí hranu <MN>e</MN> a navíc další hranu <MN>e_1</MN>.
-      </p>
-    );
-    return { description: description, repeatBoxHidden: true, repeatBoxContent: '' };
   };
 
   step5 = (state) => {
@@ -396,13 +325,16 @@ class Exercise23 extends React.Component {
     return { graphVis: { nodes: newNodes, edges: newEdges } };
   };
 
-  step5Texts = () => {
-    const description = (<p>Vyznačení kružnice <MN>C_1</MN>.</p>);
-    return { description: description };
-  };
-
   step6 = (state) => {
-    let newNodes = this.updateNodeShape(state.graphVis.nodes, 8, palette.purple, 'u = x1', -75, 'dot', 21);
+    let newNodes = this.updateNodeShape(
+      state.graphVis.nodes,
+      8,
+      palette.purple,
+      'u = x1',
+      -75,
+      'dot',
+      21
+    );
     newNodes = this.updateNodeShape(newNodes, 9, palette.purple, 'x2', -75, 'dot', 21);
     newNodes = this.updateNodeShape(newNodes, 11, palette.purple, 'v = x5', -75, 'dot', 21);
     newNodes = this.updateNodeShape(newNodes, 12, palette.purple, 'x3', -75, 'dot', 21);
@@ -415,15 +347,6 @@ class Exercise23 extends React.Component {
     newEdges = this.updateEdge(newEdges, 15, palette.purple, 3, false, '');
 
     return { graphVis: { nodes: newNodes, edges: newEdges } };
-  };
-
-  step6Texts = () => {
-    const description = (
-      <p>
-        Vyznačení cesty <MN>P_1=C_1 - e</MN>, tedy přes kružnici <MN>C_1</MN> bez hrany <MN>e</MN>.
-      </p>
-    );
-    return { description: description };
   };
 
   step7 = (state) => {
@@ -440,11 +363,6 @@ class Exercise23 extends React.Component {
     newEdges = this.updateEdge(newEdges, 16, palette.jade, 3, false, '');
 
     return { graphVis: { nodes: newNodes, edges: newEdges } };
-  };
-
-  step7Texts = () => {
-    const description = (<p>Vyznačení kružnice <MN>C_2</MN>.</p>);
-    return { description: description };
   };
 
   step8 = (state) => {
@@ -471,15 +389,6 @@ class Exercise23 extends React.Component {
     return { graphVis: { nodes: newNodes, edges: newEdges } };
   };
 
-  step8Texts = () => {
-    const description = (
-      <p>
-        Vyznačení cesty <MN>P_2=C_2 - e</MN>, tedy přes kružnici <MN>C_2</MN> bez hrany <MN>e</MN>.
-      </p>
-    );
-    return { description: description };
-  };
-
   step9 = (state) => {
     let newNodes = this.updateNodeShape(
       state.graphVis.nodes,
@@ -493,15 +402,6 @@ class Exercise23 extends React.Component {
     newNodes = this.updateNodeShape(newNodes, 14, palette.orange, 'x4 = y4', -75, 'dot', 21);
 
     return { graphVis: { nodes: newNodes, edges: state.graphVis.edges } };
-  };
-
-  step9Texts = () => {
-    const description = (
-      <p>
-        Vyznačení vrcholu <MN>x_1=y_1</MN>, ve kterém se cesty rozcházejí, a vrcholu <MN>x_4=y_4</MN>, ve kterém se cesty scházejí.
-      </p>
-    );
-    return { description: description, repeatBoxHidden: true, repeatBoxContent: '' };
   };
 
   step10 = (state) => {
@@ -530,34 +430,13 @@ class Exercise23 extends React.Component {
     return { graphVis: { nodes: newNodes, edges: newEdges } };
   };
 
-  step10Texts = () => {
-    const description = (
-      <p>
-        Vyznačení vrcholu križnice <MN>C_3</MN>, která neobsahuje hranu <MN>e</MN>.
-      </p>
-    );
-    const repeatBox = (
-      <div>
-        <p>
-          KRUŽNICE (Definice 1.8)
-          <br />Kružnice délky <MN>k, k \geq 3</MN>, v grafu <MN>G</MN> je posloupnost <MN>{'(v_{0}, e_{1}, v_{1},...,e_{k}, v_{0})'}</MN>, kde <MN>{'e_{i}=\\{v_{i-1}, v_{i}\\}'}</MN>, <MN>i=1,...,k-1</MN>, <MN>{'e_{k}=\\{v_{k-1}, v_{0}\\}'}</MN> a pro <MN>i \neq j</MN> platí <MN>{'v_{i} \\neq v_{j}'}</MN>.
-        </p>
-      </div>
-    );
-    return { description: description, repeatBoxHidden: false, repeatBoxContent: repeatBox };
-  };
-
   render() {
     return (
       <ExerciseWrapper
         {...this.state}
         events={events}
         initNetworkInstance={this.initNetworkInstance}
-        headingTitle={headingTitle}
-        breadcrumbsCurrent={breadcrumbsCurrent}
-        claimPanel={claimPanel}
-        proofPanels={proofPanels}
-        stepSum={stepSum}
+        constants={constants}
         previousStep={this.previousStep}
         nextStep={this.nextStep}
         repeatStep={this.repeatStep}

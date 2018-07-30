@@ -2,17 +2,17 @@ import React from 'react';
 import ClaimPanel from '../../../components/UI/ClaimPanel/ClaimPanel';
 import MN from '../../../components/MathJax/MathJaxNode';
 
-export const headingTitle = 'Příklad 23';
-export const breadcrumbsCurrent = 'Důkazy přímo';
-export const stepSum = 10;
+const headingTitle = 'Příklad 23';
+const breadcrumbsCurrent = 'Důkazy přímo';
+const stepSum = 10;
 
-export const claimPanel = (
+const claimPanel = (
   <ClaimPanel>
     Dokažte, že když dvě různé kružnice grafu <MN>G</MN> obsahují hranu <MN>e</MN>, pak v <MN>G</MN> existuje i kružnice neobsahující hranu <MN>e</MN>.
   </ClaimPanel>
 );
 
-export const proofPanels = [
+const proofPanels = [
   {
     name: 'proofPanel1',
     activeForSteps: [1],
@@ -78,20 +78,127 @@ export const proofPanels = [
   },
 ];
 
-export const cameraPosition1 = {
+const descriptionPanels = [
+  {
+    id: 1,
+    showForSteps: [1],
+    content: <p>Příklad dvou grafů obsahujících kružnice.</p>
+  },
+  {
+    id: 2,
+    showForSteps: [2],
+    content:
+      <p>
+        Příklad grafu <MN>G</MN>, kde kružnice <MN>C_1</MN> a <MN>C_2</MN> sdílejí hranu <MN>e</MN>.
+      </p>
+  },
+  {
+    id: 3,
+    showForSteps: [3],
+    content:
+      <p>
+        Poté v grafu <MN>G</MN> existuje také kružnice <MN>C_3</MN> neobsahující hranu <MN>e</MN>.
+      </p>
+  },
+  {
+    id: 4,
+    showForSteps: [4],
+    content:
+      <p>
+        Příklad grafu <MN>G</MN>, kde kružnice <MN>C_1</MN> a <MN>C_2</MN> sdílejí hranu <MN>e</MN> a navíc další hranu <MN>e_1</MN>.
+      </p>
+  },
+  {
+    id: 5,
+    showForSteps: [5],
+    content: <p>Vyznačení kružnice <MN>C_1</MN>.</p>
+  },
+  {
+    id: 6,
+    showForSteps: [6],
+    content:
+      <p>
+        Vyznačení cesty <MN>P_1=C_1 - e</MN>, tedy přes kružnici <MN>C_1</MN> bez hrany <MN>e</MN>.
+      </p>
+  },
+  {
+    id: 7,
+    showForSteps: [7],
+    content: <p>Vyznačení kružnice <MN>C_2</MN>.</p>
+  },
+  {
+    id: 8,
+    showForSteps: [8],
+    content:
+      <p>
+        Vyznačení cesty <MN>P_2=C_2 - e</MN>, tedy přes kružnici <MN>C_2</MN> bez hrany <MN>e</MN>.
+      </p>
+  },
+  {
+    id: 9,
+    showForSteps: [9],
+    content:
+      <p>
+        Vyznačení vrcholu <MN>x_1=y_1</MN>, ve kterém se cesty rozcházejí, a vrcholu <MN>x_4=y_4</MN>, ve kterém se cesty scházejí.
+      </p>
+  },
+  {
+    id: 10,
+    showForSteps: [10],
+    content:
+      <p>
+        Vyznačení vrcholu križnice <MN>C_3</MN>, která neobsahuje hranu <MN>e</MN>.
+      </p>
+  },
+];
+
+const definitionPanels = [
+  {
+    id: 1,
+    showForSteps: [3],
+    content:
+      <p>
+        KRUŽNICE (Definice 1.8)
+        <br />Kružnice délky <MN>k, k \geq 3</MN>, v grafu <MN>G</MN> je posloupnost <MN>{'(v_{0}, e_{1}, v_{1},...,e_{k}, v_{0})'}</MN>, kde <MN>{'e_{i}=\\{v_{i-1}, v_{i}\\}'}</MN>, <MN>i=1,...,k-1</MN>, <MN>{'e_{k}=\\{v_{k-1}, v_{0}\\}'}</MN> a pro <MN>i \neq j</MN> platí <MN>{'v_{i} \\neq v_{j}'}</MN>.
+      </p>
+  },
+  {
+    id: 2,
+    showForSteps: [10],
+    content:
+      <p>
+        KRUŽNICE (Definice 1.8)
+        <br />Kružnice délky <MN>k, k \geq 3</MN>, v grafu <MN>G</MN> je posloupnost <MN>{'(v_{0}, e_{1}, v_{1},...,e_{k}, v_{0})'}</MN>, kde <MN>{'e_{i}=\\{v_{i-1}, v_{i}\\}'}</MN>, <MN>i=1,...,k-1</MN>, <MN>{'e_{k}=\\{v_{k-1}, v_{0}\\}'}</MN> a pro <MN>i \neq j</MN> platí <MN>{'v_{i} \\neq v_{j}'}</MN>.
+      </p>
+  },
+];
+
+const cameraPosition0 = {
   position: { x: 0, y: 15 }, 
   scale: 0.65,
   animation: { duration: 1500, easingFunction: "easeInOutQuad" },
 };
 
-export const cameraPosition2 = {
+const cameraPosition1 = {
   position: { x: 0, y: -130 }, 
   scale: 1.15,
   animation: { duration: 1500, easingFunction: "easeInOutQuad" },
 };
 
-export const cameraPosition3 = {
+const cameraPosition2 = {
   position: { x: 0, y: 200 }, 
   scale: 1.15,
   animation: { duration: 1500, easingFunction: "easeInOutQuad" },
 };
+
+export const constants = {
+  headingTitle: headingTitle,
+  breadcrumbsCurrent: breadcrumbsCurrent,
+  stepSum: stepSum,
+  claimPanel: claimPanel,
+  proofPanels: proofPanels,
+  descriptionPanels: descriptionPanels,
+  definitionPanels: definitionPanels,
+};
+
+export const cameraPositions = [cameraPosition0, cameraPosition1, cameraPosition2];
