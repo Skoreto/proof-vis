@@ -5,18 +5,7 @@ import {
   palette,
 } from '../../../functionality/GlobalExerciseConstants';
 import { scroller } from 'react-scroll';
-import {
-  headingTitle,
-  breadcrumbsCurrent,
-  stepSum,
-  claimPanel,
-  proofPanels,
-  descriptionPanels,
-  definitionPanels,
-  cameraPosition1,
-  cameraPosition2,
-  cameraPosition3,
-} from './constants';
+import { constants, cameraPositions } from './constants';
 import {
   updateNode,
   updateEdge,
@@ -62,7 +51,7 @@ class Exercise21 extends React.Component {
 
       if (this.state.currentStep === 1) {
         this.setState(this.step2);
-        this.network.moveTo(cameraPosition1);
+        this.network.moveTo(cameraPositions[0]);
         scroller.scrollTo('proofPanel2', getScrollOptions(window.scrollY));
       }
 
@@ -77,18 +66,18 @@ class Exercise21 extends React.Component {
 
       if (this.state.currentStep === 4) {
         this.setState(this.step5);
-        this.network.moveTo(cameraPosition2);
+        this.network.moveTo(cameraPositions[1]);
         scroller.scrollTo('proofPanel4', getScrollOptions(window.scrollY));
       }
 
       if (this.state.currentStep === 5) {
         this.setState(this.step6);
-        this.network.moveTo(cameraPosition3);
+        this.network.moveTo(cameraPositions[2]);
         scroller.scrollTo('proofPanel5', getScrollOptions(window.scrollY));
       }
 
       if (this.state.currentStep === 6) {
-        this.network.moveTo(cameraPosition1);
+        this.network.moveTo(cameraPositions[0]);
         scroller.scrollTo('proofPanel6', getScrollOptions(window.scrollY));
       }
 
@@ -134,7 +123,7 @@ class Exercise21 extends React.Component {
         this.setState(this.step2);
         this.setState(this.step3);
         this.setState(this.step4);
-        this.network.moveTo(cameraPosition1);
+        this.network.moveTo(cameraPositions[0]);
         scroller.scrollTo('proofPanel3', getScrollOptions(window.scrollY));
       }
 
@@ -144,12 +133,12 @@ class Exercise21 extends React.Component {
         this.setState(this.step3);
         this.setState(this.step4);
         this.setState(this.step5);
-        this.network.moveTo(cameraPosition2);
+        this.network.moveTo(cameraPositions[1]);
         scroller.scrollTo('proofPanel4', getScrollOptions(window.scrollY));
       }
 
       if (this.state.currentStep === 7) {
-        this.network.moveTo(cameraPosition3);
+        this.network.moveTo(cameraPositions[2]);
         scroller.scrollTo('proofPanel5', getScrollOptions(window.scrollY));
       }
 
@@ -333,13 +322,7 @@ class Exercise21 extends React.Component {
         {...this.state}
         events={events}
         initNetworkInstance={this.initNetworkInstance}
-        headingTitle={headingTitle}
-        breadcrumbsCurrent={breadcrumbsCurrent}
-        claimPanel={claimPanel}
-        proofPanels={proofPanels}
-        descriptionPanels={descriptionPanels}
-        definitionPanels={definitionPanels}
-        stepSum={stepSum}
+        constants={constants}
         previousStep={this.previousStep}
         nextStep={this.nextStep}
         repeatStep={this.repeatStep}

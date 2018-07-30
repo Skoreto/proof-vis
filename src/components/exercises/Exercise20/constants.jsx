@@ -169,19 +169,19 @@ const definitionPanels = [
 const cameraPosition0 = {
   position: { x: 0, y: -10 }, 
   scale: 1.4,
-  animation: { duration: 1500, easingFunction: "easeInOutQuad" },
+  animation: { duration: 1500, easingFunction: 'easeInOutQuad' },
 };
 
 const cameraPosition1 = {
   position: { x: 170, y: -10 }, 
   scale: 0.82,
-  animation: { duration: 1000, easingFunction: "easeInOutQuad" },
+  animation: { duration: 1000, easingFunction: 'easeInOutQuad' },
 };
 
 const cameraPosition2 = {
   position: { x: 400, y: -10 }, 
   scale: 1.4,
-  animation: { duration: 4000, easingFunction: "easeInOutQuad" },
+  animation: { duration: 4000, easingFunction: 'easeInOutQuad' },
 };
 
 export const constants = {

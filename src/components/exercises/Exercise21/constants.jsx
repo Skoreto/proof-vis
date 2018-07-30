@@ -2,17 +2,17 @@ import React from 'react';
 import ClaimPanel from '../../../components/UI/ClaimPanel/ClaimPanel';
 import MN from '../../../components/MathJax/MathJaxNode';
 
-export const headingTitle = 'Příklad 21';
-export const breadcrumbsCurrent = 'Důkazy nepřímo';
-export const stepSum = 8;
+const headingTitle = 'Příklad 21';
+const breadcrumbsCurrent = 'Důkazy nepřímo';
+const stepSum = 8;
 
-export const claimPanel = (
+const claimPanel = (
   <ClaimPanel>
     <cite><q>Nechť <MN>G</MN> je graf. Jestliže v <MN>G</MN> neexistuje kružnice, pak každá hrana v <MN>G</MN> je most.</q></cite> Dokažte nepřímo.
   </ClaimPanel>
 );
 
-export const proofPanels = [
+const proofPanels = [
   {
     name: 'proofPanel1',
     activeForSteps: [1],
@@ -79,7 +79,7 @@ export const proofPanels = [
   },
 ];
 
-export const descriptionPanels = [
+const descriptionPanels = [
   {
     id: 1,
     showForSteps: [1],
@@ -141,7 +141,7 @@ export const descriptionPanels = [
   },
 ];
 
-export const definitionPanels = [
+const definitionPanels = [
   {
     id: 1,
     showForSteps: [2],
@@ -179,20 +179,32 @@ export const definitionPanels = [
   },
 ];
 
-export const cameraPosition1 = {
+const cameraPosition0 = {
   position: { x: 0, y: -10 }, 
   scale: 1.4,
-  animation: { duration: 1500, easingFunction: "easeInOutQuad" },
+  animation: { duration: 1500, easingFunction: 'easeInOutQuad' },
 };
 
-export const cameraPosition2 = {
+const cameraPosition1 = {
   position: { x: 170, y: -10 }, 
   scale: 0.82,
-  animation: { duration: 1000, easingFunction: "easeInOutQuad" },
+  animation: { duration: 1000, easingFunction: 'easeInOutQuad' },
 };
 
-export const cameraPosition3 = {
+const cameraPosition2 = {
   position: { x: 400, y: -10 }, 
   scale: 1.4,
-  animation: { duration: 4000, easingFunction: "easeInOutQuad" },
+  animation: { duration: 4000, easingFunction: 'easeInOutQuad' },
 };
+
+export const constants = {
+  headingTitle: headingTitle,
+  breadcrumbsCurrent: breadcrumbsCurrent,
+  stepSum: stepSum,
+  claimPanel: claimPanel,
+  proofPanels: proofPanels,
+  descriptionPanels: descriptionPanels,
+  definitionPanels: definitionPanels,
+};
+
+export const cameraPositions = [cameraPosition0, cameraPosition1, cameraPosition2];
