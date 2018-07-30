@@ -9,7 +9,7 @@ import {
   headingTitle,
   breadcrumbsCurrent,
   stepSum,
-  definitionPanel,
+  claimPanel,
   proofPanels,
 } from './constants';
 import {
@@ -413,7 +413,7 @@ class Exercise24 extends React.Component {
         events={events}
         headingTitle={headingTitle}
         breadcrumbsCurrent={breadcrumbsCurrent}
-        definitionPanel={definitionPanel}
+        claimPanel={claimPanel}
         proofPanels={proofPanels}
         stepSum={stepSum}
         previousStep={this.previousStep}

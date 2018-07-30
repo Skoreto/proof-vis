@@ -1,15 +1,15 @@
 import React from 'react';
-import DefinitionPanel from '../../../components/UI/DefinitionPanel/DefinitionPanel';
+import ClaimPanel from '../../../components/UI/ClaimPanel/ClaimPanel';
 import MN from '../../../components/MathJax/MathJaxNode';
 
 export const headingTitle = 'Příklad 21';
 export const breadcrumbsCurrent = 'Důkazy nepřímo';
 export const stepSum = 8;
 
-export const definitionPanel = (
-  <DefinitionPanel>
+export const claimPanel = (
+  <ClaimPanel>
     <cite><q>Nechť <MN>G</MN> je graf. Jestliže v <MN>G</MN> neexistuje kružnice, pak každá hrana v <MN>G</MN> je most.</q></cite> Dokažte nepřímo.
-  </DefinitionPanel>
+  </ClaimPanel>
 );
 
 export const proofPanels = [

@@ -16,7 +16,7 @@ import M from 'react-mathjax2';
 import MN from '../../../components/MathJax/MathJaxNode';
 import '../../../customMainTheme.css';
 import PageHeading from "../../../components/UI/PageHeading/PageHeader";
-import DefinitionPanel from "../../../components/UI/DefinitionPanel/DefinitionPanel";
+import ClaimPanel from "../../../components/UI/ClaimPanel/ClaimPanel";
 import Button from '../../../components/UI/Button/Button';
 import StepCounter from '../../../components/UI/StepCounter/StepCounter';
 
@@ -300,11 +300,11 @@ class Exercise26 extends React.Component {
           <div className="page-wrapper">
             <PageHeading headingTitle={"Příklad 26 (v1)"} breadcrumbsCurrent={"Důkazy přímo"} />
             <div className="page-content">
-              <DefinitionPanel>
+              <ClaimPanel>
                 Dokažte přímo tvrzení:
                 <cite><q>Jestliže graf <MN>G</MN> je strom, pak graf <MN>G-e</MN>, kde <MN>e</MN> je libovolná hrana grafu <MN>G</MN>, již není strom.</q></cite>
                 <br />(K důkazu použijte známé definice a věty týkající se stromů.)
-              </DefinitionPanel>
+              </ClaimPanel>
               <Row className="page-row">
                 <Col xs={12} md={12} lg={7}>
                   <main>

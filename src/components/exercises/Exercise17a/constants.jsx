@@ -1,15 +1,15 @@
 import React from 'react';
-import DefinitionPanel from '../../../components/UI/DefinitionPanel/DefinitionPanel';
+import ClaimPanel from '../../../components/UI/ClaimPanel/ClaimPanel';
 import MN from '../../../components/MathJax/MathJaxNode';
 
 export const headingTitle = 'Příklad 17 a) (v2)';
 export const breadcrumbsCurrent = 'Ostatní';
 export const stepSum = 4;
 
-export const definitionPanel = (
-  <DefinitionPanel>
+export const claimPanel = (
+  <ClaimPanel>
     Dokažte, nebo vyvraťte: <cite><q>Když v grafu <MN>G</MN> existují dva různé <MN>u</MN>-<MN>v</MN> sledy, tak graf <MN>G</MN> obsahuje kružnici.</q></cite>
-  </DefinitionPanel>
+  </ClaimPanel>
 );
 
 export const proofPanels = [

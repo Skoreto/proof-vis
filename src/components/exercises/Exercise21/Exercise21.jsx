@@ -9,7 +9,7 @@ import {
   headingTitle,
   breadcrumbsCurrent,
   stepSum,
-  definitionPanel,
+  claimPanel,
   proofPanels,
   cameraPosition1,
   cameraPosition2,
@@ -447,7 +447,7 @@ class Exercise21 extends React.Component {
         initNetworkInstance={this.initNetworkInstance}
         headingTitle={headingTitle}
         breadcrumbsCurrent={breadcrumbsCurrent}
-        definitionPanel={definitionPanel}
+        claimPanel={claimPanel}
         proofPanels={proofPanels}
         stepSum={stepSum}
         previousStep={this.previousStep}

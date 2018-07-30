@@ -1,15 +1,15 @@
 import React from 'react';
-import DefinitionPanel from '../../../components/UI/DefinitionPanel/DefinitionPanel';
+import ClaimPanel from '../../../components/UI/ClaimPanel/ClaimPanel';
 import MN from '../../../components/MathJax/MathJaxNode';
 
 export const headingTitle = 'Příklad 23';
 export const breadcrumbsCurrent = 'Důkazy přímo';
 export const stepSum = 10;
 
-export const definitionPanel = (
-  <DefinitionPanel>
+export const claimPanel = (
+  <ClaimPanel>
     Dokažte, že když dvě různé kružnice grafu <MN>G</MN> obsahují hranu <MN>e</MN>, pak v <MN>G</MN> existuje i kružnice neobsahující hranu <MN>e</MN>.
-  </DefinitionPanel>
+  </ClaimPanel>
 );
 
 export const proofPanels = [

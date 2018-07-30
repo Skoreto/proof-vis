@@ -1,16 +1,16 @@
 import React from 'react';
 import { Element } from 'react-scroll';
-import DefinitionPanel from '../../../components/UI/DefinitionPanel/DefinitionPanel';
+import ClaimPanel from '../../../components/UI/ClaimPanel/ClaimPanel';
 import MN from '../../../components/MathJax/MathJaxNode';
 
 export const headingTitle = 'Příklad 24';
 export const breadcrumbsCurrent = 'Důkazy nepřímo';
 export const stepSum = 8;
 
-export const definitionPanel = (
-  <DefinitionPanel>
+export const claimPanel = (
+  <ClaimPanel>
     Dokažte nepřímo tvrzení: <cite><q>Jestliže graf <MN>G</MN> je strom, pak graf <MN>G</MN> je souvislý a každá jeho hrana je most.</q></cite>
-  </DefinitionPanel>
+  </ClaimPanel>
 );
 
 export const proofPanels = [

@@ -21,7 +21,7 @@ const ExerciseWrapper = (props) => (
         breadcrumbsCurrent={props.breadcrumbsCurrent}
       />
       <div className='page-content'>
-        {props.definitionPanel}
+        {props.claimPanel}
         <Row className='page-row'>
           <Col xs={12} md={12} lg={5}>
             <aside>

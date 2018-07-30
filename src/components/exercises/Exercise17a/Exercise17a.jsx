@@ -20,7 +20,7 @@ import M from 'react-mathjax2';
 import MN from '../../../components/MathJax/MathJaxNode';
 import '../../../customMainTheme.css';
 import PageHeading from "../../../components/UI/PageHeading/PageHeader";
-import DefinitionPanel from "../../../components/UI/DefinitionPanel/DefinitionPanel";
+import ClaimPanel from "../../../components/UI/ClaimPanel/ClaimPanel";
 import Button from '../../../components/UI/Button/Button';
 import StepCounter from '../../../components/UI/StepCounter/StepCounter';
 // import FontAwesomeIcon from '@fortawesome/react-fontawesome';
@@ -321,9 +321,9 @@ class Exercise17a extends React.Component {
         <div className="page-wrapper">
           <PageHeading headingTitle={"Příklad 17 a) (v1)"} breadcrumbsCurrent={"Ostatní příklady"} />
           <div className="page-content">
-            <DefinitionPanel>
+            <ClaimPanel>
               Dokažte, nebo vyvraťte: <cite><q>Když v grafu <MN>G</MN> existují dva různé <MN>u</MN>-<MN>v</MN> sledy, tak graf <MN>G</MN> obsahuje kružnici.</q></cite>
-            </DefinitionPanel>
+            </ClaimPanel>
             <Row className="page-row">
               <Col xs={12} md={12} lg={7}>
                 <main>

@@ -1,16 +1,16 @@
 import React from 'react';
 import { Element } from 'react-scroll';
-import DefinitionPanel from '../../../components/UI/DefinitionPanel/DefinitionPanel';
+import ClaimPanel from '../../../components/UI/ClaimPanel/ClaimPanel';
 import MN from '../../../components/MathJax/MathJaxNode';
 
 export const headingTitle = 'Příklad 19';
 export const breadcrumbsCurrent = 'Důkazy sporem';
 export const stepSum = 10;
 
-export const definitionPanel = (
-  <DefinitionPanel>
+export const claimPanel = (
+  <ClaimPanel>
     Dokažte sporem tvrzení: <cite><q> <MN>\forall G=(V,E):</MN> Jestliže hrana <MN>e</MN> je most v <MN>G</MN>, pak v <MN>G</MN> neexistuje kružnice obsahující hranu <MN>e</MN>.</q></cite>
-  </DefinitionPanel>
+  </ClaimPanel>
 );
 
 export const getProofBox = currentStep => {

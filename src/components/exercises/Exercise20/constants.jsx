@@ -1,15 +1,15 @@
 import React from 'react';
-import DefinitionPanel from '../../../components/UI/DefinitionPanel/DefinitionPanel';
+import ClaimPanel from '../../../components/UI/ClaimPanel/ClaimPanel';
 import MN from '../../../components/MathJax/MathJaxNode';
 
 export const headingTitle = 'Příklad 20';
 export const breadcrumbsCurrent = 'Důkazy přímo';
 export const stepSum = 7;
 
-export const definitionPanel = (
-  <DefinitionPanel>
+export const claimPanel = (
+  <ClaimPanel>
     <cite><q>Nechť <MN>G</MN> je souvislý graf. Jestliže hrana <MN>e</MN> není most v <MN>G</MN>, pak v <MN>G</MN> existuje kružnice obsahující hranu <MN>e</MN>.</q> </cite> Dokažte přímo.
-  </DefinitionPanel>
+  </ClaimPanel>
 );
 
 export const proofPanels = [
