@@ -23,7 +23,6 @@ import {
   getScrollOptions,
 } from '../../../functionality/GraphFunctions';
 import ExerciseWrapper from '../../../components/UI/ExerciseWrapper/ExerciseWrapper';
-import MN from '../../../components/MathJax/MathJaxNode';
 
 class Exercise19 extends React.Component {
   constructor(props) {

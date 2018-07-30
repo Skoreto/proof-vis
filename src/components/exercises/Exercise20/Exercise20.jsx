@@ -23,8 +23,8 @@ import {
   handlerDrawingDialog,
 } from '../../../functionality/GraphFunctions';
 import ExerciseWrapper from '../../../components/UI/ExerciseWrapper/ExerciseWrapper';
-import DescriptionPanel2 from '../../../components/UI/DescriptionPanel2/DescriptionPanel2';
-import DefinitionPanel2 from '../../../components/UI/DefinitionPanel/DefinitionPanel2';
+import DescriptionPanel2 from '../../../components/UI/DescriptionPanel/DescriptionPanel';
+import DefinitionPanel2 from '../../../components/UI/DefinitionPanel/DefinitionPanel';
 import MN from '../../../components/MathJax/MathJaxNode';
 
 class Exercise20v2 extends React.Component {

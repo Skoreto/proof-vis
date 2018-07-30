@@ -4,7 +4,13 @@ import MathJax from 'react-mathjax2';
 const DescriptionPanel = (props) => (
   <MathJax.Context input="tex">
     <div className="description-panel">
-      {props.children}
+      {props.descriptionPanels
+      .filter(descriptionPanel => descriptionPanel.showForSteps.includes(props.currentStep))
+      .map((descriptionPanel, index) =>
+        <div key={index + "-" + descriptionPanel.id}>
+          {descriptionPanel.content}
+        </div>
+      )}
     </div>
   </MathJax.Context>
 );

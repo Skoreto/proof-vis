@@ -1,5 +1,4 @@
 import React from 'react';
-import { Element } from 'react-scroll';
 import ClaimPanel from '../../../components/UI/ClaimPanel/ClaimPanel';
 import MN from '../../../components/MathJax/MathJaxNode';
 
