@@ -3,12 +3,12 @@ import GraphVis from 'react-graph-vis';
 import { Row, Col } from 'react-bootstrap';
 import { SketchField } from 'react-sketch';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import M from 'react-mathjax2';
 import PageHeader from '../../../components/UI/PageHeading/PageHeader';
 import ProofBox from '../../../components/UI/ProofBox/ProofBox';
 import Button from '../../../components/UI/Button/Button';
 import StepCounter from '../../../components/UI/StepCounter/StepCounter';
 import DescriptionPanel from '../../../components/UI/DescriptionPanel/DescriptionPanel';
+import DefinitionPanel from '../../../components/UI/DefinitionPanel/DefinitionPanel';
 import Dialog from 'react-dialog';
 import DialogDrawing from '../../../components/DialogDrawing/DialogDrawing';
 import '../../../drawingDialog.css';
@@ -118,13 +118,9 @@ const ExerciseWrapper = (props) => (
                   </Button>
                 </span>
               </div>
-              <div className={'repeat-box'} hidden={props.repeatBoxHidden}>
-                <M.Context input='tex'>
-                  <div>
-                    {props.repeatBoxContent}
-                  </div>
-                </M.Context>
-              </div>
+              <DefinitionPanel hidden={props.repeatBoxHidden}>
+                {props.repeatBoxContent}
+              </DefinitionPanel>
               {
                 props.isDrawingDialogOpen &&
                   <Dialog  
