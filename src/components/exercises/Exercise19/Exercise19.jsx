@@ -5,13 +5,7 @@ import {
   palette,
 } from '../../../functionality/GlobalExerciseConstants';
 import { scroller } from 'react-scroll';
-import {
-  headingTitle,
-  breadcrumbsCurrent,
-  stepSum,
-  claimPanel,
-  proofPanels,
-} from './constants';
+import { constants } from './constants';
 import {
   updateNode,
   updateEdge,
@@ -108,10 +102,7 @@ class Exercise19 extends React.Component {
   stepReset = () => {
     return {
       graphVis: { nodes: [], edges: [] },
-      description: '',
-      isSVGCoverShowed: false,
-      repeatBoxHidden: true,
-      repeatBoxContent: '',    
+      isSVGCoverShowed: false, 
     };
   };
 
@@ -133,15 +124,8 @@ class Exercise19 extends React.Component {
     return {
       isSVGCoverShowed: true,
       svgContent: svgContent,
-      repeatBoxHidden: true,
-      repeatBoxContent: '',
     }
   }
-
-  step1Texts = () => {
-    const description = (<p>Provedení negace původního výroku.</p>);
-    return { description: description };
-  };
 
   step2SVGContent = () => {
     const svgContent = (
@@ -170,8 +154,6 @@ class Exercise19 extends React.Component {
     return {
       isSVGCoverShowed: true,
       svgContent: svgContent,
-      repeatBoxHidden: true,
-      repeatBoxContent: '',
     }
   }
 
@@ -206,8 +188,6 @@ class Exercise19 extends React.Component {
     return {
       isSVGCoverShowed: true,
       svgContent: svgContent,
-      repeatBoxHidden: true,
-      repeatBoxContent: '',
     }
   }
 
@@ -288,11 +268,7 @@ class Exercise19 extends React.Component {
       <ExerciseWrapper
         {...this.state}
         events={events}
-        headingTitle={headingTitle}
-        breadcrumbsCurrent={breadcrumbsCurrent}
-        claimPanel={claimPanel}
-        proofPanels={proofPanels}
-        stepSum={stepSum}
+        constants={constants}
         previousStep={this.previousStep}
         nextStep={this.nextStep}
         repeatStep={this.repeatStep}
