@@ -1,6 +1,7 @@
 import React from 'react';
 import { Navbar, Nav, NavItem, NavDropdown, MenuItem, Image } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { LinkContainer } from 'react-router-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './MainNavbar.css';
 
@@ -17,74 +18,66 @@ const MainNavbar = () => (
     <Navbar.Collapse>
       <Nav>
         <NavDropdown
-          eventKey={1}
           title={
             <span><FontAwesomeIcon icon="arrow-right" /> Důkazy přímo</span>
           }
-          id="basic-nav-dropdown"
-          className={"nav-item"}
+          // id="basic-nav-dropdown"
+          className="nav-item"
         >
-          <MenuItem eventKey={1.1} componentClass={Link} href="/priklad20" to="/priklad20">
-            Příklad 20
-          </MenuItem>
-          <MenuItem eventKey={1.2} componentClass={Link} href="/priklad23" to="/priklad23">
-            Příklad 23
-          </MenuItem>
-          <MenuItem eventKey={1.3} componentClass={Link} href="/priklad26v2" to="/priklad26v2">
-            Příklad 26
-          </MenuItem>
+          <LinkContainer to="/priklad20">
+            <MenuItem>Příklad 20</MenuItem>
+          </LinkContainer>
+          <LinkContainer to="/priklad23">
+            <MenuItem>Příklad 23</MenuItem>
+          </LinkContainer>
+          <LinkContainer to="/priklad26v2">
+            <MenuItem>Příklad 26</MenuItem>
+          </LinkContainer>
         </NavDropdown>
         <NavDropdown
-          eventKey={2}
           title={
             <span><FontAwesomeIcon icon="sync-alt" /> Důkazy nepřímo</span>
           }
-          id="basic-nav-dropdown"
-          className={"nav-item"}
+          // id="basic-nav-dropdown"
+          className="nav-item"
         >
-          <MenuItem eventKey={2.1} componentClass={Link} href="/priklad21" to="/priklad21">
-            Příklad 21
-          </MenuItem>
-          <MenuItem eventKey={2.2} componentClass={Link} href="/priklad24" to="/priklad24">
-            Příklad 24
-          </MenuItem>
+          <LinkContainer to="/priklad21">
+            <MenuItem>Příklad 21</MenuItem>
+          </LinkContainer>
+          <LinkContainer to="/priklad24">
+            <MenuItem>Příklad 24</MenuItem>
+          </LinkContainer>
         </NavDropdown>
         <NavDropdown
-          eventKey={3}
           title={
             <span><FontAwesomeIcon icon="bolt" /> Důkazy sporem</span>
           }
-          id="basic-nav-dropdown"
-          className={"nav-item"}
+          // id="basic-nav-dropdown"
+          className="nav-item"
         >
-          <MenuItem eventKey={3.1} componentClass={Link} href="/priklad19" to="/priklad19">
-            Příklad 19
-          </MenuItem>
+          <LinkContainer to="/priklad19">
+            <MenuItem>Příklad 19</MenuItem>
+          </LinkContainer>
         </NavDropdown>
         <NavDropdown
-          eventKey={4}
           title={
             <span><FontAwesomeIcon icon="times" /> Protipříklady</span>
           }
-          id="basic-nav-dropdown"
-          className={"nav-item"}
+          // id="basic-nav-dropdown"
+          className="nav-item"
         >
-          <MenuItem eventKey={4.1} componentClass={Link} href="/priklad17a" to="/priklad17a">
-            Příklad 17 a) (verze 1)
-          </MenuItem>
-          <MenuItem eventKey={4.2} componentClass={Link} href="/priklad17av2" to="/priklad17av2">
-            Příklad 17 a) (verze 2)
-          </MenuItem>
+          <LinkContainer to="/priklad17a">
+            <MenuItem>Příklad 17 a) (verze 1)</MenuItem>
+          </LinkContainer>
+          <LinkContainer to="/priklad17av2">
+            <MenuItem>Příklad 17 a) (verze 2)</MenuItem>
+          </LinkContainer>
         </NavDropdown>
-        <NavItem 
-          eventKey={5}
-          componentClass={Link}
-          href="/platno"
-          to="/platno"
-          className={"nav-item"}
-        >
-          {<span><FontAwesomeIcon icon="edit" /> Plátno</span>}
-        </NavItem>
+        <LinkContainer to="/platno">
+          <NavItem className="nav-item">
+            {<span><FontAwesomeIcon icon="edit" /> Plátno</span>}
+          </NavItem>
+        </LinkContainer>
       </Nav>
     </Navbar.Collapse>
   </Navbar>

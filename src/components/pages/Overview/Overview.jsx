@@ -1,6 +1,6 @@
 import React from 'react';
 import { Row, Col, ListGroup, ListGroupItem } from 'react-bootstrap';
-import { BrowserRouter } from 'react-router-dom';
+import { LinkContainer } from 'react-router-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../../../customMainTheme.css';
 import PageHeading from "../../../components/UI/PageHeading/PageHeader";
@@ -67,66 +67,41 @@ class Overview extends React.Component {
                 </Col>
                 <Col xs={12} md={12} lg={5}>
                   <aside>
-                    <BrowserRouter basename={process.env.PUBLIC_URL}>
                       <div>
                         <ListGroup>
                           <ListGroupItem bsStyle="success">Důkazy přímo</ListGroupItem>
-                          <ListGroupItem 
-                            href={process.env.PUBLIC_URL + "/priklad20"}
-                            to={process.env.PUBLIC_URL + "/priklad20"}
-                          >
-                            Příklad 20
-                          </ListGroupItem>
-                          <ListGroupItem 
-                            href={process.env.PUBLIC_URL + "/priklad23"}
-                            to={process.env.PUBLIC_URL + "/priklad23"}
-                          >
-                            Příklad 23
-                          </ListGroupItem>
-                          <ListGroupItem 
-                            href={process.env.PUBLIC_URL + "/priklad26v2"}
-                            to={process.env.PUBLIC_URL + "/priklad26v2"}
-                          >
-                            Příklad 26
-                          </ListGroupItem>
+                          <LinkContainer to="/priklad20">
+                            <ListGroupItem>Příklad 20</ListGroupItem>
+                          </LinkContainer>
+                          <LinkContainer to="/priklad23">
+                            <ListGroupItem>Příklad 23</ListGroupItem>
+                          </LinkContainer>
+                          <LinkContainer to="/priklad26v2">  
+                            <ListGroupItem>Příklad 26</ListGroupItem>
+                          </LinkContainer>
                         </ListGroup>
                         <ListGroup>
                           <ListGroupItem bsStyle="warning">Důkazy nepřímo</ListGroupItem>
-                          <ListGroupItem 
-                            href={process.env.PUBLIC_URL + "/priklad21"}
-                            to={process.env.PUBLIC_URL + "/priklad21"}
-                          >
-                            Příklad 21
-                          </ListGroupItem>
-                          <ListGroupItem 
-                            href={process.env.PUBLIC_URL + "/priklad24"}
-                            to={process.env.PUBLIC_URL + "/priklad24"}
-                          >
-                            Příklad 24
-                          </ListGroupItem>
+                          <LinkContainer to="/priklad21">
+                            <ListGroupItem>Příklad 21</ListGroupItem>
+                          </LinkContainer>
+                          <LinkContainer to="/priklad24">
+                            <ListGroupItem>Příklad 24</ListGroupItem>
+                          </LinkContainer>
                         </ListGroup>
                         <ListGroup>
-                          <ListGroupItem bsStyle="danger">
-                            Důkazy sporem
-                          </ListGroupItem>
+                          <ListGroupItem bsStyle="danger">Důkazy sporem</ListGroupItem>
                         </ListGroup>
                         <ListGroup>
                           <ListGroupItem bsStyle="info">Protipříklady</ListGroupItem>
-                          <ListGroupItem 
-                            href={process.env.PUBLIC_URL + "/priklad17a"}
-                            to={process.env.PUBLIC_URL + "/priklad17a"}
-                          >
-                            Příklad 17 a) (verze 1)
-                          </ListGroupItem>
-                          <ListGroupItem 
-                            href={process.env.PUBLIC_URL + "/priklad17av2"}
-                            to={process.env.PUBLIC_URL + "/priklad17av2"}
-                          >
-                            Příklad 17 a) (verze 2)
-                          </ListGroupItem>
+                          <LinkContainer to="/priklad17a">
+                            <ListGroupItem>Příklad 17 a) (verze 1)</ListGroupItem>
+                          </LinkContainer>
+                          <LinkContainer to="/priklad17av2">
+                            <ListGroupItem>Příklad 17 a) (verze 2)</ListGroupItem>
+                          </LinkContainer>
                         </ListGroup>
                       </div>
-                    </BrowserRouter>
                   </aside>
                 </Col>
               </Row>
