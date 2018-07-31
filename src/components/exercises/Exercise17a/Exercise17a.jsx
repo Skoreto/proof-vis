@@ -23,14 +23,6 @@ import PageHeading from "../../../components/UI/PageHeading/PageHeader";
 import ClaimPanel from "../../../components/UI/ClaimPanel/ClaimPanel";
 import Button from '../../../components/UI/Button/Button';
 import StepCounter from '../../../components/UI/StepCounter/StepCounter';
-// import FontAwesomeIcon from '@fortawesome/react-fontawesome';
-import faChevronRight from '@fortawesome/fontawesome-free-solid/faChevronRight';
-import faChevronLeft from '@fortawesome/fontawesome-free-solid/faChevronLeft';
-import faPaintBrush from '@fortawesome/fontawesome-free-solid/faPaintBrush';
-import faPencilAlt from '@fortawesome/fontawesome-free-solid/faPencilAlt';
-import faMinus from '@fortawesome/fontawesome-free-solid/faMinus';
-import faCircle from '@fortawesome/fontawesome-free-solid/faCircleNotch';
-import faRedoAlt from '@fortawesome/fontawesome-free-solid/faRedoAlt';
 
 class Exercise17a extends React.Component {
   constructor(props) {
@@ -344,11 +336,11 @@ class Exercise17a extends React.Component {
                   <div className="controls-panel">
                     <span className="step-panel">
                       <Button clicked={this.previousStep} disabled={this.state.btnPrevD}>
-                        <FontAwesomeIcon icon={faChevronLeft} />
+                        <FontAwesomeIcon icon="chevron-left" />
                       </Button>
                       <StepCounter currentStep={this.state.currentStep} stepSum={4} />
                       <Button clicked={this.nextStep} disabled={this.state.btnNextD}>
-                        <FontAwesomeIcon icon={faChevronRight} />
+                        <FontAwesomeIcon icon="chevron-right" />
                       </Button>
                     </span>
                     <span className="sketch-buttons">
@@ -357,33 +349,33 @@ class Exercise17a extends React.Component {
                         active={this.state.btnSketchA} 
                         addClass={this.state.btnSketchC}
                       >
-                        <FontAwesomeIcon icon={faPaintBrush} />
+                        <FontAwesomeIcon icon="paint-brush"/>
                       </Button>
                       <Button 
                         clicked={() => this.setState(() => this.handlerSelectedTool(1))}
                         active={this.state.btnPencilA} 
                         disabled={this.state.btnPencilD}
                       >
-                        <FontAwesomeIcon icon={faPencilAlt} />
+                        <FontAwesomeIcon icon="pencil-alt" />
                       </Button>
                       <Button 
                         clicked={() => this.setState(() => this.handlerSelectedTool(2))}
                         active={this.state.btnLineA} 
                         disabled={this.state.btnLineD}
                       >
-                        <FontAwesomeIcon icon={faMinus} />
+                        <FontAwesomeIcon icon="minus" />
                       </Button>
                       <Button 
                         clicked={() => this.setState(() => this.handlerSelectedTool(3))}
                         active={this.state.btnCircleA} 
                         disabled={this.state.btnCircleD}
                       >
-                        <FontAwesomeIcon icon={faCircle} />
+                        <FontAwesomeIcon icon="circle-notch" />
                       </Button>
                     </span>
                     <span className='animation-panel'>
                       <Button clicked={this.repeatStep} disabled={this.state.btnRepeatD}>
-                        <FontAwesomeIcon icon={faRedoAlt} />
+                        <FontAwesomeIcon icon="redo-alt" />
                       </Button>
                     </span>
                   </div>
