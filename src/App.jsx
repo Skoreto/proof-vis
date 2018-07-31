@@ -27,7 +27,7 @@ import Exercise26v2 from './components/exercises/Exercise26v2/Exercise26v2';
 import Exercise17a from './components/exercises/Exercise17a/Exercise17a';
 import Exercise17av2 from './components/exercises/Exercise17a/Exercise17av2';
 import SingleDrawing from './components/pages/SingleDrawing/SingleDrawing';
-import CustomNavbar from './components/UI/CustomNavbar/CustomNavbar';
+import MainNavbar from './components/UI/MainNavbar/MainNavbar';
 import Footer from './components/UI/Footer/Footer';
 
 // Add Font Awesome icons into global library for accesing them via FontAwesomeIcon component
@@ -51,7 +51,7 @@ class App extends React.Component {
     return (
       <BrowserRouter basename={process.env.PUBLIC_URL}>
         <div>
-          <CustomNavbar />
+          <MainNavbar />
           <Grid>
             <Route exact path="/" component={Overview} />
             <Route path="/priklad17a" component={Exercise17a} />

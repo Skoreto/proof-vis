@@ -2,9 +2,9 @@ import React from 'react';
 import { Navbar, Nav, NavItem, NavDropdown, MenuItem, Image } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import './CustomNavbar.css';
+import './MainNavbar.css';
 
-const CustomNavbar = () => (
+const MainNavbar = () => (
   <Navbar className="main-nav" default collapseOnSelect>
     <Navbar.Header>
       <Navbar.Brand>
@@ -90,4 +90,4 @@ const CustomNavbar = () => (
   </Navbar>
 );
 
-export default CustomNavbar;
+export default MainNavbar;
