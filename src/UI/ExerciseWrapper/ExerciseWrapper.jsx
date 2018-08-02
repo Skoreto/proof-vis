@@ -11,7 +11,7 @@ import StepCounter from './StepCounter/StepCounter';
 import DescriptionPanel from './DescriptionPanel/DescriptionPanel';
 import DefinitionPanel from './DefinitionPanel/DefinitionPanel';
 import DialogDrawing from '../../components/dialogs/DialogDrawing/DialogDrawing';
-import '../../drawingDialog.css';
+import '../ReactDialog/ReactDialog.css';
 
 const ExerciseWrapper = (props) => (
   <div>
