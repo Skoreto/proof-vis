@@ -21,6 +21,7 @@ const MainNavbar = () => (
           title={
             <span><FontAwesomeIcon icon="arrow-right" /> Důkazy přímo</span>
           }
+          id="primo-nav-dropdown"
           className="nav-item"
         >
           <LinkContainer to="/priklad20">
@@ -37,6 +38,7 @@ const MainNavbar = () => (
           title={
             <span><FontAwesomeIcon icon="sync-alt" /> Důkazy nepřímo</span>
           }
+          id="neprimo-nav-dropdown"
           className="nav-item"
         >
           <LinkContainer to="/priklad21">
@@ -50,6 +52,7 @@ const MainNavbar = () => (
           title={
             <span><FontAwesomeIcon icon="bolt" /> Důkazy sporem</span>
           }
+          id="sporem-nav-dropdown"
           className="nav-item"
         >
           <LinkContainer to="/priklad19">
@@ -60,6 +63,7 @@ const MainNavbar = () => (
           title={
             <span><FontAwesomeIcon icon="times" /> Protipříklady</span>
           }
+          id="protipriklady-nav-dropdown"
           className="nav-item"
         >
           <LinkContainer to="/priklad17a">

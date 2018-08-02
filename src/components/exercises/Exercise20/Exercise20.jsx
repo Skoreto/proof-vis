@@ -11,7 +11,7 @@ import {
   handlerSelectedTool,
   handlerDrawingDialog,
 } from '../../../functionality/GraphFunctions';
-import ExerciseWrapper from '../../../components/UI/ExerciseWrapper/ExerciseWrapper';
+import ExerciseWrapper from '../../../UI/ExerciseWrapper/ExerciseWrapper';
 
 class Exercise20 extends React.Component {
   constructor(props) {

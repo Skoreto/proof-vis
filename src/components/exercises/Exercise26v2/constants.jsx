@@ -1,6 +1,6 @@
 import React from 'react';
-import ClaimPanel from '../../../components/UI/ClaimPanel/ClaimPanel';
-import MN from '../../../components/MathJax/MathJaxNode';
+import ClaimPanel from '../../../UI/ExerciseWrapper/ClaimPanel/ClaimPanel';
+import MN from '../../../UI/MathJaxNode/MathJaxNode';
 
 const headingTitle = 'Příklad 26';
 const breadcrumbsCurrent = 'Důkazy přímo';

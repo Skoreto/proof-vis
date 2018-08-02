@@ -17,12 +17,12 @@ import { Row, Col } from 'react-bootstrap';
 import { SketchField } from 'react-sketch';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import M from 'react-mathjax2';
-import MN from '../../../components/MathJax/MathJaxNode';
+import MN from '../../../UI/MathJaxNode/MathJaxNode';
 import '../../../customMainTheme.css';
-import PageHeading from "../../../components/UI/PageHeading/PageHeader";
-import ClaimPanel from "../../../components/UI/ClaimPanel/ClaimPanel";
-import Button from '../../../components/UI/Button/Button';
-import StepCounter from '../../../components/UI/StepCounter/StepCounter';
+import PageHeading from "../../../UI/PageHeading/PageHeader";
+import ClaimPanel from '../../../UI/ExerciseWrapper/ClaimPanel/ClaimPanel';
+import Button from '../../../UI/ExerciseWrapper/Button/Button';
+import StepCounter from '../../../UI/ExerciseWrapper/StepCounter/StepCounter';
 
 class Exercise17a extends React.Component {
   constructor(props) {

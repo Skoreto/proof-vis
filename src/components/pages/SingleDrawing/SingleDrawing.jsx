@@ -2,7 +2,7 @@ import GraphVis from 'react-graph-vis';
 import React from 'react';
 import { graphVisLocales } from '../../../functionality/GlobalExerciseConstants';
 import { addNode, showEditNodeDialog } from '../../../functionality/nodeEditFunctions';
-import EditNodeDialog from '../../UI/EditNodeDialog/EditNodeDialog';
+import EditNodeDialog from '../../../UI/EditNodeDialog/EditNodeDialog';
 
 class SingleDrawing extends React.Component {
   constructor(props) {

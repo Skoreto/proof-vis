@@ -27,8 +27,8 @@ import Exercise26v2 from './components/exercises/Exercise26v2/Exercise26v2';
 import Exercise17a from './components/exercises/Exercise17a/Exercise17a';
 import Exercise17av2 from './components/exercises/Exercise17a/Exercise17av2';
 import SingleDrawing from './components/pages/SingleDrawing/SingleDrawing';
-import MainNavbar from './components/UI/MainNavbar/MainNavbar';
-import Footer from './components/UI/Footer/Footer';
+import MainNavbar from './UI/MainNavbar/MainNavbar';
+import Footer from './UI/Footer/Footer';
 
 // Add Font Awesome icons into global library for accesing them via FontAwesomeIcon component
 library.add(

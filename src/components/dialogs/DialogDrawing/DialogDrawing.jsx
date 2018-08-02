@@ -1,8 +1,8 @@
 import React from 'react';
 import GraphVis from 'react-graph-vis';
-import { graphVisLocales } from '../../functionality/GlobalExerciseConstants';
-import { addNode, showEditNodeDialog } from '../../functionality/nodeEditFunctions';
-import EditNodeDialog from '../../components/UI/EditNodeDialog/EditNodeDialog';
+import { graphVisLocales } from '../../../functionality/GlobalExerciseConstants';
+import { addNode, showEditNodeDialog } from '../../../functionality/nodeEditFunctions';
+import EditNodeDialog from '../../../UI/EditNodeDialog/EditNodeDialog';
 
 class DialogDrawing extends React.Component {
   constructor(props) {

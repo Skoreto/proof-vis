@@ -3,15 +3,15 @@ import GraphVis from 'react-graph-vis';
 import { Row, Col } from 'react-bootstrap';
 import { SketchField } from 'react-sketch';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import PageHeader from '../../../components/UI/PageHeading/PageHeader';
-import ProofBox from '../../../components/UI/ProofBox/ProofBox';
-import Button from '../../../components/UI/Button/Button';
-import StepCounter from '../../../components/UI/StepCounter/StepCounter';
-import DescriptionPanel from '../../../components/UI/DescriptionPanel/DescriptionPanel';
-import DefinitionPanel from '../../../components/UI/DefinitionPanel/DefinitionPanel';
 import Dialog from 'react-dialog';
-import DialogDrawing from '../../../components/DialogDrawing/DialogDrawing';
-import '../../../drawingDialog.css';
+import PageHeader from '../PageHeading/PageHeader';
+import ProofBox from './ProofBox/ProofBox';
+import Button from './Button/Button';
+import StepCounter from './StepCounter/StepCounter';
+import DescriptionPanel from './DescriptionPanel/DescriptionPanel';
+import DefinitionPanel from './DefinitionPanel/DefinitionPanel';
+import DialogDrawing from '../../components/dialogs/DialogDrawing/DialogDrawing';
+import '../../drawingDialog.css';
 
 const ExerciseWrapper = (props) => (
   <div>

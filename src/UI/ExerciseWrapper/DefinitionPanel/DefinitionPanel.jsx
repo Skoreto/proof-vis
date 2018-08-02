@@ -1,7 +1,7 @@
 import React from 'react';
 import MathJax from 'react-mathjax2';
 
-const DefinitionPanel2 = (props) => (
+const DefinitionPanel = (props) => (
   <MathJax.Context input="tex">
     <div>
       {props.definitionPanels
@@ -15,4 +15,4 @@ const DefinitionPanel2 = (props) => (
   </MathJax.Context>
 );
 
-export default DefinitionPanel2;
+export default DefinitionPanel;

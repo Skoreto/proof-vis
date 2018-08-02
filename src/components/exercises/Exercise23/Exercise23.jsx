@@ -17,7 +17,7 @@ import {
   handlerDrawingDialog,
   getScrollOptions,
 } from '../../../functionality/GraphFunctions';
-import ExerciseWrapper from '../../../components/UI/ExerciseWrapper/ExerciseWrapper';
+import ExerciseWrapper from '../../../UI/ExerciseWrapper/ExerciseWrapper';
 
 class Exercise23 extends React.Component {
   constructor(props) {

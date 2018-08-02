@@ -1,0 +1,332 @@
+/* ======= Základ ======= */
+.wrapper {
+  min-height: 100%;
+  margin-bottom: -30px;
+  /* stejná jako výška patičky */
+}
+
+.wrapper:after {
+  display: block;
+  height: 30px;
+  /* musí mít stejnou výšku jako patička */
+}
+
+.btn {
+  transition: all 0.4s ease-in-out;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+
+/* ==== MAIN ČÁST ====  */
+.overview ul {
+  text-align: justify;
+  font-size: 14px;
+}
+
+#definition {
+  border: 1px solid rgba(97, 173, 255, 0.51);
+  padding: 10px;
+  margin: 0 0 5px 0;
+  font-size: 20px;
+  text-align: center;
+}
+
+#proofBox {
+  direction: rtl;
+  border: 1px solid rgba(235, 150, 0, 0.5);
+  padding: 5px;
+  max-height: 650px;
+  overflow: auto;
+}
+
+#proofBox p {
+  font-size: 17px;
+  text-align: left;
+  margin-bottom: 5px;
+  vertical-align: middle;
+  direction:ltr;
+}
+
+#proofBox p.text-center {
+  text-align: center;
+}
+
+#proofBox p.align-right {
+  text-align: right;
+}
+
+#proofBox>div {
+  padding-top: 15px;
+  padding-bottom: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom: 1px solid rgba(235, 150, 0, 0.5);
+  /*max-height: 150px;
+    overflow-y: scroll;*/
+  opacity: 0.4;
+}
+
+#proofBox>div:last-of-type {
+  border-bottom: 0;
+}
+
+#proofBox .proof-active {
+  opacity: 1;
+}
+
+.repeat-box {
+  background-color: #fafafa;
+  border: 1px solid lightgrey;
+  padding: 10px 10px 0 10px;
+  margin-top: 15px;
+}
+
+.repeat-box p {
+  text-align: left;
+  font-size: 16px;
+}
+
+#divSentenceBox {
+  background-color: #EEEEEE;
+  border: 2px solid #E0E0E0;
+  margin-top: 10px;
+  padding: 5px;
+  /*max-height: 150px;
+    overflow-y: scroll;*/
+}
+
+.over-component {
+  position: absolute;
+  min-width: 600px;
+  height: 400px;
+  /*background-color: #3f51b5;*/
+  z-index: 3;
+}
+
+.svg-cover-panel {
+  position: absolute;
+  min-width: 600px;
+  height: 400px;
+  z-index: 2;
+  background-color: #FFFFFF;
+  border: 1px solid lightgray;
+}
+
+.GraphBox {
+  border: 1px solid lightgray;
+  min-width: 600px;
+  height: 400px;
+  z-index: 1;
+}
+
+.description-panel {
+  min-height: 50px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  /*border: 1px solid lightgray;*/
+}
+
+.description-panel p {
+  /*border: 1px solid lightgray;*/
+  font-size: 16px;
+  text-align: center;
+}
+
+.controls-panel {
+  width: 100%;
+  border: 1px solid lightgrey;
+  background-color: #fafafa;
+  padding: 5px;
+  text-align: center;
+}
+
+.step-panel {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.sketch-buttons {
+  border-left: 1px solid #fafafa;
+  margin-left: 20px;
+  margin-right: 30px;
+}
+
+.text-green {
+  /*Green 800*/
+  color: #2E7D32;
+}
+
+.text-blue {
+  /*Blue A700*/
+  color: #2962FF;
+}
+
+.text-indigo {
+  /*Indigo 500*/
+  color: #3F51B5;
+}
+
+.text-red {
+  /*Red A700*/
+  color: #D50000;
+}
+
+.text-brown {
+  /*Brown 500*/
+  color: #795548;
+}
+
+.text-purple {
+  color: #B39DDB;
+}
+
+/* === SEZNAMY OBSAHU === */
+.page-wrapper ul li {
+  margin-bottom: 5px;
+}
+
+.page-wrapper ul li.list-group-item {
+  margin-bottom: -1px;
+}
+
+.page-wrapper ul.nav li {
+  margin-bottom: 0;
+}
+
+.page-wrapper ol li {
+  margin-bottom: 5px;
+}
+
+.page-wrapper dl dd {
+  margin-bottom: 5px;
+}
+
+/* === NADPISY OBSAHU === */
+.page-wrapper .page-content h1 {
+  font-size: 26px;
+  font-weight: normal;
+}
+
+.page-wrapper .page-content h2 {
+  font-size: 24px;
+  font-weight: normal;
+}
+
+.page-wrapper .page-content h3 {
+  font-size: 20px;
+  font-weight: normal;
+  color: #303079
+}
+
+.page-wrapper .page-content h4 {
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.page-wrapper .page-content .first-heading {
+  margin-top: 0;
+}
+
+.page-wrapper .page-content .title {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-weight: 300;
+}
+
+.page-wrapper .page-content .page-row {
+  margin-bottom: 20px;
+}
+
+/* MQ - Malé úhlopříčky (telefony, méně než 768px) */
+@media (max-width: 767px) {
+  .wrapper {
+    min-height: inherit;
+    margin-bottom: 0;
+  }
+  .wrapper:after {
+    content: none;
+  }
+  /* For .page-heading  */
+  .page-wrapper>.row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .page-wrapper .page-content .page-row {
+    margin-bottom: 10px;
+  }
+  aside {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  /* Pro malé úhlopříčky centrujeme na střed a ke stranám */
+  .pull-right,
+  .pull-left {
+    float: none;
+  }
+  #definition {
+    min-width: 600px;
+    padding: 5px;
+    margin: 0;
+    font-size: 16px;
+  }
+  .description-panel {
+    min-width: 600px;
+  }
+  .description-panel p {
+    font-size: 14px;
+  }
+  #proofBox {
+    min-width: 600px;
+  }
+  #proofBox p {
+    font-size: 14px;
+  }
+  #proofBox .proof-active p {
+    font-size: 16px;
+  }
+  .repeat-box {
+    min-width: 600px;
+    margin-top: 15px;
+  }
+  #divSentenceBox {
+    min-width: 600px;
+  }
+  .controls-panel {
+    min-width: 600px;
+  }
+}
+
+/* MQ - Střední úhlopříčka (tablety, 768px a více) */
+@media (min-width: 768px) {
+  .wrapper {
+    min-height: inherit;
+    margin-bottom: -30px;
+  }
+  .wrapper:after {
+    content: none;
+  }
+}
+
+/* Velká úhlopříčka (desktopy, 992px a víc) */
+@media (min-width: 992px) {
+  .wrapper {
+    min-height: 100%;
+    margin-bottom: -30px;
+    /* stejná výška jako patička */
+  }
+  .wrapper:after {
+    content: "";
+    display: block;
+    height: 30px;
+    /* musí mít stejnou výšku jako patička */
+  }
+  .page-wrapper {
+    min-height: 830px;
+  }
+}

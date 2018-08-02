@@ -16,8 +16,8 @@ import {
   handlerSelectedTool,
   handlerDrawingDialog,
 } from '../../../functionality/GraphFunctions';
-import ExerciseWrapper from '../../../components/UI/ExerciseWrapper/ExerciseWrapper';
-import MN from '../../../components/MathJax/MathJaxNode';
+import ExerciseWrapper from '../../../UI/ExerciseWrapper/ExerciseWrapper';
+import MN from '../../../UI/MathJaxNode/MathJaxNode';
 
 class Exercise17av2 extends React.Component {
   constructor(props) {
