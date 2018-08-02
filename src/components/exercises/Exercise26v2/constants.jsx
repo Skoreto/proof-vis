@@ -13,9 +13,9 @@ const claimPanel = (
   </ClaimPanel>
 );
 
-const proofPanels = [
+const proofStepPanels = [
   {
-    name: 'proofPanel1',
+    name: 'proofStepPanel1',
     activeForSteps: [1, 2],
     content:
       <p>
@@ -24,7 +24,7 @@ const proofPanels = [
       </p>
   },
   {
-    name: 'proofPanel2',
+    name: 'proofStepPanel2',
     activeForSteps: [3],
     content:
       <p>
@@ -32,7 +32,7 @@ const proofPanels = [
       </p>
   },
   {
-    name: 'proofPanel3',
+    name: 'proofStepPanel3',
     activeForSteps: [4],
     content:
       <p>
@@ -41,7 +41,7 @@ const proofPanels = [
       </p>
   },
   {
-    name: 'proofPanel4',
+    name: 'proofStepPanel4',
     activeForSteps: [5],
     content:
       <div>
@@ -120,7 +120,7 @@ export const constants = {
   breadcrumbsCurrent: breadcrumbsCurrent,
   stepSum: stepSum,
   claimPanel: claimPanel,
-  proofPanels: proofPanels,
+  proofStepPanels: proofStepPanels,
   descriptionPanels: descriptionPanels,
   definitionPanels: definitionPanels,
 };

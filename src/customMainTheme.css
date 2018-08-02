@@ -37,49 +37,6 @@
   text-align: center;
 }
 
-#proofBox {
-  direction: rtl;
-  border: 1px solid rgba(235, 150, 0, 0.5);
-  padding: 5px;
-  max-height: 650px;
-  overflow: auto;
-}
-
-#proofBox p {
-  font-size: 17px;
-  text-align: left;
-  margin-bottom: 5px;
-  vertical-align: middle;
-  direction:ltr;
-}
-
-#proofBox p.text-center {
-  text-align: center;
-}
-
-#proofBox p.align-right {
-  text-align: right;
-}
-
-#proofBox>div {
-  padding-top: 15px;
-  padding-bottom: 10px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom: 1px solid rgba(235, 150, 0, 0.5);
-  /*max-height: 150px;
-    overflow-y: scroll;*/
-  opacity: 0.4;
-}
-
-#proofBox>div:last-of-type {
-  border-bottom: 0;
-}
-
-#proofBox .proof-active {
-  opacity: 1;
-}
-
 .repeat-box {
   background-color: #fafafa;
   border: 1px solid lightgrey;
@@ -118,7 +75,7 @@
   border: 1px solid lightgray;
 }
 
-.GraphBox {
+.graph-box {
   border: 1px solid lightgray;
   min-width: 600px;
   height: 400px;
@@ -280,15 +237,6 @@
   }
   .description-panel p {
     font-size: 14px;
-  }
-  #proofBox {
-    min-width: 600px;
-  }
-  #proofBox p {
-    font-size: 14px;
-  }
-  #proofBox .proof-active p {
-    font-size: 16px;
   }
   .repeat-box {
     min-width: 600px;

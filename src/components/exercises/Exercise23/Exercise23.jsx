@@ -60,25 +60,25 @@ class Exercise23 extends React.Component {
         let interval1 = setInterval(this.step2Animation, 6000);
         this.setState({ intervals: [interval1] });
         this.network.moveTo(cameraPositions[1]);
-        scroller.scrollTo('proofPanel2', getScrollOptions(window.scrollY));
+        scroller.scrollTo('proofStepPanel2', getScrollOptions(window.scrollY));
       }
 
       if (this.state.currentStep === 2) {
         this.clearAllTimers(this.state);
         this.setState(this.step1);
         this.setState(this.step3);
-        scroller.scrollTo('proofPanel3', getScrollOptions(window.scrollY));
+        scroller.scrollTo('proofStepPanel3', getScrollOptions(window.scrollY));
       }
 
       if (this.state.currentStep === 3) {
         this.setState(this.step4);
         this.network.moveTo(cameraPositions[2]);
-        scroller.scrollTo('proofPanel4', getScrollOptions(window.scrollY));
+        scroller.scrollTo('proofStepPanel4', getScrollOptions(window.scrollY));
       }
 
       if (this.state.currentStep === 4) {
         this.setState(this.step5);
-        scroller.scrollTo('proofPanel5', getScrollOptions(window.scrollY));
+        scroller.scrollTo('proofStepPanel5', getScrollOptions(window.scrollY));
       }
 
       if (this.state.currentStep === 5) {
@@ -97,13 +97,13 @@ class Exercise23 extends React.Component {
       if (this.state.currentStep === 8) {
         this.setState(this.step1);
         this.setState(this.step9);
-        scroller.scrollTo('proofPanel6', getScrollOptions(window.scrollY));
+        scroller.scrollTo('proofStepPanel6', getScrollOptions(window.scrollY));
       }
 
       if (this.state.currentStep === 9) {
         this.setState({ btnNextD: true });
         this.setState(this.step10);
-        scroller.scrollTo('proofPanel7', getScrollOptions(window.scrollY));
+        scroller.scrollTo('proofStepPanel7', getScrollOptions(window.scrollY));
       }
 
       // Increase currentStep after a step was executed
@@ -122,7 +122,7 @@ class Exercise23 extends React.Component {
         this.clearAllTimers(this.state);
         this.setState(this.step1);
         this.network.moveTo(cameraPositions[0]);
-        scroller.scrollTo('proofPanel1', getScrollOptions(window.scrollY));
+        scroller.scrollTo('proofStepPanel1', getScrollOptions(window.scrollY));
       }
 
       if (this.state.currentStep === 3) {
@@ -130,7 +130,7 @@ class Exercise23 extends React.Component {
         this.step2Animation();
         let interval1 = setInterval(this.step2Animation, 6000);
         this.setState({ intervals: [interval1] });
-        scroller.scrollTo('proofPanel2', getScrollOptions(window.scrollY));
+        scroller.scrollTo('proofStepPanel2', getScrollOptions(window.scrollY));
       }
 
       if (this.state.currentStep === 4) {
@@ -138,13 +138,13 @@ class Exercise23 extends React.Component {
         this.setState(this.step1);
         this.setState(this.step3);
         this.network.moveTo(cameraPositions[1]);
-        scroller.scrollTo('proofPanel3', getScrollOptions(window.scrollY));
+        scroller.scrollTo('proofStepPanel3', getScrollOptions(window.scrollY));
       }
 
       if (this.state.currentStep === 5) {
         this.setState(this.step1);
         this.setState(this.step4);
-        scroller.scrollTo('proofPanel4', getScrollOptions(window.scrollY));
+        scroller.scrollTo('proofStepPanel4', getScrollOptions(window.scrollY));
       }
 
       if (this.state.currentStep === 6) {
@@ -164,14 +164,14 @@ class Exercise23 extends React.Component {
       if (this.state.currentStep === 9) {
         this.setState(this.step1);
         this.setState(this.step8);
-        scroller.scrollTo('proofPanel5', getScrollOptions(window.scrollY));
+        scroller.scrollTo('proofStepPanel5', getScrollOptions(window.scrollY));
       }
 
       if (this.state.currentStep === 10) {
         this.setState({ btnNextD: false });
         this.setState(this.step1);
         this.setState(this.step9);
-        scroller.scrollTo('proofPanel6', getScrollOptions(window.scrollY));
+        scroller.scrollTo('proofStepPanel6', getScrollOptions(window.scrollY));
       }
 
       // Reduce currentStep after a step was executed

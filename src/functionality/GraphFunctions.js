@@ -261,7 +261,7 @@ export function getScrollOptions(windowScrollY) {
     duration: 800,
     delay: 0,
     smooth: 'linear',
-    containerId: 'proofBox',
+    containerId: 'proof-steps-box',
     offset: (-240 + windowScrollY),
     // Prevent canceling of scroll by fast switching between steps
     ignoreCancelEvents: true,

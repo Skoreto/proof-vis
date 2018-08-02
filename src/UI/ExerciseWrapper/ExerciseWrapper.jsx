@@ -5,7 +5,7 @@ import { SketchField } from 'react-sketch';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Dialog from 'react-dialog';
 import PageHeader from '../PageHeading/PageHeader';
-import ProofBox from './ProofBox/ProofBox';
+import ProofStepsBox from './ProofStepsBox/ProofStepsBox';
 import Button from './Button/Button';
 import StepCounter from './StepCounter/StepCounter';
 import DescriptionPanel from './DescriptionPanel/DescriptionPanel';
@@ -15,18 +15,18 @@ import '../../drawingDialog.css';
 
 const ExerciseWrapper = (props) => (
   <div>
-    <div className='page-wrapper'>
+    <div className="page-wrapper">
       <PageHeader
         headingTitle={props.constants.headingTitle}
         breadcrumbsCurrent={props.constants.breadcrumbsCurrent}
       />
-      <div className='page-content'>
+      <div className="page-content">
         {props.constants.claimPanel}
-        <Row className='page-row'>
+        <Row className="page-row">
           <Col xs={12} md={12} lg={5}>
             <aside>
-              <ProofBox
-                proofPanels={props.constants.proofPanels}
+              <ProofStepsBox
+                proofStepPanels={props.constants.proofStepPanels}
                 currentStep={props.currentStep} 
               />
             </aside>
@@ -35,19 +35,19 @@ const ExerciseWrapper = (props) => (
             <main>
               {
                 props.isSketchAllowed &&
-                  <div className={'over-component'}>
+                  <div className="over-component">
                     <SketchField
-                      width='650px'
-                      height='400px'
+                      width="650px"
+                      height="400px"
                       tool={props.sketchTool}
-                      lineColor='#1E88E5'
+                      lineColor="#1E88E5"
                       lineWidth={3}
                     />
                   </div>
               }
               {
                 props.isSVGCoverShowed &&
-                  <div className={'svg-cover-panel'}>
+                  <div className="svg-cover-panel">
                     <svg
                       width={650}
                       height={400}
@@ -58,7 +58,7 @@ const ExerciseWrapper = (props) => (
                     </svg>
                   </div>
               }
-              <div className='GraphBox'>
+              <div className="graph-box">
                 <GraphVis
                   graph={props.graphVis}
                   options={props.options}
@@ -71,13 +71,13 @@ const ExerciseWrapper = (props) => (
                 descriptionPanels={props.constants.descriptionPanels}
                 currentStep={props.currentStep}
               />
-              <div className='controls-panel'>
-                <span className='animation-panel'>
+              <div className="controls-panel">
+                <span className="animation-panel">
                   <Button clicked={props.repeatStep} disabled={props.btnRepeatD}>
                     <FontAwesomeIcon icon="redo-alt" />
                   </Button>
                 </span>
-                <span className='step-panel'>
+                <span className="step-panel">
                   <Button clicked={props.previousStep} disabled={props.btnPrevD}>
                     <FontAwesomeIcon icon="chevron-left" />
                   </Button>

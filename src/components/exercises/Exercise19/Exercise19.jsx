@@ -41,29 +41,29 @@ class Exercise19 extends React.Component {
           break;
         case 1:
           this.setState(this.step2SVGContent);
-          scroller.scrollTo('proofPanel2', getScrollOptions(window.scrollY));
+          scroller.scrollTo('proofStepPanel2', getScrollOptions(window.scrollY));
           break;
         case 2:
           this.setState(this.step3SVGContent);
-          scroller.scrollTo('proofPanel3', getScrollOptions(window.scrollY));
+          scroller.scrollTo('proofStepPanel3', getScrollOptions(window.scrollY));
           break;
         case 3:
           this.setState(this.step4);
-          scroller.scrollTo('proofPanel4', getScrollOptions(window.scrollY));
+          scroller.scrollTo('proofStepPanel4', getScrollOptions(window.scrollY));
           break;
         case 4:
           this.setState(this.step5);
-          scroller.scrollTo('proofPanel4', getScrollOptions(window.scrollY));
+          scroller.scrollTo('proofStepPanel4', getScrollOptions(window.scrollY));
           break;
         case 5:
           this.setState(this.step4);
           this.setState(this.step6);
-          scroller.scrollTo('proofPanel5', getScrollOptions(window.scrollY));
+          scroller.scrollTo('proofStepPanel5', getScrollOptions(window.scrollY));
           break;
         case 6:
           this.setState(this.step4);
           this.setState(this.step7);
-          scroller.scrollTo('proofPanel6', getScrollOptions(window.scrollY));
+          scroller.scrollTo('proofStepPanel6', getScrollOptions(window.scrollY));
           break;
 
         default:
@@ -87,7 +87,7 @@ class Exercise19 extends React.Component {
           this.setState(this.stepReset);
           this.setState(this.step1SVGContent);
           this.setState(this.step1Texts);
-          scroller.scrollTo('proofPanel1', getScrollOptions(window.scrollY));
+          scroller.scrollTo('proofStepPanel1', getScrollOptions(window.scrollY));
           break;
       
         default:

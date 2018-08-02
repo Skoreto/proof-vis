@@ -41,40 +41,40 @@ class Exercise24 extends React.Component {
 
         case 1:
           this.setState(this.step2);
-          scroller.scrollTo('proofPanel2', getScrollOptions(window.scrollY));
+          scroller.scrollTo('proofStepPanel2', getScrollOptions(window.scrollY));
           break;
       
         case 2:
           this.setState(this.step3);
-          scroller.scrollTo('proofPanel3', getScrollOptions(window.scrollY));
+          scroller.scrollTo('proofStepPanel3', getScrollOptions(window.scrollY));
           break;
 
         case 3:
           this.step4();
           let interval = setInterval(this.step4, 3000);
           this.setState({ intervals: [interval] });
-          scroller.scrollTo('proofPanel4', getScrollOptions(window.scrollY));
+          scroller.scrollTo('proofStepPanel4', getScrollOptions(window.scrollY));
           break;
 
         case 4:
           this.clearAllTimers(this.state);
           this.setState(this.step5);
-          scroller.scrollTo('proofPanel5', getScrollOptions(window.scrollY));
+          scroller.scrollTo('proofStepPanel5', getScrollOptions(window.scrollY));
           break;
 
         case 5:
           this.setState(this.step6);
-          scroller.scrollTo('proofPanel6', getScrollOptions(window.scrollY));
+          scroller.scrollTo('proofStepPanel6', getScrollOptions(window.scrollY));
           break;
 
         case 6:
           this.setState(this.step7);
-          scroller.scrollTo('proofPanel7', getScrollOptions(window.scrollY));
+          scroller.scrollTo('proofStepPanel7', getScrollOptions(window.scrollY));
           break;
 
         case 7:
           this.setState({ btnNextD: true });
-          scroller.scrollTo('proofPanel8', getScrollOptions(window.scrollY));
+          scroller.scrollTo('proofStepPanel8', getScrollOptions(window.scrollY));
           break;
 
         default:
@@ -97,12 +97,12 @@ class Exercise24 extends React.Component {
         case 2:
           this.setState(this.stepReset);
           this.setState(this.step1SVGContent);
-          scroller.scrollTo('proofPanel1', getScrollOptions(window.scrollY));
+          scroller.scrollTo('proofStepPanel1', getScrollOptions(window.scrollY));
           break;
       
         case 3:
           this.setState(this.step2);
-          scroller.scrollTo('proofPanel2', getScrollOptions(window.scrollY));
+          scroller.scrollTo('proofStepPanel2', getScrollOptions(window.scrollY));
           break;
 
         case 4:
@@ -110,7 +110,7 @@ class Exercise24 extends React.Component {
           this.setState(this.stepReset);
           this.setState(this.step2);
           this.setState(this.step3);
-          scroller.scrollTo('proofPanel3', getScrollOptions(window.scrollY));
+          scroller.scrollTo('proofStepPanel3', getScrollOptions(window.scrollY));
           break;
 
         case 5:
@@ -120,23 +120,23 @@ class Exercise24 extends React.Component {
           this.step4();
           let interval = setInterval(this.step4, 3000);
           this.setState({ intervals: [interval] });
-          scroller.scrollTo('proofPanel4', getScrollOptions(window.scrollY));
+          scroller.scrollTo('proofStepPanel4', getScrollOptions(window.scrollY));
           break;
 
         case 6:
           this.setState(this.step5);
-          scroller.scrollTo('proofPanel5', getScrollOptions(window.scrollY));
+          scroller.scrollTo('proofStepPanel5', getScrollOptions(window.scrollY));
           break;
 
         case 7:
           this.setState(this.step6);
-          scroller.scrollTo('proofPanel6', getScrollOptions(window.scrollY));
+          scroller.scrollTo('proofStepPanel6', getScrollOptions(window.scrollY));
           break;
 
         case 8:
           this.setState({ btnNextD: false });
           this.setState(this.step7);
-          scroller.scrollTo('proofPanel7', getScrollOptions(window.scrollY));
+          scroller.scrollTo('proofStepPanel7', getScrollOptions(window.scrollY));
           break;
 
         default:

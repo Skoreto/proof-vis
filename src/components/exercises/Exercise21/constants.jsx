@@ -12,9 +12,9 @@ const claimPanel = (
   </ClaimPanel>
 );
 
-const proofPanels = [
+const proofStepPanels = [
   {
-    name: 'proofPanel1',
+    name: 'proofStepPanel1',
     activeForSteps: [1],
     content:
       <p>
@@ -24,7 +24,7 @@ const proofPanels = [
       </p>
   },
   {
-    name: 'proofPanel2',
+    name: 'proofStepPanel2',
     activeForSteps: [2],
     content:
       <p>
@@ -32,7 +32,7 @@ const proofPanels = [
       </p>
   },
   {
-    name: 'proofPanel3',
+    name: 'proofStepPanel3',
     activeForSteps: [3, 4],
     content:
       <p>
@@ -42,7 +42,7 @@ const proofPanels = [
       </p>
   },
   {
-    name: 'proofPanel4',
+    name: 'proofStepPanel4',
     activeForSteps: [5],
     content:
       <p>
@@ -52,7 +52,7 @@ const proofPanels = [
       </p>
   },
   {
-    name: 'proofPanel5',
+    name: 'proofStepPanel5',
     activeForSteps: [6],
     content:
       <p>
@@ -60,7 +60,7 @@ const proofPanels = [
       </p>
   },
   {
-    name: 'proofPanel6',
+    name: 'proofStepPanel6',
     activeForSteps: [7],
     content:
       <p>
@@ -68,7 +68,7 @@ const proofPanels = [
       </p>
   },
   {
-    name: 'proofPanel7',
+    name: 'proofStepPanel7',
     activeForSteps: [8],
     content:
       <p>
@@ -197,7 +197,7 @@ export const constants = {
   breadcrumbsCurrent: breadcrumbsCurrent,
   stepSum: stepSum,
   claimPanel: claimPanel,
-  proofPanels: proofPanels,
+  proofStepPanels: proofStepPanels,
   descriptionPanels: descriptionPanels,
   definitionPanels: definitionPanels,
 };
