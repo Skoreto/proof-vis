@@ -29,15 +29,6 @@
   font-size: 14px;
 }
 
-#divSentenceBox {
-  background-color: #EEEEEE;
-  border: 2px solid #E0E0E0;
-  margin-top: 10px;
-  padding: 5px;
-  /*max-height: 150px;
-    overflow-y: scroll;*/
-}
-
 .over-component {
   position: absolute;
   min-width: 600px;
@@ -60,19 +51,6 @@
   min-width: 600px;
   height: 400px;
   z-index: 1;
-}
-
-.description-panel {
-  min-height: 50px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  /*border: 1px solid lightgray;*/
-}
-
-.description-panel p {
-  /*border: 1px solid lightgray;*/
-  font-size: 16px;
-  text-align: center;
 }
 
 .controls-panel {
@@ -205,21 +183,6 @@
   .pull-right,
   .pull-left {
     float: none;
-  }
-  #definition {
-    min-width: 600px;
-    padding: 5px;
-    margin: 0;
-    font-size: 16px;
-  }
-  .description-panel {
-    min-width: 600px;
-  }
-  .description-panel p {
-    font-size: 14px;
-  }
-  #divSentenceBox {
-    min-width: 600px;
   }
   .controls-panel {
     min-width: 600px;
