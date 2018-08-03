@@ -81,7 +81,8 @@ export const graphVisOptions = {
  * Initial state of every Exercise component.
  */
 export const initialExerciseState = {
-  graphVis: { nodes: [], edges: [] },
+  nodes: [],
+  edges: [],
   options: graphVisOptions,
   timeouts: [],
   intervals: [],

@@ -60,7 +60,7 @@ const ExerciseWrapper = (props) => (
               }
               <div className="graph-box">
                 <GraphVis
-                  graph={props.graphVis}
+                  graph={{ nodes: props.nodes, edges: props.edges }}
                   options={props.options}
                   events={props.events} 
                   getNetwork={props.initNetworkInstance}
