@@ -1,5 +1,6 @@
 import React from 'react';
 import MathJax from 'react-mathjax2';
+import './DefinitionPanel.css';
 
 const DefinitionPanel = (props) => (
   <MathJax.Context input="tex">
@@ -7,7 +8,7 @@ const DefinitionPanel = (props) => (
       {props.definitionPanels
       .filter(definitionPanel => definitionPanel.showForSteps.includes(props.currentStep))
       .map((definitionPanel, index) =>
-        <div key={definitionPanel.id} className="repeat-box">
+        <div key={index + "-" + definitionPanel.id} className="definition-panel">
           {definitionPanel.content}
         </div>
       )}

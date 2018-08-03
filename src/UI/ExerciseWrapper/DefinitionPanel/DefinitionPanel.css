@@ -1,0 +1,18 @@
+.definition-panel {
+  background-color: #fafafa;
+  border: 1px solid lightgrey;
+  padding: 10px 10px 0 10px;
+  margin-top: 15px;
+}
+
+.definition-panel p {
+  text-align: left;
+  font-size: 16px;
+}
+
+@media (max-width: 767px) {
+  .definition-panel {
+    min-width: 600px;
+    margin-top: 15px;
+  }
+}

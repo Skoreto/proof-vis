@@ -9,7 +9,7 @@ const ProofStepsBox = (props) => (
       {props.proofStepPanels.map((proofStepPanel, index) =>
         <Element
           key={index + "-" + proofStepPanel.name}
-          name={proofStepPanel.name} 
+          name={proofStepPanel.name}
           className={
             proofStepPanel.activeForSteps.includes(props.currentStep) ? "proof-step-active" : ""
           }
