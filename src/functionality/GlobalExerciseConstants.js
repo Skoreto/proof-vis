@@ -30,9 +30,8 @@ export const graphVisOptions = {
   width: '100%',
   locale: 'cs',
   locales: graphVisLocales,
-  clickToUse: false,
-  physics: false,
-  layout: {},
+  clickToUse: true, // smazat po vyzkouseni
+  // Default node properties
   nodes: {
     shape: 'circle',
     color: { background: '#ffff08', border: '#000000' },
@@ -40,6 +39,7 @@ export const graphVisOptions = {
     margin: 12,
     font: { size: 18 },
   },
+  // Default edge properties
   edges: {
     arrows: {
       to: { enabled: false, scaleFactor: 2 },
@@ -51,50 +51,30 @@ export const graphVisOptions = {
     label: '   ',
     font: { align: 'top', size: 18 },
   },
-  configure: {
-    enabled: false,
-    filter: 'nodes,edges',
-    showButton: true,
-  },
-  manipulation: {
-    enabled: false,
-    initiallyActive: false,
-    addNode: function (nodeData, callback) {
-      // Nastaveni parametru noveho vrcholu
-      let color = { background: '#FFFF00', border: '#000000' };
-      let shadow = { enabled: false };
-      nodeData.shape = 'dot';
-      nodeData.size = 21;
-      nodeData.label = null;
-      nodeData.color = color;
-      nodeData.borderWidth = 1;
-      nodeData.shadow = shadow;
-      callback(nodeData);
-    },
-    editEdge: true,
-    deleteNode: true,
-    deleteEdge: true,
-    controlNodeStyle: {},
-  },
+  // Allow to interact with the graph
   interaction: {
     dragNodes: true,
     dragView: false,
-    hideEdgesOnDrag: false,
-    hideNodesOnDrag: false,
+    // Use node hover colors when to mouse moves over it
     hover: true,
     hoverConnectedEdges: false,
-    keyboard: {
-      enabled: false,
-      speed: { x: 5, y: 5, zoom: 0.02 },
-      bindToWindow: true,
-    },
+    // Longheld click or CTRT+click will add to the selection
     multiselect: true,
     navigationButtons: true,
     selectable: true,
+    // Do not highlight connecting edges on selecting a node
     selectConnectedEdges: false,
-    tooltipDelay: 300,
     zoomView: true,
-  }
+  },
+  // Turn automatic graph rearranging off
+  physics: false,
+  // Turn configuration panel off
+  configure: false,
+  // configure: {
+  //   enabled: true,
+  //   filter: 'nodes,edges,layout,interaction,manipulation,physics,selection,renderer',
+  //   showButton: true,
+  // },
 };
 
 /**

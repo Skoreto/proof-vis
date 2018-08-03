@@ -49,7 +49,7 @@ class DialogDrawing extends React.Component {
           editEdge: true,
           deleteNode: true,
           deleteEdge: true,
-          controlNodeStyle: {},
+          controlNodeStyle: {}, // TODO Doplnit styl pridavaneho nodu
         },
         interaction: {
           dragNodes: true,

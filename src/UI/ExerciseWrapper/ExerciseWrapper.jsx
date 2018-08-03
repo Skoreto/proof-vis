@@ -62,8 +62,7 @@ const ExerciseWrapper = (props) => (
                 <GraphVis
                   graph={props.graphVis}
                   options={props.options}
-                  events={props.events}
-                  style={{ width: '100%', height: '400px' }}
+                  events={props.events} 
                   getNetwork={props.initNetworkInstance}
                 />
               </div>
