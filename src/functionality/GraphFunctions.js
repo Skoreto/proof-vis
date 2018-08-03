@@ -62,6 +62,22 @@ export function updateNodeShape(nodesState, nodeIndex, background, label, vadjus
 }
 
 /**
+ * Function for updating node position.
+ * @param nodesState - Array of nodes from the state of component.
+ * @param nodeIndex - Index of node in the array.
+ * @param newX - New X coordinate of the node.
+ * @param newY - New Y coordinate of the node.
+ */
+export function updateNodesPositions(nodesState, nodeIndex, newX, newY) {
+  return imHelp(nodesState, { 
+    [nodeIndex]: { 
+      x: { $set: newX },
+      y: { $set: newY },
+    }
+  });
+}
+
+/**
  * Method for updating edge properties.
  * @param {Object[]} edgesState - Array of edges from the state of component.
  * @param {number} edgeIndex - Index of edge in the array.

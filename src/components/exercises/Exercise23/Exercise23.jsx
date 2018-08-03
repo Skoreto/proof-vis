@@ -9,6 +9,7 @@ import { constants, cameraPositions } from './constants';
 import {
   updateNode,
   updateNodeShape,
+  updateNodesPositions,
   updateEdge,
   updateEdgeWithArrow,
   clearAllTimers,
@@ -27,6 +28,7 @@ class Exercise23 extends React.Component {
     this.initNetworkInstance = this.initNetworkInstance.bind(this);
     this.updateNode = updateNode.bind(this);
     this.updateNodeShape = updateNodeShape.bind(this);
+    this.updateNodesPositions = updateNodesPositions.bind(this);
     this.updateEdge = updateEdge.bind(this);
     this.updateEdgeWithArrow = updateEdgeWithArrow.bind(this);
     this.clearAllTimers = clearAllTimers.bind(this);
@@ -49,6 +51,18 @@ class Exercise23 extends React.Component {
 
   nextStep = () => {
     if (this.state.currentStep < 10) {
+
+      let nodesPositions = this.network.getPositions();
+      if(Object.keys(nodesPositions).length) {
+        let newNodes = this.state.graphVis.nodes;
+        for (let i = 0; i < Object.keys(nodesPositions).length; i++) {
+          let newX = Object.entries(nodesPositions)[i][1].x;
+          let newY = Object.entries(nodesPositions)[i][1].y;
+          newNodes = this.updateNodesPositions(newNodes, i, newX, newY);
+        }
+        this.setState({ graphVis: { nodes: newNodes, edges: this.state.graphVis.edges } })
+      }
+
       if (this.state.currentStep === 0) {
         this.setState({ btnPrevD: false });
         this.setState(this.step1);
@@ -106,6 +120,15 @@ class Exercise23 extends React.Component {
         scroller.scrollTo('proofStepPanel7', getScrollOptions(window.scrollY));
       }
 
+      // if(Object.keys(nodesPositions).length) {
+      //   let newX = Object.entries(nodesPositions)[0][1].x;
+      //   let newY = Object.entries(nodesPositions)[0][1].y;
+      //   let newX2 = Object.entries(nodesPositions)[1][1].x;
+      //   let newY2 = Object.entries(nodesPositions)[1][1].y;
+      //   console.log(newX);
+      //   console.log(newY);
+      // }
+      
       // Increase currentStep after a step was executed
       this.setState((state) => { return { currentStep: state.currentStep += 1 } });
     }
@@ -113,6 +136,19 @@ class Exercise23 extends React.Component {
 
   previousStep = () => {
     if (this.state.currentStep > 0) {
+
+      let nodesPositions = this.network.getPositions();
+      if(Object.keys(nodesPositions).length) {
+        let newNodes = this.state.graphVis.nodes;
+        for (let i = 0; i < Object.keys(nodesPositions).length; i++) {
+          let newX = Object.entries(nodesPositions)[i][1].x;
+          let newY = Object.entries(nodesPositions)[i][1].y;
+          newNodes = this.updateNodesPositions(newNodes, i, newX, newY);
+        }
+        this.setState({ graphVis: { nodes: newNodes, edges: this.state.graphVis.edges } })
+      }
+
+
       if (this.state.currentStep === 1) {
         this.setState({ btnPrevD: true });
         this.setState(this.stepReset);
