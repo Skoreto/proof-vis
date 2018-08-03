@@ -29,14 +29,6 @@
   font-size: 14px;
 }
 
-#definition {
-  border: 1px solid rgba(97, 173, 255, 0.51);
-  padding: 10px;
-  margin: 0 0 5px 0;
-  font-size: 20px;
-  text-align: center;
-}
-
 #divSentenceBox {
   background-color: #EEEEEE;
   border: 2px solid #E0E0E0;

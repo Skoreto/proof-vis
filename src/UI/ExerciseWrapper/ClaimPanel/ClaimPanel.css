@@ -1,0 +1,17 @@
+.claim-panel {
+  background-color: #d9edf7;
+  border: 1px solid rgba(97, 173, 255, 0.51);
+  padding: 10px;
+  margin: 0 0 5px 0;
+  font-size: 20px;
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  .claim-panel {
+    min-width: 600px;
+    padding: 5px;
+    margin: 0;
+    font-size: 16px;
+  }
+}
