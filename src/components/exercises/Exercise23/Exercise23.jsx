@@ -74,7 +74,7 @@ class Exercise23 extends React.Component {
 
       if (this.state.currentStep === 2) {
         this.clearAllTimers(this.state);
-        this.setState(this.step1);
+        this.setState(this.colorsReset);
         this.setState(this.step3);
         scroller.scrollTo('proofStepPanel3', getScrollOptions(window.scrollY));
       }
@@ -95,7 +95,7 @@ class Exercise23 extends React.Component {
       }
 
       if (this.state.currentStep === 6) {
-        this.setState(this.step1);
+        this.setState(this.colorsReset);
         this.setState(this.step7);
       }
 
@@ -104,7 +104,7 @@ class Exercise23 extends React.Component {
       }
 
       if (this.state.currentStep === 8) {
-        this.setState(this.step1);
+        this.setState(this.colorsReset);
         this.setState(this.step9);
         scroller.scrollTo('proofStepPanel6', getScrollOptions(window.scrollY));
       }
@@ -136,13 +136,13 @@ class Exercise23 extends React.Component {
 
       if (this.state.currentStep === 2) {
         this.clearAllTimers(this.state);
-        this.setState(this.step1);
+        this.setState(this.colorsReset);
         this.network.moveTo(cameraPositions[0]);
         scroller.scrollTo('proofStepPanel1', getScrollOptions(window.scrollY));
       }
 
       if (this.state.currentStep === 3) {
-        this.setState(this.step1);
+        this.setState(this.colorsReset);
         this.step2Animation();
         let interval1 = setInterval(this.step2Animation, 6000);
         this.setState({ intervals: [interval1] });
@@ -151,14 +151,14 @@ class Exercise23 extends React.Component {
 
       if (this.state.currentStep === 4) {
         this.clearAllTimers(this.state);
-        this.setState(this.step1);
+        this.setState(this.colorsReset);
         this.setState(this.step3);
         this.network.moveTo(cameraPositions[1]);
         scroller.scrollTo('proofStepPanel3', getScrollOptions(window.scrollY));
       }
 
       if (this.state.currentStep === 5) {
-        this.setState(this.step1);
+        this.setState(this.colorsReset);
         this.setState(this.step4);
         scroller.scrollTo('proofStepPanel4', getScrollOptions(window.scrollY));
       }
@@ -168,24 +168,24 @@ class Exercise23 extends React.Component {
       }
 
       if (this.state.currentStep === 7) {
-        this.setState(this.step1);
+        this.setState(this.colorsReset);
         this.setState(this.step6);
       }
 
       if (this.state.currentStep === 8) {
-        this.setState(this.step1);
+        this.setState(this.colorsReset);
         this.setState(this.step7);
       }
 
       if (this.state.currentStep === 9) {
-        this.setState(this.step1);
+        this.setState(this.colorsReset);
         this.setState(this.step8);
         scroller.scrollTo('proofStepPanel5', getScrollOptions(window.scrollY));
       }
 
       if (this.state.currentStep === 10) {
         this.setState({ btnNextD: false });
-        this.setState(this.step1);
+        this.setState(this.colorsReset);
         this.setState(this.step9);
         scroller.scrollTo('proofStepPanel6', getScrollOptions(window.scrollY));
       }
@@ -201,6 +201,55 @@ class Exercise23 extends React.Component {
     return {
       nodes: [],
       edges: [],
+    };
+  };
+
+  colorsReset = () => {
+    return {
+      nodes: [
+        { id: 1, color: { background: palette.yellow }, label: '   ' },
+        { id: 2, color: { background: palette.yellow }, label: '   ' },
+        { id: 3, color: { background: palette.yellow }, label: '   ' },
+        { id: 4, color: { background: palette.yellow }, label: ' u ' },
+        { id: 5, color: { background: palette.yellow }, label: ' v ' },
+        { id: 6, color: { background: palette.yellow }, label: '   ' },
+        { id: 7, color: { background: palette.yellow }, label: '   ' },
+        { id: 8, color: { background: palette.yellow }, label: '   ',
+        font: { vadjust: 0 }, shape: 'circle' },
+        { id: 9, color: { background: palette.yellow }, label: ' u ',
+        font: { vadjust: 0 }, shape: 'circle' },
+        { id: 10, color: { background: palette.yellow }, label: '   ',
+        font: { vadjust: 0 }, shape: 'circle' },
+        { id: 11, color: { background: palette.yellow }, label: '   ',
+        font: { vadjust: 0 }, shape: 'circle' },
+        { id: 12, color: { background: palette.yellow }, label: ' v ',
+        font: { vadjust: 0 }, shape: 'circle' },
+        { id: 13, color: { background: palette.yellow }, label: '   ',
+        font: { vadjust: 0 }, shape: 'circle' },
+        { id: 14, color: { background: palette.yellow }, label: '   ',
+        font: { vadjust: 0 }, shape: 'circle' },
+        { id: 15, color: { background: palette.yellow }, label: '   ',
+        font: { vadjust: 0 }, shape: 'circle' },
+      ],
+      edges: [
+        { id: 1, from: 1, to: 2, color: { color: palette.black }, width: 1 },
+        { id: 2, from: 1, to: 3, color: { color: palette.black }, width: 1 },
+        { id: 3, from: 2, to: 4, color: { color: palette.black }, width: 1 },
+        { id: 4, from: 3, to: 5, color: { color: palette.black }, width: 1 },
+        { id: 5, from: 4, to: 5, color: { color: palette.black }, width: 1, label: 'e' },
+        { id: 6, from: 4, to: 6, color: { color: palette.black }, width: 1 },
+        { id: 7, from: 5, to: 7, color: { color: palette.black }, width: 1 },
+        { id: 8, from: 6, to: 8, color: { color: palette.black }, width: 1 },
+        { id: 9, from: 7, to: 8, color: { color: palette.black }, width: 1 },
+        { id: 10, from: 9, to: 10, color: { color: palette.black }, width: 1 },
+        { id: 11, from: 9, to: 11, color: { color: palette.black }, width: 1 },
+        { id: 12, from: 9, to: 12, color: { color: palette.black }, width: 1, label: 'e' },
+        { id: 13, from: 10, to: 13, color: { color: palette.black }, width: 1 },
+        { id: 14, from: 11, to: 14, color: { color: palette.black }, width: 1 },
+        { id: 15, from: 12, to: 15, color: { color: palette.black }, width: 1 },
+        { id: 16, from: 13, to: 15, color: { color: palette.black }, width: 1 },
+        { id: 17, from: 14, to: 15, color: { color: palette.black }, width: 1 },
+      ],
     };
   };
 
@@ -255,9 +304,9 @@ class Exercise23 extends React.Component {
 
   step2Animation = () => {
     let timeout1 = setTimeout(() => { this.setState(this.step2a); }, 1000);
-    let timeout2 = setTimeout(() => { this.setState(this.step1); }, 2500);
+    let timeout2 = setTimeout(() => { this.setState(this.colorsReset); }, 2500);
     let timeout3 = setTimeout(() => { this.setState(this.step2c); }, 3000);
-    let timeout4 = setTimeout(() => { this.setState(this.step1); }, 4500);
+    let timeout4 = setTimeout(() => { this.setState(this.colorsReset); }, 4500);
 
     this.setState({ timeouts: [timeout1, timeout2, timeout3, timeout4] });
   };
