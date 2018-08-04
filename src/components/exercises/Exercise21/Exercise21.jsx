@@ -12,6 +12,7 @@ import {
   updateEdgeWithArrow,
   addObjectArray,
   getNodesWithNewPositions,
+  updateNodesWithNewPositions,
   clearAllTimers,
   handlerSketchAllowance,
   handlerSelectedTool,
@@ -30,6 +31,7 @@ class Exercise21 extends React.Component {
     this.updateEdgeWithArrow = updateEdgeWithArrow.bind(this);
     this.addObjectArray = addObjectArray.bind(this);
     this.getNodesWithNewPositions = getNodesWithNewPositions.bind(this);
+    this.updateNodesWithNewPositions = updateNodesWithNewPositions.bind(this);
     this.clearAllTimers = clearAllTimers.bind(this);
     this.handlerSketchAllowance = handlerSketchAllowance.bind(this);
     this.handlerSelectedTool = handlerSelectedTool.bind(this);
@@ -46,12 +48,7 @@ class Exercise21 extends React.Component {
 
   nextStep = () => {
     if (this.state.currentStep <= 7) {
-
-      if (this.state.nodes.length)
-        // Update node positions in state
-        this.setState(
-          { nodes: this.getNodesWithNewPositions(this.network.getPositions(), this.state.nodes) }
-        );
+      this.updateNodesWithNewPositions(this.network.getPositions(), this.state.nodes);
 
       if (this.state.currentStep === 0) {
         this.setState({ btnPrevD: false });

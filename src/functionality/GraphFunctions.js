@@ -193,6 +193,17 @@ export function getNodesWithNewPositions(nodesPositions, stateNodes) {
 }
 
 /**
+ * Updates state with array of nodes with user's positions.
+ * @param {Object[]} nodesPositions - Actual nodes positions in canvas.
+ * @param {Object[]} nodesState - Array of nodes from the state of component.
+ */
+export function updateNodesWithNewPositions(nodesPositions, stateNodes) {
+  // Update positions only when nodes array is not empty
+  if (stateNodes.length)
+    this.setState({ nodes: getNodesWithNewPositions(nodesPositions, stateNodes)})
+}
+
+/**
  * Clears all used Timeouts and Intervals.
  * @param state State of the updated component.
  */

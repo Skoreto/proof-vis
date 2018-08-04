@@ -12,6 +12,7 @@ import {
   updateEdge,
   updateEdgeWithArrow,
   getNodesWithNewPositions,
+  updateNodesWithNewPositions,
   clearAllTimers,
   handlerSketchAllowance,
   handlerSelectedTool,
@@ -29,6 +30,7 @@ class Exercise23 extends React.Component {
     this.updateNode = updateNode.bind(this);
     this.updateNodeShape = updateNodeShape.bind(this);
     this.getNodesWithNewPositions = getNodesWithNewPositions.bind(this);
+    this.updateNodesWithNewPositions = updateNodesWithNewPositions.bind(this);
     this.updateEdge = updateEdge.bind(this);
     this.updateEdgeWithArrow = updateEdgeWithArrow.bind(this);
     this.clearAllTimers = clearAllTimers.bind(this);
@@ -51,12 +53,7 @@ class Exercise23 extends React.Component {
 
   nextStep = () => {
     if (this.state.currentStep < 10) {
-
-      if (this.state.nodes.length)
-        // Update node positions in state
-        this.setState(
-          { nodes: this.getNodesWithNewPositions(this.network.getPositions(), this.state.nodes) }
-        );
+      this.updateNodesWithNewPositions(this.network.getPositions(), this.state.nodes);
 
       if (this.state.currentStep === 0) {
         this.setState({ btnPrevD: false });
@@ -122,12 +119,7 @@ class Exercise23 extends React.Component {
 
   previousStep = () => {
     if (this.state.currentStep > 0) {
-
-      if (this.state.nodes.length)
-        // Update node positions in state
-        this.setState(
-          { nodes: this.getNodesWithNewPositions(this.network.getPositions(), this.state.nodes) }
-        );
+      this.updateNodesWithNewPositions(this.network.getPositions(), this.state.nodes);
 
       if (this.state.currentStep === 1) {
         this.setState({ btnPrevD: true });
@@ -197,12 +189,7 @@ class Exercise23 extends React.Component {
 
   repeatStep = () => { };
 
-  stepReset = () => {
-    return {
-      nodes: [],
-      edges: [],
-    };
-  };
+  stepReset = () => { return { nodes: [], edges: [] }; };
 
   colorsReset = () => {
     return {
