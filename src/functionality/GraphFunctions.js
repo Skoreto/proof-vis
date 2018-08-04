@@ -182,7 +182,7 @@ export function addObjectArray(objectsState, newObjectsArray) {
 export function getNodesWithNewPositions(nodesPositions, stateNodes) {
   let newNodes = stateNodes;
 
-  if(Object.keys(nodesPositions).length) {
+  if(Object.keys(nodesPositions).length > 0) {
     for (let i = 0; i < Object.keys(nodesPositions).length; i++) {
       let newX = Object.entries(nodesPositions)[i][1].x;
       let newY = Object.entries(nodesPositions)[i][1].y;
@@ -199,7 +199,7 @@ export function getNodesWithNewPositions(nodesPositions, stateNodes) {
  */
 export function updateNodesWithNewPositions(nodesPositions, stateNodes) {
   // Update positions only when nodes array is not empty
-  if (stateNodes.length)
+  if (stateNodes.length > 0)
     this.setState({ nodes: getNodesWithNewPositions(nodesPositions, stateNodes)})
 }
 

@@ -34,51 +34,52 @@ class Exercise24 extends React.Component {
   nextStep = () => {
     if (this.state.currentStep < 8) {
       switch (this.state.currentStep) {
-        case 0:
+        case 0: {
           this.setState({ btnPrevD: false });
           this.setState(this.step1SVGContent);
           break;
-
-        case 1:
+        }
+        case 1: {
           this.setState(this.step2);
           scroller.scrollTo('proofStepPanel2', getScrollOptions(window.scrollY));
           break;
-      
-        case 2:
+        }
+        case 2: {
           this.setState(this.step3);
           scroller.scrollTo('proofStepPanel3', getScrollOptions(window.scrollY));
           break;
-
-        case 3:
+        }
+        case 3: {
           this.step4();
           let interval = setInterval(this.step4, 3000);
           this.setState({ intervals: [interval] });
           scroller.scrollTo('proofStepPanel4', getScrollOptions(window.scrollY));
           break;
-
-        case 4:
+        }
+        case 4: {
           this.clearAllTimers(this.state);
           this.setState(this.step5);
           scroller.scrollTo('proofStepPanel5', getScrollOptions(window.scrollY));
           break;
-
-        case 5:
+        }
+        case 5: {
           this.setState(this.step6);
           scroller.scrollTo('proofStepPanel6', getScrollOptions(window.scrollY));
           break;
-
-        case 6:
+        }
+        case 6: {
           this.setState(this.step7);
           scroller.scrollTo('proofStepPanel7', getScrollOptions(window.scrollY));
           break;
-
-        case 7:
+        }
+        case 7: {
           this.setState({ btnNextD: true });
           scroller.scrollTo('proofStepPanel8', getScrollOptions(window.scrollY));
           break;
-
-        default:
+        }
+        default: {
           break;
+        }
       }
 
       // Increase currentStep after a step was executed
@@ -89,31 +90,31 @@ class Exercise24 extends React.Component {
   previousStep = () => {
     if (this.state.currentStep > 0) {
       switch (this.state.currentStep) {
-        case 1:
+        case 1: {
           this.setState({ btnPrevD: true });
           this.setState(this.stepReset);
           break;
-
-        case 2:
+        }
+        case 2: {
           this.setState(this.stepReset);
           this.setState(this.step1SVGContent);
           scroller.scrollTo('proofStepPanel1', getScrollOptions(window.scrollY));
           break;
-      
-        case 3:
+        }
+        case 3: {
           this.setState(this.step2);
           scroller.scrollTo('proofStepPanel2', getScrollOptions(window.scrollY));
           break;
-
-        case 4:
+        }
+        case 4: {
           this.clearAllTimers(this.state);
           this.setState(this.stepReset);
           this.setState(this.step2);
           this.setState(this.step3);
           scroller.scrollTo('proofStepPanel3', getScrollOptions(window.scrollY));
           break;
-
-        case 5:
+        }
+        case 5: {
           this.setState(this.stepReset);
           this.setState(this.step2);
           this.setState(this.step3);
@@ -122,25 +123,26 @@ class Exercise24 extends React.Component {
           this.setState({ intervals: [interval] });
           scroller.scrollTo('proofStepPanel4', getScrollOptions(window.scrollY));
           break;
-
-        case 6:
+        }
+        case 6: {
           this.setState(this.step5);
           scroller.scrollTo('proofStepPanel5', getScrollOptions(window.scrollY));
           break;
-
-        case 7:
+        }
+        case 7: {
           this.setState(this.step6);
           scroller.scrollTo('proofStepPanel6', getScrollOptions(window.scrollY));
           break;
-
-        case 8:
+        }
+        case 8: {
           this.setState({ btnNextD: false });
           this.setState(this.step7);
           scroller.scrollTo('proofStepPanel7', getScrollOptions(window.scrollY));
           break;
-
-        default:
+        }
+        default: {
           break;
+        }
       }
 
       // Reduce currentStep after a step was executed
@@ -148,14 +150,8 @@ class Exercise24 extends React.Component {
     }
   };
 
-  stepReset = () => {
-    return {
-      graphVis: { nodes: [], edges: [] },
-      description: '',
-      isSVGCoverShowed: false,
-      repeatBoxHidden: true,
-      repeatBoxContent: '',    
-    };
+  stepReset = () => { 
+    return { nodes: [], edges: [], description: '', isSVGCoverShowed: false }; 
   };
 
   step1SVGContent = () => {
@@ -186,50 +182,43 @@ class Exercise24 extends React.Component {
       </svg>
     );
 
-    return {
-      isSVGCoverShowed: true,
-      svgContent: svgContent,
-      repeatBoxHidden: true,
-      repeatBoxContent: '',
-    }
+    return { isSVGCoverShowed: true, svgContent: svgContent };
   }
 
   step2 = () => {
     return {
-      graphVis: {
-        nodes: [
-          { id: 1, x: 0, y: -150, color: { background: palette.yellow }, label: '   ' },
-          { id: 2, x: -70, y: -50, color: { background: palette.yellow }, label: '   ' },
-          { id: 3, x: -140, y: 50, color: { background: palette.yellow }, label: '   ' },
-          { id: 4, x: 0, y: 50, color: { background: palette.yellow }, label: '   ' },
-          { id: 5, x: -70, y: 150, color: { background: palette.yellow }, label: '   ' },
-          { id: 6, x: 70, y: 150, color: { background: palette.yellow }, label: '   ' },
-          { id: 7, x: 70, y: -50, color: { background: palette.yellow }, label: '   ' },
-          { id: 8, x: 140, y: 50, color: { background: palette.yellow }, label: '   ' },
-        ],
-        edges: [
-          { id: 1, from: 1, to: 2 },
-          { id: 2, from: 2, to: 3 },
-          { id: 3, from: 4, to: 5 },
-          { id: 4, from: 4, to: 6 },
-          { id: 5, from: 1, to: 7 },
-          { id: 6, from: 7, to: 8 },
-        ],
-      },
+      nodes: [
+        { id: 1, x: 0, y: -150, color: { background: palette.yellow }, label: '   ' },
+        { id: 2, x: -70, y: -50, color: { background: palette.yellow }, label: '   ' },
+        { id: 3, x: -140, y: 50, color: { background: palette.yellow }, label: '   ' },
+        { id: 4, x: 0, y: 50, color: { background: palette.yellow }, label: '   ' },
+        { id: 5, x: -70, y: 150, color: { background: palette.yellow }, label: '   ' },
+        { id: 6, x: 70, y: 150, color: { background: palette.yellow }, label: '   ' },
+        { id: 7, x: 70, y: -50, color: { background: palette.yellow }, label: '   ' },
+        { id: 8, x: 140, y: 50, color: { background: palette.yellow }, label: '   ' },
+      ],
+      edges: [
+        { id: 1, from: 1, to: 2 },
+        { id: 2, from: 2, to: 3 },
+        { id: 3, from: 4, to: 5 },
+        { id: 4, from: 4, to: 6 },
+        { id: 5, from: 1, to: 7 },
+        { id: 6, from: 7, to: 8 },
+      ],
       isSVGCoverShowed: false,
     };
   };
 
   step3 = (state) => {
-    let newNodes = this.updateNode(state.graphVis.nodes, 1, palette.yellow, ' x ');
+    let newNodes = this.updateNode(state.nodes, 1, palette.yellow, ' x ');
     newNodes = this.updateNode(newNodes, 3, palette.yellow, ' y ');
 
-    let newEdges = this.addObjectArray(state.graphVis.edges, [
+    let newEdges = this.addObjectArray(state.edges, [
       { id: 7, from: 2, to: 4, label: 'e' },
       { id: 8, from: 4, to: 7 },
     ]);
 
-    return { graphVis: { nodes: newNodes, edges: newEdges } };
+    return { nodes: newNodes, edges: newEdges };
   };
 
   step4 = () => {
@@ -241,36 +230,36 @@ class Exercise24 extends React.Component {
   };
 
   step4a = (state) => {
-    let newEdges = this.updateEdge(state.graphVis.edges, 6, palette.red, 2, [8, 8], 'e');
-    return { graphVis: { nodes: state.graphVis.nodes, edges: newEdges } };
+    let newEdges = this.updateEdge(state.edges, 6, palette.red, 2, [8, 8], 'e');
+    return { nodes: state.nodes, edges: newEdges };
   };
 
   step4b = (state) => {
-    let newEdges = this.updateEdge(state.graphVis.edges, 6, palette.white, 2, false, '');
-    return { graphVis: { nodes: state.graphVis.nodes, edges: newEdges } };
+    let newEdges = this.updateEdge(state.edges, 6, palette.white, 2, false, '');
+    return { nodes: state.nodes, edges: newEdges };
   };
 
   step5 = (state) => {
-    let newNodes = this.updateNode(state.graphVis.nodes, 0, palette.green, '   ');
+    let newNodes = this.updateNode(state.nodes, 0, palette.green, '   ');
     newNodes = this.updateNode(newNodes, 1, palette.green, ' x ');
     newNodes = this.updateNode(newNodes, 3, palette.green, ' y ');
     newNodes = this.updateNode(newNodes, 6, palette.green, '   ');
     
-    let newEdges = this.updateEdge(state.graphVis.edges, 0, palette.green, 3, false, '');
+    let newEdges = this.updateEdge(state.edges, 0, palette.green, 3, false, '');
     newEdges = this.updateEdge(newEdges, 4, palette.green, 3, false, '');
     newEdges = this.updateEdge(newEdges, 6, palette.white, 2, false, '');
     newEdges = this.updateEdge(newEdges, 7, palette.green, 3, false, '');
-    return { graphVis: { nodes: newNodes, edges: newEdges } };
+    return { nodes: newNodes, edges: newEdges };
   };
 
   step6 = (state) => {
-    let newEdges = this.updateEdge(state.graphVis.edges, 6, palette.black, 1, false, 'e');
-    return { graphVis: { nodes: state.graphVis.nodes, edges: newEdges } };
+    let newEdges = this.updateEdge(state.edges, 6, palette.black, 1, false, 'e');
+    return { nodes: state.nodes, edges: newEdges };
   };
 
   step7 = (state) => {
-    let newEdges = this.updateEdge(state.graphVis.edges, 6, palette.green, 3, false, 'e');
-    return { graphVis: { nodes: state.graphVis.nodes, edges: newEdges } };
+    let newEdges = this.updateEdge(state.edges, 6, palette.green, 3, false, 'e');
+    return { nodes: state.nodes, edges: newEdges };
   };
 
   render() {
