@@ -35,7 +35,7 @@ class Exercise21 extends React.Component {
   }
 
   /**
-   * Initialize graphVis network instance.
+   * Initialize GraphVis network instance.
    * @param {Object} networkInstance - Object of network instance returned by getNetwork() callback function.
    */
   initNetworkInstance(networkInstance) {
@@ -160,12 +160,7 @@ class Exercise21 extends React.Component {
     }
   };
 
-  stepReset = () => {
-    return {
-      graphVis: { nodes: [], edges: [] },
-      isSVGCoverShowed: false,
-    }
-  };
+  stepReset = () => { return { nodes: [], edges: [], isSVGCoverShowed: false } };
 
   step1SVGContent = () => {
     const svgContent = (
@@ -196,52 +191,50 @@ class Exercise21 extends React.Component {
 
   step2 = () => {
     return {
-      graphVis: {
-        nodes: [
-          { id: 1, x: -180, y: -40, color: { background: palette.yellow }, label: '   ' },
-          { id: 2, x: -40, y: -100, color: { background: palette.yellow }, label: ' x ' },
-          { id: 3, x: -30, y: 50, color: { background: palette.yellow }, label: '   ' },
-          { id: 4, x: 110, y: -50, color: { background: palette.yellow }, label: ' y ' },
-          { id: 5, x: 120, y: 80, color: { background: palette.yellow }, label: '   ' },
-        ],
-        edges: [
-          { id: 1, from: 1, to: 2 },
-          { id: 2, from: 2, to: 3 },
-          { id: 3, from: 2, to: 4, label: 'e' },
-          { id: 4, from: 3, to: 5 },
-          { id: 5, from: 4, to: 5 },
-        ],
-      },
+      nodes: [
+        { id: 1, x: -180, y: -40, color: { background: palette.yellow }, label: '   ' },
+        { id: 2, x: -40, y: -100, color: { background: palette.yellow }, label: ' x ' },
+        { id: 3, x: -30, y: 50, color: { background: palette.yellow }, label: '   ' },
+        { id: 4, x: 110, y: -50, color: { background: palette.yellow }, label: ' y ' },
+        { id: 5, x: 120, y: 80, color: { background: palette.yellow }, label: '   ' },
+      ],
+      edges: [
+        { id: 1, from: 1, to: 2 },
+        { id: 2, from: 2, to: 3 },
+        { id: 3, from: 2, to: 4, label: 'e' },
+        { id: 4, from: 3, to: 5 },
+        { id: 5, from: 4, to: 5 },
+      ],
       isSVGCoverShowed: false,
     }
   };
 
   step3 = (state) => {
-    let newNodes = this.updateNode(state.graphVis.nodes, 0, palette.yellow, ' u ');
+    let newNodes = this.updateNode(state.nodes, 0, palette.yellow, ' u ');
     newNodes = this.updateNode(newNodes, 1, palette.yellow, ' x ');
     newNodes = this.updateNode(newNodes, 3, palette.yellow, ' y ');
     newNodes = this.updateNode(newNodes, 4, palette.yellow, ' v ');
 
-    let newEdges = this.updateEdge(state.graphVis.edges, 2, palette.black, 1, false, ' e ');
+    let newEdges = this.updateEdge(state.edges, 2, palette.black, 1, false, ' e ');
 
-    return { graphVis: { nodes: newNodes, edges: newEdges } };
+    return { nodes: newNodes, edges: newEdges };
   };
 
   step4 = (state) => {
-    let newNodes = this.updateNode(state.graphVis.nodes, 0, palette.purple, ' u ');
+    let newNodes = this.updateNode(state.nodes, 0, palette.purple, ' u ');
     newNodes = this.updateNode(newNodes, 1, palette.purple, ' x ');
     newNodes = this.updateNode(newNodes, 3, palette.purple, ' y ');
     newNodes = this.updateNode(newNodes, 4, palette.purple, ' v ');
 
-    let newEdges = this.updateEdge(state.graphVis.edges, 0, palette.purple, 2, false, undefined);
+    let newEdges = this.updateEdge(state.edges, 0, palette.purple, 2, false, undefined);
     newEdges = this.updateEdge(newEdges, 2, palette.purple, 2, false, ' e ');
     newEdges = this.updateEdge(newEdges, 4, palette.purple, 2, false, undefined);
 
-    return { graphVis: { nodes: newNodes, edges: newEdges } };
+    return { nodes: newNodes, edges: newEdges };
   };
 
   step5 = (state) => {
-    let newNodes = this.addObjectArray(state.graphVis.nodes, [
+    let newNodes = this.addObjectArray(state.nodes, [
       { id: 6, x: 220, y: -40, color: { background: palette.purple }, label: ' u ' },
       { id: 7, x: 360, y: -100, color: { background: palette.purple }, label: ' x ' },
       { id: 8, x: 370, y: 50, color: { background: palette.purple }, label: '   ' },
@@ -249,7 +242,7 @@ class Exercise21 extends React.Component {
       { id: 10, x: 520, y: 80, color: { background: palette.purple }, label: ' v ' },
     ]);
 
-    let newEdges = this.addObjectArray(state.graphVis.edges, [
+    let newEdges = this.addObjectArray(state.edges, [
       { id: 6, from: 6, to: 7, color: { color: palette.purple, hover: palette.purple }, width: 2 },
       { id: 7, from: 7, to: 8, color: { color: palette.purple, hover: palette.purple }, width: 2 },
       {
@@ -265,11 +258,11 @@ class Exercise21 extends React.Component {
       { id: 10, from: 9, to: 10 },
     ]);
 
-    return { graphVis: { nodes: newNodes, edges: newEdges } };
+    return { nodes: newNodes, edges: newEdges };
   };
 
   step6 = (state) => {
-    let newNodes = this.updateNode(state.graphVis.nodes, 0, palette.yellow, '   ');
+    let newNodes = this.updateNode(state.nodes, 0, palette.yellow, '   ');
     newNodes = this.updateNode(newNodes, 1, palette.green, ' x ');
     newNodes = this.updateNode(newNodes, 2, palette.green, '   ');
     newNodes = this.updateNode(newNodes, 3, palette.green, ' y ');
@@ -280,7 +273,7 @@ class Exercise21 extends React.Component {
     newNodes = this.updateNode(newNodes, 8, palette.green, ' y ');
     newNodes = this.updateNode(newNodes, 9, palette.green, '   ');
 
-    let newEdges = this.updateEdge(state.graphVis.edges, 0, palette.black, 1, false, undefined);
+    let newEdges = this.updateEdge(state.edges, 0, palette.black, 1, false, undefined);
     newEdges = this.updateEdge(newEdges, 1, palette.green, 3, false, undefined);
     newEdges = this.updateEdge(newEdges, 2, palette.black, 1, false, ' e ');
     newEdges = this.updateEdge(newEdges, 3, palette.green, 3, false, undefined);
@@ -291,7 +284,7 @@ class Exercise21 extends React.Component {
     newEdges = this.updateEdge(newEdges, 8, palette.green, 3, false, undefined);
     newEdges = this.updateEdge(newEdges, 9, palette.green, 3, false, undefined);
 
-    return { graphVis: { nodes: newNodes, edges: newEdges } };
+    return { nodes: newNodes, edges: newEdges };
   };
 
   step8 = () => {
@@ -302,13 +295,13 @@ class Exercise21 extends React.Component {
   };
 
   step8a = (state) => {
-    let newEdges = this.updateEdge(state.graphVis.edges, 2, palette.green, 3, false, ' e ');
-    return { graphVis: { nodes: state.graphVis.nodes, edges: newEdges } };
+    let newEdges = this.updateEdge(state.edges, 2, palette.green, 3, false, ' e ');
+    return { edges: newEdges };
   };
 
   step8b = (state) => {
-    let newEdges = this.updateEdge(state.graphVis.edges, 2, palette.black, 1, false, ' e ');
-    return { graphVis: { nodes: state.graphVis.nodes, edges: newEdges } };
+    let newEdges = this.updateEdge(state.edges, 2, palette.black, 1, false, ' e ');
+    return { edges: newEdges };
   };
 
   render() {
