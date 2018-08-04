@@ -7,6 +7,7 @@ import {
   updateEdgeWithArrow,
   addObjectArray,
   clearAllTimers,
+  updateCurrentStep,
   handlerSketchAllowance,
   handlerSelectedTool,
   handlerDrawingDialog,
@@ -23,6 +24,7 @@ class Exercise20 extends React.Component {
     this.updateEdgeWithArrow = updateEdgeWithArrow.bind(this);
     this.addObjectArray = addObjectArray.bind(this);
     this.clearAllTimers = clearAllTimers.bind(this);
+    this.updateCurrentStep = updateCurrentStep.bind(this);
     this.handlerSketchAllowance = handlerSketchAllowance.bind(this);
     this.handlerSelectedTool = handlerSelectedTool.bind(this);
     this.handlerDrawingDialog = handlerDrawingDialog.bind(this);
@@ -38,99 +40,109 @@ class Exercise20 extends React.Component {
 
   nextStep = () => {
     if (this.state.currentStep <= 6) {
-      if (this.state.currentStep === 0) {
-        this.setState({ btnPrevD: false });
-        this.setState(this.step1);
-        this.network.moveTo(cameraPositions[0]);
+      switch (this.state.currentStep) {
+        case 0: {
+          this.setState({ btnPrevD: false });
+          this.setState(this.step1);
+          this.network.moveTo(cameraPositions[0]);
+          break;
+        }
+        case 1: {
+          this.setState(this.step2);
+          break;
+        }
+        case 2: {
+          this.setState(this.step3);
+          break;
+        }
+        case 3: {
+          this.setState(this.step4);
+          this.network.moveTo(cameraPositions[1]);
+          break;
+        }
+        case 4: {
+          this.setState(this.step5);
+          this.network.moveTo(cameraPositions[2]);
+          break;
+        }
+        case 5: {
+          this.network.moveTo(cameraPositions[0]);
+          break;
+        }
+        case 6: {
+          this.setState({ btnNextD: true });
+          this.step7();
+          let interval1 = setInterval(this.step7, 2000);
+          this.setState({ interval1: interval1 });
+          break;
+        }
+        default: {
+          break;
+        }
       }
 
-      if (this.state.currentStep === 1) {
-        this.setState(this.step2);
-      }
-
-      if (this.state.currentStep === 2) {
-        this.setState(this.step3);
-      }
-
-      if (this.state.currentStep === 3) {
-        this.setState(this.step4);
-        this.network.moveTo(cameraPositions[1]);
-      }
-
-      if (this.state.currentStep === 4) {
-        this.setState(this.step5);
-        this.network.moveTo(cameraPositions[2]);
-      }
-
-      if (this.state.currentStep === 5) {
-        this.network.moveTo(cameraPositions[0]);
-      }
-
-      if (this.state.currentStep === 6) {
-        this.setState({ btnNextD: true });
-        this.step7();
-        let interval1 = setInterval(this.step7, 2000);
-        this.setState({ interval1: interval1 });
-      }
-
-      // Increase currentStep after a step was executed
-      this.setState((state) => { return { currentStep: state.currentStep += 1 } });
+      this.updateCurrentStep(this.state.currentStep, 1);
     }
   };
 
   previousStep = () => {
     if (this.state.currentStep > 0) {
-      if (this.state.currentStep === 1) {
-        this.setState({ btnPrevD: true });
-        this.setState(this.stepReset);
+      switch (this.state.currentStep) {
+        case 1: {
+          this.setState({ btnPrevD: true });
+          this.setState(this.stepReset);
+          break;
+        }
+        case 2: {
+          this.setState(this.stepReset);
+          this.setState(this.step1);
+          break;
+        }
+        case 3: {
+          this.setState(this.stepReset);
+          this.setState(this.step1);
+          this.setState(this.step2);
+          break;
+        }
+        case 4: {
+          this.setState(this.stepReset);
+          this.setState(this.step1);
+          this.setState(this.step2);
+          this.setState(this.step3);
+          this.network.moveTo(cameraPositions[0]);
+          break;
+        }
+        case 5: {
+          this.setState(this.stepReset);
+          this.setState(this.step1);
+          this.setState(this.step2);
+          this.setState(this.step3);
+          this.setState(this.step4);
+          this.network.moveTo(cameraPositions[1]);
+          break;
+        }
+        case 6: {
+          this.network.moveTo(cameraPositions[2]);
+          break;
+        }
+        case 7: {
+          this.setState({ btnNextD: false });
+          clearInterval(this.state.interval1);
+          this.clearAllTimers(this.state);
+          this.setState(this.stepReset);
+          this.setState(this.step1);
+          this.setState(this.step2);
+          this.setState(this.step3);
+          this.setState(this.step4);
+          this.setState(this.step5);
+          break;
+        }
+        default: {
+          break;
+        }
       }
 
-      if (this.state.currentStep === 2) {
-        this.setState(this.stepReset);
-        this.setState(this.step1);
-      }
-
-      if (this.state.currentStep === 3) {
-        this.setState(this.stepReset);
-        this.setState(this.step1);
-        this.setState(this.step2);
-      }
-
-      if (this.state.currentStep === 4) {
-        this.setState(this.stepReset);
-        this.setState(this.step1);
-        this.setState(this.step2);
-        this.setState(this.step3);
-        this.network.moveTo(cameraPositions[0]);
-      }
-
-      if (this.state.currentStep === 5) {
-        this.setState(this.stepReset);
-        this.setState(this.step1);
-        this.setState(this.step2);
-        this.setState(this.step3);
-        this.setState(this.step4);
-        this.network.moveTo(cameraPositions[1]);
-      }
-
-      if (this.state.currentStep === 6) {
-        this.network.moveTo(cameraPositions[2]);
-      }
-
-      if (this.state.currentStep === 7) {
-        this.setState({ btnNextD: false });
-        clearInterval(this.state.interval1);
-        this.clearAllTimers(this.state);
-        this.setState(this.stepReset);
-        this.setState(this.step1);
-        this.setState(this.step2);
-        this.setState(this.step3);
-        this.setState(this.step4);
-        this.setState(this.step5);
-      }
-
-      // Reduce currentStep after a step was executed
-      this.setState((state) => { return { currentStep: state.currentStep -= 1 } });
+      this.updateCurrentStep(this.state.currentStep, -1);
     }
   };
 
@@ -242,12 +254,12 @@ class Exercise20 extends React.Component {
 
   step7a = (state) => {
     let newEdges = this.updateEdge(state.edges, 2, '#81C784', 3, false, ' e ');
-    return { nodes: state.nodes, edges: newEdges };
+    return { edges: newEdges };
   };
 
   step7b = (state) => {
     let newEdges = this.updateEdge(state.edges, 2, '#000000', 1, false, ' e ');
-    return { nodes: state.graphVis.nodes, edges: newEdges };
+    return { edges: newEdges };
   };
 
   render() {

@@ -11,6 +11,7 @@ import {
   updateEdge,
   addObjectArray,
   clearAllTimers,
+  updateCurrentStep,
   handlerSketchAllowance,
   handlerSelectedTool,
   handlerDrawingDialog,
@@ -26,6 +27,7 @@ class Exercise24 extends React.Component {
     this.updateEdge = updateEdge.bind(this);
     this.addObjectArray = addObjectArray.bind(this);
     this.clearAllTimers = clearAllTimers.bind(this);
+    this.updateCurrentStep = updateCurrentStep.bind(this);
     this.handlerSketchAllowance = handlerSketchAllowance.bind(this);
     this.handlerSelectedTool = handlerSelectedTool.bind(this);
     this.handlerDrawingDialog = handlerDrawingDialog.bind(this);
@@ -82,8 +84,7 @@ class Exercise24 extends React.Component {
         }
       }
 
-      // Increase currentStep after a step was executed
-      this.setState((state) => { return { currentStep: state.currentStep += 1 } });
+      this.updateCurrentStep(this.state.currentStep, 1);
     }
   };
 
@@ -145,8 +146,7 @@ class Exercise24 extends React.Component {
         }
       }
 
-      // Reduce currentStep after a step was executed
-      this.setState((state) => { return { currentStep: state.currentStep -= 1 } });
+      this.updateCurrentStep(this.state.currentStep, -1);
     }
   };
 
@@ -231,12 +231,12 @@ class Exercise24 extends React.Component {
 
   step4a = (state) => {
     let newEdges = this.updateEdge(state.edges, 6, palette.red, 2, [8, 8], 'e');
-    return { nodes: state.nodes, edges: newEdges };
+    return { edges: newEdges };
   };
 
   step4b = (state) => {
     let newEdges = this.updateEdge(state.edges, 6, palette.white, 2, false, '');
-    return { nodes: state.nodes, edges: newEdges };
+    return { edges: newEdges };
   };
 
   step5 = (state) => {
@@ -254,12 +254,12 @@ class Exercise24 extends React.Component {
 
   step6 = (state) => {
     let newEdges = this.updateEdge(state.edges, 6, palette.black, 1, false, 'e');
-    return { nodes: state.nodes, edges: newEdges };
+    return { edges: newEdges };
   };
 
   step7 = (state) => {
     let newEdges = this.updateEdge(state.edges, 6, palette.green, 3, false, 'e');
-    return { nodes: state.nodes, edges: newEdges };
+    return { edges: newEdges };
   };
 
   render() {
