@@ -49,64 +49,70 @@ class Exercise23 extends React.Component {
   }
 
   nextStep = () => {
-    if (this.state.currentStep < 10) {
+    if (this.state.currentStep < constants.stepSum) {
       this.updateNodesWithNewPositions(this.network.getPositions(), this.state.nodes);
 
-      if (this.state.currentStep === 0) {
-        this.setState({ btnPrevD: false });
-        this.setState(this.step1);
-        this.network.moveTo(cameraPositions[0]);
-      }
-
-      if (this.state.currentStep === 1) {    
-        this.step2Animation();
-        let interval1 = setInterval(this.step2Animation, 6000);
-        this.setState({ intervals: [interval1] });
-        this.network.moveTo(cameraPositions[1]);
-        scroller.scrollTo('proofStepPanel2', getScrollOptions(window.scrollY));
-      }
-
-      if (this.state.currentStep === 2) {
-        this.clearAllTimers(this.state);
-        this.setState(this.colorsReset);
-        this.setState(this.step3);
-        scroller.scrollTo('proofStepPanel3', getScrollOptions(window.scrollY));
-      }
-
-      if (this.state.currentStep === 3) {
-        this.setState(this.step4);
-        this.network.moveTo(cameraPositions[2]);
-        scroller.scrollTo('proofStepPanel4', getScrollOptions(window.scrollY));
-      }
-
-      if (this.state.currentStep === 4) {
-        this.setState(this.step5);
-        scroller.scrollTo('proofStepPanel5', getScrollOptions(window.scrollY));
-      }
-
-      if (this.state.currentStep === 5) {
-        this.setState(this.step6);
-      }
-
-      if (this.state.currentStep === 6) {
-        this.setState(this.colorsReset);
-        this.setState(this.step7);
-      }
-
-      if (this.state.currentStep === 7) {
-        this.setState(this.step8);
-      }
-
-      if (this.state.currentStep === 8) {
-        this.setState(this.colorsReset);
-        this.setState(this.step9);
-        scroller.scrollTo('proofStepPanel6', getScrollOptions(window.scrollY));
-      }
-
-      if (this.state.currentStep === 9) {
-        this.setState({ btnNextD: true });
-        this.setState(this.step10);
-        scroller.scrollTo('proofStepPanel7', getScrollOptions(window.scrollY));
+      switch (this.state.currentStep) {
+        case 0: {
+          this.setState({ btnPrevD: false });
+          this.setState(this.step1);
+          this.network.moveTo(cameraPositions[0]);
+          break;
+        }
+        case 1: {
+          this.step2Animation();
+          let interval1 = setInterval(this.step2Animation, 6000);
+          this.setState({ intervals: [interval1] });
+          this.network.moveTo(cameraPositions[1]);
+          scroller.scrollTo('proofStepPanel2', getScrollOptions(window.scrollY));
+          break;
+        }
+        case 2: {
+          this.clearAllTimers(this.state);
+          this.setState(this.colorsReset);
+          this.setState(this.step3);
+          scroller.scrollTo('proofStepPanel3', getScrollOptions(window.scrollY));
+          break;
+        }
+        case 3: {
+          this.setState(this.step4);
+          this.network.moveTo(cameraPositions[2]);
+          scroller.scrollTo('proofStepPanel4', getScrollOptions(window.scrollY));
+          break;
+        }
+        case 4: {
+          this.setState(this.step5);
+          scroller.scrollTo('proofStepPanel5', getScrollOptions(window.scrollY));
+          break;
+        }
+        case 5: {
+          this.setState(this.step6);
+          break;
+        }
+        case 6: {
+          this.setState(this.colorsReset);
+          this.setState(this.step7);
+          break;
+        }
+        case 7: {
+          this.setState(this.step8);
+          break;
+        }
+        case 8: {
+          this.setState(this.colorsReset);
+          this.setState(this.step9);
+          scroller.scrollTo('proofStepPanel6', getScrollOptions(window.scrollY));
+          break;
+        }
+        case 9: {
+          this.setState({ btnNextD: true });
+          this.setState(this.step10);
+          scroller.scrollTo('proofStepPanel7', getScrollOptions(window.scrollY));
+          break;
+        }
+        default: {
+          break;
+        }
       }
 
       this.updateCurrentStep(this.state.currentStep, 1);
@@ -117,65 +123,71 @@ class Exercise23 extends React.Component {
     if (this.state.currentStep > 0) {
       this.updateNodesWithNewPositions(this.network.getPositions(), this.state.nodes);
 
-      if (this.state.currentStep === 1) {
-        this.setState({ btnPrevD: true });
-        this.setState(this.stepReset);
-      }
-
-      if (this.state.currentStep === 2) {
-        this.clearAllTimers(this.state);
-        this.setState(this.colorsReset);
-        this.network.moveTo(cameraPositions[0]);
-        scroller.scrollTo('proofStepPanel1', getScrollOptions(window.scrollY));
-      }
-
-      if (this.state.currentStep === 3) {
-        this.setState(this.colorsReset);
-        this.step2Animation();
-        let interval1 = setInterval(this.step2Animation, 6000);
-        this.setState({ intervals: [interval1] });
-        scroller.scrollTo('proofStepPanel2', getScrollOptions(window.scrollY));
-      }
-
-      if (this.state.currentStep === 4) {
-        this.clearAllTimers(this.state);
-        this.setState(this.colorsReset);
-        this.setState(this.step3);
-        this.network.moveTo(cameraPositions[1]);
-        scroller.scrollTo('proofStepPanel3', getScrollOptions(window.scrollY));
-      }
-
-      if (this.state.currentStep === 5) {
-        this.setState(this.colorsReset);
-        this.setState(this.step4);
-        scroller.scrollTo('proofStepPanel4', getScrollOptions(window.scrollY));
-      }
-
-      if (this.state.currentStep === 6) {
-        this.setState(this.step5);
-      }
-
-      if (this.state.currentStep === 7) {
-        this.setState(this.colorsReset);
-        this.setState(this.step6);
-      }
-
-      if (this.state.currentStep === 8) {
-        this.setState(this.colorsReset);
-        this.setState(this.step7);
-      }
-
-      if (this.state.currentStep === 9) {
-        this.setState(this.colorsReset);
-        this.setState(this.step8);
-        scroller.scrollTo('proofStepPanel5', getScrollOptions(window.scrollY));
-      }
-
-      if (this.state.currentStep === 10) {
-        this.setState({ btnNextD: false });
-        this.setState(this.colorsReset);
-        this.setState(this.step9);
-        scroller.scrollTo('proofStepPanel6', getScrollOptions(window.scrollY));
+      switch (this.state.currentStep) {
+        case 1: {
+          this.setState({ btnPrevD: true });
+          this.setState(this.stepReset);
+          break;
+        }
+        case 2: {
+          this.clearAllTimers(this.state);
+          this.setState(this.colorsReset);
+          this.network.moveTo(cameraPositions[0]);
+          scroller.scrollTo('proofStepPanel1', getScrollOptions(window.scrollY));
+          break;
+        }
+        case 3: {
+          this.setState(this.colorsReset);
+          this.step2Animation();
+          let interval1 = setInterval(this.step2Animation, 6000);
+          this.setState({ intervals: [interval1] });
+          scroller.scrollTo('proofStepPanel2', getScrollOptions(window.scrollY));
+          break;
+        }
+        case 4: {
+          this.clearAllTimers(this.state);
+          this.setState(this.colorsReset);
+          this.setState(this.step3);
+          this.network.moveTo(cameraPositions[1]);
+          scroller.scrollTo('proofStepPanel3', getScrollOptions(window.scrollY));
+          break;
+        }
+        case 5: {
+          this.setState(this.colorsReset);
+          this.setState(this.step4);
+          scroller.scrollTo('proofStepPanel4', getScrollOptions(window.scrollY));
+          break;
+        }
+        case 6: {
+          this.setState(this.step5);
+          break;
+        }
+        case 7: {
+          this.setState(this.colorsReset);
+          this.setState(this.step6);
+          break;
+        }
+        case 8: {
+          this.setState(this.colorsReset);
+          this.setState(this.step7);
+          break;
+        }
+        case 9: {
+          this.setState(this.colorsReset);
+          this.setState(this.step8);
+          scroller.scrollTo('proofStepPanel5', getScrollOptions(window.scrollY));
+          break;
+        }
+        case 10: {
+          this.setState({ btnNextD: false });
+          this.setState(this.colorsReset);
+          this.setState(this.step9);
+          scroller.scrollTo('proofStepPanel6', getScrollOptions(window.scrollY));
+          break;
+        }
+        default: {
+          break;
+        }
       }
 
       this.updateCurrentStep(this.state.currentStep, -1);
@@ -184,7 +196,9 @@ class Exercise23 extends React.Component {
 
   repeatStep = () => { };
 
-  stepReset = () => { return { nodes: [], edges: [] }; };
+  stepReset = () => { 
+    return { nodes: [], edges: [] };
+  };
 
   colorsReset = () => {
     return {
