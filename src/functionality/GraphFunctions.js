@@ -175,12 +175,12 @@ export function addObjectArray(objectsState, newObjectsArray) {
 }
 
 /**
- * 
+ * Returns an array of nodes with new postitions, which might change by user's interaction.
  * @param {Object[]} nodesPositions - Actual nodes positions in canvas.
  * @param {Object[]} nodesState - Array of nodes from the state of component.
  */
-export function updateNodesPositions(nodesPositions, stateNodes) {
-  let newNodes = this.state.nodes;
+export function getNodesWithNewPositions(nodesPositions, stateNodes) {
+  let newNodes = stateNodes;
 
   if(Object.keys(nodesPositions).length) {
     for (let i = 0; i < Object.keys(nodesPositions).length; i++) {
@@ -189,7 +189,7 @@ export function updateNodesPositions(nodesPositions, stateNodes) {
       newNodes = updateNodePosition(newNodes, i, newX, newY);
     }
   }
-  return {nodes: newNodes};
+  return newNodes;
 }
 
 /**

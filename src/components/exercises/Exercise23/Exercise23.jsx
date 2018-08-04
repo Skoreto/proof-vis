@@ -9,9 +9,9 @@ import { constants, cameraPositions } from './constants';
 import {
   updateNode,
   updateNodeShape,
-  updateNodesPositions,
   updateEdge,
   updateEdgeWithArrow,
+  getNodesWithNewPositions,
   clearAllTimers,
   handlerSketchAllowance,
   handlerSelectedTool,
@@ -28,7 +28,7 @@ class Exercise23 extends React.Component {
     this.initNetworkInstance = this.initNetworkInstance.bind(this);
     this.updateNode = updateNode.bind(this);
     this.updateNodeShape = updateNodeShape.bind(this);
-    this.updateNodesPositions = updateNodesPositions.bind(this);
+    this.getNodesWithNewPositions = getNodesWithNewPositions.bind(this);
     this.updateEdge = updateEdge.bind(this);
     this.updateEdgeWithArrow = updateEdgeWithArrow.bind(this);
     this.clearAllTimers = clearAllTimers.bind(this);
@@ -52,10 +52,11 @@ class Exercise23 extends React.Component {
   nextStep = () => {
     if (this.state.currentStep < 10) {
 
-      
       if (this.state.nodes.length)
         // Update node positions in state
-        this.setState(this.updateNodesPositions(this.network.getPositions(), this.state.nodes))
+        this.setState(
+          { nodes: this.getNodesWithNewPositions(this.network.getPositions(), this.state.nodes) }
+        );
 
       if (this.state.currentStep === 0) {
         this.setState({ btnPrevD: false });
@@ -122,10 +123,11 @@ class Exercise23 extends React.Component {
   previousStep = () => {
     if (this.state.currentStep > 0) {
 
-      
       if (this.state.nodes.length)
         // Update node positions in state
-        this.setState(this.updateNodesPositions(this.network.getPositions(), this.state.nodes))
+        this.setState(
+          { nodes: this.getNodesWithNewPositions(this.network.getPositions(), this.state.nodes) }
+        );
 
       if (this.state.currentStep === 1) {
         this.setState({ btnPrevD: true });
@@ -261,7 +263,8 @@ class Exercise23 extends React.Component {
   };
 
   step2a = (state) => {
-    let newNodes = this.updateNode(state.nodes, 0, palette.ruby, '   ');
+    let newNodes = this.getNodesWithNewPositions(this.network.getPositions(), state.nodes);
+    newNodes = this.updateNode(newNodes, 0, palette.ruby, '   ');
     newNodes = this.updateNode(newNodes, 1, palette.ruby, '   ');
     newNodes = this.updateNode(newNodes, 2, palette.ruby, '   ');
     newNodes = this.updateNode(newNodes, 3, palette.ruby, ' u ');
@@ -277,7 +280,8 @@ class Exercise23 extends React.Component {
   };
 
   step2c = (state) => {
-    let newNodes = this.updateNode(state.nodes, 3, palette.jade, ' u ');
+    let newNodes = this.getNodesWithNewPositions(this.network.getPositions(), state.nodes);
+    newNodes = this.updateNode(newNodes, 3, palette.jade, ' u ');
     newNodes = this.updateNode(newNodes, 4, palette.jade, ' v ');
     newNodes = this.updateNode(newNodes, 5, palette.jade, '   ');
     newNodes = this.updateNode(newNodes, 6, palette.jade, '   ');
