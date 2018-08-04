@@ -196,10 +196,7 @@ class Exercise21 extends React.Component {
       </svg>
     );
 
-    return {
-      isSVGCoverShowed: true,
-      svgContent: svgContent,
-    }
+    return { isSVGCoverShowed: true, svgContent: svgContent }
   }
 
   step2 = () => {

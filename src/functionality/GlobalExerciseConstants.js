@@ -44,6 +44,7 @@ export const graphVisOptions = {
   autoResize: true,
   height: '100%',
   width: '100%',
+  // Set localization to Czech language and pass object with Czech translations.
   locale: 'cs',
   locales: graphVisLocales,
   // Default node properties
@@ -114,7 +115,6 @@ export const initialExerciseState = {
   btnCircleD: true,
   btnRepeatD: true,
   isDrawingDialogOpen: false,
-  styleProofStepsBox: {},
 };
 
 /**

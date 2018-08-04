@@ -29,7 +29,7 @@ class Exercise20 extends React.Component {
   }
 
   /**
-   * Initialize graphVis network instance.
+   * Initialize GraphVis network instance.
    * @param {Object} networkInstance - Object of network instance returned by getNetwork() callback function.
    */
   initNetworkInstance(networkInstance) {
@@ -134,62 +134,53 @@ class Exercise20 extends React.Component {
     }
   };
 
-  stepReset = () => {
-    return {
-      graphVis: { nodes: [], edges: [] },
-      description: '',
-      repeatBoxHidden: true,
-      repeatBoxContent: '',
-    }
-  };
+  stepReset = () => { return { nodes: [], edges: [], description: '' }; };
 
   step1 = () => {
     return {
-      graphVis: {
-        nodes: [
-          { id: 1, x: -180, y: -40, color: { background: '#ffff08' }, label: '   ' },
-          { id: 2, x: -40, y: -100, color: { background: '#ffff08' }, label: ' x ' },
-          { id: 3, x: -30, y: 50, color: { background: '#ffff08' }, label: '   ' },
-          { id: 4, x: 110, y: -50, color: { background: '#ffff08' }, label: ' y ' },
-          { id: 5, x: 120, y: 80, color: { background: '#ffff08' }, label: '   ' },
-        ],
-        edges: [
-          { id: 1, from: 1, to: 2 },
-          { id: 2, from: 2, to: 3 },
-          { id: 3, from: 2, to: 4, label: 'e' },
-          { id: 4, from: 3, to: 5 },
-          { id: 5, from: 4, to: 5 },
-        ],
-      },
-    }
+      nodes: [
+        { id: 1, x: -180, y: -40, color: { background: '#ffff08' }, label: '   ' },
+        { id: 2, x: -40, y: -100, color: { background: '#ffff08' }, label: ' x ' },
+        { id: 3, x: -30, y: 50, color: { background: '#ffff08' }, label: '   ' },
+        { id: 4, x: 110, y: -50, color: { background: '#ffff08' }, label: ' y ' },
+        { id: 5, x: 120, y: 80, color: { background: '#ffff08' }, label: '   ' },
+      ],
+      edges: [
+        { id: 1, from: 1, to: 2 },
+        { id: 2, from: 2, to: 3 },
+        { id: 3, from: 2, to: 4, label: 'e' },
+        { id: 4, from: 3, to: 5 },
+        { id: 5, from: 4, to: 5 },
+      ],
+    };
   };
 
   step2 = (state) => {
-    let newNodes = this.updateNode(state.graphVis.nodes, 0, '#ffff08', ' u ');
+    let newNodes = this.updateNode(state.nodes, 0, '#ffff08', ' u ');
     newNodes = this.updateNode(newNodes, 1, '#ffff08', ' x ');
     newNodes = this.updateNode(newNodes, 3, '#ffff08', ' y ');
     newNodes = this.updateNode(newNodes, 4, '#ffff08', ' v ');
 
-    let newEdges = this.updateEdge(state.graphVis.edges, 2, '#000000', 1, false, ' e ');
+    let newEdges = this.updateEdge(state.edges, 2, '#000000', 1, false, ' e ');
 
-    return { graphVis: { nodes: newNodes, edges: newEdges } };
+    return { nodes: newNodes, edges: newEdges };
   };
 
   step3 = (state) => {
-    let newNodes = this.updateNode(state.graphVis.nodes, 0, '#B39DDB', ' u ');
+    let newNodes = this.updateNode(state.nodes, 0, '#B39DDB', ' u ');
     newNodes = this.updateNode(newNodes, 1, '#B39DDB', ' x ');
     newNodes = this.updateNode(newNodes, 3, '#B39DDB', ' y ');
     newNodes = this.updateNode(newNodes, 4, '#B39DDB', ' v ');
 
-    let newEdges = this.updateEdge(state.graphVis.edges, 0, '#B39DDB', 2, false, undefined);
+    let newEdges = this.updateEdge(state.edges, 0, '#B39DDB', 2, false, undefined);
     newEdges = this.updateEdge(newEdges, 2, '#B39DDB', 2, false, ' e ');
     newEdges = this.updateEdge(newEdges, 4, '#B39DDB', 2, false, undefined);
 
-    return { graphVis: { nodes: newNodes, edges: newEdges } };
+    return { nodes: newNodes, edges: newEdges };
   };
 
   step4 = (state) => {
-    let newNodes = this.addObjectArray(state.graphVis.nodes, [
+    let newNodes = this.addObjectArray(state.nodes, [
       { id: 6, x: 220, y: -40, color: { background: '#B39DDB' }, label: ' u ' },
       { id: 7, x: 360, y: -100, color: { background: '#B39DDB' }, label: ' x ' },
       { id: 8, x: 370, y: 50, color: { background: '#B39DDB' }, label: '   ' },
@@ -197,7 +188,7 @@ class Exercise20 extends React.Component {
       { id: 10, x: 520, y: 80, color: { background: '#B39DDB' }, label: ' v ' },
     ]);
 
-    let newEdges = this.addObjectArray(state.graphVis.edges, [
+    let newEdges = this.addObjectArray(state.edges, [
       { id: 6, from: 6, to: 7, color: { color: '#B39DDB', hover: '#B39DDB' }, width: 2 },
       { id: 7, from: 7, to: 8, color: { color: '#B39DDB', hover: '#B39DDB' }, width: 2 },
       {
@@ -213,11 +204,11 @@ class Exercise20 extends React.Component {
       { id: 10, from: 9, to: 10 },
     ]);
 
-    return { graphVis: { nodes: newNodes, edges: newEdges } };
+    return { nodes: newNodes, edges: newEdges };
   };
 
   step5 = (state) => {
-    let newNodes = this.updateNode(state.graphVis.nodes, 0, '#FFFF08', '   ');
+    let newNodes = this.updateNode(state.nodes, 0, '#FFFF08', '   ');
     newNodes = this.updateNode(newNodes, 1, '#81C784', ' x ');
     newNodes = this.updateNode(newNodes, 2, '#81C784', '   ');
     newNodes = this.updateNode(newNodes, 3, '#81C784', ' y ');
@@ -228,7 +219,7 @@ class Exercise20 extends React.Component {
     newNodes = this.updateNode(newNodes, 8, '#81C784', ' y ');
     newNodes = this.updateNode(newNodes, 9, '#81C784', '   ');
 
-    let newEdges = this.updateEdge(state.graphVis.edges, 0, '#000000', 1, false, undefined);
+    let newEdges = this.updateEdge(state.edges, 0, '#000000', 1, false, undefined);
     newEdges = this.updateEdge(newEdges, 1, '#81C784', 3, false, undefined);
     newEdges = this.updateEdge(newEdges, 2, '#000000', 1, false, ' e ');
     newEdges = this.updateEdge(newEdges, 3, '#81C784', 3, false, undefined);
@@ -239,7 +230,7 @@ class Exercise20 extends React.Component {
     newEdges = this.updateEdge(newEdges, 8, '#81C784', 3, false, undefined);
     newEdges = this.updateEdge(newEdges, 9, '#81C784', 3, false, undefined);
 
-    return { graphVis: { nodes: newNodes, edges: newEdges } };
+    return { nodes: newNodes, edges: newEdges };
   };
 
   step7 = () => {
@@ -250,13 +241,13 @@ class Exercise20 extends React.Component {
   };
 
   step7a = (state) => {
-    let newEdges = this.updateEdge(state.graphVis.edges, 2, '#81C784', 3, false, ' e ');
-    return { graphVis: { nodes: state.graphVis.nodes, edges: newEdges } };
+    let newEdges = this.updateEdge(state.edges, 2, '#81C784', 3, false, ' e ');
+    return { nodes: state.nodes, edges: newEdges };
   };
 
   step7b = (state) => {
-    let newEdges = this.updateEdge(state.graphVis.edges, 2, '#000000', 1, false, ' e ');
-    return { graphVis: { nodes: state.graphVis.nodes, edges: newEdges } };
+    let newEdges = this.updateEdge(state.edges, 2, '#000000', 1, false, ' e ');
+    return { nodes: state.graphVis.nodes, edges: newEdges };
   };
 
   render() {

@@ -182,10 +182,6 @@ class Exercise23 extends React.Component {
     }
   };
 
-  handleMaximize = () => {return { 
-    styleProofStepsBox: {color: 'blue', backgroundColor: 'red', height: '100%' }
-  } };
-
   repeatStep = () => { };
 
   stepReset = () => { return { nodes: [], edges: [] }; };
@@ -496,7 +492,6 @@ class Exercise23 extends React.Component {
         handleDrawingDialog={
           () => this.setState(() => this.handlerDrawingDialog(this.state.isDrawingDialogOpen))
         }
-        handleMaximize={() => this.setState(() => this.handleMaximize())}
       />
     );
   }

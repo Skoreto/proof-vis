@@ -25,7 +25,7 @@ const ExerciseWrapper = (props) => (
         <Row className="page-row">
           <Col xs={12} md={12} lg={5}>
             <aside>
-              <ProofStepsBox styles={props.styleProofStepsBox}
+              <ProofStepsBox
                 proofStepPanels={props.constants.proofStepPanels}
                 currentStep={props.currentStep} 
               />
@@ -118,11 +118,6 @@ const ExerciseWrapper = (props) => (
                 <span className="drawing-dialog-panel">
                   <Button clicked={props.handleDrawingDialog}>
                     <FontAwesomeIcon icon="edit" />
-                  </Button>
-                </span>
-                <span>
-                  <Button clicked={props.handleMaximize}>
-                    <FontAwesomeIcon icon="minus" />
                   </Button>
                 </span>
               </div>
