@@ -11,6 +11,7 @@ import {
   updateEdge,
   updateEdgeWithArrow,
   addObjectArray,
+  getNodesWithNewPositions,
   clearAllTimers,
   handlerSketchAllowance,
   handlerSelectedTool,
@@ -28,6 +29,7 @@ class Exercise21 extends React.Component {
     this.updateEdge = updateEdge.bind(this);
     this.updateEdgeWithArrow = updateEdgeWithArrow.bind(this);
     this.addObjectArray = addObjectArray.bind(this);
+    this.getNodesWithNewPositions = getNodesWithNewPositions.bind(this);
     this.clearAllTimers = clearAllTimers.bind(this);
     this.handlerSketchAllowance = handlerSketchAllowance.bind(this);
     this.handlerSelectedTool = handlerSelectedTool.bind(this);
@@ -44,6 +46,13 @@ class Exercise21 extends React.Component {
 
   nextStep = () => {
     if (this.state.currentStep <= 7) {
+
+      if (this.state.nodes.length)
+        // Update node positions in state
+        this.setState(
+          { nodes: this.getNodesWithNewPositions(this.network.getPositions(), this.state.nodes) }
+        );
+
       if (this.state.currentStep === 0) {
         this.setState({ btnPrevD: false });
         this.setState(this.step1SVGContent);
@@ -96,6 +105,13 @@ class Exercise21 extends React.Component {
 
   previousStep = () => {
     if (this.state.currentStep > 0) {
+
+      if (this.state.nodes.length)
+      // Update node positions in state
+      this.setState(
+        { nodes: this.getNodesWithNewPositions(this.network.getPositions(), this.state.nodes) }
+      );
+
       if (this.state.currentStep === 1) {
         this.setState({ btnPrevD: true });
         this.setState(this.stepReset);
