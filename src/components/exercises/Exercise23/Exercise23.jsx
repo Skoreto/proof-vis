@@ -52,16 +52,10 @@ class Exercise23 extends React.Component {
   nextStep = () => {
     if (this.state.currentStep < 10) {
 
-      let nodesPositions = this.network.getPositions();
-      if(Object.keys(nodesPositions).length) {
-        let newNodes = this.state.nodes;
-        for (let i = 0; i < Object.keys(nodesPositions).length; i++) {
-          let newX = Object.entries(nodesPositions)[i][1].x;
-          let newY = Object.entries(nodesPositions)[i][1].y;
-          newNodes = this.updateNodesPositions(newNodes, i, newX, newY);
-        }
-        this.setState({ nodes: newNodes })
-      }
+      
+      if (this.state.nodes.length)
+        // Update node positions in state
+        this.setState(this.updateNodesPositions(this.network.getPositions(), this.state.nodes))
 
       if (this.state.currentStep === 0) {
         this.setState({ btnPrevD: false });
@@ -120,15 +114,6 @@ class Exercise23 extends React.Component {
         scroller.scrollTo('proofStepPanel7', getScrollOptions(window.scrollY));
       }
 
-      // if(Object.keys(nodesPositions).length) {
-      //   let newX = Object.entries(nodesPositions)[0][1].x;
-      //   let newY = Object.entries(nodesPositions)[0][1].y;
-      //   let newX2 = Object.entries(nodesPositions)[1][1].x;
-      //   let newY2 = Object.entries(nodesPositions)[1][1].y;
-      //   console.log(newX);
-      //   console.log(newY);
-      // }
-      
       // Increase currentStep after a step was executed
       this.setState((state) => { return { currentStep: state.currentStep += 1 } });
     }
@@ -137,17 +122,10 @@ class Exercise23 extends React.Component {
   previousStep = () => {
     if (this.state.currentStep > 0) {
 
-      let nodesPositions = this.network.getPositions();
-      if(Object.keys(nodesPositions).length) {
-        let newNodes = this.state.nodes;
-        for (let i = 0; i < Object.keys(nodesPositions).length; i++) {
-          let newX = Object.entries(nodesPositions)[i][1].x;
-          let newY = Object.entries(nodesPositions)[i][1].y;
-          newNodes = this.updateNodesPositions(newNodes, i, newX, newY);
-        }
-        this.setState({ nodes: newNodes })
-      }
-
+      
+      if (this.state.nodes.length)
+        // Update node positions in state
+        this.setState(this.updateNodesPositions(this.network.getPositions(), this.state.nodes))
 
       if (this.state.currentStep === 1) {
         this.setState({ btnPrevD: true });

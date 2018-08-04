@@ -68,7 +68,7 @@ export function updateNodeShape(nodesState, nodeIndex, background, label, vadjus
  * @param newX - New X coordinate of the node.
  * @param newY - New Y coordinate of the node.
  */
-export function updateNodesPositions(nodesState, nodeIndex, newX, newY) {
+export function updateNodePosition(nodesState, nodeIndex, newX, newY) {
   return imHelp(nodesState, { 
     [nodeIndex]: { 
       x: { $set: newX },
@@ -172,6 +172,24 @@ export function updateEdgeSmooth(
  */
 export function addObjectArray(objectsState, newObjectsArray) {
   return imHelp(objectsState, { $push: newObjectsArray });
+}
+
+/**
+ * 
+ * @param {Object[]} nodesPositions - Actual nodes positions in canvas.
+ * @param {Object[]} nodesState - Array of nodes from the state of component.
+ */
+export function updateNodesPositions(nodesPositions, stateNodes) {
+  let newNodes = this.state.nodes;
+
+  if(Object.keys(nodesPositions).length) {
+    for (let i = 0; i < Object.keys(nodesPositions).length; i++) {
+      let newX = Object.entries(nodesPositions)[i][1].x;
+      let newY = Object.entries(nodesPositions)[i][1].y;
+      newNodes = updateNodePosition(newNodes, i, newX, newY);
+    }
+  }
+  return {nodes: newNodes};
 }
 
 /**
