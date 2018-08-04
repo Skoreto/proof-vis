@@ -1,5 +1,9 @@
 import React from 'react';
-import { initialExerciseState, events } from '../../../functionality/GlobalExerciseConstants';
+import {
+  initialExerciseState,
+  events,
+  palette,
+} from '../../../functionality/GlobalExerciseConstants';
 import { constants, cameraPositions } from './constants';
 import {
   updateNode,
@@ -151,11 +155,11 @@ class Exercise20 extends React.Component {
   step1 = () => {
     return {
       nodes: [
-        { id: 1, x: -180, y: -40, color: { background: '#ffff08' }, label: '   ' },
-        { id: 2, x: -40, y: -100, color: { background: '#ffff08' }, label: ' x ' },
-        { id: 3, x: -30, y: 50, color: { background: '#ffff08' }, label: '   ' },
-        { id: 4, x: 110, y: -50, color: { background: '#ffff08' }, label: ' y ' },
-        { id: 5, x: 120, y: 80, color: { background: '#ffff08' }, label: '   ' },
+        { id: 1, x: -180, y: -40, color: { background: palette.yellow }, label: '   ' },
+        { id: 2, x: -40, y: -100, color: { background: palette.yellow }, label: ' x ' },
+        { id: 3, x: -30, y: 50, color: { background: palette.yellow }, label: '   ' },
+        { id: 4, x: 110, y: -50, color: { background: palette.yellow }, label: ' y ' },
+        { id: 5, x: 120, y: 80, color: { background: palette.yellow }, label: '   ' },
       ],
       edges: [
         { id: 1, from: 1, to: 2 },
@@ -168,51 +172,51 @@ class Exercise20 extends React.Component {
   };
 
   step2 = (state) => {
-    let newNodes = this.updateNode(state.nodes, 0, '#ffff08', ' u ');
-    newNodes = this.updateNode(newNodes, 1, '#ffff08', ' x ');
-    newNodes = this.updateNode(newNodes, 3, '#ffff08', ' y ');
-    newNodes = this.updateNode(newNodes, 4, '#ffff08', ' v ');
+    let newNodes = this.updateNode(state.nodes, 0, palette.yellow, ' u ');
+    newNodes = this.updateNode(newNodes, 1, palette.yellow, ' x ');
+    newNodes = this.updateNode(newNodes, 3, palette.yellow, ' y ');
+    newNodes = this.updateNode(newNodes, 4, palette.yellow, ' v ');
 
-    let newEdges = this.updateEdge(state.edges, 2, '#000000', 1, false, ' e ');
+    let newEdges = this.updateEdge(state.edges, 2, palette.black, 1, false, ' e ');
 
     return { nodes: newNodes, edges: newEdges };
   };
 
   step3 = (state) => {
-    let newNodes = this.updateNode(state.nodes, 0, '#B39DDB', ' u ');
-    newNodes = this.updateNode(newNodes, 1, '#B39DDB', ' x ');
-    newNodes = this.updateNode(newNodes, 3, '#B39DDB', ' y ');
-    newNodes = this.updateNode(newNodes, 4, '#B39DDB', ' v ');
+    let newNodes = this.updateNode(state.nodes, 0, palette.purple, ' u ');
+    newNodes = this.updateNode(newNodes, 1, palette.purple, ' x ');
+    newNodes = this.updateNode(newNodes, 3, palette.purple, ' y ');
+    newNodes = this.updateNode(newNodes, 4, palette.purple, ' v ');
 
-    let newEdges = this.updateEdge(state.edges, 0, '#B39DDB', 2, false, undefined);
-    newEdges = this.updateEdge(newEdges, 2, '#B39DDB', 2, false, ' e ');
-    newEdges = this.updateEdge(newEdges, 4, '#B39DDB', 2, false, undefined);
+    let newEdges = this.updateEdge(state.edges, 0, palette.purple, 2, false, undefined);
+    newEdges = this.updateEdge(newEdges, 2, palette.purple, 2, false, ' e ');
+    newEdges = this.updateEdge(newEdges, 4, palette.purple, 2, false, undefined);
 
     return { nodes: newNodes, edges: newEdges };
   };
 
   step4 = (state) => {
     let newNodes = this.addObjectArray(state.nodes, [
-      { id: 6, x: 220, y: -40, color: { background: '#B39DDB' }, label: ' u ' },
-      { id: 7, x: 360, y: -100, color: { background: '#B39DDB' }, label: ' x ' },
-      { id: 8, x: 370, y: 50, color: { background: '#B39DDB' }, label: '   ' },
-      { id: 9, x: 510, y: -50, color: { background: '#FFFF08' }, label: ' y ' },
-      { id: 10, x: 520, y: 80, color: { background: '#B39DDB' }, label: ' v ' },
+      { id: 6, x: 220, y: -40, color: { background: palette.purple }, label: ' u ' },
+      { id: 7, x: 360, y: -100, color: { background: palette.purple }, label: ' x ' },
+      { id: 8, x: 370, y: 50, color: { background: palette.purple }, label: '   ' },
+      { id: 9, x: 510, y: -50, color: { background: palette.yellow }, label: ' y ' },
+      { id: 10, x: 520, y: 80, color: { background: palette.purple }, label: ' v ' },
     ]);
 
     let newEdges = this.addObjectArray(state.edges, [
-      { id: 6, from: 6, to: 7, color: { color: '#B39DDB', hover: '#B39DDB' }, width: 2 },
-      { id: 7, from: 7, to: 8, color: { color: '#B39DDB', hover: '#B39DDB' }, width: 2 },
+      { id: 6, from: 6, to: 7, color: { color: palette.purple, hover: palette.purple }, width: 2 },
+      { id: 7, from: 7, to: 8, color: { color: palette.purple, hover: palette.purple }, width: 2 },
       {
         id: 8,
         from: 7,
         to: 9,
-        color: { color: 'red', hover: 'red' },
+        color: { color: palette.red, hover: palette.red },
         width: 2,
         dashes: [8, 8],
         label: ' e ',
       },
-      { id: 9, from: 8, to: 10, color: { color: '#B39DDB', hover: '#B39DDB' }, width: 2 },
+      { id: 9, from: 8, to: 10, color: { color: palette.purple, hover: palette.purple }, width: 2 },
       { id: 10, from: 9, to: 10 },
     ]);
 
@@ -220,27 +224,27 @@ class Exercise20 extends React.Component {
   };
 
   step5 = (state) => {
-    let newNodes = this.updateNode(state.nodes, 0, '#FFFF08', '   ');
-    newNodes = this.updateNode(newNodes, 1, '#81C784', ' x ');
-    newNodes = this.updateNode(newNodes, 2, '#81C784', '   ');
-    newNodes = this.updateNode(newNodes, 3, '#81C784', ' y ');
-    newNodes = this.updateNode(newNodes, 4, '#81C784', '   ');
-    newNodes = this.updateNode(newNodes, 5, '#FFFF08', '   ');
-    newNodes = this.updateNode(newNodes, 6, '#81C784', ' x ');
-    newNodes = this.updateNode(newNodes, 7, '#81C784', '   ');
-    newNodes = this.updateNode(newNodes, 8, '#81C784', ' y ');
-    newNodes = this.updateNode(newNodes, 9, '#81C784', '   ');
+    let newNodes = this.updateNode(state.nodes, 0, palette.yellow, '   ');
+    newNodes = this.updateNode(newNodes, 1, palette.green, ' x ');
+    newNodes = this.updateNode(newNodes, 2, palette.green, '   ');
+    newNodes = this.updateNode(newNodes, 3, palette.green, ' y ');
+    newNodes = this.updateNode(newNodes, 4, palette.green, '   ');
+    newNodes = this.updateNode(newNodes, 5, palette.yellow, '   ');
+    newNodes = this.updateNode(newNodes, 6, palette.green, ' x ');
+    newNodes = this.updateNode(newNodes, 7, palette.green, '   ');
+    newNodes = this.updateNode(newNodes, 8, palette.green, ' y ');
+    newNodes = this.updateNode(newNodes, 9, palette.green, '   ');
 
-    let newEdges = this.updateEdge(state.edges, 0, '#000000', 1, false, undefined);
-    newEdges = this.updateEdge(newEdges, 1, '#81C784', 3, false, undefined);
-    newEdges = this.updateEdge(newEdges, 2, '#000000', 1, false, ' e ');
-    newEdges = this.updateEdge(newEdges, 3, '#81C784', 3, false, undefined);
-    newEdges = this.updateEdge(newEdges, 4, '#81C784', 3, false, undefined);
-    newEdges = this.updateEdge(newEdges, 5, '#000000', 1, false, undefined);
-    newEdges = this.updateEdge(newEdges, 6, '#81C784', 3, false, undefined);
-    newEdges = this.updateEdge(newEdges, 7, '#FFFFFF', 2, false, '   ');
-    newEdges = this.updateEdge(newEdges, 8, '#81C784', 3, false, undefined);
-    newEdges = this.updateEdge(newEdges, 9, '#81C784', 3, false, undefined);
+    let newEdges = this.updateEdge(state.edges, 0, palette.black, 1, false, undefined);
+    newEdges = this.updateEdge(newEdges, 1, palette.green, 3, false, undefined);
+    newEdges = this.updateEdge(newEdges, 2, palette.black, 1, false, ' e ');
+    newEdges = this.updateEdge(newEdges, 3, palette.green, 3, false, undefined);
+    newEdges = this.updateEdge(newEdges, 4, palette.green, 3, false, undefined);
+    newEdges = this.updateEdge(newEdges, 5, palette.black, 1, false, undefined);
+    newEdges = this.updateEdge(newEdges, 6, palette.green, 3, false, undefined);
+    newEdges = this.updateEdge(newEdges, 7, palette.white, 2, false, '   ');
+    newEdges = this.updateEdge(newEdges, 8, palette.green, 3, false, undefined);
+    newEdges = this.updateEdge(newEdges, 9, palette.green, 3, false, undefined);
 
     return { nodes: newNodes, edges: newEdges };
   };
@@ -253,12 +257,12 @@ class Exercise20 extends React.Component {
   };
 
   step7a = (state) => {
-    let newEdges = this.updateEdge(state.edges, 2, '#81C784', 3, false, ' e ');
+    let newEdges = this.updateEdge(state.edges, 2, palette.green, 3, false, ' e ');
     return { edges: newEdges };
   };
 
   step7b = (state) => {
-    let newEdges = this.updateEdge(state.edges, 2, '#000000', 1, false, ' e ');
+    let newEdges = this.updateEdge(state.edges, 2, palette.black, 1, false, ' e ');
     return { edges: newEdges };
   };
 
