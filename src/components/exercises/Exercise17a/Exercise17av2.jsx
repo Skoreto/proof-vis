@@ -12,6 +12,7 @@ import {
   updateEdgeSmooth,
   addObjectArray,
   clearAllTimers,
+  updateCurrentStep,
   handlerSketchAllowance,
   handlerSelectedTool,
   handlerDrawingDialog,
@@ -29,77 +30,88 @@ class Exercise17av2 extends React.Component {
     this.updateEdgeSmooth = updateEdgeSmooth.bind(this);
     this.addObjectArray = addObjectArray.bind(this);
     this.clearAllTimers = clearAllTimers.bind(this);
+    this.updateCurrentStep = updateCurrentStep.bind(this);
     this.handlerSketchAllowance = handlerSketchAllowance.bind(this);
     this.handlerSelectedTool = handlerSelectedTool.bind(this);
     this.handlerDrawingDialog = handlerDrawingDialog.bind(this);
   }
 
   nextStep = () => {
-    if (this.state.currentStep < 4) {
-      if (this.state.currentStep === 0) {
-        this.setState({ btnPrevD: false });
-        this.setState(this.step1);
+    if (this.state.currentStep < constants.stepSum) {
+      switch (this.state.currentStep) {
+        case 0: {
+          this.setState({ btnPrevD: false });
+          this.setState(this.step1);
+          break;
+        }
+        case 1: {
+          this.setState({ btnRepeatD: false });
+          this.step2();
+          let interval1 = setInterval(this.step2, 8000);
+          this.setState({ intervals: [interval1] });
+          this.setState(this.step2Texts);
+          break;
+        }
+        case 2: {
+          this.clearAllTimers(this.state);
+          this.setState(this.stepReset);
+          this.setState(this.step1);
+          this.step3();
+          let interval2 = setInterval(this.step3, 17000);
+          this.setState({ intervals: [interval2] });
+          break;
+        }
+        case 3: {
+          this.setState({ btnNextD: true });
+          break;
+        }
+        default: {
+          break;
+        }
       }
 
-      if (this.state.currentStep === 1) {
-        this.setState({ btnRepeatD: false });
-        this.step2();
-        let interval1 = setInterval(this.step2, 8000);
-        this.setState({ intervals: [interval1] });
-        this.setState(this.step2Texts);
-      }
-
-      if (this.state.currentStep === 2) {
-        this.clearAllTimers(this.state);
-        this.setState(this.stepReset);
-        this.setState(this.step1);
-        this.step3();
-        let interval2 = setInterval(this.step3, 17000);
-        this.setState({ intervals: [interval2] });
-      }
-
-      if (this.state.currentStep === 3) {
-        this.setState({ btnNextD: true });
-      }
-
-      // Increase currentStep after a step was executed
-      this.setState((state) => { return { currentStep: state.currentStep += 1 } });
+      this.updateCurrentStep(this.state.currentStep, 1);
     }
   };
 
   previousStep = () => {
     if (this.state.currentStep > 0) {
-      if (this.state.currentStep === 1) {
-        this.setState({ btnPrevD: true });
-        this.clearAllTimers(this.state);
-        this.setState(this.stepReset);
+      switch (this.state.currentStep) {
+        case 1: {
+          this.setState({ btnPrevD: true });
+          this.clearAllTimers(this.state);
+          this.setState(this.stepReset);
+          break;
+        }
+        case 2: {
+          this.setState({ btnRepeatD: true });
+          this.clearAllTimers(this.state);
+          this.setState(this.stepReset);
+          this.setState(this.step1);
+          break;
+        }
+        case 3: {
+          this.setState({ btnNextD: false });
+          this.setState({ btnRepeatD: false });
+          this.clearAllTimers(this.state);
+          this.setState(this.stepReset);
+          this.setState(this.step1);
+          this.step2();
+          let interval1 = setInterval(this.step2, 8000);
+          this.setState({ intervals: [interval1] });
+          this.setState(this.step2Texts);
+          break;
+        }
+        case 4: {
+          this.setState({ btnNextD: false });
+          break;
+        }
+        default: {
+          break;
+        }
       }
 
-      if (this.state.currentStep === 2) {
-        this.setState({ btnRepeatD: true });
-        this.clearAllTimers(this.state);
-        this.setState(this.stepReset);
-        this.setState(this.step1);
-      }
-
-      if (this.state.currentStep === 3) {
-        this.setState({ btnNextD: false });
-        this.setState({ btnRepeatD: false });
-        this.clearAllTimers(this.state);
-        this.setState(this.stepReset);
-        this.setState(this.step1);
-        this.step2();
-        let interval1 = setInterval(this.step2, 8000);
-        this.setState({ intervals: [interval1] });
-        this.setState(this.step2Texts);
-      }
-
-      if (this.state.currentStep === 4) {
-        this.setState({ btnNextD: false });
-      }
-
-      // Reduce currentStep after a step was executed
-      this.setState((state) => { return { currentStep: state.currentStep -= 1 } });
+      this.updateCurrentStep(this.state.currentStep, -1);
     }
   };
 
@@ -122,22 +134,20 @@ class Exercise17av2 extends React.Component {
   };
 
   stepReset = () => {
-    return { graphVis: { nodes: [], edges: [] } };
+    return { nodes: [], edges: [] };
   };
 
   step1 = () => {
     return {
-      graphVis: {
-        nodes: [
-          { id: 1, x: -240, y: 0, color: { background: palette.yellow }, label: ' u ' },
-          { id: 2, x: 0, y: 0, color: { background: palette.yellow }, label: ' w ' },
-          { id: 3, x: 240, y: 0, color: { background: palette.yellow }, label: ' v ' },
-        ],
-        edges: [
-          { id: 1, from: 1, to: 2, label: 'e1' },
-          { id: 2, from: 2, to: 3, label: 'e2' },
-        ],
-      },
+      nodes: [
+        { id: 1, x: -240, y: 0, color: { background: palette.yellow }, label: ' u ' },
+        { id: 2, x: 0, y: 0, color: { background: palette.yellow }, label: ' w ' },
+        { id: 3, x: 240, y: 0, color: { background: palette.yellow }, label: ' v ' },
+      ],
+      edges: [
+        { id: 1, from: 1, to: 2, label: 'e1' },
+        { id: 2, from: 2, to: 3, label: 'e2' },
+      ],
     };
   };
 
@@ -157,63 +167,63 @@ class Exercise17av2 extends React.Component {
   };
 
   step2a = (state) => {
-    let newNodes = this.updateNode(state.graphVis.nodes, 0, palette.lightpurple, ' u ');
+    let newNodes = this.updateNode(state.nodes, 0, palette.lightpurple, ' u ');
     const description = (
       <p>
         Konstrukce sledu <MN>S_1 = (</MN><MN classes='text-purple'>u</MN><MN>,e_1,w,e_2,v)</MN>
       </p>
     );
-    return { graphVis: { nodes: newNodes, edges: state.graphVis.edges } };
+    return { nodes: newNodes };
   };
 
   step2b = (state) => {
     let newEdges = this.updateEdgeWithArrow(
-      state.graphVis.edges, 0, palette.lightpurple, 3, false, ' e1 ', true, false
+      state.edges, 0, palette.lightpurple, 3, false, ' e1 ', true, false
     );
     const description = (
       <p>
         Konstrukce sledu <MN>S_1 = (</MN><MN classes='text-purple'>u,e_1</MN><MN>,w,e_2,v)</MN>
       </p>
     );
-    return { graphVis: { nodes: state.graphVis.nodes, edges: newEdges }, description: description };
+    return { edges: newEdges, description: description };
   };
 
   step2c = (state) => {
-    let newNodes = this.updateNode(state.graphVis.nodes, 1, palette.lightpurple, ' w ');
+    let newNodes = this.updateNode(state.nodes, 1, palette.lightpurple, ' w ');
     let newEdges = this.updateEdgeWithArrow(
-      state.graphVis.edges, 0, palette.lightpurple, 3, false, ' e1 ', false, false
+      state.edges, 0, palette.lightpurple, 3, false, ' e1 ', false, false
     );
     const description = (
       <p>
         Konstrukce sledu <MN>S_1 = (</MN><MN classes='text-purple'>u,e_1,w</MN><MN>,e_2,v)</MN>
       </p>
     );
-    return { graphVis: { nodes: newNodes, edges: newEdges }, description: description };
+    return { nodes: newNodes, edges: newEdges, description: description };
   };
 
   step2d = (state) => {
     let newEdges = this.updateEdgeWithArrow(
-      state.graphVis.edges, 1, palette.lightpurple, 3, false, ' e2 ', true, false
+      state.edges, 1, palette.lightpurple, 3, false, ' e2 ', true, false
     );
     const description = (
       <p>
         Konstrukce sledu <MN>S_1 = (</MN><MN classes='text-purple'>u,e_1,w,e_2</MN><MN>,v)</MN>
       </p>
     );
-    return { graphVis: { nodes: state.graphVis.nodes, edges: newEdges }, description: description };
+    return { edges: newEdges, description: description };
   };
 
   step2e = (state) => {
-    let newNodes = this.updateNode(state.graphVis.nodes, 2, palette.lightpurple, ' v ');
+    let newNodes = this.updateNode(state.nodes, 2, palette.lightpurple, ' v ');
     let newEdges = this.updateEdgeWithArrow(
-      state.graphVis.edges, 1, palette.lightpurple, 3, false, ' e2 ', false, false
+      state.edges, 1, palette.lightpurple, 3, false, ' e2 ', false, false
     );
     const description = (
       <p>
         Konstrukce sledu <MN>S_1 = (</MN><MN classes='text-purple'>u,e_1,w,e_2,v</MN><MN>)</MN>
       </p>
     );
-    return { graphVis: { nodes: newNodes, edges: newEdges }, description: description };
+    return { nodes: newNodes, edges: newEdges, description: description };
   };
 
   step2Texts = () => {
@@ -253,24 +263,24 @@ class Exercise17av2 extends React.Component {
   };
 
   step3a = (state) => {
-    let newNodes = this.updateNode(state.graphVis.nodes, 0, palette.lightpurple, ' u ');
-    return { graphVis: { nodes: newNodes, edges: state.graphVis.edges } };
+    let newNodes = this.updateNode(state.nodes, 0, palette.lightpurple, ' u ');
+    return { nodes: newNodes };
   };
 
   step3b = (state) => {
     let newEdges = this.updateEdgeWithArrow(
-      state.graphVis.edges, 0, palette.lightpurple, 3, false, ' e1 ', true, false
+      state.edges, 0, palette.lightpurple, 3, false, ' e1 ', true, false
     );
-    return { graphVis: { nodes: state.graphVis.nodes, edges: newEdges } };
+    return { edges: newEdges };
   };
 
   step3c = (state) => {
-    let newNodes = this.updateNode(state.graphVis.nodes, 1, palette.lightpurple, ' w ');
-    return { graphVis: { nodes: newNodes, edges: this.state.graphVis.edges } };
+    let newNodes = this.updateNode(state.nodes, 1, palette.lightpurple, ' w ');
+    return { nodes: newNodes };
   };
 
   step3e = (state) => {
-    let newEdges = this.addObjectArray(state.graphVis.edges, [
+    let newEdges = this.addObjectArray(state.edges, [
       {
         id: 3, 
         from: 2, 
@@ -281,16 +291,16 @@ class Exercise17av2 extends React.Component {
         smooth: { enabled: true, type: "curvedCW", roundness: 0.3 },
       }
     ]);
-    return { graphVis: { nodes: state.graphVis.nodes, edges: newEdges } };
+    return { edges: newEdges };
   };
 
   step3f = (state) => {
-    let newNodes = this.updateNode(state.graphVis.nodes, 0, palette.purple, ' u ');
-    return { graphVis: { nodes: newNodes, edges: this.state.graphVis.edges } };
+    let newNodes = this.updateNode(state.nodes, 0, palette.purple, ' u ');
+    return { nodes: newNodes };
   };
 
   step3h = (state) => {
-    let newEdges = this.addObjectArray(state.graphVis.edges, [
+    let newEdges = this.addObjectArray(state.edges, [
       {
         id: 4, 
         from: 1, 
@@ -301,24 +311,24 @@ class Exercise17av2 extends React.Component {
         smooth: { enabled: true, type: "curvedCW", roundness: 0.3 },
       }
     ]);
-    return { graphVis: { nodes: state.graphVis.nodes, edges: newEdges } };
+    return { edges: newEdges };
   };
 
   step3i = (state) => {
-    let newNodes = this.updateNode(state.graphVis.nodes, 1, palette.purple, ' w ');
-    return { graphVis: { nodes: newNodes, edges: state.graphVis.edges } };
+    let newNodes = this.updateNode(state.nodes, 1, palette.purple, ' w ');
+    return { nodes: newNodes };
   }; 
 
   step3j = (state) => {
     let newEdges = this.updateEdgeWithArrow(
-      state.graphVis.edges, 1, palette.lightpurple, 3, false, ' e2 ', true, false
+      state.edges, 1, palette.lightpurple, 3, false, ' e2 ', true, false
     );
-    return { graphVis: { nodes: state.graphVis.nodes, edges: newEdges } };
+    return { edges: newEdges };
   };
 
   step3k = (state) => {
-    let newNodes = this.updateNode(state.graphVis.nodes, 2, palette.lightpurple, ' v ');
-    return { graphVis: { nodes: newNodes, edges: state.graphVis.edges } };
+    let newNodes = this.updateNode(state.nodes, 2, palette.lightpurple, ' v ');
+    return { nodes: newNodes };
   };
 
   render() {
