@@ -112,10 +112,9 @@ export const initialExerciseState = {
   btnLineD: true,
   btnCircleA: false,
   btnCircleD: true,
-  repeatBoxHidden: true,
-  repeatBoxContent: '',
   btnRepeatD: true,
   isDrawingDialogOpen: false,
+  styleProofStepsBox: {},
 };
 
 /**

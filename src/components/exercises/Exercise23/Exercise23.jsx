@@ -1,11 +1,11 @@
 import React from 'react';
+import { scroller } from 'react-scroll';
+import { constants, cameraPositions } from './constants';
 import {
   initialExerciseState,
   events,
   palette,
 } from '../../../functionality/GlobalExerciseConstants';
-import { scroller } from 'react-scroll';
-import { constants, cameraPositions } from './constants';
 import {
   updateNode,
   updateNodeShape,
@@ -181,6 +181,10 @@ class Exercise23 extends React.Component {
       this.updateCurrentStep(this.state.currentStep, -1);
     }
   };
+
+  handleMaximize = () => {return { 
+    styleProofStepsBox: {color: 'blue', backgroundColor: 'red', height: '100%' }
+  } };
 
   repeatStep = () => { };
 
@@ -492,6 +496,7 @@ class Exercise23 extends React.Component {
         handleDrawingDialog={
           () => this.setState(() => this.handlerDrawingDialog(this.state.isDrawingDialogOpen))
         }
+        handleMaximize={() => this.setState(() => this.handleMaximize())}
       />
     );
   }

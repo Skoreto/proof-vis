@@ -5,7 +5,7 @@ import './ProofStepsBox.css';
 
 const ProofStepsBox = (props) => (
   <MathJax.Context input="tex">
-    <Element className="bg-warning" id="proof-steps-box">
+    <Element className="bg-warning" id="proof-steps-box" style={props.styles}>
       {props.proofStepPanels.map((proofStepPanel, index) =>
         <Element
           key={index + "-" + proofStepPanel.name}
