@@ -4,7 +4,7 @@ import {
   events,
   palette,
 } from '../../../functionality/GlobalExerciseConstants';
-import { scrollSpy, scroller } from 'react-scroll';
+import { scroller } from 'react-scroll';
 import { constants, cameraPositions } from './constants';
 import {
   updateNode,
@@ -14,6 +14,7 @@ import {
   getNodesWithNewPositions,
   updateNodesWithNewPositions,
   clearAllTimers,
+  updateCurrentStep,
   handlerSketchAllowance,
   handlerSelectedTool,
   handlerDrawingDialog,
@@ -25,7 +26,6 @@ class Exercise23 extends React.Component {
   constructor(props) {
     super(props);
     this.state = initialExerciseState;
-    const network = null;
     this.initNetworkInstance = this.initNetworkInstance.bind(this);
     this.updateNode = updateNode.bind(this);
     this.updateNodeShape = updateNodeShape.bind(this);
@@ -34,13 +34,10 @@ class Exercise23 extends React.Component {
     this.updateEdge = updateEdge.bind(this);
     this.updateEdgeWithArrow = updateEdgeWithArrow.bind(this);
     this.clearAllTimers = clearAllTimers.bind(this);
+    this.updateCurrentStep = updateCurrentStep.bind(this);
     this.handlerSketchAllowance = handlerSketchAllowance.bind(this);
     this.handlerSelectedTool = handlerSelectedTool.bind(this);
     this.handlerDrawingDialog = handlerDrawingDialog.bind(this);
-  }
-
-  componentDidMount() {
-    scrollSpy.update();
   }
 
   /**
@@ -112,8 +109,7 @@ class Exercise23 extends React.Component {
         scroller.scrollTo('proofStepPanel7', getScrollOptions(window.scrollY));
       }
 
-      // Increase currentStep after a step was executed
-      this.setState((state) => { return { currentStep: state.currentStep += 1 } });
+      this.updateCurrentStep(this.state.currentStep, 1);
     }
   };
 
@@ -182,8 +178,7 @@ class Exercise23 extends React.Component {
         scroller.scrollTo('proofStepPanel6', getScrollOptions(window.scrollY));
       }
 
-      // Reduce currentStep after a step was executed
-      this.setState((state) => { return { currentStep: state.currentStep -= 1 } });
+      this.updateCurrentStep(this.state.currentStep, -1);
     }
   };
 

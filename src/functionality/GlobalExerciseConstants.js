@@ -1,6 +1,22 @@
 import { Tools } from 'react-sketch';
 
 /**
+ * Palette of global color presets.
+ */
+export const palette = {
+  yellow: '#FFFF08',
+  black: '#000000',
+  white: '#FFFFFF',
+  lightpurple: '#D1C4E9',
+  purple: '#B39DDB',  // #B388FF
+  green: '#81C784',
+  jade: '#4DB6AC',
+  red: '#F06292',
+  ruby: '#EC407A',
+  orange: '#FF7043',
+};
+
+/**
  * Czech localization for graphVis editing bar.
  */
 export const graphVisLocales = {
@@ -22,7 +38,7 @@ export const graphVisLocales = {
 };
 
 /**
- * Default presets for graphVis.
+ * Default presets for GraphVis component.
  */
 export const graphVisOptions = {
   autoResize: true,
@@ -30,11 +46,10 @@ export const graphVisOptions = {
   width: '100%',
   locale: 'cs',
   locales: graphVisLocales,
-  clickToUse: true, // smazat po vyzkouseni
   // Default node properties
   nodes: {
     shape: 'circle',
-    color: { background: '#ffff08', border: '#000000' },
+    color: { background: palette.yellow, border: palette.black },
     label: '   ',
     margin: 12,
     font: { size: 18 },
@@ -45,7 +60,7 @@ export const graphVisOptions = {
       to: { enabled: false, scaleFactor: 2 },
       from: { enabled: false, scaleFactor: 2 },
     },
-    color: { color: '#000000', hover: '#000000' },
+    color: { color: palette.black, hover: palette.black },
     width: 1,
     dashes: false,
     label: '   ',
@@ -70,11 +85,6 @@ export const graphVisOptions = {
   physics: false,
   // Turn configuration panel off
   configure: false,
-  // configure: {
-  //   enabled: true,
-  //   filter: 'nodes,edges,layout,interaction,manipulation,physics,selection,renderer',
-  //   showButton: true,
-  // },
 };
 
 /**
@@ -109,22 +119,6 @@ export const initialExerciseState = {
 };
 
 /**
- * GraphVis events object.
+ * GraphVis component events object.
  */
 export const events = {};
-
-/**
- * Palette of global color presets.
- */
-export const palette = {
-  yellow: '#FFFF08',
-  black: '#000000',
-  white: '#FFFFFF',
-  lightpurple: '#D1C4E9',
-  purple: '#B39DDB',  // #B388FF
-  green: '#81C784',
-  jade: '#4DB6AC',
-  red: '#F06292',
-  ruby: '#EC407A',
-  orange: '#FF7043',
-};

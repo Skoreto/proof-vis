@@ -221,6 +221,15 @@ export function clearAllTimers(state) {
 }
 
 /**
+ * Increases or decreases currentStep in component state after a step was executed by increment.
+ * @param {number} stateCurrentStep - Current step number in component state.
+ * @param {number} increment - Number to increment to the current state.
+ */
+export function updateCurrentStep(stateCurrentStep, increment) {
+  this.setState({ currentStep: stateCurrentStep += increment });
+}
+
+/**
  * Handler for activating drawing over graph.
  * @param state - State of the component.
  */
