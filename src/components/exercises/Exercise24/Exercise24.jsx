@@ -34,7 +34,7 @@ class Exercise24 extends React.Component {
   }
 
   nextStep = () => {
-    if (this.state.currentStep < 8) {
+    if (this.state.currentStep < constants.stepSum) {
       switch (this.state.currentStep) {
         case 0: {
           this.setState({ btnPrevD: false });

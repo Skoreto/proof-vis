@@ -14,6 +14,7 @@ import {
   getNodesWithNewPositions,
   updateNodesWithNewPositions,
   clearAllTimers,
+  updateCurrentStep,
   handlerSketchAllowance,
   handlerSelectedTool,
   handlerDrawingDialog,
@@ -33,6 +34,7 @@ class Exercise21 extends React.Component {
     this.getNodesWithNewPositions = getNodesWithNewPositions.bind(this);
     this.updateNodesWithNewPositions = updateNodesWithNewPositions.bind(this);
     this.clearAllTimers = clearAllTimers.bind(this);
+    this.updateCurrentStep = updateCurrentStep.bind(this);
     this.handlerSketchAllowance = handlerSketchAllowance.bind(this);
     this.handlerSelectedTool = handlerSelectedTool.bind(this);
     this.handlerDrawingDialog = handlerDrawingDialog.bind(this);
@@ -47,133 +49,140 @@ class Exercise21 extends React.Component {
   }
 
   nextStep = () => {
-    if (this.state.currentStep <= 7) {
+    if (this.state.currentStep < constants.stepSum) {
       this.updateNodesWithNewPositions(this.network.getPositions(), this.state.nodes);
 
-      if (this.state.currentStep === 0) {
-        this.setState({ btnPrevD: false });
-        this.setState(this.step1SVGContent);
+      switch (this.state.currentStep) {
+        case 0: {
+          this.setState({ btnPrevD: false });
+          this.setState(this.step1SVGContent);
+          break;
+        }
+        case 1: {
+          this.setState(this.step2);
+          this.network.moveTo(cameraPositions[0]);
+          scroller.scrollTo('proofStepPanel2', getScrollOptions(window.scrollY));
+          break;
+        }
+        case 2: {
+          this.setState(this.step3);
+          scroller.scrollTo('proofStepPanel3', getScrollOptions(window.scrollY));
+          break;
+        }
+        case 3: {
+          this.setState(this.step4);
+          break;
+        }
+        case 4: {
+          this.setState(this.step5);
+          this.network.moveTo(cameraPositions[1]);
+          scroller.scrollTo('proofStepPanel4', getScrollOptions(window.scrollY));
+          break;
+        }
+        case 5: {
+          this.setState(this.step6);
+          this.network.moveTo(cameraPositions[2]);
+          scroller.scrollTo('proofStepPanel5', getScrollOptions(window.scrollY));
+          break;
+        }
+        case 6: {
+          this.network.moveTo(cameraPositions[0]);
+          scroller.scrollTo('proofStepPanel6', getScrollOptions(window.scrollY));
+          break;
+        }
+        case 7: {
+          this.setState({ btnNextD: true });
+          this.step8();
+          let interval1 = setInterval(this.step8, 2000);
+          this.setState({ interval1: interval1 });
+          scroller.scrollTo('proofStepPanel7', getScrollOptions(window.scrollY));
+          break;
+        }
+        default: {
+          break;
+        }
       }
 
-      if (this.state.currentStep === 1) {
-        this.setState(this.step2);
-        this.network.moveTo(cameraPositions[0]);
-        scroller.scrollTo('proofStepPanel2', getScrollOptions(window.scrollY));
-      }
-
-      if (this.state.currentStep === 2) {
-        this.setState(this.step3);
-        scroller.scrollTo('proofStepPanel3', getScrollOptions(window.scrollY));
-      }
-
-      if (this.state.currentStep === 3) {
-        this.setState(this.step4);
-      }
-
-      if (this.state.currentStep === 4) {
-        this.setState(this.step5);
-        this.network.moveTo(cameraPositions[1]);
-        scroller.scrollTo('proofStepPanel4', getScrollOptions(window.scrollY));
-      }
-
-      if (this.state.currentStep === 5) {
-        this.setState(this.step6);
-        this.network.moveTo(cameraPositions[2]);
-        scroller.scrollTo('proofStepPanel5', getScrollOptions(window.scrollY));
-      }
-
-      if (this.state.currentStep === 6) {
-        this.network.moveTo(cameraPositions[0]);
-        scroller.scrollTo('proofStepPanel6', getScrollOptions(window.scrollY));
-      }
-
-      if (this.state.currentStep === 7) {
-        this.setState({ btnNextD: true });
-        this.step8();
-        let interval1 = setInterval(this.step8, 2000);
-        this.setState({ interval1: interval1 });
-        scroller.scrollTo('proofStepPanel7', getScrollOptions(window.scrollY));
-      }
-
-      // Increase currentStep after a step was executed
-      this.setState((state) => { return { currentStep: state.currentStep += 1 } });
+      this.updateCurrentStep(this.state.currentStep, 1);
     }
   };
 
   previousStep = () => {
     if (this.state.currentStep > 0) {
+      this.updateNodesWithNewPositions(this.network.getPositions(), this.state.nodes);
 
-      if (this.state.nodes.length)
-      // Update node positions in state
-      this.setState(
-        { nodes: this.getNodesWithNewPositions(this.network.getPositions(), this.state.nodes) }
-      );
-
-      if (this.state.currentStep === 1) {
-        this.setState({ btnPrevD: true });
-        this.setState(this.stepReset);
+      switch (this.state.currentStep) {
+        case 1: {
+          this.setState({ btnPrevD: true });
+          this.setState(this.stepReset);
+          break;
+        }
+        case 2: {
+          this.setState(this.step1SVGContent);
+          scroller.scrollTo('proofStepPanel1', getScrollOptions(window.scrollY));
+          break;
+        }
+        case 3: {
+          this.setState(this.stepReset);
+          this.setState(this.step2);
+          scroller.scrollTo('proofStepPanel2', getScrollOptions(window.scrollY));
+          break;
+        }
+        case 4: {
+          this.setState(this.stepReset);
+          this.setState(this.step2);
+          this.setState(this.step3);
+          break;
+        }
+        case 5: {
+          this.setState(this.stepReset);
+          this.setState(this.step2);
+          this.setState(this.step3);
+          this.setState(this.step4);
+          this.network.moveTo(cameraPositions[0]);
+          scroller.scrollTo('proofStepPanel3', getScrollOptions(window.scrollY));
+          break;
+        }
+        case 6: {
+          this.setState(this.stepReset);
+          this.setState(this.step2);
+          this.setState(this.step3);
+          this.setState(this.step4);
+          this.setState(this.step5);
+          this.network.moveTo(cameraPositions[1]);
+          scroller.scrollTo('proofStepPanel4', getScrollOptions(window.scrollY));
+          break;
+        }
+        case 7: {
+          this.network.moveTo(cameraPositions[2]);
+          scroller.scrollTo('proofStepPanel5', getScrollOptions(window.scrollY));
+          break;
+        }
+        case 8: {
+          this.setState({ btnNextD: false });
+          clearInterval(this.state.interval1);
+          this.clearAllTimers(this.state);
+          this.setState(this.stepReset);
+          this.setState(this.step2);
+          this.setState(this.step3);
+          this.setState(this.step4);
+          this.setState(this.step5);
+          this.setState(this.step6);
+          scroller.scrollTo('proofStepPanel6', getScrollOptions(window.scrollY));
+          break;
+        }
+        default: {
+          break;
+        }
       }
 
-      if (this.state.currentStep === 2) {
-        this.setState(this.step1SVGContent);
-        scroller.scrollTo('proofStepPanel1', getScrollOptions(window.scrollY));
-      }
-
-      if (this.state.currentStep === 3) {
-        this.setState(this.stepReset);
-        this.setState(this.step2);
-        scroller.scrollTo('proofStepPanel2', getScrollOptions(window.scrollY));
-      }
-
-      if (this.state.currentStep === 4) {
-        this.setState(this.stepReset);
-        this.setState(this.step2);
-        this.setState(this.step3);
-      }
-
-      if (this.state.currentStep === 5) {
-        this.setState(this.stepReset);
-        this.setState(this.step2);
-        this.setState(this.step3);
-        this.setState(this.step4);
-        this.network.moveTo(cameraPositions[0]);
-        scroller.scrollTo('proofStepPanel3', getScrollOptions(window.scrollY));
-      }
-
-      if (this.state.currentStep === 6) {
-        this.setState(this.stepReset);
-        this.setState(this.step2);
-        this.setState(this.step3);
-        this.setState(this.step4);
-        this.setState(this.step5);
-        this.network.moveTo(cameraPositions[1]);
-        scroller.scrollTo('proofStepPanel4', getScrollOptions(window.scrollY));
-      }
-
-      if (this.state.currentStep === 7) {
-        this.network.moveTo(cameraPositions[2]);
-        scroller.scrollTo('proofStepPanel5', getScrollOptions(window.scrollY));
-      }
-
-      if (this.state.currentStep === 8) {
-        this.setState({ btnNextD: false });
-        clearInterval(this.state.interval1);
-        this.clearAllTimers(this.state);
-        this.setState(this.stepReset);
-        this.setState(this.step2);
-        this.setState(this.step3);
-        this.setState(this.step4);
-        this.setState(this.step5);
-        this.setState(this.step6);
-        scroller.scrollTo('proofStepPanel6', getScrollOptions(window.scrollY));
-      }
-
-      // Reduce currentStep after a step was executed
-      this.setState((state) => { return { currentStep: state.currentStep -= 1 } });
+      this.updateCurrentStep(this.state.currentStep, -1);
     }
   };
 
-  stepReset = () => { return { nodes: [], edges: [], isSVGCoverShowed: false } };
+  stepReset = () => { 
+    return { nodes: [], edges: [], isSVGCoverShowed: false } 
+  };
 
   step1SVGContent = () => {
     const svgContent = (
