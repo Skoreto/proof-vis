@@ -10,6 +10,7 @@ import {
   updateEdge,
   updateEdgeWithArrow,
   clearAllTimers,
+  updateCurrentStep,
   handlerSketchAllowance,
   handlerSelectedTool,
   handlerDrawingDialog,
@@ -24,135 +25,142 @@ class Exercise26v2 extends React.Component {
     this.updateEdge = updateEdge.bind(this);
     this.updateEdgeWithArrow = updateEdgeWithArrow.bind(this);
     this.clearAllTimers = clearAllTimers.bind(this);
+    this.updateCurrentStep = updateCurrentStep.bind(this);
     this.handlerSketchAllowance = handlerSketchAllowance.bind(this);
     this.handlerSelectedTool = handlerSelectedTool.bind(this);
     this.handlerDrawingDialog = handlerDrawingDialog.bind(this);
   }
 
   nextStep = () => {
-    if (this.state.currentStep < 5) {
-      if (this.state.currentStep === 0) {
-        this.setState({ btnPrevD: false });
-        this.setState(this.step1);
+    if (this.state.currentStep < constants.stepSum) {
+      switch (this.state.currentStep) {
+        case 0: {
+          this.setState({ btnPrevD: false });
+          this.setState(this.step1);
+          break;
+        }
+        case 1: {
+          this.setState(this.step2);
+          break;
+        }
+        case 2: {
+          this.step3();
+          let interval1 = setInterval(this.step3, 3000);
+          this.setState({ intervals: [interval1] });
+          break;
+        }
+        case 3: {
+          this.clearAllTimers(this.state);
+          this.step4();
+          let interval2 = setInterval(this.step4, 3000);
+          this.setState({ intervals: [interval2] });
+          break;
+        }
+        case 4: {
+          this.setState({ btnNextD: true });
+          this.clearAllTimers(this.state);
+          this.setState(this.step4a);
+          break;
+        }
+        default: {
+          break;
+        }
       }
 
-      if (this.state.currentStep === 1) {
-        this.setState(this.step2);
-      }
-
-      if (this.state.currentStep === 2) {
-        this.step3();
-        let interval1 = setInterval(this.step3, 3000);
-        this.setState({ intervals: [interval1] });
-      }
-
-      if (this.state.currentStep === 3) {
-        this.clearAllTimers(this.state);
-        this.step4();
-        let interval2 = setInterval(this.step4, 3000);
-        this.setState({ intervals: [interval2] });
-      }
-
-      if (this.state.currentStep === 4) {
-        this.setState({ btnNextD: true });
-        this.clearAllTimers(this.state);
-        this.setState(this.step4a);
-      }
-
-      // Increase currentStep after a step was executed
-      this.setState((state) => { return { currentStep: state.currentStep += 1 } });
+      this.updateCurrentStep(this.state.currentStep, 1);
     }
   };
 
   previousStep = () => {
     if (this.state.currentStep > 0) {
-      if (this.state.currentStep === 1) {
-        this.setState({ btnPrevD: true });
-        this.setState(this.stepReset);
+      switch (this.state.currentStep) {
+        case 1: {
+          this.setState({ btnPrevD: true });
+          this.setState(this.stepReset);
+          break;
+        }
+        case 2: {
+          this.setState(this.stepReset);
+          this.setState(this.step1);
+          break;
+        }
+        case 3: {
+          this.clearAllTimers(this.state);
+          this.setState(this.stepReset);
+          this.setState(this.step1);
+          this.setState(this.step2);
+          break;
+        }
+        case 4: {
+          this.clearAllTimers(this.state);
+          this.setState(this.stepReset);
+          this.setState(this.step1);
+          this.setState(this.step2);
+          this.step3();
+          let interval1 = setInterval(this.step3, 3000);
+          this.setState({ intervals: [interval1] });
+          break;
+        }
+        case 5: {
+          this.setState({ btnNextD: false });
+          this.clearAllTimers(this.state);
+          this.step4();
+          let interval2 = setInterval(this.step4, 3000);
+          this.setState({ intervals: [interval2] });
+          break;
+        }
+        default: {
+          break;
+        }
       }
 
-      if (this.state.currentStep === 2) {
-        this.setState(this.stepReset);
-        this.setState(this.step1);
-      }
-
-      if (this.state.currentStep === 3) {
-        this.clearAllTimers(this.state);
-        this.setState(this.stepReset);
-        this.setState(this.step1);
-        this.setState(this.step2);
-      }
-
-      if (this.state.currentStep === 4) {
-        this.clearAllTimers(this.state);
-        this.setState(this.stepReset);
-        this.setState(this.step1);
-        this.setState(this.step2);
-        this.step3();
-        let interval1 = setInterval(this.step3, 3000);
-        this.setState({ intervals: [interval1] });
-      }
-
-      if (this.state.currentStep === 5) {
-        this.setState({ btnNextD: false });
-        this.clearAllTimers(this.state);
-        this.step4();
-        let interval2 = setInterval(this.step4, 3000);
-        this.setState({ intervals: [interval2] });
-      }
-
-      // Reduce currentStep after a step was executed
-      this.setState((state) => { return { currentStep: state.currentStep -= 1 } });
+      this.updateCurrentStep(this.state.currentStep, -1);
     }
   };
 
   repeatStep = () => { };
 
   stepReset = () => {
-    return {
-      graphVis: { nodes: [], edges: [] },
-    };
+    return { nodes: [], edges: [] };
   };
 
   step1 = () => {
     return {
-      graphVis: {
-        nodes: [
-          { id: 1, x: 0, y: -150, color: { background: palette.yellow }, label: '   ' },
-          { id: 2, x: -70, y: -50, color: { background: palette.yellow }, label: '   ' },
-          { id: 3, x: -140, y: 50, color: { background: palette.yellow }, label: '   ' },
-          { id: 4, x: 0, y: 50, color: { background: palette.yellow }, label: '   ' },
-          { id: 5, x: -70, y: 150, color: { background: palette.yellow }, label: '   ' },
-          { id: 6, x: 70, y: 150, color: { background: palette.yellow }, label: '   ' },
-          { id: 7, x: 70, y: -50, color: { background: palette.yellow }, label: '   ' },
-          { id: 8, x: 140, y: 50, color: { background: palette.yellow }, label: '   ' },
-        ],
-        edges: [
-          { id: 1, from: 1, to: 2 },
-          { id: 2, from: 2, to: 3 },
-          { id: 3, from: 2, to: 4 },
-          { id: 4, from: 4, to: 5 },
-          { id: 5, from: 4, to: 6 },
-          { id: 6, from: 1, to: 7 },
-          { id: 7, from: 7, to: 8 },
-        ]
-      }
+      nodes: [
+        { id: 1, x: 0, y: -150, color: { background: palette.yellow }, label: '   ' },
+        { id: 2, x: -70, y: -50, color: { background: palette.yellow }, label: '   ' },
+        { id: 3, x: -140, y: 50, color: { background: palette.yellow }, label: '   ' },
+        { id: 4, x: 0, y: 50, color: { background: palette.yellow }, label: '   ' },
+        { id: 5, x: -70, y: 150, color: { background: palette.yellow }, label: '   ' },
+        { id: 6, x: 70, y: 150, color: { background: palette.yellow }, label: '   ' },
+        { id: 7, x: 70, y: -50, color: { background: palette.yellow }, label: '   ' },
+        { id: 8, x: 140, y: 50, color: { background: palette.yellow }, label: '   ' },
+      ],
+      edges: [
+        { id: 1, from: 1, to: 2 },
+        { id: 2, from: 2, to: 3 },
+        { id: 3, from: 2, to: 4 },
+        { id: 4, from: 4, to: 5 },
+        { id: 5, from: 4, to: 6 },
+        { id: 6, from: 1, to: 7 },
+        { id: 7, from: 7, to: 8 },
+      ],
     };
   };
 
   step2 = (state) => {
-    let newNodes = this.updateNode(state.graphVis.nodes, 0, palette.purple, '   ');
+    let newNodes = this.updateNode(state.nodes, 0, palette.purple, '   ');
     newNodes = this.updateNode(newNodes, 1, palette.purple, '   ');
     newNodes = this.updateNode(newNodes, 3, palette.purple, '   ');
     newNodes = this.updateNode(newNodes, 5, palette.purple, ' v ');
     newNodes = this.updateNode(newNodes, 6, palette.purple, ' u ');
 
-    let newEdges = this.updateEdge(state.graphVis.edges, 0, palette.purple, 2, false, undefined);
+    let newEdges = this.updateEdge(state.edges, 0, palette.purple, 2, false, undefined);
     newEdges = this.updateEdge(newEdges, 2, palette.purple, 2, false, undefined);
     newEdges = this.updateEdge(newEdges, 4, palette.purple, 2, false, undefined);
     newEdges = this.updateEdge(newEdges, 5, palette.purple, 2, false, undefined);
 
-    return { graphVis: { nodes: newNodes, edges: newEdges } };
+    return { nodes: newNodes, edges: newEdges };
   };
 
   step3 = () => {
@@ -164,17 +172,17 @@ class Exercise26v2 extends React.Component {
   };
 
   step3a = (state) => {
-    let newNodes = this.updateNode(state.graphVis.nodes, 1, palette.purple, ' x ');
+    let newNodes = this.updateNode(state.nodes, 1, palette.purple, ' x ');
     newNodes = this.updateNode(newNodes, 3, palette.purple, ' y ');
-    let newEdges = this.updateEdge(state.graphVis.edges, 2, palette.red, 2, [8, 8], ' e ');
-    return { graphVis: { nodes: newNodes, edges: newEdges } };
+    let newEdges = this.updateEdge(state.edges, 2, palette.red, 2, [8, 8], ' e ');
+    return { nodes: newNodes, edges: newEdges };
   };
 
   step3b = (state) => {
-    let newNodes = this.updateNode(state.graphVis.nodes, 1, palette.purple, ' x ');
+    let newNodes = this.updateNode(state.nodes, 1, palette.purple, ' x ');
     newNodes = this.updateNode(newNodes, 3, palette.purple, ' y ');
-    let newEdges = this.updateEdge(state.graphVis.edges, 2, palette.purple, 2, false, ' e ');
-    return { graphVis: { nodes: newNodes, edges: newEdges } };
+    let newEdges = this.updateEdge(state.edges, 2, palette.purple, 2, false, ' e ');
+    return { nodes: newNodes, edges: newEdges };
   };
 
   step4 = () => {
@@ -186,10 +194,10 @@ class Exercise26v2 extends React.Component {
   };
 
   step4a = (state) => {
-    let newNodes = this.updateNode(state.graphVis.nodes, 1, palette.purple, ' x ');
+    let newNodes = this.updateNode(state.nodes, 1, palette.purple, ' x ');
     newNodes = this.updateNode(newNodes, 3, palette.purple, ' y ');
-    let newEdges = this.updateEdge(state.graphVis.edges, 2, palette.white, 2, false, '   ');
-    return { graphVis: { nodes: newNodes, edges: newEdges } };
+    let newEdges = this.updateEdge(state.edges, 2, palette.white, 2, false, '   ');
+    return { nodes: newNodes, edges: newEdges };
   };
 
   render() {
