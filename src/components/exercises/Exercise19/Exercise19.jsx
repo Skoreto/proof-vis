@@ -11,6 +11,7 @@ import {
   updateEdge,
   addObjectArray,
   clearAllTimers,
+  updateCurrentStep,
   handlerSketchAllowance,
   handlerSelectedTool,
   handlerDrawingDialog,
@@ -26,25 +27,43 @@ class Exercise19 extends React.Component {
     this.updateEdge = updateEdge.bind(this);
     this.addObjectArray = addObjectArray.bind(this);
     this.clearAllTimers = clearAllTimers.bind(this);
+    this.updateCurrentStep = updateCurrentStep.bind(this);
     this.handlerSketchAllowance = handlerSketchAllowance.bind(this);
     this.handlerSelectedTool = handlerSelectedTool.bind(this);
     this.handlerDrawingDialog = handlerDrawingDialog.bind(this);
   }
 
   nextStep = () => {
-    if (this.state.currentStep < 10) {
+    if (this.state.currentStep < constants.stepSum) {
       switch (this.state.currentStep) {
         case 0:
           this.setState({ btnPrevD: false });
-          this.setState(this.step1SVGContent);
+          // this.setState(this.step1SVGContent);
+          this.setState(this.step1VisTexts);
           this.setState(this.step1Texts);
           break;
         case 1:
-          this.setState(this.step2SVGContent);
+          // this.setState(this.step2SVGContent);
+          this.setState(state => ({
+            visTexts: [
+              ...state.visTexts,
+              { 
+                id: 5,
+                content: 
+                  <div style={ {position: 'absolute', top: '320px', left: '20px'} }>Paty radek</div> 
+              },,
+            ],
+          }))
+
           scroller.scrollTo('proofStepPanel2', getScrollOptions(window.scrollY));
           break;
         case 2:
-          this.setState(this.step3SVGContent);
+          // this.setState(this.step3SVGContent);
+          this.setState(state => ({
+            visTexts: state.visTexts.filter(
+              item => item.id < 3
+            ),
+          }));
           scroller.scrollTo('proofStepPanel3', getScrollOptions(window.scrollY));
           break;
         case 3:
@@ -70,8 +89,7 @@ class Exercise19 extends React.Component {
           break;
       }
 
-      // Increase currentStep after a step was executed
-      this.setState((state) => { return { currentStep: state.currentStep += 1 } });
+      this.updateCurrentStep(this.state.currentStep, 1);
     }
   };
 
@@ -94,36 +112,62 @@ class Exercise19 extends React.Component {
           break;
       }
 
-      // Reduce currentStep after a step was executed
-      this.setState((state) => { return { currentStep: state.currentStep -= 1 } });
+      this.updateCurrentStep(this.state.currentStep, -1);
     }
   };
 
   stepReset = () => {
-    return {
-      graphVis: { nodes: [], edges: [] },
-      isSVGCoverShowed: false, 
-    };
+    return { nodes: [], edges: [], isSVGCoverShowed: false };
   };
 
-  step1SVGContent = () => {
-    const svgContent = (
-      <svg>
-        <text textAnchor={'middle'} x={325} y={40} stroke={'black'} strokeWidth={0} fontSize={28}>
-          &forall;<tspan fill={'green'}>A</tspan>⇒<tspan fill={'red'}>B</tspan>
-        </text>
-        <text textAnchor={'middle'} x={155} y={80} fill={'green'} strokeWidth={0} fontSize={26}>
-          A: hrana <tspan fontStyle='italic'>e</tspan> je most
-        </text>
-        <text textAnchor={'middle'} x={325} y={120} fill={'red'} strokeWidth={0} fontSize={26}>
-          B: v grafu <tspan fontStyle='italic'>G</tspan> neexistuje kružnice obsahující hranu <tspan fontStyle='italic'>e</tspan>
-        </text>
-      </svg>
-    );
+  // step1SVGContent = () => {
+  //   const svgContent = (
+  //     <svg>
+  //       <text textAnchor={'middle'} x={325} y={40} stroke={'black'} strokeWidth={0} fontSize={28}>
+  //         &forall;<tspan fill={'green'}>A</tspan>⇒<tspan fill={'red'}>B</tspan>
+  //       </text>
+  //       <text textAnchor={'middle'} x={155} y={80} fill={'green'} strokeWidth={0} fontSize={26}>
+  //         A: hrana <tspan fontStyle='italic'>e</tspan> je most
+  //       </text>
+  //       <text textAnchor={'middle'} x={325} y={120} fill={'red'} strokeWidth={0} fontSize={26}>
+  //         B: v grafu <tspan fontStyle='italic'>G</tspan> neexistuje kružnice obsahující hranu <tspan fontStyle='italic'>e</tspan>
+  //       </text>
+  //     </svg>
+  //   );
+
+  //   return {
+  //     isSVGCoverShowed: true,
+  //     svgContent: svgContent,
+  //   }
+  // }
+
+  step1VisTexts = () => {
+    const visTexts = [
+        { 
+          id: 1,
+          content: 
+            <div style={ {position: 'absolute', top: '10px', left: '20px'} }>Prvni radek</div> 
+        },
+        { 
+          id: 2,
+          content: 
+            <div style={ {position: 'absolute', top: '100px', left: '20px'} }>Druhy radek</div> 
+        },
+        { 
+          id: 3,
+          content: 
+            <div style={ {position: 'absolute', top: '200px', left: '20px'} }>Treti radek</div> 
+        },
+        { 
+          id: 4,
+          content: 
+            <div style={ {position: 'absolute', top: '300px', left: '20px'} }>Ctvrty radek</div> 
+        },
+      ];
 
     return {
-      isSVGCoverShowed: true,
-      svgContent: svgContent,
+      isVisTextShowed: true,
+      visTexts: visTexts,
     }
   }
 
@@ -193,74 +237,72 @@ class Exercise19 extends React.Component {
 
   step4 = () => {
     return {
-      graphVis: {
-        nodes: [
-          { id: 1, x: -250, y: 0, color: { background: palette.yellow }, label: '   ' },
-          { id: 2, x: -130, y: -80, color: { background: palette.yellow }, label: '   ' },
-          { id: 3, x: -130, y: 80, color: { background: palette.yellow }, label: '   ' },
-          { id: 4, x: 0, y: -150, color: { background: palette.yellow }, label: '   ' },
-          { id: 5, x: 0, y: 150, color: { background: palette.yellow }, label: ' x ' },
-          { id: 6, x: 130, y: -80, color: { background: palette.yellow }, label: '   ' },
-          { id: 7, x: 130, y: 80, color: { background: palette.yellow }, label: ' y ' },
-          { id: 8, x: 250, y: 0, color: { background: palette.yellow }, label: '   ' },
-        ],
-        edges: [
-          { id: 1, from: 1, to: 2 },
-          { id: 2, from: 2, to: 3 },
-          { id: 3, from: 2, to: 4},
-          { id: 4, from: 3, to: 5 },
-          { id: 5, from: 4, to: 6 },
-          { id: 6, from: 5, to: 7, label: 'e' },
-          { id: 7, from: 6, to: 7 },
-          { id: 8, from: 7, to: 8 },
-        ],
-      },
+      nodes: [
+        { id: 1, x: -250, y: 0, color: { background: palette.yellow }, label: '   ' },
+        { id: 2, x: -130, y: -80, color: { background: palette.yellow }, label: '   ' },
+        { id: 3, x: -130, y: 80, color: { background: palette.yellow }, label: '   ' },
+        { id: 4, x: 0, y: -150, color: { background: palette.yellow }, label: '   ' },
+        { id: 5, x: 0, y: 150, color: { background: palette.yellow }, label: ' x ' },
+        { id: 6, x: 130, y: -80, color: { background: palette.yellow }, label: '   ' },
+        { id: 7, x: 130, y: 80, color: { background: palette.yellow }, label: ' y ' },
+        { id: 8, x: 250, y: 0, color: { background: palette.yellow }, label: '   ' },
+      ],
+      edges: [
+        { id: 1, from: 1, to: 2 },
+        { id: 2, from: 2, to: 3 },
+        { id: 3, from: 2, to: 4},
+        { id: 4, from: 3, to: 5 },
+        { id: 5, from: 4, to: 6 },
+        { id: 6, from: 5, to: 7, label: 'e' },
+        { id: 7, from: 6, to: 7 },
+        { id: 8, from: 7, to: 8 },
+      ],
       isSVGCoverShowed: false,
     }
   };
 
   step5 = (state) => {
-    let newNodes = this.updateNode(state.graphVis.nodes, 1, palette.green, '');
+    let newNodes = this.updateNode(state.nodes, 1, palette.green, '');
     newNodes = this.updateNode(newNodes, 2, palette.green, '');
     newNodes = this.updateNode(newNodes, 3, palette.green, '');
     newNodes = this.updateNode(newNodes, 4, palette.green, ' x ');
     newNodes = this.updateNode(newNodes, 5, palette.green, '');
     newNodes = this.updateNode(newNodes, 6, palette.green, ' y ');
     
-    let newEdges = this.updateEdge(state.graphVis.edges, 1, palette.green, 3, false, '');
+    let newEdges = this.updateEdge(state.edges, 1, palette.green, 3, false, '');
     newEdges = this.updateEdge(newEdges, 2, palette.green, 3, false, '');
     newEdges = this.updateEdge(newEdges, 3, palette.green, 3, false, '');
     newEdges = this.updateEdge(newEdges, 4, palette.green, 3, false, '');
     newEdges = this.updateEdge(newEdges, 5, palette.green, 3, false, 'e');
     newEdges = this.updateEdge(newEdges, 6, palette.green, 3, false, '');
 
-    return { graphVis: { nodes: newNodes, edges: newEdges } };
+    return { nodes: newNodes, edges: newEdges };
   };
 
   step6 = (state) => {
-    let newNodes = this.updateNode(state.graphVis.nodes, 4, palette.purple, ' x ');
+    let newNodes = this.updateNode(state.nodes, 4, palette.purple, ' x ');
     newNodes = this.updateNode(newNodes, 6, palette.purple, ' y ');
     
-    let newEdges = this.updateEdge(state.graphVis.edges, 5, palette.purple, 3, false, 'e');
+    let newEdges = this.updateEdge(state.edges, 5, palette.purple, 3, false, 'e');
 
-    return { graphVis: { nodes: newNodes, edges: newEdges } };
+    return { nodes: newNodes, edges: newEdges };
   };
 
   step7 = (state) => {
-    let newNodes = this.updateNode(state.graphVis.nodes, 1, palette.purple, '');
+    let newNodes = this.updateNode(state.nodes, 1, palette.purple, '');
     newNodes = this.updateNode(newNodes, 2, palette.purple, '');
     newNodes = this.updateNode(newNodes, 3, palette.purple, '');
     newNodes = this.updateNode(newNodes, 4, palette.purple, ' x ');
     newNodes = this.updateNode(newNodes, 5, palette.purple, '');
     newNodes = this.updateNode(newNodes, 6, palette.purple, ' y ');
     
-    let newEdges = this.updateEdge(state.graphVis.edges, 1, palette.purple, 3, false, '');
+    let newEdges = this.updateEdge(state.edges, 1, palette.purple, 3, false, '');
     newEdges = this.updateEdge(newEdges, 2, palette.purple, 3, false, '');
     newEdges = this.updateEdge(newEdges, 3, palette.purple, 3, false, '');
     newEdges = this.updateEdge(newEdges, 4, palette.purple, 3, false, '');
     newEdges = this.updateEdge(newEdges, 6, palette.purple, 3, false, '');
 
-    return { graphVis: { nodes: newNodes, edges: newEdges } };
+    return { nodes: newNodes, edges: newEdges };
   };
 
   render() {

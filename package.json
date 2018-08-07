@@ -22,7 +22,8 @@
     "react-scripts": "1.1.1",
     "react-scroll": "^1.7.9",
     "react-sketch": "^0.4.4",
-    "react-test-renderer": "^16.4.2"
+    "react-test-renderer": "^16.4.2",
+    "react-transition-group": "^2.4.0"
   },
   "scripts": {
     "start": "react-scripts start",

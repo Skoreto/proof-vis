@@ -115,6 +115,8 @@ export const initialExerciseState = {
   btnCircleD: true,
   btnRepeatD: true,
   isDrawingDialogOpen: false,
+  isVisTextShowed: false,
+  visText: '',
 };
 
 /**
