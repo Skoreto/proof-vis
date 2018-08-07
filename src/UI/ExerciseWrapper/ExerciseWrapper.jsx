@@ -1,6 +1,6 @@
 import React from 'react';
 import GraphVis from 'react-graph-vis';
-import { Row, Col, ListGroup, ListGroupItem } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import { SketchField } from 'react-sketch';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Dialog from 'react-dialog';
@@ -10,6 +10,7 @@ import Button from './Button/Button';
 import StepCounter from './StepCounter/StepCounter';
 import DescriptionPanel from './DescriptionPanel/DescriptionPanel';
 import DefinitionPanel from './DefinitionPanel/DefinitionPanel';
+import VisualTextsPanel from './VisualTextsPanel/VisualTextsPanel';
 import DialogDrawing from '../../components/dialogs/DialogDrawing/DialogDrawing';
 import '../ReactDialog/ReactDialog.css';
 import {
@@ -64,21 +65,10 @@ const ExerciseWrapper = (props) => (
               }
               {
                 props.isVisTextShowed &&
-                  <div className="svg-cover-panel">
-                      {/* <ListGroup> */}
-                        <TransitionGroup>
-                          {props.visTexts.map(({ id, content }) => (
-                            <CSSTransition
-                              key={id}
-                              timeout={500}
-                              classNames="fade"
-                            >         
-                              {content}                     
-                            </CSSTransition>
-                          ))}
-                        </TransitionGroup>
-                      {/* </ListGroup> */}     
-                  </div>
+                  <VisualTextsPanel 
+                    visualTextRows={props.constants.visualTextRows}
+                    currentStep={props.currentStep}
+                  />
               }
               <div className="graph-box">
                 <GraphVis

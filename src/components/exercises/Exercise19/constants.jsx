@@ -77,6 +77,39 @@ const descriptionPanels = [
 
 const definitionPanels = [];
 
+const visualTextRows = [
+  {
+    id: 1,
+    showForSteps: [1, 2, 3],
+    content: 
+      <div style={ {position: 'absolute', top: '10px', left: '20px'} }>Prvni radek <MN>{'P_{x,y}=e=\\{x,y\\}'}</MN></div> 
+  },
+  {
+    id: 2,
+    showForSteps: [2, 3],
+    content: 
+      <div style={ {position: 'absolute', top: '100px', left: '20px'} }>Druhy radek</div> 
+  },
+  {
+    id: 3,
+    showForSteps: [3, 4],
+    content: 
+      <div style={ {position: 'absolute', top: '200px', left: '20px'} }>Treti radek <MN>{'P_{x,y}=e=\\{x,y\\}'}</MN></div>
+  },
+  {
+    id: 4,
+    showForSteps: [5],
+    content: 
+      <div style={ {position: 'absolute', top: '300px', left: '20px'} }>Ctvrty radek</div> 
+  },
+  {
+    id: 5,
+    showForSteps: [1],
+    content: 
+      <div style={ {position: 'absolute', top: '320px', left: '20px'} }>Paty radek</div> 
+  },
+];
+
 export const constants = {
   headingTitle: headingTitle,
   breadcrumbsCurrent: breadcrumbsCurrent,
@@ -85,4 +118,5 @@ export const constants = {
   proofStepPanels: proofStepPanels,
   descriptionPanels: descriptionPanels,
   definitionPanels: definitionPanels,
+  visualTextRows: visualTextRows,
 };

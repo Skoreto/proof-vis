@@ -44,26 +44,10 @@ class Exercise19 extends React.Component {
           break;
         case 1:
           // this.setState(this.step2SVGContent);
-          this.setState(state => ({
-            visTexts: [
-              ...state.visTexts,
-              { 
-                id: 5,
-                content: 
-                  <div style={ {position: 'absolute', top: '320px', left: '20px'} }>Paty radek</div> 
-              },,
-            ],
-          }))
-
           scroller.scrollTo('proofStepPanel2', getScrollOptions(window.scrollY));
           break;
         case 2:
           // this.setState(this.step3SVGContent);
-          this.setState(state => ({
-            visTexts: state.visTexts.filter(
-              item => item.id < 3
-            ),
-          }));
           scroller.scrollTo('proofStepPanel3', getScrollOptions(window.scrollY));
           break;
         case 3:
@@ -142,32 +126,8 @@ class Exercise19 extends React.Component {
   // }
 
   step1VisTexts = () => {
-    const visTexts = [
-        { 
-          id: 1,
-          content: 
-            <div style={ {position: 'absolute', top: '10px', left: '20px'} }>Prvni radek</div> 
-        },
-        { 
-          id: 2,
-          content: 
-            <div style={ {position: 'absolute', top: '100px', left: '20px'} }>Druhy radek</div> 
-        },
-        { 
-          id: 3,
-          content: 
-            <div style={ {position: 'absolute', top: '200px', left: '20px'} }>Treti radek</div> 
-        },
-        { 
-          id: 4,
-          content: 
-            <div style={ {position: 'absolute', top: '300px', left: '20px'} }>Ctvrty radek</div> 
-        },
-      ];
-
     return {
       isVisTextShowed: true,
-      visTexts: visTexts,
     }
   }
 
