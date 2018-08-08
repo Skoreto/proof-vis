@@ -5,7 +5,7 @@ import MN from '../../../UI/MathJaxNode/MathJaxNode';
 
 const headingTitle = 'Příklad 19';
 const breadcrumbsCurrent = 'Důkazy sporem';
-const stepSum = 10;
+const stepSum = 20;
 
 const claimPanel = (
   <ClaimPanel>
@@ -72,7 +72,37 @@ const descriptionPanels = [
   {
     id: 1,
     showForSteps: [1],
-    content: <p>Provedení negace původního výroku.</p>
+    content: <p>Tvar implikace původního tvrzení.</p>
+  },
+  {
+    id: 2,
+    showForSteps: [2],
+    content: <p>Znění výroku <MN>A</MN>.</p>
+  },
+  {
+    id: 3,
+    showForSteps: [3],
+    content: <p>Znění výroku <MN>B</MN>.</p>
+  },
+  {
+    id: 4,
+    showForSteps: [4],
+    content: <p>Sestavení negace původního tvrzení.</p>
+  },
+  {
+    id: 5,
+    showForSteps: [5],
+    content: <p>Znění výroku <MN>A</MN> zůstává nezměněné.</p>
+  },
+  {
+    id: 6,
+    showForSteps: [6],
+    content: <p>Znění negace výroku <MN>B</MN>.</p>
+  },
+  {
+    id: 7,
+    showForSteps: [7],
+    content: <p>Celé znění negace původního tvrzení.</p>
   },
 ];
 
@@ -86,39 +116,59 @@ const visualTextRows = [
   },
   {
     id: 1,
-    showForSteps: [1, 2, 3, 4],
+    showForSteps: [1, 2, 3, 4, 5, 6, 7],
     content:
-      <VisualTextRow left={325} top={40}>
-        <MN>&forall; A ⇒ B</MN>
+      <VisualTextRow left={270} top={10}>
+        <MN>\forall</MN><MN classes={'t-green'}>A</MN><MN>\Rightarrow</MN><MN classes={'t-red'}>B</MN>
       </VisualTextRow>
   },
   {
     id: 2,
-    showForSteps: [2, 3, 4],
+    showForSteps: [2, 3, 4, 5, 6, 7],
     content:
-      <VisualTextRow left={155} top={80} classes={'t-green'}>
-        <MN classes={'t-red'}>A:</MN> hrana <MN>e</MN> je most
+      <VisualTextRow left={20} top={60} classes={'t-green'}>
+        <MN>A:</MN> hrana <MN>e</MN> je most
       </VisualTextRow>
   },
   {
     id: 3,
-    showForSteps: [3, 4],
+    showForSteps: [3, 4, 5, 6, 7],
     content:
-      <VisualTextRow left={100} top={120}>
+      <VisualTextRow left={20} top={100} width={610} classes={'t-red'}>
         <MN>B:</MN> v grafu <MN>G</MN> neexistuje kružnice obsahující hranu <MN>e</MN>
       </VisualTextRow>
   },
   {
     id: 4,
-    showForSteps: [5],
+    showForSteps: [4, 5, 6, 7],
     content:
-      <div style={ {position: 'absolute', top: '300px', left: '20px'} }>Ctvrty radek</div> 
+      <VisualTextRow left={160} top={150}>
+        <MN>\neg (\forall</MN><MN classes={'t-green'}>A</MN><MN>\Rightarrow</MN><MN classes={'t-red'}>B</MN><MN>)</MN><MN>\Longleftrightarrow</MN><MN>(\exists</MN><MN classes={'t-green'}>A</MN><MN>\wedge</MN><MN classes={'t-red'}>\neg B</MN><MN>)</MN>
+      </VisualTextRow>
   },
   {
     id: 5,
-    showForSteps: [5],
+    showForSteps: [5, 6, 7],
     content:
-      <div style={ {position: 'absolute', top: '320px', left: '20px'} }>Paty radek</div> 
+      <VisualTextRow left={40} top={210} classes={'t-green'}>
+        <MN>A:</MN> hrana <MN>e</MN> je most
+      </VisualTextRow>
+  },
+  {
+    id: 6,
+    showForSteps: [6, 7],
+    content:
+      <VisualTextRow left={20} top={250} classes={'t-red'}>
+        <MN>\neg B:</MN> v grafu <MN>G</MN> existuje kružnice obsahující hranu <MN>e</MN>
+      </VisualTextRow>
+  },
+  {
+    id: 7,
+    showForSteps: [7],
+    content:
+      <VisualTextRow left={45} top={310} width={570}>
+        Existuje graf <MN>G</MN>, ve kterém <span className={'t-green'}>hrana <MN>e</MN> je most</span>, a zároveň <span className={'t-red'}>v grafu <MN>G</MN> existuje kružnice obsahující hranu <MN>e</MN></span>.
+      </VisualTextRow>
   },
 ];
 

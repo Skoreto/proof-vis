@@ -8,10 +8,11 @@ const VisualTextRow = (props) => (
   <div 
     className={props.classes}
     style={{
-      fontSize: '28px',
+      fontSize: props.fontSize ? props.fontSize : '24px',
       position: 'absolute',
       left: props.left + 'px',
       top: props.top + 'px',
+      width: props.width + 'px',
     }}
   >
     {props.children}
