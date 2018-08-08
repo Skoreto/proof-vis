@@ -7,20 +7,20 @@
   border: 1px solid lightgray;
 }
 
-.fade-enter {
+.row-enter {
   opacity: 0.01;
 }
 
-.fade-enter-active {
+.row-enter-active {
   opacity: 1;
   transition: opacity 1000ms ease-in;
 }
 
-.fade-exit {
+.row-exit {
   opacity: 1;
 }
 
-.fade-exit-active {
+.row-exit-active {
   opacity: 0.01;
   transition: opacity 500ms ease-in;
 }

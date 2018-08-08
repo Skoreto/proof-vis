@@ -20,47 +20,57 @@ const proofStepPanels = [
     content:
       <p>
         Při dokazování sporem vycházíme z negace původního tvrzení.
-        <br />
-        Původní tvrzení odpovídá implikaci ve tvaru <MN>\forall A \Rightarrow B</MN>. Vyznačíme v tvrzení výrok A i B.
+        <br /><br />
+        Původní tvrzení odpovídá implikaci ve tvaru <MN>\forall A \Rightarrow B</MN>.
       </p>
   },
   {
     name: 'proofStepPanel2',
-    activeForSteps: [2],
+    activeForSteps: [2, 3],
     content:
       <p>
-        Negace původního tvrzení se skládá z výroku A a &not; B.
+        Vyznačíme v tvrzení jeho části, výroky <MN>A</MN> a <MN>B</MN>.
       </p>
   },
   {
     name: 'proofStepPanel3',
-    activeForSteps: [3],
-    content:
-      <p>
-        Sestavíme výslednou negaci původního tvrzení.
-        <br /><br />
-        Pro spor tedy předpokládejme tvrzení: <cite><q>Existuje graf G, ve kterém hrana <MN>e</MN> je most a zároveň v grafu <MN>G</MN> existuje kružnice obsahující hranu <MN>e</MN>.</q></cite>
-      </p>
+    activeForSteps: [4],
+    content: <p>Sestavíme negaci původního tvrzení.</p>
   },
   {
     name: 'proofStepPanel4',
-    activeForSteps: [4, 5],
+    activeForSteps: [5, 6],
+    content: <p>Určíme nová znění obou výroků.</p>
+  },
+  {
+    name: 'proofStepPanel5',
+    activeForSteps: [7],
+    content:
+      <p>
+        Určíme celé znění negace původního tvrzení.
+        <br /><br />
+        Pro spor tedy předpokládejme tvrzení: <cite><q>Existuje graf G, ve kterém hrana <MN>e</MN> je most a zároveň v grafu <MN>G</MN> existuje kružnice obsahující hranu <MN>e</MN>.</q></cite>    
+      </p>
+  },
+  {
+    name: 'proofStepPanel6',
+    activeForSteps: [8],
     content:
       <p>
         Pokud v <MN>G</MN> existuje kružnice <MN>C</MN> obsahující hranu <MN>{'e=\\{x,y\\}'}</MN>, pak v grafu <MN>G</MN> existují minimálně 2 <MN>x-y</MN> cesty.
       </p>
   },
   {
-    name: 'proofStepPanel5',
-    activeForSteps: [6],
+    name: 'proofStepPanel8',
+    activeForSteps: [9],
     content:
       <p>
         <b>1.</b> <MN>{'P_{x,y}=e=\\{x,y\\}'}</MN> (samotná hrana <MN>e</MN>)
       </p>
   },
   {
-    name: 'proofStepPanel6',
-    activeForSteps: [7],
+    name: 'proofStepPanel9',
+    activeForSteps: [10],
     content:
       <p>
         <b>2.</b> <MN>{"P'_{x,y}=C-e=(x,v_1,v_2,...,v_3,y)"}</MN> (kružnice bez hrany <MN>e</MN>)
@@ -84,11 +94,11 @@ const descriptionPanels = [
     showForSteps: [3],
     content: <p>Znění výroku <MN>B</MN>.</p>
   },
-  {
-    id: 4,
-    showForSteps: [4],
-    content: <p>Sestavení negace původního tvrzení.</p>
-  },
+  // {
+  //   id: 4,
+  //   showForSteps: [4],
+  //   content: <p>Sestavení negace původního tvrzení.</p>
+  // },
   {
     id: 5,
     showForSteps: [5],

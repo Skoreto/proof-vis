@@ -73,7 +73,7 @@ const ExerciseWrapper = (props) => (
                     (textRow) => { return textRow.showForSteps.includes(props.currentStep) }) &&
                     <CSSTransition
                       key={99}
-                      timeout={3000}
+                      timeout={1000}
                       classNames="fade"
                     > 
                       <VisualTextsPanel 

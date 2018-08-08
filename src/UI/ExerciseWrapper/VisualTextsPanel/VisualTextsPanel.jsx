@@ -16,7 +16,7 @@ const VisualTextsPanel = (props) => (
           <CSSTransition
             key={id}
             timeout={1000}
-            classNames="fade"
+            classNames="row"
           >         
             {content}                     
           </CSSTransition>
