@@ -1,6 +1,6 @@
 .vis-texts-panel {
   position: absolute;
-  min-width: 650px;
+  width: 650px;
   height: 400px;
   z-index: 3;
   background-color: #FFFFFF;

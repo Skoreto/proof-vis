@@ -1,5 +1,6 @@
 import React from 'react';
 import ClaimPanel from '../../../UI/ExerciseWrapper/ClaimPanel/ClaimPanel';
+import VisualTextRow from '../../../UI/ExerciseWrapper/VisualTextRow/VisualTextRow';
 import MN from '../../../UI/MathJaxNode/MathJaxNode';
 
 const headingTitle = 'Příklad 19';
@@ -85,32 +86,38 @@ const visualTextRows = [
   },
   {
     id: 1,
-    showForSteps: [1, 2, 3],
-    content: 
-      <div style={ {position: 'absolute', top: '10px', left: '20px'} }>Prvni radek <MN>{'P_{x,y}=e=\\{x,y\\}'}</MN></div> 
+    showForSteps: [1, 2, 3, 4],
+    content:
+      <VisualTextRow left={325} top={40}>
+        <MN>&forall; A ⇒ B</MN>
+      </VisualTextRow>
   },
   {
     id: 2,
-    showForSteps: [2, 3],
-    content: 
-      <div style={ {position: 'absolute', top: '100px', left: '20px'} }>Druhy radek</div> 
+    showForSteps: [2, 3, 4],
+    content:
+      <VisualTextRow left={155} top={80} classes={'t-green'}>
+        <MN classes={'t-red'}>A:</MN> hrana <MN>e</MN> je most
+      </VisualTextRow>
   },
   {
     id: 3,
     showForSteps: [3, 4],
-    content: 
-      <div style={ {position: 'absolute', top: '200px', left: '20px'} }>Treti radek <MN>{'P_{x,y}=e=\\{x,y\\}'}</MN></div>
+    content:
+      <VisualTextRow left={100} top={120}>
+        <MN>B:</MN> v grafu <MN>G</MN> neexistuje kružnice obsahující hranu <MN>e</MN>
+      </VisualTextRow>
   },
   {
     id: 4,
     showForSteps: [5],
-    content: 
+    content:
       <div style={ {position: 'absolute', top: '300px', left: '20px'} }>Ctvrty radek</div> 
   },
   {
     id: 5,
-    showForSteps: [1],
-    content: 
+    showForSteps: [5],
+    content:
       <div style={ {position: 'absolute', top: '320px', left: '20px'} }>Paty radek</div> 
   },
 ];
