@@ -15,7 +15,7 @@ const VisualTextsPanel = (props) => (
         .map(({ id, content }) => (
           <CSSTransition
             key={id}
-            timeout={500}
+            timeout={2000}
             classNames="fade"
           >         
             {content}                     

@@ -18,11 +18,6 @@ import {
   TransitionGroup,
 } from 'react-transition-group';
 
-
-// function isTrue(textRow, index, array) {
-//   return textRowshowForSteps.includes(props.currentStep);
-// }
-
 const ExerciseWrapper = (props) => (
   <div>
     <div className="page-wrapper">
@@ -68,23 +63,26 @@ const ExerciseWrapper = (props) => (
                     </svg>
                   </div>
               }
-              {
-                // (props.isVisTextShowed && props.constants.visualTextRows.filter(textRow => textRow.showForSteps.includes(props.currentStep)) === true )
-                //  ? <VisualTextsPanel 
-                //     visualTextRows={props.constants.visualTextRows}
-                //     currentStep={props.currentStep}
-                //   />
-                //   : <div></div>
-
-                // props.constants.visualTextRows.filter(textRow => textRow.showForSteps.includes(props.currentStep)) === true) &&
-                props.constants.visualTextRows !== undefined &&
-                props.constants.visualTextRows.length > 0 && props.constants.visualTextRows.some((textRow, index, array) => {return textRow.showForSteps.includes(props.currentStep)}) &&
-                 <VisualTextsPanel 
-                    visualTextRows={props.constants.visualTextRows}
-                    currentStep={props.currentStep}
-                  />
-                
-              }
+              <TransitionGroup>
+                {
+                  // Checks if any row from visualTextRows is defined
+                  // Checks if any of rows should be visible and shows/hides the panel accordingly
+                  props.constants.visualTextRows !== undefined &&
+                  props.constants.visualTextRows.length > 0 &&
+                  props.constants.visualTextRows.some(
+                    (textRow) => { return textRow.showForSteps.includes(props.currentStep) }) &&
+                    <CSSTransition
+                      key={99}
+                      timeout={3000}
+                      classNames="fade"
+                    > 
+                      <VisualTextsPanel 
+                        visualTextRows={props.constants.visualTextRows}
+                        currentStep={props.currentStep}
+                      />
+                    </CSSTransition>
+                }
+              </TransitionGroup>
               <div className="graph-box">
                 <GraphVis
                   graph={{ nodes: props.nodes, edges: props.edges }}
@@ -148,10 +146,13 @@ const ExerciseWrapper = (props) => (
                   </Button>
                 </span>
               </div>
-              <DefinitionPanel
-                definitionPanels={props.constants.definitionPanels}
-                currentStep={props.currentStep}
-              />
+              {
+                props.constants.definitionPanels !== undefined &&
+                  <DefinitionPanel
+                    definitionPanels={props.constants.definitionPanels}
+                    currentStep={props.currentStep}
+                  />
+              }
               {
                 props.isDrawingDialogOpen &&
                   <Dialog  

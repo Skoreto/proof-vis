@@ -75,9 +75,14 @@ const descriptionPanels = [
   },
 ];
 
-const definitionPanels = [];
+// const definitionPanels = [];
 
 const visualTextRows = [
+  {
+    id: 0,
+    showForSteps: [0],
+    content: <div></div> 
+  },
   {
     id: 1,
     showForSteps: [1, 2, 3],
@@ -117,6 +122,6 @@ export const constants = {
   claimPanel: claimPanel,
   proofStepPanels: proofStepPanels,
   descriptionPanels: descriptionPanels,
-  definitionPanels: definitionPanels,
+  // definitionPanels: definitionPanels,
   visualTextRows: visualTextRows,
 };

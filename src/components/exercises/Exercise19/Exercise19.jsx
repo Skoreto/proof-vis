@@ -39,7 +39,6 @@ class Exercise19 extends React.Component {
         case 0:
           this.setState({ btnPrevD: false });
           // this.setState(this.step1SVGContent);
-          this.setState(this.step1VisTexts);
           this.setState(this.step1Texts);
           break;
         case 1:
@@ -124,12 +123,6 @@ class Exercise19 extends React.Component {
   //     svgContent: svgContent,
   //   }
   // }
-
-  step1VisTexts = () => {
-    return {
-      isVisTextShowed: true,
-    }
-  }
 
   step2SVGContent = () => {
     const svgContent = (
