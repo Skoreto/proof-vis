@@ -1,9 +1,6 @@
 import React from 'react';
 import MathJax from 'react-mathjax2';
-import {
-  CSSTransition,
-  TransitionGroup,
-} from 'react-transition-group';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import './VisualTextsPanel.css';
 
 const VisualTextsPanel = (props) => (
@@ -15,9 +12,9 @@ const VisualTextsPanel = (props) => (
         .map(({ id, content }) => (
           <CSSTransition
             key={id}
-            timeout={1000}
+            timeout={500}
             classNames="row"
-          >         
+          >
             {content}                     
           </CSSTransition>
         ))}

@@ -80,6 +80,11 @@ const proofStepPanels = [
 
 const descriptionPanels = [
   {
+    id: 0,
+    showForSteps: [0, 4],
+    content: <p></p>
+  },
+  {
     id: 1,
     showForSteps: [1],
     content: <p>Tvar implikace původního tvrzení.</p>
@@ -94,11 +99,6 @@ const descriptionPanels = [
     showForSteps: [3],
     content: <p>Znění výroku <MN>B</MN>.</p>
   },
-  // {
-  //   id: 4,
-  //   showForSteps: [4],
-  //   content: <p>Sestavení negace původního tvrzení.</p>
-  // },
   {
     id: 5,
     showForSteps: [5],
