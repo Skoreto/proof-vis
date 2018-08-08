@@ -1,5 +1,4 @@
 import React from 'react';
-// import './VisualTextRow.css';
 
 /**
  * Stateless component for adding text rows over visualization.

@@ -3,6 +3,7 @@ import GraphVis from 'react-graph-vis';
 import { Row, Col } from 'react-bootstrap';
 import { SketchField } from 'react-sketch';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import Dialog from 'react-dialog';
 import PageHeader from '../PageHeading/PageHeader';
 import ProofStepsBox from './ProofStepsBox/ProofStepsBox';
@@ -12,13 +13,7 @@ import DescriptionPanel from './DescriptionPanel/DescriptionPanel';
 import DefinitionPanel from './DefinitionPanel/DefinitionPanel';
 import VisualTextsPanel from './VisualTextsPanel/VisualTextsPanel';
 import DialogDrawing from '../../components/dialogs/DialogDrawing/DialogDrawing';
-import ReactCSSTransitionReplace from 'react-css-transition-replace';
-import '../../customMainTheme.css';
 import '../ReactDialog/ReactDialog.css';
-import {
-  CSSTransition,
-  TransitionGroup,
-} from 'react-transition-group';
 
 const ExerciseWrapper = (props) => (
   <div>
@@ -74,10 +69,8 @@ const ExerciseWrapper = (props) => (
                   props.constants.visualTextRows.some(
                     (textRow) => { return textRow.showForSteps.includes(props.currentStep) }) &&
                     <CSSTransition
-                      // in={true}
                       key={99}
-                      // appear={true}
-                      timeout={5000}
+                      timeout={500}
                       classNames="fade"
                     > 
                       <VisualTextsPanel 
@@ -150,21 +143,13 @@ const ExerciseWrapper = (props) => (
                   </Button>
                 </span>
               </div>
-              
               {
                 props.constants.definitionPanels !== undefined &&
-                <ReactCSSTransitionReplace
-                  transitionName="cross-fade" 
-                  transitionEnterTimeout={1000}
-                  transitionLeaveTimeout={400}
-                >
                   <DefinitionPanel key={98}
                     definitionPanels={props.constants.definitionPanels}
                     currentStep={props.currentStep}
                   />
-                </ReactCSSTransitionReplace>  
               }
-              
               {
                 props.isDrawingDialogOpen &&
                   <Dialog  
