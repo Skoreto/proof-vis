@@ -10,6 +10,34 @@
   font-size: 16px;
 }
 
+.cross-fade-leave {
+  opacity: 1;
+}
+.cross-fade-leave.cross-fade-leave-active {
+  opacity: 0;
+  transition: opacity 500ms ease-in;
+}
+
+.cross-fade-enter {
+  opacity: 0;
+}
+.cross-fade-enter.cross-fade-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.cross-fade-appear {
+  opacity: 1;
+}
+.cross-fade-appear.cross-fade-appear-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.cross-fade-height {
+  transition: height .5s ease-in-out;
+}
+
 @media (max-width: 767px) {
   .definition-panel {
     min-width: 600px;

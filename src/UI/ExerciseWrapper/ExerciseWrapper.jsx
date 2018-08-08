@@ -12,6 +12,8 @@ import DescriptionPanel from './DescriptionPanel/DescriptionPanel';
 import DefinitionPanel from './DefinitionPanel/DefinitionPanel';
 import VisualTextsPanel from './VisualTextsPanel/VisualTextsPanel';
 import DialogDrawing from '../../components/dialogs/DialogDrawing/DialogDrawing';
+import ReactCSSTransitionReplace from 'react-css-transition-replace';
+import '../../customMainTheme.css';
 import '../ReactDialog/ReactDialog.css';
 import {
   CSSTransition,
@@ -72,8 +74,10 @@ const ExerciseWrapper = (props) => (
                   props.constants.visualTextRows.some(
                     (textRow) => { return textRow.showForSteps.includes(props.currentStep) }) &&
                     <CSSTransition
+                      // in={true}
                       key={99}
-                      timeout={1000}
+                      // appear={true}
+                      timeout={5000}
                       classNames="fade"
                     > 
                       <VisualTextsPanel 
@@ -146,13 +150,21 @@ const ExerciseWrapper = (props) => (
                   </Button>
                 </span>
               </div>
+              
               {
                 props.constants.definitionPanels !== undefined &&
-                  <DefinitionPanel
+                <ReactCSSTransitionReplace
+                  transitionName="cross-fade" 
+                  transitionEnterTimeout={1000}
+                  transitionLeaveTimeout={400}
+                >
+                  <DefinitionPanel key={98}
                     definitionPanels={props.constants.definitionPanels}
                     currentStep={props.currentStep}
                   />
+                </ReactCSSTransitionReplace>  
               }
+              
               {
                 props.isDrawingDialogOpen &&
                   <Dialog  

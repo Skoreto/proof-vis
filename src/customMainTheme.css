@@ -101,6 +101,16 @@
   color: #B39DDB;
 }
 
+/* == Transition settings for ExerciseWrapper == */
+.fade-appear {
+  opacity: 0.01;
+}
+
+.fade-appear.fade-appear-active {
+  opacity: 1;
+  transition: opacity 5000ms ease-in;
+}
+
 .fade-enter {
   opacity: 0.01;
 }
@@ -117,6 +127,27 @@
 .fade-exit-active {
   opacity: 0.01;
   transition: opacity 1000ms ease-in;
+}
+
+/* Cross-fade for ExerciseWrapper */
+.cross-fade-leave {
+  opacity: 1;
+}
+.cross-fade-leave.cross-fade-leave-active {
+  opacity: 0;
+  transition: opacity 500ms ease-in;
+}
+
+.cross-fade-enter {
+  opacity: 0;
+}
+.cross-fade-enter.cross-fade-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.cross-fade-height {
+  transition: height .5s ease-in-out;
 }
 
 /* === SEZNAMY OBSAHU === */
