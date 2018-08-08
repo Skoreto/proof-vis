@@ -18,6 +18,11 @@ import {
   TransitionGroup,
 } from 'react-transition-group';
 
+
+// function isTrue(textRow, index, array) {
+//   return textRowshowForSteps.includes(props.currentStep);
+// }
+
 const ExerciseWrapper = (props) => (
   <div>
     <div className="page-wrapper">
@@ -64,11 +69,21 @@ const ExerciseWrapper = (props) => (
                   </div>
               }
               {
-                props.isVisTextShowed &&
-                  <VisualTextsPanel 
+                // (props.isVisTextShowed && props.constants.visualTextRows.filter(textRow => textRow.showForSteps.includes(props.currentStep)) === true )
+                //  ? <VisualTextsPanel 
+                //     visualTextRows={props.constants.visualTextRows}
+                //     currentStep={props.currentStep}
+                //   />
+                //   : <div></div>
+
+                // props.constants.visualTextRows.filter(textRow => textRow.showForSteps.includes(props.currentStep)) === true) &&
+                props.constants.visualTextRows !== undefined &&
+                props.constants.visualTextRows.length > 0 && props.constants.visualTextRows.some((textRow, index, array) => {return textRow.showForSteps.includes(props.currentStep)}) &&
+                 <VisualTextsPanel 
                     visualTextRows={props.constants.visualTextRows}
                     currentStep={props.currentStep}
                   />
+                
               }
               <div className="graph-box">
                 <GraphVis
