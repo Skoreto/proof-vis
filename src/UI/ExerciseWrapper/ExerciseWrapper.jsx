@@ -113,7 +113,7 @@ const ExerciseWrapper = (props) => (
                     active={props.btnSketchA}
                     addClass={props.btnSketchC}
                   >
-                    <FontAwesomeIcon icon="paint-brush" />
+                    <FontAwesomeIcon icon="edit" />
                   </Button>
                   <Button
                     clicked={props.handleSketchPencil}
@@ -139,7 +139,7 @@ const ExerciseWrapper = (props) => (
                 </span>
                 <span className="drawing-dialog-panel">
                   <Button clicked={props.handleDrawingDialog}>
-                    <FontAwesomeIcon icon="edit" />
+                    <FontAwesomeIcon icon="chalkboard-teacher" />
                   </Button>
                 </span>
               </div>

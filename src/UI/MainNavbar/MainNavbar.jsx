@@ -75,7 +75,7 @@ const MainNavbar = () => (
         </NavDropdown>
         <LinkContainer to="/platno">
           <NavItem className="nav-item">
-            <FontAwesomeIcon icon="edit" /> Plátno
+            <FontAwesomeIcon icon="chalkboard-teacher" /> Plátno
           </NavItem>
         </LinkContainer>
       </Nav>

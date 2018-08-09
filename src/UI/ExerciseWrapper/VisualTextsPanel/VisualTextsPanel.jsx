@@ -10,11 +10,7 @@ const VisualTextsPanel = (props) => (
         {props.visualTextRows
         .filter(textRow => textRow.showForSteps.includes(props.currentStep))
         .map(({ id, content }) => (
-          <CSSTransition
-            key={id}
-            timeout={500}
-            classNames="row"
-          >
+          <CSSTransition key={id} timeout={500} classNames="row">
             {content}                     
           </CSSTransition>
         ))}

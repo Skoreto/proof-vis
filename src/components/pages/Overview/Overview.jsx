@@ -40,13 +40,13 @@ class Overview extends React.Component {
                     <h3>Pro výuku</h3>
                     <ul>
                       <li>
-                        Tlačítko štětce <FontAwesomeIcon icon="paint-brush" /> slouží k volnému <b>kreslení přes plátno</b> důkazu. Po aktivaci kreslení jsou zpřístupněny k výběru další kreslící nástroje - čára <FontAwesomeIcon icon="minus" /> a kruh <FontAwesomeIcon icon="circle-notch" />. Opětovným stistknutím tlačítka štětce je kreslení deaktivováno a kresba vymazána.
+                        Tlačítko editace <FontAwesomeIcon icon="edit" /> slouží k volnému <b>kreslení přes plátno</b> důkazu. Po aktivaci kreslení jsou zpřístupněny k výběru další kreslící nástroje - čára <FontAwesomeIcon icon="minus" /> a kruh <FontAwesomeIcon icon="circle-notch" />. Opětovným stistknutím tlačítka štětce je kreslení deaktivováno a kresba vymazána.
                       </li>
                       <li>
                         Dlouhým podržením levého tlačítka myši či klikáním při držení levého tlačítka CTRL nad vrcholem či hranou lze <b>označit více prvků zároveň</b>. To lze využít k vyznačování prvků grafu, ale také k jejich jednotnému přesunu.
                       </li>
                       <li>
-                        Pro účely výuky byly do aplikace přidány <b>prázdná plátna</b>, ve kterých může vyučující sám sestrojovat grafy. Z hlavní nabídky je dostupné velké plátno, roztažené přes celou obrazovku. Z panelu ovládání důkazu lze tlačítkem <FontAwesomeIcon icon="edit" /> zobrazit menší pomocné plátno, které lze snadněji kombinovat s výkladem k danému důkazu.
+                        Pro účely výuky byly do aplikace přidány <b>prázdná plátna</b>, ve kterých může vyučující sám sestrojovat grafy. Z hlavní nabídky je dostupné velké plátno, roztažené přes celou obrazovku. Z panelu ovládání důkazu lze tlačítkem tabule <FontAwesomeIcon icon="chalkboard-teacher" /> zobrazit menší pomocné plátno, které lze snadněji kombinovat s výkladem k danému důkazu.
                       </li>
                         <ul>
                           <li>

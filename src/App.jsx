@@ -9,12 +9,12 @@ import {
   faTimes,
   faChevronRight,
   faChevronLeft,
-  faPaintBrush,
+  faEdit,
   faPencilAlt,
   faMinus,
   faCircleNotch,
   faRedoAlt,
-  faEdit,
+  faChalkboardTeacher,
 } from '@fortawesome/free-solid-svg-icons';
 import Overview from './components/pages/Overview/Overview';
 import Exercise19 from './components/exercises/Exercise19/Exercise19';
@@ -38,12 +38,12 @@ library.add(
   faTimes,
   faChevronRight,
   faChevronLeft,
-  faPaintBrush,
+  faEdit,
   faPencilAlt,
   faMinus,
   faCircleNotch,
   faRedoAlt,
-  faEdit,
+  faChalkboardTeacher,
 );
 
 const App = () => (
