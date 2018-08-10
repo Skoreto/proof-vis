@@ -61,7 +61,7 @@ const MainNavbar = () => (
         </NavDropdown>
         <NavDropdown
           title={
-            <span><FontAwesomeIcon icon="times" /> Protipříklady</span>
+            <span><FontAwesomeIcon icon="draw-polygon" /> Ostatní</span>
           }
           id="protipriklady-nav-dropdown"
           className="nav-item"
@@ -76,6 +76,11 @@ const MainNavbar = () => (
         <LinkContainer to="/platno">
           <NavItem className="nav-item">
             <FontAwesomeIcon icon="chalkboard-teacher" /> Plátno
+          </NavItem>
+        </LinkContainer>
+        <LinkContainer to="/platno">
+          <NavItem className="nav-item">
+            <FontAwesomeIcon icon="question" /> Nápověda
           </NavItem>
         </LinkContainer>
       </Nav>

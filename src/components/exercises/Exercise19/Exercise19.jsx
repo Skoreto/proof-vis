@@ -84,6 +84,17 @@ class Exercise19 extends React.Component {
           scroller.scrollTo('proofStepPanel9', getScrollOptions(window.scrollY));
           break;
         }
+        case 10: {
+          this.setState(this.colorReset);
+          this.setState(this.step11);
+          scroller.scrollTo('proofStepPanel10', getScrollOptions(window.scrollY));
+          break;
+        }
+        case 11: {
+          this.setState(this.step12);
+          scroller.scrollTo('proofStepPanel11', getScrollOptions(window.scrollY));
+          break;
+        }
 
         default: {
           break;
@@ -211,6 +222,31 @@ class Exercise19 extends React.Component {
     newEdges = this.updateEdge(newEdges, 3, palette.purple, 3, false, '');
     newEdges = this.updateEdge(newEdges, 4, palette.purple, 3, false, '');
     newEdges = this.updateEdge(newEdges, 6, palette.purple, 3, false, '');
+
+    return { nodes: newNodes, edges: newEdges };
+  };
+
+  step11 = (state) => {
+    let newNodes = this.updateNode(state.nodes, 0, palette.yellow, ' u ');
+    newNodes = this.updateNode(newNodes, 7, palette.yellow, ' v ');
+
+    return { nodes: newNodes };
+  };
+
+  step12 = (state) => {
+    let newNodes = this.updateNode(state.nodes, 0, palette.purple, ' u ');
+    newNodes = this.updateNode(newNodes, 1, palette.purple, '');
+    newNodes = this.updateNode(newNodes, 3, palette.purple, '');
+    newNodes = this.updateNode(newNodes, 5, palette.purple, ' x ');
+    newNodes = this.updateNode(newNodes, 6, palette.purple, ' y ');
+    newNodes = this.updateNode(newNodes, 7, palette.purple, ' v ');
+    
+    let newEdges = this.updateEdge(state.edges, 0, palette.purple, 3, false, '');
+    newEdges = this.updateEdge(newEdges, 2, palette.purple, 3, false, '');
+    newEdges = this.updateEdge(newEdges, 4, palette.purple, 3, false, '');
+    newEdges = this.updateEdge(newEdges, 5, palette.red, 3, false, 'e');
+    newEdges = this.updateEdge(newEdges, 6, palette.purple, 3, false, '');
+    newEdges = this.updateEdge(newEdges, 7, palette.purple, 3, false, '');
 
     return { nodes: newNodes, edges: newEdges };
   };

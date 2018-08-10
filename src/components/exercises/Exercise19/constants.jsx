@@ -5,7 +5,7 @@ import MN from '../../../UI/MathJaxNode/MathJaxNode';
 
 const headingTitle = 'Příklad 19';
 const breadcrumbsCurrent = 'Důkazy sporem';
-const stepSum = 20;
+const stepSum = 16;
 
 const claimPanel = (
   <ClaimPanel>
@@ -65,7 +65,7 @@ const proofStepPanels = [
     activeForSteps: [9],
     content:
       <p>
-        <b>1.</b> <MN>{'P_{x,y}=e=\\{x,y\\}'}</MN> (samotná hrana <MN>e</MN>)
+        <b>1.</b> Cesta <MN>{"P_{x,y}=e=\\{x,y\\}"}</MN> (samotná hrana <MN>e</MN>)
       </p>
   },
   {
@@ -73,7 +73,61 @@ const proofStepPanels = [
     activeForSteps: [10],
     content:
       <p>
-        <b>2.</b> <MN>{"P'_{x,y}=C-e=(x,v_1,v_2,...,v_3,y)"}</MN> (kružnice bez hrany <MN>e</MN>)
+        <b>2.</b> Cesta <MN>{"P'_{x,y}=C-e=(x,v_1,v_2,...,v_3,y)"}</MN> (kružnice bez hrany <MN>e</MN>)
+      </p>
+  },
+  {
+    name: 'proofStepPanel10',
+    activeForSteps: [11],
+    content:
+      <p>
+        Nyní ukážeme pro <MN>\forall u,v \in V(G):</MN> jestliže existuje <MN>u-v</MN> cesta <MN>{"P_{u,v}"}</MN> v grafu <MN>G</MN> <MN>\Rightarrow</MN> pak existuje <MN>u-v</MN> cesta <MN>{"P'_{u,v}"}</MN> také v grafu <MN>G-e</MN>:
+        <br /><br />
+        Pro demonstraci zvolíme libovoně vrcholy <MN>u</MN> a <MN>v</MN>.
+      </p>
+  },
+  {
+    name: 'proofStepPanel11',
+    activeForSteps: [12],
+    content:
+      <p>
+        <b>1.</b> Pokud v grafu <MN>G</MN> cesta <MN>{"P_{u,v}"}</MN> neobsahuje hranu <MN>e</MN>, pak platí <MN>{"P'_{u,v}=P_{u,v}"}</MN>. Tedy že <MN>u-v</MN> cesta v grafu <MN>G</MN> se v grafu <MN>G-e</MN> nezmění.
+      </p>
+  },
+  {
+    name: 'proofStepPanel12',
+    activeForSteps: [13],
+    content:
+      <p>
+        <b>2.</b> Pokud v grafu <MN>G</MN> cesta <MN>{"P_{u,v}"}</MN> obsahuje hranu <MN>e</MN>, pak hranu <MN>e</MN> v alternativní cestě <MN>{"P'_{u,v}"}</MN> nahradíme cestou <MN>{"P'_{x,y}"}</MN>. Tedy cestou mezi vrcholy <MN>x</MN> a <MN>y</MN> po kružnici <MN>C</MN>.
+        <br /><br />
+        Tím vznikne sled mezi vrcholy <MN>u</MN> a <MN>v</MN> v grafu <MN>G-e</MN>.
+        <br /><br />
+        Formálně zapsáno: <MN>{"(P_{u,v} - e) \\cup P'_{x,y} = (P_{u,v} - e) \\cup (C-e)"}</MN>
+      </p>
+  },
+  {
+    name: 'proofStepPanel13',
+    activeForSteps: [14],
+    content:
+      <p>
+        <MN>\Rightarrow</MN> Pak existuje také cesta mezi vrcholy <MN>u</MN> a <MN>v</MN> v grafu <MN>G-e</MN>.
+      </p>
+  },
+  {
+    name: 'proofStepPanel14',
+    activeForSteps: [15],
+    content:
+      <p>
+        <MN>\Rightarrow</MN> Tudíž je počet komponent grafu <MN>G-e</MN> stejný jako počet komponent grafu <MN>G</MN>.
+      </p>
+  },
+  {
+    name: 'proofStepPanel15',
+    activeForSteps: [16],
+    content:
+      <p>
+        <MN>\Rightarrow</MN> Podle definice mostu tedy hrana <MN>e</MN> není most, což je spor s předpokladem, a proto platí původní tvrzení. <MN>\square</MN>
       </p>
   },
 ];
@@ -114,9 +168,34 @@ const descriptionPanels = [
     showForSteps: [7],
     content: <p>Celé znění negace původního tvrzení.</p>
   },
+  {
+    id: 11,
+    showForSteps: [11],
+    content: <p>Zvolení libovolných vrcholů <MN>u</MN> a <MN>v</MN></p>
+  },
+  {
+    id: 12,
+    showForSteps: [12],
+    content: <p>Cesta mezi vrcholy <MN>u</MN> a <MN>v</MN> bez hrany <MN>e</MN> je v grafu <MN>G-e</MN> shodná s cestou v grafu <MN>G</MN>.</p>
+  },
 ];
 
-// const definitionPanels = [];
+const definitionPanels = [
+  {
+    id: 1,
+    showForSteps: [16],
+    content:
+      <div>
+        <p>
+          DEFINICE MOSTU (1.11)
+          <br />Nechť je dán graf <MN>G=(V,E)</MN>, vrchol <MN>v \in V</MN> a hrana <MN>e \in E</MN>.
+        </p>
+        <p>
+          Hrana <MN>e</MN> je most grafu <MN>G</MN>, jestliže graf <MN>G-e</MN> má více komponent než graf <MN>G</MN>.
+        </p>
+      </div>
+  },
+];
 
 const visualTextRows = [
   {

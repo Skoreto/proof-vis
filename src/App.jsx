@@ -14,7 +14,9 @@ import {
   faMinus,
   faCircleNotch,
   faRedoAlt,
+  faDrawPolygon,
   faChalkboardTeacher,
+  faQuestion,
 } from '@fortawesome/free-solid-svg-icons';
 import Overview from './components/pages/Overview/Overview';
 import Exercise19 from './components/exercises/Exercise19/Exercise19';
@@ -43,7 +45,9 @@ library.add(
   faMinus,
   faCircleNotch,
   faRedoAlt,
+  faDrawPolygon,
   faChalkboardTeacher,
+  faQuestion,
 );
 
 const App = () => (
