@@ -5,7 +5,7 @@ import MN from '../../../UI/MathJaxNode/MathJaxNode';
 
 const headingTitle = 'Příklad 19';
 const breadcrumbsCurrent = 'Důkazy sporem';
-const stepSum = 16;
+const stepSum = 17;
 
 const claimPanel = (
   <ClaimPanel>
@@ -99,11 +99,7 @@ const proofStepPanels = [
     activeForSteps: [13],
     content:
       <p>
-        <b>2.</b> Pokud v grafu <MN>G</MN> cesta <MN>{"P_{u,v}"}</MN> obsahuje hranu <MN>e</MN>, pak hranu <MN>e</MN> v alternativní cestě <MN>{"P'_{u,v}"}</MN> nahradíme cestou <MN>{"P'_{x,y}"}</MN>. Tedy cestou mezi vrcholy <MN>x</MN> a <MN>y</MN> po kružnici <MN>C</MN>.
-        <br /><br />
-        Tím vznikne sled mezi vrcholy <MN>u</MN> a <MN>v</MN> v grafu <MN>G-e</MN>.
-        <br /><br />
-        Formálně zapsáno: <MN>{"(P_{u,v} - e) \\cup P'_{x,y} = (P_{u,v} - e) \\cup (C-e)"}</MN>
+        <b>2.</b> Pokud v grafu <MN>G</MN> cesta <MN>{"P_{u,v}"}</MN> obsahuje hranu <MN>e</MN>, ...
       </p>
   },
   {
@@ -111,7 +107,11 @@ const proofStepPanels = [
     activeForSteps: [14],
     content:
       <p>
-        <MN>\Rightarrow</MN> Pak existuje také cesta mezi vrcholy <MN>u</MN> a <MN>v</MN> v grafu <MN>G-e</MN>.
+        pak hranu <MN>e</MN> v alternativní cestě <MN>{"P'_{u,v}"}</MN> nahradíme cestou <MN>{"P'_{x,y}"}</MN>. Tedy cestou mezi vrcholy <MN>x</MN> a <MN>y</MN> po kružnici <MN>C</MN> (z kroku 10).
+        <br /><br />
+        Tím vznikne sled mezi vrcholy <MN>u</MN> a <MN>v</MN> v grafu <MN>G-e</MN>.
+        <br /><br />
+        Formálně zapsáno: <MN>{"(P_{u,v} - e) \\cup P'_{x,y} = (P_{u,v} - e) \\cup (C-e)"}</MN>
       </p>
   },
   {
@@ -119,12 +119,20 @@ const proofStepPanels = [
     activeForSteps: [15],
     content:
       <p>
-        <MN>\Rightarrow</MN> Tudíž je počet komponent grafu <MN>G-e</MN> stejný jako počet komponent grafu <MN>G</MN>.
+        <MN>\Rightarrow</MN> Pak existuje také cesta mezi vrcholy <MN>u</MN> a <MN>v</MN> v grafu <MN>G-e</MN>. (Každý úsek, kde se vracíme do stejného vrcholu, můžeme totiž vynechat.)
       </p>
   },
   {
     name: 'proofStepPanel15',
     activeForSteps: [16],
+    content:
+      <p>
+        <MN>\Rightarrow</MN> Tudíž je počet komponent grafu <MN>G-e</MN> stejný jako počet komponent grafu <MN>G</MN>.
+      </p>
+  },
+  {
+    name: 'proofStepPanel16',
+    activeForSteps: [17],
     content:
       <p>
         <MN>\Rightarrow</MN> Podle definice mostu tedy hrana <MN>e</MN> není most, což je spor s předpokladem, a proto platí původní tvrzení. <MN>\square</MN>
@@ -171,19 +179,58 @@ const descriptionPanels = [
   {
     id: 11,
     showForSteps: [11],
-    content: <p>Zvolení libovolných vrcholů <MN>u</MN> a <MN>v</MN></p>
+    content: <p>Zvolení libovolných vrcholů <MN>u</MN> a <MN>v</MN>.</p>
   },
   {
     id: 12,
     showForSteps: [12],
-    content: <p>Cesta mezi vrcholy <MN>u</MN> a <MN>v</MN> bez hrany <MN>e</MN> je v grafu <MN>G-e</MN> shodná s cestou v grafu <MN>G</MN>.</p>
+    content: 
+      <p>
+        Cesta mezi vrcholy <MN>u</MN> a <MN>v</MN> bez hrany <MN>e</MN> je v grafu <MN>G-e</MN> shodná s cestou v grafu <MN>G</MN>.
+      </p>
+  },
+  {
+    id: 13,
+    showForSteps: [13],
+    content: 
+      <p>
+        V grafu <MN>G</MN> může existovat cesta <MN>{"P_{u,v}"}</MN> vedoucí přes hranu <MN>e</MN>.
+      </p>
+  },
+  {
+    id: 14,
+    showForSteps: [14],
+    content: 
+      <p>
+        Hranu <MN>e</MN> můžeme v grafu <MN>G-e</MN> nahradit cestou po kružnici <MN>C</MN>.
+        <br /> Tím vznikne sled mezi vrcholy <MN>u</MN> a <MN>v</MN>.
+      </p>
+  },
+  {
+    id: 15,
+    showForSteps: [15],
+    content: 
+      <p>
+        Úseky mezi dvěma výskyty stejného vrcholu vynecháme a zbyde nám cesta mezi vrcholy <MN>u</MN> a <MN>v</MN> i v grafu <MN>G-e</MN>.
+      </p>
   },
 ];
 
 const definitionPanels = [
   {
     id: 1,
-    showForSteps: [16],
+    showForSteps: [15],
+    content:
+      <div>
+        <p>
+          TVRZENÍ 1.1 Implikace II)
+          <br /><MN>\forall G=(V,E)</MN>: Jestliže v grafu <MN>G</MN> existuje sled z vrcholu <MN>v</MN> do vrcholu <MN>w</MN> <MN>\Rightarrow</MN> pak v grafu <MN>G</MN> existuje cesta z vrcholu <MN>v</MN> do vrcholu <MN>w</MN>.
+        </p>
+      </div>
+  },
+  {
+    id: 2,
+    showForSteps: [17],
     content:
       <div>
         <p>
@@ -268,6 +315,6 @@ export const constants = {
   claimPanel: claimPanel,
   proofStepPanels: proofStepPanels,
   descriptionPanels: descriptionPanels,
-  // definitionPanels: definitionPanels,
+  definitionPanels: definitionPanels,
   visualTextRows: visualTextRows,
 };

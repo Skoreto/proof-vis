@@ -95,6 +95,23 @@ class Exercise19 extends React.Component {
           scroller.scrollTo('proofStepPanel11', getScrollOptions(window.scrollY));
           break;
         }
+        case 12: {
+          this.setState(this.colorReset);
+          this.setState(this.step13);
+          scroller.scrollTo('proofStepPanel12', getScrollOptions(window.scrollY));
+          break;
+        }
+        case 13: {
+          this.setState(this.colorReset);
+          scroller.scrollTo('proofStepPanel13', getScrollOptions(window.scrollY));
+          break;
+        }
+        case 14: {
+          this.setState(this.colorReset);
+          this.setState(this.step12); // Keep
+          scroller.scrollTo('proofStepPanel14', getScrollOptions(window.scrollY));
+          break;
+        }
 
         default: {
           break;
@@ -171,12 +188,12 @@ class Exercise19 extends React.Component {
       ],
       edges: [
         { id: 1, from: 1, to: 2 },
-        { id: 2, from: 2, to: 3, color: { color: palette.green }, width: 3 },
-        { id: 3, from: 2, to: 4, color: { color: palette.green }, width: 3 },
-        { id: 4, from: 3, to: 5, color: { color: palette.green }, width: 3 },
-        { id: 5, from: 4, to: 6, color: { color: palette.green }, width: 3 },
-        { id: 6, from: 5, to: 7, color: { color: palette.green }, width: 3, label: 'e' },
-        { id: 7, from: 6, to: 7, color: { color: palette.green }, width: 3 },
+        { id: 2, from: 2, to: 3, color: { color: palette.green }, width: 4 },
+        { id: 3, from: 2, to: 4, color: { color: palette.green }, width: 4 },
+        { id: 4, from: 3, to: 5, color: { color: palette.green }, width: 4 },
+        { id: 5, from: 4, to: 6, color: { color: palette.green }, width: 4 },
+        { id: 6, from: 5, to: 7, color: { color: palette.green }, width: 4, label: 'e' },
+        { id: 7, from: 6, to: 7, color: { color: palette.green }, width: 4 },
         { id: 8, from: 7, to: 8 },
       ],
     }
@@ -204,7 +221,7 @@ class Exercise19 extends React.Component {
     let newNodes = this.updateNode(state.nodes, 4, palette.purple, ' x ');
     newNodes = this.updateNode(newNodes, 6, palette.purple, ' y ');
     
-    let newEdges = this.updateEdge(state.edges, 5, palette.purple, 3, false, 'e');
+    let newEdges = this.updateEdge(state.edges, 5, palette.purple, 4, false, 'e');
 
     return { nodes: newNodes, edges: newEdges };
   };
@@ -217,11 +234,11 @@ class Exercise19 extends React.Component {
     newNodes = this.updateNode(newNodes, 5, palette.purple, '');
     newNodes = this.updateNode(newNodes, 6, palette.purple, ' y ');
     
-    let newEdges = this.updateEdge(state.edges, 1, palette.purple, 3, false, '');
-    newEdges = this.updateEdge(newEdges, 2, palette.purple, 3, false, '');
-    newEdges = this.updateEdge(newEdges, 3, palette.purple, 3, false, '');
-    newEdges = this.updateEdge(newEdges, 4, palette.purple, 3, false, '');
-    newEdges = this.updateEdge(newEdges, 6, palette.purple, 3, false, '');
+    let newEdges = this.updateEdge(state.edges, 1, palette.purple, 4, false, '');
+    newEdges = this.updateEdge(newEdges, 2, palette.purple, 4, false, '');
+    newEdges = this.updateEdge(newEdges, 3, palette.purple, 4, false, '');
+    newEdges = this.updateEdge(newEdges, 4, palette.purple, 4, false, '');
+    newEdges = this.updateEdge(newEdges, 6, palette.purple, 4, false, '');
 
     return { nodes: newNodes, edges: newEdges };
   };
@@ -237,16 +254,33 @@ class Exercise19 extends React.Component {
     let newNodes = this.updateNode(state.nodes, 0, palette.purple, ' u ');
     newNodes = this.updateNode(newNodes, 1, palette.purple, '');
     newNodes = this.updateNode(newNodes, 3, palette.purple, '');
-    newNodes = this.updateNode(newNodes, 5, palette.purple, ' x ');
+    newNodes = this.updateNode(newNodes, 5, palette.purple, '');
     newNodes = this.updateNode(newNodes, 6, palette.purple, ' y ');
     newNodes = this.updateNode(newNodes, 7, palette.purple, ' v ');
     
-    let newEdges = this.updateEdge(state.edges, 0, palette.purple, 3, false, '');
-    newEdges = this.updateEdge(newEdges, 2, palette.purple, 3, false, '');
-    newEdges = this.updateEdge(newEdges, 4, palette.purple, 3, false, '');
-    newEdges = this.updateEdge(newEdges, 5, palette.red, 3, false, 'e');
-    newEdges = this.updateEdge(newEdges, 6, palette.purple, 3, false, '');
-    newEdges = this.updateEdge(newEdges, 7, palette.purple, 3, false, '');
+    let newEdges = this.updateEdge(state.edges, 0, palette.purple, 5, false, '');
+    newEdges = this.updateEdge(newEdges, 2, palette.purple, 5, false, '');
+    newEdges = this.updateEdge(newEdges, 4, palette.purple, 5, false, '');
+    newEdges = this.updateEdge(newEdges, 5, palette.red, 5, [12, 12], 'e');
+    newEdges = this.updateEdge(newEdges, 6, palette.purple, 5, false, '');
+    newEdges = this.updateEdge(newEdges, 7, palette.purple, 5, false, '');
+
+    return { nodes: newNodes, edges: newEdges };
+  };
+
+  step13 = (state) => {
+    let newNodes = this.updateNode(state.nodes, 0, palette.purple, ' u ');
+    newNodes = this.updateNode(newNodes, 1, palette.purple, '');
+    newNodes = this.updateNode(newNodes, 2, palette.purple, '');
+    newNodes = this.updateNode(newNodes, 4, palette.purple, ' x ');
+    newNodes = this.updateNode(newNodes, 6, palette.purple, ' y ');
+    newNodes = this.updateNode(newNodes, 7, palette.purple, ' v ');
+    
+    let newEdges = this.updateEdge(state.edges, 0, palette.purple, 5, false, '');
+    newEdges = this.updateEdge(newEdges, 1, palette.purple, 5, false, '');
+    newEdges = this.updateEdge(newEdges, 3, palette.purple, 5, false, '');
+    newEdges = this.updateEdge(newEdges, 5, palette.purple, 5, false, 'e');
+    newEdges = this.updateEdge(newEdges, 7, palette.purple, 5, false, '');
 
     return { nodes: newNodes, edges: newEdges };
   };

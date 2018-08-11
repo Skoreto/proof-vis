@@ -63,6 +63,8 @@ class Overview extends React.Component {
                           </li> 
                         </ul>     
                     </ul>
+                    <h3>Zdroje</h3>
+                    V průběhu dokazovaná jsou využívány znění definic a vět ze skript Milkové, jakožto hlavního materiálu dooporučeného pro studium předmětů DIMA a KDIMA
                   </main>
                 </Col>
                 <Col xs={12} md={12} lg={5}>
