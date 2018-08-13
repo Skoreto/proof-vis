@@ -12,8 +12,7 @@ class Overview extends React.Component {
         <div className={"container"}>
           <div className="page-wrapper">
             <PageHeading 
-              headingTitle={"Ovládání a aktuálně zpracované příklady"} 
-              breadcrumbsCurrent={"Přehled"} 
+              headingTitle={"Ovládání a aktuálně zpracované příklady"}
             />
             <div className="page-content overview">
               <Row className="page-row">

@@ -1,0 +1,88 @@
+import React from 'react';
+import { Row, Col, Image } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import '../../../customMainTheme.css';
+import PageHeading from "../../../UI/PageHeading/PageHeader";
+
+class Help extends React.Component {
+  render() {
+    return (
+      <div>
+        <div className={"container"}>
+          <div className="page-wrapper">
+            <PageHeading 
+              headingTitle={"Nápověda a informace o aplikaci"} 
+            />
+            <div className="page-content help">
+              <Row className="page-row">
+                <Col xs={12} md={12} lg={12}>
+                  <main>                                     
+                    <h3 className="first-heading">Požadavky na provoz aplikace</h3>
+                    <p>
+                    Vývoj aplikace byl cílen na použití v nových verzích majoritních zástupců webových a desktopových a mobilních prohlížečů. Z desktopových variant jsou doporučeny prohlížeče Google Chrome a Mozilla Firefox, ale podporován je také prohlížeč Opera, Microsoft Edge a Safari. Na mobilních zařízeních je doporučen prohlížeč Google Chrome. Pro pohodlné používání aplikace by úhlopříčka displeje zařízení měla dosahovat alespoň rozměrů tabletu s rozlišením alespoň 1024x768 pixelů. Uživatelské rozhraní se však přizpůsobí i displejům chytrých telefonů.
+                    </p>
+
+                    <h3>Orientace v aplikaci</h3>
+                    <p>
+                      V horní části stránek je umístěna horizontální navigace obsahující rozbalitelné nabídky s odkazy na stránky důkazů. Důkazy jsou rozděleny do nabídek podle metody dokazování, která v nich je využita. Navigace je dostupná z každé stránky a je proto možné ihned přejít na kterýkoli z příkladů. V navigaci se dále nachází odkaz na stránku s velkým plátnem pro tvorbu vlastního grafu a odkaz na stránku s nápovědou. Přechod na úvodní stranu je proveden po kliknutí na logo s názvem aplikace.
+                    </p>
+
+                    <h3>Popis hlavních prvků stránky důkazu</h3>
+                    <p>
+                      Rozvržení těla každé stránky důkazu zahrnuje v horní části název příkladu a drobečkovou navigaci pro usnadnění orientaci v aplikaci. Dále široký panel se zněním dokazovaného tvrzení, levý postranní panel s kroky prováděnými v průběhu dokazování, vizualizační plátno s popisem aktuální vizualizace, panel ovládání a v případě potřeby šedý panel definic, který slouží k připomenutí znění důležitých definic použitých při dokazování.
+                    </p>
+
+                    <h3>Ovládání vizualizačního plátna</h3>
+                    <p>
+                      Součástí plátna jsou zelená tlačítka pro ovládání kamery. Šipky v levém dolním rohu slouží k posunu po ose x a y. Tlačítka + a – v pravém dolním rohu umožňují pohled kamery přiblížit a oddálit, což lze provést také otáčením kolečka myši. Tlačítko roztahovaného čtverce vycentruje graf na střed a resetuje oddálení kamery tak, aby byl komfortně zobrazen celý aktuální obsah plátna.
+                    </p>
+                    <p>
+                      S grafem na plátnu je možné interagovat. Vrcholy a hrany reagují na přejetí kurzorem myši a stisknutím levého tlačítka myši je možné je zvýrazňovat. Jejich zvýraznění zůstane permanentní, pokud je levé tlačítko podrženo déle než jednu sekundu nebo pokud je při klikání podržena klávesa CTRL.
+                    </p>
+                    <p>
+                      V daném kroku lze vrcholy přesunout na jinou pozici.
+                    </p>
+
+                    <h3>Ovládání vizualizačního plátna</h3>
+                    <p>
+                      V šedém panelu ovládání se nacházejí tlačítka pro ovládání průběhu důkazu a pomocných nástrojů pro výuku.
+                    </p>
+                    <Image src="assets/image/controls_panel.png" thumbnail />
+                    <p>
+                      Černými šipkami vlevo a vpravo se lze pohybovat v důkazu o krok zpět či vpřed. Aktuální krok z celkového počtu kroků zobrazuje ukazadlo mezi šipkami. V průběhu vícekrokových animací je aktivní tlačítko „šipky zopakovat“, které slouží k okamžitému zopakování animace od začátku.
+                    </p>
+
+                    <h3>Kreslící nástroje</h3>
+                    <p>
+                      Panel ovládání dále obsahuje skupinu tlačítek pro kreslení přes plátno. Po aktivaci kreslení prvním tlačítkem „editace“ je kurzor změněn na kříž a jsou zpřístupněny tlačítka pro výběr kreslícího nástroje. Ve výchozím stavu je aktivní nástroj „tužka“, který umožní kreslit přes plátno volným tahem. Další dva nástroje umožní kreslení přímek a kružnic například pro naznačení vrcholů a hran grafu. Deaktivací kreslení opětovným stisknutím tlačítka „editace“ je kresba vymazána.
+                    </p>
+
+                    <h3>Tvůrčí plátna</h3>
+                    <p>
+                      Pro účely výuky byly dále do aplikace přidány prázdná tvůrčí plátna, ve kterých může vyučující sám sestrojovat grafy přidáváním vrcholů a jejich propojováním hranami. Na stránku velkého plátna lze přejít tlačítkem „PLÁTNO“ v hlavní navigaci.
+                    </p>
+                    <p>
+                      Na stránce každého důkazu je v panelu ovládání dostupné tlačítko pro zobrazení malého pomocného plátna. Plátno lze volně přesouvat v prostoru celé stránky uchopením za horní panel a po zavření dialogu křížkem v pravém horním rohu je jeho obsah vymazán. 
+                    </p>
+                    <Image src="assets/image/drawing_dialog_1.png" thumbnail />
+                    <p>
+                      Pro tvorbu a úpravy grafu slouží tlačítka z nabídky v horní části plátna. Po jejich zvolení se v nabídce zobrazí nápověda k provedení požadovaného úkonu. Po označení vrcholu je v nabídce zobrazeno také tlačítko „Upravit vrchol“ po jehož stisknutí se zobrazí dialog z obrázku 19, ve kterém lze změnit text popisu vrcholu, barvu textu a barvu vrcholu. Obdobně je možné upravit také textový popis, barvu a tloušťku hrany. Nejprve je možné propojit hranu s jiným vrcholem, poté se zobrazí formulář pro úpravu zmíněných atributů.
+                    </p>
+                    <Image src="assets/image/drawing_dialog_edit.png" thumbnail />
+
+                    <h3>Řešení problémů</h3>
+                    <p>
+                      V případě výskytu chyby či špatného vykreslení některého z prvků je doporučeno přejít na úvodní stránku a obnovit ji například klávesou F5.
+                    </p>
+                  </main>
+                </Col>
+              </Row>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
+
+export default Help;

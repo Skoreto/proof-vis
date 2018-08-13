@@ -6,12 +6,15 @@ const PageHeading = (props) => (
   <Row>
     <header className="page-heading clearfix">
       <h1 className="heading-title">{props.headingTitle}</h1>
-      <div className="breadcrumbs pull-right">
-        <ul className="breadcrumbs-list">
-          <li className="breadcrumbs-label">Nacházíte se zde:</li>
-          <li className="current">{props.breadcrumbsCurrent}</li>
-        </ul>
-      </div>
+      {
+        props.breadcrumbsCurrent && 
+          <div className="breadcrumbs pull-right">
+            <ul className="breadcrumbs-list">
+              <li className="breadcrumbs-label">Nacházíte se v sekci:</li>
+              <li className="current">{props.breadcrumbsCurrent}</li>
+            </ul>
+          </div>
+      }
     </header>
   </Row>
 );

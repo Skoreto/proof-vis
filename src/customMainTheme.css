@@ -29,6 +29,16 @@
   font-size: 14px;
 }
 
+.help p {
+  font-size: 16px;
+}
+
+.help img {
+  margin: auto;
+  margin-bottom: 15px;
+  display: block;
+}
+
 .over-component {
   position: absolute;
   min-width: 600px;

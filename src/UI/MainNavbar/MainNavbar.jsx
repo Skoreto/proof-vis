@@ -78,7 +78,7 @@ const MainNavbar = () => (
             <FontAwesomeIcon icon="chalkboard-teacher" /> Plátno
           </NavItem>
         </LinkContainer>
-        <LinkContainer to="/platno">
+        <LinkContainer to="/napoveda">
           <NavItem className="nav-item">
             <FontAwesomeIcon icon="question" /> Nápověda
           </NavItem>
