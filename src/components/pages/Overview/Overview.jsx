@@ -93,6 +93,9 @@ class Overview extends React.Component {
                         </ListGroup>
                         <ListGroup>
                           <ListGroupItem bsStyle="danger">Důkazy sporem</ListGroupItem>
+                          <LinkContainer to="/priklad19">
+                            <ListGroupItem>Příklad 19</ListGroupItem>
+                          </LinkContainer>
                         </ListGroup>
                         <ListGroup>
                           <ListGroupItem bsStyle="info">Protipříklady</ListGroupItem>
