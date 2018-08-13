@@ -5,7 +5,7 @@ import {
   palette,
 } from '../../../functionality/GlobalExerciseConstants';
 import { scroller } from 'react-scroll';
-import { constants } from './constants';
+import { constants, cameraPositions } from './constants';
 import {
   updateNode,
   updateEdge,
@@ -24,6 +24,7 @@ class Exercise19 extends React.Component {
   constructor(props) {
     super(props);
     this.state = initialExerciseState;
+    this.initNetworkInstance = this.initNetworkInstance.bind(this);
     this.updateNode = updateNode.bind(this);
     this.updateEdge = updateEdge.bind(this);
     this.updateEdgeWithArrow = updateEdgeWithArrow.bind(this);
@@ -33,6 +34,14 @@ class Exercise19 extends React.Component {
     this.handlerSketchAllowance = handlerSketchAllowance.bind(this);
     this.handlerSelectedTool = handlerSelectedTool.bind(this);
     this.handlerDrawingDialog = handlerDrawingDialog.bind(this);
+  }
+
+  /**
+   * Initialize graphVis network instance.
+   * @param {Object} networkInstance - Object of network instance returned by getNetwork() callback function.
+   */
+  initNetworkInstance(networkInstance) {
+    this.network = networkInstance;
   }
 
   nextStep = () => {
@@ -47,78 +56,77 @@ class Exercise19 extends React.Component {
           break;
         }
         case 3: {
-          // this.setState(this.step4);
           scroller.scrollTo('proofStepPanel3', getScrollOptions(window.scrollY));
           break;
         }
         case 4: {
-          // this.setState(this.step5);
           scroller.scrollTo('proofStepPanel4', getScrollOptions(window.scrollY));
           break;
         }
-        // case 5:
-        //   // this.setState(this.step4);
-        //   // this.setState(this.step6);
-        //   scroller.scrollTo('proofStepPanel5', getScrollOptions(window.scrollY));
-        //   break;
         case 6: {
-          // this.setState(this.step4);
-          // this.setState(this.step7);
           scroller.scrollTo('proofStepPanel5', getScrollOptions(window.scrollY));
           break;
         }
         case 7: {
-          // this.setState(this.step4);
-          // this.setState(this.step7);
           this.setState(this.step8);
-          scroller.scrollTo('proofStepPanel7', getScrollOptions(window.scrollY));
+          this.network.moveTo(cameraPositions[0]);
+          scroller.scrollTo('proofStepPanel6', getScrollOptions(window.scrollY));
           break;
         }
         case 8: {
           this.setState(this.colorReset);
           this.setState(this.step9);
-          scroller.scrollTo('proofStepPanel8', getScrollOptions(window.scrollY));
+          scroller.scrollTo('proofStepPanel7', getScrollOptions(window.scrollY));
           break;
         }
         case 9: {
           this.setState(this.colorReset);
           this.setState(this.step10);
-          scroller.scrollTo('proofStepPanel9', getScrollOptions(window.scrollY));
+          scroller.scrollTo('proofStepPanel8', getScrollOptions(window.scrollY));
           break;
         }
         case 10: {
           this.setState(this.colorReset);
           this.setState(this.step11);
-          scroller.scrollTo('proofStepPanel10', getScrollOptions(window.scrollY));
+          scroller.scrollTo('proofStepPanel9', getScrollOptions(window.scrollY));
           break;
         }
         case 11: {
           this.setState(this.step12);
-          scroller.scrollTo('proofStepPanel11', getScrollOptions(window.scrollY));
+          scroller.scrollTo('proofStepPanel10', getScrollOptions(window.scrollY));
           break;
         }
         case 12: {
           this.setState(this.colorReset);
           this.setState(this.step13);
-          scroller.scrollTo('proofStepPanel12', getScrollOptions(window.scrollY));
+          scroller.scrollTo('proofStepPanel11', getScrollOptions(window.scrollY));
           break;
         }
         case 13: {
           this.setState(this.colorReset);
           this.step14();
           this.setState({ btnRepeatD: false });
-          scroller.scrollTo('proofStepPanel13', getScrollOptions(window.scrollY));
+          scroller.scrollTo('proofStepPanel12', getScrollOptions(window.scrollY));
           break;
         }
         case 14: {
           this.clearAllTimers(this.state);
           this.setState(this.colorReset);
-          this.setState(this.step12); // Keep
+          this.setState(this.step12); // Same as step12
           this.setState({ btnRepeatD: true });
+          scroller.scrollTo('proofStepPanel13', getScrollOptions(window.scrollY));
+          break;
+        }
+        case 15: {
+          this.setState(this.colorReset);
+          this.setState(this.step16);
           scroller.scrollTo('proofStepPanel14', getScrollOptions(window.scrollY));
           break;
         }
-
+        case 16: {
+          scroller.scrollTo('proofStepPanel15', getScrollOptions(window.scrollY));
+          break;
+        }
         default: {
           break;
         }
@@ -133,14 +141,86 @@ class Exercise19 extends React.Component {
       switch (this.state.currentStep) {
         case 1: {
           this.setState({ btnPrevD: true });
-          this.setState(this.stepReset);
           break;
         }
         case 2: {
-          this.setState(this.stepReset);
-          this.setState(this.step1SVGContent);
-          this.setState(this.step1Texts);
           scroller.scrollTo('proofStepPanel1', getScrollOptions(window.scrollY));
+          break;
+        }
+        case 4: {
+          scroller.scrollTo('proofStepPanel2', getScrollOptions(window.scrollY));
+          break;
+        }
+        case 5: {
+          scroller.scrollTo('proofStepPanel3', getScrollOptions(window.scrollY));
+          break;
+        }
+        case 7: {
+          scroller.scrollTo('proofStepPanel4', getScrollOptions(window.scrollY));
+          break;
+        }
+        case 8: {
+          scroller.scrollTo('proofStepPanel5', getScrollOptions(window.scrollY));
+          break;
+        }
+        case 9: {
+          this.setState(this.step8);
+          scroller.scrollTo('proofStepPanel6', getScrollOptions(window.scrollY));
+          break;
+        }
+        case 10: {
+          this.setState(this.colorReset);
+          this.setState(this.step9);
+          scroller.scrollTo('proofStepPanel7', getScrollOptions(window.scrollY));
+          break;
+        }
+        case 11: {
+          this.setState(this.colorReset);
+          this.setState(this.step10);
+          scroller.scrollTo('proofStepPanel8', getScrollOptions(window.scrollY));
+          break;
+        }
+        case 12: {
+          this.setState(this.colorReset);
+          this.setState(this.step11);
+          scroller.scrollTo('proofStepPanel9', getScrollOptions(window.scrollY));
+          break;
+        }
+        case 13: {
+          this.setState(this.colorReset);
+          this.setState(this.step12);
+          scroller.scrollTo('proofStepPanel10', getScrollOptions(window.scrollY));
+          break;
+        }
+        case 14: {
+          this.clearAllTimers(this.state);
+          this.setState(this.colorReset);
+          this.setState(this.step13);
+          this.setState({ btnRepeatD: true });
+          scroller.scrollTo('proofStepPanel11', getScrollOptions(window.scrollY));
+          break;
+        }
+        case 15: {
+          this.setState(this.colorReset);
+          this.step14();
+          this.setState({ btnRepeatD: false });
+          scroller.scrollTo('proofStepPanel12', getScrollOptions(window.scrollY));
+          break;
+        }
+        case 16: {  
+          this.setState(this.colorReset);
+          this.setState(this.step12); // Same as step12
+          scroller.scrollTo('proofStepPanel13', getScrollOptions(window.scrollY));
+          break;
+        }
+        case 17: {
+          this.setState(this.colorReset);
+          this.setState(this.step16);
+          scroller.scrollTo('proofStepPanel14', getScrollOptions(window.scrollY));
+          break;
+        }
+        case 18: {
+          scroller.scrollTo('proofStepPanel15', getScrollOptions(window.scrollY));
           break;
         }
         default: {
@@ -449,11 +529,16 @@ class Exercise19 extends React.Component {
     return { nodes: this.updateNode(state.nodes, 7, palette.lightblue, ' v ') };
   };
 
+  step16 = (state) => {
+    return { edges: this.updateEdge(state.edges, 5, palette.white, 4, false, '') };
+  };
+
   render() {
     return (
       <ExerciseWrapper
         {...this.state}
         events={events}
+        initNetworkInstance={this.initNetworkInstance}
         constants={constants}
         previousStep={this.previousStep}
         nextStep={this.nextStep}

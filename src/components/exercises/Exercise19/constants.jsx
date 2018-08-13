@@ -61,7 +61,7 @@ const proofStepPanels = [
       </p>
   },
   {
-    name: 'proofStepPanel8',
+    name: 'proofStepPanel7',
     activeForSteps: [9],
     content:
       <p>
@@ -69,7 +69,7 @@ const proofStepPanels = [
       </p>
   },
   {
-    name: 'proofStepPanel9',
+    name: 'proofStepPanel8',
     activeForSteps: [10],
     content:
       <p>
@@ -77,7 +77,7 @@ const proofStepPanels = [
       </p>
   },
   {
-    name: 'proofStepPanel10',
+    name: 'proofStepPanel9',
     activeForSteps: [11],
     content:
       <p>
@@ -87,7 +87,7 @@ const proofStepPanels = [
       </p>
   },
   {
-    name: 'proofStepPanel11',
+    name: 'proofStepPanel10',
     activeForSteps: [12],
     content:
       <p>
@@ -95,7 +95,7 @@ const proofStepPanels = [
       </p>
   },
   {
-    name: 'proofStepPanel12',
+    name: 'proofStepPanel11',
     activeForSteps: [13],
     content:
       <p>
@@ -103,7 +103,7 @@ const proofStepPanels = [
       </p>
   },
   {
-    name: 'proofStepPanel13',
+    name: 'proofStepPanel12',
     activeForSteps: [14],
     content:
       <p>
@@ -115,7 +115,7 @@ const proofStepPanels = [
       </p>
   },
   {
-    name: 'proofStepPanel14',
+    name: 'proofStepPanel13',
     activeForSteps: [15],
     content:
       <p>
@@ -123,7 +123,7 @@ const proofStepPanels = [
       </p>
   },
   {
-    name: 'proofStepPanel15',
+    name: 'proofStepPanel14',
     activeForSteps: [16],
     content:
       <p>
@@ -131,7 +131,7 @@ const proofStepPanels = [
       </p>
   },
   {
-    name: 'proofStepPanel16',
+    name: 'proofStepPanel15',
     activeForSteps: [17],
     content:
       <p>
@@ -143,7 +143,7 @@ const proofStepPanels = [
 const descriptionPanels = [
   {
     id: 0,
-    showForSteps: [0, 4],
+    showForSteps: [0, 4, 9, 17],
     content: <p></p>
   },
   {
@@ -177,6 +177,24 @@ const descriptionPanels = [
     content: <p>Celé znění negace původního tvrzení.</p>
   },
   {
+    id: 8,
+    showForSteps: [8],
+    content: 
+      <p>
+        Příklad grafu <MN>G</MN>, kde existuje kružnice <MN>C</MN>, a zvolení libovolné hrany <MN>e</MN>, která leží na kružnici <MN>C</MN>.
+      </p>
+  },
+  {
+    id: 9,
+    showForSteps: [9],
+    content: <p>Cesta z vrcholu <MN>x</MN> do vrcholu <MN>y</MN> přímo přes hranu <MN>e</MN>.</p>
+  },
+  {
+    id: 10,
+    showForSteps: [10],
+    content: <p>Cesta z vrcholu <MN>x</MN> do vrcholu <MN>y</MN> přes kružnici <MN>C</MN>.</p>
+  },
+  {
     id: 11,
     showForSteps: [11],
     content: <p>Zvolení libovolných vrcholů <MN>u</MN> a <MN>v</MN>.</p>
@@ -194,7 +212,7 @@ const descriptionPanels = [
     showForSteps: [13],
     content: 
       <p>
-        V grafu <MN>G</MN> může existovat cesta <MN>{"P_{u,v}"}</MN> vedoucí přes hranu <MN>e</MN>.
+        V grafu <MN>G</MN> však může existovat cesta <MN>{"P_{u,v}"}</MN> vedoucí přes hranu <MN>e</MN>.
       </p>
   },
   {
@@ -211,8 +229,18 @@ const descriptionPanels = [
     showForSteps: [15],
     content: 
       <p>
-        Úseky mezi dvěma výskyty stejného vrcholu vynecháme a zbyde nám cesta mezi vrcholy <MN>u</MN> a <MN>v</MN> i v grafu <MN>G-e</MN>.
+        Úseky mezi dvěma výskyty stejného vrcholu vynecháme a zbyde nám cesta mezi vrcholy <MN>u</MN> a <MN>v</MN> existující i v grafu <MN>G-e</MN>.
       </p>
+  },
+  {
+    id: 16,
+    showForSteps: [16],
+    content: <p>Počet komponent po odebrání hrany <MN>e</MN> zůstane stejný.</p>
+  },
+  {
+    id: 17,
+    showForSteps: [17],
+    content: <p>Hrana <MN>e</MN> ležící na kružnici totiž nemohla být most.</p>
   },
 ];
 
@@ -308,6 +336,12 @@ const visualTextRows = [
   },
 ];
 
+const cameraPosition0 = {
+  position: { x: 0, y: 0 }, 
+  scale: 1.10,
+  animation: { duration: 1500, easingFunction: "easeInOutQuad" },
+};
+
 export const constants = {
   headingTitle: headingTitle,
   breadcrumbsCurrent: breadcrumbsCurrent,
@@ -318,3 +352,5 @@ export const constants = {
   definitionPanels: definitionPanels,
   visualTextRows: visualTextRows,
 };
+
+export const cameraPositions = [cameraPosition0];
