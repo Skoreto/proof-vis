@@ -9,6 +9,7 @@ import { constants } from './constants';
 import {
   updateNode,
   updateEdge,
+  updateEdgeWithArrow,
   addObjectArray,
   clearAllTimers,
   updateCurrentStep,
@@ -25,6 +26,7 @@ class Exercise19 extends React.Component {
     this.state = initialExerciseState;
     this.updateNode = updateNode.bind(this);
     this.updateEdge = updateEdge.bind(this);
+    this.updateEdgeWithArrow = updateEdgeWithArrow.bind(this);
     this.addObjectArray = addObjectArray.bind(this);
     this.clearAllTimers = clearAllTimers.bind(this);
     this.updateCurrentStep = updateCurrentStep.bind(this);
@@ -103,12 +105,16 @@ class Exercise19 extends React.Component {
         }
         case 13: {
           this.setState(this.colorReset);
+          this.step14();
+          this.setState({ btnRepeatD: false });
           scroller.scrollTo('proofStepPanel13', getScrollOptions(window.scrollY));
           break;
         }
         case 14: {
+          this.clearAllTimers(this.state);
           this.setState(this.colorReset);
           this.setState(this.step12); // Keep
+          this.setState({ btnRepeatD: true });
           scroller.scrollTo('proofStepPanel14', getScrollOptions(window.scrollY));
           break;
         }
@@ -125,20 +131,21 @@ class Exercise19 extends React.Component {
   previousStep = () => {
     if (this.state.currentStep > 0) {
       switch (this.state.currentStep) {
-        case 1:
+        case 1: {
           this.setState({ btnPrevD: true });
           this.setState(this.stepReset);
           break;
-
-        case 2:
+        }
+        case 2: {
           this.setState(this.stepReset);
           this.setState(this.step1SVGContent);
           this.setState(this.step1Texts);
           scroller.scrollTo('proofStepPanel1', getScrollOptions(window.scrollY));
           break;
-      
-        default:
+        }
+        default: {
           break;
+        }
       }
 
       this.updateCurrentStep(this.state.currentStep, -1);
@@ -171,6 +178,21 @@ class Exercise19 extends React.Component {
         { id: 7, from: 6, to: 7, color: { color: palette.black }, width: 1 },
         { id: 8, from: 7, to: 8, color: { color: palette.black }, width: 1 },
       ],
+    }
+  };
+
+  repeatStep = () => {
+    this.clearAllTimers(this.state);
+
+    switch (this.state.currentStep) {
+      case 14: {
+        this.setState(this.colorReset);
+        this.step14();
+        break;
+      }
+      default: {
+        break;
+      }
     }
   };
 
@@ -227,11 +249,11 @@ class Exercise19 extends React.Component {
   };
 
   step10 = (state) => {
-    let newNodes = this.updateNode(state.nodes, 1, palette.purple, '');
-    newNodes = this.updateNode(newNodes, 2, palette.purple, '');
-    newNodes = this.updateNode(newNodes, 3, palette.purple, '');
+    let newNodes = this.updateNode(state.nodes, 1, palette.purple, '   ');
+    newNodes = this.updateNode(newNodes, 2, palette.purple, '   ');
+    newNodes = this.updateNode(newNodes, 3, palette.purple, '   ');
     newNodes = this.updateNode(newNodes, 4, palette.purple, ' x ');
-    newNodes = this.updateNode(newNodes, 5, palette.purple, '');
+    newNodes = this.updateNode(newNodes, 5, palette.purple, '   ');
     newNodes = this.updateNode(newNodes, 6, palette.purple, ' y ');
     
     let newEdges = this.updateEdge(state.edges, 1, palette.purple, 4, false, '');
@@ -252,9 +274,9 @@ class Exercise19 extends React.Component {
 
   step12 = (state) => {
     let newNodes = this.updateNode(state.nodes, 0, palette.purple, ' u ');
-    newNodes = this.updateNode(newNodes, 1, palette.purple, '');
-    newNodes = this.updateNode(newNodes, 3, palette.purple, '');
-    newNodes = this.updateNode(newNodes, 5, palette.purple, '');
+    newNodes = this.updateNode(newNodes, 1, palette.purple, '   ');
+    newNodes = this.updateNode(newNodes, 3, palette.purple, '   ');
+    newNodes = this.updateNode(newNodes, 5, palette.purple, '   ');
     newNodes = this.updateNode(newNodes, 6, palette.purple, ' y ');
     newNodes = this.updateNode(newNodes, 7, palette.purple, ' v ');
     
@@ -270,8 +292,8 @@ class Exercise19 extends React.Component {
 
   step13 = (state) => {
     let newNodes = this.updateNode(state.nodes, 0, palette.purple, ' u ');
-    newNodes = this.updateNode(newNodes, 1, palette.purple, '');
-    newNodes = this.updateNode(newNodes, 2, palette.purple, '');
+    newNodes = this.updateNode(newNodes, 1, palette.purple, '   ');
+    newNodes = this.updateNode(newNodes, 2, palette.purple, '   ');
     newNodes = this.updateNode(newNodes, 4, palette.purple, ' x ');
     newNodes = this.updateNode(newNodes, 6, palette.purple, ' y ');
     newNodes = this.updateNode(newNodes, 7, palette.purple, ' v ');
@@ -283,6 +305,148 @@ class Exercise19 extends React.Component {
     newEdges = this.updateEdge(newEdges, 7, palette.purple, 5, false, '');
 
     return { nodes: newNodes, edges: newEdges };
+  };
+
+  step14 = () => {
+    // Preparation before animation
+    this.setState(this.step14prep);
+    this.setState({ timeouts: [
+      setTimeout(() => { this.setState(this.step14a); }, 1000),
+      setTimeout(() => { this.setState(this.step14b); }, 2000),
+      setTimeout(() => { this.setState(this.step14c); }, 3000), 
+      setTimeout(() => { this.setState(this.step14d); }, 4000),
+      setTimeout(() => { this.setState(this.step14e); }, 5000),
+      setTimeout(() => { this.setState(this.step14f); }, 6000),
+      setTimeout(() => { this.setState(this.step14g); }, 7000),
+      setTimeout(() => { this.setState(this.step14h); }, 8000),
+      setTimeout(() => { this.setState(this.step14i); }, 9000),
+      setTimeout(() => { this.setState(this.step14j); }, 10000),
+      setTimeout(() => { this.setState(this.step14k); }, 11000),
+      setTimeout(() => { this.setState(this.step14l); }, 12000),
+      setTimeout(() => { this.setState(this.step14m); }, 13000),
+      setTimeout(() => { this.setState(this.step14n); }, 14000),
+      setTimeout(() => { this.setState(this.step14o); }, 15000),
+      setTimeout(() => { this.setState(this.step14p); }, 16000),
+      setTimeout(() => { this.setState(this.step14q); }, 17000),
+      setTimeout(() => { this.setState(this.step14r); }, 18000),
+      setTimeout(() => { this.setState(this.step14s); }, 19000),
+    ] });
+  };
+
+  step14prep = (state) => {
+    let newNodes = this.updateNode(state.nodes, 0, palette.yellow, ' u ');
+    newNodes = this.updateNode(state.nodes, 7, palette.yellow, ' v ');
+    return { nodes: newNodes };
+  };
+
+  step14a = (state) => {
+    return { nodes: this.updateNode(state.nodes, 0, palette.lightblue, ' u ') };
+  };
+
+  step14b = (state) => {
+    return {
+      edges: this.updateEdgeWithArrow(state.edges, 0, palette.lightblue, 4, false, '', true, false)
+    };
+  };
+
+  step14c = (state) => {
+    return { nodes: this.updateNode(state.nodes, 1, palette.lightblue, '   ') };
+  };
+
+  step14d = (state) => {
+    return {
+      edges: this.updateEdgeWithArrow(state.edges, 1, palette.lightblue, 4, false, '', true, false)
+    };
+  };
+
+  step14e = (state) => {
+    return { nodes: this.updateNode(state.nodes, 2, palette.lightblue, '   ') };
+  };
+
+  step14f = (state) => {
+    return {
+      edges: this.updateEdgeWithArrow(state.edges, 3, palette.lightblue, 4, false, '', true, false)
+    };
+  };
+
+  step14g = (state) => {
+    return { nodes: this.updateNode(state.nodes, 4, palette.lightblue, ' x ') };
+  };
+
+  step14h = (state) => {
+    return { edges: this.addObjectArray(state.edges, [
+      {
+        id: 9, 
+        from: 5, 
+        to: 3, 
+        color: { color: palette.lightblue, hover: palette.lightblue }, 
+        width: 4,
+        arrows: { to: { enabled: true } }, 
+        smooth: { enabled: true, type: "curvedCCW", roundness: 0.5 },
+      }
+    ]) };
+  };
+
+  step14i = (state) => {
+    return { nodes: this.updateNode(state.nodes, 2, palette.blue, '   ') };
+  };
+
+  step14j = (state) => {
+    return { edges: this.addObjectArray(state.edges, [
+      {
+        id: 10, 
+        from: 3, 
+        to: 2, 
+        color: { color: palette.lightblue, hover: palette.lightblue }, 
+        width: 4,
+        arrows: { to: { enabled: true } }, 
+        smooth: { enabled: true, type: "curvedCCW", roundness: 0.5 },
+      }
+    ]) };
+  };
+
+  step14k = (state) => {
+    return { nodes: this.updateNode(state.nodes, 1, palette.blue, '   ') };
+  };
+
+  step14l = (state) => {
+    return {
+      edges: this.updateEdgeWithArrow(state.edges, 2, palette.lightblue, 4, false, '', true, false)
+    };
+  };
+
+  step14m = (state) => {
+    return { nodes: this.updateNode(state.nodes, 3, palette.lightblue, '   ') };
+  };
+
+  step14n = (state) => {
+    return {
+      edges: this.updateEdgeWithArrow(state.edges, 4, palette.lightblue, 4, false, '', true, false)
+    };
+  };
+
+  step14o = (state) => {
+    return { nodes: this.updateNode(state.nodes, 5, palette.lightblue, '   ') };
+  };
+
+  step14p = (state) => {
+    return {
+      edges: this.updateEdgeWithArrow(state.edges, 6, palette.lightblue, 4, false, '', true, false)
+    };
+  };
+
+  step14q = (state) => {
+    return { nodes: this.updateNode(state.nodes, 6, palette.lightblue, ' y ') };
+  };
+
+  step14r = (state) => {
+    return {
+      edges: this.updateEdgeWithArrow(state.edges, 7, palette.lightblue, 4, false, '', true, false)
+    };
+  };
+
+  step14s = (state) => {
+    return { nodes: this.updateNode(state.nodes, 7, palette.lightblue, ' v ') };
   };
 
   render() {

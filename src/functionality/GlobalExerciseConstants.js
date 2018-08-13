@@ -9,6 +9,8 @@ export const palette = {
   white: '#FFFFFF',
   lightpurple: '#D1C4E9',
   purple: '#B39DDB',  // #B388FF
+  lightblue: '#BBDEFB',
+  blue: '#90CAF9',
   green: '#81C784',
   jade: '#4DB6AC',
   red: '#F06292',
