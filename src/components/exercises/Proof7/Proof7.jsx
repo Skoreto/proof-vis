@@ -20,7 +20,7 @@ import {
 import ExerciseWrapper from '../../../UI/ExerciseWrapper/ExerciseWrapper';
 import MN from '../../../UI/MathJaxNode/MathJaxNode';
 
-class Exercise17av2 extends React.Component {
+class Proof7 extends React.Component {
   constructor(props) {
     super(props);
     this.state = initialExerciseState;
@@ -352,4 +352,4 @@ class Exercise17av2 extends React.Component {
   }
 }
 
-export default Exercise17av2;
+export default Proof7;

@@ -2,13 +2,13 @@ import React from 'react';
 import ClaimPanel from '../../../UI/ExerciseWrapper/ClaimPanel/ClaimPanel';
 import MN from '../../../UI/MathJaxNode/MathJaxNode';
 
-const headingTitle = 'Příklad 17 a) (v2)';
-const breadcrumbsCurrent = 'Protipříklady';
+const headingTitle = 'Důkaz 7';
+const breadcrumbsCurrent = 'Ostatní';
 const stepSum = 4;
 
 const claimPanel = (
   <ClaimPanel>
-    Dokažte, nebo vyvraťte: <cite><q>Když v grafu <MN>G</MN> existují dva různé <MN>u</MN>-<MN>v</MN> sledy, tak graf <MN>G</MN> obsahuje kružnici.</q></cite>
+    Dokažte, nebo vyvraťte protipříkladem: <cite><q>Když v grafu <MN>G</MN> existují dva různé <MN>u</MN>-<MN>v</MN> sledy, tak graf <MN>G</MN> obsahuje kružnici.</q></cite>
   </ClaimPanel>
 );
 
@@ -17,7 +17,7 @@ const proofStepPanels = [
     name: 'proofStepPanel1',
     activeForSteps: [1],
     content:
-      <p>Dané tvrzení neplatí, protože existuje kontra-příklad.</p>
+      <p>Dané tvrzení neplatí, protože existuje protipříklad.</p>
   },
   {
     name: 'proofStepPanel2',

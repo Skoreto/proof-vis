@@ -19,13 +19,13 @@ import {
   faQuestion,
 } from '@fortawesome/free-solid-svg-icons';
 import Overview from './components/pages/Overview/Overview';
-import Proof6 from './components/exercises/Proof6/Proof6';
 import Proof1 from './components/exercises/Proof1/Proof1';
-import Proof4 from './components/exercises/Proof4/Proof4';
 import Proof2 from './components/exercises/Proof2/Proof2';
-import Proof5 from './components/exercises/Proof5/Proof5';
 import Proof3 from './components/exercises/Proof3/Proof3';
-import Exercise17av2 from './components/exercises/Exercise17a/Exercise17av2';
+import Proof4 from './components/exercises/Proof4/Proof4';
+import Proof5 from './components/exercises/Proof5/Proof5';
+import Proof6 from './components/exercises/Proof6/Proof6';
+import Proof7 from './components/exercises/Proof7/Proof7';
 import Help from './components/pages/Help/Help';
 import SingleDrawing from './components/pages/SingleDrawing/SingleDrawing';
 import MainNavbar from './UI/MainNavbar/MainNavbar';
@@ -56,13 +56,13 @@ const App = () => (
       <Grid>
         <Switch>
           <Route exact path="/" component={Overview} />
-          <Route path="/priklad17av2" component={Exercise17av2} />
-          <Route path="/dukaz6" component={Proof6} />
           <Route path="/dukaz1" component={Proof1} />
-          <Route path="/dukaz4" component={Proof4} />
           <Route path="/dukaz2" component={Proof2} />
-          <Route path="/dukaz5" component={Proof5} />
           <Route path="/dukaz3" component={Proof3} />
+          <Route path="/dukaz4" component={Proof4} />
+          <Route path="/dukaz5" component={Proof5} />
+          <Route path="/dukaz6" component={Proof6} />
+          <Route path="/dukaz7" component={Proof7} />
           <Route path="/napoveda" component={Help} />
           <Route path="/platno" component={SingleDrawing} />
         </Switch>
