@@ -19,13 +19,13 @@ import {
   faQuestion,
 } from '@fortawesome/free-solid-svg-icons';
 import Overview from './components/pages/Overview/Overview';
-import Proof1 from './components/exercises/Proof1/Proof1';
-import Proof2 from './components/exercises/Proof2/Proof2';
-import Proof3 from './components/exercises/Proof3/Proof3';
-import Proof4 from './components/exercises/Proof4/Proof4';
-import Proof5 from './components/exercises/Proof5/Proof5';
-import Proof6 from './components/exercises/Proof6/Proof6';
-import Proof7 from './components/exercises/Proof7/Proof7';
+import Proof1 from './components/proofs/Proof1/Proof1';
+import Proof2 from './components/proofs/Proof2/Proof2';
+import Proof3 from './components/proofs/Proof3/Proof3';
+import Proof4 from './components/proofs/Proof4/Proof4';
+import Proof5 from './components/proofs/Proof5/Proof5';
+import Proof6 from './components/proofs/Proof6/Proof6';
+import Proof7 from './components/proofs/Proof7/Proof7';
 import Help from './components/pages/Help/Help';
 import SingleDrawing from './components/pages/SingleDrawing/SingleDrawing';
 import MainNavbar from './UI/MainNavbar/MainNavbar';
