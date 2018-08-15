@@ -66,9 +66,6 @@ const MainNavbar = () => (
           id="protipriklady-nav-dropdown"
           className="nav-item"
         >
-          <LinkContainer to="/priklad17a">
-            <MenuItem>Příklad 17 a) (verze 1)</MenuItem>
-          </LinkContainer>
           <LinkContainer to="/priklad17av2">
             <MenuItem>Příklad 17 a) (verze 2)</MenuItem>
           </LinkContainer>

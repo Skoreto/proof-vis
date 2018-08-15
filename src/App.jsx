@@ -24,9 +24,7 @@ import Exercise20 from './components/exercises/Exercise20/Exercise20';
 import Exercise21 from './components/exercises/Exercise21/Exercise21';
 import Exercise23 from './components/exercises/Exercise23/Exercise23';
 import Exercise24 from './components/exercises/Exercise24/Exercise24';
-import Exercise26 from './components/exercises/Exercise26/Exercise26';
 import Exercise26v2 from './components/exercises/Exercise26v2/Exercise26v2';
-import Exercise17a from './components/exercises/Exercise17a/Exercise17a';
 import Exercise17av2 from './components/exercises/Exercise17a/Exercise17av2';
 import Help from './components/pages/Help/Help';
 import SingleDrawing from './components/pages/SingleDrawing/SingleDrawing';
@@ -58,14 +56,12 @@ const App = () => (
       <Grid>
         <Switch>
           <Route exact path="/" component={Overview} />
-          <Route path="/priklad17a" component={Exercise17a} />
           <Route path="/priklad17av2" component={Exercise17av2} />
           <Route path="/priklad19" component={Exercise19} />
           <Route path="/priklad20" component={Exercise20} />
           <Route path="/priklad21" component={Exercise21} />
           <Route path="/priklad23" component={Exercise23} />
           <Route path="/priklad24" component={Exercise24} />
-          <Route path="/priklad26" component={Exercise26} />
           <Route path="/priklad26v2" component={Exercise26v2} />
           <Route path="/napoveda" component={Help} />
           <Route path="/platno" component={SingleDrawing} />
