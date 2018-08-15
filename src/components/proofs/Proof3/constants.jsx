@@ -50,7 +50,7 @@ const proofStepPanels = [
         <br /><MN>\Rightarrow</MN> Z definice stromu pak platí, že <MN>G-e</MN> není strom.
         </p>
         <p className="text-center">
-          <MN>\dagger</MN> Tím je dokázáno stanovené tvrzení.
+          Tím je dokázáno stanovené tvrzení. <MN>\square</MN>
         </p>
       </div>
   },

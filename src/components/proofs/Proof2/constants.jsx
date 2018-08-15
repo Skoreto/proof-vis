@@ -8,7 +8,7 @@ const stepSum = 10;
 
 const claimPanel = (
   <ClaimPanel>
-    Dokažte, že když dvě různé kružnice grafu <MN>G</MN> obsahují hranu <MN>e</MN>, pak v <MN>G</MN> existuje i kružnice neobsahující hranu <MN>e</MN>.
+    Dokažte: <cite><q> <MN>\forall G=(V,E)</MN>: Když dvě různé kružnice grafu <MN>G</MN> obsahují hranu <MN>e</MN>, pak v <MN>G</MN> existuje i kružnice neobsahující hranu <MN>e</MN>.</q></cite>
   </ClaimPanel>
 );
 
