@@ -27,8 +27,8 @@ const MainNavbar = () => (
           <LinkContainer to="/proof1">
             <MenuItem>Důkaz 1</MenuItem>
           </LinkContainer>
-          <LinkContainer to="/priklad23">
-            <MenuItem>Příklad 23</MenuItem>
+          <LinkContainer to="/proof2">
+            <MenuItem>Důkaz 2</MenuItem>
           </LinkContainer>
           <LinkContainer to="/priklad26v2">
             <MenuItem>Příklad 26</MenuItem>

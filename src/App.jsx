@@ -22,7 +22,7 @@ import Overview from './components/pages/Overview/Overview';
 import Exercise19 from './components/exercises/Exercise19/Exercise19';
 import Proof1 from './components/exercises/Proof1/Proof1';
 import Exercise21 from './components/exercises/Exercise21/Exercise21';
-import Exercise23 from './components/exercises/Exercise23/Exercise23';
+import Proof2 from './components/exercises/Proof2/Proof2';
 import Exercise24 from './components/exercises/Exercise24/Exercise24';
 import Exercise26v2 from './components/exercises/Exercise26v2/Exercise26v2';
 import Exercise17av2 from './components/exercises/Exercise17a/Exercise17av2';
@@ -60,7 +60,7 @@ const App = () => (
           <Route path="/priklad19" component={Exercise19} />
           <Route path="/proof1" component={Proof1} />
           <Route path="/priklad21" component={Exercise21} />
-          <Route path="/priklad23" component={Exercise23} />
+          <Route path="/proof2" component={Proof2} />
           <Route path="/priklad24" component={Exercise24} />
           <Route path="/priklad26v2" component={Exercise26v2} />
           <Route path="/napoveda" component={Help} />
