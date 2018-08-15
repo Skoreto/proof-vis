@@ -26,8 +26,8 @@ import Proof4 from './components/proofs/Proof4/Proof4';
 import Proof5 from './components/proofs/Proof5/Proof5';
 import Proof6 from './components/proofs/Proof6/Proof6';
 import Proof7 from './components/proofs/Proof7/Proof7';
-import Help from './components/pages/Help/Help';
 import SingleDrawing from './components/pages/SingleDrawing/SingleDrawing';
+import Help from './components/pages/Help/Help';
 import MainNavbar from './UI/MainNavbar/MainNavbar';
 import Footer from './UI/Footer/Footer';
 
@@ -63,8 +63,8 @@ const App = () => (
           <Route path="/dukaz5" component={Proof5} />
           <Route path="/dukaz6" component={Proof6} />
           <Route path="/dukaz7" component={Proof7} />
-          <Route path="/napoveda" component={Help} />
           <Route path="/platno" component={SingleDrawing} />
+          <Route path="/napoveda" component={Help} />
         </Switch>
       </Grid>
       {/* <Footer/> */}

@@ -3,7 +3,7 @@ import {
   initialExerciseState,
   events,
   palette,
-} from '../../../functionality/GlobalExerciseConstants';
+} from '../../../functionality/GlobalProofConstants';
 import { constants, cameraPositions } from './constants';
 import {
   updateNode,

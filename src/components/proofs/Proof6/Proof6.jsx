@@ -3,7 +3,7 @@ import {
   initialExerciseState,
   events,
   palette,
-} from '../../../functionality/GlobalExerciseConstants';
+} from '../../../functionality/GlobalProofConstants';
 import { scroller } from 'react-scroll';
 import { constants, cameraPositions } from './constants';
 import {

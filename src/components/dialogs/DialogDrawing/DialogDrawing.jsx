@@ -1,6 +1,6 @@
 import React from 'react';
 import GraphVis from 'react-graph-vis';
-import { palette, graphVisLocales } from '../../../functionality/GlobalExerciseConstants';
+import { palette, graphVisLocales } from '../../../functionality/GlobalProofConstants';
 import { addNode, showEditNodeDialog } from '../../../functionality/nodeEditFunctions';
 import { addEdge, showEditEdgeDialog } from '../../../functionality/edgeEditFunctions';
 import EditNodeDialog from '../../../UI/EditNodeDialog/EditNodeDialog';
