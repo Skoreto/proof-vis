@@ -24,13 +24,13 @@ const MainNavbar = () => (
           id="primo-nav-dropdown"
           className="nav-item"
         >
-          <LinkContainer to="/proof1">
+          <LinkContainer to="/dukaz1">
             <MenuItem>Důkaz 1</MenuItem>
           </LinkContainer>
-          <LinkContainer to="/proof2">
+          <LinkContainer to="/dukaz2">
             <MenuItem>Důkaz 2</MenuItem>
           </LinkContainer>
-          <LinkContainer to="/proof3">
+          <LinkContainer to="/dukaz3">
             <MenuItem>Důkaz 3</MenuItem>
           </LinkContainer>
         </NavDropdown>
@@ -41,11 +41,11 @@ const MainNavbar = () => (
           id="neprimo-nav-dropdown"
           className="nav-item"
         >
-          <LinkContainer to="/proof4">
+          <LinkContainer to="/dukaz4">
             <MenuItem>Důkaz 4</MenuItem>
           </LinkContainer>
-          <LinkContainer to="/priklad24">
-            <MenuItem>Příklad 24</MenuItem>
+          <LinkContainer to="/dukaz5">
+            <MenuItem>Důkaz 5</MenuItem>
           </LinkContainer>
         </NavDropdown>
         <NavDropdown

@@ -23,7 +23,7 @@ import Exercise19 from './components/exercises/Exercise19/Exercise19';
 import Proof1 from './components/exercises/Proof1/Proof1';
 import Proof4 from './components/exercises/Proof4/Proof4';
 import Proof2 from './components/exercises/Proof2/Proof2';
-import Exercise24 from './components/exercises/Exercise24/Exercise24';
+import Proof5 from './components/exercises/Proof5/Proof5';
 import Proof3 from './components/exercises/Proof3/Proof3';
 import Exercise17av2 from './components/exercises/Exercise17a/Exercise17av2';
 import Help from './components/pages/Help/Help';
@@ -58,11 +58,11 @@ const App = () => (
           <Route exact path="/" component={Overview} />
           <Route path="/priklad17av2" component={Exercise17av2} />
           <Route path="/priklad19" component={Exercise19} />
-          <Route path="/proof1" component={Proof1} />
-          <Route path="/proof4" component={Proof4} />
-          <Route path="/proof2" component={Proof2} />
-          <Route path="/priklad24" component={Exercise24} />
-          <Route path="/proof3" component={Proof3} />
+          <Route path="/dukaz1" component={Proof1} />
+          <Route path="/dukaz4" component={Proof4} />
+          <Route path="/dukaz2" component={Proof2} />
+          <Route path="/dukaz5" component={Proof5} />
+          <Route path="/dukaz3" component={Proof3} />
           <Route path="/napoveda" component={Help} />
           <Route path="/platno" component={SingleDrawing} />
         </Switch>
