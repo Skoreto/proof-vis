@@ -17,7 +17,7 @@ import {
   handlerSelectedTool,
   handlerDrawingDialog,
 } from '../../../functionality/GraphFunctions';
-import ExerciseWrapper from '../../../UI/ExerciseWrapper/ExerciseWrapper';
+import ExerciseWrapper from '../../../UI/ProofWrapper/ProofWrapper';
 import MN from '../../../UI/MathJaxNode/MathJaxNode';
 
 class Proof7 extends React.Component {

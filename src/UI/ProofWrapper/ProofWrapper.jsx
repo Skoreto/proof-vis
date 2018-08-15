@@ -15,7 +15,7 @@ import VisualTextsPanel from './VisualTextsPanel/VisualTextsPanel';
 import DialogDrawing from '../../components/dialogs/DialogDrawing/DialogDrawing';
 import '../ReactDialog/ReactDialog.css';
 
-const ExerciseWrapper = (props) => (
+const ProofWrapper = (props) => (
   <div>
     <div className="page-wrapper">
       <PageHeader
@@ -172,4 +172,4 @@ const ExerciseWrapper = (props) => (
   </div>
 );
 
-export default ExerciseWrapper;
+export default ProofWrapper;

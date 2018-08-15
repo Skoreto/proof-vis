@@ -1,6 +1,6 @@
 import React from 'react';
-import ClaimPanel from '../../../UI/ExerciseWrapper/ClaimPanel/ClaimPanel';
-import VisualTextRow from '../../../UI/ExerciseWrapper/VisualTextRow/VisualTextRow';
+import ClaimPanel from '../../../UI/ProofWrapper/ClaimPanel/ClaimPanel';
+import VisualTextRow from '../../../UI/ProofWrapper/VisualTextRow/VisualTextRow';
 import MN from '../../../UI/MathJaxNode/MathJaxNode';
 
 const headingTitle = 'Důkaz 6';

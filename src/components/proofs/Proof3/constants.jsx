@@ -1,5 +1,5 @@
 import React from 'react';
-import ClaimPanel from '../../../UI/ExerciseWrapper/ClaimPanel/ClaimPanel';
+import ClaimPanel from '../../../UI/ProofWrapper/ClaimPanel/ClaimPanel';
 import MN from '../../../UI/MathJaxNode/MathJaxNode';
 
 const headingTitle = 'Důkaz 3';

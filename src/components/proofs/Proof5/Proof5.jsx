@@ -17,7 +17,7 @@ import {
   handlerDrawingDialog,
   getScrollOptions,
 } from '../../../functionality/GraphFunctions';
-import ExerciseWrapper from '../../../UI/ExerciseWrapper/ExerciseWrapper';
+import ExerciseWrapper from '../../../UI/ProofWrapper/ProofWrapper';
 
 class Proof5 extends React.Component {
   constructor(props) {
