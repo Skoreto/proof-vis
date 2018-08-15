@@ -41,8 +41,8 @@ const MainNavbar = () => (
           id="neprimo-nav-dropdown"
           className="nav-item"
         >
-          <LinkContainer to="/priklad21">
-            <MenuItem>Příklad 21</MenuItem>
+          <LinkContainer to="/proof4">
+            <MenuItem>Důkaz 4</MenuItem>
           </LinkContainer>
           <LinkContainer to="/priklad24">
             <MenuItem>Příklad 24</MenuItem>

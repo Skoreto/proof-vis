@@ -21,7 +21,7 @@ import {
 import Overview from './components/pages/Overview/Overview';
 import Exercise19 from './components/exercises/Exercise19/Exercise19';
 import Proof1 from './components/exercises/Proof1/Proof1';
-import Exercise21 from './components/exercises/Exercise21/Exercise21';
+import Proof4 from './components/exercises/Proof4/Proof4';
 import Proof2 from './components/exercises/Proof2/Proof2';
 import Exercise24 from './components/exercises/Exercise24/Exercise24';
 import Proof3 from './components/exercises/Proof3/Proof3';
@@ -59,7 +59,7 @@ const App = () => (
           <Route path="/priklad17av2" component={Exercise17av2} />
           <Route path="/priklad19" component={Exercise19} />
           <Route path="/proof1" component={Proof1} />
-          <Route path="/priklad21" component={Exercise21} />
+          <Route path="/proof4" component={Proof4} />
           <Route path="/proof2" component={Proof2} />
           <Route path="/priklad24" component={Exercise24} />
           <Route path="/proof3" component={Proof3} />

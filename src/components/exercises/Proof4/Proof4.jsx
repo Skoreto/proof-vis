@@ -22,7 +22,7 @@ import {
 } from '../../../functionality/GraphFunctions';
 import ExerciseWrapper from '../../../UI/ExerciseWrapper/ExerciseWrapper';
 
-class Exercise21 extends React.Component {
+class Proof4 extends React.Component {
   constructor(props) {
     super(props);
     this.state = initialExerciseState;
@@ -345,4 +345,4 @@ class Exercise21 extends React.Component {
   }
 }
 
-export default Exercise21;
+export default Proof4;
