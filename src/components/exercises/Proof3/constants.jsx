@@ -2,7 +2,7 @@ import React from 'react';
 import ClaimPanel from '../../../UI/ExerciseWrapper/ClaimPanel/ClaimPanel';
 import MN from '../../../UI/MathJaxNode/MathJaxNode';
 
-const headingTitle = 'Příklad 26';
+const headingTitle = 'Důkaz 3';
 const breadcrumbsCurrent = 'Důkazy přímo';
 const stepSum = 5;
 

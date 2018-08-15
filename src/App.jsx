@@ -24,7 +24,7 @@ import Proof1 from './components/exercises/Proof1/Proof1';
 import Exercise21 from './components/exercises/Exercise21/Exercise21';
 import Proof2 from './components/exercises/Proof2/Proof2';
 import Exercise24 from './components/exercises/Exercise24/Exercise24';
-import Exercise26v2 from './components/exercises/Exercise26v2/Exercise26v2';
+import Proof3 from './components/exercises/Proof3/Proof3';
 import Exercise17av2 from './components/exercises/Exercise17a/Exercise17av2';
 import Help from './components/pages/Help/Help';
 import SingleDrawing from './components/pages/SingleDrawing/SingleDrawing';
@@ -62,7 +62,7 @@ const App = () => (
           <Route path="/priklad21" component={Exercise21} />
           <Route path="/proof2" component={Proof2} />
           <Route path="/priklad24" component={Exercise24} />
-          <Route path="/priklad26v2" component={Exercise26v2} />
+          <Route path="/proof3" component={Proof3} />
           <Route path="/napoveda" component={Help} />
           <Route path="/platno" component={SingleDrawing} />
         </Switch>
