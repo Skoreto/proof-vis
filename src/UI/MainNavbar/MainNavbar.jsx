@@ -24,8 +24,8 @@ const MainNavbar = () => (
           id="primo-nav-dropdown"
           className="nav-item"
         >
-          <LinkContainer to="/priklad20">
-            <MenuItem>Příklad 20</MenuItem>
+          <LinkContainer to="/proof1">
+            <MenuItem>Důkaz 1</MenuItem>
           </LinkContainer>
           <LinkContainer to="/priklad23">
             <MenuItem>Příklad 23</MenuItem>
