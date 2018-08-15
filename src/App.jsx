@@ -19,7 +19,7 @@ import {
   faQuestion,
 } from '@fortawesome/free-solid-svg-icons';
 import Overview from './components/pages/Overview/Overview';
-import Exercise19 from './components/exercises/Exercise19/Exercise19';
+import Proof6 from './components/exercises/Proof6/Proof6';
 import Proof1 from './components/exercises/Proof1/Proof1';
 import Proof4 from './components/exercises/Proof4/Proof4';
 import Proof2 from './components/exercises/Proof2/Proof2';
@@ -57,7 +57,7 @@ const App = () => (
         <Switch>
           <Route exact path="/" component={Overview} />
           <Route path="/priklad17av2" component={Exercise17av2} />
-          <Route path="/priklad19" component={Exercise19} />
+          <Route path="/dukaz6" component={Proof6} />
           <Route path="/dukaz1" component={Proof1} />
           <Route path="/dukaz4" component={Proof4} />
           <Route path="/dukaz2" component={Proof2} />
