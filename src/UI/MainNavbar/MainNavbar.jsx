@@ -55,8 +55,8 @@ const MainNavbar = () => (
           id="sporem-nav-dropdown"
           className="nav-item"
         >
-          <LinkContainer to="/priklad19">
-            <MenuItem>Příklad 19</MenuItem>
+          <LinkContainer to="/dukaz6">
+            <MenuItem>Důkaz 6</MenuItem>
           </LinkContainer>
         </NavDropdown>
         <NavDropdown

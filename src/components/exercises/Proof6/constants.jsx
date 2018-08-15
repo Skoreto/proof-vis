@@ -3,7 +3,7 @@ import ClaimPanel from '../../../UI/ExerciseWrapper/ClaimPanel/ClaimPanel';
 import VisualTextRow from '../../../UI/ExerciseWrapper/VisualTextRow/VisualTextRow';
 import MN from '../../../UI/MathJaxNode/MathJaxNode';
 
-const headingTitle = 'Příklad 19';
+const headingTitle = 'Důkaz 6';
 const breadcrumbsCurrent = 'Důkazy sporem';
 const stepSum = 17;
 
