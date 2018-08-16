@@ -1,9 +1,8 @@
 import React from 'react';
 import { Row, Col, Table } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import '../../../customMainTheme.css';
 import PageHeading from "../../../UI/PageHeading/PageHeader";
+import '../../../customMainTheme.css';
 
 class Overview extends React.Component {
   render() {

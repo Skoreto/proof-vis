@@ -49,7 +49,7 @@ const proofStepPanels = [
       <p>
         Určíme celé znění obměny původního tvrzení.
         <br />
-        <br />Přímou tedy budeme snažit dokázat tvrzení: <cite><q>Jestliže existuje hrana v <MN>G</MN>, která není most, pak v <MN>G</MN> existuje kružnice.</q></cite>
+        <br />Přímo se tedy budeme snažit dokázat tvrzení: <cite><q>Jestliže existuje hrana v <MN>G</MN>, která není most, pak v <MN>G</MN> existuje kružnice.</q></cite>
       </p>
   },
   {

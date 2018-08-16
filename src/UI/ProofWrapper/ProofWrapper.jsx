@@ -74,7 +74,7 @@ const ProofWrapper = (props) => (
                       timeout={500}
                       classNames="fade"
                     > 
-                      <VisualTextsPanel 
+                      <VisualTextsPanel
                         visualTextRows={props.constants.visualTextRows}
                         currentStep={props.currentStep}
                       />
@@ -146,7 +146,7 @@ const ProofWrapper = (props) => (
               </div>
               {
                 props.constants.definitionPanels !== undefined &&
-                  <DefinitionPanel key={98}
+                  <DefinitionPanel
                     definitionPanels={props.constants.definitionPanels}
                     currentStep={props.currentStep}
                   />
