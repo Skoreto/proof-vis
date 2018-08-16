@@ -1,10 +1,7 @@
 import React from 'react';
 import { scroller } from 'react-scroll';
 import { constants, cameraPositions } from './constants';
-import {
-  initialProofState,
-  palette,
-} from '../../../functionality/GlobalProofConstants';
+import { initialProofState, palette } from '../../../functionality/globalProofConstants';
 import {
   updateNode,
   updateNodeShape,
@@ -12,13 +9,15 @@ import {
   updateEdgeWithArrow,
   getNodesWithNewPositions,
   updateNodesWithNewPositions,
+} from '../../../functionality/graphFunctions';
+import {
   clearAllTimers,
   updateCurrentStep,
   handlerSketchAllowance,
   handlerSelectedTool,
   handlerDrawingDialog,
   getScrollOptions,
-} from '../../../functionality/GraphFunctions';
+} from '../../../functionality/proofFunctions';
 import ProofWrapper from '../../../UI/ProofWrapper/ProofWrapper';
 
 class Proof2 extends React.Component {

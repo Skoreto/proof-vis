@@ -1,20 +1,19 @@
 import React from 'react';
-import {
-  initialProofState,
-  palette,
-} from '../../../functionality/GlobalProofConstants';
+import { initialProofState, palette } from '../../../functionality/globalProofConstants';
 import { constants, cameraPositions } from './constants';
 import {
   updateNode,
   updateEdge,
   updateEdgeWithArrow,
   addObjectArray,
+} from '../../../functionality/graphFunctions';
+import {
   clearAllTimers,
   updateCurrentStep,
   handlerSketchAllowance,
   handlerSelectedTool,
   handlerDrawingDialog,
-} from '../../../functionality/GraphFunctions';
+} from '../../../functionality/proofFunctions';
 import ProofWrapper from '../../../UI/ProofWrapper/ProofWrapper';
 
 class Proof1 extends React.Component {

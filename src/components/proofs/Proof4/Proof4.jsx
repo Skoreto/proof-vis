@@ -1,8 +1,5 @@
 import React from 'react';
-import {
-  initialProofState,
-  palette,
-} from '../../../functionality/GlobalProofConstants';
+import { initialProofState, palette } from '../../../functionality/globalProofConstants';
 import { scroller } from 'react-scroll';
 import { constants, cameraPositions } from './constants';
 import {
@@ -12,13 +9,15 @@ import {
   addObjectArray,
   getNodesWithNewPositions,
   updateNodesWithNewPositions,
+} from '../../../functionality/graphFunctions';
+import {
   clearAllTimers,
   updateCurrentStep,
   handlerSketchAllowance,
   handlerSelectedTool,
   handlerDrawingDialog,
   getScrollOptions,
-} from '../../../functionality/GraphFunctions';
+} from '../../../functionality/proofFunctions';
 import ProofWrapper from '../../../UI/ProofWrapper/ProofWrapper';
 
 class Proof4 extends React.Component {

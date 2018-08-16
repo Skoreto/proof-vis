@@ -1,8 +1,5 @@
 import React from 'react';
-import {
-  initialProofState,
-  palette,
-} from '../../../functionality/GlobalProofConstants';
+import { initialProofState, palette } from '../../../functionality/globalProofConstants';
 import { constants, cameraPositions } from './constants';
 import {
   updateNode,
@@ -11,12 +8,14 @@ import {
   getNodesWithNewPositions,
   updateEdgeSmooth,
   addObjectArray,
+} from '../../../functionality/graphFunctions';
+import {
   clearAllTimers,
   updateCurrentStep,
   handlerSketchAllowance,
   handlerSelectedTool,
   handlerDrawingDialog,
-} from '../../../functionality/GraphFunctions';
+} from '../../../functionality/proofFunctions';
 import ProofWrapper from '../../../UI/ProofWrapper/ProofWrapper';
 
 class Proof7 extends React.Component {

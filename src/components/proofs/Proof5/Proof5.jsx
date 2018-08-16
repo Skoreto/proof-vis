@@ -1,21 +1,20 @@
 import React from 'react';
-import {
-  initialProofState,
-  palette,
-} from '../../../functionality/GlobalProofConstants';
+import { initialProofState, palette } from '../../../functionality/globalProofConstants';
 import { scroller } from 'react-scroll';
 import { constants } from './constants';
 import {
   updateNode,
   updateEdge,
   addObjectArray,
+} from '../../../functionality/graphFunctions';
+import {
   clearAllTimers,
   updateCurrentStep,
   handlerSketchAllowance,
   handlerSelectedTool,
   handlerDrawingDialog,
   getScrollOptions,
-} from '../../../functionality/GraphFunctions';
+} from '../../../functionality/proofFunctions';
 import ProofWrapper from '../../../UI/ProofWrapper/ProofWrapper';
 
 class Proof5 extends React.Component {
