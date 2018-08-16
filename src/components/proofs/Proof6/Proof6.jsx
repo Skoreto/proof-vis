@@ -301,24 +301,6 @@ class Proof6 extends React.Component {
     }
   };
 
-  // step5 = (state) => {
-  //   let newNodes = this.updateNode(state.nodes, 1, palette.green, '');
-  //   newNodes = this.updateNode(newNodes, 2, palette.green, '');
-  //   newNodes = this.updateNode(newNodes, 3, palette.green, '');
-  //   newNodes = this.updateNode(newNodes, 4, palette.green, ' x ');
-  //   newNodes = this.updateNode(newNodes, 5, palette.green, '');
-  //   newNodes = this.updateNode(newNodes, 6, palette.green, ' y ');
-    
-  //   let newEdges = this.updateEdge(state.edges, 1, palette.green, 3, false, '');
-  //   newEdges = this.updateEdge(newEdges, 2, palette.green, 3, false, '');
-  //   newEdges = this.updateEdge(newEdges, 3, palette.green, 3, false, '');
-  //   newEdges = this.updateEdge(newEdges, 4, palette.green, 3, false, '');
-  //   newEdges = this.updateEdge(newEdges, 5, palette.green, 3, false, 'e');
-  //   newEdges = this.updateEdge(newEdges, 6, palette.green, 3, false, '');
-
-  //   return { nodes: newNodes, edges: newEdges };
-  // };
-
   step9 = (state) => {
     let newNodes = this.updateNode(state.nodes, 4, palette.purple, ' x ');
     newNodes = this.updateNode(newNodes, 6, palette.purple, ' y ');

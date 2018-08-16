@@ -55,47 +55,62 @@ class Proof4 extends React.Component {
       switch (this.state.currentStep) {
         case 0: {
           this.setState({ btnPrevD: false });
-          this.setState(this.step1SVGContent);
           break;
         }
         case 1: {
-          this.setState(this.step2);
-          this.network.moveTo(cameraPositions[0]);
           scroller.scrollTo('proofStepPanel2', getScrollOptions(window.scrollY));
           break;
         }
-        case 2: {
-          this.setState(this.step3);
+        case 3: {
           scroller.scrollTo('proofStepPanel3', getScrollOptions(window.scrollY));
           break;
         }
-        case 3: {
-          this.setState(this.step4);
-          break;
-        }
         case 4: {
-          this.setState(this.step5);
-          this.network.moveTo(cameraPositions[1]);
           scroller.scrollTo('proofStepPanel4', getScrollOptions(window.scrollY));
           break;
         }
-        case 5: {
-          this.setState(this.step6);
-          this.network.moveTo(cameraPositions[2]);
+        case 6: {
           scroller.scrollTo('proofStepPanel5', getScrollOptions(window.scrollY));
           break;
         }
-        case 6: {
+        case 7: {
+          this.setState(this.step8);
           this.network.moveTo(cameraPositions[0]);
           scroller.scrollTo('proofStepPanel6', getScrollOptions(window.scrollY));
           break;
         }
-        case 7: {
-          this.setState({ btnNextD: true });
-          this.step8();
-          let interval1 = setInterval(this.step8, 2000);
-          this.setState({ interval1: interval1 });
+        case 8: {
+          this.setState(this.step9);
           scroller.scrollTo('proofStepPanel7', getScrollOptions(window.scrollY));
+          break;
+        }
+        case 9: {
+          this.setState(this.step10);
+          break;
+        }
+        case 10: {
+          this.setState(this.step11);
+          this.network.moveTo(cameraPositions[1]);
+          scroller.scrollTo('proofStepPanel8', getScrollOptions(window.scrollY));
+          break;
+        }
+        case 11: {
+          this.setState(this.step12);
+          this.network.moveTo(cameraPositions[2]);
+          scroller.scrollTo('proofStepPanel9', getScrollOptions(window.scrollY));
+          break;
+        }
+        case 12: {
+          this.network.moveTo(cameraPositions[0]);
+          scroller.scrollTo('proofStepPanel10', getScrollOptions(window.scrollY));
+          break;
+        }
+        case 13: {
+          this.setState({ btnNextD: true });
+          this.step14();
+          let interval1 = setInterval(this.step14, 2000);
+          this.setState({ interval1: interval1 });
+          scroller.scrollTo('proofStepPanel11', getScrollOptions(window.scrollY));
           break;
         }
         default: {
@@ -118,57 +133,67 @@ class Proof4 extends React.Component {
           break;
         }
         case 2: {
-          this.setState(this.step1SVGContent);
           scroller.scrollTo('proofStepPanel1', getScrollOptions(window.scrollY));
           break;
         }
-        case 3: {
-          this.setState(this.stepReset);
-          this.setState(this.step2);
+        case 4: {
           scroller.scrollTo('proofStepPanel2', getScrollOptions(window.scrollY));
           break;
         }
-        case 4: {
-          this.setState(this.stepReset);
-          this.setState(this.step2);
-          this.setState(this.step3);
-          break;
-        }
         case 5: {
-          this.setState(this.stepReset);
-          this.setState(this.step2);
-          this.setState(this.step3);
-          this.setState(this.step4);
-          this.network.moveTo(cameraPositions[0]);
           scroller.scrollTo('proofStepPanel3', getScrollOptions(window.scrollY));
           break;
         }
-        case 6: {
-          this.setState(this.stepReset);
-          this.setState(this.step2);
-          this.setState(this.step3);
-          this.setState(this.step4);
-          this.setState(this.step5);
-          this.network.moveTo(cameraPositions[1]);
+        case 7: {
           scroller.scrollTo('proofStepPanel4', getScrollOptions(window.scrollY));
           break;
         }
-        case 7: {
-          this.network.moveTo(cameraPositions[2]);
+        case 8: {
           scroller.scrollTo('proofStepPanel5', getScrollOptions(window.scrollY));
           break;
         }
-        case 8: {
+        case 9: {
+          this.setState(this.stepReset);
+          this.setState(this.step8);
+          scroller.scrollTo('proofStepPanel6', getScrollOptions(window.scrollY));
+          break;
+        }
+        case 10: {
+          this.setState(this.stepReset);
+          this.setState(this.step8);
+          this.setState(this.step9);
+          break;
+        }
+        case 11: {
+          this.setState(this.stepReset);
+          this.setState(this.step8);
+          this.setState(this.step9);
+          this.setState(this.step10);
+          this.network.moveTo(cameraPositions[0]);
+          scroller.scrollTo('proofStepPanel7', getScrollOptions(window.scrollY));
+          break;
+        }
+        case 12: {
+          // this.setState(this.stepReset);
+          this.setState(this.step8);
+          this.setState(this.step9);
+          this.setState(this.step10);
+          this.setState(this.step11);
+          this.network.moveTo(cameraPositions[1]);
+          scroller.scrollTo('proofStepPanel8', getScrollOptions(window.scrollY));
+          break;
+        }
+        case 13: {
+          this.network.moveTo(cameraPositions[2]);
+          scroller.scrollTo('proofStepPanel9', getScrollOptions(window.scrollY));
+          break;
+        }
+        case 14: {
           this.setState({ btnNextD: false });
           clearInterval(this.state.interval1);
           this.clearAllTimers(this.state);
-          this.setState(this.stepReset);
-          this.setState(this.step2);
-          this.setState(this.step3);
-          this.setState(this.step4);
-          this.setState(this.step5);
-          this.setState(this.step6);
-          scroller.scrollTo('proofStepPanel6', getScrollOptions(window.scrollY));
+          this.setState(this.step12);
+          scroller.scrollTo('proofStepPanel10', getScrollOptions(window.scrollY));
           break;
         }
         default: {
@@ -181,34 +206,10 @@ class Proof4 extends React.Component {
   };
 
   stepReset = () => { 
-    return { nodes: [], edges: [], isSVGCoverShowed: false } 
+    return { nodes: [], edges: [] } 
   };
 
-  step1SVGContent = () => {
-    const svgContent = (
-      <svg>
-        <text textAnchor={'middle'} x={318} y={80} fill={'green'} strokeWidth={0} fontSize={26}>
-          A: v <tspan fontStyle='italic'>G</tspan> neexistuje kružnice
-        </text>
-        <text textAnchor={'middle'} x={325} y={110} fill={'red'} strokeWidth={0} fontSize={26}>
-          B: každá hrana v <tspan fontStyle='italic'>G</tspan> je most 
-        </text>
-        <text textAnchor={'middle'} x={325} y={180} stroke={'black'} strokeWidth={0} fontSize={28}>
-          (<tspan fill={'green'}>A</tspan>⇒<tspan fill={'red'}>B</tspan>) ⇔ (<tspan fill={'red'}>&not;B</tspan>&rArr;<tspan fill={'green'}>&not;A</tspan>)
-        </text>
-        <text textAnchor={'middle'} x={325} y={250} fill={'red'} strokeWidth={0} fontSize={26}>
-          &not;B: existuje hrana v <tspan fontStyle='italic'>G</tspan>, která není most
-        </text>
-        <text textAnchor={'middle'} x={245} y={290} fill={'green'} strokeWidth={0} fontSize={26}>
-          &not;A: v <tspan fontStyle='italic'>G</tspan> existuje kružnice
-        </text>
-      </svg>
-    );
-
-    return { isSVGCoverShowed: true, svgContent: svgContent }
-  }
-
-  step2 = () => {
+  step8 = () => {
     return {
       nodes: [
         { id: 1, x: -180, y: -40, color: { background: palette.yellow }, label: '   ' },
@@ -224,11 +225,10 @@ class Proof4 extends React.Component {
         { id: 4, from: 3, to: 5 },
         { id: 5, from: 4, to: 5 },
       ],
-      isSVGCoverShowed: false,
     }
   };
 
-  step3 = (state) => {
+  step9 = (state) => {
     let newNodes = this.updateNode(state.nodes, 0, palette.yellow, ' u ');
     newNodes = this.updateNode(newNodes, 1, palette.yellow, ' x ');
     newNodes = this.updateNode(newNodes, 3, palette.yellow, ' y ');
@@ -239,20 +239,20 @@ class Proof4 extends React.Component {
     return { nodes: newNodes, edges: newEdges };
   };
 
-  step4 = (state) => {
+  step10 = (state) => {
     let newNodes = this.updateNode(state.nodes, 0, palette.purple, ' u ');
     newNodes = this.updateNode(newNodes, 1, palette.purple, ' x ');
     newNodes = this.updateNode(newNodes, 3, palette.purple, ' y ');
     newNodes = this.updateNode(newNodes, 4, palette.purple, ' v ');
 
-    let newEdges = this.updateEdge(state.edges, 0, palette.purple, 2, false, undefined);
-    newEdges = this.updateEdge(newEdges, 2, palette.purple, 2, false, ' e ');
-    newEdges = this.updateEdge(newEdges, 4, palette.purple, 2, false, undefined);
+    let newEdges = this.updateEdge(state.edges, 0, palette.purple, 4, false, undefined);
+    newEdges = this.updateEdge(newEdges, 2, palette.purple, 4, false, ' e ');
+    newEdges = this.updateEdge(newEdges, 4, palette.purple, 4, false, undefined);
 
     return { nodes: newNodes, edges: newEdges };
   };
 
-  step5 = (state) => {
+  step11 = (state) => {
     let newNodes = this.addObjectArray(state.nodes, [
       { id: 6, x: 220, y: -40, color: { background: palette.purple }, label: ' u ' },
       { id: 7, x: 360, y: -100, color: { background: palette.purple }, label: ' x ' },
@@ -262,8 +262,8 @@ class Proof4 extends React.Component {
     ]);
 
     let newEdges = this.addObjectArray(state.edges, [
-      { id: 6, from: 6, to: 7, color: { color: palette.purple, hover: palette.purple }, width: 2 },
-      { id: 7, from: 7, to: 8, color: { color: palette.purple, hover: palette.purple }, width: 2 },
+      { id: 6, from: 6, to: 7, color: { color: palette.purple, hover: palette.purple }, width: 4 },
+      { id: 7, from: 7, to: 8, color: { color: palette.purple, hover: palette.purple }, width: 4 },
       {
         id: 8,
         from: 7,
@@ -273,14 +273,14 @@ class Proof4 extends React.Component {
         dashes: [8, 8],
         label: ' e ',
       },
-      { id: 9, from: 8, to: 10, color: { color: palette.purple, hover: palette.purple }, width: 2 },
+      { id: 9, from: 8, to: 10, color: { color: palette.purple, hover: palette.purple }, width: 4 },
       { id: 10, from: 9, to: 10 },
     ]);
 
     return { nodes: newNodes, edges: newEdges };
   };
 
-  step6 = (state) => {
+  step12 = (state) => {
     let newNodes = this.updateNode(state.nodes, 0, palette.yellow, '   ');
     newNodes = this.updateNode(newNodes, 1, palette.green, ' x ');
     newNodes = this.updateNode(newNodes, 2, palette.green, '   ');
@@ -293,32 +293,34 @@ class Proof4 extends React.Component {
     newNodes = this.updateNode(newNodes, 9, palette.green, '   ');
 
     let newEdges = this.updateEdge(state.edges, 0, palette.black, 1, false, undefined);
-    newEdges = this.updateEdge(newEdges, 1, palette.green, 3, false, undefined);
+    newEdges = this.updateEdge(newEdges, 1, palette.green, 4, false, undefined);
     newEdges = this.updateEdge(newEdges, 2, palette.black, 1, false, ' e ');
-    newEdges = this.updateEdge(newEdges, 3, palette.green, 3, false, undefined);
-    newEdges = this.updateEdge(newEdges, 4, palette.green, 3, false, undefined);
+    newEdges = this.updateEdge(newEdges, 3, palette.green, 4, false, undefined);
+    newEdges = this.updateEdge(newEdges, 4, palette.green, 4, false, undefined);
     newEdges = this.updateEdge(newEdges, 5, palette.black, 1, false, undefined);
-    newEdges = this.updateEdge(newEdges, 6, palette.green, 3, false, undefined);
+    newEdges = this.updateEdge(newEdges, 6, palette.green, 4, false, undefined);
     newEdges = this.updateEdge(newEdges, 7, palette.white, 2, false, '   ');
-    newEdges = this.updateEdge(newEdges, 8, palette.green, 3, false, undefined);
-    newEdges = this.updateEdge(newEdges, 9, palette.green, 3, false, undefined);
+    newEdges = this.updateEdge(newEdges, 8, palette.green, 4, false, undefined);
+    newEdges = this.updateEdge(newEdges, 9, palette.green, 4, false, undefined);
 
     return { nodes: newNodes, edges: newEdges };
   };
 
-  step8 = () => {
-    let timeout1 = setTimeout(() => { this.setState(this.step8a); }, 500);
-    let timeout2 = setTimeout(() => { this.setState(this.step8b); }, 2000);
-
-    this.setState({ timeouts: [timeout1, timeout2] });
+  step14 = () => {
+    this.setState({ 
+      timeouts: [
+        setTimeout(() => { this.setState(this.step14a); }, 500),
+        setTimeout(() => { this.setState(this.step14b); }, 2000),
+      ]
+    });
   };
 
-  step8a = (state) => {
-    let newEdges = this.updateEdge(state.edges, 2, palette.green, 3, false, ' e ');
+  step14a = (state) => {
+    let newEdges = this.updateEdge(state.edges, 2, palette.green, 4, false, ' e ');
     return { edges: newEdges };
   };
 
-  step8b = (state) => {
+  step14b = (state) => {
     let newEdges = this.updateEdge(state.edges, 2, palette.black, 1, false, ' e ');
     return { edges: newEdges };
   };
