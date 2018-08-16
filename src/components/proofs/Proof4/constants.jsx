@@ -49,7 +49,7 @@ const proofStepPanels = [
       <p>
         Určíme celé znění obměny původního tvrzení.
         <br />
-        <br />Přímou metodou se tedy budeme snažit dokázat tvrzení: <cite><q>Jestliže existuje hrana v <MN>G</MN>, která není most, pak v <MN>G</MN> existuje kružnice.</q></cite>
+        <br />Přímou tedy budeme snažit dokázat tvrzení: <cite><q>Jestliže existuje hrana v <MN>G</MN>, která není most, pak v <MN>G</MN> existuje kružnice.</q></cite>
       </p>
   },
   {
@@ -112,7 +112,7 @@ const descriptionPanels = [
   {
     id: 1,
     showForSteps: [1],
-    content: <p>Provedení obměny původního výroku.</p>
+    content: <p>Tvar původního výroku.</p>
   },
   {
     id: 2,
@@ -127,7 +127,7 @@ const descriptionPanels = [
   {
     id: 4,
     showForSteps: [4],
-    content: <p>Jedná se o vzájemně ekvivalentní tvrzení.</p>
+    content: <p>Tvar obměněného tvrzení.</p>
   },
   {
     id: 5,

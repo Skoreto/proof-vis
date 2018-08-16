@@ -5,9 +5,9 @@ import { initialProofState, palette } from '../../../functionality/globalProofCo
 import {
   updateNode,
   updateNodeShape,
+  getNodesWithNewPositions,
   updateEdge,
   updateEdgeWithArrow,
-  getNodesWithNewPositions,
   updateNodesWithNewPositions,
 } from '../../../functionality/graphFunctions';
 import {

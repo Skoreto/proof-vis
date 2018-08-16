@@ -74,6 +74,9 @@ class Help extends React.Component {
                     <p>
                       V případě výskytu chyby či špatného vykreslení některého z prvků je doporučeno přejít na úvodní stránku a obnovit ji například klávesou F5.
                     </p>
+                    <p>
+                      Pokud jste nalezli bug nebo chybu v postupu některého z důkazů, informujte, prosím, o této skutečnosti autora na email TomSkorepa@gmail.com.
+                    </p>
                   </main>
                 </Col>
               </Row>

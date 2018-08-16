@@ -1,10 +1,11 @@
 import React from 'react';
 import ClaimPanel from '../../../UI/ProofWrapper/ClaimPanel/ClaimPanel';
+import VisualTextRow from '../../../UI/ProofWrapper/VisualTextRow/VisualTextRow';
 import MN from '../../../UI/MathJaxNode/MathJaxNode';
 
 const headingTitle = 'Důkaz 5';
 const breadcrumbsCurrent = 'Důkazy nepřímo';
-const stepSum = 8;
+const stepSum = 14;
 
 const claimPanel = (
   <ClaimPanel>
@@ -19,15 +20,43 @@ const proofStepPanels = [
     content:
       <p>
         Dokazujeme-li nepřímo, snažíme se přímou metodou dokázat tvrzení <MN>\neg B \Rightarrow \neg A</MN>, které je dle zásad výrokové logiky ekvivalentní s původním tvrzením.
-        <br />
-        <br />V tomto případě bude znít: <cite><q>Jestliže <MN>G</MN> není strom, pak graf <MN>G</MN> je nesouvislý nebo existuje hrana <MN>e</MN>, která není most v <MN>G</MN>.</q></cite>
-        <br />
-        <br />A dostáváme dvě části implikované věty, které je třeba dokázat:
+        <br /><br />
+        Původní tvrzení odpovídá implikaci ve tvaru <MN>A \Rightarrow B</MN>.
       </p>
   },
   {
     name: 'proofStepPanel2',
-    activeForSteps: [2],
+    activeForSteps: [2, 3],
+    content:
+      <p>
+        Vyznačíme v tvrzení jeho části, výroky <MN>A</MN> a <MN>B</MN>.
+      </p>
+  },
+  {
+    name: 'proofStepPanel3',
+    activeForSteps: [4],
+    content: <p>Sestavíme obměnu původního tvrzení.</p>
+  },
+  {
+    name: 'proofStepPanel4',
+    activeForSteps: [5, 6],
+    content: <p>Určíme nová znění obou výroků.</p>
+  },
+  {
+    name: 'proofStepPanel5',
+    activeForSteps: [7],
+    content:
+      <p>
+        Určíme celé znění obměny původního tvrzení.
+        <br />
+        <br />Přímou metodou tedy budeme dokazovat tvrzení: <cite><q>Jestliže graf <MN>G</MN> je nesouvislý nebo existuje hrana <MN>e</MN>, která není most v grafu <MN>G</MN>, pak graf <MN>G</MN> není strom.</q></cite>
+        <br />
+        <br />Výrok <MN>\neg B</MN> se navíc skládá ze dvou částí spojených disjunkcí (<MN>\vee</MN>), ve větě oddělených slovem <q>nebo</q>:
+      </p>
+  },
+  {
+    name: 'proofStepPanel6',
+    activeForSteps: [8],
     content:
       <p>
         <b>1. část:</b> <cite><q>graf <MN>G</MN> je nesouvislý</q></cite>
@@ -36,8 +65,8 @@ const proofStepPanels = [
       </p>
   },
   {
-    name: 'proofStepPanel3',
-    activeForSteps: [3],
+    name: 'proofStepPanel7',
+    activeForSteps: [9],
     content:
       <p>
         <b>2. část:</b> <cite><q>existuje hrana <MN>e</MN>, která není most v grafu <MN>G</MN></q></cite>
@@ -46,8 +75,8 @@ const proofStepPanels = [
       </p>
   },
   {
-    name: 'proofStepPanel4',
-    activeForSteps: [4],
+    name: 'proofStepPanel8',
+    activeForSteps: [10],
     content:
       <p>
         Z definice mostu víme, že jeho odebráním vznikne v grafu více komponent.
@@ -56,8 +85,8 @@ const proofStepPanels = [
       </p>
   },
   {
-    name: 'proofStepPanel5',
-    activeForSteps: [5],
+    name: 'proofStepPanel9',
+    activeForSteps: [11],
     content:
       <p>
         Protože komponenta je sama o sobě souvislý graf. Musí mezi každou dvojicí jejích vrcholů existovat cesta.
@@ -66,24 +95,24 @@ const proofStepPanels = [
       </p>
   },
   {
-    name: 'proofStepPanel6',
-    activeForSteps: [6],
+    name: 'proofStepPanel10',
+    activeForSteps: [12],
     content:
       <p>
         Pak ale cesta <MN>{'P_{xy}'}</MN> musela existovat také v grafu <MN>G</MN>, protože graf <MN>G-e</MN> vznikl z grafu <MN>G</MN> pouze odebráním hrany <MN>e</MN>.
       </p>
   },
   {
-    name: 'proofStepPanel7',
-    activeForSteps: [7],
+    name: 'proofStepPanel11',
+    activeForSteps: [13],
     content:
       <p>
         Z definice kružnice pak vyplývá, že cesta <MN>{'P_{xy}'}</MN> spolu s hranou e tvoří kružnici v grafu <MN>G</MN>.
       </p>
   },
   {
-    name: 'proofStepPanel8',
-    activeForSteps: [8],
+    name: 'proofStepPanel12',
+    activeForSteps: [14],
     content:
       <p>
         Protože graf <MN>G</MN> obsahuje kružnici, není podle definice stromu stromem.
@@ -95,48 +124,78 @@ const descriptionPanels = [
   {
     id: 1,
     showForSteps: [1],
-    content: <p>Provedení obměny původního výroku.</p>
+    content: <p>Tvar původního výroku.</p>
   },
   {
     id: 2,
     showForSteps: [2],
-    content: <p>Příklad nesouvislého grafu <MN>G</MN>, který není strom.</p>
+    content: <p>Znění výroku <MN>A</MN>.</p>
   },
   {
     id: 3,
     showForSteps: [3],
+    content: <p>Znění výroku <MN>B</MN>.</p>
+  },
+  {
+    id: 4,
+    showForSteps: [4],
+    content: <p>Tvar obměněného tvrzení.</p>
+  },
+  {
+    id: 5,
+    showForSteps: [5],
+    content: <p>Znění negace výroku <MN>B</MN>.</p>
+  },
+  {
+    id: 6,
+    showForSteps: [6],
+    content: <p>Znění negace výroku <MN>A</MN>.</p>
+  },
+  {
+    id: 7,
+    showForSteps: [7],
+    content: <p>Znění celé obměny původního tvrzení.</p>
+  },
+  {
+    id: 8,
+    showForSteps: [8],
+    content: <p>Příklad nesouvislého grafu <MN>G</MN>, který není strom.</p>
+  },
+  {
+    id: 9,
+    showForSteps: [9],
     content:
       <p>
         Příklad grafu <MN>G</MN>, kde existuje hrana <MN>{'e=\\{x,y\\}'}</MN>, která není most.
       </p>
   },
   {
-    id: 4,
-    showForSteps: [4],
+    id: 10,
+    showForSteps: [10],
     content:
       <p>
         Po odebrání hrany <MN>e</MN> zůstanou její vrcholy <MN>x</MN> a <MN>y</MN> stále v jedné souvislé komponentě.
       </p>
   },
   {
-    id: 5,
-    showForSteps: [5],
+    id: 11,
+    showForSteps: [11],
     content:
       <p>
         Po odebrání hrany <MN>e</MN> v grafu stále existuje také cesta mezi jejími vrcholy <MN>x</MN> a <MN>y</MN>.
       </p>
   },
   {
-    id: 6,
-    showForSteps: [6],
+    id: 12,
+    showForSteps: [12],
     content:
       <p>
         Cesta <MN>{'P_{xy}'}</MN> existovala také v grafu <MN>G</MN>.
       </p>
   },
   {
-    id: 7,
-    showForSteps: [7],
+    id: 13,
+    showForSteps: [13],
     content:
       <p>
         Cesta <MN>{'P_{xy}'}</MN> spolu s hranou <MN>e</MN> tvoří kružnici v grafu <MN>G</MN>.
@@ -147,7 +206,7 @@ const descriptionPanels = [
 const definitionPanels = [
   {
     id: 1,
-    showForSteps: [2],
+    showForSteps: [8],
     content:
       <p>
         DEFINICE STROMU (4.2)
@@ -156,7 +215,7 @@ const definitionPanels = [
   },
   {
     id: 2,
-    showForSteps: [4],
+    showForSteps: [10],
     content:
       <div>
         <p>
@@ -170,7 +229,7 @@ const definitionPanels = [
   },
   {
     id: 3,
-    showForSteps: [5],
+    showForSteps: [11],
     content:
       <div>
         <p>
@@ -186,7 +245,7 @@ const definitionPanels = [
   },
   {
     id: 4,
-    showForSteps: [7],
+    showForSteps: [13],
     content:
       <p>
         KRUŽNICE (Definice 1.8)
@@ -195,7 +254,7 @@ const definitionPanels = [
   },
   {
     id: 5,
-    showForSteps: [8],
+    showForSteps: [14],
     content:
       <p>
         DEFINICE STROMU (4.2)
@@ -203,6 +262,76 @@ const definitionPanels = [
       </p>
   },
 ];
+
+const visualTextRows = [
+  {
+    id: 0,
+    showForSteps: [0],
+    content: <div></div> 
+  },
+  {
+    id: 1,
+    showForSteps: [1, 2, 3, 4, 5, 6, 7],
+    content:
+      <VisualTextRow left={270} top={10}>
+        <MN classes={'t-green'}>A</MN><MN>\Rightarrow</MN><MN classes={'t-red'}>B</MN>
+      </VisualTextRow>
+  },
+  {
+    id: 2,
+    showForSteps: [2, 3, 4, 5, 6, 7],
+    content:
+      <VisualTextRow left={50} top={50} classes={'t-green'}>
+        <MN>A:</MN> graf <MN>G</MN> je strom
+      </VisualTextRow>
+  },
+  {
+    id: 3,
+    showForSteps: [3, 4, 5, 6, 7],
+    content:
+      <VisualTextRow left={50} top={90} classes={'t-red'}>
+        <MN>B:</MN> graf <MN>G</MN> je souvislý a každá jeho hrana je most
+      </VisualTextRow>
+  },
+  {
+    id: 4,
+    showForSteps: [4, 5, 6, 7],
+    content:
+      <VisualTextRow left={170} top={140}>
+        <MN>(</MN><MN classes={'t-green'}>A</MN><MN>\Rightarrow</MN><MN classes={'t-red'}>B</MN><MN>)</MN><MN>\Longleftrightarrow</MN><MN>(</MN><MN classes={'t-red'}>\neg B</MN><MN>\Rightarrow</MN><MN classes={'t-green'}>\neg A</MN><MN>)</MN>
+      </VisualTextRow>
+  },
+  {
+    id: 5,
+    showForSteps: [5, 6, 7],
+    content:
+      <VisualTextRow left={50} top={190} width={550} classes={'t-red'}>
+        <MN>\neg B:</MN> graf <MN>G</MN> je nesouvislý nebo existuje hrana <MN>e</MN>, která není most
+      </VisualTextRow>
+  },
+  {
+    id: 6,
+    showForSteps: [6, 7],
+    content:
+      <VisualTextRow left={50} top={260} classes={'t-green'}>
+        <MN>\neg A:</MN> graf <MN>G</MN> není strom
+      </VisualTextRow>
+  },
+  {
+    id: 7,
+    showForSteps: [7],
+    content:
+      <VisualTextRow left={50} top={310} width={550}>
+        Jestliže <span className={'t-red'}>graf <MN>G</MN> je nesouvislý nebo existuje hrana <MN>e</MN>, která není most v grafu <MN>G</MN></span>, pak <span className={'t-green'}>graf <MN>G</MN> není strom</span>.
+      </VisualTextRow>
+  },
+];
+
+const cameraPosition0 = {
+  position: { x: 0, y: 0 }, 
+  scale: 1.1,
+  animation: { duration: 1500, easingFunction: 'easeInOutQuad' },
+};
 
 export const constants = {
   headingTitle: headingTitle,
@@ -212,4 +341,7 @@ export const constants = {
   proofStepPanels: proofStepPanels,
   descriptionPanels: descriptionPanels,
   definitionPanels: definitionPanels,
+  visualTextRows: visualTextRows,
 };
+
+export const cameraPositions = [cameraPosition0];
