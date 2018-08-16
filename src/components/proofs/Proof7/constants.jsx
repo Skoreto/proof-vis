@@ -8,7 +8,9 @@ const stepSum = 4;
 
 const claimPanel = (
   <ClaimPanel>
-    Dokažte, nebo vyvraťte protipříkladem: <cite><q>Když v grafu <MN>G</MN> existují dva různé <MN>u</MN>-<MN>v</MN> sledy, tak graf <MN>G</MN> obsahuje kružnici.</q></cite>
+    Dokažte, nebo vyvraťte protipříkladem: 
+    <br />
+    <cite><q> <MN>\forall G=(V,E)</MN>: Když v grafu <MN>G</MN> existují dva různé <MN>u</MN>-<MN>v</MN> sledy, tak graf <MN>G</MN> obsahuje kružnici.</q></cite>
   </ClaimPanel>
 );
 

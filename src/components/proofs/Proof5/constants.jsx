@@ -8,7 +8,7 @@ const stepSum = 8;
 
 const claimPanel = (
   <ClaimPanel>
-    Dokažte nepřímo tvrzení: <cite><q>Jestliže graf <MN>G</MN> je strom, pak graf <MN>G</MN> je souvislý a každá jeho hrana je most.</q></cite>
+    Dokažte nepřímo: <cite><q> <MN>\forall G=(V,E)</MN>: Jestliže graf <MN>G</MN> je strom, pak graf <MN>G</MN> je souvislý a každá jeho hrana je most.</q></cite>
   </ClaimPanel>
 );
 

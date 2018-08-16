@@ -8,7 +8,7 @@ const stepSum = 5;
 
 const claimPanel = (
   <ClaimPanel>
-    Dokažte přímo tvrzení: <cite><q>Jestliže graf <MN>G</MN> je strom, pak graf <MN>G-e</MN>, kde <MN>e</MN> je libovolná hrana grafu <MN>G</MN>, již není strom.</q></cite>
+    Dokažte přímo: <cite><q> <MN>\forall G=(V,E)</MN>: Jestliže graf <MN>G</MN> je strom, pak graf <MN>G-e</MN>, kde <MN>e</MN> je libovolná hrana grafu <MN>G</MN>, již není strom.</q></cite>
     <br />(Při dokazování použijte definice a věty z teorie týkající se stromů.)
   </ClaimPanel>
 );

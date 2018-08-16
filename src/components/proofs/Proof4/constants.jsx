@@ -8,7 +8,7 @@ const stepSum = 8;
 
 const claimPanel = (
   <ClaimPanel>
-    <cite><q>Nechť <MN>G</MN> je graf. Jestliže v <MN>G</MN> neexistuje kružnice, pak každá hrana v <MN>G</MN> je most.</q></cite> Dokažte nepřímo.
+    <cite><q> <MN>\forall G=(V,E)</MN>: Jestliže v grafu <MN>G</MN> neexistuje kružnice, pak každá hrana v grafu <MN>G</MN> je most.</q></cite> Dokažte nepřímo.
   </ClaimPanel>
 );
 

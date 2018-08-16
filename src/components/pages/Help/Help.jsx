@@ -49,12 +49,12 @@ class Help extends React.Component {
                     </p>
                     <Image src="assets/image/controls_panel.png" thumbnail />
                     <p>
-                      Černými šipkami vlevo a vpravo se lze pohybovat v důkazu o krok zpět či vpřed. Aktuální krok z celkového počtu kroků zobrazuje ukazadlo mezi šipkami. V průběhu vícekrokových animací je aktivní tlačítko „šipky zopakovat“, které slouží k okamžitému zopakování animace od začátku.
+                      Černými šipkami vlevo <FontAwesomeIcon icon="chevron-left" /> a vpravo <FontAwesomeIcon icon="chevron-right" /> se lze pohybovat v důkazu o krok zpět či vpřed. Aktuální krok z celkového počtu kroků zobrazuje ukazadlo mezi šipkami. V průběhu vícekrokových animací je aktivní tlačítko „šipky zopakovat“ <FontAwesomeIcon icon="redo-alt" />, které slouží k okamžitému zopakování animace od začátku.
                     </p>
 
                     <h3>Kreslící nástroje</h3>
                     <p>
-                      Panel ovládání dále obsahuje skupinu tlačítek pro kreslení přes plátno. Po aktivaci kreslení prvním tlačítkem „editace“ je kurzor změněn na kříž a jsou zpřístupněny tlačítka pro výběr kreslícího nástroje. Ve výchozím stavu je aktivní nástroj „tužka“, který umožní kreslit přes plátno volným tahem. Další dva nástroje umožní kreslení přímek a kružnic například pro naznačení vrcholů a hran grafu. Deaktivací kreslení opětovným stisknutím tlačítka „editace“ je kresba vymazána.
+                      Panel ovládání dále obsahuje skupinu tlačítek pro kreslení přes plátno. Po aktivaci kreslení prvním tlačítkem „editace“ <FontAwesomeIcon icon="edit" /> je kurzor změněn na kříž a jsou zpřístupněny tlačítka pro výběr kreslícího nástroje. Ve výchozím stavu je aktivní nástroj „tužka“ <FontAwesomeIcon icon="pencil-alt" />, který umožní kreslit přes plátno volným tahem. Další dva nástroje umožní kreslení přímek <FontAwesomeIcon icon="minus" /> a kružnic <FontAwesomeIcon icon="circle-notch" /> například pro naznačení vrcholů a hran grafu. Deaktivací kreslení opětovným stisknutím tlačítka „editace“ <FontAwesomeIcon icon="edit" /> je kresba vymazána.
                     </p>
 
                     <h3>Tvůrčí plátna</h3>
@@ -62,7 +62,7 @@ class Help extends React.Component {
                       Pro účely výuky byly dále do aplikace přidány prázdná tvůrčí plátna, ve kterých může vyučující sám sestrojovat grafy přidáváním vrcholů a jejich propojováním hranami. Na stránku velkého plátna lze přejít tlačítkem „PLÁTNO“ v hlavní navigaci.
                     </p>
                     <p>
-                      Na stránce každého důkazu je v panelu ovládání dostupné tlačítko pro zobrazení malého pomocného plátna. Plátno lze volně přesouvat v prostoru celé stránky uchopením za horní panel a po zavření dialogu křížkem v pravém horním rohu je jeho obsah vymazán. 
+                      Na stránce každého důkazu je v panelu ovládání dostupné tlačítko pro zobrazení malého pomocného plátna <FontAwesomeIcon icon="chalkboard-teacher" />. Plátno lze volně přesouvat v prostoru celé stránky uchopením za horní panel a po zavření dialogu křížkem v pravém horním rohu je jeho obsah vymazán. 
                     </p>
                     <Image src="assets/image/drawing_dialog_1.png" thumbnail />
                     <p>

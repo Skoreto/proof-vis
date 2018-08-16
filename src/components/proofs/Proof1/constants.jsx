@@ -8,7 +8,7 @@ const stepSum = 7;
 
 const claimPanel = (
   <ClaimPanel>
-    <cite><q>Nechť <MN>G</MN> je souvislý graf. Jestliže hrana <MN>e</MN> není most v <MN>G</MN>, pak v <MN>G</MN> existuje kružnice obsahující hranu <MN>e</MN>.</q> </cite> Dokažte přímo.
+    Dokažte přímo: <cite><q> <MN>\forall G=(V,E)</MN>: Nechť <MN>G</MN> je souvislý graf. Jestliže hrana <MN>e</MN> není most v <MN>G</MN>, pak v <MN>G</MN> existuje kružnice obsahující hranu <MN>e</MN>.</q> </cite>
   </ClaimPanel>
 );
 
