@@ -29,8 +29,6 @@
   padding-left: 5px;
   padding-right: 5px;
   border-bottom: 1px solid rgba(235, 150, 0, 0.5);
-  /*max-height: 150px;
-    overflow-y: scroll;*/
   opacity: 0.4;
 }
 
@@ -45,6 +43,7 @@
 @media (max-width: 767px) {
   #proof-steps-box {
     min-width: 600px;
+    max-height: 2000px;
   }
   #proof-steps-box p {
     font-size: 14px;

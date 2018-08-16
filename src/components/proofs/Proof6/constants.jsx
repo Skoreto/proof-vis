@@ -141,11 +141,11 @@ const proofStepPanels = [
 ];
 
 const descriptionPanels = [
-  {
-    id: 0,
-    showForSteps: [0, 4, 9, 17],
-    content: <p></p>
-  },
+  // {
+  //   id: 0,
+  //   showForSteps: [0, 4, 9, 17],
+  //   content: <p></p>
+  // },
   {
     id: 1,
     showForSteps: [1],
@@ -162,22 +162,22 @@ const descriptionPanels = [
     content: <p>Znění výroku <MN>B</MN>.</p>
   },
   {
-    id: 5,
+    id: 4,
     showForSteps: [5],
     content: <p>Znění výroku <MN>A</MN> zůstává nezměněné.</p>
   },
   {
-    id: 6,
+    id: 5,
     showForSteps: [6],
     content: <p>Znění negace výroku <MN>B</MN>.</p>
   },
   {
-    id: 7,
+    id: 6,
     showForSteps: [7],
     content: <p>Celé znění negace původního tvrzení.</p>
   },
   {
-    id: 8,
+    id: 7,
     showForSteps: [8],
     content: 
       <p>
@@ -185,22 +185,22 @@ const descriptionPanels = [
       </p>
   },
   {
-    id: 9,
+    id: 8,
     showForSteps: [9],
     content: <p>Cesta z vrcholu <MN>x</MN> do vrcholu <MN>y</MN> přímo přes hranu <MN>e</MN>.</p>
   },
   {
-    id: 10,
+    id: 9,
     showForSteps: [10],
     content: <p>Cesta z vrcholu <MN>x</MN> do vrcholu <MN>y</MN> přes kružnici <MN>C</MN>.</p>
   },
   {
-    id: 11,
+    id: 10,
     showForSteps: [11],
     content: <p>Zvolení libovolných vrcholů <MN>u</MN> a <MN>v</MN>.</p>
   },
   {
-    id: 12,
+    id: 11,
     showForSteps: [12],
     content: 
       <p>
@@ -208,7 +208,7 @@ const descriptionPanels = [
       </p>
   },
   {
-    id: 13,
+    id: 12,
     showForSteps: [13],
     content: 
       <p>
@@ -216,7 +216,7 @@ const descriptionPanels = [
       </p>
   },
   {
-    id: 14,
+    id: 13,
     showForSteps: [14],
     content: 
       <p>
@@ -225,7 +225,7 @@ const descriptionPanels = [
       </p>
   },
   {
-    id: 15,
+    id: 14,
     showForSteps: [15],
     content: 
       <p>
@@ -233,12 +233,12 @@ const descriptionPanels = [
       </p>
   },
   {
-    id: 16,
+    id: 15,
     showForSteps: [16],
     content: <p>Počet komponent po odebrání hrany <MN>e</MN> zůstane stejný.</p>
   },
   {
-    id: 17,
+    id: 16,
     showForSteps: [17],
     content: <p>Hrana <MN>e</MN> ležící na kružnici totiž nemohla být most.</p>
   },

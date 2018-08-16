@@ -1,4 +1,4 @@
-/* === NADPIS HLAVNÍ STRANY === */
+/* === MAIN HEADING === */
 .page-wrapper .page-heading {
   margin-bottom: 20px;
   border-bottom: 2px solid #e8e8e8;
@@ -11,7 +11,7 @@
   color: #2a4713;
 }
 
-/* === DROBEČKOVÁ NAVIGACE === */
+/* === BREADCRUMBS === */
 .page-wrapper .breadcrumbs {
   display: inline-block;
 }

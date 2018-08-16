@@ -1,4 +1,3 @@
-/* ======= Základ ======= */
 .wrapper {
   min-height: 100%;
   margin-bottom: -30px;
@@ -23,10 +22,10 @@
   background-clip: padding-box;
 }
 
-/* ==== MAIN ČÁST ====  */
-.overview ul {
+/* ==== MAIN ====  */
+.overview p {
   text-align: justify;
-  font-size: 14px;
+  font-size: 17px;
 }
 
 .help p {
@@ -82,19 +81,10 @@
   margin-right: 30px;
 }
 
+/* == TEXT COLORS == */
 .t-green {
   /*Green 800*/
   color: #2E7D32;
-}
-
-.text-blue {
-  /*Blue A700*/
-  color: #2962FF;
-}
-
-.text-indigo {
-  /*Indigo 500*/
-  color: #3F51B5;
 }
 
 .t-red {
@@ -102,35 +92,7 @@
   color: #D50000;
 }
 
-.text-brown {
-  /*Brown 500*/
-  color: #795548;
-}
-
-.text-purple {
-  color: #B39DDB;
-}
-
-/* == Transition settings for ExerciseWrapper == */
-.fade-enter {
-  opacity: 0.01;
-}
-
-.fade-enter-active {
-  opacity: 1;
-  transition: opacity 500ms ease-in;
-}
-
-.fade-exit {
-  opacity: 1;
-}
-
-.fade-exit-active {
-  opacity: 0.01;
-  transition: opacity 500ms ease-in;
-}
-
-/* === SEZNAMY OBSAHU === */
+/* === LISTS CONTENT === */
 .page-wrapper ul li {
   margin-bottom: 5px;
 }
@@ -151,15 +113,16 @@
   margin-bottom: 5px;
 }
 
-/* === NADPISY OBSAHU === */
+/* === HEDINGS CONTENT === */
 .page-wrapper .page-content h1 {
   font-size: 26px;
   font-weight: normal;
 }
 
 .page-wrapper .page-content h2 {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: normal;
+  color: #8f3e3e
 }
 
 .page-wrapper .page-content h3 {
@@ -177,14 +140,21 @@
   margin-top: 0;
 }
 
-.page-wrapper .page-content .title {
-  margin-top: 0;
-  margin-bottom: 15px;
-  font-weight: 300;
-}
-
 .page-wrapper .page-content .page-row {
   margin-bottom: 20px;
+}
+
+/* === TABLE === */
+.page-wrapper table tr {
+  font-size: 17px;
+}
+
+.page-wrapper table tr {
+  border-top-style: hidden !important;
+}
+
+tbody tr td:first-child {
+  max-width: 80px;
 }
 
 /* MQ - Malé úhlopříčky (telefony, méně než 768px) */
@@ -215,6 +185,12 @@
   }
   .controls-panel {
     min-width: 600px;
+  }
+  .overview {
+    min-width: 565px;
+  }
+  .help {
+    min-width: 565px;
   }
 }
 
