@@ -1,8 +1,11 @@
 import GraphVis from 'react-graph-vis';
 import React from 'react';
-import { graphVisLocales } from '../../../functionality/globalProofConstants';
+import { palette, graphVisLocales } from '../../../functionality/globalProofConstants';
 import { addNode, showEditNodeDialog } from '../../../functionality/nodeEditFunctions';
+import { addEdge, showEditEdgeDialog } from '../../../functionality/edgeEditFunctions';
 import EditNodeDialog from '../../../UI/EditNodeDialog/EditNodeDialog';
+import EditEdgeDialog from '../../../UI/EditEdgeDialog/EditEdgeDialog';
+import './SingleDrawing.css';
 
 class SingleDrawing extends React.Component {
   constructor(props) {
@@ -16,75 +19,62 @@ class SingleDrawing extends React.Component {
         locale: 'cs',
         locales: graphVisLocales,
         clickToUse: false,
-        physics: false,
         layout: {},
         nodes: {
-          shape: 'circle',
-          color: { background: '#ffff08', border: '#000000' },
-          label: '   ',
           font: { size: 22 },
         },
         edges: {
           arrows: {
-            to: { enabled: false, scaleFactor: 2 },
-            from: { enabled: false, scaleFactor: 2 },
+            to: { enabled: false },
+            from: { enabled: false },
           },
-          color: { color: '#000000', hover: '#000000' },
+          color: { color: palette.black, hover: palette.black },
           width: 2,
-          dashes: false,
-          label: '   ',
+          hoverWidth: function (width) { return width * 2; },
+          selectionWidth: function (width) { return width * 2; },
           font: { align: 'top', size: 18 },
-        },
-        configure: {
-          enabled: false,
-          filter: 'nodes,edges',
-          showButton: true,
         },
         manipulation: {
           enabled: true,
           initiallyActive: true,
           addNode: addNode,
           editNode: showEditNodeDialog,
-          editEdge: true,
+          addEdge: addEdge,
+          editEdge: showEditEdgeDialog,
           deleteNode: true,
           deleteEdge: true,
-          controlNodeStyle: {},
         },
         interaction: {
           dragNodes: true,
           dragView: true,
-          hideEdgesOnDrag: false,
-          hideNodesOnDrag: false,
+          // Use node hover colors when to mouse moves over it
           hover: true,
           hoverConnectedEdges: false,
-          keyboard: {
-            enabled: false,
-            speed: { x: 10, y: 10, zoom: 0.02 },
-            bindToWindow: true,
-          },
+          // Longheld click or CTRT+click will add to the selection
           multiselect: true,
           navigationButtons: true,
           selectable: true,
+          // Do not highlight connecting edges on selecting a node
           selectConnectedEdges: false,
-          tooltipDelay: 300,
           zoomView: false,
-        }
+        },
+        // Turn automatic graph rearranging off
+        physics: false,
+        // Turn configuration panel off
+        configure: false,
       },
     };
   }
 
   render() {
-    const events = {
-      select: function (event) { }
-    };
-
     return (
-      <div>
+      <div className="single-drawing-box">
         <EditNodeDialog />
+        <EditEdgeDialog />
         <GraphVis
           graph={this.state.graphVis}
           options={this.state.options}
-          events={events}
+          events={{ }}
           style={{ width: "100%", height: window.innerHeight - 120 }} />
       </div>
     );
