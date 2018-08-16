@@ -84,7 +84,7 @@ const ProofWrapper = (props) => (
                 <GraphVis
                   graph={{ nodes: props.nodes, edges: props.edges }}
                   options={props.options}
-                  events={props.events} 
+                  events={{}} 
                   getNetwork={props.initNetworkInstance}
                 />
               </div>

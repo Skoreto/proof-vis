@@ -2,8 +2,7 @@ import React from 'react';
 import { scroller } from 'react-scroll';
 import { constants, cameraPositions } from './constants';
 import {
-  initialExerciseState,
-  events,
+  initialProofState,
   palette,
 } from '../../../functionality/GlobalProofConstants';
 import {
@@ -20,12 +19,12 @@ import {
   handlerDrawingDialog,
   getScrollOptions,
 } from '../../../functionality/GraphFunctions';
-import ExerciseWrapper from '../../../UI/ProofWrapper/ProofWrapper';
+import ProofWrapper from '../../../UI/ProofWrapper/ProofWrapper';
 
 class Proof2 extends React.Component {
   constructor(props) {
     super(props);
-    this.state = initialExerciseState;
+    this.state = initialProofState;
     this.initNetworkInstance = this.initNetworkInstance.bind(this);
     this.updateNode = updateNode.bind(this);
     this.updateNodeShape = updateNodeShape.bind(this);
@@ -491,9 +490,8 @@ class Proof2 extends React.Component {
 
   render() {
     return (
-      <ExerciseWrapper
+      <ProofWrapper
         {...this.state}
-        events={events}
         initNetworkInstance={this.initNetworkInstance}
         constants={constants}
         previousStep={this.previousStep}

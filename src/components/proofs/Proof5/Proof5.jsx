@@ -1,7 +1,6 @@
 import React from 'react';
 import {
-  initialExerciseState,
-  events,
+  initialProofState,
   palette,
 } from '../../../functionality/GlobalProofConstants';
 import { scroller } from 'react-scroll';
@@ -17,12 +16,12 @@ import {
   handlerDrawingDialog,
   getScrollOptions,
 } from '../../../functionality/GraphFunctions';
-import ExerciseWrapper from '../../../UI/ProofWrapper/ProofWrapper';
+import ProofWrapper from '../../../UI/ProofWrapper/ProofWrapper';
 
 class Proof5 extends React.Component {
   constructor(props) {
     super(props);
-    this.state = initialExerciseState;
+    this.state = initialProofState;
     this.updateNode = updateNode.bind(this);
     this.updateEdge = updateEdge.bind(this);
     this.addObjectArray = addObjectArray.bind(this);
@@ -264,9 +263,8 @@ class Proof5 extends React.Component {
 
   render() {
     return (
-      <ExerciseWrapper
+      <ProofWrapper
         {...this.state}
-        events={events}
         constants={constants}
         previousStep={this.previousStep}
         nextStep={this.nextStep}

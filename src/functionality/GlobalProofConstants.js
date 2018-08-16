@@ -91,9 +91,9 @@ export const graphVisOptions = {
 };
 
 /**
- * Initial state of every Exercise component.
+ * Initial state of every Proof component.
  */
-export const initialExerciseState = {
+export const initialProofState = {
   nodes: [],
   edges: [],
   options: graphVisOptions,
@@ -118,8 +118,3 @@ export const initialExerciseState = {
   btnRepeatD: true,
   isDrawingDialogOpen: false,
 };
-
-/**
- * GraphVis component events object.
- */
-export const events = {};

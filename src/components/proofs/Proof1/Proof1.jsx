@@ -1,7 +1,6 @@
 import React from 'react';
 import {
-  initialExerciseState,
-  events,
+  initialProofState,
   palette,
 } from '../../../functionality/GlobalProofConstants';
 import { constants, cameraPositions } from './constants';
@@ -16,12 +15,12 @@ import {
   handlerSelectedTool,
   handlerDrawingDialog,
 } from '../../../functionality/GraphFunctions';
-import ExerciseWrapper from '../../../UI/ProofWrapper/ProofWrapper';
+import ProofWrapper from '../../../UI/ProofWrapper/ProofWrapper';
 
 class Proof1 extends React.Component {
   constructor(props) {
     super(props);
-    this.state = initialExerciseState;
+    this.state = initialProofState;
     this.initNetworkInstance = this.initNetworkInstance.bind(this);
     this.updateNode = updateNode.bind(this);
     this.updateEdge = updateEdge.bind(this);
@@ -268,9 +267,8 @@ class Proof1 extends React.Component {
 
   render() {
     return (
-      <ExerciseWrapper
+      <ProofWrapper
         {...this.state}
-        events={events}
         initNetworkInstance={this.initNetworkInstance}
         constants={constants}
         previousStep={this.previousStep}
