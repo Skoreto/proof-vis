@@ -7,20 +7,8 @@
   border: 1px solid lightgray;
 }
 
-.row-enter {
-  opacity: 0.01;
-}
-
-.row-enter-active {
-  opacity: 1;
-  transition: opacity 500ms ease-in;
-}
-
-.row-exit {
-  opacity: 1;
-}
-
-.row-exit-active {
-  opacity: 0.01;
-  transition: opacity 500ms ease-in;
+@media (max-width: 767px) {
+  .vis-texts-panel {
+    width: 630px;
+  }
 }
