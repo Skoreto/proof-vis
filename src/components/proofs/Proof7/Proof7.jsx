@@ -4,11 +4,12 @@ import {
   events,
   palette,
 } from '../../../functionality/GlobalProofConstants';
-import { constants } from './constants';
+import { constants, cameraPositions } from './constants';
 import {
   updateNode,
   updateEdge,
   updateEdgeWithArrow,
+  getNodesWithNewPositions,
   updateEdgeSmooth,
   addObjectArray,
   clearAllTimers,
@@ -18,13 +19,14 @@ import {
   handlerDrawingDialog,
 } from '../../../functionality/GraphFunctions';
 import ExerciseWrapper from '../../../UI/ProofWrapper/ProofWrapper';
-import MN from '../../../UI/MathJaxNode/MathJaxNode';
 
 class Proof7 extends React.Component {
   constructor(props) {
     super(props);
     this.state = initialExerciseState;
+    this.initNetworkInstance = this.initNetworkInstance.bind(this);
     this.updateNode = updateNode.bind(this);
+    this.getNodesWithNewPositions = getNodesWithNewPositions.bind(this);
     this.updateEdge = updateEdge.bind(this);
     this.updateEdgeWithArrow = updateEdgeWithArrow.bind(this);
     this.updateEdgeSmooth = updateEdgeSmooth.bind(this);
@@ -36,12 +38,21 @@ class Proof7 extends React.Component {
     this.handlerDrawingDialog = handlerDrawingDialog.bind(this);
   }
 
+  /**
+   * Initialize graphVis network instance.
+   * @param {Object} networkInstance - Object of network instance returned by getNetwork() callback function.
+   */
+  initNetworkInstance(networkInstance) {
+    this.network = networkInstance;
+  }
+
   nextStep = () => {
     if (this.state.currentStep < constants.stepSum) {
       switch (this.state.currentStep) {
         case 0: {
           this.setState({ btnPrevD: false });
           this.setState(this.step1);
+          this.network.moveTo(cameraPositions[0]);
           break;
         }
         case 1: {
@@ -49,13 +60,11 @@ class Proof7 extends React.Component {
           this.step2();
           let interval1 = setInterval(this.step2, 8000);
           this.setState({ intervals: [interval1] });
-          this.setState(this.step2Texts);
           break;
         }
         case 2: {
           this.clearAllTimers(this.state);
-          this.setState(this.stepReset);
-          this.setState(this.step1);
+          this.setState(this.colorReset);
           this.step3();
           let interval2 = setInterval(this.step3, 17000);
           this.setState({ intervals: [interval2] });
@@ -86,20 +95,17 @@ class Proof7 extends React.Component {
         case 2: {
           this.setState({ btnRepeatD: true });
           this.clearAllTimers(this.state);
-          this.setState(this.stepReset);
-          this.setState(this.step1);
+          this.setState(this.colorReset);
           break;
         }
         case 3: {
           this.setState({ btnNextD: false });
           this.setState({ btnRepeatD: false });
           this.clearAllTimers(this.state);
-          this.setState(this.stepReset);
-          this.setState(this.step1);
+          this.setState(this.colorReset);
           this.step2();
           let interval1 = setInterval(this.step2, 8000);
           this.setState({ intervals: [interval1] });
-          this.setState(this.step2Texts);
           break;
         }
         case 4: {
@@ -117,24 +123,49 @@ class Proof7 extends React.Component {
 
   repeatStep = () => {
     this.clearAllTimers(this.state);
-    this.setState(this.step1);
+    this.setState(this.colorReset);
 
-    if (this.state.currentStep === 2) {
-      this.step2();
-      let interval1 = setInterval(this.step2, 8000);
-      this.setState({ intervals: [interval1] });
-    }
-
-    if (this.state.currentStep === 3 ||
-      this.state.currentStep === 4) {
-      this.step3();
-      let interval2 = setInterval(this.step3, 17000);
-      this.setState({ intervals: [interval2] });
+    switch (this.state.currentStep) {
+      case 2: {
+        this.step2();
+        let interval1 = setInterval(this.step2, 8000);
+        this.setState({ intervals: [interval1] });
+        break;
+      }
+      case 3: {
+        this.step3();
+        let interval2 = setInterval(this.step3, 17000);
+        this.setState({ intervals: [interval2] });
+        break;
+      }
+      case 4: {
+        this.step3();
+        let interval2 = setInterval(this.step3, 17000);
+        this.setState({ intervals: [interval2] });
+        break;
+      }
+      default: {
+        break;
+      }
     }
   };
 
   stepReset = () => {
     return { nodes: [], edges: [] };
+  };
+
+  colorReset = () => {
+    return {
+      nodes: [
+        { id: 1, color: { background: palette.yellow }, label: ' u ' },
+        { id: 2, color: { background: palette.yellow }, label: ' w ' },
+        { id: 3, color: { background: palette.yellow }, label: ' v ' },
+      ],
+      edges: [
+        { id: 1, from: 1, to: 2, label: 'e1' },
+        { id: 2, from: 2, to: 3, label: 'e2' },
+      ],
+    };
   };
 
   step1 = () => {
@@ -152,183 +183,149 @@ class Proof7 extends React.Component {
   };
 
   step2 = () => {
-    let timeout2a = setTimeout(() => { this.setState(this.step2a); }, 1000);
-    let timeout2b = setTimeout(() => { this.setState(this.step2b); }, 2000);
-    let timeout2c = setTimeout(() => { this.setState(this.step2c); }, 3000);
-    let timeout2d = setTimeout(() => { this.setState(this.step2d); }, 4000);
-    let timeout2e = setTimeout(() => { this.setState(this.step2e); }, 5000);
-    let timeout2f = setTimeout(() => {
-      this.setState(this.stepReset);
-      this.setState(this.step1);
-      this.setState(this.step2Texts);
-    }, 7000);
-
-    this.setState({ timeouts: [timeout2a, timeout2b, timeout2c, timeout2d, timeout2e, timeout2f] });
+    this.setState({ timeouts: [
+      setTimeout(() => { this.setState(this.step2a); }, 1000),
+      setTimeout(() => { this.setState(this.step2b); }, 2000),
+      setTimeout(() => { this.setState(this.step2c); }, 3000),
+      setTimeout(() => { this.setState(this.step2d); }, 4000),
+      setTimeout(() => { this.setState(this.step2e); }, 5000),
+      setTimeout(() => {
+        this.setState(this.colorReset);
+      }, 7000),
+    ] });
   };
 
   step2a = (state) => {
-    let newNodes = this.updateNode(state.nodes, 0, palette.lightpurple, ' u ');
-    const description = (
-      <p>
-        Konstrukce sledu <MN>S_1 = (</MN><MN classes='text-purple'>u</MN><MN>,e_1,w,e_2,v)</MN>
-      </p>
-    );
-    return { nodes: newNodes };
+    return { 
+      nodes: this.updateNode(
+        this.getNodesWithNewPositions(this.network.getPositions(),state.nodes),
+        0,
+        palette.blue,
+        ' u ',
+      ) };
   };
 
   step2b = (state) => {
     let newEdges = this.updateEdgeWithArrow(
-      state.edges, 0, palette.lightpurple, 3, false, ' e1 ', true, false
+      state.edges, 0, palette.blue, 3, false, 'e1', true, false
     );
-    const description = (
-      <p>
-        Konstrukce sledu <MN>S_1 = (</MN><MN classes='text-purple'>u,e_1</MN><MN>,w,e_2,v)</MN>
-      </p>
-    );
-    return { edges: newEdges, description: description };
+    return { edges: newEdges };
   };
 
   step2c = (state) => {
-    let newNodes = this.updateNode(state.nodes, 1, palette.lightpurple, ' w ');
+    let newNodes = this.updateNode(
+      this.getNodesWithNewPositions(this.network.getPositions(), state.nodes),
+      1,
+      palette.blue,
+      ' w ',
+    );
     let newEdges = this.updateEdgeWithArrow(
-      state.edges, 0, palette.lightpurple, 3, false, ' e1 ', false, false
+      state.edges, 0, palette.blue, 3, false, 'e1', false, false
     );
-    const description = (
-      <p>
-        Konstrukce sledu <MN>S_1 = (</MN><MN classes='text-purple'>u,e_1,w</MN><MN>,e_2,v)</MN>
-      </p>
-    );
-    return { nodes: newNodes, edges: newEdges, description: description };
+    return { nodes: newNodes, edges: newEdges };
   };
 
   step2d = (state) => {
-    let newEdges = this.updateEdgeWithArrow(
-      state.edges, 1, palette.lightpurple, 3, false, ' e2 ', true, false
-    );
-    const description = (
-      <p>
-        Konstrukce sledu <MN>S_1 = (</MN><MN classes='text-purple'>u,e_1,w,e_2</MN><MN>,v)</MN>
-      </p>
-    );
-    return { edges: newEdges, description: description };
+    return { 
+      edges: this.updateEdgeWithArrow(
+        state.edges, 1, palette.blue, 3, false, ' e2 ', true, false
+      ) };
   };
 
   step2e = (state) => {
-    let newNodes = this.updateNode(state.nodes, 2, palette.lightpurple, ' v ');
+    let newNodes = this.updateNode(
+      this.getNodesWithNewPositions(this.network.getPositions(), state.nodes),
+      2,
+      palette.blue,
+      ' v ',
+    );
     let newEdges = this.updateEdgeWithArrow(
-      state.edges, 1, palette.lightpurple, 3, false, ' e2 ', false, false
+      state.edges, 1, palette.blue, 3, false, ' e2 ', false, false
     );
-    const description = (
-      <p>
-        Konstrukce sledu <MN>S_1 = (</MN><MN classes='text-purple'>u,e_1,w,e_2,v</MN><MN>)</MN>
-      </p>
-    );
-    return { nodes: newNodes, edges: newEdges, description: description };
-  };
-
-  step2Texts = () => {
-    const description = (<p>Konstrukce sledu <MN>S_1 = (u,e_1,w,e_2,v)</MN></p>);
-    return { description: description };
+    return { nodes: newNodes, edges: newEdges };
   };
 
   step3 = () => {
-    let timeout3a = setTimeout(() => { this.setState(this.step3a); }, 1000);
-    let timeout3b = setTimeout(() => { this.setState(this.step3b); }, 2500);
-    let timeout3c = setTimeout(() => { this.setState(this.step3c); }, 4000);
-    let timeout3e = setTimeout(() => { this.setState(this.step3e); }, 5500);
-    let timeout3f = setTimeout(() => { this.setState(this.step3f); }, 7000);
-    let timeout3h = setTimeout(() => { this.setState(this.step3h); }, 8500);
-    let timeout3i = setTimeout(() => { this.setState(this.step3i); }, 10000);
-    let timeout3j = setTimeout(() => { this.setState(this.step3j); }, 11500);
-    let timeout3k = setTimeout(() => { this.setState(this.step3k); }, 13000);
-    let timeout3l = setTimeout(() => {
-      this.setState(this.stepReset);
-      this.setState(this.step1);
-    }, 16000);
-
     this.setState({
       timeouts: [
-        timeout3a, 
-        timeout3b, 
-        timeout3c, 
-        timeout3e, 
-        timeout3f, 
-        timeout3h, 
-        timeout3i,
-        timeout3j, 
-        timeout3k, 
-        timeout3l,
+        setTimeout(() => { this.setState(this.step3a); }, 1000), 
+        setTimeout(() => { this.setState(this.step3b); }, 2500), 
+        setTimeout(() => { this.setState(this.step3c); }, 4000), 
+        setTimeout(() => { this.setState(this.step3e); }, 5500), 
+        setTimeout(() => { this.setState(this.step3f); }, 7000), 
+        setTimeout(() => { this.setState(this.step3h); }, 8500), 
+        setTimeout(() => { this.setState(this.step3i); }, 10000),
+        setTimeout(() => { this.setState(this.step3j); }, 11500), 
+        setTimeout(() => { this.setState(this.step3k); }, 13000), 
+        setTimeout(() => {
+          this.setState(this.colorReset);
+        }, 16000),
       ]
     });
   };
 
   step3a = (state) => {
-    let newNodes = this.updateNode(state.nodes, 0, palette.lightpurple, ' u ');
-    return { nodes: newNodes };
+    return { nodes: this.updateNode(state.nodes, 0, palette.blue, ' u ') };
   };
 
   step3b = (state) => {
-    let newEdges = this.updateEdgeWithArrow(
-      state.edges, 0, palette.lightpurple, 3, false, ' e1 ', true, false
-    );
-    return { edges: newEdges };
+    return { 
+      edges: this.updateEdgeWithArrow(
+        state.edges, 0, palette.blue, 3, false, ' e1 ', true, false
+      ) };
   };
 
   step3c = (state) => {
-    let newNodes = this.updateNode(state.nodes, 1, palette.lightpurple, ' w ');
-    return { nodes: newNodes };
+    return { nodes: this.updateNode(state.nodes, 1, palette.blue, ' w ') };
   };
 
   step3e = (state) => {
-    let newEdges = this.addObjectArray(state.edges, [
-      {
-        id: 3, 
-        from: 2, 
-        to: 1, 
-        color: { color: palette.lightpurple, hover: palette.lightpurple }, 
-        width: 3,
-        arrows: { to: { enabled: true } }, 
-        smooth: { enabled: true, type: "curvedCW", roundness: 0.3 },
-      }
-    ]);
-    return { edges: newEdges };
+    return { 
+      edges: this.addObjectArray(state.edges, [
+        {
+          id: 3, 
+          from: 2, 
+          to: 1, 
+          color: { color: palette.blue, hover: palette.blue }, 
+          width: 3,
+          arrows: { to: { enabled: true } }, 
+          smooth: { enabled: true, type: "curvedCW", roundness: 0.3 },
+        }
+      ]) };
   };
 
   step3f = (state) => {
-    let newNodes = this.updateNode(state.nodes, 0, palette.purple, ' u ');
-    return { nodes: newNodes };
+    return { nodes: this.updateNode(state.nodes, 0, palette.darkblue, ' u ') };
   };
 
   step3h = (state) => {
-    let newEdges = this.addObjectArray(state.edges, [
-      {
-        id: 4, 
-        from: 1, 
-        to: 2, 
-        color: { color: palette.lightpurple, hover: palette.lightpurple }, 
-        width: 3,
-        arrows: { to: { enabled: true } }, 
-        smooth: { enabled: true, type: "curvedCW", roundness: 0.3 },
-      }
-    ]);
-    return { edges: newEdges };
+    return { 
+      edges: this.addObjectArray(state.edges, [
+        {
+          id: 4, 
+          from: 1, 
+          to: 2, 
+          color: { color: palette.blue, hover: palette.blue }, 
+          width: 3,
+          arrows: { to: { enabled: true } }, 
+          smooth: { enabled: true, type: "curvedCW", roundness: 0.3 },
+        }
+      ]) };
   };
 
   step3i = (state) => {
-    let newNodes = this.updateNode(state.nodes, 1, palette.purple, ' w ');
-    return { nodes: newNodes };
+    return { nodes: this.updateNode(state.nodes, 1, palette.darkblue, ' w ') };
   }; 
 
   step3j = (state) => {
-    let newEdges = this.updateEdgeWithArrow(
-      state.edges, 1, palette.lightpurple, 3, false, ' e2 ', true, false
-    );
-    return { edges: newEdges };
+    return { 
+      edges: this.updateEdgeWithArrow(
+        state.edges, 1, palette.blue, 3, false, ' e2 ', true, false
+      ) };
   };
 
   step3k = (state) => {
-    let newNodes = this.updateNode(state.nodes, 2, palette.lightpurple, ' v ');
-    return { nodes: newNodes };
+    return { nodes: this.updateNode(state.nodes, 2, palette.blue, ' v ') };
   };
 
   render() {
@@ -336,6 +333,7 @@ class Proof7 extends React.Component {
       <ExerciseWrapper 
         {...this.state}
         events={events}
+        initNetworkInstance={this.initNetworkInstance}
         constants={constants}
         previousStep={this.previousStep}
         nextStep={this.nextStep}

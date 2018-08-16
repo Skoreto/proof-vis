@@ -420,37 +420,37 @@ class Proof6 extends React.Component {
   };
 
   step14a = (state) => {
-    return { nodes: this.updateNode(state.nodes, 0, palette.lightblue, ' u ') };
+    return { nodes: this.updateNode(state.nodes, 0, palette.blue, ' u ') };
   };
 
   step14b = (state) => {
     return {
-      edges: this.updateEdgeWithArrow(state.edges, 0, palette.lightblue, 4, false, '', true, false)
+      edges: this.updateEdgeWithArrow(state.edges, 0, palette.blue, 4, false, '', true, false)
     };
   };
 
   step14c = (state) => {
-    return { nodes: this.updateNode(state.nodes, 1, palette.lightblue, '   ') };
+    return { nodes: this.updateNode(state.nodes, 1, palette.blue, '   ') };
   };
 
   step14d = (state) => {
     return {
-      edges: this.updateEdgeWithArrow(state.edges, 1, palette.lightblue, 4, false, '', true, false)
+      edges: this.updateEdgeWithArrow(state.edges, 1, palette.blue, 4, false, '', true, false)
     };
   };
 
   step14e = (state) => {
-    return { nodes: this.updateNode(state.nodes, 2, palette.lightblue, '   ') };
+    return { nodes: this.updateNode(state.nodes, 2, palette.blue, '   ') };
   };
 
   step14f = (state) => {
     return {
-      edges: this.updateEdgeWithArrow(state.edges, 3, palette.lightblue, 4, false, '', true, false)
+      edges: this.updateEdgeWithArrow(state.edges, 3, palette.blue, 4, false, '', true, false)
     };
   };
 
   step14g = (state) => {
-    return { nodes: this.updateNode(state.nodes, 4, palette.lightblue, ' x ') };
+    return { nodes: this.updateNode(state.nodes, 4, palette.blue, ' x ') };
   };
 
   step14h = (state) => {
@@ -459,7 +459,7 @@ class Proof6 extends React.Component {
         id: 9, 
         from: 5, 
         to: 3, 
-        color: { color: palette.lightblue, hover: palette.lightblue }, 
+        color: { color: palette.blue, hover: palette.blue }, 
         width: 4,
         arrows: { to: { enabled: true } }, 
         smooth: { enabled: true, type: "curvedCCW", roundness: 0.5 },
@@ -468,7 +468,7 @@ class Proof6 extends React.Component {
   };
 
   step14i = (state) => {
-    return { nodes: this.updateNode(state.nodes, 2, palette.blue, '   ') };
+    return { nodes: this.updateNode(state.nodes, 2, palette.darkblue, '   ') };
   };
 
   step14j = (state) => {
@@ -477,7 +477,7 @@ class Proof6 extends React.Component {
         id: 10, 
         from: 3, 
         to: 2, 
-        color: { color: palette.lightblue, hover: palette.lightblue }, 
+        color: { color: palette.blue, hover: palette.blue }, 
         width: 4,
         arrows: { to: { enabled: true } }, 
         smooth: { enabled: true, type: "curvedCCW", roundness: 0.5 },
@@ -486,47 +486,47 @@ class Proof6 extends React.Component {
   };
 
   step14k = (state) => {
-    return { nodes: this.updateNode(state.nodes, 1, palette.blue, '   ') };
+    return { nodes: this.updateNode(state.nodes, 1, palette.darkblue, '   ') };
   };
 
   step14l = (state) => {
     return {
-      edges: this.updateEdgeWithArrow(state.edges, 2, palette.lightblue, 4, false, '', true, false)
+      edges: this.updateEdgeWithArrow(state.edges, 2, palette.blue, 4, false, '', true, false)
     };
   };
 
   step14m = (state) => {
-    return { nodes: this.updateNode(state.nodes, 3, palette.lightblue, '   ') };
+    return { nodes: this.updateNode(state.nodes, 3, palette.blue, '   ') };
   };
 
   step14n = (state) => {
     return {
-      edges: this.updateEdgeWithArrow(state.edges, 4, palette.lightblue, 4, false, '', true, false)
+      edges: this.updateEdgeWithArrow(state.edges, 4, palette.blue, 4, false, '', true, false)
     };
   };
 
   step14o = (state) => {
-    return { nodes: this.updateNode(state.nodes, 5, palette.lightblue, '   ') };
+    return { nodes: this.updateNode(state.nodes, 5, palette.blue, '   ') };
   };
 
   step14p = (state) => {
     return {
-      edges: this.updateEdgeWithArrow(state.edges, 6, palette.lightblue, 4, false, '', true, false)
+      edges: this.updateEdgeWithArrow(state.edges, 6, palette.blue, 4, false, '', true, false)
     };
   };
 
   step14q = (state) => {
-    return { nodes: this.updateNode(state.nodes, 6, palette.lightblue, ' y ') };
+    return { nodes: this.updateNode(state.nodes, 6, palette.blue, ' y ') };
   };
 
   step14r = (state) => {
     return {
-      edges: this.updateEdgeWithArrow(state.edges, 7, palette.lightblue, 4, false, '', true, false)
+      edges: this.updateEdgeWithArrow(state.edges, 7, palette.blue, 4, false, '', true, false)
     };
   };
 
   step14s = (state) => {
-    return { nodes: this.updateNode(state.nodes, 7, palette.lightblue, ' v ') };
+    return { nodes: this.updateNode(state.nodes, 7, palette.blue, ' v ') };
   };
 
   step16 = (state) => {

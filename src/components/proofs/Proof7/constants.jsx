@@ -46,7 +46,7 @@ const proofStepPanels = [
       <div>
         <p>Přitom graf <MN>G</MN> neobsahuje kružnici.</p>
         <p className="text-center">
-          <MN>\dagger</MN> Tím je vyvráceno stanovené tvrzení.
+          Tím je vyvráceno stanovené tvrzení. <MN>\square</MN>
         </p>
       </div>
   },
@@ -70,7 +70,11 @@ const descriptionPanels = [
   },
 ];
 
-const definitionPanels = [];
+const cameraPosition0 = {
+  position: { x: 0, y: 0 }, 
+  scale: 1.15,
+  animation: { duration: 1500, easingFunction: "easeInOutQuad" },
+};
 
 export const constants = {
   headingTitle: headingTitle,
@@ -79,5 +83,6 @@ export const constants = {
   claimPanel: claimPanel,
   proofStepPanels: proofStepPanels,
   descriptionPanels: descriptionPanels,
-  definitionPanels: definitionPanels,
 };
+
+export const cameraPositions = [cameraPosition0];
