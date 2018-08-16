@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col, Table } from 'react-bootstrap';
+import { Row, Table } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import PageHeading from "../../../UI/PageHeading/PageHeader";
 import '../../../customMainTheme.css';

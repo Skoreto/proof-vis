@@ -29,7 +29,6 @@ import Proof7 from './components/proofs/Proof7/Proof7';
 import SingleDrawing from './components/pages/SingleDrawing/SingleDrawing';
 import Help from './components/pages/Help/Help';
 import MainNavbar from './UI/MainNavbar/MainNavbar';
-import Footer from './UI/Footer/Footer';
 
 // Add Font Awesome icons into global library for accesing them via FontAwesomeIcon component
 library.add(
@@ -67,7 +66,6 @@ const App = () => (
           <Route path="/napoveda" component={Help} />
         </Switch>
       </Grid>
-      {/* <Footer/> */}
     </div>
   </BrowserRouter>
 );
