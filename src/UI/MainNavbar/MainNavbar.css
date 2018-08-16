@@ -78,8 +78,6 @@
   color: #fff;
 }
 
-
-
 .main-nav .nav .nav-item.active>a.dropdown-toggle:before {
   display: none;
 }

@@ -48,19 +48,6 @@ const ProofWrapper = (props) => (
                     />
                   </div>
               }
-              {
-                props.isSVGCoverShowed &&
-                  <div className="svg-cover-panel">
-                    <svg
-                      width={650}
-                      height={400}
-                      stroke={'black'}
-                      strokeWidth={1}
-                    >
-                      {props.svgContent}
-                    </svg>
-                  </div>
-              }
               <TransitionGroup>
                 {
                   // Checks if any row from visualTextRows is defined
