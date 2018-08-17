@@ -153,10 +153,10 @@ class Proof3 extends React.Component {
     newNodes = this.updateNode(newNodes, 5, palette.purple, ' v ');
     newNodes = this.updateNode(newNodes, 6, palette.purple, ' u ');
 
-    let newEdges = this.updateEdge(state.edges, 0, palette.purple, 2, false, undefined);
-    newEdges = this.updateEdge(newEdges, 2, palette.purple, 2, false, undefined);
-    newEdges = this.updateEdge(newEdges, 4, palette.purple, 2, false, undefined);
-    newEdges = this.updateEdge(newEdges, 5, palette.purple, 2, false, undefined);
+    let newEdges = this.updateEdge(state.edges, 0, palette.purple, 4, false, undefined);
+    newEdges = this.updateEdge(newEdges, 2, palette.purple, 4, false, undefined);
+    newEdges = this.updateEdge(newEdges, 4, palette.purple, 4, false, undefined);
+    newEdges = this.updateEdge(newEdges, 5, palette.purple, 4, false, undefined);
 
     return { nodes: newNodes, edges: newEdges };
   };
@@ -172,14 +172,14 @@ class Proof3 extends React.Component {
   step3a = (state) => {
     let newNodes = this.updateNode(state.nodes, 1, palette.purple, ' x ');
     newNodes = this.updateNode(newNodes, 3, palette.purple, ' y ');
-    let newEdges = this.updateEdge(state.edges, 2, palette.red, 2, [8, 8], ' e ');
+    let newEdges = this.updateEdge(state.edges, 2, palette.red, 4, [10, 10], ' e ');
     return { nodes: newNodes, edges: newEdges };
   };
 
   step3b = (state) => {
     let newNodes = this.updateNode(state.nodes, 1, palette.purple, ' x ');
     newNodes = this.updateNode(newNodes, 3, palette.purple, ' y ');
-    let newEdges = this.updateEdge(state.edges, 2, palette.purple, 2, false, ' e ');
+    let newEdges = this.updateEdge(state.edges, 2, palette.purple, 4, false, ' e ');
     return { nodes: newNodes, edges: newEdges };
   };
 

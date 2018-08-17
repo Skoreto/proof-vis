@@ -313,11 +313,11 @@ class Proof2 extends React.Component {
     newNodes = this.updateNode(newNodes, 3, palette.ruby, ' u ');
     newNodes = this.updateNode(newNodes, 4, palette.ruby, ' v ');
 
-    let newEdges = this.updateEdge(state.edges, 0, palette.ruby, 3, false, '');
-    newEdges = this.updateEdge(newEdges, 1, palette.ruby, 3, false, '');
-    newEdges = this.updateEdge(newEdges, 2, palette.ruby, 3, false, '');
-    newEdges = this.updateEdge(newEdges, 3, palette.ruby, 3, false, '');
-    newEdges = this.updateEdge(newEdges, 4, palette.ruby, 3, false, 'e');
+    let newEdges = this.updateEdge(state.edges, 0, palette.ruby, 4, false, '');
+    newEdges = this.updateEdge(newEdges, 1, palette.ruby, 4, false, '');
+    newEdges = this.updateEdge(newEdges, 2, palette.ruby, 4, false, '');
+    newEdges = this.updateEdge(newEdges, 3, palette.ruby, 4, false, '');
+    newEdges = this.updateEdge(newEdges, 4, palette.ruby, 4, false, 'e');
 
     return { nodes: newNodes, edges: newEdges };
   };
@@ -330,11 +330,11 @@ class Proof2 extends React.Component {
     newNodes = this.updateNode(newNodes, 6, palette.jade, '   ');
     newNodes = this.updateNode(newNodes, 7, palette.jade, '   ');
 
-    let newEdges = this.updateEdge(state.edges, 4, palette.jade, 3, false, 'e');
-    newEdges = this.updateEdge(newEdges, 5, palette.jade, 3, false, '');
-    newEdges = this.updateEdge(newEdges, 6, palette.jade, 3, false, '');
-    newEdges = this.updateEdge(newEdges, 7, palette.jade, 3, false, '');
-    newEdges = this.updateEdge(newEdges, 8, palette.jade, 3, false, '');
+    let newEdges = this.updateEdge(state.edges, 4, palette.jade, 4, false, 'e');
+    newEdges = this.updateEdge(newEdges, 5, palette.jade, 4, false, '');
+    newEdges = this.updateEdge(newEdges, 6, palette.jade, 4, false, '');
+    newEdges = this.updateEdge(newEdges, 7, palette.jade, 4, false, '');
+    newEdges = this.updateEdge(newEdges, 8, palette.jade, 4, false, '');
 
     return { nodes: newNodes, edges: newEdges };
   };
@@ -349,14 +349,14 @@ class Proof2 extends React.Component {
     newNodes = this.updateNode(newNodes, 6, palette.orange, '   ');
     newNodes = this.updateNode(newNodes, 7, palette.orange, '   ');
 
-    let newEdges = this.updateEdge(state.edges, 0, palette.orange, 3, false, '');
-    newEdges = this.updateEdge(newEdges, 1, palette.orange, 3, false, '');
-    newEdges = this.updateEdge(newEdges, 2, palette.orange, 3, false, '');
-    newEdges = this.updateEdge(newEdges, 3, palette.orange, 3, false, '');
-    newEdges = this.updateEdge(newEdges, 5, palette.orange, 3, false, '');
-    newEdges = this.updateEdge(newEdges, 6, palette.orange, 3, false, '');
-    newEdges = this.updateEdge(newEdges, 7, palette.orange, 3, false, '');
-    newEdges = this.updateEdge(newEdges, 8, palette.orange, 3, false, '');
+    let newEdges = this.updateEdge(state.edges, 0, palette.orange, 4, false, '');
+    newEdges = this.updateEdge(newEdges, 1, palette.orange, 4, false, '');
+    newEdges = this.updateEdge(newEdges, 2, palette.orange, 4, false, '');
+    newEdges = this.updateEdge(newEdges, 3, palette.orange, 4, false, '');
+    newEdges = this.updateEdge(newEdges, 5, palette.orange, 4, false, '');
+    newEdges = this.updateEdge(newEdges, 6, palette.orange, 4, false, '');
+    newEdges = this.updateEdge(newEdges, 7, palette.orange, 4, false, '');
+    newEdges = this.updateEdge(newEdges, 8, palette.orange, 4, false, '');
 
     return { nodes: newNodes, edges: newEdges };
   };
@@ -373,11 +373,11 @@ class Proof2 extends React.Component {
     newNodes = this.updateNode(newNodes, 12, palette.ruby, '   ');
     newNodes = this.updateNode(newNodes, 14, palette.ruby, '   ');
 
-    let newEdges = this.updateEdge(state.edges, 9, palette.ruby, 3, false, '');
-    newEdges = this.updateEdge(newEdges, 11, palette.ruby, 3, false, 'e');
-    newEdges = this.updateEdge(newEdges, 12, palette.ruby, 3, false, '');
-    newEdges = this.updateEdge(newEdges, 14, palette.ruby, 3, false, '');
-    newEdges = this.updateEdge(newEdges, 15, palette.ruby, 3, false, '');
+    let newEdges = this.updateEdge(state.edges, 9, palette.ruby, 4, false, '');
+    newEdges = this.updateEdge(newEdges, 11, palette.ruby, 4, false, 'e');
+    newEdges = this.updateEdge(newEdges, 12, palette.ruby, 4, false, '');
+    newEdges = this.updateEdge(newEdges, 14, palette.ruby, 4, false, '');
+    newEdges = this.updateEdge(newEdges, 15, palette.ruby, 4, false, '');
 
     return { nodes: newNodes, edges: newEdges };
   };
@@ -397,11 +397,11 @@ class Proof2 extends React.Component {
     newNodes = this.updateNodeShape(newNodes, 12, palette.purple, 'x3', -75, 'dot', 21);
     newNodes = this.updateNodeShape(newNodes, 14, palette.purple, 'x4', -75, 'dot', 21);
 
-    let newEdges = this.updateEdge(state.edges, 9, palette.purple, 3, false, '');
+    let newEdges = this.updateEdge(state.edges, 9, palette.purple, 4, false, '');
     newEdges = this.updateEdge(newEdges, 11, palette.black, 1, false, 'e');
-    newEdges = this.updateEdge(newEdges, 12, palette.purple, 3, false, '');
-    newEdges = this.updateEdge(newEdges, 14, palette.purple, 3, false, '');
-    newEdges = this.updateEdge(newEdges, 15, palette.purple, 3, false, '');
+    newEdges = this.updateEdge(newEdges, 12, palette.purple, 4, false, '');
+    newEdges = this.updateEdge(newEdges, 14, palette.purple, 4, false, '');
+    newEdges = this.updateEdge(newEdges, 15, palette.purple, 4, false, '');
 
     return { nodes: newNodes, edges: newEdges };
   };
@@ -413,11 +413,11 @@ class Proof2 extends React.Component {
     newNodes = this.updateNode(newNodes, 13, palette.jade, '   ');
     newNodes = this.updateNode(newNodes, 14, palette.jade, '   ');
 
-    let newEdges = this.updateEdge(state.edges, 10, palette.jade, 3, false, '');
-    newEdges = this.updateEdge(newEdges, 11, palette.jade, 3, false, 'e');
-    newEdges = this.updateEdge(newEdges, 13, palette.jade, 3, false, '');
-    newEdges = this.updateEdge(newEdges, 14, palette.jade, 3, false, '');
-    newEdges = this.updateEdge(newEdges, 16, palette.jade, 3, false, '');
+    let newEdges = this.updateEdge(state.edges, 10, palette.jade, 4, false, '');
+    newEdges = this.updateEdge(newEdges, 11, palette.jade, 4, false, 'e');
+    newEdges = this.updateEdge(newEdges, 13, palette.jade, 4, false, '');
+    newEdges = this.updateEdge(newEdges, 14, palette.jade, 4, false, '');
+    newEdges = this.updateEdge(newEdges, 16, palette.jade, 4, false, '');
 
     return { nodes: newNodes, edges: newEdges };
   };
@@ -437,11 +437,11 @@ class Proof2 extends React.Component {
     newNodes = this.updateNodeShape(newNodes, 13, palette.purple, 'y3', -75, 'dot', 21);
     newNodes = this.updateNodeShape(newNodes, 14, palette.purple, 'y4', -75, 'dot', 21);
 
-    let newEdges = this.updateEdge(state.edges, 10, palette.purple, 3, false, '');
+    let newEdges = this.updateEdge(state.edges, 10, palette.purple, 4, false, '');
     newEdges = this.updateEdge(newEdges, 11, palette.black, 1, false, 'e');
-    newEdges = this.updateEdge(newEdges, 13, palette.purple, 3, false, '');
-    newEdges = this.updateEdge(newEdges, 14, palette.purple, 3, false, '');
-    newEdges = this.updateEdge(newEdges, 16, palette.purple, 3, false, '');
+    newEdges = this.updateEdge(newEdges, 13, palette.purple, 4, false, '');
+    newEdges = this.updateEdge(newEdges, 14, palette.purple, 4, false, '');
+    newEdges = this.updateEdge(newEdges, 16, palette.purple, 4, false, '');
 
     return { nodes: newNodes, edges: newEdges };
   };
@@ -477,12 +477,12 @@ class Proof2 extends React.Component {
     newNodes = this.updateNodeShape(newNodes, 13, palette.orange, 'y3', -75, 'dot', 21);
     newNodes = this.updateNodeShape(newNodes, 14, palette.orange, 'x4 = y4', -75, 'dot', 21);
 
-    let newEdges = this.updateEdge(state.edges, 9, palette.orange, 3, false, '');
-    newEdges = this.updateEdge(newEdges, 10, palette.orange, 3, false, '');
-    newEdges = this.updateEdge(newEdges, 12, palette.orange, 3, false, '');
-    newEdges = this.updateEdge(newEdges, 13, palette.orange, 3, false, '');
-    newEdges = this.updateEdge(newEdges, 15, palette.orange, 3, false, '');
-    newEdges = this.updateEdge(newEdges, 16, palette.orange, 3, false, '');
+    let newEdges = this.updateEdge(state.edges, 9, palette.orange, 4, false, '');
+    newEdges = this.updateEdge(newEdges, 10, palette.orange, 4, false, '');
+    newEdges = this.updateEdge(newEdges, 12, palette.orange, 4, false, '');
+    newEdges = this.updateEdge(newEdges, 13, palette.orange, 4, false, '');
+    newEdges = this.updateEdge(newEdges, 15, palette.orange, 4, false, '');
+    newEdges = this.updateEdge(newEdges, 16, palette.orange, 4, false, '');
 
     return { nodes: newNodes, edges: newEdges };
   };

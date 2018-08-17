@@ -27,7 +27,7 @@
 }
 
 .help p {
-  font-size: 16px;
+  font-size: 17px;
 }
 
 .help img {
@@ -80,12 +80,10 @@
 
 /* == TEXT COLORS == */
 .t-green {
-  /*Green 800*/
   color: #2E7D32;
 }
 
 .t-red {
-  /*Red A700*/
   color: #D50000;
 }
 
@@ -207,13 +205,11 @@ tbody tr td:first-child {
   .wrapper {
     min-height: 100%;
     margin-bottom: -30px;
-    /* stejná výška jako patička */
   }
   .wrapper:after {
     content: "";
     display: block;
     height: 30px;
-    /* musí mít stejnou výšku jako patička */
   }
   .page-wrapper {
     min-height: 830px;

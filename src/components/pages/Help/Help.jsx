@@ -17,22 +17,22 @@ class Help extends React.Component {
               <Row className="page-row">
                 <Col xs={12} md={12} lg={12}>
                   <main>                                     
-                    <h3 className="first-heading">Požadavky na provoz aplikace</h3>
+                    <h2 className="first-heading">Požadavky na provoz aplikace</h2>
                     <p>
                     Vývoj aplikace byl cílen na použití v nových verzích majoritních zástupců webových a desktopových a mobilních prohlížečů. Z desktopových variant jsou doporučeny prohlížeče Google Chrome a Mozilla Firefox, ale podporován je také prohlížeč Opera, Microsoft Edge a Safari. Na mobilních zařízeních je doporučen prohlížeč Google Chrome. Pro pohodlné používání aplikace by úhlopříčka displeje zařízení měla dosahovat alespoň rozměrů tabletu s rozlišením alespoň 1024x768 pixelů. Uživatelské rozhraní se však přizpůsobí i displejům chytrých telefonů.
                     </p>
 
-                    <h3>Orientace v aplikaci</h3>
+                    <h2>Orientace v aplikaci</h2>
                     <p>
                       V horní části stránek je umístěna horizontální navigace obsahující rozbalitelné nabídky s odkazy na stránky důkazů. Důkazy jsou rozděleny do nabídek podle metody dokazování, která v nich je využita. Navigace je dostupná z každé stránky a je proto možné ihned přejít na kterýkoli z příkladů. V navigaci se dále nachází odkaz na stránku s velkým plátnem pro tvorbu vlastního grafu a odkaz na stránku s nápovědou. Přechod na úvodní stranu je proveden po kliknutí na logo s názvem aplikace.
                     </p>
 
-                    <h3>Popis hlavních prvků stránky důkazu</h3>
+                    <h2>Popis hlavních prvků stránky důkazu</h2>
                     <p>
                       Rozvržení těla každé stránky důkazu zahrnuje v horní části název příkladu a drobečkovou navigaci pro usnadnění orientaci v aplikaci. Dále široký panel se zněním dokazovaného tvrzení, levý postranní panel s kroky prováděnými v průběhu dokazování, vizualizační plátno s popisem aktuální vizualizace, panel ovládání a v případě potřeby šedý panel definic, který slouží k připomenutí znění důležitých definic použitých při dokazování.
                     </p>
 
-                    <h3>Ovládání vizualizačního plátna</h3>
+                    <h2>Ovládání vizualizačního plátna</h2>
                     <p>
                       Součástí plátna jsou zelená tlačítka pro ovládání kamery. Šipky v levém dolním rohu slouží k posunu po ose x a y. Tlačítka + a – v pravém dolním rohu umožňují pohled kamery přiblížit a oddálit, což lze provést také otáčením kolečka myši. Tlačítko roztahovaného čtverce vycentruje graf na střed a resetuje oddálení kamery tak, aby byl komfortně zobrazen celý aktuální obsah plátna.
                     </p>
@@ -43,7 +43,7 @@ class Help extends React.Component {
                       V daném kroku lze vrcholy přesunout na jinou pozici.
                     </p>
 
-                    <h3>Ovládání vizualizačního plátna</h3>
+                    <h2>Ovládání vizualizačního plátna</h2>
                     <p>
                       V šedém panelu ovládání se nacházejí tlačítka pro ovládání průběhu důkazu a pomocných nástrojů pro výuku.
                     </p>
@@ -52,12 +52,12 @@ class Help extends React.Component {
                       Černými šipkami vlevo <FontAwesomeIcon icon="chevron-left" /> a vpravo <FontAwesomeIcon icon="chevron-right" /> se lze pohybovat v důkazu o krok zpět či vpřed. Aktuální krok z celkového počtu kroků zobrazuje ukazadlo mezi šipkami. V průběhu vícekrokových animací je aktivní tlačítko „šipky zopakovat“ <FontAwesomeIcon icon="redo-alt" />, které slouží k okamžitému zopakování animace od začátku.
                     </p>
 
-                    <h3>Kreslící nástroje</h3>
+                    <h2>Kreslící nástroje</h2>
                     <p>
                       Panel ovládání dále obsahuje skupinu tlačítek pro kreslení přes plátno. Po aktivaci kreslení prvním tlačítkem „editace“ <FontAwesomeIcon icon="edit" /> je kurzor změněn na kříž a jsou zpřístupněny tlačítka pro výběr kreslícího nástroje. Ve výchozím stavu je aktivní nástroj „tužka“ <FontAwesomeIcon icon="pencil-alt" />, který umožní kreslit přes plátno volným tahem. Další dva nástroje umožní kreslení přímek <FontAwesomeIcon icon="minus" /> a kružnic <FontAwesomeIcon icon="circle-notch" /> například pro naznačení vrcholů a hran grafu. Deaktivací kreslení opětovným stisknutím tlačítka „editace“ <FontAwesomeIcon icon="edit" /> je kresba vymazána.
                     </p>
 
-                    <h3>Tvůrčí plátna</h3>
+                    <h2>Tvůrčí plátna</h2>
                     <p>
                       Pro účely výuky byly dále do aplikace přidány prázdná tvůrčí plátna, ve kterých může vyučující sám sestrojovat grafy přidáváním vrcholů a jejich propojováním hranami. Na stránku velkého plátna lze přejít tlačítkem „PLÁTNO“ v hlavní navigaci.
                     </p>
@@ -70,7 +70,7 @@ class Help extends React.Component {
                     </p>
                     <Image src="assets/image/drawing_dialog_edit.png" thumbnail />
 
-                    <h3>Řešení problémů</h3>
+                    <h2>Řešení problémů</h2>
                     <p>
                       V případě výskytu chyby či špatného vykreslení některého z prvků je doporučeno přejít na úvodní stránku a obnovit ji například klávesou F5.
                     </p>

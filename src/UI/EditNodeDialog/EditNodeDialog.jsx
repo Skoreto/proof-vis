@@ -11,12 +11,6 @@ const EditNodeDialog = () => (
           <input type="text" className="form-control" id="inpNodeLabel" />
         </div>
       </div>
-      {/* <div className="form-group">
-        <label htmlFor="inpNodeMargin" className="col-sm-4 control-label">Velikost okolí</label>
-        <div className="col-sm-7">
-          <input type="number" className="form-control" id="inpNodeMargin" />
-        </div>
-      </div> */}
       <div className="form-group">
         <label htmlFor="inpLabelColor" className="col-sm-4 control-label">Barva textu</label>
         <div className="col-sm-7">

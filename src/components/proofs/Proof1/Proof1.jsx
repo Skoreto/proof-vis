@@ -186,9 +186,9 @@ class Proof1 extends React.Component {
     newNodes = this.updateNode(newNodes, 3, palette.purple, ' y ');
     newNodes = this.updateNode(newNodes, 4, palette.purple, ' v ');
 
-    let newEdges = this.updateEdge(state.edges, 0, palette.purple, 2, false, undefined);
-    newEdges = this.updateEdge(newEdges, 2, palette.purple, 2, false, ' e ');
-    newEdges = this.updateEdge(newEdges, 4, palette.purple, 2, false, undefined);
+    let newEdges = this.updateEdge(state.edges, 0, palette.purple, 4, false, undefined);
+    newEdges = this.updateEdge(newEdges, 2, palette.purple, 4, false, ' e ');
+    newEdges = this.updateEdge(newEdges, 4, palette.purple, 4, false, undefined);
 
     return { nodes: newNodes, edges: newEdges };
   };
@@ -203,8 +203,8 @@ class Proof1 extends React.Component {
     ]);
 
     let newEdges = this.addObjectArray(state.edges, [
-      { id: 6, from: 6, to: 7, color: { color: palette.purple, hover: palette.purple }, width: 2 },
-      { id: 7, from: 7, to: 8, color: { color: palette.purple, hover: palette.purple }, width: 2 },
+      { id: 6, from: 6, to: 7, color: { color: palette.purple, hover: palette.purple }, width: 4 },
+      { id: 7, from: 7, to: 8, color: { color: palette.purple, hover: palette.purple }, width: 4 },
       {
         id: 8,
         from: 7,
@@ -214,7 +214,7 @@ class Proof1 extends React.Component {
         dashes: [8, 8],
         label: ' e ',
       },
-      { id: 9, from: 8, to: 10, color: { color: palette.purple, hover: palette.purple }, width: 2 },
+      { id: 9, from: 8, to: 10, color: { color: palette.purple, hover: palette.purple }, width: 4 },
       { id: 10, from: 9, to: 10 },
     ]);
 
@@ -234,15 +234,15 @@ class Proof1 extends React.Component {
     newNodes = this.updateNode(newNodes, 9, palette.green, '   ');
 
     let newEdges = this.updateEdge(state.edges, 0, palette.black, 1, false, undefined);
-    newEdges = this.updateEdge(newEdges, 1, palette.green, 3, false, undefined);
+    newEdges = this.updateEdge(newEdges, 1, palette.green, 4, false, undefined);
     newEdges = this.updateEdge(newEdges, 2, palette.black, 1, false, ' e ');
-    newEdges = this.updateEdge(newEdges, 3, palette.green, 3, false, undefined);
-    newEdges = this.updateEdge(newEdges, 4, palette.green, 3, false, undefined);
+    newEdges = this.updateEdge(newEdges, 3, palette.green, 4, false, undefined);
+    newEdges = this.updateEdge(newEdges, 4, palette.green, 4, false, undefined);
     newEdges = this.updateEdge(newEdges, 5, palette.black, 1, false, undefined);
-    newEdges = this.updateEdge(newEdges, 6, palette.green, 3, false, undefined);
+    newEdges = this.updateEdge(newEdges, 6, palette.green, 4, false, undefined);
     newEdges = this.updateEdge(newEdges, 7, palette.white, 2, false, '   ');
-    newEdges = this.updateEdge(newEdges, 8, palette.green, 3, false, undefined);
-    newEdges = this.updateEdge(newEdges, 9, palette.green, 3, false, undefined);
+    newEdges = this.updateEdge(newEdges, 8, palette.green, 4, false, undefined);
+    newEdges = this.updateEdge(newEdges, 9, palette.green, 4, false, undefined);
 
     return { nodes: newNodes, edges: newEdges };
   };
@@ -255,7 +255,7 @@ class Proof1 extends React.Component {
   };
 
   step7a = (state) => {
-    let newEdges = this.updateEdge(state.edges, 2, palette.green, 3, false, ' e ');
+    let newEdges = this.updateEdge(state.edges, 2, palette.green, 4, false, ' e ');
     return { edges: newEdges };
   };
 

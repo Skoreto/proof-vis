@@ -168,7 +168,7 @@ const definitionPanels = [
 
 const cameraPosition0 = {
   position: { x: 0, y: -10 }, 
-  scale: 1.4,
+  scale: 1.5,
   animation: { duration: 1500, easingFunction: 'easeInOutQuad' },
 };
 
@@ -180,7 +180,7 @@ const cameraPosition1 = {
 
 const cameraPosition2 = {
   position: { x: 400, y: -10 }, 
-  scale: 1.4,
+  scale: 1.5,
   animation: { duration: 4000, easingFunction: 'easeInOutQuad' },
 };
 

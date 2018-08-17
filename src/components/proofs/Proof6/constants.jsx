@@ -141,11 +141,6 @@ const proofStepPanels = [
 ];
 
 const descriptionPanels = [
-  // {
-  //   id: 0,
-  //   showForSteps: [0, 4, 9, 17],
-  //   content: <p></p>
-  // },
   {
     id: 1,
     showForSteps: [1],
