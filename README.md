@@ -12,3 +12,11 @@ Z těchto důvodů je aplikace vhodná pro samostudium, ale disponuje také řad
 Postaveno na CLI Create React App.
 
 React, JavaScript ES6+, React Router, Jest, Enzyme, Babel, Webpack, Bootstrap, Font Awesome, Vis.js, MathJax
+
+## Ukázky aplikace:
+<p align="center">
+  <img src="https://i.imgur.com/IqrSDYP.png" />
+</p>
+<p align="center">
+  <img src="https://i.imgur.com/PzK0U9a.png" />
+</p>
