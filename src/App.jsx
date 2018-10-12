@@ -48,26 +48,37 @@ library.add(
   faQuestion,
 );
 
-const App = () => (
-  <BrowserRouter basename={process.env.PUBLIC_URL}>
-    <div>
-      <MainNavbar />
-      <Grid>
-        <Switch>
-          <Route exact path="/" component={Overview} />
-          <Route path="/dukaz1" component={Proof1} />
-          <Route path="/dukaz2" component={Proof2} />
-          <Route path="/dukaz3" component={Proof3} />
-          <Route path="/dukaz4" component={Proof4} />
-          <Route path="/dukaz5" component={Proof5} />
-          <Route path="/dukaz6" component={Proof6} />
-          <Route path="/dukaz7" component={Proof7} />
-          <Route path="/platno" component={SingleDrawing} />
-          <Route path="/napoveda" component={Help} />
-        </Switch>
-      </Grid>
-    </div>
-  </BrowserRouter>
-);
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      
+    };
+  }
+
+  render() {
+    return (
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
+        <div>
+          <MainNavbar />
+          <Grid>
+            <Switch>
+              <Route exact path="/" component={Overview} />
+              <Route path="/dukaz1" component={Proof1} />
+              <Route path="/dukaz2" component={Proof2} />
+              <Route path="/dukaz3" component={Proof3} />
+              <Route path="/dukaz4" component={Proof4} />
+              <Route path="/dukaz5" component={Proof5} />
+              <Route path="/dukaz6" component={Proof6} />
+              <Route path="/dukaz7" component={Proof7} />
+              <Route path="/platno" component={SingleDrawing} />
+              <Route path="/napoveda" component={Help} />
+            </Switch>
+          </Grid>
+        </div>
+      </BrowserRouter>
+    )
+  }
+}
 
 export default App;

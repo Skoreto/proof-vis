@@ -19,7 +19,7 @@ const MainNavbar = () => (
       <Nav>
         <NavDropdown
           title={
-            <span><FontAwesomeIcon icon="arrow-right" /> Důkazy přímo</span>
+            <span><FontAwesomeIcon icon="arrow-right" /> Přímé důkazy</span>
           }
           id="primo-nav-dropdown"
           className="nav-item"
@@ -36,7 +36,7 @@ const MainNavbar = () => (
         </NavDropdown>
         <NavDropdown
           title={
-            <span><FontAwesomeIcon icon="sync-alt" /> Důkazy nepřímo</span>
+            <span><FontAwesomeIcon icon="sync-alt" /> Nepřímé důkazy</span>
           }
           id="neprimo-nav-dropdown"
           className="nav-item"

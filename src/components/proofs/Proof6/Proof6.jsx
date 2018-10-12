@@ -1,7 +1,7 @@
 import React from 'react';
 import { initialProofState, palette } from '../../../functionality/globalProofConstants';
 import { scroller } from 'react-scroll';
-import { constants, cameraPositions } from './constants';
+import { constants, constantsEng, cameraPositions } from './constants';
 import {
   updateNode,
   updateEdge,
@@ -14,6 +14,7 @@ import {
   handlerSketchAllowance,
   handlerSelectedTool,
   handlerDrawingDialog,
+  handlerTranslation,
   getScrollOptions,
 } from '../../../functionality/proofFunctions';
 import ProofWrapper from '../../../UI/ProofWrapper/ProofWrapper';
@@ -32,6 +33,7 @@ class Proof6 extends React.Component {
     this.handlerSketchAllowance = handlerSketchAllowance.bind(this);
     this.handlerSelectedTool = handlerSelectedTool.bind(this);
     this.handlerDrawingDialog = handlerDrawingDialog.bind(this);
+    this.handlerTranslation = handlerTranslation.bind(this);
   }
 
   /**
@@ -518,7 +520,7 @@ class Proof6 extends React.Component {
       <ProofWrapper
         {...this.state}
         initNetworkInstance={this.initNetworkInstance}
-        constants={constants}
+        constants={this.state.isCzechChosen ? constants : constantsEng}
         previousStep={this.previousStep}
         nextStep={this.nextStep}
         repeatStep={this.repeatStep}
@@ -528,6 +530,9 @@ class Proof6 extends React.Component {
         handleSketchCircle={() => this.setState(() => this.handlerSelectedTool(3))}
         handleDrawingDialog={
           () => this.setState(() => this.handlerDrawingDialog(this.state.isDrawingDialogOpen))
+        }
+        handleTranslation={
+          () => this.setState(() => this.handlerTranslation(this.state.isCzechChosen))
         }
       />
     );

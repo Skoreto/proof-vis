@@ -117,4 +117,5 @@ export const initialProofState = {
   btnCircleD: true,
   btnRepeatD: true,
   isDrawingDialogOpen: false,
+  isCzechChosen: true,
 };

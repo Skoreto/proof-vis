@@ -130,6 +130,11 @@ const ProofWrapper = (props) => (
                     <FontAwesomeIcon icon="chalkboard-teacher" />
                   </Button>
                 </span>
+                  <Button clicked={props.handleTranslation}>
+                    {
+                      props.isCzechChosen ? 'EN' : 'CZ'
+                    }
+                  </Button>
               </div>
               {
                 props.constants.definitionPanels !== undefined &&
