@@ -51,16 +51,21 @@ library.add(
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      
-    };
+    this.state = { isCzechChosen: true };
   }
+
+  handlerTranslation = () => {
+    this.setState({ isCzechChosen: !this.state.isCzechChosen });
+  };
 
   render() {
     return (
       <BrowserRouter basename={process.env.PUBLIC_URL}>
         <div>
-          <MainNavbar />
+          <MainNavbar
+            handleTranslation={this.handlerTranslation}
+            isCzechChosen={this.state.isCzechChosen}
+          />
           <Grid>
             <Switch>
               <Route exact path="/" component={Overview} />
@@ -69,7 +74,10 @@ class App extends React.Component {
               <Route path="/dukaz3" component={Proof3} />
               <Route path="/dukaz4" component={Proof4} />
               <Route path="/dukaz5" component={Proof5} />
-              <Route path="/dukaz6" component={Proof6} />
+              <Route
+                path="/dukaz6" 
+                render={(props) => <Proof6 {...props} isCzechChosen={this.state.isCzechChosen} />}
+              />
               <Route path="/dukaz7" component={Proof7} />
               <Route path="/platno" component={SingleDrawing} />
               <Route path="/napoveda" component={Help} />

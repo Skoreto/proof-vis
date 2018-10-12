@@ -520,7 +520,7 @@ class Proof6 extends React.Component {
       <ProofWrapper
         {...this.state}
         initNetworkInstance={this.initNetworkInstance}
-        constants={this.state.isCzechChosen ? constants : constantsEng}
+        constants={this.props.isCzechChosen ? constants : constantsEng}
         previousStep={this.previousStep}
         nextStep={this.nextStep}
         repeatStep={this.repeatStep}
@@ -530,9 +530,6 @@ class Proof6 extends React.Component {
         handleSketchCircle={() => this.setState(() => this.handlerSelectedTool(3))}
         handleDrawingDialog={
           () => this.setState(() => this.handlerDrawingDialog(this.state.isDrawingDialogOpen))
-        }
-        handleTranslation={
-          () => this.setState(() => this.handlerTranslation(this.state.isCzechChosen))
         }
       />
     );
