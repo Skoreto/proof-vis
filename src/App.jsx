@@ -17,6 +17,7 @@ import {
   faDrawPolygon,
   faChalkboardTeacher,
   faQuestion,
+  faGlobe,
 } from '@fortawesome/free-solid-svg-icons';
 import Overview from './components/pages/Overview/Overview';
 import Proof1 from './components/proofs/Proof1/Proof1';
@@ -46,6 +47,7 @@ library.add(
   faDrawPolygon,
   faChalkboardTeacher,
   faQuestion,
+  faGlobe,
 );
 
 class App extends React.Component {

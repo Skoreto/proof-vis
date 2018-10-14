@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, Nav, NavItem, NavDropdown, MenuItem, Image, Button } from 'react-bootstrap';
+import { Navbar, Nav, NavItem, NavDropdown, MenuItem, Image } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { LinkContainer } from 'react-router-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -21,7 +21,7 @@ const MainNavbar = (props) => (
           title={
             <span><FontAwesomeIcon icon="arrow-right" />
               {
-                props.isCzechChosen ? ' Přímé důkazy' : ' Direct proofs'
+                props.isCzechChosen ? ' Přímé důkazy' : ' Direct'
               }
             </span>
           }
@@ -42,7 +42,7 @@ const MainNavbar = (props) => (
           title={
             <span><FontAwesomeIcon icon="sync-alt" />
               {
-                props.isCzechChosen ? ' Nepřímé důkazy' : ' Proofs by contraposition'
+                props.isCzechChosen ? ' Nepřímé důkazy' : ' Contraposition'
               }
             </span>
           }
@@ -60,7 +60,7 @@ const MainNavbar = (props) => (
           title={
             <span><FontAwesomeIcon icon="bolt" />
               {
-                props.isCzechChosen ? ' Důkazy sporem' : ' Proofs by contradiction'
+                props.isCzechChosen ? ' Důkazy sporem' : ' Contradiction'
               }
             </span>
           }
@@ -106,11 +106,12 @@ const MainNavbar = (props) => (
             }
           </NavItem>
         </LinkContainer>
-        <Button onClick={props.handleTranslation} pullRight>
+        <NavItem className="nav-item" onClick={props.handleTranslation}>
+          <FontAwesomeIcon icon="globe" />
           {
-            props.isCzechChosen ? 'EN' : 'CZ'
+            props.isCzechChosen ? ' EN' : ' CZ'
           }
-        </Button>
+        </NavItem>
       </Nav>   
     </Navbar.Collapse>
   </Navbar>
