@@ -10,7 +10,11 @@ const PageHeading = (props) => (
         props.breadcrumbsCurrent && 
           <div className="breadcrumbs pull-right">
             <ul className="breadcrumbs-list">
-              <li className="breadcrumbs-label">Nacházíte se v sekci:</li>
+              <li className="breadcrumbs-label">
+                {
+                  !props.isCzechChosen ? 'You are located at the section:' : 'Nacházíte se v sekci:'
+                }
+              </li>
               <li className="current">{props.breadcrumbsCurrent}</li>
             </ul>
           </div>

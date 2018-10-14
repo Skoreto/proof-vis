@@ -22,6 +22,7 @@ const ProofWrapper = (props) => (
       <PageHeader
         headingTitle={props.constants.headingTitle}
         breadcrumbsCurrent={props.constants.breadcrumbsCurrent}
+        isCzechChosen={props.isCzechChosen}
       />
       <div className="page-content">
         {props.constants.claimPanel}

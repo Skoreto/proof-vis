@@ -531,6 +531,7 @@ class Proof6 extends React.Component {
         handleDrawingDialog={
           () => this.setState(() => this.handlerDrawingDialog(this.state.isDrawingDialogOpen))
         }
+        isCzechChosen={this.props.isCzechChosen}
       />
     );
   }
