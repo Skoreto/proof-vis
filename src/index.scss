@@ -1,3 +1,5 @@
+@import 'styles/variables.scss';
+
 /* ======= Základ ======= */
 html,
 body {
@@ -28,7 +30,7 @@ p {
 }
 
 a {
-  color: #ba6060;
+  color: $color-primary;
   /*text-decoration: underline;*/
   -webkit-transition: all 0.4s ease-in-out;
   -moz-transition: all 0.4s ease-in-out;

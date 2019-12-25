@@ -1,6 +1,8 @@
+@import "../../styles/variables";
+
 /* === HLAVNÍ NAVIGACE === */
 .main-nav {
-  background: #ba6060;
+  background: $color-primary;
   color: #fff;
   /*background: #ad2121;*/
   margin-bottom: 30px;
@@ -15,7 +17,7 @@
 .navbar-default .navbar-brand:focus,
 .navbar-default .navbar-brand:hover {
   color: #fff;
-  background: #8f3e3e;
+  background: $color-primary-dark;
 }
 
 .navbar-brand {
@@ -104,12 +106,12 @@
 }
 
 .main-nav .nav .nav-item .dropdown-menu a {
-  border-bottom: 1px solid #8f3e3e;
+  border-bottom: 1px solid $color-primary-dark;
   padding: 8px 20px;
 }
 
 .main-nav .nav .nav-item .dropdown-menu a:hover {
-  background: #8f3e3e;
+  background: $color-primary-dark;
   color: #fff;
   padding-left: 24px;
 }
