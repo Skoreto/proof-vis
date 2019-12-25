@@ -1,7 +1,7 @@
 import React from 'react';
 import MathJax from 'react-mathjax2';
 import { Element } from 'react-scroll';
-import './ProofStepsBox.css';
+import './ProofStepsBox.scss';
 
 const ProofStepsBox = (props) => (
   <MathJax.Context input="tex">

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row, Col, Image } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import '../../../customMainTheme.css';
+import '../../../customMainTheme.scss';
 import PageHeading from "../../../UI/PageHeading/PageHeader";
 
 class Help extends React.Component {

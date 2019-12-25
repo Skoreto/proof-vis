@@ -3,7 +3,7 @@ import { Navbar, Nav, NavItem, NavDropdown, MenuItem, Image } from 'react-bootst
 import { Link } from 'react-router-dom';
 import { LinkContainer } from 'react-router-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import './MainNavbar.css';
+import './MainNavbar.scss';
 
 const MainNavbar = (props) => (
   <Navbar className="main-nav" default collapseOnSelect>

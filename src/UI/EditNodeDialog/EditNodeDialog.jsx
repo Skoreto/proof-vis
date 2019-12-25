@@ -1,5 +1,5 @@
 import React from 'react';
-import './EditNodeDialog.css';
+import './EditNodeDialog.scss';
 
 const EditNodeDialog = () => (
   <div id="editNodeDialog">

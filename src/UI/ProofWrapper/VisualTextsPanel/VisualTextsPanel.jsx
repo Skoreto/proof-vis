@@ -1,7 +1,7 @@
 import React from 'react';
 import MathJax from 'react-mathjax2';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import './VisualTextsPanel.css';
+import './VisualTextsPanel.scss';
 
 const VisualTextsPanel = (props) => (
   <MathJax.Context input="tex">

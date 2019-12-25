@@ -13,8 +13,8 @@ import DescriptionPanel from './DescriptionPanel/DescriptionPanel';
 import DefinitionPanel from './DefinitionPanel/DefinitionPanel';
 import VisualTextsPanel from './VisualTextsPanel/VisualTextsPanel';
 import DialogDrawing from '../../components/dialogs/DialogDrawing/DialogDrawing';
-import './ProofWrapper.css';
-import '../ReactDialog/ReactDialog.css';
+import './ProofWrapper.scss';
+import '../ReactDialog/ReactDialog.scss';
 
 const ProofWrapper = (props) => (
   <div>

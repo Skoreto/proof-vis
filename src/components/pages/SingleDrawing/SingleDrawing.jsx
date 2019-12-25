@@ -5,7 +5,7 @@ import { addNode, showEditNodeDialog } from '../../../functionality/nodeEditFunc
 import { addEdge, showEditEdgeDialog } from '../../../functionality/edgeEditFunctions';
 import EditNodeDialog from '../../../UI/EditNodeDialog/EditNodeDialog';
 import EditEdgeDialog from '../../../UI/EditEdgeDialog/EditEdgeDialog';
-import './SingleDrawing.css';
+import './SingleDrawing.scss';
 
 class SingleDrawing extends React.Component {
   constructor(props) {

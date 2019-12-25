@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 import MathJax from 'react-mathjax2';
-import './ClaimPanel.css';
+import './ClaimPanel.scss';
 
 const ClaimPanel = (props) => (
   <Row className="page-row">

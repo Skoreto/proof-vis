@@ -1,5 +1,5 @@
 import React from 'react';
-import './EditEdgeDialog.css';
+import './EditEdgeDialog.scss';
 
 const EditEdgeDialog = () => (
   <div id="editEdgeDialog">

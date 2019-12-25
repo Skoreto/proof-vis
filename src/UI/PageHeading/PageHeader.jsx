@@ -1,6 +1,6 @@
 import React from 'react';
 import { Row } from 'react-bootstrap';
-import './PageHeader.css';
+import './PageHeader.scss';
 
 const PageHeading = (props) => (
   <Row>

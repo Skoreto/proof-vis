@@ -1,6 +1,6 @@
 import React from 'react';
 import MathJax from 'react-mathjax2';
-import './DescriptionPanel.css';
+import './DescriptionPanel.scss';
 
 const DescriptionPanel = (props) => (
   <MathJax.Context input="tex">

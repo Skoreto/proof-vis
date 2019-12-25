@@ -2,7 +2,7 @@ import React from 'react';
 import { Row, Table } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import PageHeading from "../../../UI/PageHeading/PageHeader";
-import '../../../customMainTheme.css';
+import '../../../customMainTheme.scss';
 
 class Overview extends React.Component {
   render() {

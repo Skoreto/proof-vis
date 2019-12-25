@@ -1,5 +1,5 @@
 import React from 'react';
-import './StepCounter.css';
+import './StepCounter.scss';
 
 const StepCounter = (props) => (
   <span className="step-counter">
