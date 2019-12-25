@@ -1,82 +1,91 @@
 /* === MAIN HEADING === */
-.page-wrapper .page-heading {
-  margin-bottom: 20px;
-  border-bottom: 2px solid #e8e8e8;
-}
+.page-wrapper {
+  .page-heading {
+    margin-bottom: 20px;
+    border-bottom: 2px solid #e8e8e8;
 
-.page-wrapper .page-heading h1 {
-  margin-top: 0;
-  display: inline-block;
-  font-size: 28px;
-  color: #2a4713;
-}
+    h1 {
+      margin-top: 0;
+      display: inline-block;
+      font-size: 28px;
+      color: #2a4713;
+    }
+  }
 
-/* === BREADCRUMBS === */
-.page-wrapper .breadcrumbs {
-  display: inline-block;
-}
+  /* === BREADCRUMBS === */
+  .breadcrumbs {
+    display: inline-block;
 
-.page-wrapper .breadcrumbs ul {
-  padding-top: 25px;
-  margin: 0;
-}
+    ul {
+      padding-top: 25px;
+      margin: 0;
 
-.page-wrapper .breadcrumbs ul li {
-  color: #ad2121;
-  font-size: 14px;
-  list-style: none;
-  display: inline-block;
-}
+      li {
+        color: #ad2121;
+        font-size: 14px;
+        list-style: none;
+        display: inline-block;
 
-.page-wrapper .breadcrumbs ul li a {
-  display: inline-block;
-  padding: 0 5px;
-  color: #585858;
-}
+        a {
+          display: inline-block;
+          padding: 0 5px;
+          color: #585858;
 
-.page-wrapper .breadcrumbs ul li a:hover {
-  color: #7e3636;
-}
+          &:hover {
+            color: #7e3636;
+          }
+        }
 
-.page-wrapper .breadcrumbs ul li.breadcrumbs-label {
-  padding-right: 0;
-  color: #585858;
-}
+        &.breadcrumbs-label {
+          padding-right: 0;
+          color: #585858;
+        }
 
-.page-wrapper .breadcrumbs ul li.current {
-  max-width: 250px;
-  margin-left: 5px;
+        &.current {
+          max-width: 250px;
+          margin-left: 5px;
+        }
+      }
+    }
+  }
 }
 
 /* MQ - Malé úhlopříčky (telefony, méně než 768px) */
 @media (max-width: 767px) {
-  .page-wrapper .page-heading {
-    min-width: 600px;
-    float: none;
-    text-align: center;
-    display: block;
-  }
-  .page-wrapper .page-heading h1.heading-title {
-    float: none;
-    text-align: center;
-    display: block;
-  }
-  .page-wrapper .breadcrumbs {
-    float: none;
-    text-align: center;
-    display: block;
-  }
-  .page-wrapper .breadcrumbs ul {
-    padding-top: 0;
-    padding-left: 0;
-    margin: 0 auto;
-  }
-  .page-wrapper .breadcrumbs ul li {
-    float: none;
-    display: inline-block;
-  }
-  .page-wrapper .breadcrumbs ul li.current {
-    max-width: inherit;
-    overflow: visible;
-  }
+  .page-wrapper {
+    .page-heading {
+      min-width: 600px;
+      float: none;
+      text-align: center;
+      display: block;
+
+      h1.heading-title {
+        float: none;
+        text-align: center;
+        display: block;
+      }
+    }
+
+    .breadcrumbs {
+      float: none;
+      text-align: center;
+      display: block;
+
+      ul {
+        padding-top: 0;
+        padding-left: 0;
+        margin: 0 auto;
+
+        li {
+          float: none;
+          display: inline-block;
+
+          &.current {
+            max-width: inherit;
+            overflow: visible;
+          }
+        }
+      }
+    }
+  } 
 }
