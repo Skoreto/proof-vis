@@ -1,16 +1,24 @@
-import React from 'react';
-import { Navbar, Nav, NavItem, NavDropdown, MenuItem, Image } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import { LinkContainer } from 'react-router-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import './MainNavbar.scss';
+import React from "react";
+import {
+  Navbar,
+  Nav,
+  NavItem,
+  NavDropdown,
+  MenuItem,
+  Image
+} from "react-bootstrap";
+import { Link } from "react-router-dom";
+import { LinkContainer } from "react-router-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "./MainNavbar.scss";
 
-const MainNavbar = (props) => (
+const MainNavbar = props => (
   <Navbar className="main-nav" default collapseOnSelect>
     <Navbar.Header>
       <Navbar.Brand>
         <Link to="/">
-          <Image src="assets/image/logo.png" alt="Vizualizace důkazů" />ProofVis
+          <Image src="assets/image/logo.png" alt="Vizualizace důkazů" />
+          ProofVis
         </Link>
       </Navbar.Brand>
       <Navbar.Toggle />
@@ -19,10 +27,9 @@ const MainNavbar = (props) => (
       <Nav>
         <NavDropdown
           title={
-            <span><FontAwesomeIcon icon="arrow-right" />
-              {
-                props.isCzechChosen ? ' Přímé důkazy' : ' Direct'
-              }
+            <span>
+              <FontAwesomeIcon icon="arrow-right" />
+              {props.isCzechChosen ? " Přímé důkazy" : " Direct"}
             </span>
           }
           id="primo-nav-dropdown"
@@ -40,10 +47,9 @@ const MainNavbar = (props) => (
         </NavDropdown>
         <NavDropdown
           title={
-            <span><FontAwesomeIcon icon="sync-alt" />
-              {
-                props.isCzechChosen ? ' Nepřímé důkazy' : ' Contraposition'
-              }
+            <span>
+              <FontAwesomeIcon icon="sync-alt" />
+              {props.isCzechChosen ? " Nepřímé důkazy" : " Contraposition"}
             </span>
           }
           id="neprimo-nav-dropdown"
@@ -58,29 +64,23 @@ const MainNavbar = (props) => (
         </NavDropdown>
         <NavDropdown
           title={
-            <span><FontAwesomeIcon icon="bolt" />
-              {
-                props.isCzechChosen ? ' Důkazy sporem' : ' Contradiction'
-              }
+            <span>
+              <FontAwesomeIcon icon="bolt" />
+              {props.isCzechChosen ? " Důkazy sporem" : " Contradiction"}
             </span>
           }
           id="sporem-nav-dropdown"
           className="nav-item"
         >
           <LinkContainer to="/dukaz6">
-            <MenuItem>
-              {
-                props.isCzechChosen ? ' Důkaz 6' : ' Proof 6'
-              }
-            </MenuItem>
+            <MenuItem>{props.isCzechChosen ? " Důkaz 6" : " Proof 6"}</MenuItem>
           </LinkContainer>
         </NavDropdown>
         <NavDropdown
           title={
-            <span><FontAwesomeIcon icon="draw-polygon" />
-              {
-                props.isCzechChosen ? ' Ostatní' : ' Other'
-              }
+            <span>
+              <FontAwesomeIcon icon="draw-polygon" />
+              {props.isCzechChosen ? " Ostatní" : " Other"}
             </span>
           }
           id="protipriklady-nav-dropdown"
@@ -93,26 +93,20 @@ const MainNavbar = (props) => (
         <LinkContainer to="/platno">
           <NavItem className="nav-item">
             <FontAwesomeIcon icon="chalkboard-teacher" />
-            {
-              props.isCzechChosen ? ' Plátno' : ' Canvas'
-            }
+            {props.isCzechChosen ? " Plátno" : " Canvas"}
           </NavItem>
         </LinkContainer>
         <LinkContainer to="/napoveda">
           <NavItem className="nav-item">
             <FontAwesomeIcon icon="question" />
-            {
-              props.isCzechChosen ? ' Nápověda' : ' Help'
-            }
+            {props.isCzechChosen ? " Nápověda" : " Help"}
           </NavItem>
         </LinkContainer>
         <NavItem className="nav-item" onClick={props.handleTranslation}>
           <FontAwesomeIcon icon="globe" />
-          {
-            props.isCzechChosen ? ' EN' : ' CZ'
-          }
+          {props.isCzechChosen ? " EN" : " CZ"}
         </NavItem>
-      </Nav>   
+      </Nav>
     </Navbar.Collapse>
   </Navbar>
 );

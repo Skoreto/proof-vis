@@ -1,4 +1,4 @@
-import imHelp from 'immutability-helper';
+import imHelp from "immutability-helper";
 
 /**
  * Method for updating node properties.
@@ -9,10 +9,10 @@ import imHelp from 'immutability-helper';
  * @returns {ReadonlyArray<any> | ReadonlySet<any> | ReadonlyMap<any, any> | any}
  */
 export function updateNode(nodesState, nodeIndex, background, label) {
-  return imHelp(nodesState, { 
-    [nodeIndex]: { 
+  return imHelp(nodesState, {
+    [nodeIndex]: {
       color: { $set: { background: background } },
-      label: { $set: label },
+      label: { $set: label }
     }
   });
 }
@@ -27,13 +27,20 @@ export function updateNode(nodesState, nodeIndex, background, label) {
  * @param fontSize - Font size of the label.
  * @returns {ReadonlyArray<any> | ReadonlySet<any> | ReadonlyMap<any, any> | any}
  */
-export function updateNodeFont(nodesState, nodeIndex, background, label, margin, fontSize) {
-  return imHelp(nodesState, { 
-    [nodeIndex]: { 
+export function updateNodeFont(
+  nodesState,
+  nodeIndex,
+  background,
+  label,
+  margin,
+  fontSize
+) {
+  return imHelp(nodesState, {
+    [nodeIndex]: {
       color: { $set: { background: background } },
       label: { $set: label },
       margin: { $set: margin },
-      font: { $set: { size: fontSize } },
+      font: { $set: { size: fontSize } }
     }
   });
 }
@@ -48,14 +55,22 @@ export function updateNodeFont(nodesState, nodeIndex, background, label, margin,
  * @param size - Size of the node.
  * @returns {ReadonlyArray<any> | ReadonlySet<any> | ReadonlyMap<any, any> | any}
  */
-export function updateNodeShape(nodesState, nodeIndex, background, label, vadjust, shape, size) {
-  return imHelp(nodesState, { 
-    [nodeIndex]: { 
+export function updateNodeShape(
+  nodesState,
+  nodeIndex,
+  background,
+  label,
+  vadjust,
+  shape,
+  size
+) {
+  return imHelp(nodesState, {
+    [nodeIndex]: {
       color: { $set: { background: background } },
       label: { $set: label },
       font: { $set: { vadjust: vadjust } },
       shape: { $set: shape },
-      size: { $set: size },
+      size: { $set: size }
     }
   });
 }
@@ -68,10 +83,10 @@ export function updateNodeShape(nodesState, nodeIndex, background, label, vadjus
  * @param newY - New Y coordinate of the node.
  */
 export function updateNodePosition(nodesState, nodeIndex, newX, newY) {
-  return imHelp(nodesState, { 
-    [nodeIndex]: { 
+  return imHelp(nodesState, {
+    [nodeIndex]: {
       x: { $set: newX },
-      y: { $set: newY },
+      y: { $set: newY }
     }
   });
 }
@@ -90,7 +105,9 @@ export function updateEdge(edgesState, edgeIndex, color, width, dashes, label) {
   return imHelp(edgesState, {
     [edgeIndex]: {
       color: { $set: { color: color, highlight: color, hover: color } },
-      width: { $set: width }, dashes: { $set: dashes }, label: { $set: label },
+      width: { $set: width },
+      dashes: { $set: dashes },
+      label: { $set: label }
     }
   });
 }
@@ -115,13 +132,20 @@ export function updateEdgeWithArrow(
   dashes,
   label,
   enableArrowTo,
-  enableArrowFrom,
+  enableArrowFrom
 ) {
   return imHelp(edgesState, {
     [edgeIndex]: {
       color: { $set: { color: color, highlight: color, hover: color } },
-      width: { $set: width }, dashes: { $set: dashes }, label: { $set: label },
-      arrows: { $set: { to: { enabled: enableArrowTo }, from: { enabled: enableArrowFrom } } },
+      width: { $set: width },
+      dashes: { $set: dashes },
+      label: { $set: label },
+      arrows: {
+        $set: {
+          to: { enabled: enableArrowTo },
+          from: { enabled: enableArrowFrom }
+        }
+      }
     }
   });
 }
@@ -136,9 +160,9 @@ export function updateEdgeWithArrow(
  * @param {string} label - Text above the edge.
  * @param {boolean} enableArrowTo - Determines whether to show arrow pointing from starting node to ending node.
  * @param {boolean} enableArrowFrom - Determines whether to show arrow pointing from ending node to starting node.
- * @param {*} enableSmooth 
- * @param {*} smoothType 
- * @param {*} roundness 
+ * @param {*} enableSmooth
+ * @param {*} smoothType
+ * @param {*} roundness
  */
 export function updateEdgeSmooth(
   edgesState,
@@ -151,14 +175,23 @@ export function updateEdgeSmooth(
   enableArrowFrom,
   enableSmooth,
   smoothType,
-  roundness,
+  roundness
 ) {
   return imHelp(edgesState, {
     [edgeIndex]: {
       color: { $set: { color: color, highlight: color, hover: color } },
-      width: { $set: width }, dashes: { $set: dashes }, label: { $set: label },
-      arrows: { $set: { to: { enabled: enableArrowTo }, from: { enabled: enableArrowFrom } } },
-      smooth: { $set: { enabled: enableSmooth, type: smoothType, roundness: roundness } },
+      width: { $set: width },
+      dashes: { $set: dashes },
+      label: { $set: label },
+      arrows: {
+        $set: {
+          to: { enabled: enableArrowTo },
+          from: { enabled: enableArrowFrom }
+        }
+      },
+      smooth: {
+        $set: { enabled: enableSmooth, type: smoothType, roundness: roundness }
+      }
     }
   });
 }
@@ -181,7 +214,7 @@ export function addObjectArray(objectsState, newObjectsArray) {
 export function getNodesWithNewPositions(nodesPositions, stateNodes) {
   let newNodes = stateNodes;
 
-  if(Object.keys(nodesPositions).length > 0) {
+  if (Object.keys(nodesPositions).length > 0) {
     for (let i = 0; i < Object.keys(nodesPositions).length; i++) {
       let newX = Object.entries(nodesPositions)[i][1].x;
       let newY = Object.entries(nodesPositions)[i][1].y;
@@ -199,5 +232,7 @@ export function getNodesWithNewPositions(nodesPositions, stateNodes) {
 export function updateNodesWithNewPositions(nodesPositions, stateNodes) {
   // Update positions only when nodes array is not empty
   if (stateNodes.length > 0)
-    this.setState({ nodes: getNodesWithNewPositions(nodesPositions, stateNodes)})
+    this.setState({
+      nodes: getNodesWithNewPositions(nodesPositions, stateNodes)
+    });
 }

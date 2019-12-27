@@ -1,4 +1,4 @@
-import { Tools } from 'react-sketch';
+import { Tools } from "react-sketch";
 
 /**
  * Increases or decreases currentStep in component state after a step was executed by increment.
@@ -6,7 +6,7 @@ import { Tools } from 'react-sketch';
  * @param {number} increment - Number to increment to the current state.
  */
 export function updateCurrentStep(stateCurrentStep, increment) {
-  this.setState({ currentStep: stateCurrentStep += increment });
+  this.setState({ currentStep: (stateCurrentStep += increment) });
 }
 
 /**
@@ -15,12 +15,12 @@ export function updateCurrentStep(stateCurrentStep, increment) {
  */
 export function clearAllTimers(state) {
   if (state.timeouts.length > 0) {
-    state.timeouts.forEach(function (value, index) {
+    state.timeouts.forEach(function(value, index) {
       clearTimeout(value);
     });
   }
   if (state.intervals.length > 0) {
-    state.intervals.forEach(function (value, index) {
+    state.intervals.forEach(function(value, index) {
       clearInterval(value);
     });
   }
@@ -32,25 +32,25 @@ export function clearAllTimers(state) {
  */
 export function handlerSketchAllowance(state) {
   if (state.isSketchAllowed) {
-    return ({
+    return {
       isSketchAllowed: false,
       btnSketchA: false,
-      btnSketchC: '',
+      btnSketchC: "",
       btnPencilD: true,
       btnLineD: true,
-      btnCircleD: true,
-    })
+      btnCircleD: true
+    };
   } else {
     const isAnyToolActive = state.btnLineA || state.btnCircleA;
-    return ({
+    return {
       isSketchAllowed: true,
       btnSketchA: true,
-      btnSketchC: 'btnSketchActive',
+      btnSketchC: "btnSketchActive",
       btnPencilA: !isAnyToolActive,
       btnPencilD: false,
       btnLineD: false,
-      btnCircleD: false,
-    })
+      btnCircleD: false
+    };
   }
 }
 
@@ -62,36 +62,36 @@ export function handlerSketchAllowance(state) {
 export function handlerSelectedTool(tool) {
   switch (tool) {
     case 1: {
-      return ({
+      return {
         sketchTool: Tools.Pencil,
         btnPencilA: true,
         btnLineA: false,
-        btnCircleA: false,
-      });
+        btnCircleA: false
+      };
     }
     case 2: {
-      return ({
+      return {
         sketchTool: Tools.Line,
         btnPencilA: false,
         btnLineA: true,
-        btnCircleA: false,
-      });
+        btnCircleA: false
+      };
     }
     case 3: {
-      return ({
+      return {
         sketchTool: Tools.Circle,
         btnPencilA: false,
         btnLineA: false,
-        btnCircleA: true,
-      });
+        btnCircleA: true
+      };
     }
     default: {
-      return ({
+      return {
         sketchTool: Tools.Pencil,
         btnPencilA: true,
         btnLineA: false,
-        btnCircleA: false,
-      });
+        btnCircleA: false
+      };
     }
   }
 }
@@ -118,10 +118,10 @@ export function getScrollOptions(windowScrollY) {
   return {
     duration: 800,
     delay: 0,
-    smooth: 'linear',
-    containerId: 'proof-steps-box',
-    offset: (-230 + windowScrollY),
+    smooth: "linear",
+    containerId: "proof-steps-box",
+    offset: -230 + windowScrollY,
     // Prevent canceling of scroll by fast switching between steps
-    ignoreCancelEvents: true,
-  }
+    ignoreCancelEvents: true
+  };
 }

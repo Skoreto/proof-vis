@@ -1,17 +1,19 @@
-import React from 'react';
-import MathJax from 'react-mathjax2';
-import './DescriptionPanel.scss';
+import React from "react";
+import MathJax from "react-mathjax2";
+import "./DescriptionPanel.scss";
 
-const DescriptionPanel = (props) => (
+const DescriptionPanel = props => (
   <MathJax.Context input="tex">
     <div className="description-panel">
-        {props.descriptionPanels
-        .filter(descriptionPanel => descriptionPanel.showForSteps.includes(props.currentStep))
-        .map((descriptionPanel, index) =>
+      {props.descriptionPanels
+        .filter(descriptionPanel =>
+          descriptionPanel.showForSteps.includes(props.currentStep)
+        )
+        .map((descriptionPanel, index) => (
           <div key={index + "-" + descriptionPanel.id}>
             {descriptionPanel.content}
           </div>
-        )}
+        ))}
     </div>
   </MathJax.Context>
 );

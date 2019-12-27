@@ -1,21 +1,21 @@
-import { Tools } from 'react-sketch';
+import { Tools } from "react-sketch";
 
 /**
  * Palette of global color presets.
  */
 export const palette = {
-  yellow: '#FFFF08',
-  black: '#000000',
-  white: '#FFFFFF',
-  lightpurple: '#D1C4E9',
-  purple: '#B39DDB',  // #B388FF
-  blue: '#90CAF9',
-  darkblue: '#29B6F6',
-  green: '#81C784',
-  jade: '#4DB6AC',
-  red: '#F06292',
-  ruby: '#EC407A',
-  orange: '#FF7043',
+  yellow: "#FFFF08",
+  black: "#000000",
+  white: "#FFFFFF",
+  lightpurple: "#D1C4E9",
+  purple: "#B39DDB", // #B388FF
+  blue: "#90CAF9",
+  darkblue: "#29B6F6",
+  green: "#81C784",
+  jade: "#4DB6AC",
+  red: "#F06292",
+  ruby: "#EC407A",
+  orange: "#FF7043"
 };
 
 /**
@@ -23,19 +23,22 @@ export const palette = {
  */
 export const graphVisLocales = {
   cs: {
-    edit: 'Upravit',
-    del: 'Smazat vybrané',
-    back: 'Zpět',
-    addNode: 'Přidat vrchol',
-    addEdge: 'Přidat hranu',
-    editNode: 'Upravit vrchol',
-    editEdge: 'Upravit hranu',
-    addDescription: 'Klikněte do prázdného prostoru pro umístění nového vrcholu.',
-    edgeDescription: 'Táhnutím hrany od vybraného vrcholu ji spojte s jiným vrcholem.',
-    editEdgeDescription: 'Přetáhněte konec hrany na vrchol, se kterým ji chcete spojit.',
-    createEdgeError: 'Nelze připojit hrany ke clusteru.',
-    deleteClusterError: 'Clustery nemohou být smazány.',
-    editClusterError: 'Clustery nemohou být upraveny.',
+    edit: "Upravit",
+    del: "Smazat vybrané",
+    back: "Zpět",
+    addNode: "Přidat vrchol",
+    addEdge: "Přidat hranu",
+    editNode: "Upravit vrchol",
+    editEdge: "Upravit hranu",
+    addDescription:
+      "Klikněte do prázdného prostoru pro umístění nového vrcholu.",
+    edgeDescription:
+      "Táhnutím hrany od vybraného vrcholu ji spojte s jiným vrcholem.",
+    editEdgeDescription:
+      "Přetáhněte konec hrany na vrchol, se kterým ji chcete spojit.",
+    createEdgeError: "Nelze připojit hrany ke clusteru.",
+    deleteClusterError: "Clustery nemohou být smazány.",
+    editClusterError: "Clustery nemohou být upraveny."
   }
 };
 
@@ -44,30 +47,30 @@ export const graphVisLocales = {
  */
 export const graphVisOptions = {
   autoResize: true,
-  height: '100%',
-  width: '100%',
+  height: "100%",
+  width: "100%",
   // Set localization to Czech language and pass object with Czech translations.
-  locale: 'cs',
+  locale: "cs",
   locales: graphVisLocales,
   // Default node properties
   nodes: {
-    shape: 'circle',
+    shape: "circle",
     color: { background: palette.yellow, border: palette.black },
-    label: '   ',
+    label: "   ",
     margin: 12,
-    font: { size: 18 },
+    font: { size: 18 }
   },
   // Default edge properties
   edges: {
     arrows: {
       to: { enabled: false, scaleFactor: 2 },
-      from: { enabled: false, scaleFactor: 2 },
+      from: { enabled: false, scaleFactor: 2 }
     },
     color: { color: palette.black, hover: palette.black },
     width: 1,
     dashes: false,
-    label: '   ',
-    font: { align: 'top', size: 18 },
+    label: "   ",
+    font: { align: "top", size: 18 }
   },
   // Allow to interact with the graph
   interaction: {
@@ -82,12 +85,12 @@ export const graphVisOptions = {
     selectable: true,
     // Do not highlight connecting edges on selecting a node
     selectConnectedEdges: false,
-    zoomView: true,
+    zoomView: true
   },
   // Turn automatic graph rearranging off
   physics: false,
   // Turn configuration panel off
-  configure: false,
+  configure: false
 };
 
 /**
@@ -103,12 +106,12 @@ export const initialProofState = {
   isSketchAllowed: false,
   sketchTool: Tools.Pencil,
   isSVGCoverShowed: false,
-  svgContent: '',
-  description: '',
+  svgContent: "",
+  description: "",
   btnPrevD: true,
   btnNextD: false,
   btnSketchA: false,
-  btnSketchC: '',
+  btnSketchC: "",
   btnPencilA: false,
   btnPencilD: true,
   btnLineA: false,
@@ -117,5 +120,5 @@ export const initialProofState = {
   btnCircleD: true,
   btnRepeatD: true,
   isDrawingDialogOpen: false,
-  isCzechChosen: true,
+  isCzechChosen: true
 };

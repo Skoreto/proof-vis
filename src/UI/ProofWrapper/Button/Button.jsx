@@ -1,8 +1,8 @@
-import React from 'react';
-import { Button } from 'react-bootstrap';
-import './Button.scss';
+import React from "react";
+import { Button } from "react-bootstrap";
+import "./Button.scss";
 
-const button = (props) => (
+const button = props => (
   <Button
     className={"button " + props.addClass}
     onClick={props.clicked}

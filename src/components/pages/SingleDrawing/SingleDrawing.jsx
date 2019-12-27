@@ -1,11 +1,20 @@
-import GraphVis from 'react-graph-vis';
-import React from 'react';
-import { palette, graphVisLocales } from '../../../functionality/globalProofConstants';
-import { addNode, showEditNodeDialog } from '../../../functionality/nodeEditFunctions';
-import { addEdge, showEditEdgeDialog } from '../../../functionality/edgeEditFunctions';
-import EditNodeDialog from '../../../UI/EditNodeDialog/EditNodeDialog';
-import EditEdgeDialog from '../../../UI/EditEdgeDialog/EditEdgeDialog';
-import './SingleDrawing.scss';
+import GraphVis from "react-graph-vis";
+import React from "react";
+import {
+  palette,
+  graphVisLocales
+} from "../../../functionality/globalProofConstants";
+import {
+  addNode,
+  showEditNodeDialog
+} from "../../../functionality/nodeEditFunctions";
+import {
+  addEdge,
+  showEditEdgeDialog
+} from "../../../functionality/edgeEditFunctions";
+import EditNodeDialog from "../../../UI/EditNodeDialog/EditNodeDialog";
+import EditEdgeDialog from "../../../UI/EditEdgeDialog/EditEdgeDialog";
+import "./SingleDrawing.scss";
 
 class SingleDrawing extends React.Component {
   constructor(props) {
@@ -14,25 +23,29 @@ class SingleDrawing extends React.Component {
       graphVis: { nodes: [], edges: [] },
       options: {
         autoResize: true,
-        height: '100%',
-        width: '100%',
-        locale: 'cs',
+        height: "100%",
+        width: "100%",
+        locale: "cs",
         locales: graphVisLocales,
         clickToUse: false,
         layout: {},
         nodes: {
-          font: { size: 22 },
+          font: { size: 22 }
         },
         edges: {
           arrows: {
             to: { enabled: false },
-            from: { enabled: false },
+            from: { enabled: false }
           },
           color: { color: palette.black, hover: palette.black },
           width: 2,
-          hoverWidth: function (width) { return width * 2; },
-          selectionWidth: function (width) { return width * 2; },
-          font: { align: 'top', size: 18 },
+          hoverWidth: function(width) {
+            return width * 2;
+          },
+          selectionWidth: function(width) {
+            return width * 2;
+          },
+          font: { align: "top", size: 18 }
         },
         manipulation: {
           enabled: true,
@@ -42,7 +55,7 @@ class SingleDrawing extends React.Component {
           addEdge: addEdge,
           editEdge: showEditEdgeDialog,
           deleteNode: true,
-          deleteEdge: true,
+          deleteEdge: true
         },
         interaction: {
           dragNodes: true,
@@ -56,13 +69,13 @@ class SingleDrawing extends React.Component {
           selectable: true,
           // Do not highlight connecting edges on selecting a node
           selectConnectedEdges: false,
-          zoomView: false,
+          zoomView: false
         },
         // Turn automatic graph rearranging off
         physics: false,
         // Turn configuration panel off
-        configure: false,
-      },
+        configure: false
+      }
     };
   }
 
@@ -74,8 +87,9 @@ class SingleDrawing extends React.Component {
         <GraphVis
           graph={this.state.graphVis}
           options={this.state.options}
-          events={{ }}
-          style={{ width: "100%", height: window.innerHeight - 120 }} />
+          events={{}}
+          style={{ width: "100%", height: window.innerHeight - 120 }}
+        />
       </div>
     );
   }

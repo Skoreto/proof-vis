@@ -1,7 +1,7 @@
-import React from 'react';
-import { Grid } from 'react-bootstrap';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import { library } from '@fortawesome/fontawesome-svg-core';
+import React from "react";
+import { Grid } from "react-bootstrap";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faArrowRight,
   faSyncAlt,
@@ -17,19 +17,19 @@ import {
   faDrawPolygon,
   faChalkboardTeacher,
   faQuestion,
-  faGlobe,
-} from '@fortawesome/free-solid-svg-icons';
-import Overview from './components/pages/Overview/Overview';
-import Proof1 from './components/proofs/Proof1/Proof1';
-import Proof2 from './components/proofs/Proof2/Proof2';
-import Proof3 from './components/proofs/Proof3/Proof3';
-import Proof4 from './components/proofs/Proof4/Proof4';
-import Proof5 from './components/proofs/Proof5/Proof5';
-import Proof6 from './components/proofs/Proof6/Proof6';
-import Proof7 from './components/proofs/Proof7/Proof7';
-import SingleDrawing from './components/pages/SingleDrawing/SingleDrawing';
-import Help from './components/pages/Help/Help';
-import MainNavbar from './UI/MainNavbar/MainNavbar';
+  faGlobe
+} from "@fortawesome/free-solid-svg-icons";
+import Overview from "./components/pages/Overview/Overview";
+import Proof1 from "./components/proofs/Proof1/Proof1";
+import Proof2 from "./components/proofs/Proof2/Proof2";
+import Proof3 from "./components/proofs/Proof3/Proof3";
+import Proof4 from "./components/proofs/Proof4/Proof4";
+import Proof5 from "./components/proofs/Proof5/Proof5";
+import Proof6 from "./components/proofs/Proof6/Proof6";
+import Proof7 from "./components/proofs/Proof7/Proof7";
+import SingleDrawing from "./components/pages/SingleDrawing/SingleDrawing";
+import Help from "./components/pages/Help/Help";
+import MainNavbar from "./UI/MainNavbar/MainNavbar";
 
 // Add Font Awesome icons into global library for accesing them via FontAwesomeIcon component
 library.add(
@@ -47,7 +47,7 @@ library.add(
   faDrawPolygon,
   faChalkboardTeacher,
   faQuestion,
-  faGlobe,
+  faGlobe
 );
 
 class App extends React.Component {
@@ -77,8 +77,10 @@ class App extends React.Component {
               <Route path="/dukaz4" component={Proof4} />
               <Route path="/dukaz5" component={Proof5} />
               <Route
-                path="/dukaz6" 
-                render={(props) => <Proof6 {...props} isCzechChosen={this.state.isCzechChosen} />}
+                path="/dukaz6"
+                render={props => (
+                  <Proof6 {...props} isCzechChosen={this.state.isCzechChosen} />
+                )}
               />
               <Route path="/dukaz7" component={Proof7} />
               <Route path="/platno" component={SingleDrawing} />
@@ -87,7 +89,7 @@ class App extends React.Component {
           </Grid>
         </div>
       </BrowserRouter>
-    )
+    );
   }
 }
 

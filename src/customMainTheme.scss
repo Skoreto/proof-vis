@@ -1,4 +1,4 @@
-@import 'styles/variables.scss';
+@import "styles/variables.scss";
 
 .wrapper {
   min-height: 100%;
@@ -82,11 +82,11 @@
 
 /* == TEXT COLORS == */
 .t-green {
-  color: #2E7D32;
+  color: #2e7d32;
 }
 
 .t-red {
-  color: #D50000;
+  color: #d50000;
 }
 
 /* === LISTS CONTENT === */
@@ -119,13 +119,13 @@
 .page-wrapper .page-content h2 {
   font-size: 22px;
   font-weight: normal;
-  color: $color-primary-dark
+  color: $color-primary-dark;
 }
 
 .page-wrapper .page-content h3 {
   font-size: 20px;
   font-weight: normal;
-  color: $color-primary-dark
+  color: $color-primary-dark;
 }
 
 .page-wrapper .page-content h4 {
@@ -164,7 +164,7 @@ tbody tr td:first-child {
     content: none;
   }
   /* For .page-heading  */
-  .page-wrapper>.row {
+  .page-wrapper > .row {
     margin-left: 0;
     margin-right: 0;
   }

@@ -1,17 +1,22 @@
-import React from 'react';
-import MathJax from 'react-mathjax2';
-import './DefinitionPanel.scss';
+import React from "react";
+import MathJax from "react-mathjax2";
+import "./DefinitionPanel.scss";
 
-const DefinitionPanel = (props) => (
+const DefinitionPanel = props => (
   <MathJax.Context input="tex">
     <div>
       {props.definitionPanels
-      .filter(definitionPanel => definitionPanel.showForSteps.includes(props.currentStep))
-      .map((definitionPanel, index) =>
-        <div key={index + "-" + definitionPanel.id} className="definition-panel">
-          {definitionPanel.content}
-        </div>
-      )}
+        .filter(definitionPanel =>
+          definitionPanel.showForSteps.includes(props.currentStep)
+        )
+        .map((definitionPanel, index) => (
+          <div
+            key={index + "-" + definitionPanel.id}
+            className="definition-panel"
+          >
+            {definitionPanel.content}
+          </div>
+        ))}
     </div>
   </MathJax.Context>
 );

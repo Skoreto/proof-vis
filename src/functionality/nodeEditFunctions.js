@@ -3,10 +3,10 @@
  */
 export function addNode(nodeData, callback) {
   // Set parameters of the new node
-  nodeData.shape = 'circle';
+  nodeData.shape = "circle";
   nodeData.margin = 16;
-  nodeData.label = '   ';
-  nodeData.color = { background: '#FFFF00', border: '#000000' };
+  nodeData.label = "   ";
+  nodeData.color = { background: "#FFFF00", border: "#000000" };
   nodeData.borderWidth = 1;
   nodeData.shadow = { enabled: false };
   callback(nodeData);
@@ -18,34 +18,40 @@ export function addNode(nodeData, callback) {
 export function showEditNodeDialog(nodeData, callback) {
   // Fill node edit dialog's inputs by selected node data
   let labelInput = nodeData.label;
-  if (labelInput === '   ')
-    labelInput = '';
+  if (labelInput === "   ") labelInput = "";
 
-  document.getElementById('inpNodeLabel').value = labelInput;
-  document.getElementById('inpNodeColor').value = nodeData.color.background;
+  document.getElementById("inpNodeLabel").value = labelInput;
+  document.getElementById("inpNodeColor").value = nodeData.color.background;
   // document.getElementById('inpNodeMargin').value = nodeData.margin;
-  document.getElementById('inpLabelColor').value = nodeData.font.color;
+  document.getElementById("inpLabelColor").value = nodeData.font.color;
   // Bind saveNode and cancelEditNode functions
-  document.getElementById('btnSave').onclick = saveNode.bind(this, nodeData, document, callback);
-  document.getElementById('btnCancel').onclick = cancelNodeEdit.bind(this, document, callback);
-  document.getElementById('editNodeDialog').style.display = 'block';
+  document.getElementById("btnSave").onclick = saveNode.bind(
+    this,
+    nodeData,
+    document,
+    callback
+  );
+  document.getElementById("btnCancel").onclick = cancelNodeEdit.bind(
+    this,
+    document,
+    callback
+  );
+  document.getElementById("editNodeDialog").style.display = "block";
 }
 
 /**
  * Sets inputed data to the selected node, saves the node and hides the Node Edit dialog.
  */
 function saveNode(nodeData, document, callback) {
-  let newLabel = document.getElementById('inpNodeLabel').value;
-  if (newLabel.length === 1)
-    newLabel = ' ' + newLabel + ' ';
+  let newLabel = document.getElementById("inpNodeLabel").value;
+  if (newLabel.length === 1) newLabel = " " + newLabel + " ";
 
-  if (newLabel === '')
-    newLabel = '   ';
+  if (newLabel === "") newLabel = "   ";
 
   nodeData.label = newLabel;
-  nodeData.color.background = document.getElementById('inpNodeColor').value;
+  nodeData.color.background = document.getElementById("inpNodeColor").value;
   // nodeData.margin = document.getElementById('inpNodeMargin').value;
-  nodeData.font.color = document.getElementById('inpLabelColor').value;
+  nodeData.font.color = document.getElementById("inpLabelColor").value;
   clearEditNodeDialog(document);
   callback(nodeData);
 }
@@ -56,13 +62,13 @@ function saveNode(nodeData, document, callback) {
 function cancelNodeEdit(document, callback) {
   clearEditNodeDialog(document);
   callback(null);
-};
+}
 
 /**
  * Clears and hides Edit Node dialog.
  */
 function clearEditNodeDialog(document) {
-  document.getElementById('btnSave').onclick = null;
-  document.getElementById('btnCancel').onclick = null;
-  document.getElementById('editNodeDialog').style.display = 'none';
+  document.getElementById("btnSave").onclick = null;
+  document.getElementById("btnCancel").onclick = null;
+  document.getElementById("editNodeDialog").style.display = "none";
 }

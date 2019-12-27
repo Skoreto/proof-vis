@@ -28,7 +28,7 @@
       font-weight: 600;
       text-transform: uppercase;
       font-family: arial, sans-serif;
-      letter-spacing: .4px;
+      letter-spacing: 0.4px;
 
       a {
         color: #fff;
@@ -48,7 +48,7 @@
       &.active {
         position: relative;
 
-        &>a {
+        & > a {
           background: #a14646;
           color: #fff;
 
@@ -114,7 +114,7 @@
   font-size: 22px;
   color: #fff;
 
-  &>img {
+  & > img {
     padding: 5px 5px;
     margin-right: 3px;
     width: 45px;
@@ -139,17 +139,17 @@
         padding-left: 20px;
       }
 
-      &.active>a:before {
+      &.active > a:before {
         content: none;
       }
     }
   }
-  
+
   .navbar-nav {
     margin-top: 0;
   }
 
-  .navbar-default .navbar-nav .open .dropdown-menu>li>a {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
     color: #fff;
     padding-left: 30px;
   }
